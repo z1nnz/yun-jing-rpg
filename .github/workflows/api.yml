@@ -1,8 +1,15 @@
 name: API and persistence
 on: [push, pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: yunjing-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
+    name: API and persistence tests
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -11,3 +18,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+  assets:
+    name: LFS asset integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - run: git lfs fsck
