@@ -1,0 +1,49 @@
+{
+  "asset": "SpiritHerbMature",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SpiritHerbMature_v001.blend",
+    "objects": 67,
+    "mesh_objects": 66,
+    "triangles": 8664,
+    "materials": 4,
+    "meshes_without_uv": 56,
+    "bounds_min_m": [
+      -0.2041671872138977,
+      -0.21467408537864685,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.2041671872138977,
+      0.21467408537864685,
+      0.43799999356269836
+    ],
+    "size_m": [
+      0.4083343744277954,
+      0.4293481707572937,
+      0.43799999356269836
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SpiritHerbMature_v001.fbx",
+      "mesh_objects": 66,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.4083343744277954,
+        0.4293481707572937,
+        0.43800002336502075
+      ],
+      "size_error_m": 2.9802322387695312e-08
+    }
+  ]
+}

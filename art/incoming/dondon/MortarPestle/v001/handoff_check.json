@@ -1,0 +1,49 @@
+{
+  "asset": "MortarPestle",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "MortarPestle_v001.blend",
+    "objects": 10,
+    "mesh_objects": 9,
+    "triangles": 4188,
+    "materials": 4,
+    "meshes_without_uv": 6,
+    "bounds_min_m": [
+      -0.2560926377773285,
+      -0.25,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.2439073622226715,
+      0.25,
+      0.5074993968009949
+    ],
+    "size_m": [
+      0.5,
+      0.5,
+      0.5074993968009949
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "MortarPestle_v001.fbx",
+      "mesh_objects": 9,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.5,
+        0.5,
+        0.5074993371963501
+      ],
+      "size_error_m": 5.960464477539063e-08
+    }
+  ]
+}

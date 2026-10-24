@@ -1,0 +1,56 @@
+{
+  "asset": "SmithWorkbench",
+  "name_zh": "工作台",
+  "stage": "extracted_appearance_prototype",
+  "source_blend": "Models/Blacksmith/v001/Blacksmith_v001.blend",
+  "source_sha256": "21f13bdb8c3e9027916366fb0b72c843e8f54e660bef582b0db805e58faa7bd1",
+  "source_objects": [
+    "Workbench_Leg",
+    "Workbench_Leg.001",
+    "Workbench_Leg.002",
+    "Workbench_Leg.003",
+    "Workbench_Plank",
+    "Workbench_Plank.001",
+    "Workbench_Plank.002",
+    "Workbench_Plank.003",
+    "Workbench_Lower_Shelf"
+  ],
+  "rotation_matrix_from_source": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    2.049999952316284,
+    0.8299999237060547,
+    0.9700000286102295
+  ],
+  "mesh_objects": 9,
+  "uv_baked": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false
+}

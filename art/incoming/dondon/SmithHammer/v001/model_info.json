@@ -1,0 +1,49 @@
+{
+  "asset": "SmithHammer",
+  "name_zh": "鐵鎚",
+  "stage": "extracted_appearance_prototype",
+  "source_blend": "Models/Blacksmith/v001/Blacksmith_v001.blend",
+  "source_sha256": "21f13bdb8c3e9027916366fb0b72c843e8f54e660bef582b0db805e58faa7bd1",
+  "source_objects": [
+    "Hammer_Handle",
+    "Hammer_Steel_Head"
+  ],
+  "rotation_matrix_from_source": [
+    [
+      -4.233417172372356e-08,
+      -1.0885926826631476e-08,
+      -1.0,
+      0.0
+    ],
+    [
+      -0.24904097616672516,
+      0.9684929251670837,
+      0.0,
+      0.0
+    ],
+    [
+      0.9684929251670837,
+      0.24904097616672516,
+      -4.371138828673793e-08,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.17000000178813934,
+    0.39846566319465637,
+    0.8935038447380066
+  ],
+  "mesh_objects": 2,
+  "uv_baked": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false
+}

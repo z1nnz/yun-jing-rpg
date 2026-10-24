@@ -1,0 +1,46 @@
+{
+  "asset": "QSpiritStone",
+  "plan_id": "ITEM01",
+  "name_zh": "靈石",
+  "stage": "editable_noncharacter_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom_center",
+  "assembly_offset_m": [
+    0.0,
+    -0.001353725790977478,
+    0.0
+  ],
+  "dimensions_m": [
+    0.12999999523162842,
+    0.11529075354337692,
+    0.1899999976158142
+  ],
+  "bounds_m": [
+    [
+      -0.06499999761581421,
+      -0.05764537677168846,
+      0.0
+    ],
+    [
+      0.06499999761581421,
+      0.05764537677168846,
+      0.1899999976158142
+    ]
+  ],
+  "mesh_objects": 2,
+  "triangles": 84,
+  "modeling_method": "procedural editable geometry guided by approved Q-style concept; not image generation",
+  "render_engine": "Cycles CPU, 16 samples, denoised",
+  "uv_baked": false,
+  "rigged": false,
+  "animation_ready": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "limits": "Appearance prototype; UV/LOD/collision and UE validation pending. Creatures not rigged.",
+  "version": "v002",
+  "source_version": "v001",
+  "source_sha256": "eacbb20c9fb8d24e8b119b0a9dcabb61774321a83680f35caabed85af6bb5e1d",
+  "door_hinge_animation": false
+}

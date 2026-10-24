@@ -1,0 +1,49 @@
+{
+  "asset": "StorageChest",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "StorageChest_v001.blend",
+    "objects": 21,
+    "mesh_objects": 20,
+    "triangles": 6260,
+    "materials": 4,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -0.7250000238418579,
+      -0.453000009059906,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.7250000238418579,
+      0.4529999792575836,
+      0.7944999933242798
+    ],
+    "size_m": [
+      1.4500000476837158,
+      0.906000018119812,
+      0.7944999933242798
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "StorageChest_v001.fbx",
+      "mesh_objects": 20,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        1.4500000476837158,
+        0.906000018119812,
+        0.7945001125335693
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

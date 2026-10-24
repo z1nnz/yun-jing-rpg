@@ -1,0 +1,17 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/SectModules06/validation.json",
+  "blender": null,
+  "entry": {
+    "asset": "TrainingDummy",
+    "blend_reopened": true,
+    "meshes": 8,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  "not_verified": null,
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

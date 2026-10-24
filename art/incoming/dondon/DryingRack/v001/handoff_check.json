@@ -1,0 +1,49 @@
+{
+  "asset": "DryingRack",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "DryingRack_v001.blend",
+    "objects": 135,
+    "mesh_objects": 134,
+    "triangles": 28972,
+    "materials": 5,
+    "meshes_without_uv": 45,
+    "bounds_min_m": [
+      -0.6399999856948853,
+      -0.41999998688697815,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.6399999856948853,
+      0.41999998688697815,
+      1.6820000410079956
+    ],
+    "size_m": [
+      1.2799999713897705,
+      0.8399999737739563,
+      1.6820000410079956
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "DryingRack_v001.fbx",
+      "mesh_objects": 134,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        1.2799999713897705,
+        0.8400000333786011,
+        1.6820001602172852
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "Blacksmith",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "Blacksmith_v001.blend",
+    "objects": 430,
+    "mesh_objects": 422,
+    "triangles": 86854,
+    "materials": 21,
+    "meshes_without_uv": 77,
+    "bounds_min_m": [
+      -3.7150001525878906,
+      -3.0231778621673584,
+      0.0
+    ],
+    "bounds_max_m": [
+      3.7150001525878906,
+      2.700000047683716,
+      5.360000133514404
+    ],
+    "size_m": [
+      7.430000305175781,
+      5.723177909851074,
+      5.360000133514404
+    ],
+    "bottom_centre_origin": false,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "Blacksmith_v001.fbx",
+      "mesh_objects": 422,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        7.430000305175781,
+        5.723177433013916,
+        5.3600006103515625
+      ],
+      "size_error_m": 4.76837158203125e-07
+    }
+  ]
+}

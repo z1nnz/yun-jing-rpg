@@ -1,0 +1,53 @@
+{
+  "asset": "BasicSword01",
+  "name_zh": "基礎法劍",
+  "stage": "extracted_appearance_prototype",
+  "source_blend": "Models/Blacksmith/v001/Blacksmith_v001.blend",
+  "source_sha256": "21f13bdb8c3e9027916366fb0b72c843e8f54e660bef582b0db805e58faa7bd1",
+  "source_objects": [
+    "Sword_Grip",
+    "Sword_Pommel",
+    "Sword_Guard",
+    "Sword_Blade"
+  ],
+  "geometry_changes": "none; isolated and recentered",
+  "rotation_matrix_from_source": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.28999999165534973,
+    0.10000000149011612,
+    1.21999990940094
+  ],
+  "mesh_objects": 4,
+  "uv_baked": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "bounds_method": "evaluated mesh vertices after modifiers"
+}

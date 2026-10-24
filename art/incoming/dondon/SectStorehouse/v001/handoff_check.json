@@ -1,0 +1,49 @@
+{
+  "asset": "SectStorehouse",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SectStorehouse_v001.blend",
+    "objects": 313,
+    "mesh_objects": 312,
+    "triangles": 97032,
+    "materials": 12,
+    "meshes_without_uv": 2,
+    "bounds_min_m": [
+      -4.790931701660156,
+      -4.059999942779541,
+      0.0
+    ],
+    "bounds_max_m": [
+      4.790931701660156,
+      4.059999942779541,
+      5.311562538146973
+    ],
+    "size_m": [
+      9.581863403320312,
+      8.119999885559082,
+      5.311562538146973
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SectStorehouse_v001.fbx",
+      "mesh_objects": 312,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        9.581863403320312,
+        8.120000839233398,
+        5.311563014984131
+      ],
+      "size_error_m": 9.5367431640625e-07
+    }
+  ]
+}

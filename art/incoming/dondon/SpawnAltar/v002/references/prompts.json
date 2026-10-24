@@ -1,0 +1,112 @@
+{
+  "asset": "SpawnAltar",
+  "name_zh": "出生石台",
+  "stage": "pre-modelling concept reference",
+  "method": "Claude-written prompt -> design spec (BlenderSource/TownLife09/town11_shapes.py) -> Codex-style soft studio concept render of a throwaway blockout by BlenderSource/TownLife09/concept_render09.py. No AI image model was available in the cloud session; the prompts can be re-run with an image model.",
+  "style_reference": "ArtReferences/HerbalStall/concept.png and ArtReferences/Blacksmith_10Views (Codex image_gen)",
+  "master": "05_front_right.png",
+  "front": "Blender -Y",
+  "projection": "perspective 50 mm",
+  "images": [
+    {
+      "name": "01_front.png",
+      "title": "正面",
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: straight front elevation, camera level, facing the -Y front, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "02_right.png",
+      "title": "右側",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: straight right side elevation, camera level, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "03_rear.png",
+      "title": "背面",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: straight rear elevation, camera level, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "04_left.png",
+      "title": "左側",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: straight left side elevation, camera level, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "05_front_right.png",
+      "title": "右前斜角",
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: front-right three-quarter view, slightly elevated, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "06_rear_right.png",
+      "title": "右後斜角",
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: rear-right three-quarter view, slightly elevated, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "07_rear_left.png",
+      "title": "左後斜角",
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: rear-left three-quarter view, slightly elevated, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "08_front_left.png",
+      "title": "左前斜角",
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: front-left three-quarter view, slightly elevated, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "09_top.png",
+      "title": "垂直俯視",
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: top-down plan view, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "10_high_front.png",
+      "title": "正面高角度",
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single modular game asset: 出生石台 (SpawnAltar). Design: Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns. Scale: Approx. 3.5 x 4.3 x 1.9 m. Style: softly beveled stylized 3D game art matching the existing dondon town (blue-grey stone paving, warm cedar timber, red lacquer, curved blue-grey tile roofs, restrained jade and gold accents). View: high front bird's-eye view at 45 degrees, entire object visible on a light grey seamless studio background with soft contact shadow. No characters, no scenery, no text or lettering, no watermark."
+    }
+  ]
+}

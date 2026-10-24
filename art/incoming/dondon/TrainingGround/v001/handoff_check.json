@@ -1,0 +1,49 @@
+{
+  "asset": "TrainingGround",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "TrainingGround_v001.blend",
+    "objects": 159,
+    "mesh_objects": 158,
+    "triangles": 62572,
+    "materials": 8,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -4.070000171661377,
+      -3.8600001335144043,
+      0.0
+    ],
+    "bounds_max_m": [
+      4.070000171661377,
+      3.8600001335144043,
+      2.2950000762939453
+    ],
+    "size_m": [
+      8.140000343322754,
+      7.720000267028809,
+      2.2950000762939453
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "TrainingGround_v001.fbx",
+      "mesh_objects": 158,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        8.140000343322754,
+        7.720000267028809,
+        2.2950005531311035
+      ],
+      "size_error_m": 4.76837158203125e-07
+    }
+  ]
+}

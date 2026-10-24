@@ -1,0 +1,49 @@
+{
+  "asset": "SmithHammer",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SmithHammer_v001.blend",
+    "objects": 3,
+    "mesh_objects": 2,
+    "triangles": 296,
+    "materials": 2,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -0.08500000089406967,
+      -0.19300681352615356,
+      5.082605625261749e-08
+    ],
+    "bounds_max_m": [
+      0.08500000089406967,
+      0.19300681352615356,
+      0.8872779011726379
+    ],
+    "size_m": [
+      0.17000000178813934,
+      0.38601362705230713,
+      0.8872778415679932
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SmithHammer_v001.fbx",
+      "mesh_objects": 2,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.17000000178813934,
+        0.38601362705230713,
+        0.8872777819633484
+      ],
+      "size_error_m": 5.960464477539063e-08
+    }
+  ]
+}

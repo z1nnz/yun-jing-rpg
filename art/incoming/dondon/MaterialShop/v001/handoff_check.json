@@ -1,0 +1,49 @@
+{
+  "asset": "MaterialShop",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "MaterialShop_v001.blend",
+    "objects": 564,
+    "mesh_objects": 551,
+    "triangles": 118064,
+    "materials": 23,
+    "meshes_without_uv": 94,
+    "bounds_min_m": [
+      -4.394999980926514,
+      -4.720000267028809,
+      0.0
+    ],
+    "bounds_max_m": [
+      4.652789115905762,
+      3.469064712524414,
+      5.612877368927002
+    ],
+    "size_m": [
+      9.047788619995117,
+      8.189064979553223,
+      5.612877368927002
+    ],
+    "bottom_centre_origin": false,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "MaterialShop_v001.fbx",
+      "mesh_objects": 551,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        9.047788619995117,
+        8.189065933227539,
+        5.61287784576416
+      ],
+      "size_error_m": 9.5367431640625e-07
+    }
+  ]
+}

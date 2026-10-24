@@ -1,0 +1,49 @@
+{
+  "asset": "AlchemyHall",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "AlchemyHall_v001.blend",
+    "objects": 319,
+    "mesh_objects": 318,
+    "triangles": 121752,
+    "materials": 15,
+    "meshes_without_uv": 4,
+    "bounds_min_m": [
+      -4.390932083129883,
+      -3.759999990463257,
+      0.0
+    ],
+    "bounds_max_m": [
+      4.390932083129883,
+      3.759999990463257,
+      5.860000133514404
+    ],
+    "size_m": [
+      8.781864166259766,
+      7.519999980926514,
+      5.860000133514404
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "AlchemyHall_v001.fbx",
+      "mesh_objects": 318,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        8.781864166259766,
+        7.520000457763672,
+        5.860000133514404
+      ],
+      "size_error_m": 4.76837158203125e-07
+    }
+  ]
+}

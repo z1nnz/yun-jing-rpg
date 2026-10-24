@@ -1,0 +1,37 @@
+{
+  "asset": "NoticeBoard",
+  "name_zh": "小鎮公告板",
+  "category": "小鎮生活道具",
+  "stage": "editable_town_prototype",
+  "description": "Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering).",
+  "size_note": "Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    3.2146503925323486,
+    1.0160000324249268,
+    2.9961585998535156
+  ],
+  "mesh_objects": 62,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtLibrary/ExpansionBatches/TownRefinement12/SourceSnapshot/ArtReferences/NoticeBoard_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "Claude geometry corrected locally to remove coplanar artifacts; SectCore04 materials and ten new renders with original ten references packed.",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "version": "v002",
+  "style_reference": "SectCore04",
+  "style_materials": [
+    "board",
+    "brass",
+    "paper",
+    "stone",
+    "tile",
+    "timber"
+  ],
+  "source_commit": "70d3fa4d261bd9bbd7cc0cd7180ca08c6a7ba7cc",
+  "geometry_changed": true,
+  "geometry_revision": "Remove coplanar overlap: stagger paper layers, separate herb bundles, or inset crate frames by 2 mm per face."
+}

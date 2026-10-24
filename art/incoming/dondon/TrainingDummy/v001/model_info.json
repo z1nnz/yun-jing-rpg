@@ -1,0 +1,20 @@
+{
+  "asset": "TrainingDummy",
+  "name_zh": "演武木樁",
+  "stage": "editable_architecture_prototype",
+  "description": "Independently built training dummy matching the existing training-ground style; no animation or interaction.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    1.059999942779541,
+    0.7588473558425903,
+    1.9449999332427979
+  ],
+  "mesh_objects": 8,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

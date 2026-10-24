@@ -1,0 +1,21 @@
+{
+  "asset": "LayeredCliff",
+  "name_zh": "層岩峭壁",
+  "stage": "editable_landscape_prototype",
+  "description": "Stratified vertical cliff segment, approximately 28 m wide; no automatic terrain seam.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    36.12451171875,
+    16.2508544921875,
+    25.0
+  ],
+  "mesh_objects": 3,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "editable geometry; all ten views rendered at frame 1 from the same model",
+  "animation": "static",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

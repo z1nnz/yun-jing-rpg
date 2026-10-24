@@ -1,0 +1,22 @@
+{
+  "blend_reopened": true,
+  "finite_vertex_coordinates": true,
+  "fbx_reimported_in_blender": true,
+  "source_meshes": 456,
+  "imported_meshes": 456,
+  "world_bounds_m": [
+    [
+      -8.608777046203613,
+      -10.399999618530273,
+      -0.7599999904632568
+    ],
+    [
+      8.0,
+      8.600000381469727,
+      6.08811092376709
+    ]
+  ],
+  "fbx_bounds_max_error_m": 9.5367431640625e-07,
+  "studio_camera_lights_excluded": true,
+  "unity_verified": false
+}

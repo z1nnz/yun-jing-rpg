@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QPlayerFemale",
+    "name_zh": "玩家（女）",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.4444729089736938,
+    "mesh_objects": 93,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1496245861053467e-05,
+        "hand-sleeve_l": 2.8638169169425964e-08,
+        "shoe-leg_l": 7.450580596923828e-09,
+        "hand-sleeve_r": 2.8638169169425964e-08,
+        "shoe-leg_r": 4.6566128730773926e-09
+      },
+      "walk_planted_foot_max_height_m": 0.0036512715741991997,
+      "walk_sole_min_z_m": -0.007197670638561249,
+      "walk_foot_travel_m": 0.2995538902013822
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "cef46925f54c3d38091f8d2c9e31e332ff682dad093c6da702637b02be6b4b2a",
+    "fbx_sha256": "79b273c4ab11f7b8019bbfa9e3d4bb6982ced55cf6a47527e00f867b78f17991"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

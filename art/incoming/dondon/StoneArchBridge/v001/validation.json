@@ -1,0 +1,29 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/MountainWayside10/validation.json",
+  "blender": null,
+  "entry": {
+    "asset": "StoneArchBridge",
+    "blend_reopened": true,
+    "mesh_objects": 363,
+    "finite_vertices": true,
+    "bottom_center_pivot": true,
+    "architecture_checks": {
+      "closed_positive_volume_arch": true,
+      "arch_volume_m3": 15.300000497549739,
+      "deck_height_samples": 205,
+      "baluster_base_contact_samples": 80,
+      "clear_width_m": 2.98,
+      "max_deck_grade": 0.7111111111111111,
+      "center_under_arch_clearance_m": 1.6
+    },
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 7.152557373046875e-07,
+    "distinct_1024_views": 10,
+    "framing_checked": true,
+    "blend_sha256": "a3ec75550c137f71ee3f05aa72ebaba7f3634ac8d611199f4031e035f4085903",
+    "fbx_sha256": "a512fe941b85581e6cb7251a6534e16bfb16178a6f9101e0226ad30986e71124"
+  },
+  "not_verified": null,
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

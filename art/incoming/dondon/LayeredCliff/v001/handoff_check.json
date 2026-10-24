@@ -1,0 +1,49 @@
+{
+  "asset": "LayeredCliff",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "LayeredCliff_v001.blend",
+    "objects": 4,
+    "mesh_objects": 3,
+    "triangles": 13178,
+    "materials": 3,
+    "meshes_without_uv": 3,
+    "bounds_min_m": [
+      -18.062255859375,
+      -8.12542724609375,
+      0.0
+    ],
+    "bounds_max_m": [
+      18.062255859375,
+      8.12542724609375,
+      25.0
+    ],
+    "size_m": [
+      36.12451171875,
+      16.2508544921875,
+      25.0
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "LayeredCliff_v001.fbx",
+      "mesh_objects": 3,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        36.12451171875,
+        16.2508544921875,
+        25.000003814697266
+      ],
+      "size_error_m": 3.814697265625e-06
+    }
+  ]
+}

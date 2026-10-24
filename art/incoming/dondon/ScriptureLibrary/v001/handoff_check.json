@@ -1,0 +1,49 @@
+{
+  "asset": "ScriptureLibrary",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "ScriptureLibrary_v001.blend",
+    "objects": 613,
+    "mesh_objects": 612,
+    "triangles": 349096,
+    "materials": 12,
+    "meshes_without_uv": 6,
+    "bounds_min_m": [
+      -4.9900007247924805,
+      -4.029999732971191,
+      0.0
+    ],
+    "bounds_max_m": [
+      4.990000247955322,
+      4.03000020980835,
+      7.703195095062256
+    ],
+    "size_m": [
+      9.980001449584961,
+      8.059999465942383,
+      7.703195095062256
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "ScriptureLibrary_v001.fbx",
+      "mesh_objects": 612,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        9.980001449584961,
+        8.0600004196167,
+        7.703195571899414
+      ],
+      "size_error_m": 9.5367431640625e-07
+    }
+  ]
+}

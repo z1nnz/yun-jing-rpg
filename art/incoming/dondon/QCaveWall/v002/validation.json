@@ -1,0 +1,23 @@
+{
+  "asset": "QCaveWall",
+  "name_zh": "洞府直牆",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 4.76837158203125e-07,
+  "dimensions_m": [
+    4.050000190734863,
+    0.5099999904632568,
+    3.0299999713897705
+  ],
+  "mesh_objects": 27,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+  "fbx_sha256": "9a7f695dbd3dcdb52f005a6e1ee39279097f45949b85b01a6d58d21bb2c66c97",
+  "door_test": null,
+  "unreal_verified": false
+}

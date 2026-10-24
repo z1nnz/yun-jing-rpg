@@ -1,0 +1,97 @@
+{
+  "asset": "QHerbalist",
+  "version": "v006",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QHerbalist_v006.blend",
+    "objects": 100,
+    "mesh_objects": 99,
+    "triangles": 31912,
+    "materials": 22,
+    "meshes_without_uv": 99,
+    "bounds_min_m": [
+      -0.33639830350875854,
+      -0.31165367364883423,
+      -9.313225746154785e-10
+    ],
+    "bounds_max_m": [
+      0.33639830350875854,
+      0.31165367364883423,
+      1.3521184921264648
+    ],
+    "size_m": [
+      0.6727966070175171,
+      0.6233073472976685,
+      1.3521184921264648
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [
+      {
+        "name": "Armature",
+        "bones": 17,
+        "bone_names": [
+          "root",
+          "pelvis",
+          "spine",
+          "neck",
+          "head",
+          "upperarm_l",
+          "lowerarm_l",
+          "hand_l",
+          "upperarm_r",
+          "lowerarm_r",
+          "hand_r",
+          "thigh_l",
+          "calf_l",
+          "foot_l",
+          "thigh_r",
+          "calf_r",
+          "foot_r"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Idle",
+        "frame_range": [
+          1.0,
+          49.0
+        ],
+        "fps": 24,
+        "cyclic": true
+      },
+      {
+        "name": "Walk",
+        "frame_range": [
+          1.0,
+          25.0
+        ],
+        "fps": 24,
+        "cyclic": true
+      }
+    ],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QHerbalist_v006.fbx",
+      "mesh_objects": 99,
+      "armatures": 1,
+      "bones": [
+        17
+      ],
+      "actions": [
+        "Idle",
+        "Walk"
+      ],
+      "size_m": [
+        0.6727966070175171,
+        0.6233072280883789,
+        1.3521184921264648
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

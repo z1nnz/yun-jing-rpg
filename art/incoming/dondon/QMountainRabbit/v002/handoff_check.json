@@ -1,0 +1,49 @@
+{
+  "asset": "QMountainRabbit",
+  "version": "v002",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QMountainRabbit_v002.blend",
+    "objects": 20,
+    "mesh_objects": 19,
+    "triangles": 22192,
+    "materials": 5,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -0.23499993979930878,
+      -0.34449994564056396,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.23499993979930878,
+      0.34449994564056396,
+      0.7575731873512268
+    ],
+    "size_m": [
+      0.46999987959861755,
+      0.6889998912811279,
+      0.7575731873512268
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QMountainRabbit_v002.fbx",
+      "mesh_objects": 19,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.46999987959861755,
+        0.6889998912811279,
+        0.757573127746582
+      ],
+      "size_error_m": 5.960464477539063e-08
+    }
+  ]
+}

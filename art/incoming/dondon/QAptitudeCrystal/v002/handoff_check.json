@@ -1,0 +1,49 @@
+{
+  "asset": "QAptitudeCrystal",
+  "version": "v002",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QAptitudeCrystal_v002.blend",
+    "objects": 9,
+    "mesh_objects": 8,
+    "triangles": 316,
+    "materials": 4,
+    "meshes_without_uv": 8,
+    "bounds_min_m": [
+      -0.2849999964237213,
+      -0.2849999964237213,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.2849999964237213,
+      0.2849999964237213,
+      1.0199999809265137
+    ],
+    "size_m": [
+      0.5699999928474426,
+      0.5699999928474426,
+      1.0199999809265137
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QAptitudeCrystal_v002.fbx",
+      "mesh_objects": 8,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.5699999928474426,
+        0.5699999928474426,
+        1.0199999809265137
+      ],
+      "size_error_m": 0.0
+    }
+  ]
+}

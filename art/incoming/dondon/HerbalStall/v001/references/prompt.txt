@@ -1,0 +1,7 @@
+Generator: built-in image_gen (no CLI fallback).
+Use case: stylized-concept. Asset type: Blender modeling concept reference for the xianxia village expansion.
+Input image is STYLE REFERENCE ONLY: Models/MaterialShop/v001/01_material_shop_overview.png from 強悍修仙2.0.
+Create one polished standalone herbalist market stall, front-right three quarter view, entire structure visible against neutral warm gray. Match the supplied shop's softly beveled stylized 3D game art, dark timber and subdued jade/ochre colors. This is an open wooden four-post stall, 2.8 meters wide, 1.6 meters deep, 2.5 meters tall; pale sage green curved cloth canopy with scalloped front hem, waist-high planked counter, rear shelf, removable shallow herb trays. A simple round hanging wooden sign carries a leaf emblem, no lettering. Keep structure readable and plausible to model. No characters, no scenery, no text, no watermark. Soft studio lighting. The existing building must NOT appear; show only this new small freestanding market stall.
+
+The concept is a design reference, not one of the ten geometry-verified views.
+The Blender model is a simplified editable interpretation; it does not reproduce every decorative detail in the concept.

@@ -1,0 +1,20 @@
+{
+  "asset": "SectGrandHall",
+  "name_zh": "宗門大殿",
+  "stage": "editable_architecture_prototype",
+  "description": "Main hall, open central entrance, porch and basic inner altar; not a furnished interior.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    12.640000343322754,
+    10.399999618530273,
+    7.169807434082031
+  ],
+  "mesh_objects": 365,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

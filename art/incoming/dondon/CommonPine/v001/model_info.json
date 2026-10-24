@@ -1,0 +1,26 @@
+{
+  "asset": "CommonPine",
+  "name_zh": "普通松",
+  "category": "野外植被",
+  "description": "Upright mountain pine with layered cloud-pad foliage; plain counterpart to WelcomingPine.",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom centre",
+  "dimensions_m": [
+    5.814752578735352,
+    5.544557571411133,
+    7.289297103881836
+  ],
+  "mesh_objects": 14,
+  "triangles": 17864,
+  "modeling_method": "procedural Python (build_wild13.py), seeded and reproducible; editable meshes, no generative AI",
+  "same_geometry_ten_views": true,
+  "stage": "editable vegetation/rock prototype",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "branch_tiers": 7,
+  "foliage_pads": 13,
+  "wind": "static; no shape keys"
+}

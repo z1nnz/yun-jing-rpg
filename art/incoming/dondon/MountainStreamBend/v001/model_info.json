@@ -1,0 +1,30 @@
+{
+  "asset": "MountainStreamBend",
+  "name_zh": "彎曲山溪",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    6.804531097412109,
+    10.311314582824707,
+    1.4480977058410645
+  ],
+  "mesh_objects": 136,
+  "same_geometry_ten_views": true,
+  "water": "static mesh",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "water_endpoints_m": [
+    [
+      -0.32674333453178406,
+      -4.966945171356201,
+      0.36000001430511475
+    ],
+    [
+      0.3220803439617157,
+      5.033054828643799,
+      0.36000001430511475
+    ]
+  ]
+}

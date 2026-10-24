@@ -1,0 +1,453 @@
+{
+  "scene": "QCaveResidence",
+  "stage": "furnished_cutaway_layout_prototype",
+  "instances": [
+    {
+      "asset": "QCaveFloor",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveFloor\\v002\\QCaveFloor_v002.blend",
+      "source_sha256": "4dae9a538dbe783099bb88fb526a4e20a94dc7cf08fba4c661f22c74e2b83bba",
+      "position_m": [
+        -1.98,
+        -1.98,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 16
+    },
+    {
+      "asset": "QCaveFloor",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveFloor\\v002\\QCaveFloor_v002.blend",
+      "source_sha256": "4dae9a538dbe783099bb88fb526a4e20a94dc7cf08fba4c661f22c74e2b83bba",
+      "position_m": [
+        -1.98,
+        1.98,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 16
+    },
+    {
+      "asset": "QCaveFloor",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveFloor\\v002\\QCaveFloor_v002.blend",
+      "source_sha256": "4dae9a538dbe783099bb88fb526a4e20a94dc7cf08fba4c661f22c74e2b83bba",
+      "position_m": [
+        1.98,
+        -1.98,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 16
+    },
+    {
+      "asset": "QCaveFloor",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveFloor\\v002\\QCaveFloor_v002.blend",
+      "source_sha256": "4dae9a538dbe783099bb88fb526a4e20a94dc7cf08fba4c661f22c74e2b83bba",
+      "position_m": [
+        1.98,
+        1.98,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 16
+    },
+    {
+      "asset": "QCaveWall",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveWall\\v002\\QCaveWall_v002.blend",
+      "source_sha256": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+      "position_m": [
+        -2,
+        4,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 27
+    },
+    {
+      "asset": "QCaveWall",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveWall\\v002\\QCaveWall_v002.blend",
+      "source_sha256": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+      "position_m": [
+        2,
+        4,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 27
+    },
+    {
+      "asset": "QCaveWall",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveWall\\v002\\QCaveWall_v002.blend",
+      "source_sha256": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+      "position_m": [
+        -4,
+        -2,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        0.38
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "open_door": false,
+      "mesh_objects": 27
+    },
+    {
+      "asset": "QCaveWall",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveWall\\v002\\QCaveWall_v002.blend",
+      "source_sha256": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+      "position_m": [
+        4,
+        -2,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        0.38
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "open_door": false,
+      "mesh_objects": 27
+    },
+    {
+      "asset": "QCaveWall",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveWall\\v002\\QCaveWall_v002.blend",
+      "source_sha256": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+      "position_m": [
+        -4,
+        2,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        0.38
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "open_door": false,
+      "mesh_objects": 27
+    },
+    {
+      "asset": "QCaveWall",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveWall\\v002\\QCaveWall_v002.blend",
+      "source_sha256": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+      "position_m": [
+        4,
+        2,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        0.38
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "open_door": false,
+      "mesh_objects": 27
+    },
+    {
+      "asset": "QCaveEntrance",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveEntrance\\v003\\QCaveEntrance_v003.blend",
+      "source_sha256": "0768f6ebe0f8fa63c9e2c01c5800c27c77431ef05e05f8d26654bd7d0fe6f340",
+      "position_m": [
+        0,
+        -4,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 22
+    },
+    {
+      "asset": "QCaveDoor",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QCaveDoor\\v002\\QCaveDoor_v002.blend",
+      "source_sha256": "f44255beda3d308d0c87285f90822fdd6b8ac3c4e8bad48515946e3e5aba9884",
+      "position_m": [
+        0,
+        -4.03,
+        0.31
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": true,
+      "mesh_objects": 22
+    },
+    {
+      "asset": "DiscipleBed",
+      "source": "Models\\DiscipleBed\\v001\\DiscipleBed_v001.blend",
+      "source_sha256": "d481b95d850bca38349d091e60cd4b53d85f279fe969e20239bbf0aa65139bac",
+      "position_m": [
+        -2.65,
+        2.2,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 12
+    },
+    {
+      "asset": "StorageChest",
+      "source": "Models\\StorageChest\\v001\\StorageChest_v001.blend",
+      "source_sha256": "0fb5f5bb034814e4c215dc5377c486aafa7b322254b51a58e32e714271f23f6f",
+      "position_m": [
+        -2.65,
+        -0.35,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 20
+    },
+    {
+      "asset": "SmithWorkbench",
+      "source": "Models\\SmithWorkbench\\v001\\SmithWorkbench_v001.blend",
+      "source_sha256": "748d3b10dfa0f8a3f0095a79a56b97793b6cb71b028093dcb12371e8a4cdb788",
+      "position_m": [
+        2.5,
+        2.3,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 9
+    },
+    {
+      "asset": "AlchemyFurnace",
+      "source": "Models\\AlchemyFurnace\\v001\\AlchemyFurnace_v001.blend",
+      "source_sha256": "260396959f64356c3ce36ab04572f5dc56bcdfd1897234fe690515c524ec0e48",
+      "position_m": [
+        2.65,
+        -0.3,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 29
+    },
+    {
+      "asset": "MeditationCushion",
+      "source": "Models\\MeditationCushion\\v001\\MeditationCushion_v001.blend",
+      "source_sha256": "b07da7f551f1f292a9fdfe9581d0176f2665cdb2f4b7e600c45943c8a71ff7cc",
+      "position_m": [
+        0,
+        1.4,
+        0.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 59
+    },
+    {
+      "asset": "SpiritHerbGarden",
+      "source": "Models\\SpiritHerbGarden\\v001\\SpiritHerbGarden_v001.blend",
+      "source_sha256": "4d96af4eeea40e09bcb70c8b2dcd43436cd31fc93f7d681ac205f16627f6e711",
+      "position_m": [
+        6.3,
+        0.2,
+        0
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 662
+    },
+    {
+      "asset": "QQiManual",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QQiManual\\v002\\QQiManual_v002.blend",
+      "source_sha256": "f2982c7cf80263d061a4bda69b24de09c44a51d45054c9214924064e351520d7",
+      "position_m": [
+        2.1,
+        2.25,
+        1.18
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 12
+    },
+    {
+      "asset": "QPillBottle",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QPillBottle\\v002\\QPillBottle_v002.blend",
+      "source_sha256": "1be3954139a3017552d48ce150c2eab0170f363b1653031dcf5e600becdbad5a",
+      "position_m": [
+        2.68,
+        2.22,
+        1.18
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 6
+    },
+    {
+      "asset": "QSpiritStone",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QSpiritStone\\v002\\QSpiritStone_v002.blend",
+      "source_sha256": "0ca0a8e920a96352f45ac71143e40f996c2b933a61e013a310bf4cb03169b4e3",
+      "position_m": [
+        2.9,
+        2.25,
+        1.18
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 2
+    },
+    {
+      "asset": "QAptitudeCrystal",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QAptitudeCrystal\\v002\\QAptitudeCrystal_v002.blend",
+      "source_sha256": "c154e6ede9478a8605829a312c7ccb8d7d1ba61f167bf2cd7bb9cda8b51296dc",
+      "position_m": [
+        2.0,
+        -4.8,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 8
+    },
+    {
+      "asset": "QMountainRabbit",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QMountainRabbit\\v002\\QMountainRabbit_v002.blend",
+      "source_sha256": "d2fdd0189790609f6ac0b8d553e872d7a84076a97da88ebaff082595f705b89f",
+      "position_m": [
+        -3.0,
+        -4.7,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": 0,
+      "open_door": false,
+      "mesh_objects": 19
+    },
+    {
+      "asset": "QMountainBoar",
+      "source": "ArtLibrary\\ExpansionBatches\\QPlayerStart16\\Models\\QMountainBoar\\v002\\QMountainBoar_v002.blend",
+      "source_sha256": "9d5925e8ea368a05b4e794f4c8f2a075e26b2d40982fa6c49b35508b86de776c",
+      "position_m": [
+        -1.8,
+        -5.0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "yaw_rad": -0.3,
+      "open_door": false,
+      "mesh_objects": 36
+    }
+  ],
+  "independent_new_assets_added": 0,
+  "character_assets_used": false,
+  "door_pose": "open; baked static for layout",
+  "cutaway": "No ceiling; side walls at 38% height; open front sides",
+  "original_furniture_scale": 1.0,
+  "garden_instance_scale": 0.6,
+  "source_files_unchanged": true,
+  "limits": [
+    "Layout only, not enclosed playable cave",
+    "No collision/navigation or UE acceptance",
+    "No character scale or interaction tests"
+  ],
+  "version": "v002",
+  "blend_sha256": "d79e9662ae1ad310e89c60436a9f4d46066d4dd079705c03c43e1bb2b4a6c96a",
+  "fbx_sha256": "8e3dfa42243fc7d6726a56ed3958365ac3c6d72046c5cc7545e6c14345ac4330"
+}

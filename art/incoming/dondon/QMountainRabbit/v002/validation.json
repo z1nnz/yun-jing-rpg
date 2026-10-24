@@ -1,0 +1,23 @@
+{
+  "asset": "QMountainRabbit",
+  "name_zh": "山兔",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 5.960464477539063e-08,
+  "dimensions_m": [
+    0.46999987959861755,
+    0.6889998912811279,
+    0.7575731873512268
+  ],
+  "mesh_objects": 19,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "d2fdd0189790609f6ac0b8d553e872d7a84076a97da88ebaff082595f705b89f",
+  "fbx_sha256": "ebafb93ae04debca51c3e638b13016bcc861a159002b1ffe627546cb9d669f5d",
+  "door_test": null,
+  "unreal_verified": false
+}

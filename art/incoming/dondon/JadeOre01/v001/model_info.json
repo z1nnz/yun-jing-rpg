@@ -1,0 +1,50 @@
+{
+  "asset": "JadeOre01",
+  "name_zh": "靈礦原石",
+  "stage": "extracted_appearance_prototype",
+  "source_blend": "Models/MaterialShop/v001/MaterialShop_v001.blend",
+  "source_sha256": "17fba32fbaeb7435b8fb2224acdcf0f2bf28a6dab902938198e6591a1d352bc9",
+  "source_objects": [
+    "Raw_Jade_Ore_0"
+  ],
+  "geometry_changes": "none; isolated and recentered",
+  "rotation_matrix_from_source": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.18604038655757904,
+    0.15481647849082947,
+    0.30665791034698486
+  ],
+  "mesh_objects": 1,
+  "uv_baked": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "bounds_method": "evaluated mesh vertices after modifiers"
+}

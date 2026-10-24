@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QDiscipleFarmer",
+    "name_zh": "體修弟子",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.4444729089736938,
+    "mesh_objects": 84,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1466443538665771e-05,
+        "hand-sleeve_l": 4.551839083433151e-08,
+        "shoe-leg_l": 1.0244548320770264e-08,
+        "hand-sleeve_r": 4.551839083433151e-08,
+        "shoe-leg_r": 9.313225746154785e-09
+      },
+      "walk_planted_foot_max_height_m": 0.0036512790247797966,
+      "walk_sole_min_z_m": -0.007197663187980652,
+      "walk_foot_travel_m": 0.3003086296183274
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 5.960464477539063e-08,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "d4198be3afc881e6837fc816b29ffbc39a0a5748ff510b385c3390d1bb02f7aa",
+    "fbx_sha256": "8e9cd5c6cc60d33d5a23fa48a92dbe459ec947deb3ac9d366445fc248a2bda8a"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

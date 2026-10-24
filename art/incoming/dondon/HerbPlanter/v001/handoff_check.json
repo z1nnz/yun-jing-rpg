@@ -1,0 +1,49 @@
+{
+  "asset": "HerbPlanter",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "HerbPlanter_v001.blend",
+    "objects": 60,
+    "mesh_objects": 59,
+    "triangles": 12832,
+    "materials": 6,
+    "meshes_without_uv": 46,
+    "bounds_min_m": [
+      -0.2976430058479309,
+      -0.30533474683761597,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.2976430058479309,
+      0.30533474683761597,
+      1.0
+    ],
+    "size_m": [
+      0.5952860116958618,
+      0.6106694936752319,
+      1.0
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "HerbPlanter_v001.fbx",
+      "mesh_objects": 59,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.5952860116958618,
+        0.6106694936752319,
+        1.0
+      ],
+      "size_error_m": 0.0
+    }
+  ]
+}

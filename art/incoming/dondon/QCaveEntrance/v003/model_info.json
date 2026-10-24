@@ -1,0 +1,46 @@
+{
+  "asset": "QCaveEntrance",
+  "plan_id": "HOME01",
+  "name_zh": "洞府入口",
+  "stage": "editable_noncharacter_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom_center",
+  "assembly_offset_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "dimensions_m": [
+    2.809999942779541,
+    0.8100000023841858,
+    3.2699999809265137
+  ],
+  "bounds_m": [
+    [
+      -1.4049999713897705,
+      -0.4050000011920929,
+      0.0
+    ],
+    [
+      1.4049999713897705,
+      0.4050000011920929,
+      3.2699999809265137
+    ]
+  ],
+  "mesh_objects": 22,
+  "triangles": 4136,
+  "modeling_method": "procedural editable geometry guided by approved Q-style concept; not image generation",
+  "render_engine": "Cycles CPU, 16 samples, denoised",
+  "uv_baked": false,
+  "rigged": false,
+  "animation_ready": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "limits": "Appearance prototype; UV/LOD/collision and UE validation pending. Creatures not rigged.",
+  "version": "v003",
+  "source_version": "v001",
+  "source_sha256": "de71a7f5bbd71a022811097d91ca491c3c3997020503bbd2cd1e7c6336603064",
+  "door_hinge_animation": false
+}

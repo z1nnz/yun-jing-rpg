@@ -1,0 +1,54 @@
+{
+  "asset": "SmithAnvil",
+  "name_zh": "鐵砧與底座",
+  "stage": "extracted_appearance_prototype",
+  "source_blend": "Models/Blacksmith/v001/Blacksmith_v001.blend",
+  "source_sha256": "21f13bdb8c3e9027916366fb0b72c843e8f54e660bef582b0db805e58faa7bd1",
+  "source_objects": [
+    "Anvil_Stump",
+    "Stump_Iron_Band",
+    "Stump_Iron_Band.001",
+    "Anvil_Tapered_Body",
+    "Anvil_Polished_Face",
+    "Anvil_Horn",
+    "Anvil_Square_Tail"
+  ],
+  "rotation_matrix_from_source": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    1.5600001811981201,
+    0.8940000534057617,
+    0.9977437853813171
+  ],
+  "mesh_objects": 7,
+  "uv_baked": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false
+}
