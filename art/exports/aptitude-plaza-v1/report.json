@@ -1,0 +1,26 @@
+{
+  "asset": "AptitudePlaza",
+  "version": "v1",
+  "blender": "5.2.2 LTS",
+  "units": "meters",
+  "diameter_m": 18.0,
+  "height_to_crystal_m": 3.745,
+  "objects": 53,
+  "triangles": 7840,
+  "reference": {
+    "file": "art/references/world-master-v1/aptitude-plaza-three-view.png",
+    "sha256": "a5d0a8868c34ff343e2f5f7433fa9f705e809ed3f84da54b772f2da5e23de4d1",
+    "reviewed_before_modeling": true
+  },
+  "exports": {
+    "blend": "art/source/aptitude-plaza-v1.blend",
+    "fbx": "apps/game/Assets/YunJing/Models/AptitudePlazaV1/aptitude-plaza-v1.fbx",
+    "glb": "art/exports/aptitude-plaza-v1/aptitude-plaza-v1.glb",
+    "preview": "art/previews/aptitude-plaza-v1.png"
+  },
+  "limits": [
+    "Concept materials only; texture baking and final UV polish are pending.",
+    "Unity import, prefab generation, collision and mobile performance are not yet verified.",
+    "Marker jade orientation will be finalized after in-engine camera review."
+  ]
+}

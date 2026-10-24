@@ -1,5 +1,21 @@
 # 洞府灌溉模型 · 2026-10-24
 
+## 測資廣場 v1 · 2026-10-25
+
+依已選定的 A 河谷骨架＋D 古木青溪氣質，先生成並檢視
+`references/world-master-v1/aptitude-plaza-three-view.png`，再建立測資廣場模型。
+
+- Blender 母檔：`source/aptitude-plaza-v1.blend`
+- GLB：`exports/aptitude-plaza-v1/aptitude-plaza-v1.glb`
+- Unity FBX：`../apps/game/Assets/YunJing/Models/AptitudePlazaV1/aptitude-plaza-v1.fbx`
+- 實際 Blender 預覽：`previews/aptitude-plaza-v1.png`
+- 建模與驗證腳本：`../tools/build-aptitude-plaza.py`、`../tools/validate-aptitude-plaza.py`
+
+模型包含分層圓台、同心金屬環、中央靈晶、四向標柱及對向階梯。母檔基礎網格為
+7,840 三角面；套用非破壞倒角後，GLB 與 FBX 均為 16,352 三角面，尺寸皆為
+18 × 20.1 × 3.745 公尺。Blender 重新匯入驗證已通過。尚未取得 Unity 編譯與場景驗證，
+因此目前只視為已驗證的美術素材，不稱為 Unity 可運行場景。
+
 ## 最新交付 v2
 
 沿用下列已先生成、檢視並保存的 AI 三視圖，保留 v1 母檔，另存 v2。新增木材／石材／土壤的程序材質，烘焙為每件 1024px 顏色與切線法線貼圖；6 張 PNG 已隨模型保存。這批改的是同三件物品，沒有新增未先做三視圖的模型。
