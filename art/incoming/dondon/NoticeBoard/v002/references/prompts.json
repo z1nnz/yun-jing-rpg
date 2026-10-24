@@ -1,0 +1,112 @@
+{
+  "asset": "NoticeBoard",
+  "name_zh": "小鎮公告板",
+  "stage": "pre-modelling concept reference",
+  "method": "Claude-written prompt -> design spec (BlenderSource/TownLife09/town09_shapes.py) -> Codex-style soft studio concept render of a throwaway blockout by BlenderSource/TownLife09/concept_render09.py. No AI image model was available in the cloud session; the prompts can be re-run with an image model.",
+  "style_reference": "ArtReferences/HerbalStall/concept.png and ArtReferences/Blacksmith_10Views (Codex image_gen)",
+  "master": "05_front_right.png",
+  "front": "Blender -Y",
+  "projection": "perspective 50 mm",
+  "images": [
+    {
+      "name": "01_front.png",
+      "title": "正面",
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: straight front elevation, camera level, facing the -Y front, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "02_right.png",
+      "title": "右側",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: straight right side elevation, camera level, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "03_rear.png",
+      "title": "背面",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: straight rear elevation, camera level, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "04_left.png",
+      "title": "左側",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: straight left side elevation, camera level, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "05_front_right.png",
+      "title": "右前斜角",
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: front-right three-quarter view, slightly elevated, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "06_rear_right.png",
+      "title": "右後斜角",
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: rear-right three-quarter view, slightly elevated, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "07_rear_left.png",
+      "title": "左後斜角",
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: rear-left three-quarter view, slightly elevated, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "08_front_left.png",
+      "title": "左前斜角",
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: front-left three-quarter view, slightly elevated, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "09_top.png",
+      "title": "垂直俯視",
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: top-down plan view, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    },
+    {
+      "name": "10_high_front.png",
+      "title": "正面高角度",
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Blender modeling reference for a xianxia (Chinese immortal-cultivation) open-world town, single game asset: 小鎮公告板 (NoticeBoard). Design: Two-post timber notice board with braced feet, plank panel, tiny tiled roof and six blank pinned paper notices (no lettering). Scale: Approx. 2.9 x 1.0 x 2.9 m; board face 2.2 x 1.2 m. Style: softly beveled stylized 3D game art matching the existing dondon town (dark cedar timber, blue-grey stone, charcoal tile roofs, restrained jade and ochre accents). View: high front bird's-eye view at 45 degrees, orthographic, entire object visible on a neutral warm paper background. No characters, no scenery, no text or lettering, no watermark."
+    }
+  ]
+}

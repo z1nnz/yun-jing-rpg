@@ -1,0 +1,20 @@
+{
+  "asset": "SpiritHerbMature",
+  "name_zh": "靈草成熟株",
+  "stage": "editable_architecture_prototype",
+  "description": "Five-stem flowering mature plant; no harvested-state model or wind rig.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.4083343744277954,
+    0.4293481707572937,
+    0.43799999356269836
+  ],
+  "mesh_objects": 66,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

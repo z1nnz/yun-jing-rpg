@@ -1,0 +1,49 @@
+{
+  "asset": "AlchemyFurnace",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "AlchemyFurnace_v001.blend",
+    "objects": 30,
+    "mesh_objects": 29,
+    "triangles": 19484,
+    "materials": 3,
+    "meshes_without_uv": 2,
+    "bounds_min_m": [
+      -0.6489999890327454,
+      -0.4389999806880951,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.6489999890327454,
+      0.4390000104904175,
+      1.3100000619888306
+    ],
+    "size_m": [
+      1.2979999780654907,
+      0.878000020980835,
+      1.3100000619888306
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "AlchemyFurnace_v001.fbx",
+      "mesh_objects": 29,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        1.2979999780654907,
+        0.878000020980835,
+        1.3100000619888306
+      ],
+      "size_error_m": 0.0
+    }
+  ]
+}

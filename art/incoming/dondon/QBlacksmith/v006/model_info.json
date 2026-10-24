@@ -1,0 +1,84 @@
+{
+  "asset": "QBlacksmith",
+  "version": "v006",
+  "name_zh": "鐵匠",
+  "style": "Q-version chibi, ~2.5 heads, anime eyes, gripping hands",
+  "grips": "{1: ([0.04977897182106972, -0.07964634895324707, 0.9955794215202332], 0.017)}",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom centre",
+  "dimensions_m": [
+    0.6844149231910706,
+    0.60535728931427,
+    1.4036140441894531
+  ],
+  "height_m": 1.4036140441894531,
+  "mesh_objects": 97,
+  "triangles": 30476,
+  "pose": "A-pose rest; Idle and Walk actions",
+  "hair": "spiky",
+  "props": [
+    "hammer"
+  ],
+  "kit": "qchar17_v004.py geometry + rig_qchar17.py skeleton/weights/actions",
+  "modeling_method": "procedural Python, editable separate parts; no generative AI",
+  "rigged": true,
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "base_geometry": "Models/QBlacksmith/v004",
+  "skeleton": {
+    "armature_object": "Armature",
+    "bones": {
+      "root": "",
+      "pelvis": "root",
+      "spine": "pelvis",
+      "neck": "spine",
+      "head": "neck",
+      "upperarm_l": "spine",
+      "lowerarm_l": "upperarm_l",
+      "hand_l": "lowerarm_l",
+      "thigh_l": "pelvis",
+      "calf_l": "thigh_l",
+      "foot_l": "calf_l",
+      "upperarm_r": "spine",
+      "lowerarm_r": "upperarm_r",
+      "hand_r": "lowerarm_r",
+      "thigh_r": "pelvis",
+      "calf_r": "thigh_r",
+      "foot_r": "calf_r"
+    },
+    "left_is": "+X (character faces -Y)"
+  },
+  "actions": {
+    "Idle": {
+      "frames": [
+        1,
+        49
+      ],
+      "fps": 24,
+      "loop": true,
+      "in_place": true
+    },
+    "Walk": {
+      "frames": [
+        1,
+        25
+      ],
+      "fps": 24,
+      "loop": true,
+      "in_place": true,
+      "stride_deg": 22
+    }
+  },
+  "skinning": "rigid head, hands, held props and shoes; blended sleeves (elbow), legs (knee, ankle) and robe (waist, thighs below the hip)",
+  "root_motion": false,
+  "fbx_export": {
+    "apply_scale_options": "FBX_SCALE_ALL",
+    "parts_renamed": {
+      "Head": "Head_Mesh",
+      "Neck": "Neck_Mesh"
+    }
+  }
+}

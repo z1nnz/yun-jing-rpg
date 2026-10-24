@@ -1,0 +1,34 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/WildVegetation13/validation.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "CommonPine",
+    "blend_reopened": true,
+    "mesh_objects": 14,
+    "triangles": 17864,
+    "finite_vertices": true,
+    "bottom_center_pivot": true,
+    "asset_checks": {
+      "trunk_on_ground": true,
+      "foliage_pads": 13,
+      "lowest_foliage_m": 2.7351951599121094,
+      "height_m": 7.289297103881836
+    },
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 4.76837158203125e-07,
+    "distinct_1024_views": 10,
+    "framing_checked": true,
+    "blend_sha256": "cc59f05b1da1049f746606ae20afab75f9764e74f5123f8fa2a98f51f960a579",
+    "fbx_sha256": "98d4ed27e55cb2345e5909dd5a780d26c1dcd37663e155a94226835209345dd8"
+  },
+  "not_verified": [
+    "UV/texture bake",
+    "collision",
+    "LOD",
+    "Unreal import",
+    "wind animation",
+    "two-sided foliage material in engine"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

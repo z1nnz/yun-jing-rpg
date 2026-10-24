@@ -1,0 +1,46 @@
+{
+  "asset": "QAptitudeCrystal",
+  "plan_id": "ASSESS01",
+  "name_zh": "測靈晶石",
+  "stage": "editable_noncharacter_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom_center",
+  "assembly_offset_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "dimensions_m": [
+    0.5699999928474426,
+    0.5699999928474426,
+    1.0199999809265137
+  ],
+  "bounds_m": [
+    [
+      -0.2849999964237213,
+      -0.2849999964237213,
+      0.0
+    ],
+    [
+      0.2849999964237213,
+      0.2849999964237213,
+      1.0199999809265137
+    ]
+  ],
+  "mesh_objects": 8,
+  "triangles": 316,
+  "modeling_method": "procedural editable geometry guided by approved Q-style concept; not image generation",
+  "render_engine": "Cycles CPU, 16 samples, denoised",
+  "uv_baked": false,
+  "rigged": false,
+  "animation_ready": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "limits": "Appearance prototype; UV/LOD/collision and UE validation pending. Creatures not rigged.",
+  "version": "v002",
+  "source_version": "v001",
+  "source_sha256": "40a78929e7b1dc48e2ad46af20569163ba69894b360663ebe62cce7d6398e5f4",
+  "door_hinge_animation": false
+}

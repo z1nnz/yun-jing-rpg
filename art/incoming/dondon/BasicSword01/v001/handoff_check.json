@@ -1,0 +1,49 @@
+{
+  "asset": "BasicSword01",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "BasicSword01_v001.blend",
+    "objects": 5,
+    "mesh_objects": 4,
+    "triangles": 498,
+    "materials": 3,
+    "meshes_without_uv": 1,
+    "bounds_min_m": [
+      -0.14499999582767487,
+      -0.05000000074505806,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.14499999582767487,
+      0.05000000074505806,
+      1.21999990940094
+    ],
+    "size_m": [
+      0.28999999165534973,
+      0.10000000149011612,
+      1.21999990940094
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "BasicSword01_v001.fbx",
+      "mesh_objects": 4,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.28999999165534973,
+        0.10000000894069672,
+        1.21999990940094
+      ],
+      "size_error_m": 7.450580596923828e-09
+    }
+  ]
+}

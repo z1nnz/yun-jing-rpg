@@ -1,0 +1,22 @@
+{
+  "blend_reopened": true,
+  "mesh_objects": 480,
+  "finite_vertices": true,
+  "roof_tiles_outward": true,
+  "door_hinge_rotation": {
+    "Door_Left_Hinge": {
+      "child_parts": 18,
+      "rotation_test_displacement_m": 0.21496005378193506
+    },
+    "Door_Right_Hinge": {
+      "child_parts": 18,
+      "rotation_test_displacement_m": 0.21496007490305616
+    }
+  },
+  "fbx_imported_in_blender": true,
+  "fbx_mesh_objects": 480,
+  "fbx_bounds_error_m": 9.5367431640625e-07,
+  "door_hierarchy_preserved": true,
+  "studio_excluded": true,
+  "unity_verified": false
+}

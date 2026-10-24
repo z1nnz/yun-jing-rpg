@@ -1,0 +1,17 @@
+{
+  "stage": "Editable smithy exterior and prop kit",
+  "mesh_objects": 422,
+  "base_triangles": 22112,
+  "floor_footprint_m": [
+    6.8,
+    5.6
+  ],
+  "floor_height_m": 0.18,
+  "display_swords": 3,
+  "limits": [
+    "No crafting interaction, animation, colliders or LOD",
+    "No UV bake; FBX base colors only",
+    "Ember material and preview light are not a fire simulation",
+    "Unity import not verified"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "DiscipleBed",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "DiscipleBed_v001.blend",
+    "objects": 13,
+    "mesh_objects": 12,
+    "triangles": 2256,
+    "materials": 6,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -0.6000000238418579,
+      -1.059999942779541,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.6000000238418579,
+      1.059999942779541,
+      0.9750000238418579
+    ],
+    "size_m": [
+      1.2000000476837158,
+      2.119999885559082,
+      0.9750000238418579
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "DiscipleBed_v001.fbx",
+      "mesh_objects": 12,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        1.2000000476837158,
+        2.119999885559082,
+        0.9750000238418579
+      ],
+      "size_error_m": 0.0
+    }
+  ]
+}

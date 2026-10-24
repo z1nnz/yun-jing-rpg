@@ -1,0 +1,49 @@
+{
+  "asset": "SpiritHerbSeedling",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SpiritHerbSeedling_v001.blend",
+    "objects": 12,
+    "mesh_objects": 11,
+    "triangles": 1800,
+    "materials": 3,
+    "meshes_without_uv": 9,
+    "bounds_min_m": [
+      -0.06758584082126617,
+      -0.0484444722533226,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.06758584082126617,
+      0.0484444722533226,
+      0.1603325754404068
+    ],
+    "size_m": [
+      0.13517168164253235,
+      0.0968889445066452,
+      0.1603325754404068
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SpiritHerbSeedling_v001.fbx",
+      "mesh_objects": 11,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.13517168164253235,
+        0.0968889594078064,
+        0.1603325754404068
+      ],
+      "size_error_m": 1.4901161193847656e-08
+    }
+  ]
+}

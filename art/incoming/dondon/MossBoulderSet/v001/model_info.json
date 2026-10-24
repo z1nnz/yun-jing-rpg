@@ -1,0 +1,27 @@
+{
+  "asset": "MossBoulderSet",
+  "name_zh": "苔石組",
+  "category": "山石",
+  "description": "One large and six smaller flat-based boulders with moss on upward faces.",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom centre",
+  "dimensions_m": [
+    3.300165891647339,
+    2.1555776596069336,
+    1.5164966583251953
+  ],
+  "mesh_objects": 7,
+  "triangles": 2656,
+  "modeling_method": "procedural Python (build_wild13.py), seeded and reproducible; editable meshes, no generative AI",
+  "same_geometry_ten_views": true,
+  "stage": "editable vegetation/rock prototype",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "boulders": 7,
+  "flat_soles": true,
+  "planar_chisel_cuts": true,
+  "moss": "shader mask on upward normals; FBX carries base rock colour only"
+}

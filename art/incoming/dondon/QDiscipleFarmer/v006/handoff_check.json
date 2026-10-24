@@ -1,0 +1,97 @@
+{
+  "asset": "QDiscipleFarmer",
+  "version": "v006",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QDiscipleFarmer_v006.blend",
+    "objects": 85,
+    "mesh_objects": 84,
+    "triangles": 29548,
+    "materials": 20,
+    "meshes_without_uv": 84,
+    "bounds_min_m": [
+      -0.33157017827033997,
+      -0.3048599064350128,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.33157017827033997,
+      0.3048599064350128,
+      1.4444729089736938
+    ],
+    "size_m": [
+      0.6631403565406799,
+      0.6097198128700256,
+      1.4444729089736938
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [
+      {
+        "name": "Armature",
+        "bones": 17,
+        "bone_names": [
+          "root",
+          "pelvis",
+          "spine",
+          "neck",
+          "head",
+          "upperarm_l",
+          "lowerarm_l",
+          "hand_l",
+          "upperarm_r",
+          "lowerarm_r",
+          "hand_r",
+          "thigh_l",
+          "calf_l",
+          "foot_l",
+          "thigh_r",
+          "calf_r",
+          "foot_r"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Idle",
+        "frame_range": [
+          1.0,
+          49.0
+        ],
+        "fps": 24,
+        "cyclic": true
+      },
+      {
+        "name": "Walk",
+        "frame_range": [
+          1.0,
+          25.0
+        ],
+        "fps": 24,
+        "cyclic": true
+      }
+    ],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QDiscipleFarmer_v006.fbx",
+      "mesh_objects": 84,
+      "armatures": 1,
+      "bones": [
+        17
+      ],
+      "actions": [
+        "Idle",
+        "Walk"
+      ],
+      "size_m": [
+        0.6631402969360352,
+        0.6097198128700256,
+        1.4444729089736938
+      ],
+      "size_error_m": 5.960464477539063e-08
+    }
+  ]
+}

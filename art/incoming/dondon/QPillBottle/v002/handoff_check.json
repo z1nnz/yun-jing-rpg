@@ -1,0 +1,49 @@
+{
+  "asset": "QPillBottle",
+  "version": "v002",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QPillBottle_v002.blend",
+    "objects": 7,
+    "mesh_objects": 6,
+    "triangles": 1970,
+    "materials": 6,
+    "meshes_without_uv": 4,
+    "bounds_min_m": [
+      -0.06199999898672104,
+      -0.06599999964237213,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.06199999898672104,
+      0.06599999964237213,
+      0.20200000703334808
+    ],
+    "size_m": [
+      0.12399999797344208,
+      0.13199999928474426,
+      0.20200000703334808
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QPillBottle_v002.fbx",
+      "mesh_objects": 6,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.12399999797344208,
+        0.13199999928474426,
+        0.20200002193450928
+      ],
+      "size_error_m": 1.4901161193847656e-08
+    }
+  ]
+}

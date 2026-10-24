@@ -1,0 +1,49 @@
+{
+  "asset": "JadeOre01",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "JadeOre01_v001.blend",
+    "objects": 2,
+    "mesh_objects": 1,
+    "triangles": 20,
+    "materials": 1,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -0.09302019327878952,
+      -0.07740823924541473,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.09302019327878952,
+      0.07740823924541473,
+      0.30665791034698486
+    ],
+    "size_m": [
+      0.18604038655757904,
+      0.15481647849082947,
+      0.30665791034698486
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "JadeOre01_v001.fbx",
+      "mesh_objects": 1,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.18604038655757904,
+        0.15481650829315186,
+        0.30665791034698486
+      ],
+      "size_error_m": 2.9802322387695312e-08
+    }
+  ]
+}

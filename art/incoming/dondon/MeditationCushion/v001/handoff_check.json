@@ -1,0 +1,49 @@
+{
+  "asset": "MeditationCushion",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "MeditationCushion_v001.blend",
+    "objects": 60,
+    "mesh_objects": 59,
+    "triangles": 63804,
+    "materials": 4,
+    "meshes_without_uv": 1,
+    "bounds_min_m": [
+      -0.4650000035762787,
+      -0.4650000035762787,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.4650000035762787,
+      0.4650000035762787,
+      0.1854849010705948
+    ],
+    "size_m": [
+      0.9300000071525574,
+      0.9300000071525574,
+      0.1854849010705948
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "MeditationCushion_v001.fbx",
+      "mesh_objects": 59,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.9300000071525574,
+        0.9300000667572021,
+        0.18548496067523956
+      ],
+      "size_error_m": 5.960464477539063e-08
+    }
+  ]
+}

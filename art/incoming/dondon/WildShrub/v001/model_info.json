@@ -1,0 +1,27 @@
+{
+  "asset": "WildShrub",
+  "name_zh": "野灌木",
+  "category": "野外植被",
+  "description": "Rounded broadleaf shrub with woody stems and small pale-rose blossoms.",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom centre",
+  "dimensions_m": [
+    1.8553342819213867,
+    1.6842663288116455,
+    1.3099113702774048
+  ],
+  "mesh_objects": 11,
+  "triangles": 6124,
+  "modeling_method": "procedural Python (build_wild13.py), seeded and reproducible; editable meshes, no generative AI",
+  "same_geometry_ten_views": true,
+  "stage": "editable vegetation/rock prototype",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "leaf_masses": 9,
+  "stems": 7,
+  "blossoms": 36,
+  "wind": "static; no shape keys"
+}

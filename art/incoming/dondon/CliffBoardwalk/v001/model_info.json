@@ -1,0 +1,33 @@
+{
+  "asset": "CliffBoardwalk",
+  "name_zh": "峭壁木棧道",
+  "stage": "editable_path_prototype",
+  "description": "6 x 3 m boardwalk with exposed-edge rail and triangular wall brackets. Add inner rail when freestanding.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    3.2149999141693115,
+    6.230000019073486,
+    2.3499999046325684
+  ],
+  "mesh_objects": 50,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "connectors": {
+    "entry": [
+      0.05750000476837158,
+      -3.0,
+      1.2000000476837158
+    ],
+    "exit": [
+      0.05750000476837158,
+      3.0,
+      1.2000000476837158
+    ]
+  },
+  "clear_walk_width_m": 2.6
+}

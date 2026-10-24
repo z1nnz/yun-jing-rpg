@@ -1,0 +1,49 @@
+{
+  "asset": "SpiritHerbYoung",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SpiritHerbYoung_v001.blend",
+    "objects": 23,
+    "mesh_objects": 22,
+    "triangles": 2724,
+    "materials": 3,
+    "meshes_without_uv": 19,
+    "bounds_min_m": [
+      -0.13157019019126892,
+      -0.15192417800426483,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.13157019019126892,
+      0.15192417800426483,
+      0.2897479832172394
+    ],
+    "size_m": [
+      0.26314038038253784,
+      0.30384835600852966,
+      0.2897479832172394
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SpiritHerbYoung_v001.fbx",
+      "mesh_objects": 22,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.26314038038253784,
+        0.30384835600852966,
+        0.2897479832172394
+      ],
+      "size_error_m": 0.0
+    }
+  ]
+}

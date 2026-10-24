@@ -1,0 +1,49 @@
+{
+  "asset": "SmithTongs",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SmithTongs_v001.blend",
+    "objects": 12,
+    "mesh_objects": 11,
+    "triangles": 5028,
+    "materials": 1,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -0.11621157824993134,
+      -0.05629999563097954,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.11621157824993134,
+      0.05629999563097954,
+      0.5703376531600952
+    ],
+    "size_m": [
+      0.23242315649986267,
+      0.11259999126195908,
+      0.5703376531600952
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SmithTongs_v001.fbx",
+      "mesh_objects": 11,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.23242315649986267,
+        0.11259999126195908,
+        0.5703376531600952
+      ],
+      "size_error_m": 0.0
+    }
+  ]
+}

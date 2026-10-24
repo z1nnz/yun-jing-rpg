@@ -1,0 +1,21 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/TownRefinement12/validation.json",
+  "blender": null,
+  "entry": {
+    "asset": "NoticeBoard",
+    "version": "v002",
+    "source_geometry_preserved": false,
+    "blend_reopened": true,
+    "packed_reference_images": 10,
+    "matched_palette_materials": 6,
+    "distinct_1024_views": 10,
+    "blend_sha256": "a8eff359ff1de51030a4360af66bf2727aa266b7eaf80eaf6a55aa873e51d59d",
+    "fbx_sha256": "49d67941eec36066c550a6eaeacaad4a6a870f427372f3b1117defd36e966d88",
+    "six_separate_paper_planes": true,
+    "mesh_objects": 62,
+    "fbx_reimported": true,
+    "fbx_dimension_error_m": 0.0
+  },
+  "not_verified": null,
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

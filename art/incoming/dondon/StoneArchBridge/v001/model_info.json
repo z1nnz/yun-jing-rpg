@@ -1,0 +1,35 @@
+{
+  "asset": "StoneArchBridge",
+  "name_zh": "拱形石橋",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    3.940000057220459,
+    9.75,
+    3.2799999713897705
+  ],
+  "mesh_objects": 363,
+  "same_geometry_ten_views": true,
+  "stage": "editable architecture prototype",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "connectors": {
+    "entry": [
+      0.0,
+      -4.5,
+      0.5
+    ],
+    "exit": [
+      0.0,
+      4.5,
+      0.5
+    ]
+  },
+  "deck_length_m": 9,
+  "clear_width_m": 2.98,
+  "arch_thickness_vertical_m": 0.5,
+  "deck_max_slope": 0.7111111111111111,
+  "center_under_arch_clearance_m": 1.6
+}

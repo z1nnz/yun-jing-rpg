@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QDiscipleSword",
+    "name_zh": "劍修弟子",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.4444729089736938,
+    "mesh_objects": 93,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1436641216278076e-05,
+        "hand-sleeve_l": 6.915070116519928e-08,
+        "shoe-leg_l": 4.6566128730773926e-09,
+        "hand-sleeve_r": 6.961636245250702e-08,
+        "shoe-leg_r": 4.6566128730773926e-09
+      },
+      "walk_planted_foot_max_height_m": 0.003651265986263752,
+      "walk_sole_min_z_m": -0.007197671569883823,
+      "walk_foot_travel_m": 0.29955389944458366
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "80e043812b575ff897bf8f5ab9a621550a7d490880c5f14225dc93caf728248a",
+    "fbx_sha256": "42e4e7abb0dae79a94946b1a69af898b3650fe7a69be74f8355fd32fb4c9d790"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

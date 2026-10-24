@@ -1,0 +1,18 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/MountainRoute08/validation.json",
+  "blender": null,
+  "entry": {
+    "asset": "MountainStoneStairs",
+    "blend_reopened": true,
+    "meshes": 36,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 4.76837158203125e-07,
+    "ten_view_files_present": true,
+    "twelve_200mm_risers_checked": true
+  },
+  "not_verified": null,
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

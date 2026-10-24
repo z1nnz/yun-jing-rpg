@@ -1,0 +1,23 @@
+{
+  "asset": "QPillBottle",
+  "name_zh": "丹瓶",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 1.4901161193847656e-08,
+  "dimensions_m": [
+    0.12399999797344208,
+    0.13199999928474426,
+    0.20200000703334808
+  ],
+  "mesh_objects": 6,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "1be3954139a3017552d48ce150c2eab0170f363b1653031dcf5e600becdbad5a",
+  "fbx_sha256": "b38d7e6b262f4ccccd1dee5adc31d5a889a25463e5b043ee71f498d12fef9cb0",
+  "door_test": null,
+  "unreal_verified": false
+}

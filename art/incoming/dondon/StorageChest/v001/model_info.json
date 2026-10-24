@@ -1,0 +1,20 @@
+{
+  "asset": "StorageChest",
+  "name_zh": "宗門儲物箱",
+  "stage": "editable_architecture_prototype",
+  "description": "Hollow box body and separately editable lid; hinge barrels mark the hinge axis; no rig or animation.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    1.4500000476837158,
+    0.906000018119812,
+    0.7944999933242798
+  ],
+  "mesh_objects": 20,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

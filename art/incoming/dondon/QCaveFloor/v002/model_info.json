@@ -1,0 +1,46 @@
+{
+  "asset": "QCaveFloor",
+  "plan_id": "HOME02",
+  "name_zh": "洞府地板",
+  "stage": "editable_noncharacter_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom_center",
+  "assembly_offset_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "dimensions_m": [
+    3.945000171661377,
+    3.945000171661377,
+    0.20000000298023224
+  ],
+  "bounds_m": [
+    [
+      -1.9725000858306885,
+      -1.9725000858306885,
+      0.0
+    ],
+    [
+      1.9725000858306885,
+      1.9725000858306885,
+      0.20000000298023224
+    ]
+  ],
+  "mesh_objects": 16,
+  "triangles": 3008,
+  "modeling_method": "procedural editable geometry guided by approved Q-style concept; not image generation",
+  "render_engine": "Cycles CPU, 16 samples, denoised",
+  "uv_baked": false,
+  "rigged": false,
+  "animation_ready": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "limits": "Appearance prototype; UV/LOD/collision and UE validation pending. Creatures not rigged.",
+  "version": "v002",
+  "source_version": "v001",
+  "source_sha256": "53567337a28b97988e25fb589561605f9216f494f3e3c955385c9c47fd531004",
+  "door_hinge_animation": false
+}

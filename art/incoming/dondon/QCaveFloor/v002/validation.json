@@ -1,0 +1,23 @@
+{
+  "asset": "QCaveFloor",
+  "name_zh": "洞府地板",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 6.258487701416016e-07,
+  "dimensions_m": [
+    3.945000171661377,
+    3.945000171661377,
+    0.20000000298023224
+  ],
+  "mesh_objects": 16,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "4dae9a538dbe783099bb88fb526a4e20a94dc7cf08fba4c661f22c74e2b83bba",
+  "fbx_sha256": "fb924ac51e457cd193788fde3e1d2f7ff011c15268a2ae6abc458c10aec9fe59",
+  "door_test": null,
+  "unreal_verified": false
+}

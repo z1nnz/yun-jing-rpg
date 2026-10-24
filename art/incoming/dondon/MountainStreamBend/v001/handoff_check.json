@@ -1,0 +1,49 @@
+{
+  "asset": "MountainStreamBend",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "MountainStreamBend_v001.blend",
+    "objects": 137,
+    "mesh_objects": 136,
+    "triangles": 10724,
+    "materials": 6,
+    "meshes_without_uv": 136,
+    "bounds_min_m": [
+      -3.4022655487060547,
+      -5.1556572914123535,
+      0.0
+    ],
+    "bounds_max_m": [
+      3.4022655487060547,
+      5.1556572914123535,
+      1.4480977058410645
+    ],
+    "size_m": [
+      6.804531097412109,
+      10.311314582824707,
+      1.4480977058410645
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "MountainStreamBend_v001.fbx",
+      "mesh_objects": 136,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        6.804531097412109,
+        10.311314582824707,
+        1.4480985403060913
+      ],
+      "size_error_m": 8.344650268554688e-07
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "asset": "CultivationPlatform",
+  "name_zh": "修煉台／聚靈陣",
+  "stage": "editable_architecture_prototype",
+  "description": "Static cultivation dais with jade inlay, stone sockets and woven seat; no gameplay or VFX.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    5.584714889526367,
+    5.843533992767334,
+    1.5499999523162842
+  ],
+  "mesh_objects": 43,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

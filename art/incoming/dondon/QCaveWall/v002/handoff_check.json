@@ -1,0 +1,49 @@
+{
+  "asset": "QCaveWall",
+  "version": "v002",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QCaveWall_v002.blend",
+    "objects": 28,
+    "mesh_objects": 27,
+    "triangles": 5076,
+    "materials": 3,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -2.0250000953674316,
+      -0.2549999952316284,
+      0.0
+    ],
+    "bounds_max_m": [
+      2.0250000953674316,
+      0.2549999952316284,
+      3.0299999713897705
+    ],
+    "size_m": [
+      4.050000190734863,
+      0.5099999904632568,
+      3.0299999713897705
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QCaveWall_v002.fbx",
+      "mesh_objects": 27,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        4.050000190734863,
+        0.510000467300415,
+        3.0299999713897705
+      ],
+      "size_error_m": 4.76837158203125e-07
+    }
+  ]
+}

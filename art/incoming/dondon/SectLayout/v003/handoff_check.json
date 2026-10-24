@@ -1,0 +1,50 @@
+{
+  "asset": "SectLayout",
+  "version": "v003",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SectLayout_v003.blend",
+    "objects": 6231,
+    "mesh_objects": 6172,
+    "triangles": 2474324,
+    "materials": 116,
+    "meshes_without_uv": 657,
+    "bounds_min_m": [
+      -20.5,
+      -20.5,
+      -0.36000001430511475
+    ],
+    "bounds_max_m": [
+      20.875,
+      38.5,
+      7.703195095062256
+    ],
+    "size_m": [
+      41.375,
+      59.0,
+      8.06319522857666
+    ],
+    "bottom_centre_origin": false,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "placements": 491,
+  "fbx": [
+    {
+      "file": "SectLayout_v003.fbx",
+      "mesh_objects": 6172,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        41.375,
+        59.0,
+        8.063199996948242
+      ],
+      "size_error_m": 4.76837158203125e-06
+    }
+  ]
+}

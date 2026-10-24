@@ -1,0 +1,14 @@
+{
+  "blend_reopened": true,
+  "module_roots": 9,
+  "module_footprints_nonoverlapping": true,
+  "meshes": 6172,
+  "fbx_reimported": true,
+  "max_bounds_error_m": 4.798173904418945e-06,
+  "studio_excluded_from_fbx": true,
+  "preview_files": 3,
+  "navigation_and_collision_verified": false,
+  "unreal_import_verified": false,
+  "perimeter_module_placements": 50,
+  "wall_span_lengths_checked": true
+}

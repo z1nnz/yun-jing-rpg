@@ -1,0 +1,23 @@
+{
+  "asset": "QQiManual",
+  "name_zh": "煉氣訣書冊",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 2.2351741790771484e-08,
+  "dimensions_m": [
+    0.20264822244644165,
+    0.26499998569488525,
+    0.05278944596648216
+  ],
+  "mesh_objects": 12,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "f2982c7cf80263d061a4bda69b24de09c44a51d45054c9214924064e351520d7",
+  "fbx_sha256": "53904761674f256bcef562bc188af2b383e2d4d30247b70c990d3580bd85317d",
+  "door_test": null,
+  "unreal_verified": false
+}

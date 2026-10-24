@@ -1,0 +1,20 @@
+{
+  "asset": "SpiritHerbGarden",
+  "name_zh": "靈藥圃",
+  "stage": "editable_architecture_prototype",
+  "description": "Three adjacent planted beds showing small, medium and large growth appearances; no growth animation or harvesting states.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    6.300000190734863,
+    4.900000095367432,
+    0.921999990940094
+  ],
+  "mesh_objects": 662,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

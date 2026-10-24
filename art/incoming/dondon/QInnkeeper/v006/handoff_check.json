@@ -1,0 +1,97 @@
+{
+  "asset": "QInnkeeper",
+  "version": "v006",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QInnkeeper_v006.blend",
+    "objects": 92,
+    "mesh_objects": 91,
+    "triangles": 32376,
+    "materials": 21,
+    "meshes_without_uv": 91,
+    "bounds_min_m": [
+      -0.33645349740982056,
+      -0.36182475090026855,
+      -5.122274160385132e-09
+    ],
+    "bounds_max_m": [
+      0.33645349740982056,
+      0.36182475090026855,
+      1.3521637916564941
+    ],
+    "size_m": [
+      0.6729069948196411,
+      0.7236495018005371,
+      1.3521637916564941
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [
+      {
+        "name": "Armature",
+        "bones": 17,
+        "bone_names": [
+          "root",
+          "pelvis",
+          "spine",
+          "neck",
+          "head",
+          "upperarm_l",
+          "lowerarm_l",
+          "hand_l",
+          "upperarm_r",
+          "lowerarm_r",
+          "hand_r",
+          "thigh_l",
+          "calf_l",
+          "foot_l",
+          "thigh_r",
+          "calf_r",
+          "foot_r"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "name": "Idle",
+        "frame_range": [
+          1.0,
+          49.0
+        ],
+        "fps": 24,
+        "cyclic": true
+      },
+      {
+        "name": "Walk",
+        "frame_range": [
+          1.0,
+          25.0
+        ],
+        "fps": 24,
+        "cyclic": true
+      }
+    ],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QInnkeeper_v006.fbx",
+      "mesh_objects": 91,
+      "armatures": 1,
+      "bones": [
+        17
+      ],
+      "actions": [
+        "Idle",
+        "Walk"
+      ],
+      "size_m": [
+        0.6729069948196411,
+        0.7236493825912476,
+        1.3521637916564941
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

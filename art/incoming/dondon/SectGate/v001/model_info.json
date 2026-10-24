@@ -1,0 +1,20 @@
+{
+  "asset": "SectGate",
+  "name_zh": "宗門山門",
+  "stage": "editable_architecture_prototype",
+  "description": "Three-bay mountain gate; blank crest plaque for future sect name.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    9.140000343322754,
+    4.539999961853027,
+    5.717061519622803
+  ],
+  "mesh_objects": 223,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

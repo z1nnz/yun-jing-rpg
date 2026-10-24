@@ -1,0 +1,33 @@
+{
+  "asset": "QCaveDoor",
+  "name_zh": "洞府門",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 1.9371509552001953e-07,
+  "dimensions_m": [
+    1.6546400785446167,
+    0.16699999570846558,
+    2.0999999046325684
+  ],
+  "mesh_objects": 22,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "f44255beda3d308d0c87285f90822fdd6b8ac3c4e8bad48515946e3e5aba9884",
+  "fbx_sha256": "c194da5363252838d6090264da0fc0bd6b6bada916a88c406909cf0234abcf84",
+  "door_test": {
+    "hinges": 2,
+    "open_frame": 35,
+    "open_angle_deg": 90,
+    "closed_frame": 120,
+    "static_width_m": 1.6546400785446167,
+    "entry_footstone_clear_width_m": 1.71,
+    "total_width_clearance_m": 0.055359921455383265,
+    "full_sweep_collision_test": false,
+    "animated_fbx_roundtrip": true
+  },
+  "unreal_verified": false
+}

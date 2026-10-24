@@ -1,0 +1,49 @@
+{
+  "asset": "CultivationPlatform",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "CultivationPlatform_v001.blend",
+    "objects": 44,
+    "mesh_objects": 43,
+    "triangles": 29756,
+    "materials": 8,
+    "meshes_without_uv": 1,
+    "bounds_min_m": [
+      -2.7923574447631836,
+      -2.921766996383667,
+      0.0
+    ],
+    "bounds_max_m": [
+      2.7923574447631836,
+      2.921766996383667,
+      1.5499999523162842
+    ],
+    "size_m": [
+      5.584714889526367,
+      5.843533992767334,
+      1.5499999523162842
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "CultivationPlatform_v001.fbx",
+      "mesh_objects": 43,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        5.584714889526367,
+        5.843533992767334,
+        1.5500003099441528
+      ],
+      "size_error_m": 3.5762786865234375e-07
+    }
+  ]
+}

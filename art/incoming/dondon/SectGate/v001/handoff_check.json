@@ -1,0 +1,49 @@
+{
+  "asset": "SectGate",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SectGate_v001.blend",
+    "objects": 224,
+    "mesh_objects": 223,
+    "triangles": 62604,
+    "materials": 9,
+    "meshes_without_uv": 6,
+    "bounds_min_m": [
+      -4.570000171661377,
+      -2.2699999809265137,
+      0.0
+    ],
+    "bounds_max_m": [
+      4.570000171661377,
+      2.2699999809265137,
+      5.717061519622803
+    ],
+    "size_m": [
+      9.140000343322754,
+      4.539999961853027,
+      5.717061519622803
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SectGate_v001.fbx",
+      "mesh_objects": 223,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        9.140000343322754,
+        4.539999961853027,
+        5.717061996459961
+      ],
+      "size_error_m": 4.76837158203125e-07
+    }
+  ]
+}

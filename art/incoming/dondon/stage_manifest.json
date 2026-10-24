@@ -1,0 +1,1298 @@
+{
+  "source_repository": "https://github.com/joshsu54/dondon2.0",
+  "source_commit": "4644558afb5d7d2dce59614768f8dabaca16e1c5",
+  "assets": [
+    {
+      "batch": 1,
+      "group": "男女玩家",
+      "id": "QPlayerMale",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QPlayerMale_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "b6f5bfebf51ff28006068f76efc04038eb698c395ca00288bc7eb90f358f8989",
+        "anim/idle_front_02.png": "c2444d06cd510937fc1be6c91270687eb0427d19c70facff5341d84e7b5eab1a",
+        "anim/idle_front_03.png": "eafb17f0e1d5b1fe19688755db9942085cd37621109aeaa772f2be8f5c023aa5",
+        "anim/idle_front_04.png": "4e8ba2a96019d5a0cb80816d0d2be996048812ae7447b886035fece7ec8a22e4",
+        "anim/walk_side_01.png": "55590fa4acca8a0c571e1dce09ecbb584dd5943b334ab1cb10bc4bf4c484a753",
+        "anim/walk_side_02.png": "76bf7b7abf653b9c5facfe50ad4ac0c01f2ce8ea0c0b4b94cd47502affbd46b3",
+        "anim/walk_side_03.png": "08a59ff5e85c0cee649ff03d83bfc2f74d0e0ba8a1a31e441d1f3c415970c2fc",
+        "anim/walk_side_04.png": "e40f4d5a22e3c3aea384727cb30d93234eb327d39f3ed401fcb7eab802930c89",
+        "anim/walk_side_05.png": "b8c1550d4abcd27a2ad20f02103aa829baf834a9578dc35a58f382a9409a57ca",
+        "anim/walk_side_06.png": "06572ebcdef0c0b7b774273f6b61b9bcbfaf7616f222d8614148abd41211455f",
+        "anim/walk_side_07.png": "77252c1eae34b8fbd89e52265ca0f025373ee2610fdc49e4f1ad0df14418332f",
+        "anim/walk_side_08.png": "4e294f18613a7e99e06615b3f3db9eed5d10b7af2dc87525dd9e9be97b7ba42c",
+        "model_info.json": "837d1dfdb770dfd5e33d7089f4fc8eee836c94eba5895075f28b3d01ac8742fd",
+        "QPlayerMale_v006.blend": "1fafd4966861b49d2e2ead4dd8dc41e4bd98e853c3aab2f5ba6b022e6f400b11",
+        "QPlayerMale_v006.fbx": "5ef8442d8f3f3b33c6ba820df6572acd0a58d67f7793c357cabaa0a336fd1139"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "男女玩家",
+      "id": "QPlayerFemale",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QPlayerFemale_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "d58c48caecc8ee86e5af0b60ad0d6912cedd150f900f384907ceb2a1edc8b9f4",
+        "anim/idle_front_02.png": "5ddfed96319c0c75b6e90446718732b75ad83bae556d1c467bf64dd504f4a265",
+        "anim/idle_front_03.png": "d5aceff227848df09ab8311dca7e3d7eccb0eb6d837a1e60cb72287d80f68ef4",
+        "anim/idle_front_04.png": "c8444fab410f8c915e6c3395c9c74845f4acec0bcaf98e6a17bced508e1b45be",
+        "anim/walk_side_01.png": "1571541841438cbe7305f7dbd7e57abc7886b3a8822d08a561d976937326666e",
+        "anim/walk_side_02.png": "755cbce8bf697bcd296dd67dabb51d28178980719291f019a2d79aeaebc60171",
+        "anim/walk_side_03.png": "72b3165a7efacf32005c2c9184030e272be7f3d4e160b3ca1f212a1ed0e80182",
+        "anim/walk_side_04.png": "64dcac47a9cb99b1492d7f5df6615868be0604de29e169aa177deff35a801dc8",
+        "anim/walk_side_05.png": "6338ba071db41c29047af8de9aa3a2267aafe75f5c7519cec7f6b4d1e98c76c2",
+        "anim/walk_side_06.png": "c577d2c826da9413e9abd68337a7f66afe6eb5fe7d390cb09591065761081a51",
+        "anim/walk_side_07.png": "3949d8f0efb72a67dbe186687d820457e2d6ee0943e4bfa7007eb6c13847f04b",
+        "anim/walk_side_08.png": "97cbbbf21ba1e03cc16cf3da39ea984627eec7bcfc52bc5196c7a4accce99e3c",
+        "model_info.json": "1d3d4a370fb4295ceca10dcfeb65e2106d827cac7c72ad63c1af4af11b0b2abc",
+        "QPlayerFemale_v006.blend": "cef46925f54c3d38091f8d2c9e31e332ff682dad093c6da702637b02be6b4b2a",
+        "QPlayerFemale_v006.fbx": "79b273c4ab11f7b8019bbfa9e3d4bb6982ced55cf6a47527e00f867b78f17991"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "關鍵 NPC",
+      "id": "QSectElder",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QSectElder_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "84940dd071ff5d4ba9b47b0b00baf249973f7077e6103437a82ae5fa98fcddf4",
+        "anim/idle_front_02.png": "d70fbf3a7431fb1894b883475f73110d6634e16128a25051e16c216b912157c9",
+        "anim/idle_front_03.png": "8b8225f5ed721e20aaf500c2358cb129c724ac699e1332915586b26d0dca0a8f",
+        "anim/idle_front_04.png": "5dad8a8008e49fc533ad03b818fcc0486131a43926cfc19d45d43bc997e9559a",
+        "anim/walk_side_01.png": "9fb1e3c01368f2834153d55413868e1fc75e0f5217fa2b9d79a95cc21d5b8524",
+        "anim/walk_side_02.png": "7843be4bb571f58c88a2746231d989746bfa75c9bd0e399be3520895d6de8efe",
+        "anim/walk_side_03.png": "3df3f526f071b09abf43a390b5e4788966c5d3340b87ad39e69f1f7f9bec9bb9",
+        "anim/walk_side_04.png": "202cf017bdf43a5100520044f1defe69183b9e8931827f45692ce2876dc52c54",
+        "anim/walk_side_05.png": "618e0628834f5e0045c6a08e2b1ed8ebb5df69d1a9d8f27215da1fa3015fa840",
+        "anim/walk_side_06.png": "ffcec2d1d948443824bad904ecd97c9d76ee64b357db09f8bca4591dd64dc4a2",
+        "anim/walk_side_07.png": "1ed344954d008705b1b119210a1f400780a5c28d6dc8bb1947393b90d31a5dfb",
+        "anim/walk_side_08.png": "ca6f1932ca9cf3c5c9868a6a74a29b375e7ef0a5592b4b7749764958abade869",
+        "model_info.json": "0e372611e28ece6ae8589c4e8725b76e14f769d88832456e82cfdf2680135161",
+        "QSectElder_v006.blend": "a0cedca9221ec93e3d8ffa7f08695371fdb789f6458841e0df162d07874a8010",
+        "QSectElder_v006.fbx": "26c21a6ed29aa71c824c1dfb91383c78617960ba63fec8aeccdc10ba7a9968f6"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "關鍵 NPC",
+      "id": "QHerbalist",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QHerbalist_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "859927252f2370c023c4a77b8ab362b237f9cda8515f78dac8c0a045c42825e0",
+        "anim/idle_front_02.png": "9850032623259350f173ad7c9a8529ad365d645147d5ae6f7a4be1e2182fb2f6",
+        "anim/idle_front_03.png": "bdc867fc80ab6ada767976499a96a6d3e53a5cc87facde7f7b230efe728ae0de",
+        "anim/idle_front_04.png": "90015abe3fac38651b4c499a9d7fdb3b09c4f61436606ca1c2cd5b5f4bbf6840",
+        "anim/walk_side_01.png": "fe6157f41c75d04aca1d84bfd23ca3d983f96b285a3419cc44ce648bdacbeaa4",
+        "anim/walk_side_02.png": "0f92d88c68eaa64827886c6d78544902bd574004bf2458e2e967e2ae28661a09",
+        "anim/walk_side_03.png": "b70ef53d1992de3425a6ceec3d307587fea76e3d5e36ff946d6f7d0ca14c06c9",
+        "anim/walk_side_04.png": "5d4ed864751f1862706c5dca11b9f9c79c9d3b40cbaa478ca26c0b784ada5b10",
+        "anim/walk_side_05.png": "003ff9e231f1ff164a68c87473ca013c82815ab8adffe44bd71e954ceccfb4fd",
+        "anim/walk_side_06.png": "611a3e72f7727b0ae56eac195ce22b601d50ab5503f50a36bccc1cd5ae44ae11",
+        "anim/walk_side_07.png": "5c70b80360e51ae6de98c0a7bb34a8b667c8bc132f75231d36c339e307c954d0",
+        "anim/walk_side_08.png": "68aad694cddb453f121e6c2211a2659e259849f32c85ce307adb222524cab422",
+        "model_info.json": "f42f72667ada78bf0d2e8ad5cf7e3e00baf27cb918b05d7883d3e8b3777e5d4d",
+        "QHerbalist_v006.blend": "10b16e825e3acdfe221a3ea57804db6f172b39185e391eecb0f541d6897aead9",
+        "QHerbalist_v006.fbx": "7019f57f485fdc6f964a7b93c5cd1b5da675eba33acb35a68c1e0934c01c9dae"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "關鍵 NPC",
+      "id": "QShopkeeper",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QShopkeeper_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "c2f08246f60010e6e59022ac8cd82e0ea775ca7a9e36a4e0842bcabc548ea88d",
+        "anim/idle_front_02.png": "361df649620153669289c37547f7ccc985d65f6329793d63b0fd30f6fae90afc",
+        "anim/idle_front_03.png": "59372f30965cc0fb4626c0a70a3dd5eb2499ad589eb2432ff5a6c57d995f5ffc",
+        "anim/idle_front_04.png": "eee11784e17a4903b620eb4741b877f91a2caf459b1557af4e2c2aec17f918db",
+        "anim/walk_side_01.png": "136099298a9b971a7b50e307a621069b5720c32ed04f488c32ddc79f70c77159",
+        "anim/walk_side_02.png": "846d00ad19e7ede8708c81449c082533bfc1e6433ebc0e9084627e6a48934ba5",
+        "anim/walk_side_03.png": "e0e236ed703b28b2e622eafd66dec243461f906cee3e3da10739ac90a9460d6d",
+        "anim/walk_side_04.png": "5ae9dd499cb93d8684bb02926a453f76ef868d4cbc7a32ff5a1b077a1f52ea61",
+        "anim/walk_side_05.png": "b8ac697dd356370e3c12b705c71c674df3e65cded108bc7d550dec682d729035",
+        "anim/walk_side_06.png": "bad932c5ec636af825a05a81e81a29ba1706c8b426105d9045b0a9c2118d01c8",
+        "anim/walk_side_07.png": "c86499a751a1d3e1df6378d298d5493a8e8415449c2eb06221e14de3fad7bb7a",
+        "anim/walk_side_08.png": "40f139f2f3d40d4a8c1a084972207b4876f6a3de27031e3b5e1ea6cec9673477",
+        "model_info.json": "3fa818db7fa8324a2b0dce182c813bb4cc165a9fe4f223fae40526d94c140100",
+        "QShopkeeper_v006.blend": "18e256bcedff05ab824de8fc23e4f1d3698782ba5a8652fe41f645ac58669961",
+        "QShopkeeper_v006.fbx": "7dd5e0a6ac0ffb09439c063d5789b74f6c7927da6060478b027fd56559ef48c0"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "關鍵 NPC",
+      "id": "QBlacksmith",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QBlacksmith_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "afa11a3b16ff870dd882046fcd3eebdf6fa409a6ff3786371a451d721122aff6",
+        "anim/idle_front_02.png": "090ecd1a12cbd0c6ece559eeed38e95970b41b93cab1e93af6ef54084404bfda",
+        "anim/idle_front_03.png": "809ec58b3ea3563e1dc37955dd13214ccf8e90e74b3664570cc52b4044c2f3d2",
+        "anim/idle_front_04.png": "e5f0c0e44a7a7503d62f564bb410e9650dbda9116c133e024bcb7e9697a5399e",
+        "anim/walk_side_01.png": "0268ce3665d2d7085dd2a698a9664721605e5ab556fbbf018bfc669deefe5ba5",
+        "anim/walk_side_02.png": "fbf77536ee02a5888ee61569465f4c75e15ea347bb07f0ab209691e3d3a4979d",
+        "anim/walk_side_03.png": "85c12569c9cea38664a41233df14a17b80719c2587ec6ddb02d3ca41902b1f7b",
+        "anim/walk_side_04.png": "ac10841d941be8e92b0b3c6093fc1611fd24c8c9c482d69326a2bdb4d2543b8d",
+        "anim/walk_side_05.png": "a0933b0a635c886240659fd03c0f2c2d9a0375926a7a6096c0816ebf72be613c",
+        "anim/walk_side_06.png": "cabc264ecec8a7bd3a80275e08214f5fc573254c2131b96d185bc97cc8f98d85",
+        "anim/walk_side_07.png": "bc0492b9e84e21bfa72b3b2e0f68d855ecf4668fc554340ebb01dc7251cf2a49",
+        "anim/walk_side_08.png": "4649e54ed8f569b0256b3e55f78f99bdce5ac7a0bc98206ad1667c70d2bcf1f2",
+        "model_info.json": "5413b2205f638f382c5aa6db041329c2261f378b66b1153302790bcb5e954949",
+        "QBlacksmith_v006.blend": "ca7a6500c8a02b4b5256b3904fed3e09f9121368fd3b3c6579a0df30c14ae2e2",
+        "QBlacksmith_v006.fbx": "5e730335c67ec6895920fbcffa300258dcfd8f73c04a77a80e7c44000e422417"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "關鍵 NPC",
+      "id": "QInnkeeper",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QInnkeeper_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "b63987a21995981308f451dbbf3d63ac2f2b2dfb06e0a57b2883754b1512b713",
+        "anim/idle_front_02.png": "b0a6cba114455ddc978a331706d8b5fcdf089634a2977b1bdc28c7c5c5f95d71",
+        "anim/idle_front_03.png": "a6287f49aa678e10a62981371519a63d6e7b787bcc3c9d47ddae6e2a2825d7ee",
+        "anim/idle_front_04.png": "ff79ae36fae922a574026471b70ec97f508705f1b89fff36df982f99f6dfef22",
+        "anim/walk_side_01.png": "acc52fd9967a47ba998dea097a41d85c73d9b975993c65a58b155c898e5e5e23",
+        "anim/walk_side_02.png": "bc41df106ffee0c50dabd374a0114b9ab6f5f9b631c12eabb8324acccb9ec073",
+        "anim/walk_side_03.png": "5ffc9949997997c67bc5b04dc801fb36394e2ef48d24cd9a5c9a5e1a2789d973",
+        "anim/walk_side_04.png": "3ec2430fe0c9d62b83ac3d7dc04353122ce9dff6c3afb85f55ff20abd9f4d1e4",
+        "anim/walk_side_05.png": "e6c08e31ae110ba6dcceecaa421476f7b151eae376f5bb47c29e3024cc2315e6",
+        "anim/walk_side_06.png": "d5ea50005c04462ff6e0689d6525b10cfb229d1277d66fb12a69cf92d3ea7441",
+        "anim/walk_side_07.png": "e4bbccbf5eb28b18318579dece315627690c44107b793dd4808b6d484f9968b6",
+        "anim/walk_side_08.png": "bd115bda615aceea2e678da4e93f09609d2205e5369e0bc070e93d7225db5f50",
+        "model_info.json": "ff0e3fd3075d593aa0864e94c254db6beaede9d6804a4dc901c407e0a2787438",
+        "QInnkeeper_v006.blend": "9059675d2b153ba2869017857ee3636cf280b73e52eea40ca1b86fc4592b852e",
+        "QInnkeeper_v006.fbx": "94ced0b563e0ece43a32b74322704d72798fce67f67f81e800db11a06466dfe7"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "修煉與測資",
+      "id": "QQiManual",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QQiManual_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "ff358ab37ec00d63d39eaa7cb694b9d20399b298208a3ef3eb17a4fe42b0b1cf",
+        "QQiManual_v002.blend": "f2982c7cf80263d061a4bda69b24de09c44a51d45054c9214924064e351520d7",
+        "QQiManual_v002.fbx": "53904761674f256bcef562bc188af2b383e2d4d30247b70c990d3580bd85317d",
+        "validation.json": "ccb3aa8c70516a2ec3c58f6b530c984ee0801762f763d3324cc00469a674326c"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "修煉與測資",
+      "id": "QAptitudeCrystal",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QAptitudeCrystal_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "0a5f3d4ffd3b0266fc9573ae9a3398d7cac32243eba80f07c22b6ddac7e097c7",
+        "QAptitudeCrystal_v002.blend": "c154e6ede9478a8605829a312c7ccb8d7d1ba61f167bf2cd7bb9cda8b51296dc",
+        "QAptitudeCrystal_v002.fbx": "0fc74f1e7a316cb854ed61a7c7937c208015db6f0616f20f108beadf740d627a",
+        "validation.json": "976fa2e219424506cd839981f655b4ea9b692cf95338c03817e3e0d7b03124b4"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "修煉與測資",
+      "id": "QSpiritStone",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QSpiritStone_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "b78f01acba980eb2699b136fa6c18bed0aa3eb766f1727a3db8c7509c8e6c6d0",
+        "QSpiritStone_v002.blend": "0ca0a8e920a96352f45ac71143e40f996c2b933a61e013a310bf4cb03169b4e3",
+        "QSpiritStone_v002.fbx": "335d6676ba81263d1bda78845263be8b2b0cb6f89a4984540695e199235c3958",
+        "validation.json": "997287a3c9b6d608971eb760ed431c984e284c51e75885fb03ad42ca608c62bd"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "修煉與測資",
+      "id": "QPillBottle",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QPillBottle_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "84de20ea957b598c52f15c85536bb526e657a69d6bff6598de473190d5d28cf5",
+        "QPillBottle_v002.blend": "1be3954139a3017552d48ce150c2eab0170f363b1653031dcf5e600becdbad5a",
+        "QPillBottle_v002.fbx": "b38d7e6b262f4ccccd1dee5adc31d5a889a25463e5b043ee71f498d12fef9cb0",
+        "validation.json": "dfae97aeed2cfaddd8f49aabf5bde754f961037be093d06783026912ead9670f"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "採集與狩獵",
+      "id": "QMountainRabbit",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QMountainRabbit_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "a0adf9c0d70458cc9c30f3faa0bcdd269767c5ded7310331d6a2e5aefb68c14c",
+        "QMountainRabbit_v002.blend": "d2fdd0189790609f6ac0b8d553e872d7a84076a97da88ebaff082595f705b89f",
+        "QMountainRabbit_v002.fbx": "ebafb93ae04debca51c3e638b13016bcc861a159002b1ffe627546cb9d669f5d",
+        "validation.json": "3bb16bc719aaa657b681161e3e73d38fdcba531ed30fd934466a520181065875"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "採集與狩獵",
+      "id": "QMountainBoar",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QMountainBoar_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "693d5b7289fba6e7619dbd677e42843c44cc8c38eccfc24f7a7e00ea0df019e2",
+        "QMountainBoar_v002.blend": "9d5925e8ea368a05b4e794f4c8f2a075e26b2d40982fa6c49b35508b86de776c",
+        "QMountainBoar_v002.fbx": "ccfa6a540b63f9c644c6236c95fcbb3bd1726e042e2079ecc76451d7907a5072",
+        "validation.json": "44d776472269d445808fb62b3daf841a8940d5b2e66ff4db462b52a1002e922d"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "採集與狩獵",
+      "id": "BasicSword01",
+      "version": "v001",
+      "source": "ShopEquipment03",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/BasicSword01_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "BasicSword01_v001.blend": "e53409a56b318d143761d431c8d5404a27d8329ef204fb157e1f0fbdd922a411",
+        "BasicSword01_v001.fbx": "528133ab04e4ae21fbfe277ca35bc575a42c56ad6b4ebd8ee138d7bb325ec439",
+        "model_info.json": "661cdde5d1f8e2a0f523e0e6757d21d2f512d30b55a89a14a71da84db1aa4e15"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "靈草生長階段",
+      "id": "SpiritHerbSeedling",
+      "version": "v001",
+      "source": "SectModules06",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SpiritHerbSeedling_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "cb5bec862d8463cce862d29a9fdb451a691d3035a90b322ea123e48ec3210bc5",
+        "SpiritHerbSeedling_v001.blend": "28a13b708bfc86741727919d485800441f4b57b0d4472a647ab426e8286dab8f",
+        "SpiritHerbSeedling_v001.fbx": "853b3ea7b17987092db35e5fdb2876f2941ef047db685238e3b0244d8fcb8e09"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "靈草生長階段",
+      "id": "SpiritHerbYoung",
+      "version": "v001",
+      "source": "SectModules06",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SpiritHerbYoung_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "9a076b2cf8f10177eb9503f1e77231efef5bd577fee28fe05e676219e2bd1d6b",
+        "SpiritHerbYoung_v001.blend": "27d8c8ef7e615ac0666512fee70092695f0518842a447c956883b894a0930e84",
+        "SpiritHerbYoung_v001.fbx": "c597e237a563868610d66aa2274b15913038705fa3ab215ae35515da3012b8ba"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "靈草生長階段",
+      "id": "SpiritHerbMature",
+      "version": "v001",
+      "source": "SectModules06",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SpiritHerbMature_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "ebd5e3f93af990585e880d3ecfd2ac64dc89032ad190e5034b661ade3ee769f4",
+        "SpiritHerbMature_v001.blend": "1d1626efeed9e13f1e0bd29797b520dd979c677d6ec7362e5ee59469da8fb275",
+        "SpiritHerbMature_v001.fbx": "c5f2f48592c996fb91c58861ed5a0a564598ddc77e149d226d48c17f003e4f56"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "初期生活場景",
+      "id": "StarterHouse",
+      "version": "v004",
+      "source": "root:StarterHouse",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/StarterHouse_v004/05_front_right.png",
+      "batch_validation": false,
+      "files": {
+        "01_front_right.png": "b6071cb11b6965cc9f068f6f1589330b7896f68e5770c380f6ef52555c5cf098",
+        "02_front.png": "cce589240e9d091b2bcbddcee7c8f1319f65cc4982560fdfc5cfa2005c758505",
+        "03_rear_left.png": "9bd2dd5b7a8d3394b654af7cc1b615e6e6254fc9a3e71b505021959faba62c4a",
+        "model_info.json": "3579837066fdadea185560c96cd431c1577daac5c819d43dc665ffc526f4be92",
+        "StarterHouse_v004.blend": "70d3f8d8cf8427f0c175c46eb91c4d1f18eb709fd04d2ef1d124ead71579307a",
+        "StarterHouse_v004.fbx": "7a339a82107ab4cde9d64d91398c2592811fc8b42f923b1658974ddeece719b6",
+        "validation.json": "cd55ba2a8ef800f697c02a8a509e54c1106e800ed3cb96db19ef5dd1d75d1023"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "初期生活場景",
+      "id": "SpawnTown",
+      "version": "v001",
+      "source": "root:SpawnTown",
+      "references": [],
+      "preview": null,
+      "batch_validation": false,
+      "files": {
+        "01_overview.png": "5717612ca98d3d9e64ca9a02093acc2ba13b2088d6c46e289df6beb7971737a5",
+        "02_top.png": "eeb2208ddfcdceeabd095e40029c20624cbee91e8e03b8fd82c88fa48e069497",
+        "03_spawn_eye_level.png": "1d38e4ddb6702b69fa96505eb3a9abaacbe0cced4022354e928afc882865cff9",
+        "model_info.json": "7325b580136b713ecee9c615334ca60341a3cb0ad70aeba63c98ef05514c4e0c",
+        "SpawnTown_v001.blend": "7161799e56a11bda3f3b2558c4f82e9beac46b39660ddf87e8da1aaf65b2ebef",
+        "SpawnTown_v001.fbx": "97025eaeb2cc55a5ad8b0387e9d164797741d8864977ad8cd858199f92406b66",
+        "validation.json": "9377a9de9002c912f01f6d1ed09e2c40ffae3282be644a087eb72c65b328f14e"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "初期生活場景",
+      "id": "SpawnAltar",
+      "version": "v002",
+      "source": "TownRefinement12",
+      "references": [
+        {
+          "source": "ArtLibrary/ExpansionBatches/TownRefinement12/SourceSnapshot/ArtReferences/SpawnAltar_10Views",
+          "kind": "blockout_render_not_ai",
+          "note": "建模前的概念參考，但不是 AI 繪圖：先依提示詞寫設計規格，排出暫存草模，再以柔光棚拍渲染 10 個角度；提示詞保留在 prompts.json。"
+        }
+      ],
+      "preview": "ArtLibrary/Turnarounds/SpawnAltar_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "cfeca6d077c958218070adb6c5d706075d7e02fb6679a997e009b73dfce68e1e",
+        "SpawnAltar_v002.blend": "10dffd7872445ab234da0ae835264ebd2c539775a09ceee935665c7b23da1749",
+        "SpawnAltar_v002.fbx": "4786cfc7d5565f3981ee7e4bef0eef785f4e1302453c3a6e1ce089aa4a90dc5b"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "初期生活場景",
+      "id": "NoticeBoard",
+      "version": "v002",
+      "source": "TownRefinement12",
+      "references": [
+        {
+          "source": "ArtLibrary/ExpansionBatches/TownRefinement12/SourceSnapshot/ArtReferences/NoticeBoard_10Views",
+          "kind": "blockout_render_not_ai",
+          "note": "建模前的概念參考，但不是 AI 繪圖：先依提示詞寫設計規格，排出暫存草模，再以柔光棚拍渲染 10 個角度；提示詞保留在 prompts.json。"
+        }
+      ],
+      "preview": "ArtLibrary/Turnarounds/NoticeBoard_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "0a7e43a9b3b023e0b588190ee5aefebafb2a8240d4e70bda692139e1c05447f2",
+        "NoticeBoard_v002.blend": "a8eff359ff1de51030a4360af66bf2727aa266b7eaf80eaf6a55aa873e51d59d",
+        "NoticeBoard_v002.fbx": "49d67941eec36066c550a6eaeacaad4a6a870f427372f3b1117defd36e966d88"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "初期生活場景",
+      "id": "HerbalStall",
+      "version": "v001",
+      "source": "HerbalExpansion01",
+      "references": [
+        {
+          "source": "ArtReferences/HerbalStall",
+          "kind": "ai_image_gen",
+          "note": "內建 image_gen 生成的建模前概念圖與完整提示詞（prompt.txt）。"
+        }
+      ],
+      "preview": "ArtLibrary/Turnarounds/HerbalStall_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "HerbalStall_v001.blend": "58a2954f5ca08d099c087578300e038bef1330563f70d7b687885dfd72473962",
+        "HerbalStall_v001.fbx": "2aa42b1b777f7889c026659dd1e4e9ae7c07f325d793400314816fa198891c36",
+        "model_info.json": "de9f34dbd6c6cc2390a449f433dc51de16baa6ab5de980924a545e562e4e7f1b"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "初期生活場景",
+      "id": "MaterialShop",
+      "version": "v001",
+      "source": "root:MaterialShop",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/MaterialShop_v001/05_front_right.png",
+      "batch_validation": false,
+      "files": {
+        "01_material_shop_overview.png": "b0df74e852fd6040473a82273bd441bbae760d0ccebbdad0ceb29fcaddf879e0",
+        "MaterialShop_v001.blend": "17fba32fbaeb7435b8fb2224acdcf0f2bf28a6dab902938198e6591a1d352bc9",
+        "MaterialShop_v001.fbx": "0d9791a553c26a21c2f707d42a858a4ac282f620519c95b2cadd9555abccc7d1",
+        "model_info.json": "bcee83287f1792121d08ed7dd644d11ea05698155d17a8668e0af68bb43a1929",
+        "validation.json": "a56a194022a1cf87d3a51ba21f9175f11320e23bf1a6ac2d24d3fda4234009ef"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "初期生活場景",
+      "id": "Blacksmith",
+      "version": "v001",
+      "source": "root:Blacksmith",
+      "references": [
+        {
+          "source": "ArtReferences/Blacksmith_10Views",
+          "kind": "ai_image_gen",
+          "note": "內建 image_gen 生成的 10 張建模前參考圖與提示詞；來源專案把它歸為另一種畫風（Legacy_AlternateStyle），原始檔沒有明文記錄 Blacksmith v001 依哪幾張建模。"
+        }
+      ],
+      "preview": "ArtLibrary/Turnarounds/Blacksmith_v001/05_front_right.png",
+      "batch_validation": false,
+      "files": {
+        "01_smithy_overview.png": "90ebcb2302dc029004378eb7f793f052786b5ded8ab72a6aeb6e1495c4abbf78",
+        "02_workshop_roof_hidden.png": "407ddfc54e8b425827c77b17b7d6e9953cfd309bd8e729ca068a768fcf0c31c6",
+        "03_smithy_rear.png": "61a652e5ea443c1e9f9e5f1469d4ded5fcde063776e96d462f941116786f8332",
+        "Blacksmith_v001.blend": "21f13bdb8c3e9027916366fb0b72c843e8f54e660bef582b0db805e58faa7bd1",
+        "Blacksmith_v001.fbx": "c49deea503ecdac7f0f6be74047450c65509dc3d09cda40075ff23e919fb6e49",
+        "model_info.json": "101de0c5defc52e9b121b7ce194860c5e8490f25886ef647ea7a61e26f8c0346",
+        "validation.json": "06ba21de4a5e813f6e0e6fa1aba772efc4347020ceb3202d28691405339d7d05"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "入宗洞府",
+      "id": "QCaveResidence",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": null,
+      "batch_validation": false,
+      "files": {
+        "model_info.json": "ac1b4c03fde3fdd0fef2ebc965268b2d2b461bf3f2723361a9bf626f7073449f",
+        "QCaveResidence_v002.blend": "d79e9662ae1ad310e89c60436a9f4d46066d4dd079705c03c43e1bb2b4a6c96a",
+        "QCaveResidence_v002.fbx": "8e3dfa42243fc7d6726a56ed3958365ac3c6d72046c5cc7545e6c14345ac4330"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "入宗洞府",
+      "id": "QCaveEntrance",
+      "version": "v003",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QCaveEntrance_v003/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "a15db83d4320fdfc5a886cd482eef5c35841c34ebf1cbf36d63b0991b01c4231",
+        "QCaveEntrance_v003.blend": "0768f6ebe0f8fa63c9e2c01c5800c27c77431ef05e05f8d26654bd7d0fe6f340",
+        "QCaveEntrance_v003.fbx": "887f13b694afa49c3a9701dadbfb0ca284d85df738daaedac54bf45652671784",
+        "validation.json": "04fd9c1f7a34c176cfaac12a64762249b604dba20eb5e77e764ec857d59f5347"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "入宗洞府",
+      "id": "QCaveFloor",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QCaveFloor_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "d95ba778adcf2a92eb2a438ef869be02cb26e7436f7b46143f0998bc2c436cb1",
+        "QCaveFloor_v002.blend": "4dae9a538dbe783099bb88fb526a4e20a94dc7cf08fba4c661f22c74e2b83bba",
+        "QCaveFloor_v002.fbx": "fb924ac51e457cd193788fde3e1d2f7ff011c15268a2ae6abc458c10aec9fe59",
+        "validation.json": "7c37cca6cce4f31f31f0b2322333e6c3c5c2a0f9f62a89c39bcced62604fc3b2"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "入宗洞府",
+      "id": "QCaveWall",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QCaveWall_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "59db953630431e446bccda19f933e364361034a94f633d62566041457956b550",
+        "QCaveWall_v002.blend": "6e30396c0d970c06d661054d27a492bb5d78d7b01e9a3ff01bdd23affdc41f14",
+        "QCaveWall_v002.fbx": "9a7f695dbd3dcdb52f005a6e1ee39279097f45949b85b01a6d58d21bb2c66c97",
+        "validation.json": "40f0f61e6084aaa47a2dafeddd8fdd20ac28210cf1644ae6e6173cdab2a441ae"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "入宗洞府",
+      "id": "QCaveDoor",
+      "version": "v002",
+      "source": "QPlayerStart16",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QCaveDoor_v002/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "fab76e0e04ac01ba768af342ea0ba496ab68d269b24f5e0bbea459cae7ab95bc",
+        "QCaveDoor_open_close_v002.fbx": "e270f153d760d566856a2eaf8f1251554535cbbd3d4b13b416d227b77ff9606f",
+        "QCaveDoor_v002.blend": "f44255beda3d308d0c87285f90822fdd6b8ac3c4e8bad48515946e3e5aba9884",
+        "QCaveDoor_v002.fbx": "c194da5363252838d6090264da0fc0bd6b6bada916a88c406909cf0234abcf84",
+        "validation.json": "5783b72ef3ed40e65d5f68c585a28a3c48cc633b15dca84098c61229267defcd"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "洞府家具與修煉",
+      "id": "DiscipleBed",
+      "version": "v001",
+      "source": "SectFacilities05",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/DiscipleBed_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "DiscipleBed_v001.blend": "d481b95d850bca38349d091e60cd4b53d85f279fe969e20239bbf0aa65139bac",
+        "DiscipleBed_v001.fbx": "5320c89515264bf37e6465e81f292012d84eb3526cf23ab4afceea65b86f64f1",
+        "model_info.json": "63151345a3efc762d24ce859c28894dd639e3350b935a2c12659387dc90be8fd"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "洞府家具與修煉",
+      "id": "StorageChest",
+      "version": "v001",
+      "source": "SectFacilities05",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/StorageChest_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "180eeae5c061e6618f6a1a35a07df65b607be034c553d4a9e75c9cda46ca19e7",
+        "StorageChest_v001.blend": "0fb5f5bb034814e4c215dc5377c486aafa7b322254b51a58e32e714271f23f6f",
+        "StorageChest_v001.fbx": "abc10c394cef1edfac50dff19ee1253cb6fc2e125ef944a2392082abc6994372"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "洞府家具與修煉",
+      "id": "MeditationCushion",
+      "version": "v001",
+      "source": "HerbalExpansion01",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/MeditationCushion_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "MeditationCushion_v001.blend": "b07da7f551f1f292a9fdfe9581d0176f2665cdb2f4b7e600c45943c8a71ff7cc",
+        "MeditationCushion_v001.fbx": "930acb5504845704cf19871faf2c9fbddee1a9822916ed8015a71b2933e85072",
+        "model_info.json": "ccc299bb0465b91e67e8c3b1b91021509cf0a1f23c593029bcc8e5963287b09e"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "洞府家具與修煉",
+      "id": "CultivationPlatform",
+      "version": "v001",
+      "source": "SectCore04",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/CultivationPlatform_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "CultivationPlatform_v001.blend": "ef87d2b479c56b2a42ac395620ee7457ad95eeea4f028dadc5dd41ecd4814b48",
+        "CultivationPlatform_v001.fbx": "f6093ddf0bf1be90b142b887c934acc605d78e452e9058a64b4577b5e8f51302",
+        "model_info.json": "2a1c96123173c65448d17fbc69ad4269990523ec401e9d2f6932e51ca297bb76"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "種植與煉丹",
+      "id": "SpiritHerbGarden",
+      "version": "v001",
+      "source": "SectCore04",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SpiritHerbGarden_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "1a874a164fc797ad5fa8bd9f563ef8fad716d8583ad14a6f08b44288f510274a",
+        "SpiritHerbGarden_v001.blend": "4d96af4eeea40e09bcb70c8b2dcd43436cd31fc93f7d681ac205f16627f6e711",
+        "SpiritHerbGarden_v001.fbx": "1fa30ad7af26ce345d12dcaf12c3a7eba85d00689b32cfa8b9b0782609fac98d"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "種植與煉丹",
+      "id": "HerbPlanter",
+      "version": "v001",
+      "source": "HerbalExpansion01",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/HerbPlanter_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "HerbPlanter_v001.blend": "381975315b97aefd374ce6545794bba97412bc16b9893f06a3b581d645d717df",
+        "HerbPlanter_v001.fbx": "27f941ea7a70d8974c2b12aae511e215b5189eca6c14ba26175d38db539d46c1",
+        "model_info.json": "011bedbfc001ebcec1e3b740dc546a53108c94a08acf4438abeafca7fb564341"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "種植與煉丹",
+      "id": "AlchemyFurnace",
+      "version": "v001",
+      "source": "HerbalExpansion01",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/AlchemyFurnace_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "AlchemyFurnace_v001.blend": "260396959f64356c3ce36ab04572f5dc56bcdfd1897234fe690515c524ec0e48",
+        "AlchemyFurnace_v001.fbx": "28ba7d3ff2c6d0b0a2d68dd90ae0ef252cbe6c358aa658578edbc7fa10d3d705",
+        "model_info.json": "e856469df1798be05c5c06f0ad652dc9d77856649e653bb16636aa3e32ba9218"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "種植與煉丹",
+      "id": "DryingRack",
+      "version": "v001",
+      "source": "HerbalExpansion01",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/DryingRack_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "DryingRack_v001.blend": "8e766cacd2c6dc214d8d9cd1aaa72a718870d1b546570e8117de891a2ffd7b44",
+        "DryingRack_v001.fbx": "9786b661ff22e16208cf8c7a92bf301cd1c7ab60bb8018c7de4b15a5613f6de1",
+        "model_info.json": "2b3665680970ea4806a3b8599e66d72ff8d849d2a9816958d3564ec5f13424bf"
+      }
+    },
+    {
+      "batch": 1,
+      "group": "種植與煉丹",
+      "id": "MortarPestle",
+      "version": "v001",
+      "source": "HerbalExpansion01",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/MortarPestle_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "96f2fcbf3e5cd64150cab174662fada5b9198f4ea6fb5fe8ff045a93519b9908",
+        "MortarPestle_v001.blend": "ece74e0db233ba3956aded2678286dbf0093784c42deb55d9421c6e4311fb429",
+        "MortarPestle_v001.fbx": "f80f3314f062a54ffdf5e3ce7885773610430d52cdb8559d475a2f9bbf57bbc5"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "宗門建築與設施",
+      "id": "SectGate",
+      "version": "v001",
+      "source": "SectCore04",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SectGate_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "b39d952490d5ac8484a6c3469907c0f9782eb9db3e2ce355f894afe9d5b4dca1",
+        "SectGate_v001.blend": "e4649cbe3134c163c02c289556bba126ac84af0fd107ef72f29759e549d1d6ef",
+        "SectGate_v001.fbx": "d2409501e43318bb786c4680ff1613fd8038064aed866709ab4c443d36460999"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "宗門建築與設施",
+      "id": "SectGrandHall",
+      "version": "v001",
+      "source": "SectCore04",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SectGrandHall_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "7cabf894f7cf25c68d3ecaa860e59afe0423ec4d5e86ec7eeab364253b1f6810",
+        "SectGrandHall_v001.blend": "d7ad86db0168b294d1527127f7f59f4e7bf4b0266f9df10fb346f130636e9511",
+        "SectGrandHall_v001.fbx": "7112ad3a3d072c02152e3b12608d73812ca5548be74c2c133c9c00a8941aec8d"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "宗門建築與設施",
+      "id": "TrainingGround",
+      "version": "v001",
+      "source": "SectCore04",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/TrainingGround_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "9645b5053752ac64eaa0575be0e025b36077a1b99832c00bb57421fa41880b04",
+        "TrainingGround_v001.blend": "2a294ca14a9ada720ad873fbbd9a2dfc6ccc0c533b6d1f5437344407db1d429e",
+        "TrainingGround_v001.fbx": "8ee7895de0b5e9d6c6ae3e27039291c623233f370cf86fac5cb0d04c90b3f1e6"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "宗門建築與設施",
+      "id": "ScriptureLibrary",
+      "version": "v001",
+      "source": "SectFacilities05",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/ScriptureLibrary_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "interior_roof_hidden.png": "f3be529479eb10d9e3ee7a03ccc092fe0644f9c6cc75473c66e67d0f8afa0a2e",
+        "model_info.json": "c1078db28be058ba734cc7918960f4fea8771651e80fe3204923556df031440e",
+        "ScriptureLibrary_v001.blend": "64b2dcd80deedd5991ea8f00aef38cd4a776046b6c074dddd227f64084762dd9",
+        "ScriptureLibrary_v001.fbx": "aff03a118c55a192c10bb03f16f7a8fb159de24bb57f65b595664a793889cf5c"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "宗門建築與設施",
+      "id": "SectStorehouse",
+      "version": "v001",
+      "source": "SectFacilities05",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SectStorehouse_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "interior_roof_hidden.png": "512dc0ceef900e3874ed0243957bb4836bb08f75b76b46ec4339e47c4f7abfd9",
+        "model_info.json": "61a754ed2880304825c4b21b6cc90b94b265d1bc891a29adc5276bb4fb0571cd",
+        "SectStorehouse_v001.blend": "6a68f96f245e70f138c1d74b44fb6f8dd65a93deabde5892eb8868051c28e62b",
+        "SectStorehouse_v001.fbx": "a91c45246d94c6e0e100a57f3e699481d2fe81208492e7448edb5a16fa60050e"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "宗門建築與設施",
+      "id": "AlchemyHall",
+      "version": "v001",
+      "source": "SectFacilities05",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/AlchemyHall_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "AlchemyHall_v001.blend": "87af38ff84796ad3b80b55bbab3505574a905a0694dbe9ae702faf708bbaa69a",
+        "AlchemyHall_v001.fbx": "91b8a9ee0150945bd97763321109852d3757c81300ca80fef0ab7e09cc3e17b6",
+        "interior_roof_hidden.png": "7c107da2053abc186f902b693e4f3005385efcc0a9a68c6b9f8c9d2d490e04e4",
+        "model_info.json": "a67d245ead460123733d0a0a58f5bcb12cb3b272ced765b28f5b08c934e4d79c"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "宗門建築與設施",
+      "id": "TrainingDummy",
+      "version": "v001",
+      "source": "SectModules06",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/TrainingDummy_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "488b0f415a4c35bc8b2640674e0a8c9c9155243374774fb7e1377c006dd61c81",
+        "TrainingDummy_v001.blend": "7b8266eed481cc5ceab4cd99822f71aae71268433ef7ac49dc09eeaf573d26d9",
+        "TrainingDummy_v001.fbx": "624a394d06930232f04e7d8ed2fda37f595f713f0cc03fe17840ca5c0e8a9ff8"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "弟子角色",
+      "id": "QDiscipleSword",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QDiscipleSword_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "00a2a2ac30c65aca30b03b8f87a5ae3e089174430f8bd5547625bc706b4b722e",
+        "anim/idle_front_02.png": "95960e640b7dd1aa4a6087444f5d1991150488f730142fc613ba849c52dacba3",
+        "anim/idle_front_03.png": "4ca7cb236afd6558b942146c4eb4aa34bc4f1b4770794c8c6cd6c9ee0555947b",
+        "anim/idle_front_04.png": "f8f0f34775aa76b1b94bcf8b49adfc77b3b4d02e3d12b62caed988e211199dfb",
+        "anim/walk_side_01.png": "214d332b4087a591970b6abd283b183f417b23a6c5bd244ef56f7ce3787435ce",
+        "anim/walk_side_02.png": "41b8dcd970be8badb5db3c5fac08d4b3d9372daa7db1148a349128ceba8e9b6f",
+        "anim/walk_side_03.png": "fd1410dc894952048280eea6508bceb28701dc36ed95d01eac69dd511df2c7f0",
+        "anim/walk_side_04.png": "a37f197c38b02b373ca32ee70e94b4469dec4b2cec654d602798011e547d732c",
+        "anim/walk_side_05.png": "7a8c7c03d5397cc4c61be9d07931af8b443d593215aaaf081628e0f0ec4f2724",
+        "anim/walk_side_06.png": "1e120fe39b951028a7d7b701665731d5de14a9ea14a9ab0299d641f1532acdc2",
+        "anim/walk_side_07.png": "f745b7d97aef7546fe3d664c533137372c4d1c8158eb1d79eda1915865d6c061",
+        "anim/walk_side_08.png": "d69f1d71817d259820179d2678b64398af684fbb8291fa12b1df9fc45c5a5bbd",
+        "model_info.json": "570ca943fb8b263277a470cea0ebe909dd2238dd868873501f493e58011a8c9e",
+        "QDiscipleSword_v006.blend": "80e043812b575ff897bf8f5ab9a621550a7d490880c5f14225dc93caf728248a",
+        "QDiscipleSword_v006.fbx": "42e4e7abb0dae79a94946b1a69af898b3650fe7a69be74f8355fd32fb4c9d790"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "弟子角色",
+      "id": "QDiscipleAlchemy",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QDiscipleAlchemy_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "6070d36b7b84f7a97b413c553a9717494f891c5407b916d5f5a48a50169d2d26",
+        "anim/idle_front_02.png": "ad1fcf862fa9c4bc453d6bfc1258bd6cb7e7298715403f80e3f82776fe45a43e",
+        "anim/idle_front_03.png": "44eea2e6d07735fe6beae239c3b8699522700eee1dfdf918c7754807e5459b65",
+        "anim/idle_front_04.png": "daab1a0655b03f79a30a729ae8d625135aa3f070b5d9aa84a11c2718feed9145",
+        "anim/walk_side_01.png": "9ab42b3fdd17f364b95af8b58070627bcb07d40fe964c706a171495369c4ea71",
+        "anim/walk_side_02.png": "1879af200944bed7f5558af60ac9d32790cbcb0c64dbd48e8881723cd4a3dae8",
+        "anim/walk_side_03.png": "750db693c30dff36b344784f71a1921b6aee502ea7e3bafe956e063e434535dc",
+        "anim/walk_side_04.png": "e259f1981664e2e4e5f7ceb477ca084b81c1cca049ebf52e2125e90743a6c6dd",
+        "anim/walk_side_05.png": "7355750c885e558562bffef24310e1705c0d76444eccf1b2bdb938a1525de143",
+        "anim/walk_side_06.png": "2ed78cae404e87cbdfefb16f5759fc59f19b785ed99f13491f928962ba7e354b",
+        "anim/walk_side_07.png": "d3cf3e031762b940f642a0c1187c41ad8ac5debfbc94b8923aa3ad8bb02eb01d",
+        "anim/walk_side_08.png": "263803c974ab14e60c5d368bad2572b70a57fcf61c80a9f998be89bd50296868",
+        "model_info.json": "3d2477ab68814b956ee6c4fbeb60c606bf857e083ae79e6032999d57c4fe5380",
+        "QDiscipleAlchemy_v006.blend": "946dc5573828974a27770feed6d7d4345e50c03a8d3fd9c1fdecb375a23819b3",
+        "QDiscipleAlchemy_v006.fbx": "a8df2558b0025f22c33ca0ef1a33e82322ba548a4b95e7aa751f43c4404924b8"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "弟子角色",
+      "id": "QDiscipleFarmer",
+      "version": "v006",
+      "source": "QCharacters17",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QDiscipleFarmer_v006/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "anim/idle_front_01.png": "72ff76bf737334db575073ad7abbd9c6c5293e60c771c60061c69b87ed105c0f",
+        "anim/idle_front_02.png": "026b63322620553d12d8c2f8a64cd71e6d438e51e29513849e58b31b473a7d68",
+        "anim/idle_front_03.png": "2c04587ea935f5fa16f536938fabe7279f65138727f334da07188361e0b8b0c1",
+        "anim/idle_front_04.png": "d84378dc0db5f937daca03e482ab07c37507033609da1efda78b377f206dad56",
+        "anim/walk_side_01.png": "e65a1934100c165e6144c57efc1a79b5bf6e91e236e054d2552b6b6f5ad43372",
+        "anim/walk_side_02.png": "2adc7a932414b2e08479154d6cd2042cba7247012b1e21488fd2660c9d33481e",
+        "anim/walk_side_03.png": "5e348c2f17d1da41d9656808bada02b49b9df624eb0b8ba37c4fe6c7ba27f308",
+        "anim/walk_side_04.png": "1a63c79759fdf1c020062b173285f0d7f9576673e30933c5bd51b15eae799ebc",
+        "anim/walk_side_05.png": "03af444020709f0518501eb429b2a6a8dad3583915c20ec36e7b5dadb725f15f",
+        "anim/walk_side_06.png": "b7f6d826fd57b1d3796ae28bbe24525e518fa027851cd72bfd8fb13bc2c73435",
+        "anim/walk_side_07.png": "8b7bc1670eb8bd4d607cb9e38b6b638f2c267e902d70243606471827e01a9c58",
+        "anim/walk_side_08.png": "4b9c7c51f11d2d703c2e0ed5c1120dcdf0558249f3d538daeb0f84b5f4da3db2",
+        "model_info.json": "fb48e6a9773df35fad0b563408d713ef16ac97ee5fd816cd341c799d9c0f85fb",
+        "QDiscipleFarmer_v006.blend": "d4198be3afc881e6837fc816b29ffbc39a0a5748ff510b385c3390d1bb02f7aa",
+        "QDiscipleFarmer_v006.fbx": "8e9cd5c6cc60d33d5a23fa48a92dbe459ec947deb3ac9d366445fc248a2bda8a"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "煉器工具與材料",
+      "id": "SmithAnvil",
+      "version": "v001",
+      "source": "TownProps02",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SmithAnvil_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "7dd7f64eba1a04cdaf98c03f6475a3310440c8259d30b1e12f57b4433fc7aa0f",
+        "SmithAnvil_v001.blend": "ccf94da70e347b9e59819a8c693b9eb78117dc331537d13791b5703a5ba2a048",
+        "SmithAnvil_v001.fbx": "7f5647261a0eb7bce352a1616d59af7f4975bbdf47781e3d9eff6c31e7896a37"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "煉器工具與材料",
+      "id": "SmithWorkbench",
+      "version": "v001",
+      "source": "TownProps02",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SmithWorkbench_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "07d01f763385108d3ae04c9bbd0082bceef14325e637cb1331558fbbe4b286db",
+        "SmithWorkbench_v001.blend": "748d3b10dfa0f8a3f0095a79a56b97793b6cb71b028093dcb12371e8a4cdb788",
+        "SmithWorkbench_v001.fbx": "1e8a5f046cee8e4715b7da477ec61f693d67905a436e96a77c85d905e130aa82"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "煉器工具與材料",
+      "id": "SmithHammer",
+      "version": "v001",
+      "source": "TownProps02",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SmithHammer_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "2923ffe347a12e29a83a7f9411af75631dbad74e532bce39d00b40588086056f",
+        "SmithHammer_v001.blend": "b8bd1d7f7211721bd9c8d65c590b15eddac58992a5b8d22ce24ff5d5d07c795e",
+        "SmithHammer_v001.fbx": "ff2a4a921381adfd48a845bdf83e102d91ae2e2d558c6d131c7d346b5a167b59"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "煉器工具與材料",
+      "id": "QuenchBarrel",
+      "version": "v001",
+      "source": "TownProps02",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/QuenchBarrel_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "192336ede63fd71715669096bd06b8b70fa8a76e8ca4aac4ece3c3e60a104561",
+        "QuenchBarrel_v001.blend": "a47fcce789a59c94bd18d3bea35c4fe0acabfa907587a3aa4d34f72688a43d43",
+        "QuenchBarrel_v001.fbx": "e466edc20edce9e09fe05568061158db4863248b52139fe036cd1978fad02cf7"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "煉器工具與材料",
+      "id": "SmithTongs",
+      "version": "v001",
+      "source": "ShopEquipment03",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/SmithTongs_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "3faa5a7350a0025f249691d27363fd15e6b8cbf5f4a37de535c3a38eecf2da6b",
+        "SmithTongs_v001.blend": "71ff16fadc351dbf79c658fc3227f7f68fb8fa8722991d6e60b748d39097557f",
+        "SmithTongs_v001.fbx": "b752a516ac6c8fe9a0219e21bf417f719b6cea763d89bdc87f840c17469349f4"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "煉器工具與材料",
+      "id": "IronIngot01",
+      "version": "v001",
+      "source": "ShopEquipment03",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/IronIngot01_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "IronIngot01_v001.blend": "f71e36f0fdf91dfffd6fc88bda011317c73c5d7d34983182320fe84be0c54329",
+        "IronIngot01_v001.fbx": "1bcc377ec082d336ab153af9b95bba537c98a5ec5e315cb96979bdba341686ce",
+        "model_info.json": "8c7a3df1bd7af71fcd10c4f85c475586107992e309d2c7134bb55ad542db54a1"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "煉器工具與材料",
+      "id": "JadeOre01",
+      "version": "v001",
+      "source": "ShopEquipment03",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/JadeOre01_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "JadeOre01_v001.blend": "cc40f4104bf34b8202239cbc8220a8f246388e955376321732e05e67ebe40a00",
+        "JadeOre01_v001.fbx": "9985bc00dd7ab7648c968d3326df4eb72f0e698639c10124412c3397e0925c27",
+        "model_info.json": "47e2caf9ae983811c82ab7b4d3c958be89a930b930a1cd3d75a509e2653aa981"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "自然環境",
+      "id": "CommonPine",
+      "version": "v001",
+      "source": "WildVegetation13",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/CommonPine_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "CommonPine_v001.blend": "cc59f05b1da1049f746606ae20afab75f9764e74f5123f8fa2a98f51f960a579",
+        "CommonPine_v001.fbx": "98d4ed27e55cb2345e5909dd5a780d26c1dcd37663e155a94226835209345dd8",
+        "model_info.json": "7526fabfac43d9ce5cc8e4d0f8f2c1a825bb3b175015227b679a11c999312929"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "自然環境",
+      "id": "BambooClump",
+      "version": "v001",
+      "source": "WildVegetation13",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/BambooClump_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "BambooClump_v001.blend": "3f90a3a7e4ef34ad27383088e9c294efa8fe61c3220776769cda0690216ad9cf",
+        "BambooClump_v001.fbx": "4636a5424580afd35f52a0635ad6815f2b334f3e8ff637e69b740e5cf10f770f",
+        "model_info.json": "4593c3298dc0448c85f17c437edf980f6b1255042c3dcf00bdaf6ee39a610e4a"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "自然環境",
+      "id": "WildShrub",
+      "version": "v001",
+      "source": "WildVegetation13",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/WildShrub_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "6be78e62828ccb69d0a6ba7b5d2423909fe9b5a87028d3290de4e85cf7bb6241",
+        "WildShrub_v001.blend": "85e9820e8f3585c47eaa11a71cfb1744eacb5ecd32bc77d4b40d1bd2987673b0",
+        "WildShrub_v001.fbx": "80ee9f6a60dea43ec3899f019a69ca36cd50c0ac6b87ef8c02dada1ee9eeb513"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "自然環境",
+      "id": "MossBoulderSet",
+      "version": "v001",
+      "source": "WildVegetation13",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/MossBoulderSet_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "eed96204cef7bcda3b610fc0861edd9c674cb464b19a90153cf094696aee586d",
+        "MossBoulderSet_v001.blend": "29c9c1e5069dffaff5c4a7fcd889d0d3af452b2c4d80c331036fbfee79e31e1d",
+        "MossBoulderSet_v001.fbx": "75c34da041d3a1215d8e189cee668d2f716ecd119ba9d785b1cb20a6f45bdd69"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "自然環境",
+      "id": "LayeredCliff",
+      "version": "v001",
+      "source": "MountainWind07",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/LayeredCliff_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "LayeredCliff_v001.blend": "e56e0598629cd0cb1568bade9e5bd0374517a385c1ee1402f0a192f0d336f055",
+        "LayeredCliff_v001.fbx": "7cc2dafd90e1dbe826127f45afb2a645e049ff84ee3a5967bc70029c0d990fea",
+        "model_info.json": "eade646dea8cc834d45d8a03d8179425b0173ce2665bb2d0e2214d6c3a5a5e86"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "探索道路與水景",
+      "id": "MountainStonePath",
+      "version": "v001",
+      "source": "MountainRoute08",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/MountainStonePath_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "551210dfbe1556615dff3afa236616fd2184cb21595d15e669eb371f17f8ef46",
+        "MountainStonePath_v001.blend": "e1d606d33bc267febd11ae6bb695c3ff6eecd3b66eb1249470c5c99c0a151d88",
+        "MountainStonePath_v001.fbx": "1a9e0376108af27772e9d3386e4491f7635a32d030a3f9aab713ca1e55c3fe9c"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "探索道路與水景",
+      "id": "MountainStoneStairs",
+      "version": "v001",
+      "source": "MountainRoute08",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/MountainStoneStairs_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "14d34540eb8b2b2380c27c96086cc0826eb2e11828a7df4cc81bb95d85c3b58e",
+        "MountainStoneStairs_v001.blend": "363501166d27ad110024308525f432eaf41798a7fb5f338235e4c21490b27d00",
+        "MountainStoneStairs_v001.fbx": "52889ad2b788eb08a9acf705d578c1e8fb89674c206a58567d59efa5d16abf0e"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "探索道路與水景",
+      "id": "CliffBoardwalk",
+      "version": "v001",
+      "source": "MountainRoute08",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/CliffBoardwalk_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "CliffBoardwalk_v001.blend": "5bdf36602b1d02e490174f54e5d5522f4a40f64fb0fe5a0ef2ee81788d71a329",
+        "CliffBoardwalk_v001.fbx": "59f944273c4648a6fcb4b8dba6b46cfcc1e5518cb26417d267d8d7050bf4d0b8",
+        "model_info.json": "5a25a18a6e246c23266fc9b9cc1d1d4b15a9bdc785d87de092dcd7f6ff16da37"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "探索道路與水景",
+      "id": "StoneArchBridge",
+      "version": "v001",
+      "source": "MountainWayside10",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/StoneArchBridge_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "3319a914684143e0c3a41ecce7ca9a32f56d38a8ed801ee1740d7b4eef52ea80",
+        "StoneArchBridge_v001.blend": "a3ec75550c137f71ee3f05aa72ebaba7f3634ac8d611199f4031e035f4085903",
+        "StoneArchBridge_v001.fbx": "a512fe941b85581e6cb7251a6534e16bfb16178a6f9101e0226ad30986e71124"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "探索道路與水景",
+      "id": "MountainStreamBend",
+      "version": "v001",
+      "source": "MountainWaters09",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/MountainStreamBend_v001/05_front_right.png",
+      "batch_validation": true,
+      "files": {
+        "model_info.json": "5ec3c88c655e9b6e15302d65534ec8406b22274f215a60514063e5cd59ed0fe7",
+        "MountainStreamBend_v001.blend": "0b001c4120e7970c6bed316e0ed1521a90b1b23ce0bc64bde6f603428768ff8b",
+        "MountainStreamBend_v001.fbx": "95898b94fcb91ab32d6ff01c85899d718ab09d94aec17c6b46065e1d38b6405c"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "場景配置參考",
+      "id": "TownLayout",
+      "version": "v004",
+      "source": "TownRefinement12",
+      "references": [],
+      "preview": "ArtLibrary/Turnarounds/TownLayout_v004/05_front_right.png",
+      "batch_validation": false,
+      "files": {
+        "01_town_overview.png": "b4d0338b1e8e2991fa106385581784a115defc8afebe1b7467371a6547d0f80f",
+        "02_town_top_plan.png": "b0fa74a88a3dbd2416e24a30df2c2f6a7251a3a7fb26040d403a956bc4d0de46",
+        "03_north_street_archway.png": "9fb3103532ff41d4a0da8a59de73f22331b919ba2415b9c4cea578aab42c63c0",
+        "04_garden_connection.png": "39a31c0f89dbbb47427f8a79bb9c134767da44ed7ce0be9322255201c48c2606",
+        "layout_info.json": "e8ebb7685b301011546bf42eda645fd4fcf7f2132d59135e24920c80b245ca6c",
+        "TownLayout_v004.blend": "2af399cde2b7f689b52634bbae628e73793313956f851471d171fc093e8a6ce4",
+        "TownLayout_v004.fbx": "97f0348cf17ade09c66c9d06eeb57f37fa72aed6c5dada0e48e24039cbc48f85"
+      }
+    },
+    {
+      "batch": 2,
+      "group": "場景配置參考",
+      "id": "SectLayout",
+      "version": "v003",
+      "source": "SectModules06",
+      "references": [],
+      "preview": null,
+      "batch_validation": false,
+      "files": {
+        "01_campus_overview.png": "fc996454ca4d625e4f749e56833655b6ce4e47824d77831b2e98dc9ab9f4368e",
+        "02_campus_top.png": "7086341aba4a02dee138471f64167c653d4362103e1a95c0670806bd6b54e595",
+        "03_campus_front.png": "36472b921ecd30d4790e3545199495724d1d4b7c52f37fb723c271f6fdd4e5ab",
+        "layout_info.json": "e78b64f634c75038846fa3c83413a5d88c5dbf8a6e093af009c751d49ff27b6a",
+        "layout_validation.json": "7de3d601496f3d09c6b75d9e181d05f21065eea18683b13c77896d61dc0f314d",
+        "SectLayout_v003.blend": "490351eac5b0aa349a41c0f5de94d0280be78fb2547ba877bca2c65862e4cd1d",
+        "SectLayout_v003.fbx": "f08632778a005bbb32f075e2b66adc6e6404960931bd388aa70afb7b7118d44b"
+      }
+    }
+  ],
+  "tools": {
+    "QCharacters17": [
+      "tools/ArtLibrary/ExpansionBatches/QCharacters17/BlenderSource/qchar17_v004.py",
+      "tools/ArtLibrary/ExpansionBatches/QCharacters17/BlenderSource/build_qchar17.py",
+      "tools/ArtLibrary/ExpansionBatches/QCharacters17/BlenderSource/rig_qchar17.py",
+      "tools/ArtLibrary/ExpansionBatches/QCharacters17/BlenderSource/verify_rig17.py"
+    ],
+    "QPlayerStart16": [
+      "tools/ArtLibrary/ExpansionBatches/QPlayerStart16/BlenderSource/build_cave_preview.py",
+      "tools/ArtLibrary/ExpansionBatches/QPlayerStart16/BlenderSource/build_qplayer16.py",
+      "tools/ArtLibrary/ExpansionBatches/QPlayerStart16/BlenderSource/continue_noncharacter.py",
+      "tools/ArtLibrary/ExpansionBatches/QPlayerStart16/BlenderSource/fix_entry_metadata.py",
+      "tools/ArtLibrary/ExpansionBatches/QPlayerStart16/BlenderSource/package_noncharacter.py",
+      "tools/ArtLibrary/ExpansionBatches/QPlayerStart16/BlenderSource/verify_noncharacter.py",
+      "tools/ArtLibrary/ExpansionBatches/QPlayerStart16/BlenderSource/verify_qplayer16.py"
+    ],
+    "ShopEquipment03": [
+      "tools/ArtLibrary/ExpansionBatches/ShopEquipment03/BlenderSource/extract_props.py",
+      "tools/ArtLibrary/ExpansionBatches/ShopEquipment03/BlenderSource/verify_props.py"
+    ],
+    "SectModules06": [
+      "tools/ArtLibrary/ExpansionBatches/SectModules06/BlenderSource/build_modules06.py",
+      "tools/ArtLibrary/ExpansionBatches/SectModules06/BlenderSource/build_sect_layout_v003.py",
+      "tools/ArtLibrary/ExpansionBatches/SectModules06/BlenderSource/verify_modules06.py",
+      "tools/ArtLibrary/ExpansionBatches/SectModules06/BlenderSource/verify_sect_layout_v003.py"
+    ],
+    "root:StarterHouse": [
+      "tools/BlenderSource/StarterHouse/build_starter_house.py",
+      "tools/BlenderSource/StarterHouse/README.md",
+      "tools/BlenderSource/StarterHouse/verify_starter_house.py"
+    ],
+    "root:SpawnTown": [
+      "tools/BlenderSource/SpawnTown/build_spawn_town.py",
+      "tools/BlenderSource/SpawnTown/build_town_layout.py",
+      "tools/BlenderSource/SpawnTown/verify_spawn_town.py",
+      "tools/BlenderSource/SpawnTown/verify_town_layout.py",
+      "tools/BlenderSource/SpawnTown/出生小鎮建模清單.md",
+      "tools/BlenderSource/SpawnTown/小鎮街道配置.md"
+    ],
+    "TownRefinement12": [
+      "tools/ArtLibrary/ExpansionBatches/TownRefinement12/BlenderSource/install_town12.py",
+      "tools/ArtLibrary/ExpansionBatches/TownRefinement12/BlenderSource/refine_town12.py",
+      "tools/ArtLibrary/ExpansionBatches/TownRefinement12/BlenderSource/style12.py",
+      "tools/ArtLibrary/ExpansionBatches/TownRefinement12/BlenderSource/verify_town12.py"
+    ],
+    "HerbalExpansion01": [
+      "tools/ArtLibrary/ExpansionBatches/HerbalExpansion01/BlenderSource/build_expansion.py",
+      "tools/ArtLibrary/ExpansionBatches/HerbalExpansion01/BlenderSource/verify_expansion.py"
+    ],
+    "root:MaterialShop": [
+      "tools/BlenderSource/MaterialShop/build_material_shop.py",
+      "tools/BlenderSource/MaterialShop/README.md"
+    ],
+    "root:Blacksmith": [
+      "tools/BlenderSource/Blacksmith/build_blacksmith.py",
+      "tools/BlenderSource/Blacksmith/place_blacksmith_in_town.py",
+      "tools/BlenderSource/Blacksmith/README.md",
+      "tools/BlenderSource/Blacksmith/verify_blacksmith.py"
+    ],
+    "SectFacilities05": [
+      "tools/ArtLibrary/ExpansionBatches/SectFacilities05/BlenderSource/build_facilities05.py",
+      "tools/ArtLibrary/ExpansionBatches/SectFacilities05/BlenderSource/build_sect_layout_v002.py",
+      "tools/ArtLibrary/ExpansionBatches/SectFacilities05/BlenderSource/verify_facilities05.py",
+      "tools/ArtLibrary/ExpansionBatches/SectFacilities05/BlenderSource/verify_sect_layout_v002.py"
+    ],
+    "SectCore04": [
+      "tools/ArtLibrary/ExpansionBatches/SectCore04/BlenderSource/build_sect_core04.py",
+      "tools/ArtLibrary/ExpansionBatches/SectCore04/BlenderSource/build_sect_layout.py",
+      "tools/ArtLibrary/ExpansionBatches/SectCore04/BlenderSource/verify_sect_core04.py",
+      "tools/ArtLibrary/ExpansionBatches/SectCore04/BlenderSource/verify_sect_layout.py"
+    ],
+    "TownProps02": [
+      "tools/ArtLibrary/ExpansionBatches/TownProps02/BlenderSource/extract_props.py",
+      "tools/ArtLibrary/ExpansionBatches/TownProps02/BlenderSource/verify_props.py"
+    ],
+    "WildVegetation13": [
+      "tools/ArtLibrary/ExpansionBatches/WildVegetation13/BlenderSource/build_wild13.py",
+      "tools/ArtLibrary/ExpansionBatches/WildVegetation13/BlenderSource/install_wild13.py",
+      "tools/ArtLibrary/ExpansionBatches/WildVegetation13/BlenderSource/verify_wild13.py"
+    ],
+    "MountainWind07": [
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/build_mountain07.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/build_peaks_v002.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/build_sanctuary_v003.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/build_sanctuary_v004.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/build_scenes07.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/build_solid_clouds_v002.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/encode_preview07.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/verify_assets07.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/verify_sanctuary.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWind07/BlenderSource/verify_scenes07.py"
+    ],
+    "MountainRoute08": [
+      "tools/ArtLibrary/ExpansionBatches/MountainRoute08/BlenderSource/build_route_assets08.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainRoute08/BlenderSource/build_route_scene08.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainRoute08/BlenderSource/verify_assets08.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainRoute08/BlenderSource/verify_route_scene08.py"
+    ],
+    "MountainWayside10": [
+      "tools/ArtLibrary/ExpansionBatches/MountainWayside10/BlenderSource/build_wayside10.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWayside10/BlenderSource/verify_wayside10.py"
+    ],
+    "MountainWaters09": [
+      "tools/ArtLibrary/ExpansionBatches/MountainWaters09/BlenderSource/build_waters09.py",
+      "tools/ArtLibrary/ExpansionBatches/MountainWaters09/BlenderSource/verify_waters09.py"
+    ]
+  }
+}

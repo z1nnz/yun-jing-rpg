@@ -1,0 +1,23 @@
+{
+  "asset": "QSpiritStone",
+  "name_zh": "靈石",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 7.450580596923828e-09,
+  "dimensions_m": [
+    0.12999999523162842,
+    0.11529075354337692,
+    0.1899999976158142
+  ],
+  "mesh_objects": 2,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "0ca0a8e920a96352f45ac71143e40f996c2b933a61e013a310bf4cb03169b4e3",
+  "fbx_sha256": "335d6676ba81263d1bda78845263be8b2b0cb6f89a4984540695e199235c3958",
+  "door_test": null,
+  "unreal_verified": false
+}

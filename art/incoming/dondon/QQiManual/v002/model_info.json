@@ -1,0 +1,46 @@
+{
+  "asset": "QQiManual",
+  "plan_id": "ITEM04",
+  "name_zh": "煉氣訣書冊",
+  "stage": "editable_noncharacter_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom_center",
+  "assembly_offset_m": [
+    -0.00382411852478981,
+    0.0,
+    -0.0013894474832341075
+  ],
+  "dimensions_m": [
+    0.20264822244644165,
+    0.26499998569488525,
+    0.05278944596648216
+  ],
+  "bounds_m": [
+    [
+      -0.10132411122322083,
+      -0.13249999284744263,
+      0.0
+    ],
+    [
+      0.10132411122322083,
+      0.13249999284744263,
+      0.05278944596648216
+    ]
+  ],
+  "mesh_objects": 12,
+  "triangles": 3868,
+  "modeling_method": "procedural editable geometry guided by approved Q-style concept; not image generation",
+  "render_engine": "Cycles CPU, 16 samples, denoised",
+  "uv_baked": false,
+  "rigged": false,
+  "animation_ready": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "limits": "Appearance prototype; UV/LOD/collision and UE validation pending. Creatures not rigged.",
+  "version": "v002",
+  "source_version": "v001",
+  "source_sha256": "32ad8781c03b45977b5c9ea26238c29500b1fae6a1e8c3e7e24a84765ebc723f",
+  "door_hinge_animation": false
+}
