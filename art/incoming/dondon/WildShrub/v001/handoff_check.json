@@ -1,0 +1,49 @@
+{
+  "asset": "WildShrub",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "WildShrub_v001.blend",
+    "objects": 12,
+    "mesh_objects": 11,
+    "triangles": 6124,
+    "materials": 4,
+    "meshes_without_uv": 11,
+    "bounds_min_m": [
+      -0.9276671409606934,
+      -0.8421331644058228,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.9276671409606934,
+      0.8421331644058228,
+      1.3099113702774048
+    ],
+    "size_m": [
+      1.8553342819213867,
+      1.6842663288116455,
+      1.3099113702774048
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "WildShrub_v001.fbx",
+      "mesh_objects": 11,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        1.8553342819213867,
+        1.6842663288116455,
+        1.3099113702774048
+      ],
+      "size_error_m": 0.0
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "QCaveFloor",
+  "version": "v002",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QCaveFloor_v002.blend",
+    "objects": 17,
+    "mesh_objects": 16,
+    "triangles": 3008,
+    "materials": 2,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -1.9725000858306885,
+      -1.9725000858306885,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.9725000858306885,
+      1.9725000858306885,
+      0.20000000298023224
+    ],
+    "size_m": [
+      3.945000171661377,
+      3.945000171661377,
+      0.20000000298023224
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QCaveFloor_v002.fbx",
+      "mesh_objects": 16,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        3.945000171661377,
+        3.945000171661377,
+        0.20000062882900238
+      ],
+      "size_error_m": 6.258487701416016e-07
+    }
+  ]
+}

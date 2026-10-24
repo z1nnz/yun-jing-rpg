@@ -1,0 +1,20 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/TownRefinement12/validation.json",
+  "blender": null,
+  "entry": {
+    "asset": "SpawnAltar",
+    "version": "v002",
+    "source_geometry_preserved": true,
+    "blend_reopened": true,
+    "packed_reference_images": 10,
+    "matched_palette_materials": 7,
+    "distinct_1024_views": 10,
+    "blend_sha256": "10dffd7872445ab234da0ae835264ebd2c539775a09ceee935665c7b23da1749",
+    "fbx_sha256": "4786cfc7d5565f3981ee7e4bef0eef785f4e1302453c3a6e1ce089aa4a90dc5b",
+    "mesh_objects": 29,
+    "fbx_reimported": true,
+    "fbx_dimension_error_m": 3.5762786865234375e-07
+  },
+  "not_verified": null,
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

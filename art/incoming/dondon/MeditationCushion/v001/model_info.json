@@ -1,0 +1,19 @@
+{
+  "asset": "MeditationCushion",
+  "name_zh": "打坐蒲團",
+  "stage": "appearance_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.9300000071525574,
+    0.9300000071525574,
+    0.1854849010705948
+  ],
+  "mesh_objects": 59,
+  "source_concept": null,
+  "modeling_method": "procedural editable mesh; artist interpretation, not automatic image reconstruction",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

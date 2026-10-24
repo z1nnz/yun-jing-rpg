@@ -1,0 +1,49 @@
+{
+  "asset": "SpiritHerbGarden",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SpiritHerbGarden_v001.blend",
+    "objects": 663,
+    "mesh_objects": 662,
+    "triangles": 83416,
+    "materials": 8,
+    "meshes_without_uv": 540,
+    "bounds_min_m": [
+      -3.1500000953674316,
+      -2.450000047683716,
+      0.0
+    ],
+    "bounds_max_m": [
+      3.1500000953674316,
+      2.450000047683716,
+      0.921999990940094
+    ],
+    "size_m": [
+      6.300000190734863,
+      4.900000095367432,
+      0.921999990940094
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SpiritHerbGarden_v001.fbx",
+      "mesh_objects": 662,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        6.300000190734863,
+        4.900000095367432,
+        0.922000527381897
+      ],
+      "size_error_m": 5.364418029785156e-07
+    }
+  ]
+}

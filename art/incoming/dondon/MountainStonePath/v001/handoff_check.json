@@ -1,0 +1,49 @@
+{
+  "asset": "MountainStonePath",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "MountainStonePath_v001.blend",
+    "objects": 50,
+    "mesh_objects": 49,
+    "triangles": 5292,
+    "materials": 2,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -1.625,
+      -3.0,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.625,
+      3.0,
+      0.3199999928474426
+    ],
+    "size_m": [
+      3.25,
+      6.0,
+      0.3199999928474426
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "MountainStonePath_v001.fbx",
+      "mesh_objects": 49,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        3.25,
+        6.0,
+        0.32000094652175903
+      ],
+      "size_error_m": 9.5367431640625e-07
+    }
+  ]
+}

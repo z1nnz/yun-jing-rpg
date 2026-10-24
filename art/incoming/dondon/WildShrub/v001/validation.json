@@ -1,0 +1,33 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/WildVegetation13/validation.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "WildShrub",
+    "blend_reopened": true,
+    "mesh_objects": 11,
+    "triangles": 6124,
+    "finite_vertices": true,
+    "bottom_center_pivot": true,
+    "asset_checks": {
+      "leaf_masses": 9,
+      "closed_leaf_masses": true,
+      "blossoms": 36
+    },
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "framing_checked": true,
+    "blend_sha256": "85e9820e8f3585c47eaa11a71cfb1744eacb5ecd32bc77d4b40d1bd2987673b0",
+    "fbx_sha256": "80ee9f6a60dea43ec3899f019a69ca36cd50c0ac6b87ef8c02dada1ee9eeb513"
+  },
+  "not_verified": [
+    "UV/texture bake",
+    "collision",
+    "LOD",
+    "Unreal import",
+    "wind animation",
+    "two-sided foliage material in engine"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

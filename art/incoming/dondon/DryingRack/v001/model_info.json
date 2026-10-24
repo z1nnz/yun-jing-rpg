@@ -1,0 +1,19 @@
+{
+  "asset": "DryingRack",
+  "name_zh": "晾藥架",
+  "stage": "appearance_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    1.2799999713897705,
+    0.8399999737739563,
+    1.6820000410079956
+  ],
+  "mesh_objects": 134,
+  "source_concept": null,
+  "modeling_method": "procedural editable mesh; artist interpretation, not automatic image reconstruction",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

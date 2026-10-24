@@ -1,0 +1,49 @@
+{
+  "asset": "StoneArchBridge",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "StoneArchBridge_v001.blend",
+    "objects": 364,
+    "mesh_objects": 363,
+    "triangles": 9618,
+    "materials": 3,
+    "meshes_without_uv": 363,
+    "bounds_min_m": [
+      -1.9700000286102295,
+      -4.875,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.9700000286102295,
+      4.875,
+      3.2799999713897705
+    ],
+    "size_m": [
+      3.940000057220459,
+      9.75,
+      3.2799999713897705
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "StoneArchBridge_v001.fbx",
+      "mesh_objects": 363,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        3.940000057220459,
+        9.75,
+        3.280000686645508
+      ],
+      "size_error_m": 7.152557373046875e-07
+    }
+  ]
+}

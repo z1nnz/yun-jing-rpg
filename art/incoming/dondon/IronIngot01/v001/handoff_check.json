@@ -1,0 +1,49 @@
+{
+  "asset": "IronIngot01",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "IronIngot01_v001.blend",
+    "objects": 2,
+    "mesh_objects": 1,
+    "triangles": 108,
+    "materials": 1,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -0.125,
+      -0.18000000715255737,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.125,
+      0.18000000715255737,
+      0.11999999731779099
+    ],
+    "size_m": [
+      0.25,
+      0.36000001430511475,
+      0.11999999731779099
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "IronIngot01_v001.fbx",
+      "mesh_objects": 1,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.25,
+        0.36000001430511475,
+        0.12000004202127457
+      ],
+      "size_error_m": 4.470348358154297e-08
+    }
+  ]
+}

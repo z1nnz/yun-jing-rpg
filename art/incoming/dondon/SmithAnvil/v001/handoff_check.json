@@ -1,0 +1,49 @@
+{
+  "asset": "SmithAnvil",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SmithAnvil_v001.blend",
+    "objects": 8,
+    "mesh_objects": 7,
+    "triangles": 1636,
+    "materials": 3,
+    "meshes_without_uv": 1,
+    "bounds_min_m": [
+      -0.7800000905990601,
+      -0.44700002670288086,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.7800000309944153,
+      0.44700002670288086,
+      0.9977437257766724
+    ],
+    "size_m": [
+      1.5600001811981201,
+      0.8940000534057617,
+      0.9977437257766724
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SmithAnvil_v001.fbx",
+      "mesh_objects": 7,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        1.5600001811981201,
+        0.8940000534057617,
+        0.9977437853813171
+      ],
+      "size_error_m": 5.960464477539063e-08
+    }
+  ]
+}

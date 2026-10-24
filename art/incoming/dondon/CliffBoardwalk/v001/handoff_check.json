@@ -1,0 +1,49 @@
+{
+  "asset": "CliffBoardwalk",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "CliffBoardwalk_v001.blend",
+    "objects": 51,
+    "mesh_objects": 50,
+    "triangles": 5400,
+    "materials": 2,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -1.6074999570846558,
+      -3.115000009536743,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.6074999570846558,
+      3.115000009536743,
+      2.3499999046325684
+    ],
+    "size_m": [
+      3.2149999141693115,
+      6.230000019073486,
+      2.3499999046325684
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "CliffBoardwalk_v001.fbx",
+      "mesh_objects": 50,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        3.2149999141693115,
+        6.230000019073486,
+        2.3500008583068848
+      ],
+      "size_error_m": 9.5367431640625e-07
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "asset": "HerbPlanter",
+  "name_zh": "靈草盆",
+  "stage": "appearance_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.5952860116958618,
+    0.6106694936752319,
+    1.0
+  ],
+  "mesh_objects": 59,
+  "source_concept": null,
+  "modeling_method": "procedural editable mesh; artist interpretation, not automatic image reconstruction",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

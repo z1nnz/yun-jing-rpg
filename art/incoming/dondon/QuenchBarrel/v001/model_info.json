@@ -1,0 +1,51 @@
+{
+  "asset": "QuenchBarrel",
+  "name_zh": "淬火桶",
+  "stage": "extracted_appearance_prototype",
+  "source_blend": "Models/Blacksmith/v001/Blacksmith_v001.blend",
+  "source_sha256": "21f13bdb8c3e9027916366fb0b72c843e8f54e660bef582b0db805e58faa7bd1",
+  "source_objects": [
+    "Wooden_Quench_Barrel",
+    "Barrel_Iron_Hoop",
+    "Barrel_Iron_Hoop.001",
+    "Barrel_Water"
+  ],
+  "rotation_matrix_from_source": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.8100000023841858,
+    0.8100000023841858,
+    0.7400000095367432
+  ],
+  "mesh_objects": 4,
+  "uv_baked": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false
+}

@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QShopkeeper",
+    "name_zh": "雜貨店主",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.3544998168945312,
+    "mesh_objects": 80,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1496245861053467e-05,
+        "hand-sleeve_l": 1.0477378964424133e-07,
+        "shoe-leg_l": 1.210719347000122e-08,
+        "hand-sleeve_r": 4.6100467443466187e-08,
+        "shoe-leg_r": 1.0244548320770264e-08
+      },
+      "walk_planted_foot_max_height_m": 0.0036512771621346474,
+      "walk_sole_min_z_m": -0.007197665981948376,
+      "walk_foot_travel_m": 0.30087468904772197
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "18e256bcedff05ab824de8fc23e4f1d3698782ba5a8652fe41f645ac58669961",
+    "fbx_sha256": "7dd5e0a6ac0ffb09439c063d5789b74f6c7927da6060478b027fd56559ef48c0"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

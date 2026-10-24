@@ -1,0 +1,33 @@
+{
+  "asset": "MountainStonePath",
+  "name_zh": "青石古道路段",
+  "stage": "editable_path_prototype",
+  "description": "6 x 3 m paved path with stone edging; may be shortened along the travel axis.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    3.25,
+    6.0,
+    0.3199999928474426
+  ],
+  "mesh_objects": 49,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "connectors": {
+    "entry": [
+      0.0,
+      -3.0,
+      0.20000000298023224
+    ],
+    "exit": [
+      0.0,
+      3.0,
+      0.20000000298023224
+    ]
+  },
+  "clear_walk_width_m": 2.6
+}

@@ -1,0 +1,95 @@
+{
+  "asset": "BambooClump",
+  "name_zh": "竹叢",
+  "category": "野外植被",
+  "description": "Eleven jointed culms with leaf sprays, soil mound and three shoots.",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom centre",
+  "dimensions_m": [
+    3.875669479370117,
+    3.814676284790039,
+    5.98007345199585
+  ],
+  "mesh_objects": 37,
+  "triangles": 22166,
+  "modeling_method": "procedural Python (build_wild13.py), seeded and reproducible; editable meshes, no generative AI",
+  "same_geometry_ten_views": true,
+  "stage": "editable vegetation/rock prototype",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "culms": [
+    {
+      "height_m": 6.061,
+      "radius_m": 0.034,
+      "leaves": 275,
+      "aged": false
+    },
+    {
+      "height_m": 6.181,
+      "radius_m": 0.047,
+      "leaves": 303,
+      "aged": false
+    },
+    {
+      "height_m": 5.203,
+      "radius_m": 0.048,
+      "leaves": 252,
+      "aged": false
+    },
+    {
+      "height_m": 4.892,
+      "radius_m": 0.035,
+      "leaves": 236,
+      "aged": true
+    },
+    {
+      "height_m": 5.104,
+      "radius_m": 0.035,
+      "leaves": 226,
+      "aged": false
+    },
+    {
+      "height_m": 4.827,
+      "radius_m": 0.038,
+      "leaves": 203,
+      "aged": false
+    },
+    {
+      "height_m": 6.353,
+      "radius_m": 0.033,
+      "leaves": 282,
+      "aged": false
+    },
+    {
+      "height_m": 6.131,
+      "radius_m": 0.051,
+      "leaves": 262,
+      "aged": false
+    },
+    {
+      "height_m": 5.546,
+      "radius_m": 0.037,
+      "leaves": 283,
+      "aged": true
+    },
+    {
+      "height_m": 4.775,
+      "radius_m": 0.035,
+      "leaves": 236,
+      "aged": false
+    },
+    {
+      "height_m": 4.628,
+      "radius_m": 0.032,
+      "leaves": 204,
+      "aged": false
+    }
+  ],
+  "shoots": 3,
+  "leaf_cards": 2762,
+  "two_sided_leaves_required": true,
+  "wind": "static; no shape keys"
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "SpawnTown",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SpawnTown_v001.blend",
+    "objects": 457,
+    "mesh_objects": 456,
+    "triangles": 230194,
+    "materials": 17,
+    "meshes_without_uv": 296,
+    "bounds_min_m": [
+      -8.608777046203613,
+      -10.399999618530273,
+      -0.7599999904632568
+    ],
+    "bounds_max_m": [
+      8.0,
+      8.600000381469727,
+      6.08811092376709
+    ],
+    "size_m": [
+      16.608776092529297,
+      19.0,
+      6.848111152648926
+    ],
+    "bottom_centre_origin": false,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SpawnTown_v001.fbx",
+      "mesh_objects": 456,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        16.608776092529297,
+        19.0,
+        6.848109722137451
+      ],
+      "size_error_m": 1.430511474609375e-06
+    }
+  ]
+}

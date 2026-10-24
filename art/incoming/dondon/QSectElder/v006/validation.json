@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QSectElder",
+    "name_zh": "宗門長老",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.4992458820343018,
+    "mesh_objects": 69,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1980533599853516e-05,
+        "hand-sleeve_l": 1.8742866814136505e-08,
+        "shoe-leg_l": 1.210719347000122e-08,
+        "hand-sleeve_r": 5.657784640789032e-08,
+        "shoe-leg_r": 1.210719347000122e-08
+      },
+      "walk_planted_foot_max_height_m": 0.003797326935455203,
+      "walk_sole_min_z_m": -0.007485591806471348,
+      "walk_foot_travel_m": 0.3115361207970103
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "a0cedca9221ec93e3d8ffa7f08695371fdb789f6458841e0df162d07874a8010",
+    "fbx_sha256": "26c21a6ed29aa71c824c1dfb91383c78617960ba63fec8aeccdc10ba7a9968f6"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

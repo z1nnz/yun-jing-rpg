@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QBlacksmith",
+    "name_zh": "鐵匠",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.4036140441894531,
+    "mesh_objects": 97,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1496245861053467e-05,
+        "hand-sleeve_l": 2.9802322387695312e-08,
+        "shoe-leg_l": 1.1175870895385742e-08,
+        "hand-sleeve_r": 4.0512531995773315e-08,
+        "shoe-leg_r": 1.3969838619232178e-08
+      },
+      "walk_planted_foot_max_height_m": 0.003651273902505636,
+      "walk_sole_min_z_m": -0.007197665981948376,
+      "walk_foot_travel_m": 0.3012520628876256
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "ca7a6500c8a02b4b5256b3904fed3e09f9121368fd3b3c6579a0df30c14ae2e2",
+    "fbx_sha256": "5e730335c67ec6895920fbcffa300258dcfd8f73c04a77a80e7c44000e422417"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

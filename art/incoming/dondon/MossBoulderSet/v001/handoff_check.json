@@ -1,0 +1,49 @@
+{
+  "asset": "MossBoulderSet",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "MossBoulderSet_v001.blend",
+    "objects": 8,
+    "mesh_objects": 7,
+    "triangles": 2656,
+    "materials": 1,
+    "meshes_without_uv": 7,
+    "bounds_min_m": [
+      -1.6500829458236694,
+      -1.0777888298034668,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.6500829458236694,
+      1.0777888298034668,
+      1.5164966583251953
+    ],
+    "size_m": [
+      3.300165891647339,
+      2.1555776596069336,
+      1.5164966583251953
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "MossBoulderSet_v001.fbx",
+      "mesh_objects": 7,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        3.300165891647339,
+        2.1555776596069336,
+        1.5164967775344849
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

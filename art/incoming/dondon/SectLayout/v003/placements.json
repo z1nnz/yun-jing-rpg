@@ -1,0 +1,11791 @@
+{
+ "scene": "SectLayout",
+ "units": "metres",
+ "axes": "Blender: Z up, front -Y; rotations XYZ Euler degrees",
+ "objects": [
+  {
+   "name": "SectGate_ROOT",
+   "type": "EMPTY",
+   "collection": "SectGate",
+   "location_m": [
+    0.0,
+    -15.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 223,
+   "instance_collection": null
+  },
+  {
+   "name": "SectGrandHall_ROOT",
+   "type": "EMPTY",
+   "collection": "SectGrandHall",
+   "location_m": [
+    0.0,
+    13.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 365,
+   "instance_collection": null
+  },
+  {
+   "name": "DiscipleResidence_ROOT",
+   "type": "EMPTY",
+   "collection": "DiscipleResidence",
+   "location_m": [
+    -11.0,
+    0.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 216,
+   "instance_collection": null
+  },
+  {
+   "name": "TrainingGround_ROOT",
+   "type": "EMPTY",
+   "collection": "TrainingGround",
+   "location_m": [
+    11.0,
+    -3.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 158,
+   "instance_collection": null
+  },
+  {
+   "name": "SpiritHerbGarden_ROOT",
+   "type": "EMPTY",
+   "collection": "SpiritHerbGarden",
+   "location_m": [
+    -11.0,
+    12.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 662,
+   "instance_collection": null
+  },
+  {
+   "name": "CultivationPlatform_ROOT",
+   "type": "EMPTY",
+   "collection": "CultivationPlatform",
+   "location_m": [
+    10.0,
+    12.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 43,
+   "instance_collection": null
+  },
+  {
+   "name": "AlchemyHall_ROOT",
+   "type": "EMPTY",
+   "collection": "AlchemyHall",
+   "location_m": [
+    -13.0,
+    26.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 318,
+   "instance_collection": null
+  },
+  {
+   "name": "ScriptureLibrary_ROOT",
+   "type": "EMPTY",
+   "collection": "ScriptureLibrary",
+   "location_m": [
+    0.0,
+    28.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 612,
+   "instance_collection": null
+  },
+  {
+   "name": "SectStorehouse_ROOT",
+   "type": "EMPTY",
+   "collection": "SectStorehouse",
+   "location_m": [
+    13.0,
+    26.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 312,
+   "instance_collection": null
+  },
+  {
+   "name": "Campus_Terrain",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    9.0,
+    -0.18
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -13.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.001",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -13.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.002",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -13.6,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.003",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.004",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.005",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.006",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.8,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.007",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.008",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.009",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.010",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    -4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.011",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.012",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.013",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.014",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.015",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.016",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.017",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.018",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.019",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.020",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -12.0,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.021",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.022",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.023",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.024",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    -4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.025",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.026",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.027",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.028",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.029",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.030",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.031",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.032",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.033",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.034",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -11.2,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.035",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.036",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.037",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.038",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    -4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.039",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.040",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.041",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.042",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.043",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.044",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.045",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.046",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.047",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.048",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -10.4,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.049",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.050",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.051",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.052",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.053",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.054",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.055",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.056",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.057",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -9.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.058",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.059",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.060",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.061",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.062",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.063",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.064",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.065",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.066",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.067",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.068",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.069",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.070",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.071",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.072",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.073",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.074",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.075",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -8.0,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.076",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.077",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.078",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.079",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.080",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.081",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.082",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.083",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.084",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -7.2,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.085",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.086",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.087",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.088",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.089",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.090",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.091",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.092",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.093",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -6.4,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.094",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.095",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.096",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.097",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.098",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.099",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.100",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.101",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.102",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -5.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.103",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.104",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.105",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.106",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.107",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.108",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.109",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.110",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.111",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.112",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.113",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.114",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.115",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.116",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.117",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.118",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.119",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.120",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -4.0,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.121",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.122",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.123",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.124",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.125",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.126",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.127",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.128",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.129",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -3.2,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.130",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.131",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.132",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.133",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.134",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.135",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.136",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.137",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.138",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -2.4,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.139",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.140",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.141",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.142",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.143",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.144",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.145",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.146",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.147",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -1.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.148",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -12.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.149",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -11.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.150",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -10.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.151",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.152",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.153",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.154",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.155",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.156",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.157",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.158",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.159",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -3.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.160",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -2.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.161",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -1.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.162",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    -0.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.163",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    0.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.164",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    0.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.165",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    1.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.166",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    2.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.167",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    3.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.168",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.169",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.170",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.171",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.172",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.173",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.174",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.175",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.176",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.177",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    22.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.178",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    23.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.179",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    -0.8,
+    24.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.180",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -12.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.181",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -11.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.182",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -10.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.183",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.184",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.185",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.186",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.187",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.188",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.189",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.190",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.191",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -3.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.192",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -2.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.193",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -1.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.194",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    -0.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.195",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    0.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.196",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    0.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.197",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    1.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.198",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    2.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.199",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    3.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.200",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.201",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.202",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.203",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.204",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.205",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.206",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.207",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.208",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.209",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    22.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.210",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    23.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.211",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.0,
+    24.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.212",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -12.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.213",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -11.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.214",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -10.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.215",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.216",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.217",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.218",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.219",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.220",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.221",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.222",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.223",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -3.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.224",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -2.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.225",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -1.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.226",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    -0.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.227",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    0.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.228",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    0.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.229",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    1.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.230",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    2.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.231",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    3.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.232",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    4.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.233",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.234",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.235",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.236",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.237",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.238",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.239",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.240",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.241",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    22.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.242",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    23.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.243",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    0.8,
+    24.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.244",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.245",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.246",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.247",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.248",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.249",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.250",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.251",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.252",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    1.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.253",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.254",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.255",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.256",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.257",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.258",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.259",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.260",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.261",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    2.4,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.262",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.263",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.264",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.265",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.266",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.267",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.268",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.269",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.270",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    3.2,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.271",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.272",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.273",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.274",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.275",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.276",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.277",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.278",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.279",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.0,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.280",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.281",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.282",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.283",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.284",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.285",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.286",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.287",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.288",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    4.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.289",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.290",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.291",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.292",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.293",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.294",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.295",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.296",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.297",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    5.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.298",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.299",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.300",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.301",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.302",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.303",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.304",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.305",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.306",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    6.4,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.307",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.308",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.309",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.310",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.311",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.312",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.313",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.314",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.315",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.316",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.317",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    10.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.318",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    11.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.319",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    12.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.320",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    12.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.321",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    13.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.322",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    14.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.323",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    15.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.324",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    16.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.325",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    16.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.326",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    17.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.327",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    18.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.328",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.329",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.330",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    7.2,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.331",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.332",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.333",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.334",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.335",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.336",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.337",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.338",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.339",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.340",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.341",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    10.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.342",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    11.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.343",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    12.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.344",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    12.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.345",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    13.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.346",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    14.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.347",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    15.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.348",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    16.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.349",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    16.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.350",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    17.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.351",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    18.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.352",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.353",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.354",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.0,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.355",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.356",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.357",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.358",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.359",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.360",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.361",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.362",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.363",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.364",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.365",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    10.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.366",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    11.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.367",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    12.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.368",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    12.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.369",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    13.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.370",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    14.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.371",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    15.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.372",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    16.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.373",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    16.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.374",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    17.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.375",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    18.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.376",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.377",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.378",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    8.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.379",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.380",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.381",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.382",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.383",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.384",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.385",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.386",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.387",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.388",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.389",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.390",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    9.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.391",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.392",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.393",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.394",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    -7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.395",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    4.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.396",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    5.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.397",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    6.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.398",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.399",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.400",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.401",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.402",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.403",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    10.4,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.404",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    11.2,
+    -9.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.405",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    11.2,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.406",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    11.2,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.407",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    11.2,
+    -7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.408",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    11.2,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.409",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    11.2,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.410",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    11.2,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.411",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.0,
+    -8.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.412",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.0,
+    -8.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.413",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.0,
+    -7.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.414",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.0,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.415",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.0,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.416",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.0,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.417",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.0,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.418",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.8,
+    19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.419",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.8,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.420",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.8,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.421",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    12.8,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.422",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    13.6,
+    20.0,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.423",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    13.6,
+    20.8,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "Walkway_Paver.424",
+   "type": "MESH",
+   "collection": "80_Layout_Terrain_and_Paths",
+   "location_m": [
+    13.6,
+    21.6,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallCorner_Placement",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 9,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallCorner_Placement.001",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 9,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallCorner_Placement.002",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 9,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallCorner_Placement.003",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 9,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -17.721,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.001",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -13.783,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.002",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -9.845,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.003",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -5.907,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.004",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -1.969,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.005",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    1.969,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.006",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    5.907,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.007",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    9.845,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.008",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    13.783,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.009",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    17.721,
+    38.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.9845,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.010",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    -16.6764,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.011",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    -12.6493,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.012",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    -8.6221,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.013",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    -4.595,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.014",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    -0.5679,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.015",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    3.4593,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.016",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    7.4864,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.017",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    11.5136,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.018",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    15.5407,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.019",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    19.5679,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.020",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    23.595,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.021",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    27.6221,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.022",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    31.6493,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.023",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -20.0,
+    35.6764,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.00679,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.024",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    -16.7742,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.95792,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.025",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    -12.9425,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.95792,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.026",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    -9.1108,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.95792,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.027",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    -5.2792,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.95792,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.028",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    -1.4475,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.95792,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.029",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    2.3842,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    0.95792,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.030",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    9.8421,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.07107,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.031",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    14.1264,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.07107,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.032",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    18.4107,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.07107,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.033",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    22.695,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.07107,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.034",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    26.9793,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.07107,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.035",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    31.2636,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.07107,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.036",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    35.5479,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.07107,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.037",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -17.5163,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.038",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -13.1687,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.039",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -8.8212,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.040",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -4.4737,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.041",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    4.4738,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.042",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    8.8213,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.043",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    13.1688,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "SectWallStraight_Placement.044",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    17.5163,
+    -19.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.08688,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 60,
+   "instance_collection": null
+  },
+  {
+   "name": "CourtyardGate_Placement",
+   "type": "EMPTY",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    90.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 95,
+   "instance_collection": null
+  },
+  {
+   "name": "South_Entrance_Paver",
+   "type": "MESH",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -0.8,
+    -19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "South_Entrance_Paver.001",
+   "type": "MESH",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    0.0,
+    -19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "South_Entrance_Paver.002",
+   "type": "MESH",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    0.8,
+    -19.2,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "South_Entrance_Paver.003",
+   "type": "MESH",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    -0.8,
+    -18.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "South_Entrance_Paver.004",
+   "type": "MESH",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    0.0,
+    -18.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  },
+  {
+   "name": "South_Entrance_Paver.005",
+   "type": "MESH",
+   "collection": "70_Sect_Perimeter",
+   "location_m": [
+    0.8,
+    -18.4,
+    0.035
+   ],
+   "rotation_deg_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation_mode": "XYZ",
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "children": 0,
+   "instance_collection": null
+  }
+ ]
+}

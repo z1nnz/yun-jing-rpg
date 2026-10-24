@@ -1,0 +1,20 @@
+{
+  "asset": "TrainingGround",
+  "name_zh": "演武場",
+  "stage": "editable_architecture_prototype",
+  "description": "Paved training court with three static dummies; no animation.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    8.140000343322754,
+    7.720000267028809,
+    2.2950000762939453
+  ],
+  "mesh_objects": 158,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

@@ -1,0 +1,33 @@
+{
+  "asset": "MountainStoneStairs",
+  "name_zh": "青石登山階梯",
+  "stage": "editable_path_prototype",
+  "description": "12 risers of 0.2 m; 0.4 m tread; 4.8 m run, 2.4 m rise, 3 m width.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    3.190000057220459,
+    5.03000020980835,
+    3.549999952316284
+  ],
+  "mesh_objects": 36,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "connectors": {
+    "entry": [
+      0.0,
+      -2.4000000953674316,
+      0.0
+    ],
+    "exit": [
+      0.0,
+      2.4000000953674316,
+      2.4000000953674316
+    ]
+  },
+  "clear_walk_width_m": 2.6
+}

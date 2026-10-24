@@ -1,0 +1,23 @@
+{
+  "asset": "QMountainBoar",
+  "name_zh": "山豬",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 5.960464477539063e-08,
+  "dimensions_m": [
+    0.568529486656189,
+    1.1238504648208618,
+    0.6406601071357727
+  ],
+  "mesh_objects": 36,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "9d5925e8ea368a05b4e794f4c8f2a075e26b2d40982fa6c49b35508b86de776c",
+  "fbx_sha256": "ccfa6a540b63f9c644c6236c95fcbb3bd1726e042e2079ecc76451d7907a5072",
+  "door_test": null,
+  "unreal_verified": false
+}

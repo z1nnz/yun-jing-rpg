@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QInnkeeper",
+    "name_zh": "客棧老闆娘",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.3521637916564941,
+    "mesh_objects": 91,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1496245861053467e-05,
+        "hand-sleeve_l": 1.2991949915885925e-07,
+        "shoe-leg_l": 6.51925802230835e-09,
+        "hand-sleeve_r": 8.987262845039368e-08,
+        "shoe-leg_r": 5.587935447692871e-09
+      },
+      "walk_planted_foot_max_height_m": 0.003651270642876625,
+      "walk_sole_min_z_m": -0.0071976687759160995,
+      "walk_foot_travel_m": 0.2995538873443926
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 1.1920928955078125e-07,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "9059675d2b153ba2869017857ee3636cf280b73e52eea40ca1b86fc4592b852e",
+    "fbx_sha256": "94ced0b563e0ece43a32b74322704d72798fce67f67f81e800db11a06466dfe7"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

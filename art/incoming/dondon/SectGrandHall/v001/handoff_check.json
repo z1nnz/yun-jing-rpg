@@ -1,0 +1,49 @@
+{
+  "asset": "SectGrandHall",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SectGrandHall_v001.blend",
+    "objects": 366,
+    "mesh_objects": 365,
+    "triangles": 130536,
+    "materials": 11,
+    "meshes_without_uv": 4,
+    "bounds_min_m": [
+      -6.320000171661377,
+      -5.199999809265137,
+      0.0
+    ],
+    "bounds_max_m": [
+      6.320000171661377,
+      5.199999809265137,
+      7.169807434082031
+    ],
+    "size_m": [
+      12.640000343322754,
+      10.399999618530273,
+      7.169807434082031
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SectGrandHall_v001.fbx",
+      "mesh_objects": 365,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        12.640000343322754,
+        10.399999618530273,
+        7.169808387756348
+      ],
+      "size_error_m": 9.5367431640625e-07
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/WildVegetation13/validation.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "BambooClump",
+    "blend_reopened": true,
+    "mesh_objects": 37,
+    "triangles": 22166,
+    "finite_vertices": true,
+    "bottom_center_pivot": true,
+    "asset_checks": {
+      "culms": 11,
+      "node_ring_sets": 11,
+      "leaf_cards": 2762,
+      "shoots": 3,
+      "culms_grounded": true
+    },
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "framing_checked": true,
+    "blend_sha256": "3f90a3a7e4ef34ad27383088e9c294efa8fe61c3220776769cda0690216ad9cf",
+    "fbx_sha256": "4636a5424580afd35f52a0635ad6815f2b334f3e8ff637e69b740e5cf10f770f"
+  },
+  "not_verified": [
+    "UV/texture bake",
+    "collision",
+    "LOD",
+    "Unreal import",
+    "wind animation",
+    "two-sided foliage material in engine"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

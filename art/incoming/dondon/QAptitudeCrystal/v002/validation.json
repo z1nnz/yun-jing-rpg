@@ -1,0 +1,23 @@
+{
+  "asset": "QAptitudeCrystal",
+  "name_zh": "測靈晶石",
+  "version": "v002",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 0.0,
+  "dimensions_m": [
+    0.5699999928474426,
+    0.5699999928474426,
+    1.0199999809265137
+  ],
+  "mesh_objects": 8,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "c154e6ede9478a8605829a312c7ccb8d7d1ba61f167bf2cd7bb9cda8b51296dc",
+  "fbx_sha256": "0fc74f1e7a316cb854ed61a7c7937c208015db6f0616f20f108beadf740d627a",
+  "door_test": null,
+  "unreal_verified": false
+}

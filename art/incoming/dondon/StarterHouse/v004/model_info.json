@@ -1,0 +1,26 @@
+{
+  "stage": "Editable exterior first pass",
+  "blender": "5.3.0 Beta",
+  "mesh_objects": 480,
+  "base_triangles": 27304,
+  "wall_footprint_m": [
+    7.2,
+    5.2
+  ],
+  "floor_height_m": 0.54,
+  "door_opening_m": [
+    1.7,
+    2.41
+  ],
+  "window_modules": 5,
+  "door_hinges": [
+    "Door_Left_Hinge",
+    "Door_Right_Hinge"
+  ],
+  "limits": [
+    "No furnished interior, door animation or gameplay",
+    "No UV bake, collision meshes or LOD",
+    "Procedural materials export only base colors to FBX",
+    "Unity import not yet verified"
+  ]
+}

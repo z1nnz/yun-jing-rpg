@@ -1,0 +1,19 @@
+{
+  "asset": "HerbalStall",
+  "name_zh": "藥草攤",
+  "stage": "appearance_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    3.4134442806243896,
+    1.732757568359375,
+    2.6625592708587646
+  ],
+  "mesh_objects": 106,
+  "source_concept": "ArtReferences/HerbalStall/concept.png",
+  "modeling_method": "procedural editable mesh; artist interpretation, not automatic image reconstruction",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

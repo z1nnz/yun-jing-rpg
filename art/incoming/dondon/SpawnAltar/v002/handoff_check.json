@@ -1,0 +1,110 @@
+{
+  "asset": "SpawnAltar",
+  "version": "v002",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SpawnAltar_v002.blend",
+    "objects": 40,
+    "mesh_objects": 29,
+    "triangles": 3636,
+    "materials": 7,
+    "meshes_without_uv": 29,
+    "bounds_min_m": [
+      -1.6167892217636108,
+      -1.883394718170166,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.6167892217636108,
+      1.883394718170166,
+      1.919602632522583
+    ],
+    "size_m": [
+      3.2335784435272217,
+      3.766789436340332,
+      1.919602632522583
+    ],
+    "bottom_centre_origin": true,
+    "images": [
+      {
+        "name": "01_front.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\01_front.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "02_right.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\02_right.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "03_rear.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\03_rear.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "04_left.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\04_left.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "05_front_right.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\05_front_right.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "06_rear_right.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\06_rear_right.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "07_rear_left.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\07_rear_left.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "08_front_left.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\08_front_left.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "09_top.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\09_top.png",
+        "packed": true,
+        "file_exists": false
+      },
+      {
+        "name": "10_high_front.png",
+        "filepath": "/Users\\joshmac\\強悍修仙2.0\\ArtLibrary\\ExpansionBatches\\TownRefinement12\\SourceSnapshot\\ArtReferences\\SpawnAltar_10Views\\10_high_front.png",
+        "packed": true,
+        "file_exists": false
+      }
+    ],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SpawnAltar_v002.fbx",
+      "mesh_objects": 29,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        3.2335784435272217,
+        3.766789436340332,
+        1.9196029901504517
+      ],
+      "size_error_m": 3.5762786865234375e-07
+    }
+  ]
+}

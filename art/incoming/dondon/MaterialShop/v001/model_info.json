@@ -1,0 +1,11 @@
+{
+  "stage": "Editable materials shop exterior prototype",
+  "derived_from": "Models/StarterHouse/v004/StarterHouse_v004.blend",
+  "mesh_objects": 551,
+  "engine_target": "Unreal Engine; import not verified",
+  "limitations": [
+    "No shop interactions, colliders, LOD or UV texture baking",
+    "FBX includes base colors only",
+    "Goods are illustrative prop examples, not a complete item catalogue"
+  ]
+}

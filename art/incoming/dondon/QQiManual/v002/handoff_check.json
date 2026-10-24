@@ -1,0 +1,49 @@
+{
+  "asset": "QQiManual",
+  "version": "v002",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QQiManual_v002.blend",
+    "objects": 13,
+    "mesh_objects": 12,
+    "triangles": 3868,
+    "materials": 4,
+    "meshes_without_uv": 4,
+    "bounds_min_m": [
+      -0.10132411122322083,
+      -0.13249999284744263,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.10132411122322083,
+      0.13249999284744263,
+      0.05278944596648216
+    ],
+    "size_m": [
+      0.20264822244644165,
+      0.26499998569488525,
+      0.05278944596648216
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QQiManual_v002.fbx",
+      "mesh_objects": 12,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.20264822244644165,
+        0.26499998569488525,
+        0.05278946831822395
+      ],
+      "size_error_m": 2.2351741790771484e-08
+    }
+  ]
+}

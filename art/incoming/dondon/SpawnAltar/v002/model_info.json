@@ -1,0 +1,37 @@
+{
+  "asset": "SpawnAltar",
+  "name_zh": "出生石台",
+  "category": "出生點",
+  "stage": "editable_town_prototype",
+  "description": "Two-tier octagonal stone spawn altar with front steps, inlaid jade and gold rings with rune tiles, a lotus pedestal holding a floating jade spirit stone with halo, and four corner lanterns.",
+  "size_note": "Approx. 3.5 x 4.3 x 1.9 m.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    3.2335784435272217,
+    3.766789436340332,
+    1.919602632522583
+  ],
+  "mesh_objects": 29,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtLibrary/ExpansionBatches/TownRefinement12/SourceSnapshot/ArtReferences/SpawnAltar_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "Claude source geometry retained; semantic materials and studio matched to SectCore04. Prior ten concept images packed; ten new renders of this revision.",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "version": "v002",
+  "style_reference": "SectCore04",
+  "style_materials": [
+    "gold",
+    "jade",
+    "kerb",
+    "lantern",
+    "pale",
+    "stone",
+    "tile"
+  ],
+  "source_commit": "70d3fa4d261bd9bbd7cc0cd7180ca08c6a7ba7cc",
+  "geometry_changed": false
+}

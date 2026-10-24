@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QHerbalist",
+    "name_zh": "藥師",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.3521184921264648,
+    "mesh_objects": 99,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1466443538665771e-05,
+        "hand-sleeve_l": 1.979060471057892e-08,
+        "shoe-leg_l": 5.587935447692871e-09,
+        "hand-sleeve_r": 1.909211277961731e-08,
+        "shoe-leg_r": 4.6566128730773926e-09
+      },
+      "walk_planted_foot_max_height_m": 0.0036512790247797966,
+      "walk_sole_min_z_m": -0.007197665050625801,
+      "walk_foot_travel_m": 0.2995538936745852
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 1.1920928955078125e-07,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "10b16e825e3acdfe221a3ea57804db6f172b39185e391eecb0f541d6897aead9",
+    "fbx_sha256": "7019f57f485fdc6f964a7b93c5cd1b5da675eba33acb35a68c1e0934c01c9dae"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

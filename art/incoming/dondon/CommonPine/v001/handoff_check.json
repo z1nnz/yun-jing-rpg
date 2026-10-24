@@ -1,0 +1,49 @@
+{
+  "asset": "CommonPine",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "CommonPine_v001.blend",
+    "objects": 15,
+    "mesh_objects": 14,
+    "triangles": 17864,
+    "materials": 3,
+    "meshes_without_uv": 14,
+    "bounds_min_m": [
+      -2.907376289367676,
+      -2.7722787857055664,
+      0.0
+    ],
+    "bounds_max_m": [
+      2.907376289367676,
+      2.7722787857055664,
+      7.289297103881836
+    ],
+    "size_m": [
+      5.814752578735352,
+      5.544557571411133,
+      7.289297103881836
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "CommonPine_v001.fbx",
+      "mesh_objects": 14,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        5.814752578735352,
+        5.544558048248291,
+        7.289297103881836
+      ],
+      "size_error_m": 4.76837158203125e-07
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "asset": "MortarPestle",
+  "name_zh": "研缽與杵",
+  "stage": "appearance_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.512185275554657,
+    0.5,
+    0.5086503028869629
+  ],
+  "mesh_objects": 9,
+  "source_concept": null,
+  "modeling_method": "procedural editable mesh; artist interpretation, not automatic image reconstruction",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

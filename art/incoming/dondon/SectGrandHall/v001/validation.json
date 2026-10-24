@@ -1,0 +1,17 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/SectCore04/validation.json",
+  "blender": null,
+  "entry": {
+    "asset": "SectGrandHall",
+    "blend_reopened": true,
+    "meshes": 365,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 9.5367431640625e-07,
+    "ten_view_files_present": true
+  },
+  "not_verified": null,
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

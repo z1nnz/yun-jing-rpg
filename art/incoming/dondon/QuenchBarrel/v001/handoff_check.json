@@ -1,0 +1,49 @@
+{
+  "asset": "QuenchBarrel",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "QuenchBarrel_v001.blend",
+    "objects": 5,
+    "mesh_objects": 4,
+    "triangles": 1464,
+    "materials": 3,
+    "meshes_without_uv": 1,
+    "bounds_min_m": [
+      -0.4050000011920929,
+      -0.4050000011920929,
+      0.0
+    ],
+    "bounds_max_m": [
+      0.4050000011920929,
+      0.4050000011920929,
+      0.7400000095367432
+    ],
+    "size_m": [
+      0.8100000023841858,
+      0.8100000023841858,
+      0.7400000095367432
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "QuenchBarrel_v001.fbx",
+      "mesh_objects": 4,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        0.8100000023841858,
+        0.8100000023841858,
+        0.7400001287460327
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

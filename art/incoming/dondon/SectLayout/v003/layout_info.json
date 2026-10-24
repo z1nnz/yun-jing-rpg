@@ -1,0 +1,868 @@
+{
+  "asset": "SectLayout",
+  "name_zh": "宗門圍合配置",
+  "units": "meters",
+  "placements": [
+    {
+      "asset": "SectGate",
+      "source": "/Users/joshmac/強悍修仙2.0/Models/SectGate/v001/SectGate_v001.blend",
+      "position_m": [
+        0,
+        -15,
+        0
+      ]
+    },
+    {
+      "asset": "SectGrandHall",
+      "source": "/Users/joshmac/強悍修仙2.0/Models/SectGrandHall/v001/SectGrandHall_v001.blend",
+      "position_m": [
+        0,
+        13,
+        0
+      ]
+    },
+    {
+      "asset": "DiscipleResidence",
+      "source": "/Users/joshmac/強悍修仙2.0/Models/DiscipleResidence/v001/DiscipleResidence_v001.blend",
+      "position_m": [
+        -11,
+        0,
+        0
+      ]
+    },
+    {
+      "asset": "TrainingGround",
+      "source": "/Users/joshmac/強悍修仙2.0/Models/TrainingGround/v001/TrainingGround_v001.blend",
+      "position_m": [
+        11,
+        -3,
+        0
+      ]
+    },
+    {
+      "asset": "SpiritHerbGarden",
+      "source": "/Users/joshmac/強悍修仙2.0/Models/SpiritHerbGarden/v001/SpiritHerbGarden_v001.blend",
+      "position_m": [
+        -11,
+        12,
+        0
+      ]
+    },
+    {
+      "asset": "CultivationPlatform",
+      "source": "/Users/joshmac/強悍修仙2.0/Models/CultivationPlatform/v001/CultivationPlatform_v001.blend",
+      "position_m": [
+        10,
+        12,
+        0
+      ]
+    },
+    {
+      "asset": "AlchemyHall",
+      "source": "/Users/joshmac/Documents/Codex/2026-10-15/new-chat/outputs/SectFacilities05/Models/AlchemyHall/v001/AlchemyHall_v001.blend",
+      "position_m": [
+        -13,
+        26,
+        0
+      ]
+    },
+    {
+      "asset": "ScriptureLibrary",
+      "source": "/Users/joshmac/Documents/Codex/2026-10-15/new-chat/outputs/SectFacilities05/Models/ScriptureLibrary/v001/ScriptureLibrary_v001.blend",
+      "position_m": [
+        0,
+        28,
+        0
+      ]
+    },
+    {
+      "asset": "SectStorehouse",
+      "source": "/Users/joshmac/Documents/Codex/2026-10-15/new-chat/outputs/SectFacilities05/Models/SectStorehouse/v001/SectStorehouse_v001.blend",
+      "position_m": [
+        13,
+        26,
+        0
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "from": [
+        0,
+        -12,
+        0
+      ],
+      "to": [
+        0,
+        7,
+        0
+      ],
+      "width_m": 3.2
+    },
+    {
+      "from": [
+        0,
+        -6,
+        0
+      ],
+      "to": [
+        -11,
+        -6,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        -11,
+        -6,
+        0
+      ],
+      "to": [
+        -11,
+        -4,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        0,
+        -9,
+        0
+      ],
+      "to": [
+        11,
+        -9,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        11,
+        -9,
+        0
+      ],
+      "to": [
+        11,
+        -7,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        0,
+        6,
+        0
+      ],
+      "to": [
+        -11,
+        6,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        -11,
+        6,
+        0
+      ],
+      "to": [
+        -11,
+        9.6,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        0,
+        6,
+        0
+      ],
+      "to": [
+        10,
+        6,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        10,
+        6,
+        0
+      ],
+      "to": [
+        10,
+        9,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        8,
+        6,
+        0
+      ],
+      "to": [
+        8,
+        20,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        -13,
+        20,
+        0
+      ],
+      "to": [
+        13,
+        20,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        -13,
+        20,
+        0
+      ],
+      "to": [
+        -13,
+        22,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        0,
+        20,
+        0
+      ],
+      "to": [
+        0,
+        23.6,
+        0
+      ],
+      "width_m": 2.4
+    },
+    {
+      "from": [
+        13,
+        20,
+        0
+      ],
+      "to": [
+        13,
+        21.5,
+        0
+      ],
+      "width_m": 2.4
+    }
+  ],
+  "stage": "Static perimeter layout; no navmesh or collision verified.",
+  "unreal_import_verified": false,
+  "preview_count": 3,
+  "source_scene": "Models/SectLayout/v002/SectLayout_v002.blend",
+  "perimeter_placements": [
+    {
+      "asset": "SectWallCorner",
+      "location_m": [
+        -20,
+        -19,
+        0
+      ],
+      "rotation_z_radians": 0,
+      "length_scale": 1
+    },
+    {
+      "asset": "SectWallCorner",
+      "location_m": [
+        -20,
+        38,
+        0
+      ],
+      "rotation_z_radians": 0,
+      "length_scale": 1
+    },
+    {
+      "asset": "SectWallCorner",
+      "location_m": [
+        20,
+        -19,
+        0
+      ],
+      "rotation_z_radians": 0,
+      "length_scale": 1
+    },
+    {
+      "asset": "SectWallCorner",
+      "location_m": [
+        20,
+        38,
+        0
+      ],
+      "rotation_z_radians": 0,
+      "length_scale": 1
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -17.72100067138672,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -13.783000946044922,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -9.845000267028809,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -5.907000541687012,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -1.9689998626708984,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        1.9690017700195312,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        5.906999588012695,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        9.845001220703125,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        13.783002853393555,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        17.72100257873535,
+        38.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 0.9845000075635237
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        -16.676429748535156,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        -12.649286270141602,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        -8.622142791748047,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        -4.595001220703125,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        -0.5678577423095703,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        3.4592857360839844,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        7.486427307128906,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        11.513570785522461,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        15.540712356567383,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        19.56785774230957,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        23.594999313354492,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        27.62214469909668,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        31.649282455444336,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -20.0,
+        35.676429748535156,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0067856670239086
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        -16.774166107177734,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 0.9579167220646755
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        -12.942500114440918,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 0.9579167220646755
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        -9.110832214355469,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 0.9579167220646755
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        -5.279166221618652,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 0.9579167220646755
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        -1.4474983215332031,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 0.9579167220646755
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        2.3841686248779297,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 0.9579167220646755
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        9.842142105102539,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0710713472222295
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        14.126428604125977,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0710713472222295
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        18.41071319580078,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0710713472222295
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        22.69499969482422,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0710713472222295
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        26.979286193847656,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0710713472222295
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        31.263572692871094,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0710713472222295
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        20.0,
+        35.547855377197266,
+        0.0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1.0710713472222295
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -17.516250610351562,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -13.168749809265137,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -8.821249961853027,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        -4.473749160766602,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        4.473750114440918,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        8.821250915527344,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        13.168750762939453,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "SectWallStraight",
+      "location_m": [
+        17.516250610351562,
+        -19.0,
+        0.0
+      ],
+      "rotation_z_radians": 0.0,
+      "length_scale": 1.0868750716873505
+    },
+    {
+      "asset": "CourtyardGate",
+      "location_m": [
+        20,
+        6,
+        0
+      ],
+      "rotation_z_radians": 1.5707963267948966,
+      "length_scale": 1
+    }
+  ],
+  "wall_spans": [
+    {
+      "start": [
+        -19.690000534057617,
+        38.0,
+        0.0
+      ],
+      "end": [
+        19.690000534057617,
+        38.0,
+        0.0
+      ],
+      "segments": 10,
+      "module_length_m": 3.938000030254095
+    },
+    {
+      "start": [
+        -20.0,
+        -18.690000534057617,
+        0.0
+      ],
+      "end": [
+        -20.0,
+        37.689998626708984,
+        0.0
+      ],
+      "segments": 14,
+      "module_length_m": 4.027142668095634
+    },
+    {
+      "start": [
+        20.0,
+        -18.690000534057617,
+        0.0
+      ],
+      "end": [
+        20.0,
+        4.300000190734863,
+        0.0
+      ],
+      "segments": 6,
+      "module_length_m": 3.831666888258702
+    },
+    {
+      "start": [
+        20.0,
+        7.699999809265137,
+        0.0
+      ],
+      "end": [
+        20.0,
+        37.689998626708984,
+        0.0
+      ],
+      "segments": 7,
+      "module_length_m": 4.284285388888918
+    },
+    {
+      "start": [
+        -19.690000534057617,
+        -19.0,
+        0.0
+      ],
+      "end": [
+        -2.299999952316284,
+        -19.0,
+        0.0
+      ],
+      "segments": 4,
+      "module_length_m": 4.347500286749402
+    },
+    {
+      "start": [
+        2.299999952316284,
+        -19.0,
+        0.0
+      ],
+      "end": [
+        19.690000534057617,
+        -19.0,
+        0.0
+      ],
+      "segments": 4,
+      "module_length_m": 4.347500286749402
+    }
+  ],
+  "front_opening_width_m": 4.6,
+  "side_gate_opening_width_m": 3.4,
+  "side_gate_door_state": "closed; no animation",
+  "library_stair_installed": false
+}

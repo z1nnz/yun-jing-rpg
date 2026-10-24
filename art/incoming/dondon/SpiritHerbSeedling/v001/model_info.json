@@ -1,0 +1,20 @@
+{
+  "asset": "SpiritHerbSeedling",
+  "name_zh": "靈草幼苗",
+  "stage": "editable_architecture_prototype",
+  "description": "Two-stem seedling growth appearance; not a harvest interaction.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.13517168164253235,
+    0.0968889445066452,
+    0.1603325754404068
+  ],
+  "mesh_objects": 11,
+  "bounds_method": "evaluated mesh vertices",
+  "modeling_method": "procedural mesh construction; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

@@ -1,0 +1,79 @@
+{
+  "asset": "QCaveDoor",
+  "plan_id": "HOME06",
+  "name_zh": "洞府門",
+  "stage": "editable_noncharacter_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom_center",
+  "assembly_offset_m": [
+    0.0,
+    -0.028499998152256012,
+    0.0
+  ],
+  "dimensions_m": [
+    1.6546400785446167,
+    0.16699999570846558,
+    2.0999999046325684
+  ],
+  "bounds_m": [
+    [
+      -0.8273200392723083,
+      -0.08349999785423279,
+      0.0
+    ],
+    [
+      0.8273200392723083,
+      0.08349999785423279,
+      2.0999999046325684
+    ]
+  ],
+  "mesh_objects": 22,
+  "triangles": 6032,
+  "modeling_method": "procedural editable geometry guided by approved Q-style concept; not image generation",
+  "render_engine": "Cycles CPU, 16 samples, denoised",
+  "uv_baked": false,
+  "rigged": false,
+  "animation_ready": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "limits": "Appearance prototype; UV/LOD/collision and UE validation pending. Creatures not rigged.",
+  "hinge_axes_before_centering": [
+    [
+      -0.93,
+      0,
+      0
+    ],
+    [
+      0.93,
+      0,
+      0
+    ]
+  ],
+  "version": "v002",
+  "source_version": "v001",
+  "source_sha256": "c4b471a295bdddaa44c7c3858d5845666f1d9ea239d0ecc052be0f7f5b0cea3e",
+  "door_hinge_animation": true,
+  "door_opening_frames": [
+    1,
+    35,
+    85,
+    120
+  ],
+  "door_open_angle_deg": 90,
+  "door_width_adjustment": 0.86,
+  "animated_fbx": "QCaveDoor_open_close_v002.fbx",
+  "hinge_axes_m": [
+    [
+      -0.7997999787330627,
+      0.028499998152256012,
+      0.0
+    ],
+    [
+      0.7997999787330627,
+      0.028499998152256012,
+      0.0
+    ]
+  ]
+}

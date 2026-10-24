@@ -1,0 +1,23 @@
+{
+  "asset": "QCaveEntrance",
+  "name_zh": "洞府入口",
+  "version": "v003",
+  "blend_reopened": true,
+  "fbx_roundtrip": true,
+  "fbx_dimension_error_m": 5.960464477539063e-08,
+  "dimensions_m": [
+    2.809999942779541,
+    0.8100000023841858,
+    3.2699999809265137
+  ],
+  "mesh_objects": 22,
+  "finite_geometry": true,
+  "png_views_1024": 10,
+  "unique_camera_angles": 10,
+  "unique_png_hashes": 10,
+  "framing_checks": true,
+  "blend_sha256": "0768f6ebe0f8fa63c9e2c01c5800c27c77431ef05e05f8d26654bd7d0fe6f340",
+  "fbx_sha256": "887f13b694afa49c3a9701dadbfb0ca284d85df738daaedac54bf45652671784",
+  "door_test": null,
+  "unreal_verified": false
+}

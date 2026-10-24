@@ -1,0 +1,55 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/QCharacters17/validation_v006.json",
+  "blender": "5.2.2 LTS",
+  "entry": {
+    "asset": "QPlayerMale",
+    "name_zh": "玩家（男）",
+    "blend_reopened": true,
+    "bottom_center_pivot": true,
+    "height_m": 1.447022557258606,
+    "mesh_objects": 88,
+    "checks": {
+      "bones": 17,
+      "weights_sum_to_one": true,
+      "loop_error": {
+        "Idle": 0.0,
+        "Walk": 0.0
+      },
+      "attachment_growth_m": {
+        "head-neck": 1.1466443538665771e-05,
+        "hand-sleeve_l": 1.932494342327118e-08,
+        "shoe-leg_l": 6.51925802230835e-09,
+        "hand-sleeve_r": 1.885928213596344e-08,
+        "shoe-leg_r": 5.587935447692871e-09
+      },
+      "walk_planted_foot_max_height_m": 0.00365127669647336,
+      "walk_sole_min_z_m": -0.007197665981948376,
+      "walk_foot_travel_m": 0.29955388417929635
+    },
+    "fbx_reimported": true,
+    "fbx_actions": [
+      "Armature|Armature|Idle",
+      "Armature|Armature|Walk"
+    ],
+    "fbx_armature_scale_in_blender": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "part_bone_name_clashes": [],
+    "fbx_dimension_error_m": 0.0,
+    "distinct_1024_views": 10,
+    "animation_frames": 12,
+    "blend_sha256": "1fafd4966861b49d2e2ead4dd8dc41e4bd98e853c3aab2f5ba6b022e6f400b11",
+    "fbx_sha256": "5ef8442d8f3f3b33c6ba820df6572acd0a58d67f7793c357cabaa0a336fd1139"
+  },
+  "not_verified": [
+    "Unreal import, retargeting and in-game playback",
+    "cloth / hair secondary motion (robe and hair are skinned, not simulated)",
+    "arm-robe and hair-shoulder intersections in every frame (only hand, foot and head attachment is measured)",
+    "UV and texture bake",
+    "LOD",
+    "in-game scale against doors and furniture"
+  ],
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

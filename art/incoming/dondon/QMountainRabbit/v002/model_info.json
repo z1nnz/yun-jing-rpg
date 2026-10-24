@@ -1,0 +1,46 @@
+{
+  "asset": "QMountainRabbit",
+  "plan_id": "CREATURE01",
+  "name_zh": "山兔",
+  "stage": "editable_noncharacter_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "pivot": "bottom_center",
+  "assembly_offset_m": [
+    2.9802322387695312e-08,
+    0.01549994945526123,
+    0.0
+  ],
+  "dimensions_m": [
+    0.46999987959861755,
+    0.6889998912811279,
+    0.7575731873512268
+  ],
+  "bounds_m": [
+    [
+      -0.23499993979930878,
+      -0.34449994564056396,
+      0.0
+    ],
+    [
+      0.23499993979930878,
+      0.34449994564056396,
+      0.7575731873512268
+    ]
+  ],
+  "mesh_objects": 19,
+  "triangles": 22192,
+  "modeling_method": "procedural editable geometry guided by approved Q-style concept; not image generation",
+  "render_engine": "Cycles CPU, 16 samples, denoised",
+  "uv_baked": false,
+  "rigged": false,
+  "animation_ready": false,
+  "collision_ready": false,
+  "lod_ready": false,
+  "unreal_import_verified": false,
+  "limits": "Appearance prototype; UV/LOD/collision and UE validation pending. Creatures not rigged.",
+  "version": "v002",
+  "source_version": "v001",
+  "source_sha256": "669facc2b81eb2dd30de0ad53c65dc37633db2d01637f58f8f6d44fdbf66fad4",
+  "door_hinge_animation": false
+}

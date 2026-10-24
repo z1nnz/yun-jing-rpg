@@ -1,0 +1,49 @@
+{
+  "asset": "HerbalStall",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "HerbalStall_v001.blend",
+    "objects": 107,
+    "mesh_objects": 106,
+    "triangles": 35480,
+    "materials": 7,
+    "meshes_without_uv": 35,
+    "bounds_min_m": [
+      -1.7067221403121948,
+      -0.8663787841796875,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.7067221403121948,
+      0.8663787841796875,
+      2.6611814498901367
+    ],
+    "size_m": [
+      3.4134442806243896,
+      1.732757568359375,
+      2.6611814498901367
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "HerbalStall_v001.fbx",
+      "mesh_objects": 106,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        3.4134442806243896,
+        1.7327576875686646,
+        2.6611814498901367
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

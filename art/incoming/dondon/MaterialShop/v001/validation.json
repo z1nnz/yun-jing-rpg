@@ -1,0 +1,21 @@
+{
+  "blend_reopened": true,
+  "finite_vertices": true,
+  "source_meshes": 551,
+  "fbx_meshes": 551,
+  "fbx_bounds_max_error_m": 9.5367431640625e-07,
+  "world_bounds_m": [
+    [
+      -4.394999980926514,
+      -4.720000267028809,
+      0.0
+    ],
+    [
+      4.6576080322265625,
+      3.469064712524414,
+      5.617722034454346
+    ]
+  ],
+  "studio_excluded": true,
+  "unreal_import_verified": false
+}

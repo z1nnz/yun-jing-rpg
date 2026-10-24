@@ -1,0 +1,49 @@
+{
+  "asset": "SmithWorkbench",
+  "version": "v001",
+  "blender": "Blender 5.2.2 LTS",
+  "blend": {
+    "file": "SmithWorkbench_v001.blend",
+    "objects": 10,
+    "mesh_objects": 9,
+    "triangles": 972,
+    "materials": 2,
+    "meshes_without_uv": 0,
+    "bounds_min_m": [
+      -1.024999976158142,
+      -0.41499999165534973,
+      0.0
+    ],
+    "bounds_max_m": [
+      1.024999976158142,
+      0.41499993205070496,
+      0.9700000286102295
+    ],
+    "size_m": [
+      2.049999952316284,
+      0.8299999237060547,
+      0.9700000286102295
+    ],
+    "bottom_centre_origin": true,
+    "images": [],
+    "libraries": [],
+    "armatures": [],
+    "actions": [],
+    "scene_unit_scale": 1.0
+  },
+  "fbx": [
+    {
+      "file": "SmithWorkbench_v001.fbx",
+      "mesh_objects": 9,
+      "armatures": 0,
+      "bones": [],
+      "actions": [],
+      "size_m": [
+        2.049999952316284,
+        0.8299999237060547,
+        0.970000147819519
+      ],
+      "size_error_m": 1.1920928955078125e-07
+    }
+  ]
+}

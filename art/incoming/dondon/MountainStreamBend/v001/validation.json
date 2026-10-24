@@ -1,0 +1,21 @@
+{
+  "source_report": "ArtLibrary/ExpansionBatches/MountainWaters09/validation.json",
+  "blender": null,
+  "entry": {
+    "asset": "MountainStreamBend",
+    "blend_reopened": true,
+    "mesh_objects": 136,
+    "finite_vertices": true,
+    "bottom_center_pivot": true,
+    "editable_water_mesh": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 8.344650268554688e-07,
+    "distinct_1024_views": 10,
+    "framing_checked": true,
+    "blend_sha256": "0b001c4120e7970c6bed316e0ed1521a90b1b23ce0bc64bde6f603428768ff8b",
+    "fbx_sha256": "95898b94fcb91ab32d6ff01c85899d718ab09d94aec17c6b46065e1d38b6405c"
+  },
+  "not_verified": null,
+  "note": "Extracted unchanged from the batch report named in source_report."
+}

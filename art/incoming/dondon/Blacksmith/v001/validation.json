@@ -1,0 +1,12 @@
+{
+  "blend_reopened": true,
+  "finite_vertices": true,
+  "roof_tile_normals_outward": true,
+  "source_meshes": 422,
+  "fbx_meshes": 422,
+  "fbx_bounds_error_m": 4.76837158203125e-07,
+  "prop_roots_preserved": true,
+  "display_swords": 3,
+  "studio_excluded": true,
+  "unity_verified": false
+}
