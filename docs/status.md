@@ -18,6 +18,7 @@
 - 洞府灌溉 v2：Blender、FBX、GLB、貼圖、LOD 與往返驗證。
 - 測資廣場 v1：先保存三視圖，再建模；Blender、FBX、GLB 往返驗證通過。
 - 青溪世界雛形 v1：180 × 140 m 空間規劃與兩張 Blender 畫面；木橋、古樹均先完成 AI 三視圖，再建模、QA 與 FBX 往返驗證。詳見 [青溪世界雛形](qingxi-world-foundation.md)。
+- 青溪俯視動線試走頁：可在瀏覽器移動並測橋梁／河道的基本通路；它不是 Unity 遊戲或服務端玩法。
 - `dondon2.0` 交接素材已放在 `art/incoming/dondon`，尚未全部驗收或接入 Unity。
 
 ## 有原始碼但未完成驗證

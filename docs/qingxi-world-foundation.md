@@ -37,6 +37,7 @@
 ## 開啟與重製
 
 - 預覽圖片：`art/previews/qingxi-world-v1/`；可直接打開 PNG。
+- 無 Unity 授權時的動線試走：直接以瀏覽器打開 `tools/world-preview/index.html`。WASD／方向鍵移動、E 查看地標；也有觸控方向鍵。這是同座標的**俯視動線稿**，只檢查距離、道路與過橋位置，不是正式遊戲客戶端，也沒有存檔或伺服器資產操作。
 - 可編輯的 Blender 世界雛形：`art/source/qingxi-world-blockout-v1.blend`。
 - 已存的 AI 三視圖及檢視記錄：`art/references/qingxi-world-v1/`。
 - 模型生成：`blender -b --factory-startup -P tools/art/build_qingxi_landmarks.py`。
@@ -44,6 +45,8 @@
 - Unity 授權就緒後：`./tools/unity.ps1 -Target WorldPreview`，或 Unity 選單 `Yun Jing > Generate Qingxi world preview`；目標場景 `Assets/YunJing/Generated/QingxiWorldPreview.unity`。
 
 Unity 生成器會沿用現有青溪開發場景的網路服務和角色，再擴展到世界雛形；木橋有獨立步行碰撞面與兩側引道，溪流其他位置有暫時性的不可見越界碰撞。此處只驗證基本空間路線；世界互動、山兔 AI、採集與交易尚未接到這些座標。
+
+俯視動線稿已用真實瀏覽器試走：從村口走到木橋，穿過到達河東；在橋外直接往東會被溪流擋住。此測試只證明 HTML 試走稿的路線邏輯，不替代 Unity 場景碰撞測試。
 
 **Unity 本輪仍未驗證。** 2026-10-25 批次啟動 `WorldPreview` 時，Unity `6000.0.82f1` 因沒有有效 Editor 授權，以代碼 198 結束，未進入 C# 編譯或場景生成。Blender 渲染和模型檢查已完成；手機幀率、12 人同場與 Unity 內實際步行均尚未測試。
 
