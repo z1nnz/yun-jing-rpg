@@ -1,0 +1,19 @@
+{
+  "asset": "Qingxi Riverside Guesthouse v1",
+  "source_three_view": "art\\references\\qingxi-riverside-house-v1\\three-view.png",
+  "mesh_objects": 360,
+  "triangles_source": 11128,
+  "materials": 12,
+  "overall_dimensions_m": [
+    10.798,
+    9.488,
+    6.64
+  ],
+  "plinth_footprint_m": [
+    9.35,
+    7.35
+  ],
+  "front": "-Y",
+  "notes": "visual asset; no Unity compile, collision or mobile benchmark",
+  "meshes_exported": 9
+}

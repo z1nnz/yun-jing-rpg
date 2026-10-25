@@ -20,6 +20,7 @@
 - 青溪世界雛形 v1：180 × 140 m 空間規劃與兩張 Blender 畫面；木橋、古樹均先完成 AI 三視圖，再建模、QA 與 FBX 往返驗證。詳見 [青溪世界雛形](qingxi-world-foundation.md)。
 - 青溪組裝樣片 v2：依新提供的五張方向圖，重用協作者 18 種現成模型，在 Blender 組成 102 個擺位並輸出三張立體預覽；12 種 FBX 已列入 Unity 場景生成器的第一批匯入。詳見 [組裝樣片](qingxi-world-assembled-v2.md)。Unity 版本仍未編譯／試玩，模型尚無 LOD 與專用碰撞。
 - 青溪視覺樣片 v3：在 v2 基礎上增擺 126 個既有素材實例、整理三個透視鏡頭和午後光線，三張 1920 × 1080 圖已渲染；Blender 場景檢查與古樹幾何 QA 通過。詳見 [視覺樣片](qingxi-world-art-directed-v3.md)。地形與水體仍是灰盒，尚無 Unity／手機驗證。
+- 青溪細化樣片 v4：先保存原創客舍 AI 三視圖，製作可編輯房屋原稿及 9 網格匯出物，並把樹伴既有成樹素材移植到一處村落近景；Blender 原稿及 GLB 幾何 QA 均零錯誤。詳見 [青溪細化](qingxi-world-detail-v4.md)。水岸與地形仍為灰盒，房屋和樹均未完成 Unity／手機驗收。
 - 青溪俯視動線試走頁：可在瀏覽器移動並測橋梁／河道的基本通路；它不是 Unity 遊戲或服務端玩法。
 - `dondon2.0` 交接素材已放在 `art/incoming/dondon`；本輪挑選部分用於 Blender 畫面與 Unity 生成器，整包仍未完成 Unity／手機驗收。
 

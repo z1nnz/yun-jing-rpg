@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "objects_checked": 360,
+  "errors": [],
+  "warnings": [
+    "hidden back-to-back faces: SM_QX_Front stair 1<->SM_QX_Front stair 2 (4 pairs) - delete to save tris",
+    "hidden back-to-back faces: SM_QX_Front stair 0<->SM_QX_Front stair 1 (4 pairs) - delete to save tris",
+    "2 parts fully enclosed, not touching (eyes/internals?): ['SM_QX_Lantern housing -3.9', 'SM_QX_Lantern housing 3.9']"
+  ],
+  "ground_z": 0.0
+}
