@@ -25,7 +25,17 @@
 - Windows、Android、Linux Server 建置腳本。
 - Firebase 登入橋接、外部 PostgreSQL、跨 App 完整輸送流程。
 
-Unity `6000.0.82f1` 最近一次啟動因缺少有效授權退出，尚未完成套件匯入、C# 編譯、場景生成、雙端連線或 prefab 驗證。
+2026-10-25 起專案改用 Unity `6000.0.85f1`，授權有效，套件匯入與 C# 編譯通過。FishNet 改固定為 `4.7.2`，原因如下：
+- 4.7.4 的 Yak 傳輸外掛呼叫免費版沒有的成員。
+- 4.7.3 用到 Unity 6.3 以後才有的 `SceneHandle`。
+
+青溪狩獵區灰盒 `ValidateBatch` 實測結果：
+- 幾何：50 個標記不重疊，6 個鏡頭書籤無遮擋。
+- NavMesh：玩家與山兔兩組共 65 條路徑全部完整。
+- 兩個 CharacterController 走主路 72.6 秒、替代回程 57.0 秒。
+- Unity 在結束時發生崩潰（MonoManager NULL，exit 21），尚待查明。
+
+仍未做：場景中的 FishNet 雙端連線、prefab、玩家建置與手機驗證。
 
 ## 尚未完成
 

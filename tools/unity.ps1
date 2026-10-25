@@ -1,6 +1,6 @@
 param(
     [ValidateSet('Generate','Windows','Android','LinuxServer')] [string]$Target = 'Generate',
-    [string]$EditorPath = 'D:\DevTools\Unity\6000.0.82f1\Editor\Unity.exe'
+    [string]$EditorPath = 'C:\Program Files\Unity\Hub\Editor\6000.0.85f1\Editor\Unity.exe'
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot

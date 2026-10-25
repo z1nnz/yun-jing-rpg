@@ -26,7 +26,7 @@ npm test
 npm run smoke
 ```
 
-Unity 專案位於 `apps/game`，固定使用 `6000.0.82f1`。建置前必須先取得有效 Unity 授權。
+Unity 專案位於 `apps/game`，固定使用 `6000.0.85f1`。建置前必須先取得有效 Unity 授權。
 
 ## 主要目錄
 
