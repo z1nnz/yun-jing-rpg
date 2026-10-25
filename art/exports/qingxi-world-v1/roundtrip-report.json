@@ -1,0 +1,22 @@
+[
+  {
+    "asset": "qingxi-timber-bridge-v1",
+    "meshes": 3,
+    "triangles": 1608,
+    "fbx_dimensions_m": [
+      12.22,
+      4.25,
+      2.9
+    ]
+  },
+  {
+    "asset": "qingxi-sacred-tree-v1",
+    "meshes": 5,
+    "triangles": 648,
+    "fbx_dimensions_m": [
+      11.822,
+      12.228,
+      13.914
+    ]
+  }
+]

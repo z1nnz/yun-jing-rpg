@@ -1,0 +1,18 @@
+[
+  {
+    "name": "qingxi-timber-bridge-v1",
+    "objects": 134,
+    "triangles": 1608,
+    "export_meshes": 3,
+    "fbx_bytes": 41548,
+    "glb_bytes": 116052
+  },
+  {
+    "name": "qingxi-sacred-tree-v1",
+    "objects": 30,
+    "triangles": 648,
+    "export_meshes": 5,
+    "fbx_bytes": 50460,
+    "glb_bytes": 54216
+  }
+]

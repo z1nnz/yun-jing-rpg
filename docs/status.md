@@ -17,6 +17,7 @@
 
 - 洞府灌溉 v2：Blender、FBX、GLB、貼圖、LOD 與往返驗證。
 - 測資廣場 v1：先保存三視圖，再建模；Blender、FBX、GLB 往返驗證通過。
+- 青溪世界雛形 v1：180 × 140 m 空間規劃與兩張 Blender 畫面；木橋、古樹均先完成 AI 三視圖，再建模、QA 與 FBX 往返驗證。詳見 [青溪世界雛形](qingxi-world-foundation.md)。
 - `dondon2.0` 交接素材已放在 `art/incoming/dondon`，尚未全部驗收或接入 Unity。
 
 ## 有原始碼但未完成驗證
@@ -26,6 +27,7 @@
 - Firebase 登入橋接、外部 PostgreSQL、跨 App 完整輸送流程。
 
 Unity `6000.0.82f1` 最近一次啟動因缺少有效授權退出，尚未完成套件匯入、C# 編譯、場景生成、雙端連線或 prefab 驗證。
+2026-10-25 再次嘗試生成世界雛形，仍因授權問題以代碼 198 退出；世界場景原始碼尚未在 Unity 編譯或試玩。
 
 ## 尚未完成
 
