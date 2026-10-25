@@ -1,0 +1,602 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 31,
+    "sha256": "5aeb7c2b67e344641942e7c16eb426114ba9103ad08e79472ce7f4abb732368b"
+  },
+  {
+    "path": "concept-prompts.json",
+    "bytes": 4646,
+    "sha256": "1026949a07fe8f4712ac4b4acf2e73206791217b348fd9f1c3e4a0a6ee5051d0"
+  },
+  {
+    "path": "concepts/C01_settlement-exit.png",
+    "bytes": 2864432,
+    "sha256": "5a546163fc7c27f9b0557ab9c64e68b051f1759414d0cf0631662c7dc5c4c489"
+  },
+  {
+    "path": "concepts/C02_mountain-trail.png",
+    "bytes": 2838159,
+    "sha256": "60d754135d68309658a8bc0bcad1a3f0825c09b43621a5e3669212022ee39b65"
+  },
+  {
+    "path": "concepts/C03_herb-forest.png",
+    "bytes": 3131638,
+    "sha256": "b260c702796c3020d8a8735b6b3eb8960e48900d920d20035615a56993a6f997"
+  },
+  {
+    "path": "concepts/C04_rabbit-meadow.png",
+    "bytes": 3014933,
+    "sha256": "011e86d70bdc6caeba7875e23aaf8440cba2eea3baec242b3130c84d8cc82541"
+  },
+  {
+    "path": "concepts/C05_shallow-stream.png",
+    "bytes": 3092735,
+    "sha256": "f06c23ae4463f20f2a85bb5d91268d72f2abf1b963c3cf19bb1c492be3342c62"
+  },
+  {
+    "path": "concepts/C06_return-shortcut.png",
+    "bytes": 2851648,
+    "sha256": "87cfb6c4e2bf6f9e0256eafcd2d98ff608f75acf82c9718bdb3583c7987142d5"
+  },
+  {
+    "path": "image-sources.json",
+    "bytes": 1023,
+    "sha256": "b58942581c377b557f66fd48d918ecac80bf44361be117fb3fa2081e14078d2d"
+  },
+  {
+    "path": "index.html",
+    "bytes": 7390,
+    "sha256": "5f4be36c15427765ac2c3b330982ad95952fbccff8df5efb1f8c322228a94e8b"
+  },
+  {
+    "path": "models/COL_StreamBank.fbx",
+    "bytes": 20220,
+    "sha256": "829d6012ff0b7a5df4fd3da2798728d8bd0bb58ea00427536c31e3cedf68bdca"
+  },
+  {
+    "path": "models/LowGrass.blend",
+    "bytes": 130343,
+    "sha256": "ccf05d2011bf98216db717f6c9028ff6cac45df0f435498fc2926c5965bf958b"
+  },
+  {
+    "path": "models/SM_LowGrass_LOD0.fbx",
+    "bytes": 119612,
+    "sha256": "e72981bcdd6e89a172982c096c4ab23e96ff50e1a1c13a37a8ef59d93c51b11f"
+  },
+  {
+    "path": "models/SM_LowGrass_LOD0.glb",
+    "bytes": 126516,
+    "sha256": "6504da781c5e98546b616e6208b370d9c0794618867d9a231ea12bb9e0bbc8aa"
+  },
+  {
+    "path": "models/SM_LowGrass_LOD1.fbx",
+    "bytes": 66508,
+    "sha256": "0b8e98d6548e2890f8628e504b978d0173839d7b2296046c50b99a80dda5d6de"
+  },
+  {
+    "path": "models/SM_LowGrass_LOD1.glb",
+    "bytes": 59288,
+    "sha256": "9f701b474ce429ea0834432fefb162acd39a16a6d725cb85ec84086537e42290"
+  },
+  {
+    "path": "models/SM_LowGrass_LOD2.fbx",
+    "bytes": 40092,
+    "sha256": "ef6862691e17ab5e521a4f8aa2e6f38529948d6f22c64b26f1ae73262cd24245"
+  },
+  {
+    "path": "models/SM_LowGrass_LOD2.glb",
+    "bytes": 28336,
+    "sha256": "8d4dc02c822d4f2fd8c78d098678756a8332604fe874d08d48d4a6b712182d3a"
+  },
+  {
+    "path": "models/SM_StreamBank_LOD0.fbx",
+    "bytes": 60108,
+    "sha256": "cfc237876410f5fdc507827b3f92cbcbdbdea67102b4762a897bd79b4eda5e58"
+  },
+  {
+    "path": "models/SM_StreamBank_LOD0.glb",
+    "bytes": 78024,
+    "sha256": "399d8e07f7fa1ad0cdf45d34408c28ddd2923568ef21d94976dd758d02dd27f1"
+  },
+  {
+    "path": "models/SM_StreamBank_LOD1.fbx",
+    "bytes": 47532,
+    "sha256": "a3c3231f7f745ea44fe2723d13980b20dd87bfec51cc93e0f2bd38dbb285f96b"
+  },
+  {
+    "path": "models/SM_StreamBank_LOD1.glb",
+    "bytes": 50280,
+    "sha256": "d4eb9dee427e62e8fc9c07f38e7b0c7b60a5ea6de9e0f505d2a08ceb60e40e2a"
+  },
+  {
+    "path": "models/SM_StreamBank_LOD2.fbx",
+    "bytes": 37340,
+    "sha256": "bee06b3d84a900582aef2eacee776859a786494ad0dfae0dcf62ff58f54194c6"
+  },
+  {
+    "path": "models/SM_StreamBank_LOD2.glb",
+    "bytes": 32320,
+    "sha256": "485a00de7ed53529bf6a7dfc1123bcd238056021ca4ae181ed10482dd6875676"
+  },
+  {
+    "path": "models/SM_TrampledGrass_LOD0.fbx",
+    "bytes": 210764,
+    "sha256": "5dd2ff02c2c6a9c7a661f5ab6ea8107134e47ab19c77c08d895ab03667be48c1"
+  },
+  {
+    "path": "models/SM_TrampledGrass_LOD0.glb",
+    "bytes": 253140,
+    "sha256": "92792aa8539fc49f7667da4fc479b95c1a65547f219f8f3aa7fe61fc11c57178"
+  },
+  {
+    "path": "models/SM_TrampledGrass_LOD1.fbx",
+    "bytes": 109148,
+    "sha256": "b08217e09c9d7e88fbd283970ba7b49db3032479f32aa7c313a02b8d9545d88d"
+  },
+  {
+    "path": "models/SM_TrampledGrass_LOD1.glb",
+    "bytes": 116832,
+    "sha256": "74eb7b4b31d7d4f904c826a1e551f46f348ec684351607437eb82dd4a96a5d74"
+  },
+  {
+    "path": "models/SM_TrampledGrass_LOD2.fbx",
+    "bytes": 58652,
+    "sha256": "de4b57eab5e680be3ecac9a735cde2e188f54ece786ed33640ee23b4eba4b80a"
+  },
+  {
+    "path": "models/SM_TrampledGrass_LOD2.glb",
+    "bytes": 53052,
+    "sha256": "b8102293b8190b996eb22cc3dc66ceeeafa3ce694542844099dc25e1d6a37c39"
+  },
+  {
+    "path": "models/StreamBank.blend",
+    "bytes": 117440,
+    "sha256": "0f2eac857c2fd5b9652e2710f3dbd75b4aa74ee73595bd8d0708ef68a06c9db5"
+  },
+  {
+    "path": "models/TrampledGrass.blend",
+    "bytes": 172638,
+    "sha256": "4794f959d29c982cb0f6fc195a7b371795fae2cc65424938fc5fd325c6b00bed"
+  },
+  {
+    "path": "previews/LowGrass_beauty.png",
+    "bytes": 353028,
+    "sha256": "e800f116c89e418fbf0f02a1f76ec95c336b1f5825ddef3d0ccf953a4527dd22"
+  },
+  {
+    "path": "previews/LowGrass_material.png",
+    "bytes": 362424,
+    "sha256": "0a4ae14809547c7c615ad9d169dd1cad4e8dc92e19334fb3604e84cf2015cbf8"
+  },
+  {
+    "path": "previews/LowGrass_material_front.png",
+    "bytes": 97209,
+    "sha256": "03688f608f045f5aa1e590a253e8e01a1a97b83675277d3cf9d5a922bb55d688"
+  },
+  {
+    "path": "previews/LowGrass_material_right.png",
+    "bytes": 94113,
+    "sha256": "c923d638ef94ce4d7df34a5f9ab3abf7493363eb38ab3bb40d327fef3b5de1da"
+  },
+  {
+    "path": "previews/LowGrass_material_three_quarter.png",
+    "bytes": 100802,
+    "sha256": "25535abfc4c498d4b5860c4c755a4e01641f4258d8ff3f49dc431e32847ea7dc"
+  },
+  {
+    "path": "previews/LowGrass_material_top.png",
+    "bytes": 107104,
+    "sha256": "5713583570b3079801d8680c34447c5cc85fde401909612033d45aeb2b2d7bb5"
+  },
+  {
+    "path": "previews/LowGrass_wire.png",
+    "bytes": 383221,
+    "sha256": "7a4dcac9eb3ecdc75dd3eeb8e4721919746bae6704578bb16fb58447127b21ac"
+  },
+  {
+    "path": "previews/LowGrass_wire_front.png",
+    "bytes": 101047,
+    "sha256": "dae0830d5b18b156caf631bf47090d8eae9037427759ba1db5e033efbc746eab"
+  },
+  {
+    "path": "previews/LowGrass_wire_right.png",
+    "bytes": 97833,
+    "sha256": "39ae1a5ffa26add7155f01ab31c3368f6cf67cf14238156edbd6914ef823606a"
+  },
+  {
+    "path": "previews/LowGrass_wire_three_quarter.png",
+    "bytes": 106051,
+    "sha256": "555d5cbc0bb8bcf9bab26f65658fafa3c602a6eb375931fb70cbdb1d1aad218f"
+  },
+  {
+    "path": "previews/LowGrass_wire_top.png",
+    "bytes": 114402,
+    "sha256": "e8692366f79fe261274f1fe734dbcec0e2a60d079b81815e80e0e284ed1b522b"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD1_review.png",
+    "bytes": 159106,
+    "sha256": "f397fa739ce4175923effc0e6bc9070c6ae59e5f22722075ef762587d722a810"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD1_review_front.png",
+    "bytes": 44838,
+    "sha256": "ea208c5deb34d10d7ca6c7710495b949a7f3f0c3eee8b64c74f272306bea3d8a"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD1_review_right.png",
+    "bytes": 42942,
+    "sha256": "8db6d16727fbaee92a4f27a904bddc388b31ff0e7a9533a2cfaee4796b553d1b"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD1_review_three_quarter.png",
+    "bytes": 46744,
+    "sha256": "46a0e4a1b38e93687e5bb16930e31eecde5a364da9218e4dab477be73d936224"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD1_review_top.png",
+    "bytes": 48176,
+    "sha256": "f0ed8e210f75d0eaa7991fcb7c23542de1a0c30bca6e680e5da4306e419ed180"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD2_review.png",
+    "bytes": 161254,
+    "sha256": "8033854400f20b5233751db8ac65eca6490a3650efa37a3ecc6242a121a414ab"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD2_review_front.png",
+    "bytes": 43498,
+    "sha256": "ba78439664eae463458f491c8634306a601b064e5e914d093e9d8c1f5591bafe"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD2_review_right.png",
+    "bytes": 42694,
+    "sha256": "c24bf24fa6c96102bbdfa6b616ccaadd79337d1a6da1311a6412121a18b96d4b"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD2_review_three_quarter.png",
+    "bytes": 45776,
+    "sha256": "cd52e413ca3070cc792439fc26968d4daa2d426f012214d9a9e7fdf339488eee"
+  },
+  {
+    "path": "previews/SM_LowGrass_LOD2_review_top.png",
+    "bytes": 50324,
+    "sha256": "a82e89de475ceed7dd824a4db3c1b851544fd21d6de0d78fe3536012508acf71"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD1_review.png",
+    "bytes": 164788,
+    "sha256": "52f7dcccaa15561d803d6e746e12763873a53ba10c067a7415543e2b088965a4"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD1_review_front.png",
+    "bytes": 40821,
+    "sha256": "ba71b6f38a0a9d03fed8d3116127e763284784e4749e4a42ec888be727432f08"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD1_review_right.png",
+    "bytes": 41545,
+    "sha256": "e7d4560fc965b1a8ee11f8189f051c3be01d4803bc8ae1126dfb497dd1532daa"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD1_review_three_quarter.png",
+    "bytes": 48418,
+    "sha256": "b740110bf86b056798d6b428970660223ce43afe5ae58a830560519471ff71d3"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD1_review_top.png",
+    "bytes": 52764,
+    "sha256": "93c385ab82006605000dfeecc232c9ba7d85894d9f1a73428d72a602bd4ca3a9"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD2_review.png",
+    "bytes": 161708,
+    "sha256": "da5195b762846a3032a0c47e5f57ecb6a484d8240b1df99ec29b8d738576e0bc"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD2_review_front.png",
+    "bytes": 40233,
+    "sha256": "b619495546df0132b11671540b0f02cc96dee492a42f6deea302741697fd91c1"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD2_review_right.png",
+    "bytes": 41021,
+    "sha256": "35f1322d6a70bc80b0c1f08bb00ee47fe432f14e2dfd185d8c38aa77361a46cb"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD2_review_three_quarter.png",
+    "bytes": 47716,
+    "sha256": "d75c6edede1cf1330bb175174e9a4e80164c9e1f74917a8c517664520a2f27c9"
+  },
+  {
+    "path": "previews/SM_StreamBank_LOD2_review_top.png",
+    "bytes": 51435,
+    "sha256": "23440ca9e5dcfcf29e73e9bbb921558b431bbcbd2ebbb01862ac2e792c47bddd"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD1_review.png",
+    "bytes": 166755,
+    "sha256": "4f62de0489f1ff9c628bc7aa4d02a7b203493d1287a3808e3ca8fce208c7bc0d"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD1_review_front.png",
+    "bytes": 43445,
+    "sha256": "45dd2d0f9757fa4a5ed8f4f89c307a2e920dae5bf36f45b0f136bbf12285e3eb"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD1_review_right.png",
+    "bytes": 44132,
+    "sha256": "1a17d9404349683e38cc87bc6d426e27a2930a6b51836c8ac306c4878863efaa"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD1_review_three_quarter.png",
+    "bytes": 48114,
+    "sha256": "83f2a4047e8dd847fdf76d38280d83bb022ce204995cf33d6ff329d58d808b99"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD1_review_top.png",
+    "bytes": 55055,
+    "sha256": "ca43e746feaf30e8099efaf72ed24223ae1a79df5316e693667fdf34abc43eb7"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD2_review.png",
+    "bytes": 159074,
+    "sha256": "74c6af12f369f3a6fd03128f75da592c91d0a9cd290b6107b5a4cfaf15fde440"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD2_review_front.png",
+    "bytes": 41896,
+    "sha256": "73d0df91ac5fb4932ff6b623b52481d759804752c66f06f16c8e983ae42397bb"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD2_review_right.png",
+    "bytes": 42532,
+    "sha256": "7889e59a0d785503532e48d3b3e2203227e19bb25e68a5b8e5ecaaebf29d4dc1"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD2_review_three_quarter.png",
+    "bytes": 46152,
+    "sha256": "19e204ee74e2db93c441502f53f35f9d6a926d58e9e464d6c5747e426251b719"
+  },
+  {
+    "path": "previews/SM_TrampledGrass_LOD2_review_top.png",
+    "bytes": 52238,
+    "sha256": "0c7c12036e643ef9796d822afd2dce9f9bcf30f39286f8be1be76d808a6839df"
+  },
+  {
+    "path": "previews/StreamBank_beauty.png",
+    "bytes": 428515,
+    "sha256": "098002213dc5b4ae9eea2150d92004b16e1e9503f1ec1f35448450f831306bae"
+  },
+  {
+    "path": "previews/StreamBank_material.png",
+    "bytes": 367093,
+    "sha256": "6930d42449593728c3401b7eaf6be3631ad115cb4fc7b64cf8ff9acd6bff38e3"
+  },
+  {
+    "path": "previews/StreamBank_material_front.png",
+    "bytes": 88329,
+    "sha256": "2a4bc92878ef1913f500ccd79ca523812d4f04b1655dea6241bdb66ee12158ba"
+  },
+  {
+    "path": "previews/StreamBank_material_right.png",
+    "bytes": 90053,
+    "sha256": "543d3c9f66d0059face2eb1189980d8be9e071ebedbd20d5e445ac7a302dbc71"
+  },
+  {
+    "path": "previews/StreamBank_material_three_quarter.png",
+    "bytes": 101810,
+    "sha256": "eb7f4d5676932f65dce63808da8125250d80b01167a61cf84f3daa6cf6dd8e41"
+  },
+  {
+    "path": "previews/StreamBank_material_top.png",
+    "bytes": 115506,
+    "sha256": "a4d5c9ff451d1403d734d8be4336a5169ee1af548f6bf10104db82cf9f72b3e6"
+  },
+  {
+    "path": "previews/StreamBank_wire.png",
+    "bytes": 446490,
+    "sha256": "5aadb64e7b9615fc4e886bfd90f4688a2c338a3efbe72865461e966ca7fe9015"
+  },
+  {
+    "path": "previews/StreamBank_wire_front.png",
+    "bytes": 101416,
+    "sha256": "efdbf13f5b085358ee5e1b3d5dd600025c75800866bc3b3d0825bfd80214a0b7"
+  },
+  {
+    "path": "previews/StreamBank_wire_right.png",
+    "bytes": 101351,
+    "sha256": "3e1d59eb78d39a576f7cbe14b4457507be1488c6237436fa96a320a4433a001e"
+  },
+  {
+    "path": "previews/StreamBank_wire_three_quarter.png",
+    "bytes": 126184,
+    "sha256": "185874390e70ca8f36e9cd53592ff89208b09e90e921e06a2995ca694f650668"
+  },
+  {
+    "path": "previews/StreamBank_wire_top.png",
+    "bytes": 148113,
+    "sha256": "d0668569b69554a1ae11d120d65a0ed73bcc057cd2a0093c01afb80b8ba896f5"
+  },
+  {
+    "path": "previews/TrampledGrass_beauty.png",
+    "bytes": 362986,
+    "sha256": "b8e05ea1229b91eb20705d381fea5c82c3b0c5c70f3a2228f5bc89d9d51cbd55"
+  },
+  {
+    "path": "previews/TrampledGrass_material.png",
+    "bytes": 374151,
+    "sha256": "e51d830ebb3f4151582d8dac203e6ecc8e371924e74cb771a225a0e892a711ac"
+  },
+  {
+    "path": "previews/TrampledGrass_material_front.png",
+    "bytes": 94756,
+    "sha256": "99dcf3db4cbd1236e500464fa11c00efcb0489ee4499b8288f802a7b9ec07d44"
+  },
+  {
+    "path": "previews/TrampledGrass_material_right.png",
+    "bytes": 95513,
+    "sha256": "9fe79cd30747529d7d66c9f75219e7abbc57e7c36edc035a1d11c35f21839691"
+  },
+  {
+    "path": "previews/TrampledGrass_material_three_quarter.png",
+    "bytes": 103878,
+    "sha256": "090eb386d9ae3a302ad9135b1c47ad425786ffe43da7a0f764af4fad011565a7"
+  },
+  {
+    "path": "previews/TrampledGrass_material_top.png",
+    "bytes": 117832,
+    "sha256": "a068beceecbf731890fab9d58f1507aa760234a3338de534966e8c8fd159b8b6"
+  },
+  {
+    "path": "previews/TrampledGrass_wire.png",
+    "bytes": 413151,
+    "sha256": "7b4a756d3967fb4c514fee3e71820e6b361b64ea9dd45c9cda8684be69d2abd0"
+  },
+  {
+    "path": "previews/TrampledGrass_wire_front.png",
+    "bytes": 99544,
+    "sha256": "505f71ffd50a6ee8b3735494a81d923013308d3f42236a0324be9e6e98a8c691"
+  },
+  {
+    "path": "previews/TrampledGrass_wire_right.png",
+    "bytes": 99766,
+    "sha256": "c4e88ac72bdd4357f7318e698fb1b89fdbc8463e0e4cf176399729f86793a61b"
+  },
+  {
+    "path": "previews/TrampledGrass_wire_three_quarter.png",
+    "bytes": 113958,
+    "sha256": "190fb92942b9697d5348e487cff0fdff675720f8a245112b6bc01c8630d70b9e"
+  },
+  {
+    "path": "previews/TrampledGrass_wire_top.png",
+    "bytes": 135397,
+    "sha256": "70a1f789cfe66889db6c030bac2e0b4ef5af218c3dd1496a11110e0c29da32df"
+  },
+  {
+    "path": "prompts.json",
+    "bytes": 2576,
+    "sha256": "18b8bff76dc0e499aaa11a6bb0b5f91d8bc2e83e360bfcb5c9f98af4d73f965a"
+  },
+  {
+    "path": "README.md",
+    "bytes": 5476,
+    "sha256": "ea58481e1676539478b8174a9d3eb4d7ae97315f05e24642932ff0a671a4e04e"
+  },
+  {
+    "path": "reference-prompts.json",
+    "bytes": 1585,
+    "sha256": "3f172d06bb7b53cee2c9fb4072103f3220a1029fe2f02a05d6eca223778a2456"
+  },
+  {
+    "path": "references/V01_low-grass.png",
+    "bytes": 1370888,
+    "sha256": "faf2c25c9e4eda1cf7eb170477aff034cb3718e335f80abab011e2c4083078fe"
+  },
+  {
+    "path": "references/V02_trampled-grass.png",
+    "bytes": 1498672,
+    "sha256": "facb0f0a2489e216b1cc220d19345ea39cc350a9f56ec00ac3c772f7435a8340"
+  },
+  {
+    "path": "references/V03_stream-bank.png",
+    "bytes": 1289612,
+    "sha256": "766538d3a209f50b42b04783eaf54e00cd002b7d789f05422c30a44e10491921"
+  },
+  {
+    "path": "reports/export-verification.json",
+    "bytes": 16951,
+    "sha256": "392ef71b61900ce41e2b69f59cf0369a4262eaf8258e8507fff27bda921b2654"
+  },
+  {
+    "path": "reports/image-verification.json",
+    "bytes": 2389,
+    "sha256": "3152e4959f09b8044e377aea9eb03e715908b7f6f0b0b2e03b26c572b5f821c0"
+  },
+  {
+    "path": "reports/model-manifest.json",
+    "bytes": 15899,
+    "sha256": "1f942648b79f42cfb3d8dc9789c2accd67b40e3c980038e769b3282df79b37e6"
+  },
+  {
+    "path": "reports/SM_LowGrass_LOD0_qa.json",
+    "bytes": 1099,
+    "sha256": "ffac63fc0e39d95f750f90a6eed5c27a677acac5e34b5b6353bd091b09b864f1"
+  },
+  {
+    "path": "reports/SM_LowGrass_LOD1_qa.json",
+    "bytes": 937,
+    "sha256": "4c0d91c7eb09cf3664f45755b3b053bc002c079f5292227ad68afec8eea73d57"
+  },
+  {
+    "path": "reports/SM_LowGrass_LOD2_qa.json",
+    "bytes": 933,
+    "sha256": "1b27eec4e8e0ea2d17232c95ab9aa662613eace8af12cbc15b133cb5954908ab"
+  },
+  {
+    "path": "reports/SM_StreamBank_LOD0_qa.json",
+    "bytes": 941,
+    "sha256": "e6345d1019d4ff020b0000618026da19e804f6e9aa2d4107b6cfe3c5997f369f"
+  },
+  {
+    "path": "reports/SM_StreamBank_LOD1_qa.json",
+    "bytes": 941,
+    "sha256": "3a8fa0457de986eeef134af8b2def774e4b566273c9b35a9817a594e63621adb"
+  },
+  {
+    "path": "reports/SM_StreamBank_LOD2_qa.json",
+    "bytes": 939,
+    "sha256": "119f5bad3aec6c31ead0febaeca0ae02b5f0ef70e3bf7b8812acfa2d434ac145"
+  },
+  {
+    "path": "reports/SM_TrampledGrass_LOD0_qa.json",
+    "bytes": 950,
+    "sha256": "39065f500307da3b111f1a3c0be9105d75a454e4eed2d5b62581ff8fa9336098"
+  },
+  {
+    "path": "reports/SM_TrampledGrass_LOD1_qa.json",
+    "bytes": 949,
+    "sha256": "32833c77a7f9f106bf113b574e3156d27b183b90e38980e4836c88fe601537ea"
+  },
+  {
+    "path": "reports/SM_TrampledGrass_LOD2_qa.json",
+    "bytes": 945,
+    "sha256": "72a7869c805a757e84ea3b3404ee5a552027da6ddc154af369ac8f85d0bdb2c2"
+  },
+  {
+    "path": "textures/T01_rabbit-tracks.png",
+    "bytes": 885368,
+    "sha256": "384eb5f48b1420351aa449f98230b048ff3750b54ddfcb2a76c4460ac512123b"
+  },
+  {
+    "path": "textures/T02_disturbed-soil.png",
+    "bytes": 1412312,
+    "sha256": "ba816922f6fa2747c0b5a7ff0c71a48c318e80c43714d7c6797975c6c05aad73"
+  },
+  {
+    "path": "textures/T03_grass-blades.png",
+    "bytes": 779615,
+    "sha256": "02bd19bbb5a6a904d49ca43427f9082bbaf32158475c0aecf1f1e46b465a031c"
+  },
+  {
+    "path": "textures/T04_model-palette.png",
+    "bytes": 1624,
+    "sha256": "ade395178049f307f452066d7b662aaed45f67498548d90884c9fe8fbe6047d7"
+  },
+  {
+    "path": "tools/build_assets.py",
+    "bytes": 13042,
+    "sha256": "623c28a93bf07083b612f8c9fbfb693da2453f56f7d1c5110aaab27f51f7e553"
+  },
+  {
+    "path": "tools/build_gallery.py",
+    "bytes": 4938,
+    "sha256": "d4f16b322a5d550a5f300ac6a59ecf563e6ddf527cba71e948b0862a574a95cc"
+  },
+  {
+    "path": "tools/verify_exports.py",
+    "bytes": 3225,
+    "sha256": "fb5c47fc0d1f36a96df6e9254491288cdfe383237ca2aa1d2c6d92914273dba8"
+  }
+]

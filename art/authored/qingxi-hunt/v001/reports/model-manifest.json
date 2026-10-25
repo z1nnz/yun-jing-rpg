@@ -1,0 +1,524 @@
+{
+  "blender": "5.2.2 LTS",
+  "unityVerified": false,
+  "method": "Procedural mesh authored after reviewed AI three-view references",
+  "assets": [
+    {
+      "name": "LowGrass",
+      "reference": "V01_low-grass.png",
+      "referenceSha256": "faf2c25c9e4eda1cf7eb170477aff034cb3718e335f80abab011e2c4083078fe",
+      "dimensions": [
+        0.8999999761581421,
+        0.699999988079071,
+        0.36000001430511475
+      ],
+      "lods": [
+        {
+          "name": "SM_LowGrass_LOD0",
+          "triangles": 1212,
+          "materials": 1
+        },
+        {
+          "name": "SM_LowGrass_LOD1",
+          "triangles": 552,
+          "materials": 1
+        },
+        {
+          "name": "SM_LowGrass_LOD2",
+          "triangles": 248,
+          "materials": 1
+        }
+      ],
+      "qa": {
+        "SM_LowGrass_LOD0": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_LowGrass_LOD0: ~91.25% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+            "hidden back-to-back faces: SM_LowGrass_LOD0 (1 pairs) - delete to save tris"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [
+            {
+              "where": "SM_LowGrass_LOD0",
+              "tri_pairs": 1
+            }
+          ],
+          "enclosed": [],
+          "objects": {
+            "SM_LowGrass_LOD0": {
+              "verts": 668,
+              "faces": 1212,
+              "tris": 1212,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 31,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 91.25,
+              "uv_coverage_pct": 11.4
+            }
+          }
+        },
+        "SM_LowGrass_LOD1": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_LowGrass_LOD1: ~89.46% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_LowGrass_LOD1": {
+              "verts": 310,
+              "faces": 552,
+              "tris": 552,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 17,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 89.46,
+              "uv_coverage_pct": 10.9
+            }
+          }
+        },
+        "SM_LowGrass_LOD2": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_LowGrass_LOD2: ~71.1% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_LowGrass_LOD2": {
+              "verts": 142,
+              "faces": 248,
+              "tris": 248,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 9,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 71.1,
+              "uv_coverage_pct": 8.9
+            }
+          }
+        }
+      },
+      "collision": "none: decorative nonblocking foliage",
+      "acceptedWarnings": "UVs deliberately share palette swatches; not a lightmap UV set. Generate UV2 in Unity if required."
+    },
+    {
+      "name": "TrampledGrass",
+      "reference": "V02_trampled-grass.png",
+      "referenceSha256": "facb0f0a2489e216b1cc220d19345ea39cc350a9f56ec00ac3c772f7435a8340",
+      "dimensions": [
+        1.5,
+        0.8999999761581421,
+        0.2800000011920929
+      ],
+      "lods": [
+        {
+          "name": "SM_TrampledGrass_LOD0",
+          "triangles": 2452,
+          "materials": 1
+        },
+        {
+          "name": "SM_TrampledGrass_LOD1",
+          "triangles": 1116,
+          "materials": 1
+        },
+        {
+          "name": "SM_TrampledGrass_LOD2",
+          "triangles": 492,
+          "materials": 1
+        }
+      ],
+      "qa": {
+        "SM_TrampledGrass_LOD0": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_TrampledGrass_LOD0: ~94.62% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_TrampledGrass_LOD0": {
+              "verts": 1352,
+              "faces": 2452,
+              "tris": 2452,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 63,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 94.62,
+              "uv_coverage_pct": 11.6
+            }
+          }
+        },
+        "SM_TrampledGrass_LOD1": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_TrampledGrass_LOD1: ~93.78% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_TrampledGrass_LOD1": {
+              "verts": 628,
+              "faces": 1116,
+              "tris": 1116,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 35,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 93.78,
+              "uv_coverage_pct": 11.4
+            }
+          }
+        },
+        "SM_TrampledGrass_LOD2": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_TrampledGrass_LOD2: ~81.1% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_TrampledGrass_LOD2": {
+              "verts": 284,
+              "faces": 492,
+              "tris": 492,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 19,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 81.1,
+              "uv_coverage_pct": 10.7
+            }
+          }
+        }
+      },
+      "collision": "none: decorative nonblocking foliage",
+      "acceptedWarnings": "UVs deliberately share palette swatches; not a lightmap UV set. Generate UV2 in Unity if required."
+    },
+    {
+      "name": "StreamBank",
+      "reference": "V03_stream-bank.png",
+      "referenceSha256": "766538d3a209f50b42b04783eaf54e00cd002b7d789f05422c30a44e10491921",
+      "dimensions": [
+        4.0,
+        4.0,
+        0.42875000834465027
+      ],
+      "lods": [
+        {
+          "name": "SM_StreamBank_LOD0",
+          "triangles": 736,
+          "materials": 1
+        },
+        {
+          "name": "SM_StreamBank_LOD1",
+          "triangles": 464,
+          "materials": 1
+        },
+        {
+          "name": "SM_StreamBank_LOD2",
+          "triangles": 288,
+          "materials": 1
+        }
+      ],
+      "qa": {
+        "SM_StreamBank_LOD0": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_StreamBank_LOD0: ~84.36% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_StreamBank_LOD0": {
+              "verts": 402,
+              "faces": 736,
+              "tris": 736,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 17,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 84.36,
+              "uv_coverage_pct": 13.3
+            }
+          }
+        },
+        "SM_StreamBank_LOD1": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_StreamBank_LOD1: ~69.07% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_StreamBank_LOD1": {
+              "verts": 258,
+              "faces": 464,
+              "tris": 464,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 13,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 69.07,
+              "uv_coverage_pct": 10.8
+            }
+          }
+        },
+        "SM_StreamBank_LOD2": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [
+            "SM_StreamBank_LOD2: ~75.97% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+          ],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "SM_StreamBank_LOD2": {
+              "verts": 162,
+              "faces": 288,
+              "tris": 288,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 9,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 75.97,
+              "uv_coverage_pct": 7.6
+            }
+          }
+        },
+        "COL_StreamBank": {
+          "ok": true,
+          "pass": true,
+          "errors": [],
+          "warnings": [],
+          "ground_z": 0.0,
+          "zfighting": [],
+          "floating": [],
+          "back_to_back": [],
+          "enclosed": [],
+          "objects": {
+            "COL_StreamBank": {
+              "verts": 9,
+              "faces": 14,
+              "tris": 14,
+              "ngons": 0,
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "wire_edges": 0,
+              "loose_verts": 0,
+              "degenerate_faces": 0,
+              "zero_length_edges": 0,
+              "inconsistent_normals_edges": 0,
+              "duplicate_verts": 0,
+              "islands": 1,
+              "inside_out_islands": 0,
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "materials": 1,
+              "uv_maps": 1,
+              "uv_oob_pct": 0.0,
+              "uv_zero_area_faces": 0,
+              "uv_overlap_pct": 4.46,
+              "uv_coverage_pct": 1.4
+            }
+          }
+        }
+      },
+      "collision": "separate low-poly ramp mesh",
+      "acceptedWarnings": "UVs deliberately share palette swatches; not a lightmap UV set. Generate UV2 in Unity if required."
+    }
+  ]
+}

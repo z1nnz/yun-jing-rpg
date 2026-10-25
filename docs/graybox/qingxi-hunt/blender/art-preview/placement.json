@@ -1,0 +1,4514 @@
+{
+ "note": "Visual scale trial only; layout.json is unchanged and remains the coordinate source.",
+ "art_batch": "art/authored/qingxi-hunt/v001",
+ "instances": [
+  {
+   "object": "LowGrass_A01_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    120.28,
+    119.12
+   ],
+   "yaw_deg": 184.2,
+   "scale": 1.194,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    119.64,
+    118.23
+   ],
+   "yaw_deg": 216.3,
+   "scale": 1.073,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    118.68,
+    113.79
+   ],
+   "yaw_deg": 262.9,
+   "scale": 1.157,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    118.02,
+    113.57
+   ],
+   "yaw_deg": 86.3,
+   "scale": 1.096,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    121.3,
+    119.76
+   ],
+   "yaw_deg": 161.8,
+   "scale": 1.176,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    116.5,
+    113.53
+   ],
+   "yaw_deg": 75.6,
+   "scale": 0.951,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    122.69,
+    116.4
+   ],
+   "yaw_deg": 289.7,
+   "scale": 1.25,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    116.52,
+    116.87
+   ],
+   "yaw_deg": 122.5,
+   "scale": 1.073,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    117.23,
+    119.84
+   ],
+   "yaw_deg": 315.4,
+   "scale": 1.132,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    116.86,
+    116.4
+   ],
+   "yaw_deg": 255.8,
+   "scale": 0.995,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    115.6,
+    118.27
+   ],
+   "yaw_deg": 210.8,
+   "scale": 1.049,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    120.32,
+    119.09
+   ],
+   "yaw_deg": 269.9,
+   "scale": 1.09,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    113.32,
+    117.26
+   ],
+   "yaw_deg": 93.1,
+   "scale": 1.018,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    120.7,
+    115.65
+   ],
+   "yaw_deg": 186.4,
+   "scale": 0.86,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    131.27,
+    124.67
+   ],
+   "yaw_deg": 17.6,
+   "scale": 1.132,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    132.2,
+    121.96
+   ],
+   "yaw_deg": 223.9,
+   "scale": 1.038,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    128.94,
+    123.23
+   ],
+   "yaw_deg": 318.8,
+   "scale": 1.101,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    128.13,
+    123.8
+   ],
+   "yaw_deg": 334.4,
+   "scale": 1.245,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    127.81,
+    122.06
+   ],
+   "yaw_deg": 241.0,
+   "scale": 0.973,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    131.96,
+    120.04
+   ],
+   "yaw_deg": 172.3,
+   "scale": 1.204,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    128.88,
+    123.95
+   ],
+   "yaw_deg": 96.8,
+   "scale": 0.863,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    129.06,
+    120.12
+   ],
+   "yaw_deg": 164.9,
+   "scale": 1.059,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    126.31,
+    123.31
+   ],
+   "yaw_deg": 93.6,
+   "scale": 1.044,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    126.67,
+    122.69
+   ],
+   "yaw_deg": 290.7,
+   "scale": 1.073,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    134.64,
+    120.6
+   ],
+   "yaw_deg": 113.9,
+   "scale": 1.217,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    134.11,
+    125.21
+   ],
+   "yaw_deg": 282.5,
+   "scale": 1.056,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    126.34,
+    124.42
+   ],
+   "yaw_deg": 348.0,
+   "scale": 1.187,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    129.57,
+    123.19
+   ],
+   "yaw_deg": 95.9,
+   "scale": 1.049,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    141.32,
+    102.31
+   ],
+   "yaw_deg": 148.0,
+   "scale": 1.03,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    139.2,
+    100.11
+   ],
+   "yaw_deg": 208.9,
+   "scale": 1.223,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    141.65,
+    102.1
+   ],
+   "yaw_deg": 89.2,
+   "scale": 1.098,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    138.06,
+    95.17
+   ],
+   "yaw_deg": 240.5,
+   "scale": 1.104,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    139.35,
+    101.98
+   ],
+   "yaw_deg": 209.8,
+   "scale": 1.158,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    140.92,
+    99.05
+   ],
+   "yaw_deg": 259.2,
+   "scale": 0.904,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    138.58,
+    103.38
+   ],
+   "yaw_deg": 344.8,
+   "scale": 1.2,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    136.48,
+    99.95
+   ],
+   "yaw_deg": 240.6,
+   "scale": 1.224,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    138.98,
+    95.43
+   ],
+   "yaw_deg": 110.1,
+   "scale": 1.015,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    139.13,
+    97.03
+   ],
+   "yaw_deg": 70.8,
+   "scale": 0.856,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    141.59,
+    102.83
+   ],
+   "yaw_deg": 18.5,
+   "scale": 0.989,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    135.51,
+    103.28
+   ],
+   "yaw_deg": 9.3,
+   "scale": 1.054,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    136.9,
+    102.08
+   ],
+   "yaw_deg": 117.3,
+   "scale": 0.899,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A03_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    141.2,
+    98.93
+   ],
+   "yaw_deg": 289.6,
+   "scale": 0.912,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    142.17,
+    129.65
+   ],
+   "yaw_deg": 121.0,
+   "scale": 1.089,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    144.36,
+    128.68
+   ],
+   "yaw_deg": 143.6,
+   "scale": 0.928,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    146.21,
+    129.35
+   ],
+   "yaw_deg": 196.0,
+   "scale": 1.186,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    141.12,
+    131.21
+   ],
+   "yaw_deg": 67.8,
+   "scale": 1.134,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    146.22,
+    128.83
+   ],
+   "yaw_deg": 190.7,
+   "scale": 1.164,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    140.19,
+    129.49
+   ],
+   "yaw_deg": 57.7,
+   "scale": 1.188,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    142.83,
+    131.8
+   ],
+   "yaw_deg": 149.0,
+   "scale": 0.881,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    144.15,
+    132.36
+   ],
+   "yaw_deg": 94.8,
+   "scale": 1.049,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    145.53,
+    127.27
+   ],
+   "yaw_deg": 168.3,
+   "scale": 0.98,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    143.35,
+    130.19
+   ],
+   "yaw_deg": 286.6,
+   "scale": 1.169,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    146.79,
+    125.95
+   ],
+   "yaw_deg": 83.2,
+   "scale": 1.231,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    147.64,
+    127.48
+   ],
+   "yaw_deg": 146.8,
+   "scale": 1.163,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    147.19,
+    126.96
+   ],
+   "yaw_deg": 345.9,
+   "scale": 0.991,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    146.84,
+    132.78
+   ],
+   "yaw_deg": 205.9,
+   "scale": 1.065,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    162.03,
+    136.49
+   ],
+   "yaw_deg": 200.0,
+   "scale": 1.077,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    159.51,
+    136.26
+   ],
+   "yaw_deg": 96.5,
+   "scale": 1.072,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    160.77,
+    135.31
+   ],
+   "yaw_deg": 343.6,
+   "scale": 0.919,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    157.37,
+    130.26
+   ],
+   "yaw_deg": 259.9,
+   "scale": 0.924,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    156.86,
+    131.72
+   ],
+   "yaw_deg": 99.6,
+   "scale": 1.185,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    158.39,
+    136.32
+   ],
+   "yaw_deg": 93.9,
+   "scale": 0.875,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    155.08,
+    136.43
+   ],
+   "yaw_deg": 279.5,
+   "scale": 1.016,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    160.56,
+    134.15
+   ],
+   "yaw_deg": 8.3,
+   "scale": 0.899,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    157.67,
+    130.88
+   ],
+   "yaw_deg": 336.8,
+   "scale": 0.99,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    159.65,
+    130.55
+   ],
+   "yaw_deg": 235.6,
+   "scale": 1.096,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    161.14,
+    132.91
+   ],
+   "yaw_deg": 77.6,
+   "scale": 1.035,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    163.5,
+    133.41
+   ],
+   "yaw_deg": 247.0,
+   "scale": 1.195,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    157.03,
+    129.72
+   ],
+   "yaw_deg": 140.0,
+   "scale": 1.229,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    156.53,
+    137.14
+   ],
+   "yaw_deg": 157.1,
+   "scale": 0.859,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    165.22,
+    107.83
+   ],
+   "yaw_deg": 344.8,
+   "scale": 1.17,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    168.96,
+    112.86
+   ],
+   "yaw_deg": 114.7,
+   "scale": 1.211,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    163.59,
+    109.35
+   ],
+   "yaw_deg": 201.8,
+   "scale": 1.139,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    168.7,
+    112.31
+   ],
+   "yaw_deg": 42.6,
+   "scale": 0.9,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    163.77,
+    112.91
+   ],
+   "yaw_deg": 236.0,
+   "scale": 0.862,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    163.75,
+    108.8
+   ],
+   "yaw_deg": 138.2,
+   "scale": 0.946,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    164.21,
+    110.97
+   ],
+   "yaw_deg": 45.1,
+   "scale": 1.067,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    163.49,
+    105.96
+   ],
+   "yaw_deg": 246.0,
+   "scale": 1.009,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    165.94,
+    111.76
+   ],
+   "yaw_deg": 8.4,
+   "scale": 0.961,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    163.82,
+    110.29
+   ],
+   "yaw_deg": 113.3,
+   "scale": 1.228,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    162.35,
+    107.56
+   ],
+   "yaw_deg": 199.0,
+   "scale": 1.11,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    169.06,
+    109.24
+   ],
+   "yaw_deg": 95.4,
+   "scale": 1.103,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    166.07,
+    107.59
+   ],
+   "yaw_deg": 236.7,
+   "scale": 0.855,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B03_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    168.96,
+    109.59
+   ],
+   "yaw_deg": 349.1,
+   "scale": 1.122,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    176.06,
+    129.4
+   ],
+   "yaw_deg": 326.0,
+   "scale": 1.01,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    177.76,
+    132.28
+   ],
+   "yaw_deg": 83.7,
+   "scale": 1.182,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    171.91,
+    134.63
+   ],
+   "yaw_deg": 129.2,
+   "scale": 1.105,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    170.14,
+    132.09
+   ],
+   "yaw_deg": 283.8,
+   "scale": 1.082,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    174.36,
+    136.32
+   ],
+   "yaw_deg": 55.3,
+   "scale": 1.208,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    177.09,
+    131.68
+   ],
+   "yaw_deg": 300.5,
+   "scale": 1.131,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    174.02,
+    129.52
+   ],
+   "yaw_deg": 30.3,
+   "scale": 0.999,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    172.79,
+    131.29
+   ],
+   "yaw_deg": 266.1,
+   "scale": 1.25,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    175.01,
+    133.23
+   ],
+   "yaw_deg": 305.4,
+   "scale": 1.083,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    168.66,
+    130.87
+   ],
+   "yaw_deg": 136.9,
+   "scale": 1.235,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    169.37,
+    132.62
+   ],
+   "yaw_deg": 56.9,
+   "scale": 1.054,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    176.42,
+    135.04
+   ],
+   "yaw_deg": 120.0,
+   "scale": 0.955,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    176.34,
+    133.89
+   ],
+   "yaw_deg": 283.3,
+   "scale": 0.915,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    172.13,
+    136.14
+   ],
+   "yaw_deg": 128.5,
+   "scale": 1.239,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    186.52,
+    138.74
+   ],
+   "yaw_deg": 3.4,
+   "scale": 1.092,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    182.22,
+    135.35
+   ],
+   "yaw_deg": 292.2,
+   "scale": 1.211,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    189.94,
+    134.34
+   ],
+   "yaw_deg": 61.5,
+   "scale": 1.056,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    186.39,
+    137.94
+   ],
+   "yaw_deg": 59.0,
+   "scale": 1.205,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    180.47,
+    134.57
+   ],
+   "yaw_deg": 231.5,
+   "scale": 0.851,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    183.17,
+    136.84
+   ],
+   "yaw_deg": 77.8,
+   "scale": 0.912,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    183.71,
+    133.93
+   ],
+   "yaw_deg": 354.4,
+   "scale": 1.044,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    187.78,
+    132.18
+   ],
+   "yaw_deg": 137.2,
+   "scale": 1.097,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    183.49,
+    132.98
+   ],
+   "yaw_deg": 327.3,
+   "scale": 0.898,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    180.68,
+    134.48
+   ],
+   "yaw_deg": 245.9,
+   "scale": 1.032,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    183.7,
+    134.23
+   ],
+   "yaw_deg": 280.3,
+   "scale": 0.885,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    182.62,
+    135.08
+   ],
+   "yaw_deg": 271.0,
+   "scale": 0.94,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    183.58,
+    137.78
+   ],
+   "yaw_deg": 119.4,
+   "scale": 1.213,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    184.27,
+    130.6
+   ],
+   "yaw_deg": 145.0,
+   "scale": 0.921,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    188.71,
+    102.09
+   ],
+   "yaw_deg": 248.0,
+   "scale": 0.989,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    188.64,
+    101.32
+   ],
+   "yaw_deg": 289.0,
+   "scale": 1.003,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    190.27,
+    107.32
+   ],
+   "yaw_deg": 236.3,
+   "scale": 0.901,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    187.52,
+    108.35
+   ],
+   "yaw_deg": 115.2,
+   "scale": 1.186,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    186.35,
+    104.6
+   ],
+   "yaw_deg": 225.6,
+   "scale": 0.944,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    191.28,
+    103.42
+   ],
+   "yaw_deg": 44.3,
+   "scale": 0.967,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    185.37,
+    104.71
+   ],
+   "yaw_deg": 7.8,
+   "scale": 1.137,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    186.86,
+    101.8
+   ],
+   "yaw_deg": 244.4,
+   "scale": 1.219,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_8",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    191.71,
+    101.6
+   ],
+   "yaw_deg": 342.8,
+   "scale": 1.117,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_9",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    186.09,
+    103.43
+   ],
+   "yaw_deg": 126.7,
+   "scale": 0.982,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_10",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    191.5,
+    102.16
+   ],
+   "yaw_deg": 3.8,
+   "scale": 1.074,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_11",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    187.97,
+    106.47
+   ],
+   "yaw_deg": 231.9,
+   "scale": 1.016,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_12",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    188.53,
+    101.04
+   ],
+   "yaw_deg": 319.9,
+   "scale": 0.985,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C03_13",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    189.98,
+    104.48
+   ],
+   "yaw_deg": 43.5,
+   "scale": 1.191,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    119.76,
+    102.06
+   ],
+   "yaw_deg": 75.3,
+   "scale": 1.033,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    119.24,
+    104.46
+   ],
+   "yaw_deg": 28.4,
+   "scale": 1.127,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    118.02,
+    99.5
+   ],
+   "yaw_deg": 34.4,
+   "scale": 0.982,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    120.74,
+    103.78
+   ],
+   "yaw_deg": 218.1,
+   "scale": 0.918,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    118.44,
+    103.98
+   ],
+   "yaw_deg": 256.1,
+   "scale": 1.122,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    117.73,
+    99.12
+   ],
+   "yaw_deg": 97.5,
+   "scale": 1.018,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    121.95,
+    104.53
+   ],
+   "yaw_deg": 355.7,
+   "scale": 1.245,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A01_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    123.92,
+    97.53
+   ],
+   "yaw_deg": 122.8,
+   "scale": 0.989,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    125.63,
+    104.12
+   ],
+   "yaw_deg": 317.8,
+   "scale": 1.186,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    131.86,
+    106.91
+   ],
+   "yaw_deg": 7.8,
+   "scale": 1.174,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    127.88,
+    111.02
+   ],
+   "yaw_deg": 71.5,
+   "scale": 0.959,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    129.97,
+    102.99
+   ],
+   "yaw_deg": 78.5,
+   "scale": 0.872,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    126.09,
+    107.2
+   ],
+   "yaw_deg": 259.8,
+   "scale": 1.114,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    125.9,
+    101.39
+   ],
+   "yaw_deg": 107.4,
+   "scale": 1.043,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    131.4,
+    108.18
+   ],
+   "yaw_deg": 188.0,
+   "scale": 0.98,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_A02_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    126.61,
+    109.06
+   ],
+   "yaw_deg": 65.2,
+   "scale": 1.246,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    151.76,
+    113.96
+   ],
+   "yaw_deg": 92.6,
+   "scale": 1.229,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    152.82,
+    113.05
+   ],
+   "yaw_deg": 137.7,
+   "scale": 0.893,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    147.79,
+    114.19
+   ],
+   "yaw_deg": 166.9,
+   "scale": 0.934,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    145.9,
+    115.79
+   ],
+   "yaw_deg": 184.8,
+   "scale": 1.167,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    149.29,
+    121.45
+   ],
+   "yaw_deg": 175.8,
+   "scale": 1.074,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    151.78,
+    113.22
+   ],
+   "yaw_deg": 358.8,
+   "scale": 1.007,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    146.89,
+    113.25
+   ],
+   "yaw_deg": 54.7,
+   "scale": 1.071,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B01_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    154.88,
+    115.38
+   ],
+   "yaw_deg": 47.2,
+   "scale": 1.176,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    158.76,
+    118.13
+   ],
+   "yaw_deg": 239.9,
+   "scale": 0.864,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    161.42,
+    114.41
+   ],
+   "yaw_deg": 64.4,
+   "scale": 0.957,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    156.68,
+    119.14
+   ],
+   "yaw_deg": 164.5,
+   "scale": 0.925,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    162.59,
+    120.91
+   ],
+   "yaw_deg": 55.4,
+   "scale": 1.106,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    155.82,
+    120.27
+   ],
+   "yaw_deg": 10.4,
+   "scale": 0.938,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    157.26,
+    123.14
+   ],
+   "yaw_deg": 167.5,
+   "scale": 1.149,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    161.85,
+    122.73
+   ],
+   "yaw_deg": 257.2,
+   "scale": 0.866,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_B02_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    162.38,
+    120.11
+   ],
+   "yaw_deg": 210.9,
+   "scale": 1.132,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    179.18,
+    109.21
+   ],
+   "yaw_deg": 272.3,
+   "scale": 0.916,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    179.9,
+    116.91
+   ],
+   "yaw_deg": 152.1,
+   "scale": 1.023,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    179.34,
+    109.67
+   ],
+   "yaw_deg": 80.8,
+   "scale": 1.237,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    178.61,
+    114.56
+   ],
+   "yaw_deg": 356.9,
+   "scale": 1.019,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    173.2,
+    114.52
+   ],
+   "yaw_deg": 253.7,
+   "scale": 1.237,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    175.41,
+    109.27
+   ],
+   "yaw_deg": 341.1,
+   "scale": 1.093,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    182.68,
+    115.05
+   ],
+   "yaw_deg": 265.9,
+   "scale": 0.896,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C01_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    182.28,
+    114.31
+   ],
+   "yaw_deg": 223.9,
+   "scale": 0.913,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_0",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    182.15,
+    130.03
+   ],
+   "yaw_deg": 68.1,
+   "scale": 1.229,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_1",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    182.11,
+    125.77
+   ],
+   "yaw_deg": 349.4,
+   "scale": 1.109,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_2",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    184.42,
+    123.34
+   ],
+   "yaw_deg": 103.3,
+   "scale": 0.996,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_3",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    184.08,
+    126.24
+   ],
+   "yaw_deg": 319.1,
+   "scale": 1.186,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_4",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    177.46,
+    126.19
+   ],
+   "yaw_deg": 285.5,
+   "scale": 1.074,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_5",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    183.75,
+    125.28
+   ],
+   "yaw_deg": 219.0,
+   "scale": 1.087,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_6",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    184.24,
+    124.03
+   ],
+   "yaw_deg": 117.4,
+   "scale": 0.952,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrass_C02_7",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    178.41,
+    122.5
+   ],
+   "yaw_deg": 124.5,
+   "scale": 1.18,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_0",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    152.03,
+    111.82
+   ],
+   "yaw_deg": 35.4,
+   "scale": 0.938,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_1",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    112.98,
+    115.41
+   ],
+   "yaw_deg": 25.3,
+   "scale": 1.261,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_2",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    155.15,
+    103.17
+   ],
+   "yaw_deg": 232.3,
+   "scale": 1.087,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_3",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    146.56,
+    108.72
+   ],
+   "yaw_deg": 7.9,
+   "scale": 1.249,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_4",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    120.75,
+    86.31
+   ],
+   "yaw_deg": 33.1,
+   "scale": 1.067,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_5",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    130.4,
+    138.31
+   ],
+   "yaw_deg": 269.5,
+   "scale": 0.836,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_6",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    158.16,
+    87.18
+   ],
+   "yaw_deg": 346.8,
+   "scale": 1.253,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_7",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    167.38,
+    98.42
+   ],
+   "yaw_deg": 169.4,
+   "scale": 0.961,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_8",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    181.73,
+    121.43
+   ],
+   "yaw_deg": 143.9,
+   "scale": 1.057,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_9",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    177.87,
+    105.13
+   ],
+   "yaw_deg": 175.9,
+   "scale": 1.098,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_10",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    145.08,
+    126.13
+   ],
+   "yaw_deg": 211.7,
+   "scale": 1.095,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_11",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    185.64,
+    103.08
+   ],
+   "yaw_deg": 12.2,
+   "scale": 1.033,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_12",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    151.71,
+    96.04
+   ],
+   "yaw_deg": 155.3,
+   "scale": 1.168,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_13",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    112.1,
+    116.13
+   ],
+   "yaw_deg": 187.1,
+   "scale": 1.277,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_14",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    118.88,
+    86.34
+   ],
+   "yaw_deg": 356.2,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_15",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    131.01,
+    128.02
+   ],
+   "yaw_deg": 188.8,
+   "scale": 1.256,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_16",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    116.76,
+    90.06
+   ],
+   "yaw_deg": 328.0,
+   "scale": 0.909,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_17",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    177.37,
+    128.18
+   ],
+   "yaw_deg": 202.3,
+   "scale": 1.25,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_18",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    186.79,
+    138.73
+   ],
+   "yaw_deg": 249.7,
+   "scale": 1.22,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_19",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    151.24,
+    136.04
+   ],
+   "yaw_deg": 344.3,
+   "scale": 1.251,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_20",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    187.39,
+    119.03
+   ],
+   "yaw_deg": 349.4,
+   "scale": 0.824,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_21",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    117.29,
+    119.11
+   ],
+   "yaw_deg": 100.4,
+   "scale": 0.804,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_22",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    159.42,
+    82.62
+   ],
+   "yaw_deg": 332.8,
+   "scale": 0.836,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_23",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    166.06,
+    112.79
+   ],
+   "yaw_deg": 197.0,
+   "scale": 1.058,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_24",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    153.22,
+    109.72
+   ],
+   "yaw_deg": 19.2,
+   "scale": 0.976,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_25",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    152.94,
+    107.84
+   ],
+   "yaw_deg": 87.2,
+   "scale": 0.808,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_26",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    140.87,
+    85.36
+   ],
+   "yaw_deg": 242.8,
+   "scale": 0.889,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_27",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    132.31,
+    118.77
+   ],
+   "yaw_deg": 60.8,
+   "scale": 0.846,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_28",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    137.55,
+    124.87
+   ],
+   "yaw_deg": 46.9,
+   "scale": 1.27,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_29",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    175.82,
+    108.46
+   ],
+   "yaw_deg": 249.5,
+   "scale": 1.143,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_30",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    135.79,
+    109.7
+   ],
+   "yaw_deg": 41.5,
+   "scale": 0.801,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_31",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    140.36,
+    137.95
+   ],
+   "yaw_deg": 179.2,
+   "scale": 1.009,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_32",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    155.34,
+    110.74
+   ],
+   "yaw_deg": 128.1,
+   "scale": 1.171,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_33",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    129.04,
+    102.63
+   ],
+   "yaw_deg": 88.1,
+   "scale": 0.952,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_34",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    155.31,
+    98.41
+   ],
+   "yaw_deg": 191.2,
+   "scale": 1.286,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_35",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    137.4,
+    124.17
+   ],
+   "yaw_deg": 257.1,
+   "scale": 1.095,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_36",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    129.41,
+    108.29
+   ],
+   "yaw_deg": 338.9,
+   "scale": 1.104,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_37",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    150.21,
+    119.73
+   ],
+   "yaw_deg": 40.7,
+   "scale": 0.864,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_38",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    159.04,
+    98.67
+   ],
+   "yaw_deg": 146.7,
+   "scale": 0.926,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_39",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    122.05,
+    118.01
+   ],
+   "yaw_deg": 1.8,
+   "scale": 1.094,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_40",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    117.7,
+    129.92
+   ],
+   "yaw_deg": 159.7,
+   "scale": 0.834,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_41",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    140.82,
+    96.42
+   ],
+   "yaw_deg": 276.8,
+   "scale": 1.164,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_42",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    176.47,
+    95.05
+   ],
+   "yaw_deg": 266.1,
+   "scale": 1.005,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_43",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    133.72,
+    98.79
+   ],
+   "yaw_deg": 60.5,
+   "scale": 1.106,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_44",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    170.8,
+    104.2
+   ],
+   "yaw_deg": 312.2,
+   "scale": 1.132,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_45",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    123.27,
+    86.09
+   ],
+   "yaw_deg": 138.6,
+   "scale": 1.101,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_46",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    161.56,
+    103.68
+   ],
+   "yaw_deg": 221.8,
+   "scale": 0.951,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_47",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    153.43,
+    138.25
+   ],
+   "yaw_deg": 249.6,
+   "scale": 0.974,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_48",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    183.77,
+    94.55
+   ],
+   "yaw_deg": 183.0,
+   "scale": 0.819,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_49",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    159.7,
+    91.72
+   ],
+   "yaw_deg": 61.1,
+   "scale": 1.015,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_50",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    156.44,
+    106.69
+   ],
+   "yaw_deg": 135.0,
+   "scale": 1.048,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_51",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    112.89,
+    115.8
+   ],
+   "yaw_deg": 121.4,
+   "scale": 0.949,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_52",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.12,
+    139.04
+   ],
+   "yaw_deg": 226.5,
+   "scale": 1.067,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_53",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    176.35,
+    136.78
+   ],
+   "yaw_deg": 102.8,
+   "scale": 1.132,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_54",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    186.54,
+    110.36
+   ],
+   "yaw_deg": 299.3,
+   "scale": 0.975,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_55",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    141.16,
+    93.23
+   ],
+   "yaw_deg": 151.6,
+   "scale": 1.015,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_56",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    178.33,
+    128.02
+   ],
+   "yaw_deg": 201.2,
+   "scale": 0.989,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_57",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    179.09,
+    131.9
+   ],
+   "yaw_deg": 10.5,
+   "scale": 0.918,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_58",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    123.99,
+    117.07
+   ],
+   "yaw_deg": 170.2,
+   "scale": 1.207,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_59",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    144.84,
+    91.37
+   ],
+   "yaw_deg": 11.2,
+   "scale": 0.842,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_60",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    118.12,
+    93.04
+   ],
+   "yaw_deg": 44.3,
+   "scale": 1.101,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_61",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    160.87,
+    139.61
+   ],
+   "yaw_deg": 225.3,
+   "scale": 1.008,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_62",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    117.74,
+    83.98
+   ],
+   "yaw_deg": 123.0,
+   "scale": 0.875,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_63",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    160.19,
+    85.97
+   ],
+   "yaw_deg": 38.0,
+   "scale": 1.209,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_64",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    178.39,
+    85.97
+   ],
+   "yaw_deg": 359.1,
+   "scale": 1.198,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_65",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.89,
+    136.83
+   ],
+   "yaw_deg": 32.8,
+   "scale": 1.143,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_66",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.84,
+    139.49
+   ],
+   "yaw_deg": 159.0,
+   "scale": 0.831,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_67",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    148.05,
+    124.83
+   ],
+   "yaw_deg": 359.0,
+   "scale": 1.004,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_68",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    144.25,
+    84.12
+   ],
+   "yaw_deg": 256.5,
+   "scale": 1.062,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_69",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.97,
+    101.0
+   ],
+   "yaw_deg": 60.8,
+   "scale": 1.228,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_70",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    158.2,
+    127.47
+   ],
+   "yaw_deg": 92.9,
+   "scale": 1.201,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_71",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    172.87,
+    121.69
+   ],
+   "yaw_deg": 131.3,
+   "scale": 1.176,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_72",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    179.34,
+    98.65
+   ],
+   "yaw_deg": 266.9,
+   "scale": 1.102,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_73",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    112.72,
+    116.58
+   ],
+   "yaw_deg": 189.7,
+   "scale": 0.945,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_74",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    169.08,
+    132.15
+   ],
+   "yaw_deg": 74.8,
+   "scale": 1.266,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_75",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    168.23,
+    106.51
+   ],
+   "yaw_deg": 128.8,
+   "scale": 1.059,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_76",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    186.21,
+    98.68
+   ],
+   "yaw_deg": 313.8,
+   "scale": 0.923,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_77",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    183.41,
+    116.05
+   ],
+   "yaw_deg": 121.5,
+   "scale": 0.959,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_78",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    183.69,
+    118.27
+   ],
+   "yaw_deg": 237.8,
+   "scale": 1.003,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_79",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.94,
+    107.71
+   ],
+   "yaw_deg": 135.4,
+   "scale": 0.853,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_80",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    139.81,
+    129.42
+   ],
+   "yaw_deg": 154.9,
+   "scale": 1.14,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_81",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    156.75,
+    114.16
+   ],
+   "yaw_deg": 128.9,
+   "scale": 1.18,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_82",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    140.91,
+    101.04
+   ],
+   "yaw_deg": 90.3,
+   "scale": 1.04,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_83",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    138.81,
+    107.96
+   ],
+   "yaw_deg": 217.0,
+   "scale": 1.232,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_84",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    133.52,
+    138.54
+   ],
+   "yaw_deg": 285.4,
+   "scale": 0.858,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_85",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    136.47,
+    95.7
+   ],
+   "yaw_deg": 108.0,
+   "scale": 1.232,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_86",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    166.77,
+    80.13
+   ],
+   "yaw_deg": 78.5,
+   "scale": 0.839,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_87",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    124.12,
+    122.52
+   ],
+   "yaw_deg": 336.5,
+   "scale": 1.281,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_88",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    153.18,
+    86.19
+   ],
+   "yaw_deg": 220.4,
+   "scale": 1.058,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_89",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    159.39,
+    97.35
+   ],
+   "yaw_deg": 38.9,
+   "scale": 1.009,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_90",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    119.32,
+    139.89
+   ],
+   "yaw_deg": 326.7,
+   "scale": 1.197,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_91",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    115.75,
+    115.36
+   ],
+   "yaw_deg": 264.5,
+   "scale": 0.994,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_92",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    120.95,
+    138.21
+   ],
+   "yaw_deg": 202.2,
+   "scale": 0.812,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_93",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    171.63,
+    97.22
+   ],
+   "yaw_deg": 331.8,
+   "scale": 1.078,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_94",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    176.77,
+    106.47
+   ],
+   "yaw_deg": 334.9,
+   "scale": 1.007,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_95",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    121.97,
+    118.37
+   ],
+   "yaw_deg": 354.5,
+   "scale": 0.882,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_96",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    141.78,
+    82.93
+   ],
+   "yaw_deg": 163.1,
+   "scale": 1.087,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_97",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    175.71,
+    106.47
+   ],
+   "yaw_deg": 228.8,
+   "scale": 1.192,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_98",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    132.99,
+    126.86
+   ],
+   "yaw_deg": 286.5,
+   "scale": 1.015,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_99",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    131.58,
+    124.42
+   ],
+   "yaw_deg": 188.5,
+   "scale": 0.875,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_100",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    135.71,
+    125.78
+   ],
+   "yaw_deg": 248.2,
+   "scale": 0.816,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_101",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    118.24,
+    107.98
+   ],
+   "yaw_deg": 27.7,
+   "scale": 0.995,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_102",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    115.98,
+    139.66
+   ],
+   "yaw_deg": 132.1,
+   "scale": 1.135,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_103",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    132.12,
+    93.13
+   ],
+   "yaw_deg": 122.4,
+   "scale": 0.846,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_104",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    153.12,
+    86.67
+   ],
+   "yaw_deg": 195.6,
+   "scale": 1.145,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_105",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    172.72,
+    88.26
+   ],
+   "yaw_deg": 53.9,
+   "scale": 1.076,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_106",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    164.65,
+    103.42
+   ],
+   "yaw_deg": 211.6,
+   "scale": 1.035,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_107",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    125.28,
+    125.6
+   ],
+   "yaw_deg": 337.5,
+   "scale": 1.037,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_108",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    182.76,
+    115.71
+   ],
+   "yaw_deg": 224.2,
+   "scale": 0.943,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_109",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    188.51,
+    112.06
+   ],
+   "yaw_deg": 355.9,
+   "scale": 0.973,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_110",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    184.84,
+    123.13
+   ],
+   "yaw_deg": 170.5,
+   "scale": 1.261,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_111",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    183.37,
+    89.11
+   ],
+   "yaw_deg": 163.5,
+   "scale": 1.245,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_112",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    185.9,
+    122.82
+   ],
+   "yaw_deg": 74.8,
+   "scale": 0.862,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_113",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    187.41,
+    129.33
+   ],
+   "yaw_deg": 25.8,
+   "scale": 0.958,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_114",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    133.89,
+    138.28
+   ],
+   "yaw_deg": 252.6,
+   "scale": 1.217,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_115",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    184.08,
+    97.47
+   ],
+   "yaw_deg": 156.5,
+   "scale": 1.238,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_116",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    162.33,
+    136.23
+   ],
+   "yaw_deg": 4.1,
+   "scale": 1.292,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_117",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    126.16,
+    117.57
+   ],
+   "yaw_deg": 114.6,
+   "scale": 0.927,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_118",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    188.3,
+    130.3
+   ],
+   "yaw_deg": 245.8,
+   "scale": 1.07,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_119",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    159.24,
+    82.56
+   ],
+   "yaw_deg": 303.0,
+   "scale": 1.088,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_120",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    149.38,
+    121.11
+   ],
+   "yaw_deg": 248.3,
+   "scale": 0.831,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_121",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    162.09,
+    132.43
+   ],
+   "yaw_deg": 72.6,
+   "scale": 1.269,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_122",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    154.39,
+    111.49
+   ],
+   "yaw_deg": 287.0,
+   "scale": 1.069,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_123",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    180.95,
+    127.23
+   ],
+   "yaw_deg": 155.9,
+   "scale": 1.267,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_124",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    114.18,
+    115.9
+   ],
+   "yaw_deg": 170.0,
+   "scale": 1.234,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_125",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    147.85,
+    87.22
+   ],
+   "yaw_deg": 329.4,
+   "scale": 1.231,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_126",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    186.6,
+    95.85
+   ],
+   "yaw_deg": 87.4,
+   "scale": 0.913,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_127",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    126.61,
+    139.17
+   ],
+   "yaw_deg": 165.6,
+   "scale": 1.142,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_128",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    119.7,
+    124.4
+   ],
+   "yaw_deg": 189.8,
+   "scale": 0.976,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_129",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    141.5,
+    128.16
+   ],
+   "yaw_deg": 231.2,
+   "scale": 1.207,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_130",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    166.09,
+    98.09
+   ],
+   "yaw_deg": 110.7,
+   "scale": 1.015,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_131",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.81,
+    106.17
+   ],
+   "yaw_deg": 155.6,
+   "scale": 0.845,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_132",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    140.07,
+    102.08
+   ],
+   "yaw_deg": 77.4,
+   "scale": 1.072,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_133",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    157.74,
+    126.06
+   ],
+   "yaw_deg": 344.5,
+   "scale": 0.931,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_134",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    135.39,
+    122.85
+   ],
+   "yaw_deg": 263.2,
+   "scale": 1.204,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_135",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    178.25,
+    99.84
+   ],
+   "yaw_deg": 32.0,
+   "scale": 0.897,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_136",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    131.44,
+    84.75
+   ],
+   "yaw_deg": 63.3,
+   "scale": 1.161,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_137",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    128.04,
+    98.53
+   ],
+   "yaw_deg": 146.2,
+   "scale": 1.221,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_138",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    186.89,
+    133.14
+   ],
+   "yaw_deg": 104.4,
+   "scale": 0.846,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_139",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    113.7,
+    130.02
+   ],
+   "yaw_deg": 279.9,
+   "scale": 0.968,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_140",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    174.76,
+    125.65
+   ],
+   "yaw_deg": 319.8,
+   "scale": 1.056,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_141",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    169.58,
+    105.14
+   ],
+   "yaw_deg": 43.1,
+   "scale": 1.143,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_142",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    119.53,
+    83.31
+   ],
+   "yaw_deg": 311.5,
+   "scale": 0.924,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_143",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    135.41,
+    93.55
+   ],
+   "yaw_deg": 221.0,
+   "scale": 0.935,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_144",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    164.36,
+    134.62
+   ],
+   "yaw_deg": 203.6,
+   "scale": 0.937,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_145",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    148.49,
+    107.59
+   ],
+   "yaw_deg": 186.3,
+   "scale": 1.159,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_146",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    169.33,
+    126.01
+   ],
+   "yaw_deg": 46.4,
+   "scale": 1.202,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_147",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    141.81,
+    90.76
+   ],
+   "yaw_deg": 346.6,
+   "scale": 1.109,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_148",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    110.61,
+    113.55
+   ],
+   "yaw_deg": 25.0,
+   "scale": 1.242,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_149",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    188.41,
+    82.58
+   ],
+   "yaw_deg": 112.8,
+   "scale": 0.866,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_150",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    111.68,
+    83.08
+   ],
+   "yaw_deg": 6.4,
+   "scale": 1.272,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_151",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    145.49,
+    83.05
+   ],
+   "yaw_deg": 270.6,
+   "scale": 1.097,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_152",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    149.42,
+    138.23
+   ],
+   "yaw_deg": 14.0,
+   "scale": 1.026,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_153",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    125.95,
+    98.71
+   ],
+   "yaw_deg": 354.6,
+   "scale": 1.039,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_154",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    117.71,
+    105.23
+   ],
+   "yaw_deg": 255.7,
+   "scale": 1.227,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_155",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    181.85,
+    98.34
+   ],
+   "yaw_deg": 85.7,
+   "scale": 0.842,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_156",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    110.4,
+    81.71
+   ],
+   "yaw_deg": 184.1,
+   "scale": 1.274,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_157",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    160.39,
+    80.21
+   ],
+   "yaw_deg": 2.5,
+   "scale": 0.883,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_158",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    116.92,
+    105.85
+   ],
+   "yaw_deg": 35.5,
+   "scale": 1.254,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_159",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    124.26,
+    115.49
+   ],
+   "yaw_deg": 328.9,
+   "scale": 0.841,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_160",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    189.86,
+    105.12
+   ],
+   "yaw_deg": 15.2,
+   "scale": 1.152,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_161",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    172.59,
+    126.57
+   ],
+   "yaw_deg": 310.3,
+   "scale": 1.025,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_162",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    111.63,
+    100.35
+   ],
+   "yaw_deg": 179.5,
+   "scale": 1.161,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_163",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    126.3,
+    130.89
+   ],
+   "yaw_deg": 24.3,
+   "scale": 1.239,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_164",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    177.18,
+    139.4
+   ],
+   "yaw_deg": 246.2,
+   "scale": 0.85,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_165",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.56,
+    102.07
+   ],
+   "yaw_deg": 314.6,
+   "scale": 0.868,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_166",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    156.72,
+    132.62
+   ],
+   "yaw_deg": 215.6,
+   "scale": 1.257,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_167",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    188.81,
+    135.5
+   ],
+   "yaw_deg": 239.3,
+   "scale": 1.035,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_168",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    137.26,
+    95.59
+   ],
+   "yaw_deg": 325.3,
+   "scale": 0.828,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_169",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    141.62,
+    138.01
+   ],
+   "yaw_deg": 293.5,
+   "scale": 0.848,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_170",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    149.87,
+    127.18
+   ],
+   "yaw_deg": 186.5,
+   "scale": 1.294,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_171",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    146.42,
+    139.09
+   ],
+   "yaw_deg": 246.0,
+   "scale": 1.141,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_172",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    175.15,
+    124.96
+   ],
+   "yaw_deg": 146.3,
+   "scale": 1.204,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_173",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    151.35,
+    90.2
+   ],
+   "yaw_deg": 8.9,
+   "scale": 1.13,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_174",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    158.94,
+    138.87
+   ],
+   "yaw_deg": 5.3,
+   "scale": 1.165,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_175",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    167.2,
+    88.05
+   ],
+   "yaw_deg": 259.4,
+   "scale": 0.877,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_176",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    122.38,
+    124.82
+   ],
+   "yaw_deg": 48.9,
+   "scale": 0.882,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_177",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    127.89,
+    108.02
+   ],
+   "yaw_deg": 351.9,
+   "scale": 1.192,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_178",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    164.62,
+    115.63
+   ],
+   "yaw_deg": 251.6,
+   "scale": 0.822,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_179",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    114.82,
+    139.94
+   ],
+   "yaw_deg": 43.2,
+   "scale": 1.293,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_180",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    157.04,
+    113.29
+   ],
+   "yaw_deg": 4.0,
+   "scale": 0.861,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_181",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    119.64,
+    134.6
+   ],
+   "yaw_deg": 19.6,
+   "scale": 0.853,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_182",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    137.43,
+    90.68
+   ],
+   "yaw_deg": 212.8,
+   "scale": 1.244,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_183",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    144.97,
+    136.75
+   ],
+   "yaw_deg": 355.3,
+   "scale": 1.035,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_184",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    185.28,
+    128.24
+   ],
+   "yaw_deg": 329.4,
+   "scale": 0.998,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_185",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    112.63,
+    110.68
+   ],
+   "yaw_deg": 34.4,
+   "scale": 1.228,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_186",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    142.22,
+    86.55
+   ],
+   "yaw_deg": 33.8,
+   "scale": 1.064,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_187",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    137.64,
+    83.65
+   ],
+   "yaw_deg": 15.1,
+   "scale": 0.883,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_188",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    127.06,
+    104.28
+   ],
+   "yaw_deg": 274.1,
+   "scale": 1.09,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_189",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    158.11,
+    100.06
+   ],
+   "yaw_deg": 93.6,
+   "scale": 0.863,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_190",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    133.65,
+    103.73
+   ],
+   "yaw_deg": 114.6,
+   "scale": 0.96,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_191",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    115.26,
+    132.14
+   ],
+   "yaw_deg": 268.5,
+   "scale": 0.86,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_192",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    168.44,
+    138.85
+   ],
+   "yaw_deg": 19.0,
+   "scale": 0.897,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_193",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    180.5,
+    109.07
+   ],
+   "yaw_deg": 25.6,
+   "scale": 1.159,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_194",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    180.07,
+    108.47
+   ],
+   "yaw_deg": 345.1,
+   "scale": 0.862,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_195",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    171.0,
+    131.56
+   ],
+   "yaw_deg": 81.5,
+   "scale": 1.115,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_196",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    154.49,
+    104.38
+   ],
+   "yaw_deg": 196.2,
+   "scale": 1.186,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_197",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    135.98,
+    93.06
+   ],
+   "yaw_deg": 139.2,
+   "scale": 0.821,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_198",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    183.46,
+    135.98
+   ],
+   "yaw_deg": 52.1,
+   "scale": 0.975,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_199",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    167.44,
+    85.05
+   ],
+   "yaw_deg": 191.3,
+   "scale": 0.869,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_200",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    162.14,
+    129.27
+   ],
+   "yaw_deg": 290.6,
+   "scale": 1.293,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_201",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    178.88,
+    88.0
+   ],
+   "yaw_deg": 77.1,
+   "scale": 1.055,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_202",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    168.99,
+    83.95
+   ],
+   "yaw_deg": 81.7,
+   "scale": 1.2,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_203",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    168.57,
+    134.26
+   ],
+   "yaw_deg": 47.0,
+   "scale": 0.887,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_204",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    127.29,
+    128.59
+   ],
+   "yaw_deg": 187.9,
+   "scale": 1.132,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_205",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    140.2,
+    109.34
+   ],
+   "yaw_deg": 323.7,
+   "scale": 1.195,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_206",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    134.39,
+    90.28
+   ],
+   "yaw_deg": 303.4,
+   "scale": 1.06,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_207",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    136.0,
+    120.76
+   ],
+   "yaw_deg": 92.1,
+   "scale": 1.178,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_208",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    115.64,
+    122.32
+   ],
+   "yaw_deg": 221.0,
+   "scale": 1.249,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_209",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    160.25,
+    109.41
+   ],
+   "yaw_deg": 91.8,
+   "scale": 1.116,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_210",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    176.41,
+    135.23
+   ],
+   "yaw_deg": 168.0,
+   "scale": 0.912,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_211",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    128.2,
+    123.46
+   ],
+   "yaw_deg": 238.1,
+   "scale": 0.97,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_212",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    132.77,
+    103.64
+   ],
+   "yaw_deg": 341.3,
+   "scale": 0.805,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_213",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    143.05,
+    100.27
+   ],
+   "yaw_deg": 95.3,
+   "scale": 0.91,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_214",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    173.02,
+    120.39
+   ],
+   "yaw_deg": 60.0,
+   "scale": 1.072,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_215",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    148.73,
+    86.56
+   ],
+   "yaw_deg": 224.5,
+   "scale": 1.261,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_216",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    142.1,
+    95.28
+   ],
+   "yaw_deg": 143.8,
+   "scale": 1.099,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_217",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    174.53,
+    82.69
+   ],
+   "yaw_deg": 87.8,
+   "scale": 0.889,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_218",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    135.07,
+    112.36
+   ],
+   "yaw_deg": 294.8,
+   "scale": 1.259,
+   "z_offset": 0.0
+  },
+  {
+   "object": "LowGrassLOD1_219",
+   "source": "SM_LowGrass_LOD1",
+   "blender_xy": [
+    176.11,
+    103.34
+   ],
+   "yaw_deg": 243.9,
+   "scale": 0.802,
+   "z_offset": 0.0
+  },
+  {
+   "object": "TrampledGrass_01",
+   "source": "SM_TrampledGrass_LOD0",
+   "blender_xy": [
+    35.9,
+    78.0
+   ],
+   "yaw_deg": 140.2,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "TrampledGrass_02",
+   "source": "SM_TrampledGrass_LOD0",
+   "blender_xy": [
+    28.9,
+    95.0
+   ],
+   "yaw_deg": 112.4,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "TrampledGrass_03",
+   "source": "SM_TrampledGrass_LOD0",
+   "blender_xy": [
+    39.9,
+    112.0
+   ],
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "TrampledGrass_04",
+   "source": "SM_TrampledGrass_LOD0",
+   "blender_xy": [
+    78.9,
+    102.0
+   ],
+   "yaw_deg": 47.7,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "TrampledGrass_05",
+   "source": "SM_TrampledGrass_LOD0",
+   "blender_xy": [
+    110.9,
+    88.0
+   ],
+   "yaw_deg": 70.7,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "TrampledGrass_06",
+   "source": "SM_TrampledGrass_LOD0",
+   "blender_xy": [
+    126.9,
+    115.0
+   ],
+   "yaw_deg": 32.0,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "StreamBank_North_RouteEntry",
+   "source": "SM_StreamBank_LOD0",
+   "blender_xy": [
+    155,
+    62
+   ],
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "z_offset": -0.3
+  },
+  {
+   "object": "COL_StreamBank_North_RouteEntry",
+   "source": "COL_StreamBank",
+   "blender_xy": [
+    155,
+    62
+   ],
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "z_offset": -0.3
+  },
+  {
+   "object": "StreamBank_West_RouteExit",
+   "source": "SM_StreamBank_LOD0",
+   "blender_xy": [
+    118,
+    32
+   ],
+   "yaw_deg": 90.0,
+   "scale": 1.0,
+   "z_offset": -0.3
+  },
+  {
+   "object": "COL_StreamBank_West_RouteExit",
+   "source": "COL_StreamBank",
+   "blender_xy": [
+    118,
+    32
+   ],
+   "yaw_deg": 90.0,
+   "scale": 1.0,
+   "z_offset": -0.3
+  },
+  {
+   "object": "StreamBank_South_Side",
+   "source": "SM_StreamBank_LOD0",
+   "blender_xy": [
+    140,
+    28
+   ],
+   "yaw_deg": 180.0,
+   "scale": 1.0,
+   "z_offset": -0.3
+  },
+  {
+   "object": "COL_StreamBank_South_Side",
+   "source": "COL_StreamBank",
+   "blender_xy": [
+    140,
+    28
+   ],
+   "yaw_deg": 180.0,
+   "scale": 1.0,
+   "z_offset": -0.3
+  },
+  {
+   "object": "Lineup_LowGrass",
+   "source": "SM_LowGrass_LOD0",
+   "blender_xy": [
+    64.0,
+    145.0
+   ],
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "Lineup_TrampledGrass",
+   "source": "SM_TrampledGrass_LOD0",
+   "blender_xy": [
+    66.5,
+    145.0
+   ],
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "z_offset": 0.0
+  },
+  {
+   "object": "Lineup_StreamBank",
+   "source": "SM_StreamBank_LOD0",
+   "blender_xy": [
+    71.0,
+    146.0
+   ],
+   "yaw_deg": 90.0,
+   "scale": 1.0,
+   "z_offset": 0.0
+  }
+ ],
+ "renders": [
+  "01_lineup_front_ortho.png",
+  "02_lineup_perspective.png",
+  "03_meadow_third_person.png",
+  "04_trail_clue_T01.png",
+  "05_bank_side_profile.png",
+  "06_bank_route_entry.png",
+  "07_meadow_overview.png"
+ ]
+}

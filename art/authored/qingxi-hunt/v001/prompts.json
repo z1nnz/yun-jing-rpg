@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen",
+  "use_case": "stylized-concept",
+  "references": [],
+  "additional": [
+    [
+      "V03",
+      "Create ONE clean three-view modeling reference sheet for a modular shallow stream bank ramp in a chibi xianxia mobile RPG. Three separate orthographic FRONT SIDE BACK views, same object and same scale, plain warm white background. Square module 4m wide x4m deep, back edge height 0.30m, front height 0.00m, gently sloping walkable sand-earth top. Clear side profile shows shallow wedge, thin underside only. Straight modular edges. Broad unobstructed sandy middle, just a few rounded grey pebbles at outer side corners and sparse jade moss at back corners. Soft faceted hand-painted appearance, tan sand and moss green palette. No water plane, no characters, no buildings, no tall pedestal. Labels FRONT SIDE BACK only.",
+      false
+    ],
+    [
+      "T01",
+      "Game texture atlas: orthographic top-down rabbit tracks, four isolated trail clusters arranged in 2x2 grid with generous transparent margins. Each cluster contains two elongated hind-foot impressions ahead of two smaller forefoot marks, with subtle broken edges and earthy dark-brown pressed shapes. Stylized softly hand-painted chibi xianxia environmental decal, readable at small size, no white highlights, no cast shadows, no text, no background dirt tile. Genuine transparent background, square canvas.",
+      true
+    ],
+    [
+      "T02",
+      "Game texture atlas: four isolated small disturbed-earth scuffs arranged in 2x2 grid, orthographic top-down view. Subtle fresh brown scratch marks and scattered tiny earth crumbs where a rabbit kicked the soil, stylized soft hand-painted xianxia environment decals. Each motif a distinct shallow directional smear, no footprints, no animals, no grass. Large transparent gutters, no text, no cast shadow, no rectangular ground tiles. Genuine transparent background, square.",
+      true
+    ],
+    [
+      "T03",
+      "Game foliage texture atlas, four isolated broad curved tapered grass blades in four equal vertical columns, all root ends aligned near bottom and tips toward top. Each blade fits entirely within its own quarter with generous transparent gutters. Soft faceted hand-painted chibi xianxia style, dark jade green root transitioning to fresh moss green tip, central vein and subtle leaf shading, crisp alpha edge. Front-on flat albedo illustration, no perspective, no ground, no labels, no cast shadows, no clusters or overlapping blades. Genuine transparent background, square canvas.",
+      true
+    ]
+  ]
+}

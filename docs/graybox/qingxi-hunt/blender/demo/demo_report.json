@@ -1,0 +1,103 @@
+{
+  "scope": "Scripted Blender rehearsal on the graybox layout. Not Unity, not NavMesh/CharacterController, no rabbit AI, combat, drops or sales API.",
+  "layoutSha256": "7c0d74b30389808a09614375b198257f14b071c20017c45926d3d43b3b256567",
+  "fps": 24,
+  "speedup": 2.0,
+  "frames": 1785,
+  "assumptions": {
+    "player_speed_mps": 4,
+    "rabbit_flee_speed_mps": 5.0,
+    "notice_radius_m": 7,
+    "leash_radius_m": 28,
+    "walk_play_rate": 3.4,
+    "grid_cell_m": 0.5,
+    "side_by_side_offset_m": 0.8,
+    "follow_camera_distance_m": 6.0
+  },
+  "timeline_s": {
+    "main_route_end": 73.35,
+    "first_rabbit_seen": 63.670895344981396,
+    "first_seen": "RabbitSpawn_A02",
+    "catch": 79.37,
+    "return_start": 92.23,
+    "home": 143.66,
+    "return_duration_after_catch": 64.3
+  },
+  "events": [
+    [
+      0,
+      "兩名玩家從聚落出口出發（走路 4 m/s）"
+    ],
+    [
+      25.52,
+      "經過腳印線索 T01（25.5 秒）"
+    ],
+    [
+      27.35,
+      "進入採藥林：沿路有 6 個採藥點"
+    ],
+    [
+      30.2,
+      "經過腳印線索 T02（30.2 秒）"
+    ],
+    [
+      35.5,
+      "經過腳印線索 T03（35.5 秒）"
+    ],
+    [
+      63.67,
+      "第一次看見山兔 A02（63.7 秒，60 m 內無遮擋）"
+    ],
+    [
+      68.39,
+      "經過腳印線索 T05（68.4 秒）"
+    ],
+    [
+      71.61,
+      "A01 察覺玩家（7 m 內）並逃向逃跑點"
+    ],
+    [
+      74.34,
+      "A02 也受驚逃開"
+    ],
+    [
+      79.37,
+      "追上 A01 並捕獲（79.4 秒；示意，未模擬戰鬥與掉落）"
+    ],
+    [
+      92.23,
+      "沿替代回程經淺灘與捷徑回村"
+    ],
+    [
+      143.66,
+      "回到材料商販（全程 144 秒；回程 64 秒；出售未接 API）"
+    ]
+  ],
+  "rabbit_flights": {
+    "RabbitSpawn_A01": {
+      "notice_s": 71.61,
+      "flee_point": "RabbitFlee_A02",
+      "path_m": 25.5,
+      "arrive_s": 76.7,
+      "flee_point_from_home_m": 25.5,
+      "within_leash": true
+    },
+    "RabbitSpawn_A02": {
+      "notice_s": 74.34,
+      "flee_point": "RabbitFlee_A03",
+      "path_m": 11.66,
+      "arrive_s": 76.63,
+      "flee_point_from_home_m": 11.66,
+      "within_leash": true,
+      "returned_home_s": 88.0
+    }
+  },
+  "min_player_separation_m": 1.0,
+  "follow_camera": {
+    "samples": 744,
+    "blocked_samples": 0,
+    "longest_blocked_s": 0.0,
+    "blocked_times_s": [],
+    "note": "No camera collision or pull-in simulated; a blocked sample means the 6 m camera would be behind geometry."
+  }
+}

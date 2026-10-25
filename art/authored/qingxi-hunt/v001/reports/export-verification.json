@@ -1,0 +1,673 @@
+{
+  "status": "passed",
+  "blender": "5.2.2 LTS",
+  "fbxRoundTrips": 10,
+  "blendReopened": 3,
+  "unityTested": false,
+  "results": [
+    {
+      "file": "SM_LowGrass_LOD0.fbx",
+      "pass": true,
+      "dimensions_m": [
+        0.8999999761581421,
+        0.7000000178813934,
+        0.3600000705317026
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_LowGrass_LOD0: ~91.25% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+          "hidden back-to-back faces: SM_LowGrass_LOD0 (1 pairs) - delete to save tris"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [
+          {
+            "where": "SM_LowGrass_LOD0",
+            "tri_pairs": 1
+          }
+        ],
+        "enclosed": [],
+        "objects": {
+          "SM_LowGrass_LOD0": {
+            "verts": 668,
+            "faces": 1212,
+            "tris": 1212,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 31,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 91.25,
+            "uv_coverage_pct": 11.4
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 1212,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_LowGrass_LOD1.fbx",
+      "pass": true,
+      "dimensions_m": [
+        0.8999999761581421,
+        0.7000000178813934,
+        0.3600000705317026
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_LowGrass_LOD1: ~89.46% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_LowGrass_LOD1": {
+            "verts": 310,
+            "faces": 552,
+            "tris": 552,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 17,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 89.46,
+            "uv_coverage_pct": 10.9
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 552,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_LowGrass_LOD2.fbx",
+      "pass": true,
+      "dimensions_m": [
+        0.8999999761581421,
+        0.7000000178813934,
+        0.3600000705317026
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_LowGrass_LOD2: ~71.1% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_LowGrass_LOD2": {
+            "verts": 142,
+            "faces": 248,
+            "tris": 248,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 9,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 71.1,
+            "uv_coverage_pct": 8.9
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 248,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_TrampledGrass_LOD0.fbx",
+      "pass": true,
+      "dimensions_m": [
+        1.5,
+        0.9000000059604645,
+        0.2800000649684691
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_TrampledGrass_LOD0: ~94.62% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_TrampledGrass_LOD0": {
+            "verts": 1352,
+            "faces": 2452,
+            "tris": 2452,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 63,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 94.62,
+            "uv_coverage_pct": 11.6
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 2452,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_TrampledGrass_LOD1.fbx",
+      "pass": true,
+      "dimensions_m": [
+        1.5,
+        0.9000000059604645,
+        0.2800000649684691
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_TrampledGrass_LOD1: ~93.78% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_TrampledGrass_LOD1": {
+            "verts": 628,
+            "faces": 1116,
+            "tris": 1116,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 35,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 93.78,
+            "uv_coverage_pct": 11.4
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 1116,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_TrampledGrass_LOD2.fbx",
+      "pass": true,
+      "dimensions_m": [
+        1.5,
+        0.9000000059604645,
+        0.2800000649684691
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_TrampledGrass_LOD2: ~81.1% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_TrampledGrass_LOD2": {
+            "verts": 284,
+            "faces": 492,
+            "tris": 492,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 19,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 81.1,
+            "uv_coverage_pct": 10.7
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 492,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_StreamBank_LOD0.fbx",
+      "pass": true,
+      "dimensions_m": [
+        4.0,
+        4.0,
+        0.42875030835206474
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_StreamBank_LOD0: ~84.36% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": -0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_StreamBank_LOD0": {
+            "verts": 402,
+            "faces": 736,
+            "tris": 736,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 17,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 84.36,
+            "uv_coverage_pct": 13.3
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 736,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_StreamBank_LOD1.fbx",
+      "pass": true,
+      "dimensions_m": [
+        4.0,
+        4.0,
+        0.42875030835206474
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_StreamBank_LOD1: ~69.07% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": -0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_StreamBank_LOD1": {
+            "verts": 258,
+            "faces": 464,
+            "tris": 464,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 13,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 69.07,
+            "uv_coverage_pct": 10.8
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 464,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "SM_StreamBank_LOD2.fbx",
+      "pass": true,
+      "dimensions_m": [
+        4.0,
+        4.0,
+        0.42875030835206474
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_StreamBank_LOD2: ~75.97% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": -0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_StreamBank_LOD2": {
+            "verts": 162,
+            "faces": 288,
+            "tris": 288,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 9,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 75.97,
+            "uv_coverage_pct": 7.6
+          }
+        }
+      },
+      "glb": {
+        "nodes": 1,
+        "meshes": 1,
+        "materials": 1,
+        "images": 1,
+        "animations": 0,
+        "skins": 0,
+        "tris": 288,
+        "extensions": [],
+        "animation_names": []
+      }
+    },
+    {
+      "file": "COL_StreamBank.fbx",
+      "pass": true,
+      "dimensions_m": [
+        4.0,
+        4.0,
+        0.3300003131204363
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": -0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "COL_StreamBank": {
+            "verts": 9,
+            "faces": 14,
+            "tris": 14,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 4.46,
+            "uv_coverage_pct": 1.4
+          }
+        }
+      },
+      "glb": null
+    }
+  ]
+}
