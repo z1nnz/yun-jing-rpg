@@ -1,0 +1,111 @@
+{
+  "status": "passed",
+  "scope": "Blender geometry of the graybox copy only. Not compiled or run in Unity; NavMesh, CharacterController, two-player play and phone camera are NOT measured.",
+  "blender": "5.2.2 LTS",
+  "layoutSha256": "e1441f1b8afd42a5389659e7152aa4dcc354188a4eadb703be87c9a67f5ba594",
+  "checkCount": 15,
+  "checks": {
+    "blend_built_from_current_layout": true,
+    "all_layout_markers_present": true,
+    "marker_positions_match_layout": true,
+    "obstacles_present_as_matching_boxes": true,
+    "ground_matches_builder_grid": true,
+    "only_ground_uses_mesh_collider": true,
+    "ground_vertices_follow_layout_hill": true,
+    "ground_slope_under_35_degrees": true,
+    "markers_within_5cm_of_ground_mesh": true,
+    "agent_capsules_clear_of_colliders": true,
+    "two_player_spawns_do_not_overlap": true,
+    "rabbit_spawns_at_least_8m_apart": true,
+    "six_camera_bookmarks_clear_at_3.5_5_6m": true,
+    "settlement_spawn_cannot_see_all_rabbits": true,
+    "eight_preview_renders_present": true
+  },
+  "details": {
+    "blend_built_from_current_layout": {
+      "layoutSha256": "e1441f1b8afd42a5389659e7152aa4dcc354188a4eadb703be87c9a67f5ba594"
+    },
+    "all_layout_markers_present": [],
+    "marker_positions_match_layout": [],
+    "obstacles_present_as_matching_boxes": [],
+    "ground_matches_builder_grid": {
+      "vertices": 1485,
+      "triangles": 2816,
+      "size_m": [
+        220.0,
+        160.0
+      ],
+      "max_height_m": 2.4
+    },
+    "only_ground_uses_mesh_collider": [
+      "Ground_1485_vertices_2816_triangles"
+    ],
+    "ground_vertices_follow_layout_hill": 0,
+    "ground_slope_under_35_degrees": {
+      "max_degrees": 5.711
+    },
+    "markers_within_5cm_of_ground_mesh": {
+      "max_abs_offset_m": 0.012,
+      "offsets_over_1cm_marker_minus_mesh_m": [
+        [
+          "RabbitSpawn_C01",
+          0.012
+        ],
+        [
+          "RabbitFlee_A01",
+          -0.012
+        ]
+      ]
+    },
+    "agent_capsules_clear_of_colliders": [],
+    "two_player_spawns_do_not_overlap": {
+      "distance_m": 9.0
+    },
+    "rabbit_spawns_at_least_8m_apart": {
+      "minimum_m": 10.014
+    },
+    "six_camera_bookmarks_clear_at_3.5_5_6m": [],
+    "settlement_spawn_cannot_see_all_rabbits": {
+      "visible_from_PlayerSpawn_01": []
+    },
+    "info_route_strip_max_sink_below_ground_m": {
+      "MainDiscovery": 0.043,
+      "AlternativeReturn": 0.269,
+      "HerdConnector": 0.234
+    },
+    "eight_preview_renders_present": {
+      "birdseye.png": [
+        2400,
+        1759
+      ],
+      "overview.png": [
+        2000,
+        1150
+      ],
+      "view_01_exit.png": [
+        1950,
+        900
+      ],
+      "view_02_trail.png": [
+        1950,
+        900
+      ],
+      "view_03_forest.png": [
+        1950,
+        900
+      ],
+      "view_04_rabbits.png": [
+        1950,
+        900
+      ],
+      "view_05_shallow.png": [
+        1950,
+        900
+      ],
+      "view_06_shortcut.png": [
+        1950,
+        900
+      ]
+    }
+  }
+}
