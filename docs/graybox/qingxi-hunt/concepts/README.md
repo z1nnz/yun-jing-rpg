@@ -2,7 +2,7 @@
 
 日期：2026-10-25。對應 [圖稿與模型需求](../art-requirements.md) 的 C01–C06，每區一張。
 
-**狀態：提示詞已備妥，圖片尚未生成。** 依專案慣例由使用者以 AI 生圖工具產生，存成下表檔名放進本資料夾，檢視後再進行美術化。概念圖只定氣氛、材質語言與視線，不作尺寸或導航依據；尺寸以 [layout.json](../layout.json) 為準，灰盒模型見 [blender/](../blender/README.md)。
+**狀態：C01–C06 已由內建 image_gen 生成並檢視。** 正式原圖保存在 [美術補件 v001](../../../../art/authored/qingxi-hunt/v001/index.html) 的 concepts/，實際使用提示詞見該批 concept-prompts.json；下表保留原始策劃提示詞。概念圖只定氣氛、材質語言與視線，不作尺寸或導航依據；尺寸以 [layout.json](../layout.json) 為準，灰盒模型見 [blender/](../blender/README.md)。
 
 ## 共用風格（每則提示詞後面都要接上）
 

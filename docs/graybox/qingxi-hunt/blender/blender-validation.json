@@ -2,7 +2,7 @@
   "status": "passed",
   "scope": "Blender geometry of the graybox copy only. Not compiled or run in Unity; NavMesh, CharacterController, two-player play and phone camera are NOT measured.",
   "blender": "5.2.2 LTS",
-  "layoutSha256": "e1441f1b8afd42a5389659e7152aa4dcc354188a4eadb703be87c9a67f5ba594",
+  "layoutSha256": "8ac12f4e13736a823eb8bdba8e5d4401269760bcd0e19c4e148287279c01477e",
   "checkCount": 15,
   "checks": {
     "blend_built_from_current_layout": true,
@@ -23,7 +23,7 @@
   },
   "details": {
     "blend_built_from_current_layout": {
-      "layoutSha256": "e1441f1b8afd42a5389659e7152aa4dcc354188a4eadb703be87c9a67f5ba594"
+      "layoutSha256": "8ac12f4e13736a823eb8bdba8e5d4401269760bcd0e19c4e148287279c01477e"
     },
     "all_layout_markers_present": [],
     "marker_positions_match_layout": [],

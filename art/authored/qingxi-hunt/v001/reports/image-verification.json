@@ -1,0 +1,158 @@
+[
+  {
+    "file": "concepts\\C01_settlement-exit.png",
+    "size": [
+      1402,
+      1122
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "concepts\\C02_mountain-trail.png",
+    "size": [
+      1672,
+      941
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "concepts\\C03_herb-forest.png",
+    "size": [
+      1402,
+      1122
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "concepts\\C04_rabbit-meadow.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "concepts\\C05_shallow-stream.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "concepts\\C06_return-shortcut.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "references\\V01_low-grass.png",
+    "size": [
+      1983,
+      793
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "references\\V02_trampled-grass.png",
+    "size": [
+      1942,
+      809
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "references\\V03_stream-bank.png",
+    "size": [
+      2172,
+      724
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": null
+  },
+  {
+    "file": "textures\\T01_rabbit-tracks.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "opaque_red_pixels": 0
+  },
+  {
+    "file": "textures\\T02_disturbed-soil.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "opaque_red_pixels": 0
+  },
+  {
+    "file": "textures\\T03_grass-blades.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "opaque_red_pixels": 0
+  },
+  {
+    "file": "textures\\T04_model-palette.png",
+    "size": [
+      128,
+      128
+    ],
+    "alpha": [
+      255,
+      255
+    ],
+    "opaque_red_pixels": 0
+  }
+]

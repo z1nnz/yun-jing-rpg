@@ -1,0 +1,1215 @@
+{
+  "schemaVersion": 1,
+  "name": "QingxiHuntGraybox",
+  "unit": "metre",
+  "unityVersion": "6000.0.85f1",
+  "issue": 9,
+  "validationStatus": "未經 Unity 編譯、NavMesh 未實測",
+  "bounds": {
+    "width": 220,
+    "depth": 160,
+    "grid": 5
+  },
+  "hill": {
+    "centerX": 150,
+    "centerZ": 110,
+    "halfWidth": 40,
+    "halfDepth": 30,
+    "height": 2.4
+  },
+  "player": {
+    "speed": 4,
+    "radius": 0.35,
+    "height": 2,
+    "maxSlope": 35,
+    "stepHeight": 0.3
+  },
+  "rabbit": {
+    "radius": 0.25,
+    "height": 0.8,
+    "maxSlope": 35,
+    "stepHeight": 0.15
+  },
+  "camera": {
+    "minDistance": 3.5,
+    "maxDistance": 6,
+    "probeRadius": 0.2,
+    "targetHeight": 1.4,
+    "elevationDegrees": 20,
+    "width": 1950,
+    "height": 900
+  },
+  "zones": [
+    {
+      "name": "SettlementExit",
+      "label": "聚落出口",
+      "center": {
+        "x": 20,
+        "y": 0.0,
+        "z": 20
+      },
+      "width": 30,
+      "depth": 24
+    },
+    {
+      "name": "MountainTrail",
+      "label": "過渡山道",
+      "center": {
+        "x": 55,
+        "y": 0.0,
+        "z": 44
+      },
+      "width": 24,
+      "depth": 58
+    },
+    {
+      "name": "HerbForest",
+      "label": "採藥林",
+      "center": {
+        "x": 55,
+        "y": 0.0,
+        "z": 95
+      },
+      "width": 50,
+      "depth": 40
+    },
+    {
+      "name": "RabbitSlope",
+      "label": "山兔草坡",
+      "center": {
+        "x": 150,
+        "y": 2.4,
+        "z": 110
+      },
+      "width": 80,
+      "depth": 60
+    },
+    {
+      "name": "ShallowStream",
+      "label": "溪流淺灘",
+      "center": {
+        "x": 140,
+        "y": 0.0,
+        "z": 45
+      },
+      "width": 40,
+      "depth": 30
+    },
+    {
+      "name": "ReturnShortcut",
+      "label": "回村捷徑",
+      "center": {
+        "x": 59,
+        "y": 0.0,
+        "z": 20
+      },
+      "width": 74,
+      "depth": 24
+    }
+  ],
+  "markers": [
+    {
+      "name": "PlayerSpawn_01",
+      "kind": "player",
+      "group": "",
+      "position": {
+        "x": 20,
+        "y": 0.0,
+        "z": 20
+      },
+      "note": ""
+    },
+    {
+      "name": "PlayerSpawn_02",
+      "kind": "player",
+      "group": "",
+      "position": {
+        "x": 29,
+        "y": 0.0,
+        "z": 20
+      },
+      "note": ""
+    },
+    {
+      "name": "Merchant_Material",
+      "kind": "merchant",
+      "group": "",
+      "position": {
+        "x": 25,
+        "y": 0.0,
+        "z": 20
+      },
+      "note": "Only a location marker; no sales API or rewards"
+    },
+    {
+      "name": "TrailClue_01",
+      "kind": "clue",
+      "group": "",
+      "position": {
+        "x": 35,
+        "y": 0.0,
+        "z": 78
+      },
+      "note": "Footprint/pressed-grass proxy; no quest arrow"
+    },
+    {
+      "name": "TrailClue_02",
+      "kind": "clue",
+      "group": "",
+      "position": {
+        "x": 28,
+        "y": 0.0,
+        "z": 95
+      },
+      "note": "Footprint/pressed-grass proxy; no quest arrow"
+    },
+    {
+      "name": "TrailClue_03",
+      "kind": "clue",
+      "group": "",
+      "position": {
+        "x": 39,
+        "y": 0.0,
+        "z": 112
+      },
+      "note": "Footprint/pressed-grass proxy; no quest arrow"
+    },
+    {
+      "name": "TrailClue_04",
+      "kind": "clue",
+      "group": "",
+      "position": {
+        "x": 78,
+        "y": 0.0,
+        "z": 102
+      },
+      "note": "Footprint/pressed-grass proxy; no quest arrow"
+    },
+    {
+      "name": "TrailClue_05",
+      "kind": "clue",
+      "group": "",
+      "position": {
+        "x": 110,
+        "y": 0.0,
+        "z": 88
+      },
+      "note": "Footprint/pressed-grass proxy; no quest arrow"
+    },
+    {
+      "name": "TrailClue_06",
+      "kind": "clue",
+      "group": "",
+      "position": {
+        "x": 126,
+        "y": 0.8,
+        "z": 115
+      },
+      "note": "Footprint/pressed-grass proxy; no quest arrow"
+    },
+    {
+      "name": "RabbitSpawn_A01",
+      "kind": "rabbit",
+      "group": "A",
+      "position": {
+        "x": 120,
+        "y": 0.4,
+        "z": 100
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitSpawn_A02",
+      "kind": "rabbit",
+      "group": "A",
+      "position": {
+        "x": 128,
+        "y": 0.936,
+        "z": 106
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitSpawn_B01",
+      "kind": "rabbit",
+      "group": "B",
+      "position": {
+        "x": 150,
+        "y": 1.92,
+        "z": 116
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitSpawn_B02",
+      "kind": "rabbit",
+      "group": "B",
+      "position": {
+        "x": 160,
+        "y": 1.2,
+        "z": 120
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitSpawn_C01",
+      "kind": "rabbit",
+      "group": "C",
+      "position": {
+        "x": 178,
+        "y": 0.672,
+        "z": 112
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitSpawn_C02",
+      "kind": "rabbit",
+      "group": "C",
+      "position": {
+        "x": 180,
+        "y": 0.28,
+        "z": 126
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_A01",
+      "kind": "flee",
+      "group": "A",
+      "position": {
+        "x": 118,
+        "y": 0.368,
+        "z": 117
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_A02",
+      "kind": "flee",
+      "group": "A",
+      "position": {
+        "x": 131,
+        "y": 0.714,
+        "z": 123
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_A03",
+      "kind": "flee",
+      "group": "A",
+      "position": {
+        "x": 138,
+        "y": 1.12,
+        "z": 100
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_B01",
+      "kind": "flee",
+      "group": "B",
+      "position": {
+        "x": 145,
+        "y": 0.7,
+        "z": 130
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_B02",
+      "kind": "flee",
+      "group": "B",
+      "position": {
+        "x": 159,
+        "y": 0.372,
+        "z": 134
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_B03",
+      "kind": "flee",
+      "group": "B",
+      "position": {
+        "x": 166,
+        "y": 1.44,
+        "z": 110
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_C01",
+      "kind": "flee",
+      "group": "C",
+      "position": {
+        "x": 173,
+        "y": 0.238,
+        "z": 133
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_C02",
+      "kind": "flee",
+      "group": "C",
+      "position": {
+        "x": 185,
+        "y": 0.05,
+        "z": 135
+      },
+      "note": ""
+    },
+    {
+      "name": "RabbitFlee_C03",
+      "kind": "flee",
+      "group": "C",
+      "position": {
+        "x": 188,
+        "y": 0.096,
+        "z": 104
+      },
+      "note": ""
+    },
+    {
+      "name": "HerbNode_01",
+      "kind": "herb",
+      "group": "",
+      "position": {
+        "x": 35,
+        "y": 0.0,
+        "z": 87
+      },
+      "note": "qingling-herb candidate; location only, no grant"
+    },
+    {
+      "name": "HerbNode_02",
+      "kind": "herb",
+      "group": "",
+      "position": {
+        "x": 32,
+        "y": 0.0,
+        "z": 101
+      },
+      "note": "qingling-herb candidate; location only, no grant"
+    },
+    {
+      "name": "HerbNode_03",
+      "kind": "herb",
+      "group": "",
+      "position": {
+        "x": 45,
+        "y": 0.0,
+        "z": 107
+      },
+      "note": "qingling-herb candidate; location only, no grant"
+    },
+    {
+      "name": "HerbNode_04",
+      "kind": "herb",
+      "group": "",
+      "position": {
+        "x": 59,
+        "y": 0.0,
+        "z": 105
+      },
+      "note": "qingling-herb candidate; location only, no grant"
+    },
+    {
+      "name": "HerbNode_05",
+      "kind": "herb",
+      "group": "",
+      "position": {
+        "x": 69,
+        "y": 0.0,
+        "z": 97
+      },
+      "note": "qingling-herb candidate; location only, no grant"
+    },
+    {
+      "name": "HerbNode_06",
+      "kind": "herb",
+      "group": "",
+      "position": {
+        "x": 77,
+        "y": 0.0,
+        "z": 88
+      },
+      "note": "qingling-herb candidate; location only, no grant"
+    },
+    {
+      "name": "SafeReturn_01",
+      "kind": "return",
+      "group": "",
+      "position": {
+        "x": 33,
+        "y": 0.0,
+        "z": 20
+      },
+      "note": ""
+    },
+    {
+      "name": "AreaBoundary_Hunt",
+      "kind": "boundary",
+      "group": "",
+      "position": {
+        "x": 110,
+        "y": 0.0,
+        "z": 80
+      },
+      "note": "Bounds x 0..220, z 0..160"
+    },
+    {
+      "name": "CameraBlocker_EntryScreen",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 40,
+        "y": 0.0,
+        "z": 45
+      },
+      "note": "Same physical simplified collider as NavBlocker_EntryScreen"
+    },
+    {
+      "name": "CameraBlocker_ForestRidge",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 95,
+        "y": 0.0,
+        "z": 110
+      },
+      "note": "Same physical simplified collider as NavBlocker_ForestRidge"
+    },
+    {
+      "name": "CameraBlocker_ShallowScreen",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 107,
+        "y": 0.0,
+        "z": 66
+      },
+      "note": "Same physical simplified collider as NavBlocker_ShallowScreen"
+    },
+    {
+      "name": "CameraBlocker_FarRidge",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 205,
+        "y": 0.0,
+        "z": 110
+      },
+      "note": "Same physical simplified collider as NavBlocker_FarRidge"
+    },
+    {
+      "name": "CameraBlocker_ForestTree01",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 48,
+        "y": 0.0,
+        "z": 92
+      },
+      "note": "Same physical simplified collider as NavBlocker_ForestTree01"
+    },
+    {
+      "name": "CameraBlocker_ForestTree02",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 65,
+        "y": 0.0,
+        "z": 79
+      },
+      "note": "Same physical simplified collider as NavBlocker_ForestTree02"
+    },
+    {
+      "name": "CameraBlocker_ForestRock",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 64,
+        "y": 0.0,
+        "z": 102
+      },
+      "note": "Same physical simplified collider as NavBlocker_ForestRock"
+    },
+    {
+      "name": "CameraBlocker_SlopeRock01",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 149,
+        "y": 1.638,
+        "z": 101
+      },
+      "note": "Same physical simplified collider as NavBlocker_SlopeRock01"
+    },
+    {
+      "name": "CameraBlocker_SlopeRock02",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 133,
+        "y": 0.276,
+        "z": 134
+      },
+      "note": "Same physical simplified collider as NavBlocker_SlopeRock02"
+    },
+    {
+      "name": "CameraBlocker_SlopeTree01",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 180,
+        "y": 0.24,
+        "z": 92
+      },
+      "note": "Same physical simplified collider as NavBlocker_SlopeTree01"
+    },
+    {
+      "name": "CameraBlocker_MerchantStall",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 13,
+        "y": 0.0,
+        "z": 26
+      },
+      "note": "Same physical simplified collider as NavBlocker_MerchantStall"
+    },
+    {
+      "name": "CameraBlocker_DeepWater",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 177,
+        "y": 0.0,
+        "z": 45
+      },
+      "note": "Same physical simplified collider as NavBlocker_DeepWater"
+    },
+    {
+      "name": "CameraBlocker_WestRidge",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 17.5,
+        "y": 0.0,
+        "z": 66
+      },
+      "note": "Paired simplified camera collision volume"
+    },
+    {
+      "name": "CameraBlocker_TrailInnerRidge",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 50.5,
+        "y": 0.0,
+        "z": 44
+      },
+      "note": "Paired simplified camera collision volume"
+    },
+    {
+      "name": "CameraBlocker_BoundaryWest",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": -0.5,
+        "y": 0.0,
+        "z": 80
+      },
+      "note": "Same physical simplified collider as NavBlocker_BoundaryWest"
+    },
+    {
+      "name": "CameraBlocker_BoundaryEast",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 220.5,
+        "y": 0.0,
+        "z": 80
+      },
+      "note": "Same physical simplified collider as NavBlocker_BoundaryEast"
+    },
+    {
+      "name": "CameraBlocker_BoundarySouth",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 110,
+        "y": 0.0,
+        "z": -0.5
+      },
+      "note": "Same physical simplified collider as NavBlocker_BoundarySouth"
+    },
+    {
+      "name": "CameraBlocker_BoundaryNorth",
+      "kind": "cameraBlocker",
+      "group": "",
+      "position": {
+        "x": 110,
+        "y": 0.0,
+        "z": 160.5
+      },
+      "note": "Same physical simplified collider as NavBlocker_BoundaryNorth"
+    }
+  ],
+  "obstacles": [
+    {
+      "name": "NavBlocker_EntryScreen",
+      "kind": "cliff",
+      "position": {
+        "x": 40,
+        "y": 3.0,
+        "z": 45
+      },
+      "size": {
+        "x": 10,
+        "y": 6,
+        "z": 40
+      }
+    },
+    {
+      "name": "NavBlocker_ForestRidge",
+      "kind": "cliff",
+      "position": {
+        "x": 95,
+        "y": 3.5,
+        "z": 110
+      },
+      "size": {
+        "x": 12,
+        "y": 7,
+        "z": 60
+      }
+    },
+    {
+      "name": "NavBlocker_ShallowScreen",
+      "kind": "cliff",
+      "position": {
+        "x": 107,
+        "y": 3.5,
+        "z": 66
+      },
+      "size": {
+        "x": 74,
+        "y": 7,
+        "z": 6
+      }
+    },
+    {
+      "name": "NavBlocker_FarRidge",
+      "kind": "cliff",
+      "position": {
+        "x": 205,
+        "y": 4.5,
+        "z": 110
+      },
+      "size": {
+        "x": 8,
+        "y": 9,
+        "z": 65
+      }
+    },
+    {
+      "name": "NavBlocker_ForestTree01",
+      "kind": "tree",
+      "position": {
+        "x": 48,
+        "y": 3.0,
+        "z": 92
+      },
+      "size": {
+        "x": 2,
+        "y": 6,
+        "z": 2
+      }
+    },
+    {
+      "name": "NavBlocker_ForestTree02",
+      "kind": "tree",
+      "position": {
+        "x": 65,
+        "y": 3.0,
+        "z": 79
+      },
+      "size": {
+        "x": 2,
+        "y": 6,
+        "z": 2
+      }
+    },
+    {
+      "name": "NavBlocker_ForestRock",
+      "kind": "rock",
+      "position": {
+        "x": 64,
+        "y": 1.0,
+        "z": 102
+      },
+      "size": {
+        "x": 4,
+        "y": 2,
+        "z": 8
+      }
+    },
+    {
+      "name": "NavBlocker_SlopeRock01",
+      "kind": "rock",
+      "position": {
+        "x": 149,
+        "y": 2.338,
+        "z": 101
+      },
+      "size": {
+        "x": 6,
+        "y": 1.4,
+        "z": 6
+      }
+    },
+    {
+      "name": "NavBlocker_SlopeRock02",
+      "kind": "rock",
+      "position": {
+        "x": 133,
+        "y": 0.876,
+        "z": 134
+      },
+      "size": {
+        "x": 4,
+        "y": 1.2,
+        "z": 4
+      }
+    },
+    {
+      "name": "NavBlocker_SlopeTree01",
+      "kind": "tree",
+      "position": {
+        "x": 180,
+        "y": 2.74,
+        "z": 92
+      },
+      "size": {
+        "x": 2,
+        "y": 5,
+        "z": 2
+      }
+    },
+    {
+      "name": "NavBlocker_MerchantStall",
+      "kind": "building",
+      "position": {
+        "x": 13,
+        "y": 1.5,
+        "z": 26
+      },
+      "size": {
+        "x": 6,
+        "y": 3,
+        "z": 4
+      }
+    },
+    {
+      "name": "NavBlocker_DeepWater",
+      "kind": "deepWater",
+      "position": {
+        "x": 177,
+        "y": 1.0,
+        "z": 45
+      },
+      "size": {
+        "x": 34,
+        "y": 2,
+        "z": 50
+      }
+    },
+    {
+      "name": "NavBlocker_WestRidge",
+      "kind": "cliff",
+      "position": {
+        "x": 17.5,
+        "y": 3.0,
+        "z": 66
+      },
+      "size": {
+        "x": 35,
+        "y": 6,
+        "z": 6
+      }
+    },
+    {
+      "name": "NavBlocker_TrailInnerRidge",
+      "kind": "cliff",
+      "position": {
+        "x": 50.5,
+        "y": 3.0,
+        "z": 44
+      },
+      "size": {
+        "x": 11,
+        "y": 6,
+        "z": 22
+      }
+    },
+    {
+      "name": "NavBlocker_BoundaryWest",
+      "kind": "boundary",
+      "position": {
+        "x": -0.5,
+        "y": 2.5,
+        "z": 80
+      },
+      "size": {
+        "x": 1,
+        "y": 5,
+        "z": 162
+      }
+    },
+    {
+      "name": "NavBlocker_BoundaryEast",
+      "kind": "boundary",
+      "position": {
+        "x": 220.5,
+        "y": 2.5,
+        "z": 80
+      },
+      "size": {
+        "x": 1,
+        "y": 5,
+        "z": 162
+      }
+    },
+    {
+      "name": "NavBlocker_BoundarySouth",
+      "kind": "boundary",
+      "position": {
+        "x": 110,
+        "y": 2.5,
+        "z": -0.5
+      },
+      "size": {
+        "x": 220,
+        "y": 5,
+        "z": 1
+      }
+    },
+    {
+      "name": "NavBlocker_BoundaryNorth",
+      "kind": "boundary",
+      "position": {
+        "x": 110,
+        "y": 2.5,
+        "z": 160.5
+      },
+      "size": {
+        "x": 220,
+        "y": 5,
+        "z": 1
+      }
+    }
+  ],
+  "routes": [
+    {
+      "name": "MainDiscovery",
+      "width": 6,
+      "points": [
+        {
+          "x": 20,
+          "y": 0.0,
+          "z": 20
+        },
+        {
+          "x": 35,
+          "y": 0.0,
+          "z": 20
+        },
+        {
+          "x": 50,
+          "y": 0.0,
+          "z": 20
+        },
+        {
+          "x": 62,
+          "y": 0.0,
+          "z": 32
+        },
+        {
+          "x": 62,
+          "y": 0.0,
+          "z": 56
+        },
+        {
+          "x": 47,
+          "y": 0.0,
+          "z": 68
+        },
+        {
+          "x": 35,
+          "y": 0.0,
+          "z": 78
+        },
+        {
+          "x": 28,
+          "y": 0.0,
+          "z": 95
+        },
+        {
+          "x": 38,
+          "y": 0.0,
+          "z": 112
+        },
+        {
+          "x": 55,
+          "y": 0.0,
+          "z": 112
+        },
+        {
+          "x": 55,
+          "y": 0.0,
+          "z": 88
+        },
+        {
+          "x": 72,
+          "y": 0.0,
+          "z": 88
+        },
+        {
+          "x": 82,
+          "y": 0.0,
+          "z": 99
+        },
+        {
+          "x": 85,
+          "y": 0.0,
+          "z": 75
+        },
+        {
+          "x": 105,
+          "y": 0.0,
+          "z": 75
+        },
+        {
+          "x": 112,
+          "y": 0.06,
+          "z": 95
+        },
+        {
+          "x": 120,
+          "y": 0.4,
+          "z": 100
+        }
+      ]
+    },
+    {
+      "name": "AlternativeReturn",
+      "width": 8,
+      "points": [
+        {
+          "x": 120,
+          "y": 0.4,
+          "z": 100
+        },
+        {
+          "x": 130,
+          "y": 0.0,
+          "z": 80
+        },
+        {
+          "x": 155,
+          "y": 0.0,
+          "z": 80
+        },
+        {
+          "x": 155,
+          "y": 0.0,
+          "z": 60
+        },
+        {
+          "x": 155,
+          "y": 0.0,
+          "z": 40
+        },
+        {
+          "x": 130,
+          "y": 0.0,
+          "z": 32
+        },
+        {
+          "x": 105,
+          "y": 0.0,
+          "z": 32
+        },
+        {
+          "x": 92,
+          "y": 0.0,
+          "z": 25
+        },
+        {
+          "x": 72,
+          "y": 0.0,
+          "z": 12
+        },
+        {
+          "x": 45,
+          "y": 0.0,
+          "z": 12
+        },
+        {
+          "x": 25,
+          "y": 0.0,
+          "z": 20
+        }
+      ]
+    },
+    {
+      "name": "MountainTrailSegment",
+      "width": 6,
+      "points": [
+        {
+          "x": 50,
+          "y": 0.0,
+          "z": 20
+        },
+        {
+          "x": 62,
+          "y": 0.0,
+          "z": 32
+        },
+        {
+          "x": 62,
+          "y": 0.0,
+          "z": 56
+        },
+        {
+          "x": 47,
+          "y": 0.0,
+          "z": 68
+        }
+      ]
+    },
+    {
+      "name": "ShortcutSegment",
+      "width": 8,
+      "points": [
+        {
+          "x": 92,
+          "y": 0.0,
+          "z": 25
+        },
+        {
+          "x": 72,
+          "y": 0.0,
+          "z": 12
+        },
+        {
+          "x": 45,
+          "y": 0.0,
+          "z": 12
+        },
+        {
+          "x": 25,
+          "y": 0.0,
+          "z": 20
+        }
+      ]
+    },
+    {
+      "name": "HerdConnector",
+      "width": 6,
+      "points": [
+        {
+          "x": 120,
+          "y": 0.4,
+          "z": 100
+        },
+        {
+          "x": 128,
+          "y": 0.9,
+          "z": 115
+        },
+        {
+          "x": 150,
+          "y": 1.92,
+          "z": 116
+        },
+        {
+          "x": 166,
+          "y": 0.864,
+          "z": 122
+        },
+        {
+          "x": 178,
+          "y": 0.672,
+          "z": 112
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "name": "01_exit",
+      "target": {
+        "x": 24,
+        "y": 0.0,
+        "z": 20
+      },
+      "yaw": 90,
+      "distance": 5
+    },
+    {
+      "name": "02_trail",
+      "target": {
+        "x": 62,
+        "y": 0.0,
+        "z": 47
+      },
+      "yaw": 0,
+      "distance": 5
+    },
+    {
+      "name": "03_forest",
+      "target": {
+        "x": 38,
+        "y": 0.0,
+        "z": 112
+      },
+      "yaw": 90,
+      "distance": 5
+    },
+    {
+      "name": "04_rabbits",
+      "target": {
+        "x": 120,
+        "y": 0.4,
+        "z": 100
+      },
+      "yaw": 40,
+      "distance": 5
+    },
+    {
+      "name": "05_shallow",
+      "target": {
+        "x": 155,
+        "y": 0.0,
+        "z": 45
+      },
+      "yaw": 180,
+      "distance": 5
+    },
+    {
+      "name": "06_shortcut",
+      "target": {
+        "x": 72,
+        "y": 0.0,
+        "z": 12
+      },
+      "yaw": 270,
+      "distance": 5
+    }
+  ]
+}

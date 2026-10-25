@@ -1,0 +1,256 @@
+{
+  "status": "passed",
+  "scope": "Offline coordinate/AABB/lattice preflight only",
+  "unityCompiled": false,
+  "navMeshMeasured": false,
+  "twoPlayerPlaytest": false,
+  "phoneCameraTest": false,
+  "layoutSha256": "8ac12f4e13736a823eb8bdba8e5d4401269760bcd0e19c4e148287279c01477e",
+  "checks": {
+    "all_required_markers": true,
+    "unique_marker_and_blocker_names": true,
+    "six_zones_220x160": true,
+    "camera_blocker_pairs": true,
+    "source_metres_version": true,
+    "markers_clear_of_blockers": true,
+    "marker_height_matches_ground": true,
+    "all_six_rabbit_spawns_at_least_8m": true,
+    "two_spawns_at_least_8m": true,
+    "route_clear_MainDiscovery": true,
+    "route_declared_width_MainDiscovery": true,
+    "route_clear_AlternativeReturn": true,
+    "route_declared_width_AlternativeReturn": true,
+    "route_clear_MountainTrailSegment": true,
+    "route_declared_width_MountainTrailSegment": true,
+    "route_clear_ShortcutSegment": true,
+    "route_declared_width_ShortcutSegment": true,
+    "route_clear_HerdConnector": true,
+    "route_declared_width_HerdConnector": true,
+    "first_clue_20_to_30_seconds": true,
+    "first_rabbit_geometric_sight_60_to_90_seconds": true,
+    "village_cannot_see_all_rabbits": true,
+    "return_around_60_seconds": true,
+    "mountain_path_about_60m": true,
+    "shortcut_about_70m": true,
+    "ground_slope_under_35_degrees": true,
+    "no_ground_discontinuities": true,
+    "herd_A_all_spawn_flee_pairs_connected": true,
+    "herd_B_all_spawn_flee_pairs_connected": true,
+    "herd_C_all_spawn_flee_pairs_connected": true,
+    "two_capsule_offsets_clear_MainDiscovery": true,
+    "two_capsule_offsets_clear_AlternativeReturn": true,
+    "six_viewpoints_96_box_probes_clear": true,
+    "validator_rejects_blocker_interior": true,
+    "validator_detects_wall_ray": true
+  },
+  "checkCount": 35,
+  "measurements": {
+    "minimum_rabbit_spawn_spacing_m": 10.0,
+    "player_spawn_spacing_m": 9.0,
+    "routes": {
+      "MainDiscovery": {
+        "length_m": 291.591,
+        "at_4mps_seconds": 72.898,
+        "minimum_centerline_obstacle_clearance_m": 3.597,
+        "declared_width_m": 6
+      },
+      "AlternativeReturn": {
+        "length_m": 225.772,
+        "at_4mps_seconds": 56.443,
+        "minimum_centerline_obstacle_clearance_m": 5.0,
+        "declared_width_m": 8
+      },
+      "MountainTrailSegment": {
+        "length_m": 60.18,
+        "at_4mps_seconds": 15.045,
+        "minimum_centerline_obstacle_clearance_m": 3.597,
+        "declared_width_m": 6
+      },
+      "ShortcutSegment": {
+        "length_m": 72.394,
+        "at_4mps_seconds": 18.099,
+        "minimum_centerline_obstacle_clearance_m": 8.357,
+        "declared_width_m": 8
+      },
+      "HerdConnector": {
+        "length_m": 71.796,
+        "at_4mps_seconds": 17.949,
+        "minimum_centerline_obstacle_clearance_m": 11.807,
+        "declared_width_m": 6
+      }
+    },
+    "first_clue_arrival_seconds": 26.45,
+    "first_rabbit_geometric_line_of_sight_seconds": 61.24,
+    "first_rabbit_visible_from": {
+      "x": 89.0,
+      "y": 0.0,
+      "z": 75.0
+    },
+    "max_ground_triangle_slope_degrees": 5.711,
+    "rabbit_lattice_paths": [
+      {
+        "from": "RabbitSpawn_A01",
+        "to": "RabbitSpawn_A02",
+        "lattice_path_m": 10.49
+      },
+      {
+        "from": "RabbitSpawn_A01",
+        "to": "RabbitFlee_A01",
+        "lattice_path_m": 17.83
+      },
+      {
+        "from": "RabbitSpawn_A01",
+        "to": "RabbitFlee_A02",
+        "lattice_path_m": 30.38
+      },
+      {
+        "from": "RabbitSpawn_A01",
+        "to": "RabbitFlee_A03",
+        "lattice_path_m": 18.0
+      },
+      {
+        "from": "RabbitSpawn_A02",
+        "to": "RabbitFlee_A01",
+        "lattice_path_m": 15.14
+      },
+      {
+        "from": "RabbitSpawn_A02",
+        "to": "RabbitFlee_A02",
+        "lattice_path_m": 21.07
+      },
+      {
+        "from": "RabbitSpawn_A02",
+        "to": "RabbitFlee_A03",
+        "lattice_path_m": 12.49
+      },
+      {
+        "from": "RabbitFlee_A01",
+        "to": "RabbitFlee_A02",
+        "lattice_path_m": 19.73
+      },
+      {
+        "from": "RabbitFlee_A01",
+        "to": "RabbitFlee_A03",
+        "lattice_path_m": 27.63
+      },
+      {
+        "from": "RabbitFlee_A02",
+        "to": "RabbitFlee_A03",
+        "lattice_path_m": 27.9
+      },
+      {
+        "from": "RabbitSpawn_B01",
+        "to": "RabbitSpawn_B02",
+        "lattice_path_m": 11.66
+      },
+      {
+        "from": "RabbitSpawn_B01",
+        "to": "RabbitFlee_B01",
+        "lattice_path_m": 17.49
+      },
+      {
+        "from": "RabbitSpawn_B01",
+        "to": "RabbitFlee_B02",
+        "lattice_path_m": 23.14
+      },
+      {
+        "from": "RabbitSpawn_B01",
+        "to": "RabbitFlee_B03",
+        "lattice_path_m": 18.49
+      },
+      {
+        "from": "RabbitSpawn_B02",
+        "to": "RabbitFlee_B01",
+        "lattice_path_m": 21.14
+      },
+      {
+        "from": "RabbitSpawn_B02",
+        "to": "RabbitFlee_B02",
+        "lattice_path_m": 15.0
+      },
+      {
+        "from": "RabbitSpawn_B02",
+        "to": "RabbitFlee_B03",
+        "lattice_path_m": 12.49
+      },
+      {
+        "from": "RabbitFlee_B01",
+        "to": "RabbitFlee_B02",
+        "lattice_path_m": 19.66
+      },
+      {
+        "from": "RabbitFlee_B01",
+        "to": "RabbitFlee_B03",
+        "lattice_path_m": 31.28
+      },
+      {
+        "from": "RabbitFlee_B02",
+        "to": "RabbitFlee_B03",
+        "lattice_path_m": 27.49
+      },
+      {
+        "from": "RabbitSpawn_C01",
+        "to": "RabbitSpawn_C02",
+        "lattice_path_m": 14.83
+      },
+      {
+        "from": "RabbitSpawn_C01",
+        "to": "RabbitFlee_C01",
+        "lattice_path_m": 23.9
+      },
+      {
+        "from": "RabbitSpawn_C01",
+        "to": "RabbitFlee_C02",
+        "lattice_path_m": 27.9
+      },
+      {
+        "from": "RabbitSpawn_C01",
+        "to": "RabbitFlee_C03",
+        "lattice_path_m": 13.31
+      },
+      {
+        "from": "RabbitSpawn_C02",
+        "to": "RabbitFlee_C01",
+        "lattice_path_m": 11.9
+      },
+      {
+        "from": "RabbitSpawn_C02",
+        "to": "RabbitFlee_C02",
+        "lattice_path_m": 13.07
+      },
+      {
+        "from": "RabbitSpawn_C02",
+        "to": "RabbitFlee_C03",
+        "lattice_path_m": 25.31
+      },
+      {
+        "from": "RabbitFlee_C01",
+        "to": "RabbitFlee_C02",
+        "lattice_path_m": 16.49
+      },
+      {
+        "from": "RabbitFlee_C01",
+        "to": "RabbitFlee_C03",
+        "lattice_path_m": 36.04
+      },
+      {
+        "from": "RabbitFlee_C02",
+        "to": "RabbitFlee_C03",
+        "lattice_path_m": 35.07
+      }
+    ],
+    "two_capsule_geometric_traces": [
+      {
+        "route": "MainDiscovery",
+        "centre_separation_m": 1.6,
+        "blocked_samples": []
+      },
+      {
+        "route": "AlternativeReturn",
+        "centre_separation_m": 1.6,
+        "blocked_samples": []
+      }
+    ],
+    "camera_box_probe_conflicts": []
+  }
+}
