@@ -22,3 +22,9 @@ artifacts/
 *.blend1
 *.blend2
 
+
+# Unity scenes and data written by the Editor builders (reproducible, see docs/graybox/qingxi-hunt/README.md)
+apps/game/Assets/YunJing/Generated/
+apps/game/Assets/YunJing/Generated.meta
+apps/game/Assets/QingxiWorld/Generated/
+apps/game/Assets/QingxiWorld/Generated.meta

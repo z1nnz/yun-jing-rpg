@@ -1,0 +1,170 @@
+{
+  "asset": "giant-tree",
+  "version": "v1",
+  "lod": 0,
+  "reference": "art/references/qingxi-town-v1/giant-tree/three-view.png",
+  "dimension_basis": "three-view dimension notes (user choice), not the drawn proportions",
+  "target": {
+    "height_m": 62,
+    "crown_width_m": 90,
+    "crown_depth_m": 70,
+    "trunk_diameter_at_3m_m": 10,
+    "root_flare_m": 22,
+    "split_height_m": 18,
+    "crown_underside_m": 26
+  },
+  "measured": {
+    "size_m": [
+      90.56248474121094,
+      69.76770782470703,
+      62.352176666259766
+    ],
+    "bounds_min_m": [
+      -45.219696044921875,
+      -36.43634796142578,
+      0.0
+    ],
+    "bounds_max_m": [
+      45.34278869628906,
+      33.33135986328125,
+      62.352176666259766
+    ],
+    "triangles": 44420,
+    "objects": [
+      "Tree_Trunk_Limbs",
+      "Tree_Leaf_Clump_01",
+      "Tree_Leaf_Clump_02",
+      "Tree_Leaf_Clump_03",
+      "Tree_Leaf_Clump_04",
+      "Tree_Leaf_Clump_05",
+      "Tree_Leaf_Clump_06",
+      "Tree_Leaf_Clump_07",
+      "Tree_Leaf_Clump_08",
+      "Tree_Leaf_Clump_09",
+      "Tree_Leaf_Clump_10",
+      "Tree_Leaf_Clump_11",
+      "Tree_Leaf_Clump_12",
+      "Tree_Leaf_Clump_13",
+      "Tree_Leaf_Clump_14",
+      "Tree_Leaf_Clump_15",
+      "Tree_HangingMoss",
+      "Tree_Boulders",
+      "Tree_Roots",
+      "Tree_Ivy"
+    ],
+    "trunk_width_at_3m": 10.132383823394775,
+    "crown_underside_m": 27.26460075378418,
+    "crown_width_x_m": 90.56248474121094,
+    "crown_depth_y_m": 69.76770782470703,
+    "materials": [
+      "Tree_Bark",
+      "Tree_HangingMoss",
+      "Tree_Leaf_Dark",
+      "Tree_Leaf_Light",
+      "Tree_Leaf_Mid",
+      "Tree_Moss",
+      "Tree_Rock"
+    ]
+  },
+  "views": [
+    {
+      "file": "01_front.png",
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "ortho_scale": 99.2734755109716
+    },
+    {
+      "file": "02_right.png",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "ortho_scale": 76.0848527095139
+    },
+    {
+      "file": "03_rear.png",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "ortho_scale": 99.2734755109716
+    },
+    {
+      "file": "04_left.png",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "ortho_scale": 76.0848527095139
+    },
+    {
+      "file": "05_front_right.png",
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "ortho_scale": 125.75666865266503
+    },
+    {
+      "file": "06_rear_right.png",
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "ortho_scale": 125.75666865266503
+    },
+    {
+      "file": "07_rear_left.png",
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "ortho_scale": 125.75666865266503
+    },
+    {
+      "file": "08_front_left.png",
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "ortho_scale": 125.75666865266503
+    },
+    {
+      "file": "09_top.png",
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "ortho_scale": 99.2734755109716
+    },
+    {
+      "file": "10_high_front.png",
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "ortho_scale": 102.25167977630075
+    }
+  ],
+  "blender": "5.2.2 LTS",
+  "units": "metres, Z up, front -Y, origin base centre",
+  "not_done": [
+    "LOD1",
+    "UV unwrap and texture bake (procedural colours only)",
+    "collision",
+    "wind animation",
+    "Unity import"
+  ]
+}

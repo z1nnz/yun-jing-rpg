@@ -1,0 +1,3043 @@
+{
+ "source": "art/source/qingxi-town-blockout-v1.blend",
+ "axes": "Blender metres: X east, Y north, Z up; Unity X = X, Unity Z = Y, Unity Y = Z",
+ "water_level": -0.9,
+ "hunt": {
+  "origin_xy": [
+   -98.0,
+   -108.0
+  ],
+  "rotation_deg": 180,
+  "size": [
+   220.0,
+   160.0
+  ],
+  "terrain_cut_xyxy": [
+   -318.0,
+   -268.0,
+   -100.0,
+   -110.0
+  ],
+  "note": "hunt local (x, z) maps to world (HX - x, HY - z)"
+ },
+ "junction": {
+  "boardwalk_end_xy": [
+   -118.0,
+   -112.0
+  ],
+  "ground_at": {
+   "-118,-106": 0.016,
+   "-118,-104": 0.04,
+   "-110,-100": -0.215,
+   "-100,-104": -0.278,
+   "0,25": 1.8,
+   "0,17": 1.8,
+   "-3,17": 1.8
+  }
+ },
+ "placements": [
+  {
+   "asset": "SectGrandHall",
+   "collection": "ASSET_SectGrandHall_v001",
+   "x": 0.0,
+   "y": 64.0,
+   "z": 8.179,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "樹下樓閣：傳授煉氣訣、講法（以宗門大殿暫代）"
+  },
+  {
+   "asset": "ScriptureLibrary",
+   "collection": "ASSET_ScriptureLibrary_v001",
+   "x": -30.0,
+   "y": 72.0,
+   "z": 8.172,
+   "yaw_deg": 20.0,
+   "scale": 1.0,
+   "role": "樹下樓閣（藏經閣暫代）"
+  },
+  {
+   "asset": "AlchemyHall",
+   "collection": "ASSET_AlchemyHall_v001",
+   "x": 30.0,
+   "y": 73.0,
+   "z": 7.835,
+   "yaw_deg": -20.0,
+   "scale": 1.0,
+   "role": "樹下樓閣（丹房暫代）"
+  },
+  {
+   "asset": "SpawnAltar",
+   "collection": "ASSET_SpawnAltar_v002",
+   "x": 0.0,
+   "y": 25.0,
+   "z": 2.0,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "廣場中央陣台（測資）"
+  },
+  {
+   "asset": "NoticeBoard",
+   "collection": "ASSET_NoticeBoard_v002",
+   "x": 13.0,
+   "y": 13.0,
+   "z": 2.0,
+   "yaw_deg": 30.0,
+   "scale": 1.0,
+   "role": "委託與事件公告"
+  },
+  {
+   "asset": "MountainStoneStairs",
+   "collection": "ASSET_MountainStoneStairs_v001",
+   "x": 0.0,
+   "y": 44.5,
+   "z": 2.0,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "廣場往古樹的石階"
+  },
+  {
+   "asset": "MountainStoneStairs",
+   "collection": "ASSET_MountainStoneStairs_v001",
+   "x": 0.0,
+   "y": 49.5,
+   "z": 5.0,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "廣場往古樹的石階"
+  },
+  {
+   "asset": "MountainStoneStairs",
+   "collection": "ASSET_MountainStoneStairs_v001",
+   "x": 0.0,
+   "y": 5.5,
+   "z": -0.9,
+   "yaw_deg": -180.0,
+   "scale": 0.85,
+   "role": "棧道上廣場的石階"
+  },
+  {
+   "asset": "StoneArchBridge",
+   "collection": "ASSET_StoneArchBridge_v001",
+   "x": -34.0,
+   "y": -11.0,
+   "z": -0.8,
+   "yaw_deg": -60.0,
+   "scale": 1.0,
+   "role": "跨溪石拱橋"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -126.48,
+   "y": 15.541,
+   "z": -0.131,
+   "yaw_deg": 148.11,
+   "scale": 1.1965,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -110.236,
+   "y": -70.36,
+   "z": 0.516,
+   "yaw_deg": 75.66,
+   "scale": 1.0807,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -122.523,
+   "y": 2.19,
+   "z": -0.092,
+   "yaw_deg": -158.79,
+   "scale": 1.2263,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -130.694,
+   "y": 19.486,
+   "z": 0.007,
+   "yaw_deg": -51.26,
+   "scale": 1.0241,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -121.609,
+   "y": -27.638,
+   "z": -0.252,
+   "yaw_deg": -53.44,
+   "scale": 0.9936,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -120.286,
+   "y": 5.398,
+   "z": -0.253,
+   "yaw_deg": -173.15,
+   "scale": 0.9314,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -114.853,
+   "y": -57.332,
+   "z": 0.499,
+   "yaw_deg": 132.97,
+   "scale": 1.0144,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -94.923,
+   "y": -4.257,
+   "z": -0.069,
+   "yaw_deg": -122.1,
+   "scale": 1.3521,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -113.644,
+   "y": 5.56,
+   "z": -0.515,
+   "yaw_deg": 51.49,
+   "scale": 1.2318,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -124.995,
+   "y": -28.782,
+   "z": -0.17,
+   "yaw_deg": -175.09,
+   "scale": 1.1038,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -129.319,
+   "y": 53.089,
+   "z": 0.298,
+   "yaw_deg": 164.7,
+   "scale": 1.019,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -127.852,
+   "y": -46.885,
+   "z": 0.283,
+   "yaw_deg": 173.41,
+   "scale": 0.9835,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -108.491,
+   "y": -22.722,
+   "z": 0.058,
+   "yaw_deg": -164.14,
+   "scale": 0.9303,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -111.046,
+   "y": -79.483,
+   "z": 0.232,
+   "yaw_deg": -79.49,
+   "scale": 0.9428,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -118.97,
+   "y": 15.65,
+   "z": -0.419,
+   "yaw_deg": 161.23,
+   "scale": 1.3869,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -124.976,
+   "y": -65.974,
+   "z": 0.059,
+   "yaw_deg": -159.72,
+   "scale": 0.9554,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -129.192,
+   "y": 1.661,
+   "z": 0.014,
+   "yaw_deg": -28.57,
+   "scale": 1.2255,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -94.929,
+   "y": 52.589,
+   "z": 2.355,
+   "yaw_deg": 30.21,
+   "scale": 1.0405,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -95.318,
+   "y": 9.235,
+   "z": 0.068,
+   "yaw_deg": -122.15,
+   "scale": 1.3663,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -118.762,
+   "y": -43.512,
+   "z": 0.168,
+   "yaw_deg": 119.16,
+   "scale": 1.0875,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -122.068,
+   "y": -44.269,
+   "z": 0.286,
+   "yaw_deg": -169.22,
+   "scale": 1.1249,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -131.47,
+   "y": 16.644,
+   "z": 0.095,
+   "yaw_deg": 102.36,
+   "scale": 1.0222,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -130.328,
+   "y": 47.805,
+   "z": 0.135,
+   "yaw_deg": -109.91,
+   "scale": 1.3314,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -120.693,
+   "y": 14.997,
+   "z": -0.381,
+   "yaw_deg": -56.73,
+   "scale": 0.9775,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -122.577,
+   "y": -8.413,
+   "z": -0.103,
+   "yaw_deg": 82.71,
+   "scale": 1.0803,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "BambooClump",
+   "collection": "ASSET_BambooClump_v001",
+   "x": -116.832,
+   "y": -51.373,
+   "z": 0.392,
+   "yaw_deg": 50.93,
+   "scale": 1.2352,
+   "role": "竹林：採集區、入口"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -82.0,
+   "z": 0.348,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -76.0,
+   "z": 0.376,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -70.0,
+   "z": 0.289,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -64.0,
+   "z": 0.155,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -58.0,
+   "z": 0.062,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -52.0,
+   "z": 0.058,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -46.0,
+   "z": 0.131,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -40.0,
+   "z": 0.215,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -34.0,
+   "z": 0.228,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -28.0,
+   "z": 0.126,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -22.0,
+   "z": -0.071,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -16.0,
+   "z": -0.286,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -10.0,
+   "z": -0.425,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": -4.0,
+   "z": -0.433,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 2.0,
+   "z": -0.317,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 8.0,
+   "z": -0.146,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 14.0,
+   "z": -0.01,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 20.0,
+   "z": 0.033,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 26.0,
+   "z": -0.013,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 32.0,
+   "z": -0.086,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 38.0,
+   "z": -0.105,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "MountainStonePath",
+   "collection": "ASSET_MountainStonePath_v001",
+   "x": -102.0,
+   "y": 44.0,
+   "z": -0.022,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "竹林旁石板小徑"
+  },
+  {
+   "asset": "StarterHouse",
+   "collection": "ASSET_StarterHouse_v004",
+   "x": -56.0,
+   "y": -26.0,
+   "z": -0.133,
+   "yaw_deg": 35.0,
+   "scale": 1.0,
+   "role": "借住小屋：床、箱子、修煉位"
+  },
+  {
+   "asset": "StarterHouse",
+   "collection": "ASSET_StarterHouse_v004",
+   "x": -72.0,
+   "y": -2.0,
+   "z": 0.134,
+   "yaw_deg": 50.0,
+   "scale": 1.0,
+   "role": "借住小屋：床、箱子、修煉位"
+  },
+  {
+   "asset": "StarterHouse",
+   "collection": "ASSET_StarterHouse_v004",
+   "x": -40.0,
+   "y": 36.0,
+   "z": -0.017,
+   "yaw_deg": 70.0,
+   "scale": 1.0,
+   "role": "借住小屋：床、箱子、修煉位"
+  },
+  {
+   "asset": "QInnkeeper",
+   "collection": "ASSET_QInnkeeper_v006",
+   "x": -50.0,
+   "y": -18.0,
+   "z": 0.209,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "聚落 NPC"
+  },
+  {
+   "asset": "MountainStoneStairs",
+   "collection": "ASSET_MountainStoneStairs_v001",
+   "x": -78.0,
+   "y": 58.0,
+   "z": 2.77,
+   "yaw_deg": 35.0,
+   "scale": 1.0,
+   "role": "通往遺跡的石階"
+  },
+  {
+   "asset": "MountainStoneStairs",
+   "collection": "ASSET_MountainStoneStairs_v001",
+   "x": -82.0,
+   "y": 64.0,
+   "z": 7.589,
+   "yaw_deg": 35.0,
+   "scale": 1.0,
+   "role": "通往遺跡的石階"
+  },
+  {
+   "asset": "MountainStoneStairs",
+   "collection": "ASSET_MountainStoneStairs_v001",
+   "x": -86.0,
+   "y": 70.0,
+   "z": 12.566,
+   "yaw_deg": 35.0,
+   "scale": 1.0,
+   "role": "通往遺跡的石階"
+  },
+  {
+   "asset": "MountainStoneStairs",
+   "collection": "ASSET_MountainStoneStairs_v001",
+   "x": -90.0,
+   "y": 76.0,
+   "z": 16.068,
+   "yaw_deg": 35.0,
+   "scale": 1.0,
+   "role": "通往遺跡的石階"
+  },
+  {
+   "asset": "LayeredCliff",
+   "collection": "ASSET_LayeredCliff_v001",
+   "x": 110.0,
+   "y": 28.0,
+   "z": 0.0,
+   "yaw_deg": -90.0,
+   "scale": 1.25,
+   "role": "東側山壁"
+  },
+  {
+   "asset": "LayeredCliff",
+   "collection": "ASSET_LayeredCliff_v001",
+   "x": 114.0,
+   "y": 66.0,
+   "z": 0.0,
+   "yaw_deg": -90.0,
+   "scale": 1.4,
+   "role": "東側山壁"
+  },
+  {
+   "asset": "LayeredCliff",
+   "collection": "ASSET_LayeredCliff_v001",
+   "x": 104.0,
+   "y": -8.0,
+   "z": 0.0,
+   "yaw_deg": -90.0,
+   "scale": 1.0,
+   "role": "東側山壁"
+  },
+  {
+   "asset": "QCaveEntrance",
+   "collection": "ASSET_QCaveEntrance_v003",
+   "x": 97.0,
+   "y": 22.0,
+   "z": 4.5,
+   "yaw_deg": -90.0,
+   "scale": 1.6,
+   "role": "洞窟入口：洞府／礦洞／妖獸育幼地"
+  },
+  {
+   "asset": "QCaveEntrance",
+   "collection": "ASSET_QCaveEntrance_v003",
+   "x": 99.0,
+   "y": 62.0,
+   "z": 4.5,
+   "yaw_deg": -90.0,
+   "scale": 1.6,
+   "role": "洞窟入口：洞府／礦洞／妖獸育幼地"
+  },
+  {
+   "asset": "StarterHouse",
+   "collection": "ASSET_StarterHouse_v004",
+   "x": 84.0,
+   "y": -22.0,
+   "z": 0.039,
+   "yaw_deg": -70.0,
+   "scale": 1.0,
+   "role": "水車木屋（房屋可用民宅）"
+  },
+  {
+   "asset": "HerbalStall",
+   "collection": "ASSET_HerbalStall_v001",
+   "x": 36.0,
+   "y": -40.0,
+   "z": 0.115,
+   "yaw_deg": 10.0,
+   "scale": 1.0,
+   "role": "坊市攤位"
+  },
+  {
+   "asset": "HerbalStall",
+   "collection": "ASSET_HerbalStall_v001",
+   "x": 44.0,
+   "y": -38.0,
+   "z": -0.062,
+   "yaw_deg": 10.0,
+   "scale": 1.0,
+   "role": "坊市攤位"
+  },
+  {
+   "asset": "MaterialShop",
+   "collection": "ASSET_MaterialShop_v001",
+   "x": 60.0,
+   "y": -31.0,
+   "z": 0.171,
+   "yaw_deg": -20.0,
+   "scale": 1.0,
+   "role": "坊市：賣材料、買丹藥裝備"
+  },
+  {
+   "asset": "Blacksmith",
+   "collection": "ASSET_Blacksmith_v001",
+   "x": 76.0,
+   "y": -47.0,
+   "z": 0.38,
+   "yaw_deg": -30.0,
+   "scale": 1.0,
+   "role": "鐵匠鋪"
+  },
+  {
+   "asset": "DryingRack",
+   "collection": "ASSET_DryingRack_v001",
+   "x": 40.0,
+   "y": -45.0,
+   "z": 0.123,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "攤位雜物"
+  },
+  {
+   "asset": "QHerbalist",
+   "collection": "ASSET_QHerbalist_v006",
+   "x": 38.0,
+   "y": -36.0,
+   "z": 0.076,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "聚落 NPC"
+  },
+  {
+   "asset": "QShopkeeper",
+   "collection": "ASSET_QShopkeeper_v006",
+   "x": 58.0,
+   "y": -26.0,
+   "z": 0.121,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "聚落 NPC"
+  },
+  {
+   "asset": "QBlacksmith",
+   "collection": "ASSET_QBlacksmith_v006",
+   "x": 72.0,
+   "y": -42.0,
+   "z": 0.354,
+   "yaw_deg": -20.0,
+   "scale": 1.0,
+   "role": "聚落 NPC"
+  },
+  {
+   "asset": "SpiritHerbGarden",
+   "collection": "ASSET_SpiritHerbGarden_v001",
+   "x": 44.0,
+   "y": -74.0,
+   "z": -0.209,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "NPC 藥圃：種植教學"
+  },
+  {
+   "asset": "SpiritHerbGarden",
+   "collection": "ASSET_SpiritHerbGarden_v001",
+   "x": 44.0,
+   "y": -82.0,
+   "z": -0.162,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "NPC 藥圃：種植教學"
+  },
+  {
+   "asset": "SpiritHerbGarden",
+   "collection": "ASSET_SpiritHerbGarden_v001",
+   "x": 53.0,
+   "y": -74.0,
+   "z": 0.247,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "NPC 藥圃：種植教學"
+  },
+  {
+   "asset": "SpiritHerbGarden",
+   "collection": "ASSET_SpiritHerbGarden_v001",
+   "x": 53.0,
+   "y": -82.0,
+   "z": -0.003,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "NPC 藥圃：種植教學"
+  },
+  {
+   "asset": "SpiritHerbGarden",
+   "collection": "ASSET_SpiritHerbGarden_v001",
+   "x": 62.0,
+   "y": -74.0,
+   "z": 0.443,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "NPC 藥圃：種植教學"
+  },
+  {
+   "asset": "SpiritHerbGarden",
+   "collection": "ASSET_SpiritHerbGarden_v001",
+   "x": 62.0,
+   "y": -82.0,
+   "z": 0.367,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "NPC 藥圃：種植教學"
+  },
+  {
+   "asset": "HerbPlanter",
+   "collection": "ASSET_HerbPlanter_v001",
+   "x": 40.0,
+   "y": -88.0,
+   "z": 0.093,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "藥圃花盆"
+  },
+  {
+   "asset": "HerbPlanter",
+   "collection": "ASSET_HerbPlanter_v001",
+   "x": 42.5,
+   "y": -88.0,
+   "z": 0.026,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "藥圃花盆"
+  },
+  {
+   "asset": "HerbPlanter",
+   "collection": "ASSET_HerbPlanter_v001",
+   "x": 45.0,
+   "y": -88.0,
+   "z": -0.049,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "藥圃花盆"
+  },
+  {
+   "asset": "HerbPlanter",
+   "collection": "ASSET_HerbPlanter_v001",
+   "x": 47.5,
+   "y": -88.0,
+   "z": -0.113,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "藥圃花盆"
+  },
+  {
+   "asset": "HerbPlanter",
+   "collection": "ASSET_HerbPlanter_v001",
+   "x": 50.0,
+   "y": -88.0,
+   "z": -0.149,
+   "yaw_deg": 0.0,
+   "scale": 1.0,
+   "role": "藥圃花盆"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -112.269,
+   "y": 144.254,
+   "z": 1.689,
+   "yaw_deg": 47.61,
+   "scale": 1.7167,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 90.511,
+   "y": -10.537,
+   "z": 0.323,
+   "yaw_deg": -94.4,
+   "scale": 1.164,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -3.767,
+   "y": 141.001,
+   "z": -0.255,
+   "yaw_deg": -179.1,
+   "scale": 1.211,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 42.674,
+   "y": 120.491,
+   "z": -0.144,
+   "yaw_deg": 13.95,
+   "scale": 1.0481,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 118.748,
+   "y": -1.825,
+   "z": 5.247,
+   "yaw_deg": 78.73,
+   "scale": 1.2645,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 19.845,
+   "y": 11.147,
+   "z": 0.117,
+   "yaw_deg": -144.2,
+   "scale": 1.5021,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -43.581,
+   "y": 37.721,
+   "z": 0.056,
+   "yaw_deg": 116.35,
+   "scale": 1.4383,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 76.183,
+   "y": 61.716,
+   "z": 0.187,
+   "yaw_deg": -160.56,
+   "scale": 1.7959,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 58.615,
+   "y": 58.613,
+   "z": 0.262,
+   "yaw_deg": -74.35,
+   "scale": 1.0167,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 95.89,
+   "y": 89.806,
+   "z": 2.217,
+   "yaw_deg": 128.42,
+   "scale": 1.609,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -59.943,
+   "y": 64.083,
+   "z": 0.555,
+   "yaw_deg": -116.39,
+   "scale": 1.4164,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 145.525,
+   "y": 115.107,
+   "z": 4.595,
+   "yaw_deg": 106.65,
+   "scale": 1.1855,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 130.315,
+   "y": -24.274,
+   "z": 5.112,
+   "yaw_deg": -164.89,
+   "scale": 1.3024,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -40.497,
+   "y": 55.501,
+   "z": 0.007,
+   "yaw_deg": 102.2,
+   "scale": 1.0639,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -59.82,
+   "y": 134.599,
+   "z": 1.432,
+   "yaw_deg": 168.91,
+   "scale": 1.08,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 37.406,
+   "y": 51.357,
+   "z": 0.041,
+   "yaw_deg": 173.4,
+   "scale": 1.2036,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 114.448,
+   "y": -83.22,
+   "z": 4.619,
+   "yaw_deg": 73.32,
+   "scale": 1.4251,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 39.926,
+   "y": 93.826,
+   "z": 5.875,
+   "yaw_deg": -158.64,
+   "scale": 1.3198,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 126.074,
+   "y": -44.314,
+   "z": 4.759,
+   "yaw_deg": -78.63,
+   "scale": 1.4842,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -75.441,
+   "y": 34.051,
+   "z": 0.054,
+   "yaw_deg": 146.94,
+   "scale": 1.304,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 100.879,
+   "y": 60.495,
+   "z": 4.449,
+   "yaw_deg": -176.93,
+   "scale": 1.615,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 58.523,
+   "y": 70.898,
+   "z": 0.462,
+   "yaw_deg": -100.49,
+   "scale": 1.4212,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -70.897,
+   "y": 47.658,
+   "z": -0.413,
+   "yaw_deg": -108.04,
+   "scale": 1.7505,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -144.772,
+   "y": 88.52,
+   "z": 0.585,
+   "yaw_deg": 23.38,
+   "scale": 1.0391,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 24.596,
+   "y": 136.63,
+   "z": 0.209,
+   "yaw_deg": -117.14,
+   "scale": 1.0936,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 67.307,
+   "y": 64.143,
+   "z": 0.501,
+   "yaw_deg": 13.62,
+   "scale": 1.3522,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -98.827,
+   "y": 131.834,
+   "z": 11.937,
+   "yaw_deg": 103.0,
+   "scale": 1.2794,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 135.812,
+   "y": 82.313,
+   "z": 4.83,
+   "yaw_deg": -119.39,
+   "scale": 1.2891,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 39.929,
+   "y": 137.766,
+   "z": 0.169,
+   "yaw_deg": 123.85,
+   "scale": 1.7003,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -44.447,
+   "y": 106.046,
+   "z": 1.497,
+   "yaw_deg": -145.86,
+   "scale": 1.5835,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -53.076,
+   "y": 26.502,
+   "z": -0.024,
+   "yaw_deg": -84.32,
+   "scale": 1.5801,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -51.756,
+   "y": -105.755,
+   "z": 0.288,
+   "yaw_deg": -136.1,
+   "scale": 1.3623,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -39.97,
+   "y": 23.2,
+   "z": 0.151,
+   "yaw_deg": 137.65,
+   "scale": 1.7812,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 128.74,
+   "y": -5.056,
+   "z": 4.942,
+   "yaw_deg": -36.59,
+   "scale": 1.3726,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -143.982,
+   "y": 61.509,
+   "z": -0.31,
+   "yaw_deg": 165.75,
+   "scale": 1.3335,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 112.997,
+   "y": -22.079,
+   "z": 5.108,
+   "yaw_deg": -85.98,
+   "scale": 1.7295,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 96.621,
+   "y": -7.375,
+   "z": 2.743,
+   "yaw_deg": 118.39,
+   "scale": 1.1509,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -27.94,
+   "y": 134.54,
+   "z": -0.368,
+   "yaw_deg": -148.57,
+   "scale": 1.1284,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": 38.921,
+   "y": 143.137,
+   "z": 0.244,
+   "yaw_deg": 86.42,
+   "scale": 1.4214,
+   "role": "松樹"
+  },
+  {
+   "asset": "CommonPine",
+   "collection": "ASSET_CommonPine_v001",
+   "x": -77.649,
+   "y": 111.492,
+   "z": 17.121,
+   "yaw_deg": 53.54,
+   "scale": 1.4581,
+   "role": "松樹"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": -21.907,
+   "y": -3.115,
+   "z": -0.148,
+   "yaw_deg": -14.6,
+   "scale": 1.4299,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": 56.5,
+   "y": 40.941,
+   "z": 0.048,
+   "yaw_deg": 19.07,
+   "scale": 1.1968,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": 49.767,
+   "y": 10.889,
+   "z": -0.299,
+   "yaw_deg": -165.54,
+   "scale": 1.4352,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "WildShrub",
+   "collection": "ASSET_WildShrub_v001",
+   "x": -28.203,
+   "y": -98.971,
+   "z": 0.042,
+   "yaw_deg": 157.36,
+   "scale": 1.0442,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "WildShrub",
+   "collection": "ASSET_WildShrub_v001",
+   "x": 76.054,
+   "y": -13.021,
+   "z": -0.19,
+   "yaw_deg": 163.3,
+   "scale": 1.1049,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": 77.635,
+   "y": 14.412,
+   "z": -0.356,
+   "yaw_deg": -80.19,
+   "scale": 1.3705,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "WildShrub",
+   "collection": "ASSET_WildShrub_v001",
+   "x": -59.811,
+   "y": -77.337,
+   "z": -0.335,
+   "yaw_deg": 48.66,
+   "scale": 1.0502,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": -60.404,
+   "y": -78.683,
+   "z": -0.274,
+   "yaw_deg": -101.88,
+   "scale": 1.5442,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "WildShrub",
+   "collection": "ASSET_WildShrub_v001",
+   "x": 70.035,
+   "y": -24.047,
+   "z": -0.261,
+   "yaw_deg": -167.31,
+   "scale": 1.0474,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": -22.249,
+   "y": -98.46,
+   "z": 0.121,
+   "yaw_deg": 22.81,
+   "scale": 1.0232,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": -73.597,
+   "y": -14.044,
+   "z": 0.262,
+   "yaw_deg": 30.53,
+   "scale": 1.5605,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "WildShrub",
+   "collection": "ASSET_WildShrub_v001",
+   "x": -56.898,
+   "y": -90.451,
+   "z": 0.06,
+   "yaw_deg": -38.29,
+   "scale": 1.1834,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": -70.8,
+   "y": -18.177,
+   "z": 0.23,
+   "yaw_deg": -174.15,
+   "scale": 1.4499,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": 77.05,
+   "y": 9.914,
+   "z": -0.283,
+   "yaw_deg": -45.41,
+   "scale": 1.0163,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "WildShrub",
+   "collection": "ASSET_WildShrub_v001",
+   "x": 54.618,
+   "y": 31.819,
+   "z": 0.19,
+   "yaw_deg": 144.18,
+   "scale": 1.3949,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "WildShrub",
+   "collection": "ASSET_WildShrub_v001",
+   "x": -31.967,
+   "y": 7.287,
+   "z": -0.074,
+   "yaw_deg": -35.87,
+   "scale": 1.4072,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "MossBoulderSet",
+   "collection": "ASSET_MossBoulderSet_v001",
+   "x": 50.892,
+   "y": 10.812,
+   "z": -0.322,
+   "yaw_deg": 103.03,
+   "scale": 1.4715,
+   "role": "水岸灌木、苔石"
+  },
+  {
+   "asset": "QSectElder",
+   "collection": "ASSET_QSectElder_v006",
+   "x": 0.0,
+   "y": 34.0,
+   "z": 2.0,
+   "yaw_deg": -180.0,
+   "scale": 1.0,
+   "role": "廣場測資、選比的長老"
+  },
+  {
+   "asset": "QPlayerMale",
+   "collection": "ASSET_QPlayerMale_v006",
+   "x": -3.0,
+   "y": 17.0,
+   "z": 2.0,
+   "yaw_deg": -180.0,
+   "scale": 1.0,
+   "role": "比例參考：玩家身高約 1.45 m"
+  },
+  {
+   "asset": "SectGrandHall",
+   "collection": "ASSET_SectGrandHall_v001",
+   "x": 70.0,
+   "y": 300.0,
+   "z": 120.0,
+   "yaw_deg": 0.0,
+   "scale": 1.6,
+   "role": "遠景宗門（需低面數替身）"
+  },
+  {
+   "asset": "SectGate",
+   "collection": "ASSET_SectGate_v001",
+   "x": 70.0,
+   "y": 282.0,
+   "z": 120.0,
+   "yaw_deg": 0.0,
+   "scale": 1.6,
+   "role": "遠景宗門山門"
+  }
+ ],
+ "placeholders": [
+  {
+   "name": "小瀑布_-22",
+   "x": -22.0,
+   "y": 9.0,
+   "z": 0.0,
+   "dims": [
+    7.0,
+    0.6,
+    3.0
+   ]
+  },
+  {
+   "name": "小瀑布_22",
+   "x": 22.0,
+   "y": 9.0,
+   "z": 0.0,
+   "dims": [
+    7.0,
+    0.6,
+    3.0
+   ]
+  },
+  {
+   "name": "小瀑布_56",
+   "x": 56.0,
+   "y": 30.0,
+   "z": 0.0,
+   "dims": [
+    7.0,
+    0.6,
+    3.0
+   ]
+  },
+  {
+   "name": "荷葉_0",
+   "x": 12.42,
+   "y": -24.18,
+   "z": -0.86,
+   "dims": [
+    1.95,
+    1.95,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_1",
+   "x": 37.52,
+   "y": -23.04,
+   "z": -0.86,
+   "dims": [
+    2.41,
+    2.41,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_2",
+   "x": 60.19,
+   "y": -39.78,
+   "z": -0.86,
+   "dims": [
+    3.04,
+    3.04,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_3",
+   "x": -14.22,
+   "y": -63.81,
+   "z": -0.86,
+   "dims": [
+    1.71,
+    1.71,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_4",
+   "x": -9.13,
+   "y": -40.93,
+   "z": -0.86,
+   "dims": [
+    3.1,
+    3.1,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_5",
+   "x": -32.59,
+   "y": -49.16,
+   "z": -0.86,
+   "dims": [
+    1.91,
+    1.91,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_6",
+   "x": 46.57,
+   "y": -16.03,
+   "z": -0.86,
+   "dims": [
+    2.94,
+    2.94,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_7",
+   "x": -50.3,
+   "y": -53.26,
+   "z": -0.86,
+   "dims": [
+    2.3,
+    2.3,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_8",
+   "x": -51.39,
+   "y": -10.19,
+   "z": -0.86,
+   "dims": [
+    1.56,
+    1.56,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_9",
+   "x": -36.39,
+   "y": -34.48,
+   "z": -0.86,
+   "dims": [
+    2.89,
+    2.89,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_10",
+   "x": -26.42,
+   "y": -52.8,
+   "z": -0.86,
+   "dims": [
+    1.5,
+    1.5,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_11",
+   "x": 54.45,
+   "y": -46.78,
+   "z": -0.86,
+   "dims": [
+    1.55,
+    1.55,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_12",
+   "x": -1.18,
+   "y": -20.85,
+   "z": -0.86,
+   "dims": [
+    1.61,
+    1.61,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_13",
+   "x": -63.26,
+   "y": -40.37,
+   "z": -0.86,
+   "dims": [
+    1.73,
+    1.73,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_14",
+   "x": 27.99,
+   "y": -6.07,
+   "z": -0.86,
+   "dims": [
+    1.84,
+    1.84,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_15",
+   "x": -12.62,
+   "y": -54.83,
+   "z": -0.86,
+   "dims": [
+    2.97,
+    2.97,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_16",
+   "x": -4.56,
+   "y": -38.39,
+   "z": -0.86,
+   "dims": [
+    2.52,
+    2.52,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_17",
+   "x": 26.54,
+   "y": -35.64,
+   "z": -0.86,
+   "dims": [
+    2.55,
+    2.55,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_18",
+   "x": -28.15,
+   "y": -62.01,
+   "z": -0.86,
+   "dims": [
+    1.83,
+    1.83,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_19",
+   "x": 37.53,
+   "y": -43.54,
+   "z": -0.86,
+   "dims": [
+    2.78,
+    2.78,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_20",
+   "x": -12.22,
+   "y": -36.02,
+   "z": -0.86,
+   "dims": [
+    1.87,
+    1.87,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_21",
+   "x": 42.35,
+   "y": -13.69,
+   "z": -0.86,
+   "dims": [
+    2.91,
+    2.91,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_22",
+   "x": 37.93,
+   "y": -9.01,
+   "z": -0.86,
+   "dims": [
+    2.34,
+    2.34,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_23",
+   "x": -60.29,
+   "y": -39.12,
+   "z": -0.86,
+   "dims": [
+    1.82,
+    1.82,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_24",
+   "x": -24.8,
+   "y": -14.38,
+   "z": -0.86,
+   "dims": [
+    2.21,
+    2.21,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_25",
+   "x": -51.32,
+   "y": -48.83,
+   "z": -0.86,
+   "dims": [
+    3.13,
+    3.13,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_26",
+   "x": -19.43,
+   "y": -15.86,
+   "z": -0.86,
+   "dims": [
+    2.87,
+    2.87,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_27",
+   "x": -30.81,
+   "y": -51.33,
+   "z": -0.86,
+   "dims": [
+    1.91,
+    1.91,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_28",
+   "x": -41.88,
+   "y": -19.98,
+   "z": -0.86,
+   "dims": [
+    2.75,
+    2.75,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_29",
+   "x": 2.09,
+   "y": -35.98,
+   "z": -0.86,
+   "dims": [
+    2.68,
+    2.68,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_30",
+   "x": 51.75,
+   "y": -23.07,
+   "z": -0.86,
+   "dims": [
+    1.74,
+    1.74,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_31",
+   "x": -0.99,
+   "y": -19.19,
+   "z": -0.86,
+   "dims": [
+    2.65,
+    2.65,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_32",
+   "x": 42.1,
+   "y": -43.71,
+   "z": -0.86,
+   "dims": [
+    1.83,
+    1.83,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_33",
+   "x": -69.89,
+   "y": -9.71,
+   "z": -0.86,
+   "dims": [
+    1.59,
+    1.59,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_34",
+   "x": -10.99,
+   "y": -46.81,
+   "z": -0.86,
+   "dims": [
+    2.69,
+    2.69,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_35",
+   "x": 6.79,
+   "y": -17.47,
+   "z": -0.86,
+   "dims": [
+    2.18,
+    2.18,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_36",
+   "x": 3.45,
+   "y": -44.76,
+   "z": -0.86,
+   "dims": [
+    2.03,
+    2.03,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_37",
+   "x": -20.6,
+   "y": -16.82,
+   "z": -0.86,
+   "dims": [
+    1.6,
+    1.6,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_38",
+   "x": 55.15,
+   "y": -49.37,
+   "z": -0.86,
+   "dims": [
+    2.52,
+    2.52,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_39",
+   "x": -4.18,
+   "y": -27.58,
+   "z": -0.86,
+   "dims": [
+    2.49,
+    2.49,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_40",
+   "x": -29.77,
+   "y": -62.48,
+   "z": -0.86,
+   "dims": [
+    2.96,
+    2.96,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_41",
+   "x": 2.54,
+   "y": -58.1,
+   "z": -0.86,
+   "dims": [
+    1.41,
+    1.41,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_42",
+   "x": -52.99,
+   "y": -30.06,
+   "z": -0.86,
+   "dims": [
+    3.16,
+    3.16,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_43",
+   "x": 22.95,
+   "y": -26.28,
+   "z": -0.86,
+   "dims": [
+    2.96,
+    2.96,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_44",
+   "x": 24.78,
+   "y": -60.77,
+   "z": -0.86,
+   "dims": [
+    2.78,
+    2.78,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_45",
+   "x": 60.32,
+   "y": -17.0,
+   "z": -0.86,
+   "dims": [
+    1.45,
+    1.45,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_46",
+   "x": 15.38,
+   "y": -49.06,
+   "z": -0.86,
+   "dims": [
+    2.85,
+    2.85,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_47",
+   "x": 52.29,
+   "y": -5.17,
+   "z": -0.86,
+   "dims": [
+    2.59,
+    2.59,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_48",
+   "x": 9.4,
+   "y": -55.36,
+   "z": -0.86,
+   "dims": [
+    1.47,
+    1.47,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_49",
+   "x": 25.54,
+   "y": -30.39,
+   "z": -0.86,
+   "dims": [
+    1.78,
+    1.78,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_50",
+   "x": -48.56,
+   "y": -8.8,
+   "z": -0.86,
+   "dims": [
+    3.11,
+    3.11,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_51",
+   "x": 53.61,
+   "y": -35.65,
+   "z": -0.86,
+   "dims": [
+    2.42,
+    2.42,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_52",
+   "x": 6.5,
+   "y": -5.98,
+   "z": -0.86,
+   "dims": [
+    2.74,
+    2.74,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_53",
+   "x": 55.88,
+   "y": -55.05,
+   "z": -0.86,
+   "dims": [
+    1.97,
+    1.97,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_54",
+   "x": 28.94,
+   "y": -62.08,
+   "z": -0.86,
+   "dims": [
+    1.86,
+    1.86,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_55",
+   "x": 20.89,
+   "y": -14.05,
+   "z": -0.86,
+   "dims": [
+    2.17,
+    2.17,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_56",
+   "x": 62.42,
+   "y": -37.31,
+   "z": -0.86,
+   "dims": [
+    1.62,
+    1.62,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_57",
+   "x": 35.53,
+   "y": -62.79,
+   "z": -0.86,
+   "dims": [
+    2.54,
+    2.54,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_58",
+   "x": 8.71,
+   "y": -28.27,
+   "z": -0.86,
+   "dims": [
+    2.93,
+    2.93,
+    0.05
+   ]
+  },
+  {
+   "name": "荷葉_59",
+   "x": 58.75,
+   "y": -8.31,
+   "z": -0.86,
+   "dims": [
+    2.74,
+    2.74,
+    0.05
+   ]
+  },
+  {
+   "name": "巨大古樹",
+   "x": 0.0,
+   "y": 92.0,
+   "z": 7.89,
+   "dims": [
+    75.53,
+    70.93,
+    81.2
+   ]
+  },
+  {
+   "name": "圓形石廣場",
+   "x": 0.0,
+   "y": 25.0,
+   "z": 0.0,
+   "dims": [
+    34.0,
+    34.0,
+    2.0
+   ]
+  },
+  {
+   "name": "廣場陣紋",
+   "x": 0.0,
+   "y": 25.0,
+   "z": 0.0,
+   "dims": [
+    26.5,
+    26.5,
+    0.43
+   ]
+  },
+  {
+   "name": "廣場立柱_-1",
+   "x": -13.0,
+   "y": 36.0,
+   "z": 0.0,
+   "dims": [
+    1.2,
+    1.2,
+    8.0
+   ]
+  },
+  {
+   "name": "廣場立柱_1",
+   "x": 13.0,
+   "y": 36.0,
+   "z": 0.0,
+   "dims": [
+    1.2,
+    1.2,
+    8.0
+   ]
+  },
+  {
+   "name": "水上棧道_0_-118_-112",
+   "x": -99.0,
+   "y": -101.0,
+   "z": 0.0,
+   "dims": [
+    42.1,
+    26.1,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-106_-105",
+   "x": -104.93,
+   "y": -106.63,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-94_-98",
+   "x": -94.72,
+   "y": -96.33,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-82_-91",
+   "x": -80.7,
+   "y": -92.6,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_0_-80_-90",
+   "x": -65.0,
+   "y": -92.5,
+   "z": 0.0,
+   "dims": [
+    33.45,
+    8.45,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-66_-92",
+   "x": -66.5,
+   "y": -94.18,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-52_-95",
+   "x": -52.07,
+   "y": -92.73,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_0_-50_-95",
+   "x": -38.0,
+   "y": -80.5,
+   "z": 0.0,
+   "dims": [
+    28.22,
+    33.22,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-41_-84",
+   "x": -39.61,
+   "y": -85.43,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-32_-73",
+   "x": -33.61,
+   "y": -72.22,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_0_-26_-66",
+   "x": -17.5,
+   "y": -53.0,
+   "z": 0.0,
+   "dims": [
+    21.15,
+    30.15,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-18_-54",
+   "x": -16.75,
+   "y": -55.32,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-11_-43",
+   "x": -12.27,
+   "y": -41.53,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_0_-9_-40",
+   "x": -4.5,
+   "y": -27.0,
+   "z": 0.0,
+   "dims": [
+    12.82,
+    29.82,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_0_-4_-27",
+   "x": -2.62,
+   "y": -27.39,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_0_0_-14",
+   "x": 0.0,
+   "y": -5.5,
+   "z": 0.0,
+   "dims": [
+    3.05,
+    20.0,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_0_0_0",
+   "x": 1.9,
+   "y": 0.0,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_1_80_-82",
+   "x": 65.0,
+   "y": -74.0,
+   "z": 0.0,
+   "dims": [
+    34.06,
+    20.06,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_1_68_-75",
+   "x": 68.54,
+   "y": -73.74,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_1_55_-69",
+   "x": 54.4,
+   "y": -70.5,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_1_50_-66",
+   "x": 40.0,
+   "y": -64.0,
+   "z": 0.0,
+   "dims": [
+    23.53,
+    7.53,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_1_36_-63",
+   "x": 36.64,
+   "y": -61.39,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_1_30_-62",
+   "x": 22.0,
+   "y": -50.0,
+   "z": 0.0,
+   "dims": [
+    20.16,
+    28.16,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_1_22_-50",
+   "x": 23.82,
+   "y": -49.3,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_1_14_-39",
+   "x": 12.89,
+   "y": -39.76,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_1_14_-38",
+   "x": 7.0,
+   "y": -26.0,
+   "z": 0.0,
+   "dims": [
+    18.1,
+    28.1,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_1_7_-26",
+   "x": 8.59,
+   "y": -24.95,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_2_-46_-14",
+   "x": -37.0,
+   "y": -10.0,
+   "z": 0.0,
+   "dims": [
+    21.96,
+    11.96,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_2_-33_-8",
+   "x": -32.43,
+   "y": -10.05,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_2_-28_-6",
+   "x": -21.0,
+   "y": 3.0,
+   "z": 0.0,
+   "dims": [
+    18.21,
+    22.21,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_2_-19_5",
+   "x": -17.91,
+   "y": 3.88,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_3_16_20",
+   "x": 29.0,
+   "y": 17.0,
+   "z": 0.0,
+   "dims": [
+    29.6,
+    9.6,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_3_30_17",
+   "x": 29.21,
+   "y": 15.0,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "水上棧道_3_42_14",
+   "x": 52.0,
+   "y": 3.0,
+   "z": 0.0,
+   "dims": [
+    24.24,
+    26.24,
+    2.7
+   ]
+  },
+  {
+   "name": "燈籠柱_3_51_4",
+   "x": 50.01,
+   "y": 2.36,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_3_61_-7",
+   "x": 62.24,
+   "y": -5.44,
+   "z": 0.0,
+   "dims": [
+    0.45,
+    0.45,
+    3.4
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_-80",
+   "x": -98.5,
+   "y": -80.0,
+   "z": 0.28,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_-64",
+   "x": -98.5,
+   "y": -64.0,
+   "z": 0.01,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_-48",
+   "x": -98.5,
+   "y": -48.0,
+   "z": 0.18,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_-32",
+   "x": -98.5,
+   "y": -32.0,
+   "z": 0.16,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_-16",
+   "x": -98.5,
+   "y": -16.0,
+   "z": -0.33,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_0",
+   "x": -98.5,
+   "y": 0.0,
+   "z": -0.17,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_16",
+   "x": -98.5,
+   "y": 16.0,
+   "z": 0.02,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_32",
+   "x": -98.5,
+   "y": 32.0,
+   "z": -0.18,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "燈籠柱_竹徑_48",
+   "x": -98.5,
+   "y": 48.0,
+   "z": 0.49,
+   "dims": [
+    0.45,
+    0.45,
+    3.8
+   ]
+  },
+  {
+   "name": "石門遺跡_0",
+   "x": -96.0,
+   "y": 102.0,
+   "z": 17.14,
+   "dims": [
+    9.0,
+    2.0,
+    10.4
+   ]
+  },
+  {
+   "name": "石門遺跡_1",
+   "x": -80.0,
+   "y": 112.0,
+   "z": 17.05,
+   "dims": [
+    9.0,
+    2.0,
+    10.4
+   ]
+  },
+  {
+   "name": "石門遺跡_2",
+   "x": -108.0,
+   "y": 90.0,
+   "z": 16.96,
+   "dims": [
+    9.0,
+    2.0,
+    10.4
+   ]
+  },
+  {
+   "name": "殘柱_0",
+   "x": -106.25,
+   "y": 92.14,
+   "z": 16.85,
+   "dims": [
+    1.4,
+    1.4,
+    4.31
+   ]
+  },
+  {
+   "name": "殘柱_1",
+   "x": -87.25,
+   "y": 110.89,
+   "z": 16.88,
+   "dims": [
+    1.4,
+    1.4,
+    5.41
+   ]
+  },
+  {
+   "name": "殘柱_2",
+   "x": -104.79,
+   "y": 92.44,
+   "z": 16.83,
+   "dims": [
+    1.4,
+    1.4,
+    3.74
+   ]
+  },
+  {
+   "name": "殘柱_3",
+   "x": -98.38,
+   "y": 107.83,
+   "z": 17.08,
+   "dims": [
+    1.4,
+    1.4,
+    4.21
+   ]
+  },
+  {
+   "name": "殘柱_4",
+   "x": -104.29,
+   "y": 108.73,
+   "z": 16.92,
+   "dims": [
+    1.4,
+    1.4,
+    4.3
+   ]
+  },
+  {
+   "name": "殘柱_5",
+   "x": -111.51,
+   "y": 99.01,
+   "z": 16.74,
+   "dims": [
+    1.4,
+    1.4,
+    4.37
+   ]
+  },
+  {
+   "name": "山坡瀑布",
+   "x": -64.0,
+   "y": 96.0,
+   "z": 12.95,
+   "dims": [
+    5.0,
+    0.6,
+    16.0
+   ]
+  },
+  {
+   "name": "洞內暖光_22",
+   "x": 98.5,
+   "y": 22.0,
+   "z": 4.5,
+   "dims": [
+    0.3,
+    3.0,
+    4.0
+   ]
+  },
+  {
+   "name": "洞內暖光_62",
+   "x": 100.5,
+   "y": 62.0,
+   "z": 4.5,
+   "dims": [
+    0.3,
+    3.0,
+    4.0
+   ]
+  },
+  {
+   "name": "水車",
+   "x": 73.0,
+   "y": -18.0,
+   "z": 4.2,
+   "dims": [
+    9.0,
+    9.9,
+    9.9
+   ]
+  },
+  {
+   "name": "藥圃籬笆",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0,
+   "dims": [
+    30.2,
+    32.2,
+    1.1
+   ]
+  },
+  {
+   "name": "垂柳_0",
+   "x": -30.0,
+   "y": -6.0,
+   "z": -3.33,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  },
+  {
+   "name": "垂柳_1",
+   "x": 30.0,
+   "y": -2.0,
+   "z": -2.85,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  },
+  {
+   "name": "垂柳_2",
+   "x": -62.0,
+   "y": -36.0,
+   "z": -2.94,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  },
+  {
+   "name": "垂柳_3",
+   "x": 64.0,
+   "y": -40.0,
+   "z": 0.27,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  },
+  {
+   "name": "垂柳_4",
+   "x": -8.0,
+   "y": -78.0,
+   "z": -2.71,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  },
+  {
+   "name": "垂柳_5",
+   "x": 20.0,
+   "y": 6.0,
+   "z": 0.13,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  },
+  {
+   "name": "垂柳_6",
+   "x": 48.0,
+   "y": 12.0,
+   "z": -0.25,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  },
+  {
+   "name": "垂柳_7",
+   "x": -44.0,
+   "y": -60.0,
+   "z": -2.89,
+   "dims": [
+    8.56,
+    9.0,
+    14.75
+   ]
+  }
+ ],
+ "assets_below_water": [],
+ "tris": {
+  "Town_Terrain": 71304,
+  "Town_LakeBed": 3704,
+  "Town_Water": 4
+ }
+}

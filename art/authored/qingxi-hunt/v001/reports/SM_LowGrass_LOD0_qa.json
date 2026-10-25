@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    "SM_LowGrass_LOD0: ~91.25% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "hidden back-to-back faces: SM_LowGrass_LOD0 (1 pairs) - delete to save tris"
+  ],
+  "ground_z": 0.0,
+  "zfighting": [],
+  "floating": [],
+  "back_to_back": [
+    {
+      "where": "SM_LowGrass_LOD0",
+      "tri_pairs": 1
+    }
+  ],
+  "enclosed": [],
+  "objects": {
+    "SM_LowGrass_LOD0": {
+      "verts": 668,
+      "faces": 1212,
+      "tris": 1212,
+      "ngons": 0,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 31,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1,
+      "uv_maps": 1,
+      "uv_oob_pct": 0.0,
+      "uv_zero_area_faces": 0,
+      "uv_overlap_pct": 91.25,
+      "uv_coverage_pct": 11.4
+    }
+  }
+}

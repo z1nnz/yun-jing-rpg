@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-24",
+  "asset": "giant-tree",
+  "name_zh": "青溪巨大古樹",
+  "stage": "pre-modelling AI three-view",
+  "generator": "使用者以外部生圖工具生成（工具名稱未記錄）；提示詞由 Claude 依 concept.png 撰寫",
+  "source_concept": "art/references/qingxi-town-v1/concept.png",
+  "image": "three-view.png",
+  "original_webp_sha256": "7eed0420c66ccd28d76b801c105884e8a0086e2e0c9a59f3fac4158a8ccb3737",
+  "png_sha256": "4346fb585de96b5e817721b839dd233f08c49170d2abf045314a338437a64387",
+  "prompt": "Use case: stylized-concept. Asset type: orthographic three-view modeling reference sheet for an original mobile xianxia cultivation game Yun Jing. One object only, identical construction and proportions in all views. Three clearly separated panels, FRONT, RIGHT SIDE, TOP. True orthographic elevations, no perspective or isometric view, no dramatic shading. Off-white drafting-paper backdrop, stylized hand-painted game art, warm gray-brown bark, moss green, fresh yellow-green and deep green foliage, simple readable silhouette suitable for real-time modeling with leaf-card clusters. Consistent scale, enough white space. Fine construction lines and readable overall dimension notes in meters. No characters, no buildings, no logos, no scenic backgrounds, no ground terrain beyond a flat base line.\nObject: one ancient sacred broadleaf tree (camphor / banyan character) that is the landmark of a village, total height 62 m. Massive gnarled trunk 10 m in diameter at 3 m height, deep vertical twisting flutes and ridges in the bark, thick moss and ivy patches on the lower trunk. Wide buttress root flare 22 m across at the base, roots gripping a few moss-covered boulders that sit on the flat base line. At about 18 m height the trunk splits into four huge limbs: two climb steeply upward and twist, two reach far out almost horizontally to the left and right. A broad umbrella-shaped crown wider than it is tall: 90 m wide in FRONT view, 70 m deep in RIGHT SIDE view, crown underside at about 26 m. The foliage is built from about 15 distinct layered leaf clumps with visible gaps where limbs and branches show through; clump edges lighter yellow-green, clump interiors deeper green. Long strands of hanging moss and thin vines, 4 to 10 m long, droop from the horizontal limbs, sparse enough that the limbs stay readable. FRONT shows the full width of the crown and both horizontal limbs; RIGHT SIDE shows the narrower crown depth and the forward lean of the upper limbs; TOP shows the crown outline, clump layout and the trunk position marked at the center."
+}

@@ -48,7 +48,7 @@
 
 只有實際通過才勾選：
 
-- Unity 6000.0.82f1 能開啟專案並完成套件解析。
+- Unity 6000.0.85f1 能開啟專案並完成套件解析。
 - C# Console 無編譯錯誤。
 - QingxiHuntGraybox Builder 能由空白 Generated 目錄重建場景。
 - 山兔 FBX 尺寸正確，五個 clip 可播放。
