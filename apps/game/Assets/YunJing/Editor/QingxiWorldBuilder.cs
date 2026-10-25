@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -12,6 +13,7 @@ namespace YunJing.Editor
         const string Root = "Assets/YunJing/Generated";
         const string ScenePath = Root + "/QingxiWorldPreview.unity";
         const string Models = "Assets/YunJing/Models/QingxiWorldV1/";
+        const string CollaboratorModels = "Assets/YunJing/Models/CollaboratorWorldV1/";
 
         static Material Surface(string name, Color color)
         {
@@ -56,6 +58,51 @@ namespace YunJing.Editor
         {
             var obj = GameObject.Find(name);
             if (obj != null) UnityEngine.Object.DestroyImmediate(obj);
+        }
+
+        static GameObject CollaboratorModel(string file, string name, Vector3 position, float scale = 1f, float yaw = 0f)
+        {
+            var source = AssetDatabase.LoadAssetAtPath<GameObject>(CollaboratorModels + file);
+            if (source == null) throw new FileNotFoundException("Collaborator model missing", CollaboratorModels + file);
+            var instance = (GameObject)PrefabUtility.InstantiatePrefab(source);
+            instance.name = name;
+            instance.transform.position = position;
+            instance.transform.localScale = Vector3.one * scale;
+            instance.transform.rotation = Quaternion.Euler(0, yaw, 0);
+            // FBX source colors are converted to URP materials for this editor preview.
+            // Detailed texture, LOD and collider authoring still need an import pass.
+            var converted = new Dictionary<Material, Material>();
+            foreach (var renderer in instance.GetComponentsInChildren<Renderer>())
+            {
+                var materials = renderer.sharedMaterials;
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    var original = materials[i];
+                    if (original == null) continue;
+                    if (!converted.TryGetValue(original, out var replacement))
+                    {
+                        string key = Path.GetFileNameWithoutExtension(file) + "-" +
+                            original.name.Replace(" ", "-").Replace("/", "-").Replace("\\", "-").Replace(":", "-");
+                        string path = Root + "/Imported-" + key + ".mat";
+                        replacement = AssetDatabase.LoadAssetAtPath<Material>(path);
+                        if (replacement == null)
+                        {
+                            var shader = Shader.Find("Universal Render Pipeline/Lit");
+                            if (shader == null) throw new InvalidOperationException("URP Lit shader is unavailable");
+                            replacement = new Material(shader);
+                            AssetDatabase.CreateAsset(replacement, path);
+                        }
+                        var color = original.HasProperty("_BaseColor") ? original.GetColor("_BaseColor") :
+                            original.HasProperty("_Color") ? original.GetColor("_Color") : Color.white;
+                        replacement.SetColor("_BaseColor", color);
+                        EditorUtility.SetDirty(replacement);
+                        converted.Add(original, replacement);
+                    }
+                    materials[i] = replacement;
+                }
+                renderer.sharedMaterials = materials;
+            }
+            return instance;
         }
 
         [MenuItem("Yun Jing/Generate Qingxi world preview")]
@@ -116,38 +163,37 @@ namespace YunJing.Editor
             }
             else Block("Aptitude plaza placeholder",new Vector3(0,.08f,29),new Vector3(17,.15f,17),rock);
 
-            // These are scale and sightline placeholders, not final house/tree/rock models.
+            // The incoming full TownLayout is deliberately kept in the Blender
+            // composition: 906k triangles and 3,877 meshes are not mobile-ready.
+            // A bounded selection of its constituent props replaces the v1 grayboxes.
             for(int i=0;i<7;i++)
             {
                 float x=-34+i*6;
                 Block("Medicinal field blockout " + i,new Vector3(x,.08f,-28),new Vector3(4,.16f,12),field);
             }
-            for(int i=0;i<10;i++)
-            {
-                float x=-54+(i%5)*9, z=-4+(i/5)*12;
-                Block("Village house blockout " + i,new Vector3(x,1.7f,z),new Vector3(5,3.4f,4),rock);
-                Block("Village roof blockout " + i,new Vector3(x,3.6f,z),new Vector3(6,.45f,5),roof);
-            }
+            CollaboratorModel("StarterHouse_v004.fbx", "Riverside starter house", new Vector3(-32,.05f,-9));
+            CollaboratorModel("StarterHouse_v004.fbx", "Plaza-side starter house", new Vector3(-35,.05f,14),.90f,95f);
+            CollaboratorModel("StoneArchBridge_v001.fbx", "South stone bridge", new Vector3(25,.03f,-36),1f,90f);
+            CollaboratorModel("MountainStreamBend_v001.fbx", "Eastern stream bend", new Vector3(52,.04f,-26));
+            CollaboratorModel("MountainStonePath_v001.fbx", "Cave stone approach", new Vector3(70,.03f,36));
+            CollaboratorModel("MountainStoneStairs_v001.fbx", "Northern stone ascent", new Vector3(5,.03f,48));
+            CollaboratorModel("CliffBoardwalk_v001.fbx", "Northern lookout", new Vector3(39,2.2f,51));
+            CollaboratorModel("QCaveEntrance_v003.fbx", "Eastern cave entrance", new Vector3(73,.03f,48),1f,180f);
+            CollaboratorModel("SectGate_v001.fbx", "Northern sect gate silhouette", new Vector3(7,.05f,61),.8f,180f);
+            foreach (var cliff in new[] {new Vector3(-70,2,55),new Vector3(70,2,55),new Vector3(78,2,46)})
+                CollaboratorModel("LayeredCliff_v001.fbx", "Layered cliff preview", cliff,.58f);
             var random=new System.Random(241025);
-            for(int i=0;i<54;i++)
+            for(int i=0;i<12;i++)
             {
-                float x=38+(float)random.NextDouble()*48, z=-47+(float)random.NextDouble()*92;
-                if (Mathf.Abs(z-5)<5 || (x>68 && z>34)) continue;
-                Block("Forest trunk blockout " + i,new Vector3(x,2.4f,z),new Vector3(.7f,4.8f,.7f),bark);
-                var crown=GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                crown.name="Forest crown blockout " + i;
-                crown.transform.position=new Vector3(x,5.9f,z);
-                crown.transform.localScale=new Vector3(4.2f,3.2f,4.2f);
-                crown.GetComponent<Renderer>().sharedMaterial=woodland;
-                UnityEngine.Object.DestroyImmediate(crown.GetComponent<Collider>());
+                float x=42+(float)random.NextDouble()*43, z=-45+(float)random.NextDouble()*85;
+                if (Mathf.Abs(z-5)<6) z+=10;
+                CollaboratorModel("CommonPine_v001.fbx", "Eastern pine " + i,new Vector3(x,.03f,z),
+                    .75f+(float)random.NextDouble()*.3f,random.Next(360));
             }
-            Block("Cave entrance blockout",new Vector3(73,3.2f,48),new Vector3(10,6.4f,4),rock);
-            Block("Cave mouth blockout",new Vector3(73,2.1f,45.9f),new Vector3(3.4f,4.2f,.15f),roof,false);
-            for(int i=0;i<8;i++)
-            {
-                float x=-80+i*21;
-                Block("Distant sect ridge blockout " + i,new Vector3(x,10,65),new Vector3(18,20,10),rock);
-            }
+            foreach (var point in new[] {new Vector3(47,.03f,-32),new Vector3(76,.03f,-18),new Vector3(52,.03f,28)})
+                CollaboratorModel("BambooClump_v001.fbx", "Eastern bamboo",point,.72f);
+            foreach (var point in new[] {new Vector3(41,.03f,-12),new Vector3(73,.03f,25),new Vector3(-6,.03f,39)})
+                CollaboratorModel("MossBoulderSet_v001.fbx", "Mossy boulder",point,.9f);
 
             var camera=Camera.main;
             if(camera!=null) camera.farClipPlane=300;
