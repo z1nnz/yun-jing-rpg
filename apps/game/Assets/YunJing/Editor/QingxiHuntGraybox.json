@@ -1,0 +1,702 @@
+{
+  "version": 1,
+  "units": "metres",
+  "bounds": {
+    "x": 220,
+    "y": 20,
+    "z": 160
+  },
+  "walkSpeed": 4,
+  "playerRadius": 0.35,
+  "rabbitRadius": 0.25,
+  "zones": [
+    {
+      "name": "VillageExit",
+      "position": {
+        "x": -85,
+        "y": 0.01,
+        "z": -55
+      },
+      "size": {
+        "x": 30,
+        "y": 0.02,
+        "z": 24
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "MountainTrail",
+      "position": {
+        "x": -57.5,
+        "y": 0.01,
+        "z": -17.5
+      },
+      "size": {
+        "x": 30,
+        "y": 0.02,
+        "z": 40
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "HerbForest",
+      "position": {
+        "x": -20,
+        "y": 0.01,
+        "z": 20
+      },
+      "size": {
+        "x": 50,
+        "y": 0.02,
+        "z": 40
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "RabbitSlope",
+      "position": {
+        "x": 60,
+        "y": 0.01,
+        "z": 35
+      },
+      "size": {
+        "x": 80,
+        "y": 0.02,
+        "z": 60
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "StreamFord",
+      "position": {
+        "x": 65,
+        "y": 0.01,
+        "z": -35
+      },
+      "size": {
+        "x": 40,
+        "y": 0.02,
+        "z": 30
+      },
+      "kind": "water"
+    },
+    {
+      "name": "ReturnShortcut",
+      "position": {
+        "x": -12,
+        "y": 0.01,
+        "z": -45
+      },
+      "size": {
+        "x": 70,
+        "y": 0.02,
+        "z": 26
+      },
+      "kind": "solid"
+    }
+  ],
+  "blockers": [
+    {
+      "name": "NavBlocker_North",
+      "position": {
+        "x": 0,
+        "y": 4.0,
+        "z": 79
+      },
+      "size": {
+        "x": 220,
+        "y": 8,
+        "z": 2
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_South",
+      "position": {
+        "x": 0,
+        "y": 4.0,
+        "z": -79
+      },
+      "size": {
+        "x": 220,
+        "y": 8,
+        "z": 2
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_West",
+      "position": {
+        "x": -109,
+        "y": 4.0,
+        "z": 0
+      },
+      "size": {
+        "x": 2,
+        "y": 8,
+        "z": 160
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_East",
+      "position": {
+        "x": 109,
+        "y": 4.0,
+        "z": 0
+      },
+      "size": {
+        "x": 2,
+        "y": 8,
+        "z": 160
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_VillageScreen",
+      "position": {
+        "x": -70,
+        "y": 4.0,
+        "z": -42
+      },
+      "size": {
+        "x": 40,
+        "y": 8,
+        "z": 3
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_TrailScreen",
+      "position": {
+        "x": -82,
+        "y": 4.0,
+        "z": -22
+      },
+      "size": {
+        "x": 4,
+        "y": 8,
+        "z": 32
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_CentralRidge",
+      "position": {
+        "x": -10,
+        "y": 4.0,
+        "z": -5
+      },
+      "size": {
+        "x": 60,
+        "y": 8,
+        "z": 12
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_DeepWater",
+      "position": {
+        "x": 89,
+        "y": 4.0,
+        "z": -35
+      },
+      "size": {
+        "x": 6,
+        "y": 8,
+        "z": 30
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_GroveRock",
+      "position": {
+        "x": -22,
+        "y": 1.0,
+        "z": 34
+      },
+      "size": {
+        "x": 5,
+        "y": 2,
+        "z": 5
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_RabbitRock",
+      "position": {
+        "x": 58,
+        "y": 1.0,
+        "z": 35
+      },
+      "size": {
+        "x": 5,
+        "y": 2,
+        "z": 6
+      },
+      "kind": "solid"
+    },
+    {
+      "name": "NavBlocker_PineProxy",
+      "position": {
+        "x": 4,
+        "y": 3.0,
+        "z": 28
+      },
+      "size": {
+        "x": 2,
+        "y": 6,
+        "z": 2
+      },
+      "kind": "solid"
+    }
+  ],
+  "markers": [
+    {
+      "name": "PlayerSpawn_01",
+      "position": {
+        "x": -85,
+        "y": 0,
+        "z": -55
+      }
+    },
+    {
+      "name": "PlayerSpawn_02",
+      "position": {
+        "x": -85,
+        "y": 0,
+        "z": -64
+      }
+    },
+    {
+      "name": "Merchant_Material",
+      "position": {
+        "x": -78,
+        "y": 0,
+        "z": -59
+      }
+    },
+    {
+      "name": "SafeReturn_01",
+      "position": {
+        "x": -65,
+        "y": 0,
+        "z": -55
+      }
+    },
+    {
+      "name": "TrailClue_01",
+      "position": {
+        "x": -70,
+        "y": 0,
+        "z": -35
+      }
+    },
+    {
+      "name": "TrailClue_02",
+      "position": {
+        "x": -45,
+        "y": 0,
+        "z": -20
+      }
+    },
+    {
+      "name": "TrailClue_03",
+      "position": {
+        "x": -45,
+        "y": 0,
+        "z": 12
+      }
+    },
+    {
+      "name": "TrailClue_04",
+      "position": {
+        "x": -15,
+        "y": 0,
+        "z": 20
+      }
+    },
+    {
+      "name": "TrailClue_05",
+      "position": {
+        "x": 10,
+        "y": 0,
+        "z": 45
+      }
+    },
+    {
+      "name": "TrailClue_06",
+      "position": {
+        "x": 65,
+        "y": 0,
+        "z": 5
+      }
+    },
+    {
+      "name": "HerbNode_01",
+      "position": {
+        "x": -35,
+        "y": 0,
+        "z": 10
+      }
+    },
+    {
+      "name": "HerbNode_02",
+      "position": {
+        "x": -25,
+        "y": 0,
+        "z": 12
+      }
+    },
+    {
+      "name": "HerbNode_03",
+      "position": {
+        "x": -15,
+        "y": 0,
+        "z": 12
+      }
+    },
+    {
+      "name": "HerbNode_04",
+      "position": {
+        "x": -35,
+        "y": 0,
+        "z": 30
+      }
+    },
+    {
+      "name": "HerbNode_05",
+      "position": {
+        "x": -10,
+        "y": 0,
+        "z": 30
+      }
+    },
+    {
+      "name": "HerbNode_06",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 35
+      }
+    },
+    {
+      "name": "RabbitSpawn_A01",
+      "position": {
+        "x": 35,
+        "y": 0,
+        "z": 45
+      }
+    },
+    {
+      "name": "RabbitSpawn_A02",
+      "position": {
+        "x": 45,
+        "y": 0,
+        "z": 45
+      }
+    },
+    {
+      "name": "RabbitFlee_A01",
+      "position": {
+        "x": 30,
+        "y": 0,
+        "z": 30
+      }
+    },
+    {
+      "name": "RabbitFlee_A02",
+      "position": {
+        "x": 40,
+        "y": 0,
+        "z": 20
+      }
+    },
+    {
+      "name": "RabbitFlee_A03",
+      "position": {
+        "x": 48,
+        "y": 0,
+        "z": 30
+      }
+    },
+    {
+      "name": "RabbitSpawn_B01",
+      "position": {
+        "x": 70,
+        "y": 0,
+        "z": 50
+      }
+    },
+    {
+      "name": "RabbitSpawn_B02",
+      "position": {
+        "x": 80,
+        "y": 0,
+        "z": 50
+      }
+    },
+    {
+      "name": "RabbitFlee_B01",
+      "position": {
+        "x": 65,
+        "y": 0,
+        "z": 60
+      }
+    },
+    {
+      "name": "RabbitFlee_B02",
+      "position": {
+        "x": 85,
+        "y": 0,
+        "z": 60
+      }
+    },
+    {
+      "name": "RabbitFlee_B03",
+      "position": {
+        "x": 90,
+        "y": 0,
+        "z": 45
+      }
+    },
+    {
+      "name": "RabbitSpawn_C01",
+      "position": {
+        "x": 75,
+        "y": 0,
+        "z": 15
+      }
+    },
+    {
+      "name": "RabbitSpawn_C02",
+      "position": {
+        "x": 85,
+        "y": 0,
+        "z": 15
+      }
+    },
+    {
+      "name": "RabbitFlee_C01",
+      "position": {
+        "x": 65,
+        "y": 0,
+        "z": 15
+      }
+    },
+    {
+      "name": "RabbitFlee_C02",
+      "position": {
+        "x": 80,
+        "y": 0,
+        "z": 28
+      }
+    },
+    {
+      "name": "RabbitFlee_C03",
+      "position": {
+        "x": 95,
+        "y": 0,
+        "z": 20
+      }
+    }
+  ],
+  "routes": [
+    {
+      "name": "MainExploration",
+      "width": 5,
+      "points": [
+        {
+          "x": -85,
+          "y": 0,
+          "z": -55
+        },
+        {
+          "x": -95,
+          "y": 0,
+          "z": -45
+        },
+        {
+          "x": -95,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": -70,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "x": -70,
+          "y": 0,
+          "z": -35
+        },
+        {
+          "x": -45,
+          "y": 0,
+          "z": -35
+        },
+        {
+          "x": -45,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": -15,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": 45
+        },
+        {
+          "x": 35,
+          "y": 0,
+          "z": 45
+        }
+      ]
+    },
+    {
+      "name": "AlternativeReturn",
+      "width": 6,
+      "points": [
+        {
+          "x": 35,
+          "y": 0,
+          "z": 45
+        },
+        {
+          "x": 65,
+          "y": 0,
+          "z": 5
+        },
+        {
+          "x": 65,
+          "y": 0,
+          "z": -35
+        },
+        {
+          "x": 20,
+          "y": 0,
+          "z": -35
+        },
+        {
+          "x": -20,
+          "y": 0,
+          "z": -55
+        },
+        {
+          "x": -45,
+          "y": 0,
+          "z": -55
+        },
+        {
+          "x": -85,
+          "y": 0,
+          "z": -55
+        }
+      ]
+    },
+    {
+      "name": "Shortcut70m",
+      "width": 6,
+      "points": [
+        {
+          "x": 20,
+          "y": 0,
+          "z": -35
+        },
+        {
+          "x": -20,
+          "y": 0,
+          "z": -55
+        },
+        {
+          "x": -45,
+          "y": 0,
+          "z": -55
+        }
+      ]
+    },
+    {
+      "name": "RabbitCircuit_A",
+      "width": 2.5,
+      "points": [
+        {
+          "x": 30,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 40,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": 48,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 30,
+          "y": 0,
+          "z": 30
+        }
+      ]
+    },
+    {
+      "name": "RabbitCircuit_B",
+      "width": 2.5,
+      "points": [
+        {
+          "x": 65,
+          "y": 0,
+          "z": 60
+        },
+        {
+          "x": 85,
+          "y": 0,
+          "z": 60
+        },
+        {
+          "x": 90,
+          "y": 0,
+          "z": 45
+        },
+        {
+          "x": 65,
+          "y": 0,
+          "z": 60
+        }
+      ]
+    },
+    {
+      "name": "RabbitCircuit_C",
+      "width": 2.5,
+      "points": [
+        {
+          "x": 65,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "z": 28
+        },
+        {
+          "x": 95,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": 65,
+          "y": 0,
+          "z": 15
+        }
+      ]
+    }
+  ]
+}
