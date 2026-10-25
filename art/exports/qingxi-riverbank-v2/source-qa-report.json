@@ -1,0 +1,21 @@
+{
+  "asset": "bank",
+  "mode": "source",
+  "pass": true,
+  "objects_checked": 171,
+  "triangles": 8716,
+  "errors": [],
+  "warnings": [
+    "SM_QXBank_Dense grass and reed blades: ~80.11% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access -1.9 step 0: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access -1.9 step 1: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access -1.9 step 2: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access -1.9 step 3: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access 3.4 step 0: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access 3.4 step 1: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access 3.4 step 2: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Water access 3.4 step 3: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "asset lowest point z=-0.3064 (not resting on ground plane z=0)"
+  ],
+  "ground_z": -0.3064
+}

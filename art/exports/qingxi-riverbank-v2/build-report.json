@@ -1,0 +1,17 @@
+{
+  "asset": "Qingxi riverbank 12m module v2",
+  "reference": "art\\references\\qingxi-riverbank-v1\\three-view.png",
+  "length_m": 12,
+  "mesh_objects_source": 171,
+  "triangles_source": 8716,
+  "height_land_m": 0.54,
+  "water_level_m": 0.08,
+  "textures": [
+    "stone-albedo.png",
+    "path-albedo.png",
+    "grass-albedo.png",
+    "water-albedo.png"
+  ],
+  "limits": "visual module; AI texture tiling, normal maps, shader/collision/LOD/Unity/mobile unverified",
+  "mesh_objects_export": 10
+}

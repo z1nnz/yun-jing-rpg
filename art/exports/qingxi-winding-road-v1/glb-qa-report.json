@@ -1,0 +1,16 @@
+{
+  "asset": "road",
+  "mode": "glb",
+  "pass": true,
+  "objects_checked": 4,
+  "triangles": 5332,
+  "errors": [],
+  "warnings": [
+    "SM_QXRoad_Batch_stone: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXRoad_Batch_stone: duplicate verts=1020 loose verts=0",
+    "SM_QXRoad_EdgeGrass: ~59.6% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXRoad_IrregularPackedEarthPath: duplicate verts=1340 loose verts=0",
+    "SM_QXRoad_MeadowSubstrate: duplicate verts=2684 loose verts=0"
+  ],
+  "ground_z": 0.0047
+}

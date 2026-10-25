@@ -1,0 +1,21 @@
+{
+  "source_repo": "elder-tree-esg",
+  "source_file": "D:\\elder-tree-esg\\其他工作副本\\app-ready-20260828\\art-source\\blender\\生命樹庭園_母稿.blend",
+  "source_collections": [
+    "生命樹_主枝",
+    "生命樹_主體",
+    "生命樹_前景葉冠",
+    "生命樹_後景葉冠",
+    "生命樹_盤根與樹皮"
+  ],
+  "mesh_count_source": 79,
+  "mesh_count_export": 3,
+  "faces_source": 136308,
+  "dimensions_m": [
+    10.331,
+    7.1,
+    10.009
+  ],
+  "excluded": "floating island, waterfalls, lights, cameras, memorial markers",
+  "limits": "Hero visual asset only; mobile LOD, wind, collision and Unity import unverified"
+}
