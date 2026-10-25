@@ -2,7 +2,7 @@
 
 對應 [Issue #9](https://github.com/z1nnz/yun-jing-rpg/issues/9)。交付日期：2026-10-25。
 
-**未經 Unity 編譯、NavMesh 未實測。** 本次依 03 執行單及 Issue 的無 Unity 備案交付配置圖、座標、Builder 草稿與靜態幾何檢查。這不是可遊玩的場景完成宣告。
+**已嘗試 Unity 編譯，但被 FishNet 套件錯誤阻擋；NavMesh 未實測。** 本次依 03 執行單及 Issue 的無 Unity 備案交付配置圖、座標、Builder 草稿與靜態幾何檢查。這不是可遊玩的場景完成宣告。
 
 ## 檔案與範圍
 
@@ -48,7 +48,15 @@ npm ci
 npm test
 ```
 
-指定 Unity：**6000.0.82f1**；保留專案已固定的套件版本。本機發現 `C:\Program Files\Unity\Hub\Editor\6000.4.8f1`，指定版與既有腳本的 `D:\DevTools\Unity\6000.0.82f1\Editor\Unity.exe` 均未找到，因此未以其他版開啟／升級專案，也未嘗試授權繞過。
+指定 Unity：**6000.0.82f1**；保留專案已固定的套件版本。2026-10-25 後續驗證已在 `C:\Program Files\Unity\Hub\Editor\6000.0.82f1\Editor\Unity.exe` 找到並啟動指定版本，Unity Personal 授權解析成功。
+
+已以 batchmode 執行 `YunJing.Editor.QingxiHuntGrayboxBuilder.Generate`，但專案編譯被固定 FishNet 4.7.4（套件快取 `df5e3a9c2647`）內的五個錯誤阻擋：
+
+- `Runtime/Plugins/Yak/Yak.cs:140,142`：`ServerSocket`／`ClientSocket` 缺少 `IterateIncoming`（CS1061）。
+- `Runtime/Plugins/Yak/Yak.cs:193,206`：缺少 `SendToServer`／`SendToClient`（CS1061）。
+- `Runtime/Plugins/Yak/Core/ClientSocket.cs:52`：找不到 `OnLocalServerConnectionState`（CS0103）。
+
+日誌顯示 `Scripts have compiler errors.`，未產生 `QingxiHuntGraybox.unity`，不能宣稱 Builder 已通過編譯或場景已可運行。完整本機日誌：`artifacts/unity-hunt-graybox.log`（不提交）。本次只更新驗證紀錄，未修改網路套件、核心程式或固定版本；首次匯入自動生成的其他資產 meta 與 packages-lock 也未加入提交。
 
 有指定版本的環境：
 
