@@ -18,6 +18,38 @@ namespace YunJing.Editor
         [Serializable] public class Route { public string name; public float width; public Vector3[] points; }
         [Serializable] public class Layout { public Box[] zones; public Box[] blockers; public Marker[] markers; public Route[] routes; }
 
+        // Batch regression: exercise generation, saved-scene reload and rebuilding in one Editor run.
+        public static void Verify()
+        {
+            if (!Application.isBatchMode) throw new InvalidOperationException("Run Verify in a dedicated batchmode Editor.");
+            var layout = JsonUtility.FromJson<Layout>(File.ReadAllText(Source));
+            for (int run = 0; run < 2; run++)
+            {
+                Generate();
+                var scene = EditorSceneManager.OpenScene(Output, OpenSceneMode.Single);
+                var root = Array.Find(scene.GetRootGameObjects(), obj => obj.name == "QingxiHuntGraybox");
+                if (root == null) throw new InvalidDataException("Missing graybox root after reload.");
+                foreach (var marker in layout.markers)
+                {
+                    var found = root.transform.Find(marker.name);
+                    if (found == null || Vector3.Distance(found.position, marker.position) > .001f)
+                        throw new InvalidDataException("Marker mismatch: " + marker.name);
+                }
+                foreach (var blocker in layout.blockers)
+                {
+                    var found = root.transform.Find(blocker.name);
+                    if (found == null || found.GetComponent<BoxCollider>() == null ||
+                        Vector3.Distance(found.position, blocker.position) > .001f ||
+                        Vector3.Distance(found.localScale, blocker.size) > .001f)
+                        throw new InvalidDataException("Blocker mismatch: " + blocker.name);
+                }
+                if (root.GetComponentInChildren<MeshCollider>() != null)
+                    throw new InvalidDataException("Unexpected MeshCollider in graybox.");
+            }
+            Debug.Log("GRAYBOX_VERIFY_PASS: two builds and reloads; " + layout.markers.Length + " markers; " +
+                layout.blockers.Length + " box blockers. No gameplay or NavMesh validation claimed.");
+        }
+
         [MenuItem("Yun Jing/Generate independent Qingxi hunt graybox")]
         public static void Generate()
         {
@@ -39,11 +71,14 @@ namespace YunJing.Editor
             {
                 if (previous.isDirty) throw new InvalidOperationException("Save or close the edited graybox before rebuilding.");
                 if (UnityEngine.SceneManagement.SceneManager.sceneCount == 1)
-                    EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
-                EditorSceneManager.CloseScene(previous, true);
+                    EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+                else EditorSceneManager.CloseScene(previous, true);
             }
-            // Additive generation preserves any already-open scene and its unsaved contents.
-            var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
+            // Unity rejects additive creation beside an untitled scene, even on a fresh batch launch.
+            var active = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+            bool untitled = UnityEngine.SceneManagement.SceneManager.sceneCount == 1 && string.IsNullOrEmpty(active.path);
+            if (untitled && active.isDirty) throw new InvalidOperationException("Save the untitled scene before generating.");
+            var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, untitled ? NewSceneMode.Single : NewSceneMode.Additive);
             var root = new GameObject("QingxiHuntGraybox");
             UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(root, scene);
             var boundary = new GameObject("AreaBoundary_Hunt");

@@ -80,7 +80,7 @@ def validate(data):
               'reachableGridCells': len(seen), 'speedMetresPerSecond': data['walkSpeed'],
               'guidedRouteSeconds': {'firstClue': round(clue_seconds, 2), 'firstRabbit': round(rabbit_seconds, 2),
                                      'return': round(return_seconds, 2)},
-              'unityCompiled': False, 'navMeshTested': False, 'twoPlayerTested': False,
+              'unityCompiled': None, 'navMeshTested': False, 'twoPlayerTested': False,
               'cameraTested': False}
     print(json.dumps(result, indent=2))
     return result
@@ -120,7 +120,7 @@ def render(data):
            'P: player | T: trail clue | H: herb | S: rabbit spawn | F: rabbit flee point.',
            'Dark boxes: collision / sight screens. Cyan: shallow-water visual proxy; solid floor at Y=0.',
            'Timing is distance / 4 m/s along the suggested route, not a recorded playtest.',
-           'Unity compile, NavMesh, 3.5-6 m cameras, two-player traversal and mobile performance: NOT TESTED.']
+           'NavMesh, 3.5-6 m cameras, two-player traversal and mobile: NOT TESTED. Unity compile: see README.']
     for i,line in enumerate(lines): draw.text((45,935+i*24),line,fill='#203333',font=font)
     image.save(HERE/'layout.png')
 

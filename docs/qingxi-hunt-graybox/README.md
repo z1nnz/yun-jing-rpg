@@ -2,7 +2,7 @@
 
 對應 [Issue #9](https://github.com/z1nnz/yun-jing-rpg/issues/9)。交付日期：2026-10-25。
 
-**已嘗試 Unity 編譯，但被 FishNet 套件錯誤阻擋；NavMesh 未實測。** 本次依 03 執行單及 Issue 的無 Unity 備案交付配置圖、座標、Builder 草稿與靜態幾何檢查。這不是可遊玩的場景完成宣告。
+**Unity 6000.0.82f1 編譯、灰盒生成、兩次重建與重新載入驗證已通過；NavMesh 未實測。** 本次交付六區配置、座標、獨立 Builder 與靜態幾何檢查。尚未配置可遊玩角色，不能宣稱完整遊玩驗收完成。
 
 ## 檔案與範圍
 
@@ -44,37 +44,49 @@ JSON 的山道／捷徑 zone 是配置外框，實際路徑以 `routes` 折線�
 python docs/qingxi-hunt-graybox/validate.py
 # Optional: Pillow is required only to regenerate the diagram.
 python docs/qingxi-hunt-graybox/validate.py --render
+# Compile, generate twice and validate the saved scenes using the pinned Unity Editor.
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/verify-unity-graybox.ps1
 npm ci
 npm test
 ```
 
-指定 Unity：**6000.0.82f1**；保留專案已固定的套件版本。2026-10-25 後續驗證已在 `C:\Program Files\Unity\Hub\Editor\6000.0.82f1\Editor\Unity.exe` 找到並啟動指定版本，Unity Personal 授權解析成功。
+指定 Unity：**6000.0.82f1**，2026-10-25 已實際啟動並確認 Unity Personal 授權。
 
-已以 batchmode 執行 `YunJing.Editor.QingxiHuntGrayboxBuilder.Generate`，但專案編譯被固定 FishNet 4.7.4（套件快取 `df5e3a9c2647`）內的五個錯誤阻擋：
+### 編譯阻擋的原因與修正
 
-- `Runtime/Plugins/Yak/Yak.cs:140,142`：`ServerSocket`／`ClientSocket` 缺少 `IterateIncoming`（CS1061）。
-- `Runtime/Plugins/Yak/Yak.cs:193,206`：缺少 `SendToServer`／`SendToClient`（CS1061）。
-- `Runtime/Plugins/Yak/Core/ClientSocket.cs:52`：找不到 `OnLocalServerConnectionState`（CS0103）。
+原先 FishNet `4.7.4` tag（`a3627529c1875ebe6313c2fc9e2326cbd5d76719`）的公開原始碼殘留不完整 Yak 呼叫：`IterateIncoming`、`SendToServer`、`SendToClient`、`OnLocalServerConnectionState`，造成五個 CS1061／CS0103 錯誤。本機快取與官方該 tag 的錯誤檔案逐一比對一致，並非本機快取損壞。
 
-日誌顯示 `Scripts have compiler errors.`，未產生 `QingxiHuntGraybox.unity`，不能宣稱 Builder 已通過編譯或場景已可運行。完整本機日誌：`artifacts/unity-hunt-graybox.log`（不提交）。本次只更新驗證紀錄，未修改網路套件、核心程式或固定版本；首次匯入自動生成的其他資產 meta 與 packages-lock 也未加入提交。
+改為固定官方 [4.7.4R 發布 commit](https://github.com/FirstGearGames/FishNet/commit/a2e2c3e12f5f4e18c96e402113e14030ae7849f0)，套件內版本仍為 `4.7.4`，不追蹤浮動 main；同時提交 Unity 產生的 `packages-lock.json` 固定解析結果。此發布清理了不完整的 Pro 程式殘留，未自行補寫或啟用 Yak 功能。專案使用的 Tugboat 原始碼在兩個 commit 間無差異；未宣稱其他 FishNet 功能已有網路實測。
+
+快速重現使用 Unity 的 Roslyn 編譯器與實際 `FishNet.Runtime.rsp`：原始 tag 穩定失敗，替換成官方發布來源後成功。完整 Unity 執行接著發現 Builder 在未命名空場景下不能 additive 建立場景；已改為僅在未修改的未命名場景使用 Single 模式，已保存場景仍採 additive；未保存修改的場景受到保護。
+
+### Unity 實際驗證
+
+以 `-batchmode -nographics -quit -executeMethod YunJing.Editor.QingxiHuntGrayboxBuilder.Verify` 執行，退出碼 **0**。驗證入口只允許 batchmode，會連續兩次生成、保存並重新載入灰盒，檢查 31 個標記位置、11 個 BoxCollider 位置與尺寸，以及沒有 MeshCollider。實際訊息：
+
+```text
+GRAYBOX_VERIFY_PASS: two builds and reloads; 31 markers; 11 box blockers. No gameplay or NavMesh validation claimed.
+```
+
+已在本機產生 `Assets/YunJing/Generated/QingxiHuntGraybox.unity`。完整日誌：`artifacts/unity-hunt-verify.log`。產物與日誌不提交；首次匯入對其他 ProjectSettings 的自動改動已另存於 artifacts 後回復，不混入本次提交。其他自動產生的資產 meta 保留本機但不加入提交。
 
 有指定版本的環境：
 
 1. 開啟 `apps/game`，完成授權及套件匯入，先解決所有 Editor 編譯錯誤。
 2. 執行選單 `Yun Jing > Generate independent Qingxi hunt graybox`；或 batchmode 的 `-executeMethod YunJing.Editor.QingxiHuntGrayboxBuilder.Generate`。
 3. 產生 `Assets/YunJing/Generated/QingxiHuntGraybox.unity` 及其專用材質。產生器不修改 Build Settings 或全域 URP 設定；若專案尚未設定渲染管線，需於測試環境另行設定才能評估視覺。
-4. 場景以 additive 開啟，重建前需保存或關閉此灰盒的手動修改；其關鍵內容應回寫 JSON／Builder。僅有乾淨的上次灰盒場景會被關閉並重建。
+4. 已保存場景旁以 additive 開啟；未修改的未命名初始場景以 Single 取代。重建前需保存或關閉此灰盒的手動修改；其關鍵內容應回寫 JSON／Builder。僅有乾淨的上次灰盒場景會被關閉並重建。
 5. 產物、材質及其 meta 不加入本次提交。產生器不配置玩家、網路服務或 NavMesh，因此不能直接按 Play 當作遊戲測試。
 
 ## 驗證紀錄及下一次 Unity 驗收
 
-本次執行結果：`npm test` 53/53 通過；`git lfs fsck` 通過；靜態檢查通過（30,750 個可達網格）。另以重疊出生點、堵住主路、移除必要標記三個負向案例確認檢查會拒絕錯誤配置。
+本次修正後執行結果：Unity 編譯與兩次生成／重新載入驗證通過；`npm test` 53/53 通過；`git lfs fsck` 通過；靜態檢查通過（30,750 個可達網格）。另以重疊出生點、堵住主路、移除必要標記三個負向案例確認檢查會拒絕錯誤配置。
 
 靜態驗證：31 個唯一必要標記、六區、所有出生點至少 8 m 間距、主要／回程／兔群迴圈的整個走廊寬度、標記未落在阻擋中、主要坡度限制與路程時間。採 1 m 四鄰接網格，障礙膨脹角色半徑及格子半對角線，驗證所有標記位於同一連通區。此檢查只證明 JSON 的平面方盒幾何，不代表 Unity Collider 或 NavMesh 結果。
 
-待授權與指定 Editor 可用後逐項記錄：
+後續驗收清單：
 
-- Editor 編譯、場景生成兩次及重建尺寸一致性。
+- 已完成：Editor 編譯、場景生成兩次、保存後重新載入及標記／阻擋體尺寸一致性。
 - 以玩家半徑 0.35 m、山兔預期半徑 0.25 m 烘焙／查詢導航；逐群檢查出生到三個逃跑點以及點間 `PathComplete`。目前專案未加入 AI Navigation 依賴，本次不自行變更套件版本。
 - 兩個角色占位物走主路、林區、兔群迴圈、淺灘及回程，記錄碰撞和互相阻擋；這不是即時多人連線驗收。
 - 在 16:9／20:9 視窗，以 3.5、4.75、6 m 相機距離逐轉角記錄遮擋，特別檢查村口折返及中央屏障。
