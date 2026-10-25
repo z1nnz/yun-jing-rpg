@@ -19,7 +19,7 @@ namespace QingxiWorld
         public Transform huntRoot; public string[] zoneLabels; public Vector4[] zoneRects;   // hunt-local centre x, z, width, depth
         public Transform[] pointsOfInterest;
 
-        CharacterController cc; float yaw, pitch, vy, stopwatch; bool third, help = true; NavMeshDataInstance nav;
+        CharacterController cc; float yaw, pitch, vy, stopwatch; bool third = true, help = true; NavMeshDataInstance nav;
         readonly List<string> log = new List<string>(); readonly HashSet<string> reached = new HashSet<string>();
         GUIStyle box, small; GameObject[] overlays = new GameObject[0]; bool showOverlays;
 
