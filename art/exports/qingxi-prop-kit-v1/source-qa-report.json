@@ -1,0 +1,34 @@
+{
+  "grass": {
+    "pass": true,
+    "meshes": 2,
+    "triangles": 82,
+    "errors_count": 0,
+    "errors_sample": [],
+    "warnings_count": 1,
+    "warnings_sample": [
+      "SM_QX_grass_blades: ~34.7% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+    ]
+  },
+  "wildflower": {
+    "pass": true,
+    "meshes": 4,
+    "triangles": 112,
+    "errors_count": 0,
+    "errors_sample": [],
+    "warnings_count": 2,
+    "warnings_sample": [
+      "SM_QX_wildflower_leaves_and_stems: ~17.47% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "SM_QX_wildflower_small_cream_petals: duplicate verts=30 loose verts=0"
+    ]
+  },
+  "cobble": {
+    "pass": true,
+    "meshes": 1,
+    "triangles": 80,
+    "errors_count": 0,
+    "errors_sample": [],
+    "warnings_count": 0,
+    "warnings_sample": []
+  }
+}

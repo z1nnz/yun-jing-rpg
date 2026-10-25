@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "objects_checked": 9,
+  "errors": [],
+  "warnings": [
+    "SM_QX_Batched_bronze: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QX_Batched_bronze: duplicate verts=308 loose verts=0",
+    "SM_QX_Batched_carpentry: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QX_Batched_carpentry: duplicate verts=2942 loose verts=0",
+    "SM_QX_Batched_glass: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QX_Batched_glass: duplicate verts=180 loose verts=0",
+    "SM_QX_Batched_lantern: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QX_Batched_lantern: duplicate verts=24 loose verts=0",
+    "SM_QX_Batched_plaster: duplicate verts=21 loose verts=0",
+    "SM_QX_Batched_stone: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QX_Batched_stone: duplicate verts=467 loose verts=0",
+    "SM_QX_Batched_stone_light: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QX_Batched_stone_light: duplicate verts=383 loose verts=0",
+    "SM_QX_Batched_tile: duplicate verts=1149 loose verts=0",
+    "SM_QX_Batched_tile_edge: ~86.93% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QX_Batched_tile_edge: duplicate verts=2694 loose verts=0",
+    "hidden back-to-back faces: SM_QX_Batched_stone_light (8 pairs) - delete to save tris"
+  ],
+  "ground_z": 0.0
+}

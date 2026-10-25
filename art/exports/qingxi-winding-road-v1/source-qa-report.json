@@ -1,0 +1,12 @@
+{
+  "asset": "road",
+  "mode": "source",
+  "pass": true,
+  "objects_checked": 37,
+  "triangles": 5332,
+  "errors": [],
+  "warnings": [
+    "SM_QXRoad_EdgeGrass: ~59.6% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+  ],
+  "ground_z": 0.0047
+}

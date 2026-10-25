@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,">
+<title>雲境・青溪動線試走</title>
+<style>
+  :root{font-family:system-ui,"Noto Sans TC",sans-serif;color:#edf0df;background:#152524}
+  *{box-sizing:border-box} body{margin:0;overflow:hidden} canvas{display:block;width:100vw;height:100vh}
+  .panel{position:absolute;left:16px;top:16px;background:#102520de;border:1px solid #8da58488;border-radius:12px;padding:13px 16px;max-width:min(360px,calc(100vw - 32px));box-shadow:0 8px 30px #0005}
+  h1{font-size:18px;margin:0 0 7px} p{margin:5px 0;line-height:1.5} .hint{font-size:12px;color:#cbd6c3}
+  .status{color:#d8e5af;font-weight:700} .toast{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);background:#102520e8;padding:10px 17px;border:1px solid #a4c4ab;border-radius:10px;max-width:90vw;text-align:center}
+  .pad{position:absolute;right:16px;bottom:17px;display:grid;grid-template-columns:repeat(3,48px);gap:3px;touch-action:none}
+  .pad button{height:48px;border:1px solid #bdd0b0a0;border-radius:10px;background:#1d463bcf;color:white;font-size:22px}
+  .pad .empty{visibility:hidden} .legend{display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:#dce5d4}.legend i{display:inline-block;width:9px;height:9px;margin-right:3px;border-radius:2px}
+  @media(max-width:600px){.panel{font-size:12px;padding:10px}.panel h1{font-size:15px}.pad{bottom:13px}.pad button{height:42px}}
+</style>
+</head>
+<body>
+<canvas id="view" aria-label="青溪初始世界俯視動線圖"></canvas>
+<div class="panel">
+  <h1>雲境・青溪動線試走</h1>
+  <p class="status" id="area">村口</p><p id="coords">位置 (0, -7)</p>
+  <p class="hint">WASD／方向鍵移動 · E 查看附近地標 · ＋／－ 縮放。觸控可用右下方向鍵。</p>
+  <p class="hint">這是 Unity 授權完成前的空間試走稿。建築與普通樹仍是灰盒，沒有戰鬥或存檔。</p>
+  <div class="legend"><span><i style="background:#568b65"></i>林地</span><span><i style="background:#619eaa"></i>青溪</span><span><i style="background:#bca987"></i>道路</span><span><i style="background:#c6975c"></i>靈田</span></div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<div class="pad" aria-label="觸控移動"><span class="empty"></span><button data-key="w" aria-label="向上">↑</button><span class="empty"></span><button data-key="a" aria-label="向左">←</button><button data-key="s" aria-label="向下">↓</button><button data-key="d" aria-label="向右">→</button></div>
+<script>
+(() => {
+  const canvas=document.getElementById('view'), ctx=canvas.getContext('2d');
+  const area=document.getElementById('area'), coords=document.getElementById('coords'), toast=document.getElementById('toast');
+  const player={x:0,z:-7}; const keys=new Set(); let zoom=8,last=performance.now(),toastUntil=0;
+  const houses=Array.from({length:10},(_,i)=>({x:-54+(i%5)*9,z:-4+Math.floor(i/5)*12})).concat([{x:-7,z:8},{x:7,z:8}]);
+  let seed=241025; const rand=()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296};
+  const trees=[];for(let i=0;i<54;i++){const x=38+rand()*48,z=-47+rand()*92;if(Math.abs(z-5)<5||(x>68&&z>34))continue;trees.push({x,z,r:1.8+rand()*.8})}
+  function resize(){const dpr=devicePixelRatio||1;canvas.width=Math.round(innerWidth*dpr);canvas.height=Math.round(innerHeight*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
+  addEventListener('resize',resize);resize();
+  function screen(x,z){return [(x-player.x)*zoom+innerWidth/2,(player.z-z)*zoom+innerHeight/2]}
+  function rect(x,z,w,h,color){const [sx,sy]=screen(x,z);ctx.fillStyle=color;ctx.fillRect(sx-w*zoom/2,sy-h*zoom/2,w*zoom,h*zoom)}
+  function disk(x,z,r,color){const [sx,sy]=screen(x,z);ctx.beginPath();ctx.arc(sx,sy,r*zoom,0,Math.PI*2);ctx.fillStyle=color;ctx.fill()}
+  function label(x,z,text){const [sx,sy]=screen(x,z);ctx.font='600 12px system-ui';ctx.textAlign='center';ctx.fillStyle='#102420';ctx.fillText(text,sx+1,sy+1);ctx.fillStyle='#ecf1d9';ctx.fillText(text,sx,sy)}
+  function draw(){
+    ctx.fillStyle='#172823';ctx.fillRect(0,0,innerWidth,innerHeight);
+    rect(0,0,180,140,'#9da98b');rect(25,0,10,140,'#619eaa');
+    rect(0,14,3.2,48,'#bca987');rect(15,5,31,2.6,'#bca987');rect(50,5,42,2.6,'#bca987');rect(70,27,2.5,48,'#bca987');rect(0,52,3,24,'#bca987');
+    for(let i=0;i<7;i++){const x=-34+i*6;rect(x,-28,4,12,'#9a754d');for(let q=0;q<3;q++)disk(x-1+q,-31+q*.5,.25,'#526d40')}
+    for(const h of houses){rect(h.x,h.z,5.8,4.8,'#24484a');rect(h.x,h.z,4.8,3.8,'#baa485')}
+    disk(-13,27,5.5,'#415f3a');disk(-13,27,1.1,'#5a3f2d');disk(0,29,8.3,'#d0c4a8');disk(0,29,6.5,'#7b8983');disk(0,29,5.8,'#b5aa8e');
+    for(const t of trees){disk(t.x,t.z,t.r,'#386b52');disk(t.x-.4,t.z-.4,t.r*.45,'#4e8660')}
+    rect(73,48,10,4,'#6c756e');rect(73,45.9,3.4,.4,'#263733');
+    for(let i=0;i<8;i++)disk(-80+i*21,65,10,'#5f7168');
+    rect(25,5,12.2,4.25,'#54483a');for(let i=0;i<25;i++)rect(19.9+i*.42,5,.09,3.8,'#ae9877');
+    for(const [x,z,s] of [[-29,-21,'藥田'],[-31,2,'村屋'],[-13,19,'古樹'],[0,39,'測資廣場'],[25,-2,'青溪木橋'],[55,-2,'林地'],[73,56,'洞口'],[0,62,'遠山／宗門方向']])label(x,z,s);
+    const [px,py]=screen(player.x,player.z);ctx.beginPath();ctx.arc(px,py,7,0,Math.PI*2);ctx.fillStyle='#ffe7a1';ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#263d36';ctx.stroke();
+  }
+  function canMove(x,z){
+    if(x<-88||x>88||z<-68||z>68)return false;
+    if(x>20&&x<30 && (z<2.5||z>7.5))return false;
+    for(const h of houses)if(Math.abs(x-h.x)<2.8&&Math.abs(z-h.z)<2.3)return false;
+    if(Math.hypot(x+13,z-27)<1.4)return false;
+    return true;
+  }
+  function placeName(){
+    if(Math.hypot(player.x,player.z-29)<10)return '測資廣場';
+    if(Math.hypot(player.x+13,player.z-27)<8)return '村中古樹';
+    if(Math.abs(player.x-25)<8&&Math.abs(player.z-5)<7)return '青溪木橋';
+    if(player.x>=18&&player.x<=34)return '青溪河岸';
+    if(player.x>45&&player.z>38)return '古林洞口附近';
+    if(player.x>35)return '青溪東側林地';
+    if(player.z<-18)return '藥田邊地';
+    if(player.x<-18)return '新手村屋';
+    return '青溪村口';
+  }
+  function interact(){const name=placeName();const descriptions={
+    '測資廣場':'選比與完整資質揭示要等創角後 10 個現實日；目前只確認廣場的位置。',
+    '村中古樹':'青溪的地標古樹。樹模型已完成三視圖、Blender 建模與檢查。',
+    '青溪木橋':'木橋跨過青溪，是村落前往採集林地的主要路線。',
+    '青溪河岸':'目前只有木橋能過河；順著村路走到橋頭。',
+    '古林洞口附近':'洞口目前是灰盒佔位；後續才接探索事件。',
+    '青溪東側林地':'預留山兔、採集與環境事件的位置；尚未接伺服器玩法。',
+    '藥田邊地':'預留初期藥材種植與採集；尚未接存檔。',
+    '新手村屋':'預留商販、休息與煉氣訣教學；房屋仍是灰盒。',
+    '青溪村口':'玩家從這裡自由選擇要去村屋、田地、廣場或林地。'};
+    toast.textContent=descriptions[name];toast.hidden=false;toastUntil=performance.now()+5000;
+  }
+  addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright','e','+','-','='].includes(k))e.preventDefault();keys.add(k);if(k==='e')interact();if(k==='+'||k==='=')zoom=Math.min(15,zoom+1);if(k==='-')zoom=Math.max(4,zoom-1)});
+  addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));addEventListener('blur',()=>keys.clear());
+  for(const button of document.querySelectorAll('[data-key]')){const k=button.dataset.key;button.addEventListener('pointerdown',e=>{e.preventDefault();keys.add(k);button.setPointerCapture(e.pointerId)});button.addEventListener('pointerup',()=>keys.delete(k));button.addEventListener('pointercancel',()=>keys.delete(k))}
+  function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;let dx=0,dz=0;
+    if(keys.has('d')||keys.has('arrowright'))dx++;if(keys.has('a')||keys.has('arrowleft'))dx--;
+    if(keys.has('s')||keys.has('arrowdown'))dz--;if(keys.has('w')||keys.has('arrowup'))dz++;
+    const length=Math.hypot(dx,dz)||1;dx=dx/length*6*dt;dz=dz/length*6*dt;
+    if(canMove(player.x+dx,player.z))player.x+=dx;
+    if(canMove(player.x,player.z+dz))player.z+=dz;
+    area.textContent=placeName();coords.textContent=`位置 (${player.x.toFixed(1)}, ${player.z.toFixed(1)})`;
+    if(toastUntil&&now>toastUntil){toast.hidden=true;toastUntil=0}draw();requestAnimationFrame(frame)}
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "reference_props": "art/references/qingxi-prop-kit-v1/three-view.png",
+  "reference_roots": "art/references/qingxi-root-transition-v1/three-view.png",
+  "removed_uniform_grass_meshes": 7,
+  "prop_instances": {
+    "grass": 313,
+    "wildflower": 57,
+    "cobble": 53
+  },
+  "tree_new_position_m": [
+    12,
+    5
+  ],
+  "tree_root_contraction_below_m": 2.7,
+  "water_meshes_animated": 14,
+  "foam_meshes_animated": 7,
+  "flow_materials": [
+    "M_QXBank_shallow",
+    "M_QXBank_water"
+  ],
+  "water_vertical_amplitude_m": 0.032,
+  "limits": "Blender animation preview only; no Unity shader, current collision, buoyancy or gameplay tests"
+}

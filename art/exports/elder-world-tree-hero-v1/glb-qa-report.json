@@ -1,0 +1,47 @@
+{
+  "asset": "tree",
+  "mode": "glb",
+  "pass": false,
+  "objects_checked": 3,
+  "triangles": 147222,
+  "errors": [],
+  "warnings": [
+    "SM_ElderWorldTree_Batch_01: ~83.9% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_ElderWorldTree_Batch_01: duplicate verts=5132 loose verts=0",
+    "SM_ElderWorldTree_Batch_02: ~66.46% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_ElderWorldTree_Batch_02: duplicate verts=85236 loose verts=0",
+    "主幹: ~80.03% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "主幹: duplicate verts=2053 loose verts=0",
+    "251 parts fully enclosed, not touching (eyes/internals?): ['SM_ElderWorldTree_Batch_02', 'SM_ElderWorldTree_Batch_02', 'SM_ElderWorldTree_Batch_02', 'SM_ElderWorldTree_Batch_02', 'SM_ElderWorldTree_Batch_02']"
+  ],
+  "ground_z": 0.0,
+  "error_kinds": {
+    "coplanar foliage overlap": 2,
+    "detached foliage or branch island": 577
+  },
+  "error_examples": [
+    "z-fighting: SM_ElderWorldTree_Batch_01 (16 overlapping coplanar tri pairs)",
+    "z-fighting: SM_ElderWorldTree_Batch_02 (8 overlapping coplanar tri pairs)",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.143, -1.922, 6.976])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-2.511, -1.373, 7.148])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.998, -0.615, 7.878])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-2.75, 0.024, 7.685])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.071, -1.219, 7.232])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-4.136, -1.536, 6.781])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-2.859, -1.069, 6.906])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-2.271, 0.194, 7.326])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.874, -1.158, 7.006])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-2.918, -1.968, 7.061])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-4.026, -0.989, 7.779])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.322, -1.73, 6.692])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.633, -0.539, 7.873])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.422, -1.544, 6.684])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.939, -0.495, 7.889])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-2.409, -0.356, 6.854])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.992, -1.19, 7.767])",
+    "floating/detached part in SM_ElderWorldTree_Batch_02 (5 verts at [-3.576, -1.591, 6.523])"
+  ],
+  "errors_omitted": 559,
+  "error_count": 579,
+  "warnings_omitted": 0
+}

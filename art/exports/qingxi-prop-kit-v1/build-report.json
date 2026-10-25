@@ -1,0 +1,22 @@
+{
+  "reference": "art\\references\\qingxi-prop-kit-v1\\three-view.png",
+  "source": "art\\source\\qingxi-prop-kit-v1.blend",
+  "assets": {
+    "grass": {
+      "meshes": 2,
+      "triangles": 82,
+      "file": "art\\exports\\qingxi-prop-kit-v1\\qingxi-grass-v1.glb"
+    },
+    "wildflower": {
+      "meshes": 4,
+      "triangles": 112,
+      "file": "art\\exports\\qingxi-prop-kit-v1\\qingxi-wildflower-v1.glb"
+    },
+    "cobble": {
+      "meshes": 1,
+      "triangles": 80,
+      "file": "art\\exports\\qingxi-prop-kit-v1\\qingxi-cobble-v1.glb"
+    }
+  },
+  "status": "geometry preview; leaf alpha, LOD and Unity import not verified"
+}

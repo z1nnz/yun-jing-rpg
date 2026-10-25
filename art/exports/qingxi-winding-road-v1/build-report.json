@@ -1,0 +1,10 @@
+{
+  "asset": "Qingxi winding road 12m v1",
+  "reference": "art\\references\\qingxi-winding-road-v1\\three-view.png",
+  "length_m": 12,
+  "minimum_path_width_m": 2.3,
+  "source_meshes": 37,
+  "source_triangles": 5332,
+  "limits": "Visual mesh only; collision, Unity import, LOD, and mobile performance unverified",
+  "export_meshes": 4
+}

@@ -1,0 +1,26 @@
+{
+  "asset": "bank",
+  "mode": "glb",
+  "pass": true,
+  "objects_checked": 10,
+  "triangles": 8716,
+  "errors": [],
+  "warnings": [
+    "SM_QXBank_Batched_grass: duplicate verts=1005 loose verts=0",
+    "SM_QXBank_Batched_moss: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Batched_moss: duplicate verts=330 loose verts=0",
+    "SM_QXBank_Batched_path: duplicate verts=573 loose verts=0",
+    "SM_QXBank_Batched_pebble: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Batched_pebble: duplicate verts=1230 loose verts=0",
+    "SM_QXBank_Batched_reeds: ~79.45% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Batched_reeds: duplicate verts=2068 loose verts=0",
+    "SM_QXBank_Batched_shallow: duplicate verts=574 loose verts=0",
+    "SM_QXBank_Batched_stone: ~49.25% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Batched_stone: duplicate verts=1168 loose verts=0",
+    "SM_QXBank_Batched_stone_light: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+    "SM_QXBank_Batched_stone_light: duplicate verts=636 loose verts=0",
+    "SM_QXBank_Batched_water: duplicate verts=573 loose verts=0",
+    "asset lowest point z=-0.3064 (not resting on ground plane z=0)"
+  ],
+  "ground_z": -0.3064
+}

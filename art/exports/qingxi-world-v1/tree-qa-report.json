@@ -1,0 +1,10 @@
+{
+  "asset": "tree",
+  "pass": true,
+  "source_meshes": 30,
+  "error_count": 0,
+  "errors": [],
+  "warning_count": 0,
+  "warnings": [],
+  "ground_z": -0.0145
+}
