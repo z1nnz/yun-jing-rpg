@@ -1,0 +1,66 @@
+{
+  "asset": "giant-tree",
+  "version": "v1",
+  "blender": "5.2.2 LTS",
+  "status": "passed",
+  "checks": {
+    "finite_vertices": true,
+    "noted_dimensions": {
+      "height_m": {
+        "target": 62,
+        "measured": 62.35,
+        "ok": true
+      },
+      "crown_width_m": {
+        "target": 90,
+        "measured": 90.56,
+        "ok": true
+      },
+      "crown_depth_m": {
+        "target": 70,
+        "measured": 69.77,
+        "ok": true
+      },
+      "trunk_diameter_at_3m_m": {
+        "target": 10,
+        "measured": 10.13,
+        "ok": true
+      },
+      "root_flare_m": {
+        "target": 22,
+        "measured": 21.0,
+        "ok": true
+      },
+      "crown_underside_m": {
+        "target": 26,
+        "measured": 27.26,
+        "ok": true
+      },
+      "leaf_clumps": {
+        "target": 15,
+        "measured": 15,
+        "ok": true
+      }
+    },
+    "origin_on_ground": true,
+    "triangles": 44420,
+    "glb_reimport": {
+      "objects": 20,
+      "size_error_m": 0.0,
+      "ok": true
+    },
+    "fbx_reimport": {
+      "objects": 20,
+      "size_error_m": 0.0,
+      "ok": true
+    },
+    "ten_distinct_1024_views": true
+  },
+  "not_verified": [
+    "LOD1",
+    "UV / texture bake",
+    "collision",
+    "Unity import / URP / mobile performance",
+    "visual match beyond the ten views reviewed by a person"
+  ]
+}
