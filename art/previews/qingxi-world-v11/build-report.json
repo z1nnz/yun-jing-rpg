@@ -1,0 +1,14 @@
+{
+  "source": "art/source/elder-world-tree-faithful-v11.blend",
+  "removed_altered_meshes": 3,
+  "source_objects": 96,
+  "source_leaf_meshes": 16,
+  "tree_rotation_degrees": 0,
+  "extra_or_duplicated_leaves": 0,
+  "translation": [
+    12,
+    5,
+    1.03
+  ],
+  "limits": "Blender review; Unity runtime and mobile performance unverified"
+}

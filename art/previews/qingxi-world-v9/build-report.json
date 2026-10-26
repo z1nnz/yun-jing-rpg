@@ -1,0 +1,16 @@
+{
+  "source_scene": "art\\source\\qingxi-world-flora-water-v8.blend",
+  "tree_source": "latest Tree Companion authoring file; same SHA256 as copied local source",
+  "tree_root_before_m": 3.276,
+  "tree_root_after_m": 0.59,
+  "tree_vertical_correction_m": 2.686,
+  "reference_props": "art\\references\\qingxi-detail-props-v2\\three-view.png",
+  "instances": {
+    "river-reed": 36,
+    "fern-flower": 238,
+    "moss-boulder": 40,
+    "trail-lantern": 3
+  },
+  "owner": "z1nnz / Codex-assisted integration",
+  "limits": "Blender visual preview; Unity compilation, collider, runtime LOD and mobile tests pending"
+}

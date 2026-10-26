@@ -2,12 +2,12 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>雲境 · 青溪修行驗證</title><link rel="stylesheet" href="/style.css">
+  <title>雲境 · 青溪修行驗證</title><link rel="stylesheet" href="/style.css"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#18392f">
 </head>
 <body>
 <header><div><small>雲境 / YUN JING</small><h1>從一方小院，走入修行。</h1><p>青溪斷流 · 第一段互動流程</p></div><span class="badge" id="mode">連接服務中</span></header>
 <main>
-  <section class="notice">這是連接實際存檔的開發驗證介面。3D 遊戲客戶端在 Unity 專案中；此頁不代表最終遊戲畫面。</section>
+  <section class="notice">這是連接實際存檔的開發驗證介面。3D 遊戲客戶端在 Unity 專案中；此頁不代表最終遊戲畫面。<a href="/art-gallery.html">查看最新樹與河岸建模預覽</a></section>
   <section class="login" id="login"><label for="alias">本機測試身分</label><input id="alias" value="traveler-a" maxlength="24" pattern="[a-z0-9_-]+"><button id="sign-in" disabled>進入青溪</button><p>不同身分有自己的田地與物品，共用青溪水渠進度。使用相同身分會交接登入。</p></section>
   <div id="game" hidden>
     <section class="identity"><div><small>我的修行</small><h2 id="name"></h2><p id="birth"></p></div><div id="stats"></div><button id="draw">測定先天天賦 · 僅一次</button><button id="sign-out" class="quiet">切換身分</button></section>
@@ -25,5 +25,5 @@
   </div>
   <div id="feedback" role="status" aria-live="polite">準備好後，進入你的第一座小院。</div><button id="retry" hidden>重試未確認操作</button>
 </main><footer>斷脈之後，萬物待生。 · 青溪章節驗證版</footer>
-<script src="/app.js" defer></script>
+<script src="/app.js" defer></script><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});</script>
 </body></html>

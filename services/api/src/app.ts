@@ -106,6 +106,8 @@ export async function createApp(config: Configuration, database?: Database) {
     next();
   });
   app.useStaticAssets(resolve('apps/inspector'));
+  app.useStaticAssets(resolve('art/previews'), { prefix: '/art-previews/' });
+  app.useStaticAssets(resolve('art/references'), { prefix: '/art-references/' });
   await app.init();
   return { app, game, auth: runtime.auth };
 }

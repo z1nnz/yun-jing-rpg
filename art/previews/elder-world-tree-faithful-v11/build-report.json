@@ -1,0 +1,13 @@
+{
+  "source": "elder-world-tree-garden-original.blend",
+  "mesh_or_curve_count": 100,
+  "tree_shape_changes": 0,
+  "tree_rotation_changes": 0,
+  "source_textures": [
+    "bark",
+    "island grass",
+    "island rock"
+  ],
+  "foliage": "Original 16 leaf clusters and source vertex color with a Blender approximation of Unity sunward tint",
+  "limits": "Blender material comparison; not a Unity or phone render. Sky, water, and cloud rendering differ from Tree Companion."
+}

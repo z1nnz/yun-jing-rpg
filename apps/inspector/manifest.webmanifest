@@ -1,0 +1,12 @@
+{
+  "name": "雲境・青溪驗證",
+  "short_name": "雲境驗證",
+  "description": "青溪修行與美術樣片的本機驗證介面",
+  "lang": "zh-Hant",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#152524",
+  "theme_color": "#18392f",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

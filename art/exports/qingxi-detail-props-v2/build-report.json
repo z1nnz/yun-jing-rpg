@@ -1,0 +1,23 @@
+{
+  "reference": "art/references/qingxi-detail-props-v2/three-view.png",
+  "owner": "z1nnz / Codex-assisted original modeling",
+  "status": "Blender source and GLB preview; Unity import and mobile performance unverified",
+  "assets": {
+    "river-reed": {
+      "source_meshes": 57,
+      "triangles": 576
+    },
+    "fern-flower": {
+      "source_meshes": 179,
+      "triangles": 1450
+    },
+    "moss-boulder": {
+      "source_meshes": 22,
+      "triangles": 408
+    },
+    "trail-lantern": {
+      "source_meshes": 12,
+      "triangles": 180
+    }
+  }
+}
