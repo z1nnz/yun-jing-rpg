@@ -1,0 +1,26 @@
+{
+  "road": {
+    "file_bytes": 9550840,
+    "mesh_count": 115,
+    "triangles": 12320,
+    "materials": 9
+  },
+  "bridge-rail": {
+    "file_bytes": 40252,
+    "mesh_count": 10,
+    "triangles": 744,
+    "materials": 3
+  },
+  "herb-rack": {
+    "file_bytes": 101244,
+    "mesh_count": 51,
+    "triangles": 1004,
+    "materials": 4
+  },
+  "waymarker": {
+    "file_bytes": 27760,
+    "mesh_count": 6,
+    "triangles": 384,
+    "materials": 3
+  }
+}

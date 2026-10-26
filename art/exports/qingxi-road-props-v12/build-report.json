@@ -1,0 +1,22 @@
+{
+  "road": {
+    "reference": "art\\references\\qingxi-winding-road-v1\\three-view.png",
+    "mesh_count": 115,
+    "triangles": 12320
+  },
+  "bridge-rail": {
+    "reference": "art\\references\\qingxi-bridge-rail-v1\\three-view.png",
+    "mesh_count": 10,
+    "triangles": 168
+  },
+  "herb-rack": {
+    "reference": "art\\references\\qingxi-herb-rack-v1\\three-view.png",
+    "mesh_count": 51,
+    "triangles": 908
+  },
+  "waymarker": {
+    "reference": "art\\references\\qingxi-waymarker-v1\\three-view.png",
+    "mesh_count": 6,
+    "triangles": 96
+  }
+}

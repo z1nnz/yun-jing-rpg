@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17342f"><link rel="manifest" href="manifest.webmanifest">
+<title>青溪道路與小物件 v12｜視覺檢視</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,"Noto Sans TC",sans-serif;background:#132822;color:#f1f1e5}*{box-sizing:border-box}body{margin:0}header{padding:28px max(20px,4vw);background:#17342f}h1{font-size:clamp(22px,3vw,34px);margin:0 0 8px}p{line-height:1.6}main{padding:24px max(16px,4vw);max-width:1500px;margin:auto}.note{color:#c8d7c3}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px}.card{background:#1f3932;border:1px solid #537465;border-radius:14px;overflow:hidden}.card h2{font-size:19px;margin:0;padding:16px 16px 4px}.card p{font-size:14px;margin:0;padding:0 16px 16px;color:#c8d7c3}.compare{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#132822}.compare figure{margin:0;background:#293e39;min-width:0}.compare img{display:block;width:100%;height:230px;object-fit:contain}.compare figcaption{font-size:12px;padding:8px 10px;color:#dbe5d3}.road img{height:260px}footer{padding:24px max(16px,4vw);font-size:13px;color:#c8d7c3}@media(max-width:620px){.compare{grid-template-columns:1fr}.compare img,.road img{height:250px}}
+</style>
+</head>
+<body>
+<header><h1>青溪道路與小物件 v12</h1><p>三視圖和 Blender 模型並列；可在手機瀏覽器檢視。這是美術資產預覽，尚非可走動的 3D 場景。</p></header>
+<main><p class="note">檢查重點：道路是否仍過於規則、岩石與草叢的尺度層次、木件與世界圖片的視覺一致性。v12 是初版，差距如實保留。</p><div class="grid">
+<section class="card road"><h2>不規則土路</h2><p>12 m 模組，路緣碎石和草花變體。</p><div class="compare"><figure><img src="../../art/references/qingxi-winding-road-v1/three-view.png" alt="土路 AI 三視圖"><figcaption>AI 三視圖</figcaption></figure><figure><img src="../../art/previews/qingxi-road-props-v12/road-oblique.png" alt="土路 Blender 斜視渲染"><figcaption>Blender v12</figcaption></figure></div></section>
+<section class="card"><h2>橋邊木欄</h2><p>2.4 m 可重複擺放單段。</p><div class="compare"><figure><img src="../../art/references/qingxi-bridge-rail-v1/three-view.png" alt="木欄 AI 三視圖"><figcaption>AI 三視圖</figcaption></figure><figure><img src="../../art/previews/qingxi-road-props-v12/bridge-rail.png" alt="木欄 Blender 渲染"><figcaption>Blender v12</figcaption></figure></div></section>
+<section class="card"><h2>採藥晾架</h2><p>晾盤、繩與靈草束。</p><div class="compare"><figure><img src="../../art/references/qingxi-herb-rack-v1/three-view.png" alt="晾架 AI 三視圖"><figcaption>AI 三視圖</figcaption></figure><figure><img src="../../art/previews/qingxi-road-props-v12/herb-rack.png" alt="晾架 Blender 渲染"><figcaption>Blender v12</figcaption></figure></div></section>
+<section class="card"><h2>苔石路標</h2><p>文字留白，之後依區域換牌。</p><div class="compare"><figure><img src="../../art/references/qingxi-waymarker-v1/three-view.png" alt="路標 AI 三視圖"><figcaption>AI 三視圖</figcaption></figure><figure><img src="../../art/previews/qingxi-road-props-v12/waymarker.png" alt="路標 Blender 渲染"><figcaption>Blender v12</figcaption></figure></div></section>
+</div></main><footer>製作：z1nnz 指導／Codex 實作。資產來源與尚待精修項目記於 docs/qingxi-road-props-v12.md。</footer>
+<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}</script>
+</body></html>

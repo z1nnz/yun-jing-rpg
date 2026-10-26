@@ -6,6 +6,8 @@
 |---|---|---|---|
 | 樹伴成樹 | z1nnz 的 `elder-tree-esg`，母稿保存在 [原檔副本](../art/source/elder-world-tree-garden-original.blend) | z1nnz 原作／Codex 移植：v11 將完整原樹 96 個物件、16 組葉冠放入青溪，保留原方向與樹形，取消 v10 補葉；[實際畫面](../art/previews/qingxi-world-v11/original-tree-in-world.png) | 葉色與樹伴 Unity 渲染仍未完全一致；需做材質、LOD、碰撞及引擎驗證，不要重新生成或複製葉冠。 |
 | 青溪河岸與流動水樣片 | z1nnz／Codex 協作；既有 v8 | Blender 動畫及畫面已保存，水位／泡沫為樣片 | 實際遊戲水材質、遮擋和手機效能。 |
+| 12 m 不規則土路近景 v12 | z1nnz 指導／Codex 實作；沿用既有道路三視圖及河岸貼圖 | [Blender 原稿與 GLB](qingxi-road-props-v12.md)、斜視與俯視圖、QA 0 錯誤；道路仍偏程式化 | 協作者 B 獨立完成可互換三段道路與橋頭河岸銜接，勿覆寫此原稿。 |
+| 橋邊木欄、採藥晾架、苔石路標 | z1nnz 指導／Codex 實作；[新增 AI 三視圖](../art/references/qingxi-road-props-v12.md)先於模型保存 | 三件可獨立擺放的 Blender／GLB 初版；QA 0 錯誤 | 精修材質、烘焙、LOD 與擺位；不要重做同名初版。 |
 | 河岸蘆葦、蕨草花叢、苔石、木路燈 v2 | z1nnz／Codex 協作；先有 [AI 三視圖](../art/references/qingxi-detail-props-v2/three-view.png) | 有獨立 Blender 原稿、GLB 和近景預覽；質感仍是初版 | 精修紋理、近景細節及 LOD；不要做重名初版。 |
 | 客舍及鎮區模型 | z1nnz／Codex 的客舍 v1；joshsu54／Dondon 的模型依來源分別登記 | 已放入青溪組裝及協作者鎮區分支，兩者不能互稱原創 | 選用時保留來源，修改不要覆寫交接原件。 |
 | 青溪鎮與採獵區 Unity 場景 | joshsu54 分支 `very-strong`、Johnny 分支 `feature/qingxi-hunt-graybox-johnny` | 已在整合分支合併，保留兩個獨立 builder；Unity 整合版尚未編譯 | 待可用 Editor 再驗證，避免同時改同一生成場景。 |
