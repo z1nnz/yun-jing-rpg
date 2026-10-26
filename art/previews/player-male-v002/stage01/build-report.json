@@ -1,0 +1,142 @@
+{
+  "stage": "01 torso, not final character",
+  "blender": "5.2.2 LTS",
+  "working_scale": {
+    "reference_total_height_m": 1.78,
+    "shoulder_width_m": 0.462,
+    "waist_band_width_m": 0.34,
+    "shoulder_z_m": 1.425,
+    "waist_z_m": 1.058
+  },
+  "references": {
+    "male-a-pose-provisional.png": "64b48794808ed2b3047d48d480a3d6abd55b027e5487e1705151b3c7ab1686ba",
+    "male-accessories-provisional.png": "da7cd66656a8ac94910f95ca47b708dd1db62521569b9ed52f31d1829ce10ee6",
+    "male-face-hair-provisional.png": "afcbc8cadb7520ee57ad23934604da9acc3bd858837f8e60bda7481a97ed2554",
+    "male-five-view-provisional.png": "9efba7c8089eeaa154c95afd75665960f2db686c74e37fd7e4b06ca4fa5e5eef",
+    "male-garment-provisional.png": "71bb560ea29ca49682830d3541e1e54b462d82428caec4d758a459ef711e1eab",
+    "male-three-view.png": "e2213eea7dd14da552a5fd10b93c9044b6d66577e06daba145cf1d1e0618564a"
+  },
+  "objects": [
+    {
+      "name": "Torso_ContinuousCage",
+      "vertices": 3392,
+      "control_tris": 6656,
+      "dimensions_m": [
+        0.43876543641090393,
+        0.23327872157096863,
+        0.6499999761581421
+      ],
+      "modifiers": [
+        "SUBSURF"
+      ]
+    },
+    {
+      "name": "OuterRobe_UpperShell",
+      "vertices": 6240,
+      "control_tris": 12288,
+      "dimensions_m": [
+        0.4596524238586426,
+        0.2862676978111267,
+        0.516421914100647
+      ],
+      "modifiers": [
+        "SUBSURF",
+        "SOLIDIFY"
+      ]
+    },
+    {
+      "name": "Undershirt_ContinuousCollar",
+      "vertices": 1449,
+      "control_tris": 2560,
+      "dimensions_m": [
+        0.1234837993979454,
+        0.1970975548028946,
+        0.16385936737060547
+      ],
+      "modifiers": [
+        "SUBSURF",
+        "SOLIDIFY"
+      ]
+    },
+    {
+      "name": "InnerRobe_ContinuousCollar",
+      "vertices": 1449,
+      "control_tris": 2560,
+      "dimensions_m": [
+        0.16805128753185272,
+        0.21891307830810547,
+        0.2514305114746094
+      ],
+      "modifiers": [
+        "SUBSURF",
+        "SOLIDIFY"
+      ]
+    },
+    {
+      "name": "OuterRobe_ContinuousBinding",
+      "vertices": 1449,
+      "control_tris": 2560,
+      "dimensions_m": [
+        0.1980350762605667,
+        0.23374420404434204,
+        0.4814814329147339
+      ],
+      "modifiers": [
+        "SUBSURF",
+        "SOLIDIFY"
+      ]
+    },
+    {
+      "name": "InnerRobe_ChestPanel",
+      "vertices": 825,
+      "control_tris": 1536,
+      "dimensions_m": [
+        0.11302627623081207,
+        0.03421197086572647,
+        0.13232874870300293
+      ],
+      "modifiers": [
+        "SUBSURF",
+        "SOLIDIFY"
+      ]
+    },
+    {
+      "name": "WaistSash_WovenBand",
+      "vertices": 2176,
+      "control_tris": 4096,
+      "dimensions_m": [
+        0.3492436707019806,
+        0.24236533045768738,
+        0.06412220001220703
+      ],
+      "modifiers": [
+        "SUBSURF",
+        "SOLIDIFY"
+      ]
+    },
+    {
+      "name": "BackCentreSeam",
+      "vertices": 162,
+      "control_tris": 160,
+      "dimensions_m": [
+        0.0015999999595806003,
+        0.06394319236278534,
+        0.38999998569488525
+      ],
+      "modifiers": [
+        "SOLIDIFY"
+      ]
+    }
+  ],
+  "unfinished": [
+    "sleeves",
+    "limbs",
+    "lower robe",
+    "hair",
+    "face",
+    "rig",
+    "textures",
+    "animation",
+    "Unity"
+  ]
+}

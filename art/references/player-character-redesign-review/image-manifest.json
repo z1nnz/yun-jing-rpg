@@ -1,0 +1,50 @@
+{
+  "male-a-pose-provisional.png": {
+    "sha256": "64b48794808ed2b3047d48d480a3d6abd55b027e5487e1705151b3c7ab1686ba",
+    "bytes": 1838131,
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  "male-accessories-provisional.png": {
+    "sha256": "da7cd66656a8ac94910f95ca47b708dd1db62521569b9ed52f31d1829ce10ee6",
+    "bytes": 2239002,
+    "size": [
+      1774,
+      887
+    ]
+  },
+  "male-face-hair-provisional.png": {
+    "sha256": "afcbc8cadb7520ee57ad23934604da9acc3bd858837f8e60bda7481a97ed2554",
+    "bytes": 2431291,
+    "size": [
+      2172,
+      724
+    ]
+  },
+  "male-five-view-provisional.png": {
+    "sha256": "9efba7c8089eeaa154c95afd75665960f2db686c74e37fd7e4b06ca4fa5e5eef",
+    "bytes": 1969058,
+    "size": [
+      1774,
+      887
+    ]
+  },
+  "male-garment-provisional.png": {
+    "sha256": "71bb560ea29ca49682830d3541e1e54b462d82428caec4d758a459ef711e1eab",
+    "bytes": 2367205,
+    "size": [
+      1254,
+      1254
+    ]
+  },
+  "male-three-view.png": {
+    "sha256": "e2213eea7dd14da552a5fd10b93c9044b6d66577e06daba145cf1d1e0618564a",
+    "bytes": 1892382,
+    "size": [
+      1254,
+      1254
+    ]
+  }
+}

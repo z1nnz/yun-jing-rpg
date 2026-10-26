@@ -1,0 +1,375 @@
+{
+  "ok": true,
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    "hidden back-to-back faces: OuterRobe_ContinuousBinding<->WaistSash_WovenBand (34 pairs) - delete to save tris",
+    "asset lowest point z=0.9 (not resting on ground plane z=0)"
+  ],
+  "ground_z": 0.9,
+  "zfighting": [],
+  "floating": [],
+  "back_to_back": [
+    {
+      "where": "OuterRobe_ContinuousBinding<->WaistSash_WovenBand",
+      "tri_pairs": 34
+    }
+  ],
+  "enclosed": [],
+  "objects": {
+    "BackCentreSeam": {
+      "verts": 162,
+      "faces": 80,
+      "tris": 160,
+      "ngons": 0,
+      "boundary_edges": 162,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "ForearmWrap_L": {
+      "verts": 1200,
+      "faces": 1152,
+      "tris": 2304,
+      "ngons": 0,
+      "boundary_edges": 96,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "ForearmWrap_R": {
+      "verts": 1200,
+      "faces": 1152,
+      "tris": 2304,
+      "ngons": 0,
+      "boundary_edges": 96,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "InnerRobe_ChestPanel": {
+      "verts": 825,
+      "faces": 768,
+      "tris": 1536,
+      "ngons": 0,
+      "boundary_edges": 112,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "InnerRobe_ContinuousCollar": {
+      "verts": 1449,
+      "faces": 1280,
+      "tris": 2560,
+      "ngons": 0,
+      "boundary_edges": 336,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "InnerSleeve_L": {
+      "verts": 1200,
+      "faces": 1152,
+      "tris": 2304,
+      "ngons": 0,
+      "boundary_edges": 96,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "InnerSleeve_R": {
+      "verts": 1200,
+      "faces": 1152,
+      "tris": 2304,
+      "ngons": 0,
+      "boundary_edges": 96,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "OuterRobe_ConnectedSleeves": {
+      "verts": 11574,
+      "faces": 11386,
+      "tris": 22772,
+      "ngons": 0,
+      "boundary_edges": 380,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 2
+    },
+    "OuterRobe_ContinuousBinding": {
+      "verts": 1449,
+      "faces": 1280,
+      "tris": 2560,
+      "ngons": 0,
+      "boundary_edges": 336,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "Torso_ConnectedArms_Cage": {
+      "verts": 8130,
+      "faces": 8016,
+      "tris": 16032,
+      "ngons": 0,
+      "boundary_edges": 232,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "Undershirt_ContinuousCollar": {
+      "verts": 1449,
+      "faces": 1280,
+      "tris": 2560,
+      "ngons": 0,
+      "boundary_edges": 336,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "WaistSash_WovenBand": {
+      "verts": 2176,
+      "faces": 2048,
+      "tris": 4096,
+      "ngons": 0,
+      "boundary_edges": 256,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "WrapStrap_L": {
+      "verts": 442,
+      "faces": 220,
+      "tris": 440,
+      "ngons": 0,
+      "boundary_edges": 442,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "WrapStrap_R": {
+      "verts": 442,
+      "faces": 220,
+      "tris": 440,
+      "ngons": 0,
+      "boundary_edges": 442,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "WristBinding_L": {
+      "verts": 1200,
+      "faces": 1152,
+      "tris": 2304,
+      "ngons": 0,
+      "boundary_edges": 96,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    },
+    "WristBinding_R": {
+      "verts": 1200,
+      "faces": 1152,
+      "tris": 2304,
+      "ngons": 0,
+      "boundary_edges": 96,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    }
+  },
+  "blend_sha256": "07efe7671b09967d45b3ee8932ad59afff6ed1a1650b4c7a0afe180fc5072d8a",
+  "scope": "Control cage only, render profile, UV not final and not checked; no rig/Unity checks"
+}

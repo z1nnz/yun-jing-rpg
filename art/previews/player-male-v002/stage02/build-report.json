@@ -1,0 +1,93 @@
+{
+  "stage": "02 upper body; not final character",
+  "blender": "5.2.2 LTS",
+  "objects": [
+    {
+      "name": "BackCentreSeam",
+      "verts": 162,
+      "tris": 160
+    },
+    {
+      "name": "ForearmWrap_L",
+      "verts": 1200,
+      "tris": 2304
+    },
+    {
+      "name": "ForearmWrap_R",
+      "verts": 1200,
+      "tris": 2304
+    },
+    {
+      "name": "InnerRobe_ChestPanel",
+      "verts": 825,
+      "tris": 1536
+    },
+    {
+      "name": "InnerRobe_ContinuousCollar",
+      "verts": 1449,
+      "tris": 2560
+    },
+    {
+      "name": "InnerSleeve_L",
+      "verts": 1200,
+      "tris": 2304
+    },
+    {
+      "name": "InnerSleeve_R",
+      "verts": 1200,
+      "tris": 2304
+    },
+    {
+      "name": "OuterRobe_ConnectedSleeves",
+      "verts": 11574,
+      "tris": 22772
+    },
+    {
+      "name": "OuterRobe_ContinuousBinding",
+      "verts": 1449,
+      "tris": 2560
+    },
+    {
+      "name": "Torso_ConnectedArms_Cage",
+      "verts": 8130,
+      "tris": 16032
+    },
+    {
+      "name": "Undershirt_ContinuousCollar",
+      "verts": 1449,
+      "tris": 2560
+    },
+    {
+      "name": "WaistSash_WovenBand",
+      "verts": 2176,
+      "tris": 4096
+    },
+    {
+      "name": "WrapStrap_L",
+      "verts": 442,
+      "tris": 440
+    },
+    {
+      "name": "WrapStrap_R",
+      "verts": 442,
+      "tris": 440
+    },
+    {
+      "name": "WristBinding_L",
+      "verts": 1200,
+      "tris": 2304
+    },
+    {
+      "name": "WristBinding_R",
+      "verts": 1200,
+      "tris": 2304
+    }
+  ],
+  "unverified": [
+    "shoulder deformation",
+    "cloth collisions during movement",
+    "final UV",
+    "rig",
+    "Unity"
+  ]
+}
