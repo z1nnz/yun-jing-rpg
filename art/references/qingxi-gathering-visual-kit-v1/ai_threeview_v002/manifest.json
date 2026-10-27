@@ -1,0 +1,106 @@
+{
+  "source": "AI image generation (ChatGPT / Codex) run by joshsu54 with the prompts in PROMPTS.md",
+  "received_by_claude_code": "2026-10-28T01:56:32+08:00",
+  "reviewed": "REVIEW.md",
+  "images": [
+    {
+      "file": "R01_QX_SpiritHerb_Qinglan.png",
+      "px": [
+        2098,
+        749
+      ],
+      "sha256": "334ae1c85ac1c1ca8dc47cc60e2c2e247a258998b2831b77afc9068b6c7fa6c5",
+      "adopted": true
+    },
+    {
+      "file": "R01b_QX_SpiritHerb_Qinglan_post.png",
+      "px": [
+        2098,
+        749
+      ],
+      "sha256": "44615047ba8cbce01e09ed570904520c863052c6618bd3bfa54a39c333949a0e",
+      "adopted": true
+    },
+    {
+      "file": "R02_QX_SpiritHerb_Chilu.png",
+      "px": [
+        2048,
+        768
+      ],
+      "sha256": "67b676b01f619b764e03e7e4b3f23b1b73ed33d20c61f535d0e10f278484ac90",
+      "adopted": true
+    },
+    {
+      "file": "R02_QX_SpiritHerb_Chilu_rejected1.png",
+      "px": [
+        2048,
+        768
+      ],
+      "sha256": "f27a2f8600c5cb677022aad9e1853d5919f7519f02ba6f3be2f584d54b47593a",
+      "adopted": false
+    },
+    {
+      "file": "R02b_QX_SpiritHerb_Chilu_post.png",
+      "px": [
+        2048,
+        768
+      ],
+      "sha256": "55a3c873b8fdea62ee68921acc4629399178f58616f6c1a8b6d3f304136dbd38",
+      "adopted": true
+    },
+    {
+      "file": "R03_QX_EmbeddedOre_Yumai.png",
+      "px": [
+        2172,
+        724
+      ],
+      "sha256": "739bf91c44b942ddf36cb65e5f721a466be46fba1e06145d603d400659123319",
+      "adopted": true
+    },
+    {
+      "file": "R03b_QX_EmbeddedOre_Yumai_post.png",
+      "px": [
+        2172,
+        724
+      ],
+      "sha256": "659e142db975008c9476587a636caa91a4ffa79b323b1b94028ec117c6328251",
+      "adopted": true
+    },
+    {
+      "file": "R04_QX_GatheringLandmark.png",
+      "px": [
+        1947,
+        808
+      ],
+      "sha256": "600228377bf73adca000d7a807f857fa95062a0c897cee6c6a7cf444511360c0",
+      "adopted": true
+    },
+    {
+      "file": "R05_QX_CreekSteppingPlank.png",
+      "px": [
+        1956,
+        804
+      ],
+      "sha256": "22b5b77884f5fa22a41176b48394c7d5be89970585ed05fed65f047d3fc75e0e",
+      "adopted": true
+    },
+    {
+      "file": "R05_QX_CreekSteppingPlank_rejected1.png",
+      "px": [
+        1957,
+        804
+      ],
+      "sha256": "951f290e7cc218085fe0f53d2be04178a6490f4ade7d4921448ac9bedc187889",
+      "adopted": false
+    },
+    {
+      "file": "R06_QX_WaterReeds.png",
+      "px": [
+        1774,
+        887
+      ],
+      "sha256": "9d9a246c84a8838fea85ab55ec40473e7314e9bd87a20398b28fbcd1fcd37972",
+      "adopted": true
+    }
+  ]
+}
