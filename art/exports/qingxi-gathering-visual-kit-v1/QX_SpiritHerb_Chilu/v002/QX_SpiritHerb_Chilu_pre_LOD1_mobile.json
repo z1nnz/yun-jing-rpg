@@ -1,0 +1,52 @@
+{
+  "key": "QX_SpiritHerb_Chilu_pre",
+  "asset": "QX_SpiritHerb_Chilu",
+  "version": "v002",
+  "method": "Blender Decimate (collapse, triangulate) on the exported LOD0 game mesh; UVs and baked textures reused",
+  "target_triangles": 12000,
+  "ratio": 0.2148,
+  "lod0": {
+    "meshes": 1,
+    "triangles": 55854,
+    "materials": 1,
+    "images": 4,
+    "bounds_min_m": [
+      -0.5264,
+      -0.4229,
+      -0.012
+    ],
+    "bounds_max_m": [
+      0.5397,
+      0.4158,
+      0.2716
+    ]
+  },
+  "lod1": {
+    "meshes": 1,
+    "triangles": 12000,
+    "materials": 1,
+    "images": 4,
+    "bounds_min_m": [
+      -0.5264,
+      -0.4228,
+      -0.0127
+    ],
+    "bounds_max_m": [
+      0.5396,
+      0.4158,
+      0.2716
+    ]
+  },
+  "bounds_max_abs_diff_m": 0.0007,
+  "comparison_render": "art/references/qingxi-gathering-visual-kit-v1/lod_v002/QX_SpiritHerb_Chilu_pre_LOD0_vs_LOD1_front.png",
+  "file": {
+    "name": "QX_SpiritHerb_Chilu_pre_LOD1_mobile.glb",
+    "bytes": 3142936,
+    "sha256": "9a841e4f9c1a82e56281f3d7ea50284c6910521940d20538773b09a4bb1d6ad9"
+  },
+  "not_checked": [
+    "switch distance in an engine",
+    "visual pop at the switch",
+    "mobile device performance"
+  ]
+}

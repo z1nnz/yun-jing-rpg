@@ -1,4 +1,10 @@
-"""QX_EmbeddedOre_Yumai rebuild: split jade-vein boulder (pre / post harvest).
+"""QX_EmbeddedOre_Yumai v002: split jade-vein boulder (pre / post harvest).
+v002 follows the reviewed AI three-view R03 / R03b (art/references/.../ai_threeview_v002): the whole piece is
+turned so the cleft opens to the front (two blocks side by side, crystals fanning out of the cleft toward the
+viewer), the right block is raised to about 0.8 of the left one, the stone is a paler granite with glowing jade
+veins running along the beds across both blocks, and the crystals are taller (main about 1.3 x the block) and a
+paler, milkier jade. Post: crystals snapped to stumps and the veins unlit.
+v001 notes:
 Primary: two faceted blocks split by a V cleft that widens upward; the back-left block is two
 stacked strata tiers (ledge), the front-right block is a lower dipping slab, plus one fallen chunk.
 Secondary: boolean chips on silhouette edges, thin crack grooves, shallow weathering pockets.
@@ -81,7 +87,7 @@ def crystal_into(bm,base,d,r,L,rng,var_r,broken=False,tipf=.3):
         return out
     r0=ring(-.04,.88,0.0)
     if broken:
-        h=L*rng.uniform(.16,.3);sx,sy=rng.uniform(-.6,.6),rng.uniform(-.6,.6)
+        h=min(L*rng.uniform(.14,.26),rng.uniform(.13,.19));sx,sy=rng.uniform(-.6,.6),rng.uniform(-.6,.6)
         top=[];cap=[]
         for i in range(6):
             a=ro+i*TAU/6;x,y=rr[i]*math.cos(a),rr[i]*math.sin(a);z=h+sx*x+sy*y+r*.35*rng.uniform(-1,1)
@@ -228,8 +234,8 @@ def sculpt(o,scale=1.0,amp=1.0,seed=0,cleft=False,moss=True):
     bm.normal_update()
     if moss:
         for v in bm.verts:
-            p=v.co;m=sm01(.58,.88,v.normal.z+noise.noise(p*1.7+Vector((2,2,2)))*.22)*sm01(.22,.36,p.z)
-            m*=sm01(.40,.62,noise.noise(p*1.9)*.5+.5+.45*(p.y-p.x*.5))
+            p=v.co;m=sm01(.46,.80,v.normal.z+noise.noise(p*1.7+Vector((2,2,2)))*.22)*sm01(.22,.36,p.z)
+            m*=sm01(.26,.50,noise.noise(p*1.9)*.5+.5+.30*(p.y-p.x*.5))
             c0=v[rk];m*=.75+.25*sm01(.0,.35,c0[0]+c0[1]+noise.noise(p*2.6)*.25)
             m=sm01(.22,.62,m+.22*noise.noise(p*11)+.08*noise.noise(p*29))
             if cleft:m*=sm01(.10,.20,abs(p.dot(NC)))
@@ -263,7 +269,7 @@ def mat_rock_real(name,post,seam=True,tone=None):
     mr,mx,ad,mrng=K.mul,K.mix,K.add,K.mrange
     cr,gr,fl=K.attr(nt,'Rk');br,mo,fe=K.attr(nt,'Rk2');pt=geo.outputs['Pointiness']
     convex=mrng(nt,pt,.505,.56);concave=mrng(nt,pt,.495,.44);cav=mrng(nt,ao(nt,.10),.95,.55)
-    col=K.ramp(nt,br,tone or [(0,(.088,.094,.100)),(.45,(.125,.131,.137)),(.75,(.122,.117,.108)),(1,(.152,.155,.157))])
+    col=K.ramp(nt,br,tone or [(0,(.125,.131,.137)),(.45,(.172,.178,.184)),(.75,(.168,.162,.150)),(1,(.212,.215,.217))])
     col=mx(nt,mr(nt,fl,.22),col,(.205,.21,.21));col=mx(nt,mr(nt,K.math_(nt,'SUBTRACT',1,fl),.18),col,(.10,.105,.11))
     col=mx(nt,mr(nt,mrng(nt,K.noise_t(nt,ob,.7,2),.45,.75),.35),col,(.17,.158,.140))     # warm iron-stained patches
     grains=K.voronoi_t(nt,ob,240,'F1','Color');gsel=K.sep(nt,grains)[0];gd=mrng(nt,K.voronoi_t(nt,ob,240),.42,.22)
@@ -297,7 +303,11 @@ def mat_rock_real(name,post,seam=True,tone=None):
     col=mx(nt,mr(nt,cl,.9),col,ccol)
     warp2=K.node(nt,'ShaderNodeVectorMath',{0:K.scaled(nt,ob,(1,1,.7)),1:K.scaled(nt,K.node(nt,'ShaderNodeTexNoise',{'Vector':ob,'Scale':3,'Detail':2}).outputs['Color'],(.25,.25,.25))},operation='ADD').outputs[0]
     vein=mr(nt,mr(nt,mrng(nt,K.voronoi_t(nt,warp2,4.2,'DISTANCE_TO_EDGE'),.008,.002),cl),mrng(nt,K.noise_t(nt,ob,2.2,2),.42,.55))
-    col=mx(nt,vein,col,(.20,.52,.46) if not post else (.10,.15,.14))
+    bedv=K.comb(nt,x,y,ad(nt,ad(nt,z,mr(nt,x,.16)),mr(nt,y,-.10)))                                # gently dipping bed planes
+    bands=K.wave_t(nt,bedv,1.15,'Z',3.0,2)
+    sv=mr(nt,mr(nt,mr(nt,mrng(nt,bands,.990,.9985),mrng(nt,nz,.78,.45)),mr(nt,mrng(nt,K.noise_t(nt,ob,1.6,3),.44,.52),mrng(nt,z,.10,.18))),1.0 if seam else 0.0)
+    vein=K.math_(nt,'MAXIMUM',vein,sv)
+    col=mx(nt,vein,col,(.26,.62,.52) if not post else (.10,.15,.14))
     sparkle=mr(nt,mrng(nt,K.voronoi_t(nt,ob,420),.12,.04),cl)
     hgt=ad(nt,ad(nt,mr(nt,K.noise_t(nt,ob,90,5),.6),mr(nt,gd,.25)),ad(nt,mr(nt,lich,.5),mr(nt,cr,-.6)))
     rough=mx(nt,wz,mx(nt,cl,ad(nt,.80,mr(nt,K.noise_t(nt,ob,14,3),.14)),mx(nt,sparkle,(.42,.42,.42),(.18,.18,.18))),(.62,.62,.62))
@@ -307,7 +317,7 @@ def mat_rock_real(name,post,seam=True,tone=None):
         col=mx(nt,sc,col,K.ramp(nt,K.noise_t(nt,ob,45,4),[(0,(.25,.255,.25)),(1,(.36,.365,.355))]))
         hgt=ad(nt,hgt,mr(nt,sc,mr(nt,mrng(nt,K.voronoi_t(nt,ob,28),.14,.03),-1.2)))
     else:
-        nt.links.new(K.ramp(nt,vein,[(0,(0,0,0)),(1,(.10,.70,.58))]),bs.inputs['Emission Color']);bs.inputs['Emission Strength'].default_value=.9
+        nt.links.new(K.ramp(nt,vein,[(0,(0,0,0)),(1,(.14,.80,.62))]),bs.inputs['Emission Color']);bs.inputs['Emission Strength'].default_value=1.1
     rough=mx(nt,mshade,rough,(.95,.95,.95));hgt=ad(nt,hgt,mr(nt,mshade,mr(nt,K.noise_t(nt,ob,420,3),.8)))
     K.finish(nt,bs,col,rough,hgt,.32,.003);return m
 
@@ -330,14 +340,14 @@ def mat_crystal_real(name,glow):
     bs.inputs['IOR'].default_value=1.6
     frac=K.mrange(nt,b,.4,.6);cloud=K.noise_t(nt,ob,7,4)
     t=K.add(nt,v,K.mul(nt,K.math_(nt,'SUBTRACT',r,.5),.15))
-    stops=[(0,(.12,.26,.25)),(.35,(.30,.58,.55)),(1,(.62,.88,.84))] if glow else [(0,(.05,.10,.095)),(.5,(.11,.19,.18)),(1,(.20,.30,.29))]
+    stops=[(0,(.20,.36,.30)),(.35,(.44,.70,.58)),(1,(.74,.92,.82))] if glow else [(0,(.09,.14,.13)),(.5,(.17,.25,.23)),(1,(.28,.36,.34))]
     col=K.mix(nt,frac,K.ramp(nt,t,stops),(.62,.78,.75) if glow else (.26,.34,.33))
     trans=K.mix(nt,frac,K.mrange(nt,t,.0,.55,.35,.92) if glow else K.mrange(nt,K.add(nt,t,K.mul(nt,cloud,.3)),0,1.2,.55,.78),(.25,.25,.25) if not glow else (.40,.40,.40))
     K._set(nt,bs.inputs['Transmission Weight'],trans)
     stri=K.wave_t(nt,K.comb(nt,0,0,K.mul(nt,v,1.0)),38,'Z',3,2)
     rough=K.mix(nt,frac,K.add(nt,K.mrange(nt,t,0,.6,.18,.02) if glow else K.mrange(nt,t,0,1,.16,.10),K.mul(nt,K.mrange(nt,stri,.7,1),.06)),(.15,.15,.15) if glow else (.06,.06,.06))
     if glow:
-        nt.links.new(K.ramp(nt,K.mul(nt,K.mul(nt,t,K.mrange(nt,cloud,.35,.7,.4,1)),K.math_(nt,'SUBTRACT',1,frac)),[(0,(0,0,0)),(.4,(.01,.10,.08)),(1,(.18,.80,.64))]),bs.inputs['Emission Color'])
+        nt.links.new(K.ramp(nt,K.mul(nt,K.mul(nt,t,K.mrange(nt,cloud,.35,.7,.4,1)),K.math_(nt,'SUBTRACT',1,frac)),[(0,(0,0,0)),(.4,(.03,.12,.08)),(1,(.30,.85,.62))]),bs.inputs['Emission Color'])
         bs.inputs['Emission Strength'].default_value=.45
     ripple=K.wave_t(nt,K.add(nt,ob,K.mul(nt,cloud,.02)),55,'Z',6,3)                           # conchoidal ripples on breaks
     K.finish(nt,bs,col,rough,K.add(nt,K.add(nt,K.mul(nt,stri,.3),K.mul(nt,K.noise_t(nt,ob,60,2),.7)),K.mul(nt,frac,K.mul(nt,ripple,2.0))),.02,.002);return m
@@ -394,15 +404,15 @@ def build(post):
     # --- primary blocks
     A1=hull_block((-.34,.14,.20),(.60,.52,.78),11,32,.75,(0,math.radians(-7),math.radians(8)),-1,.02,.34,(-.10,.06),.78)
     A2=hull_block((-.52,.30,.86),(.40,.34,.17),12,60,.5,(math.radians(9),math.radians(-21),math.radians(-10)),-1,.012,.1,(0,0),.85)
-    B=hull_block((.38,-.26,.06),(.62,.46,.46),13,30,.75,(math.radians(-10),math.radians(-17),math.radians(-4)),1,.02,.22,(.05,-.05),.78)
+    B=hull_block((.38,-.26,.06),(.62,.48,.64),13,30,.75,(math.radians(-10),math.radians(-17),math.radians(-4)),1,.02,.22,(.05,-.05),.78)
     C=hull_block((.82,.46,-.04),(.24,.19,.22),14,40,.6,(.3,.5,.2),0,0,.2,(0,0),.75)
     # primary design facets: A's top rises toward the cleft, a broad flat outer face; B's top dips away
     K.plane_cut(A1,(-.34,.14,.86),(Vector((0,0,1))-NC*.42+TC*.12).normalized())
     K.plane_cut(A1,Vector((-.34,.14,.2))-NC*.50,(-NC+TC*.25+Vector((0,0,.18))).normalized())
-    K.plane_cut(B,(.38,-.26,.40),(Vector((0,0,1))+NC*.38-TC*.14).normalized())
+    K.plane_cut(B,(.38,-.26,.56),(Vector((0,0,1))+NC*.38-TC*.14).normalized())
     K.plane_cut(B,Vector((.38,-.26,.2))+NC*.52-TC*.2,(NC-TC*.35+Vector((0,0,.25))).normalized())
-    K.plane_cut(B,Vector((.38,-.26,.30))-TC*.52,(-TC+NC*.3+Vector((0,0,.55))).normalized())        # front chamfer
-    K.plane_cut(B,Vector((.38,-.26,.30))+TC*.50,(TC+NC*.5+Vector((0,0,.35))).normalized())
+    K.plane_cut(B,Vector((.38,-.26,.42))-TC*.52,(-TC+NC*.3+Vector((0,0,.55))).normalized())        # front chamfer
+    K.plane_cut(B,Vector((.38,-.26,.42))+TC*.50,(TC+NC*.5+Vector((0,0,.35))).normalized())
     K.plane_cut(A1,Vector((-.34,.14,.60))-TC*.48,(-TC-NC*.4+Vector((0,0,.45))).normalized())
     K.plane_cut(A1,Vector((-.34,.14,.55))+TC*.50,(TC-NC*.6+Vector((0,0,.3))).normalized())
     K.plane_cut(A1,Vector((-.34,.14,.80))-NC*.36,(-NC*.8+Vector((0,0,1))).normalized())          # weathered-back outer top edge (no boolean: deterministic)
@@ -430,7 +440,7 @@ def build(post):
         cuts.append(chip_at(objs['A1'],p,100+i,(rng.uniform(.09,.14),rng.uniform(.08,.12),rng.uniform(.08,.12))))
     boolean(objs['A1'],cuts)
     cuts=[]
-    for i,p in enumerate(top_points(objs['B'],3,.25,1)):
+    for i,p in enumerate(top_points(objs['B'],3,.38,1)):
         cuts.append(chip_at(objs['B'],p,160+i,(rng.uniform(.08,.12),rng.uniform(.07,.1),rng.uniform(.06,.09))))
     if post:  # pick-mark notches on both cleft lips
         for i,(t,z) in enumerate([(-.12,.36),(.10,.42),(.0,.30)]):
@@ -473,11 +483,12 @@ def build(post):
     # --- crystals in the cleft
     cr=K.new_bm();base0=Vector((0,0,.16))
     def cdir(along,up,out=0.0):return (TC*along+Vector((0,0,up))+NC*out).normalized()
-    main=[(base0+TC*-.02,cdir(-.30,1,.10),.10,1.02),
-          (base0+TC*.15+Vector((0,0,.03)),cdir(.42,1,-.12),.072,.62),
-          (base0+TC*-.18+Vector((0,0,.02)),cdir(-.95,1,.22),.064,.55),
-          (base0+TC*.04+Vector((0,0,.05)),cdir(.10,1,.55),.052,.40),
-          (base0+TC*-.08+Vector((0,0,.04)),cdir(-.25,1,-.5),.045,.33)]
+    main=[(base0+TC*-.06,cdir(-.16,1,.04),.115,1.32),
+          (base0+TC*.12+Vector((0,0,.03)),cdir(.30,1,-.10),.078,.80),
+          (base0+TC*-.20+Vector((0,0,.02)),cdir(-.70,1,.20),.070,.70),
+          (base0+TC*-.30+Vector((0,0,.0)),cdir(-1.1,1,-.15),.056,.50),
+          (base0+TC*.02+Vector((0,0,.05)),cdir(.05,1,.50),.055,.46),
+          (base0+TC*-.12+Vector((0,0,.04)),cdir(-.40,1,-.45),.048,.38)]
     small=[]
     for k in range(14):  # small crystals on the cleft lips, grouped in clumps of 3-5
         clump=k//4;t=[-.30,-.05,.22,.38][clump]+rng.uniform(-.05,.05);sidev=1 if clump%2 else -1
@@ -548,6 +559,7 @@ def build(post):
         p.z=skirt_height(p.x,p.y)+.008;d=Vector((math.cos(a+1.4),math.sin(a+1.4),.18))
         crystal_into(sh,p,d,rng.uniform(.012,.022)*(1.4 if post else 1),rng.uniform(.06,.11),rng,rng.random(),True)
     K.link('Ore_Crystal_Shards',sh,[M['dull' if post else 'crystal']],False)
+    ctx.root.rotation_euler=(0,0,math.pi/2-math.atan2(TC.y,TC.x))                               # cleft opens to the front (-Y)
     ctx.extra['boolean_rejections']=[list(x) for x in LOG];LOG.clear()
     ctx.extra.update({'cleft_normal':list(NC),'cleft_direction':list(TC),'crystal_base_m':list(base0),'main_crystals':len(main),'small_crystals':len(small),
                       'talus_pieces':len(fan),'state_change':'post: crystals snapped to fracture stumps, veins unlit, pick notches on cleft lips, more spent shards' if post else 'pre'})

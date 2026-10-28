@@ -1,0 +1,50 @@
+{
+  "key": "QX_CreekSteppingPlank",
+  "source_glb": "art/exports/qingxi-gathering-visual-kit-v1/QX_CreekSteppingPlank/v002/QX_CreekSteppingPlank.glb",
+  "glb_sha256": "29a3faad9f50a5191f01100ffae32a7e5d64a32c7961accf6975cff30f8ddf67",
+  "checks": {
+    "glb_imports": true,
+    "one_mesh_one_material": true,
+    "four_textures_embedded": true,
+    "dimensions_match_model_info_1mm": true,
+    "triangles_match_model_info": true,
+    "origin_bottom_centre": true,
+    "ten_views_1024": true
+  },
+  "all_passed": true,
+  "measured": {
+    "dimensions_m": [
+      0.896,
+      1.0803,
+      0.6295
+    ],
+    "bounds_min_m": [
+      -0.448,
+      -0.5401,
+      0.0
+    ],
+    "triangles": 32386,
+    "materials": 1,
+    "textures": [
+      "QX_CreekSteppingPlank_BaseColor",
+      "QX_CreekSteppingPlank_Emission",
+      "QX_CreekSteppingPlank_Normal",
+      "QX_CreekSteppingPlank_Roughness"
+    ]
+  },
+  "model_info": {
+    "dimensions_m": [
+      0.896,
+      1.0803,
+      0.6295
+    ],
+    "game_triangles": 32386
+  },
+  "not_checked": [
+    "Unreal / Godot import",
+    "collision",
+    "LOD",
+    "navigation",
+    "in-engine lighting"
+  ]
+}

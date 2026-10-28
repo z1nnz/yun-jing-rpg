@@ -1,14 +1,14 @@
-"""QX_SpiritHerb_Chilu rebuild (red-berry spirit herb, ginseng-like). Semi-real.
-Layout: a dense grassy patch; three fruiting plants of graded size and three young one- or two-leaf plants grow
-through it, so the crimson umbels sit among the grass blades rather than on bare soil.
-Each plant: one S-curved stem with a swollen node at the whorl, purple-red toward the top | four palmate leaves
-of graded size (main, two secondary, one young) on petioles of different length and droop, five serrated
-leaflets each, overlapping in depth | a peduncle leaning out of the whorl carrying a dense umbel of berries:
-varied size, a tight core with looser outliers, a few under-ripe orange / green ones.
-Ground: the shared soil / pebble / moss skirt, covered by jittered tufts of green meadow grass (a few dry blades).
-Post: every umbel stripped (bare and broken pedicels, one missed green berry), one leaf snapped and wilting,
-grass trampled flat round the main plant, crushed berries on the soil.
-Origin: stem base at (0,0,0) = ground level; front -Y.
+"""QX_SpiritHerb_Chilu v002 (red-berry spirit herb, ginseng-like). Semi-real.
+v002 follows the reviewed AI three-view R02 / R02b (art/references/.../ai_threeview_v002): a low, wide patch
+(about 1.0 x 0.3 m in front view) instead of v001's dense meadow that hid the plants.
+Layout: one main plant in the centre and a smaller fruiting plant on each side, plus one young plant; the soil,
+moss cushions and pebbles stay visible between sparse grass tufts.
+Each plant: short thick stem, a low whorl of palmate leaves spread almost flat (five broad serrated leaflets
+each) | a straight peduncle rising from the whorl to a dense globe of glossy crimson berries just above the
+leaves (main ~0.27 m high), a few under-ripe orange ones.
+Post (R02b): the main plant is dug out - a pit of loosened dark soil with clods thrown round it and a torn root;
+the side plants keep their leaves but their umbels are stripped to broken pedicels; torn leaflets on the soil.
+Origin: centre of the bed at (0,0,0) = ground level; front -Y.
 """
 import bpy,bmesh,math,random
 from mathutils import Vector,Matrix,noise
@@ -16,10 +16,6 @@ import qx_kit as K
 import qx_ore as O
 
 TAU=math.tau
-BED=(.50,.45)
-
-def bed_h(x,y):return O.skirt_height(x,y,BED,.035)
-
 def curve(pts,n=24):
     """Catmull-Rom through pts."""
     P=[Vector(p) for p in pts];P=[P[0]*2-P[1]]+P+[P[-1]*2-P[-2]];out=[]
@@ -117,124 +113,123 @@ def mat_litter(name):
 
 # ---------------------------------------------------------------- build
 # (base x, base y, scale, rotation, leaves, umbel tries; 0 tries = young plant without fruit)
-PLANTS=[(0,0,1.0,0.0,4,34),(.19,-.12,.74,.9,3,24),(-.17,.09,.64,2.3,3,18),(-.06,-.23,.50,4.0,2,0),(.10,.21,.44,1.4,1,0),(-.30,-.10,.40,5.2,1,0)]
+PLANTS=[(0,0,1.0,0.25,5,64),(-.34,.03,.62,2.1,4,40),(.35,-.02,.58,4.4,4,36),(.15,.25,.36,1.2,2,0)]
+BED=(.54,.40)
+PIT=(.0,.0,.095)                                                                              # dug pit (x, y, radius) after harvest
 
-def plant_into(st,lv,br,cfg,post,rng,main):
-    """One plant built at the origin, then scaled / turned / moved onto its base. Returns placed umbel count."""
+def bed_h(x,y):return O.skirt_height(x,y,BED,.03)
+
+def pit_h(x,y):
+    """Ground height after the main plant is dug out: a bowl 2.4 cm deep with a thrown-up rim."""
+    r=math.hypot(x-PIT[0],y-PIT[1])/PIT[2];w=1+.12*noise.noise(Vector((x*14,y*14,7)))
+    return bed_h(x,y)-.024*(1-O.sm01(.0,1.0,r*w))+.007*math.exp(-((r*w-1.15)/.28)**2)
+
+def plant_into(st,lv,br,cfg,post,rng):
+    """One plant built at the origin, then scaled / turned / moved onto its base. Returns placed berry count."""
     bx,by,s,rot,nl,tries=cfg;marks=[len(st.verts),len(lv.verts),len(br.verts)]
-    node_=Vector((.012,-.006,.16 if tries else .11))
-    path=curve([(0,0,-.01),(.006,.004,node_.z*.35),(-.004,.002,node_.z*.68),node_],8)
-    rad=[.0062-.0016*i/(len(path)-1) for i in range(len(path))];rad[-1]=.0065;rad[-2]=.0055
-    K.tube_into(st,path,rad,10)
-    leaves=[(0.35,1.00,.105,.010),(1.95,.82,.085,.020),(3.55,.78,.090,.0),(5.0,.58,.060,.028)][:nl]
-    for k,(az,sc,pl,dz) in enumerate(leaves):
-        az+=rng.uniform(-.12,.12);h=Vector((math.cos(az),math.sin(az),0))
-        if post and main and k==1:                                                               # snapped petiole, wilting leaf hanging
-            kink=node_+h*.035+Vector((0,0,.012));end=kink+h*.02+Vector((0,0,-.085))
-            K.tube_into(st,[node_,kink,end],[.0032,.003,.0026],7)
-            for f in range(5):
-                a=(f-2)*.42;dd=Vector((h.x*math.cos(a)-h.y*math.sin(a),h.x*math.sin(a)+h.y*math.cos(a),-1.7))
-                Ls=[.06,.08,.10,.08,.06][f]*sc;leaflet(lv,end,dd,Ls,Ls*.36,.012,.004*(f-2),.4*(f-2),(rng.random(),1,0),rng)
-            continue
-        tip=node_+h*pl+Vector((0,0,.022+dz))
-        K.tube_into(st,curve([node_,node_+h*pl*.5+Vector((0,0,.020+dz*.8)),tip],6),[.0034,.0031,.003,.0028,.0027,.0026,.0026,.0025,.0025,.0024,.0024,.0024,.0024],7)
+    node_=Vector((.004,-.002,.045))
+    K.tube_into(st,curve([(0,0,-.012),(.003,.001,.02),node_],6),[.0085,.008,.0075,.0072,.007,.007,.0072,.0078,.0082,.0085,.0085,.0085,.0085],10)
+    for k in range(nl):
+        az=k*TAU/nl+rng.uniform(-.15,.15);h=Vector((math.cos(az),math.sin(az),0));pl=rng.uniform(.085,.105)*(1 if k else .9)
+        tip=node_+h*pl*.8+Vector((0,0,.062))
+        K.tube_into(st,curve([node_,node_+h*pl*.25+Vector((0,0,.040)),tip],6),[.0036-.00008*i for i in range(13)],7)
         for f in range(5):
-            a=(f-2)*.60+rng.uniform(-.06,.06);dd=Vector((h.x*math.cos(a)-h.y*math.sin(a),h.x*math.sin(a)+h.y*math.cos(a),.18+.06*(2-abs(f-2))))
-            Ls=[.065,.095,.125,.095,.065][f]*sc*rng.uniform(.92,1.06)
-            leaflet(lv,tip,dd,Ls,Ls*.37,.032*sc,.006*(f-2)*rng.uniform(.6,1.2),.18*(f-2),(rng.random(),.12 if post else 0,0),rng)
+            a=(f-2)*.56+rng.uniform(-.06,.06);dd=Vector((h.x*math.cos(a)-h.y*math.sin(a),h.x*math.sin(a)+h.y*math.cos(a),.30+.10*(2-abs(f-2))))
+            Ls=[.092,.132,.170,.132,.092][f]*rng.uniform(.92,1.06)
+            leaflet(lv,tip,dd,Ls,Ls*.37,.062,.006*(f-2)*rng.uniform(.6,1.2),.16*(f-2),(rng.random(),.08 if post else 0,0),rng)
     placed=[]
     if tries:
-        pk=node_+Vector((-.012,.010,.09))
-        K.tube_into(st,curve([node_,node_+Vector((.0,.006,.045)),pk],6),[.0038,.0036,.0034,.0032,.003,.003,.0029,.0028,.0028,.0028,.0028,.0028,.0028],7)
+        pk=node_+Vector((.004,-.003,.170))
+        K.tube_into(st,curve([node_,node_+Vector((-.004,.003,.085)),pk],6),[.0046-.00012*i for i in range(13)],8)
         rng2=random.Random(77+int(bx*1000))
         for bi in range(tries):
-            phi=math.acos(1-1.3*(bi+.5)/tries)*(1 if bi<tries*.7 else 1.10);th=bi*K.GOLDEN+rng2.uniform(-.2,.2)
+            phi=math.acos(1-1.45*(bi+.5)/tries);th=bi*K.GOLDEN+rng2.uniform(-.25,.25)
             d=Vector((math.sin(phi)*math.cos(th),math.sin(phi)*math.sin(th),math.cos(phi)+.15)).normalized()
-            outlier=bi>=tries*.76;L=(.017 if not outlier else .026)*rng2.uniform(.88,1.12);r=rng2.uniform(.0058,.0078)*(.85 if outlier else 1)/max(s,.7)**.5
-            ripe=0.0 if rng2.random()>.18 else rng2.choice((.5,.5,1.0))
-            tipp=pk+d*L
-            if any((tipp-q).length<r*1.45 for q in placed):continue
-            placed.append(tipp)
-            if post:
-                if main and bi==7:                                                                  # one missed green berry
-                    K.tube_into(st,[pk,tipp],[.0011,.0009],5);berry_into(br,tipp+d*.005,d,.0058,(rng2.random(),1.0,0))
-                else:
-                    e=pk+d*L*rng2.uniform(.45,1.0);rg=K.tube_into(st,[pk,e],[.0011,.0009],5)
-                    for v in rg[-1]:K.tag_uv(v,.5,.5,(0,0,1))
+            L=(.012 if bi<tries*.3 else .018)*rng2.uniform(.9,1.1);r=rng2.uniform(.0086,.0102)
+            ripe=0.0 if rng2.random()>.07 else .5
+            tipp=pk+d*L;bc=tipp+d*r*.85
+            if any((bc-q).length<r*1.78 for q in placed):continue                                  # berry centres, not pedicel tips
+            placed.append(bc)
+            if post:                                                                                # stripped: broken pedicels
+                e=pk+d*L*rng2.uniform(.45,1.0);rg=K.tube_into(st,[pk,e],[.0012,.001],5)
+                for v in rg[-1]:K.tag_uv(v,.5,.5,(0,0,1))
                 continue
-            K.tube_into(st,[pk,pk+d*L*.5+Vector((0,0,.002)),tipp],[.0011,.001,.0009],5,False)
+            K.tube_into(st,[pk,pk+d*L*.5+Vector((0,0,.002)),tipp],[.0012,.0011,.001],5,False)
             berry_into(br,tipp+d*r*.85,d,r,(rng2.random(),ripe,0))
     T=Matrix.Translation((bx,by,bed_h(bx,by)))@Matrix.Rotation(rot,4,'Z')@Matrix.Scale(s,4)
     for bm,m0 in zip((st,lv,br),marks):
         bm.verts.ensure_lookup_table();bmesh.ops.transform(bm,matrix=T,verts=bm.verts[m0:])
     return len(placed)
 
-def meadow_into(gr,rng,post):
-    """Jittered tufts of meadow grass over the whole bed, kept off the plant stems; after harvest the tufts
-    round the main plant are trampled flat, leaning away from it."""
-    step=.052;n=0
-    for ix in range(-12,13):
-        for iy in range(-12,13):
-            x=ix*step+rng.uniform(-.02,.02);y=iy*step+rng.uniform(-.02,.02)
-            ell=(x/BED[0])**2+(y/BED[1])**2;edge=O.sm01(.40,.95,ell)
-            if ell>.95 or rng.random()<edge*.55:continue                                        # thinner toward the rim
-            if any(math.hypot(x-px,y-py)<.03+.03*ps for px,py,ps,*_ in PLANTS):continue
-            rr=math.hypot(x,y);trample=post and rr<.22;away=math.atan2(y,x)
-            hb=(.10+.20*(noise.noise(Vector((x*4,y*4,3)))*.5+.5))*(1-.72*edge)                     # and shorter, so the patch feathers out
-            c=Vector((x,y,bed_h(x,y)-.004))
-            for b in range(rng.randint(5,9)):
-                az=away+rng.uniform(-.6,.6) if trample or rng.random()<edge*.8 else rng.uniform(0,TAU)
-                H=hb*rng.uniform(.6,1.1)*(.85 if trample else 1)
-                t0,t1=(rng.uniform(.9,1.2),rng.uniform(1.45,1.62)) if trample else (rng.uniform(.04,.30)+.25*edge,rng.uniform(.45,1.35)+.35*edge)
-                pts,h=K.arch(c+Vector((rng.uniform(-.008,.008),rng.uniform(-.008,.008),0)),az,H,t0,t1,6,1.6)
-                dry=rng.choices((0,.35,1.0),(85,10,5))[0]
-                K.ribbon_into(gr,pts,[rng.uniform(.0028,.0042)*(1-j/6)**.65+.0003 for j in range(7)],Vector((-h.y,h.x,0)),.3,rng.uniform(-.6,.6),3,(rng.random(),dry,0))
-            n+=1
-    return n
-
 def build(post):
-    rng=random.Random(3201);ctx=K.ctx
-    M={'leaf':mat_leaf_real('QX_Src_Chilu_Leaf'),'berry':mat_berry_real('QX_Src_Chilu_Berry'),'crushed':mat_berry_real('QX_Src_Chilu_Berry_Crushed',True),
+    rng=random.Random(3202);ctx=K.ctx;hf=pit_h if post else bed_h
+    M={'leaf':mat_leaf_real('QX_Src_Chilu_Leaf'),'berry':mat_berry_real('QX_Src_Chilu_Berry'),
        'stem':mat_stem_real('QX_Src_Chilu_Stem'),'litter':mat_litter('QX_Src_Chilu_Leaf_Litter'),'skirt':O.mat_skirt('QX_Src_Chilu_Soil_Bed'),
-       'moss':O.mat_moss_real('QX_Src_Chilu_Moss'),'rock':O.mat_rock_real('QX_Src_Chilu_Pebble',False,False),'grass':mat_grass_real('QX_Src_Chilu_Meadow_Grass')}
-    # --- soil bed in the shared ground language (mostly hidden by the grass)
-    sk=K.new_bm();O.skirt_into(sk,BED,.035,14,72,23);K.link('Chilu_Soil_Bed',sk,[M['skirt']])
+       'moss':O.mat_moss_real('QX_Src_Chilu_Moss'),'rock':O.mat_rock_real('QX_Src_Chilu_Pebble',False,False),'grass':mat_grass_real('QX_Src_Chilu_Grass')}
+    # --- soil bed in the shared ground language; after harvest the centre is dug into a pit
+    sk=K.new_bm();O.skirt_into(sk,BED,.03,28,72,23)
+    if post:
+        for v in sk.verts:
+            if math.hypot(v.co.x-PIT[0],v.co.y-PIT[1])<PIT[2]*1.7:v.co.z+=pit_h(v.co.x,v.co.y)-bed_h(v.co.x,v.co.y)
+    K.link('Chilu_Soil_Bed',sk,[M['skirt']])
     pb=bmesh.new();n=0
-    for k in range(200):
-        if n>=12:break
-        a=rng.uniform(0,TAU);s_=rng.uniform(.3,.92);x,y=BED[0]*s_*math.cos(a),BED[1]*s_*math.sin(a);sz=rng.uniform(.010,.028)*(1.8 if k<2 else 1)
+    for k in range(300):
+        if n>=16:break
+        a=rng.uniform(0,TAU);s_=rng.uniform(.3,.94);x,y=BED[0]*s_*math.cos(a),BED[1]*s_*math.sin(a);sz=rng.uniform(.010,.026)*(1.7 if k<3 else 1)
+        if any(math.hypot(x-px,y-py)<.10*ps+.03 for px,py,ps,*_ in PLANTS):continue
         b=O.hull_block((x,y,bed_h(x,y)+sz*.05),(sz*1.3,sz,sz*.6),800+k,24,.6,(0,0,rng.uniform(0,TAU)),rmin=.7);O.finish_block(b,sz*.12,max(bed_h(x,y)-.002,0));K.merge_into(pb,b);n+=1
     me=bpy.data.meshes.new('Chilu_Pebbles_Mesh');pb.to_mesh(me);pb.free();po=bpy.data.objects.new('Chilu_Pebbles',me);ctx.coll.objects.link(po);po.parent=ctx.root
     po.hide_render=True;po['qx_role']='game_low_poly';me.materials.append(M['rock']);ctx.objs.append(po)
     ph=O.remeshed(po,'Chilu_Pebbles_HP',ctx.coll,.003,1);ph.parent=ctx.root;hb,_=O.sculpt(ph,.15,.25,7,False,False);hb.free()
     ph.data.materials.append(M['rock']);ph['qx_role']='bake_source_high_poly';ctx.objs.append(ph)
-    mo=K.new_bm()
-    for k,(x,y,rx,ry) in enumerate([(-.30,.20,.09,.06),(.26,.22,.07,.05),(.30,-.25,.06,.04)]):
-        K.lumpy_into(mo,(x,y,bed_h(x,y)-.006),(rx,ry,.018),900+k,3,.25,2.5,k)
+    mo=K.new_bm();cush=[(-.20,-.20,.07,.05),(.14,-.24,.06,.04),(-.42,-.12,.06,.04),(.44,.12,.05,.04),(-.10,.27,.07,.04),(.27,.20,.05,.035)]
+    for k,(x,y,rx,ry) in enumerate(cush):K.lumpy_into(mo,(x,y,bed_h(x,y)-.006),(rx,ry,.016),900+k,3,.25,2.5,k)
     K.flat_base(mo,0.0);mc=K.link('Chilu_Moss_Cushions',mo,[M['moss']])
     ca=mc.data.color_attributes.new('Ms','FLOAT_COLOR','POINT')
     for i,v in enumerate(mc.data.vertices):ca.data[i].color=(K.c01(v.co.z/.015),noise.noise(v.co*9)*.5+.5,0,1)
-    lt=K.new_bm()                                                                                  # leaf litter between the tufts
-    for k in range(16):
-        a=rng.uniform(0,TAU);s_=rng.uniform(.25,.9);x,y=BED[0]*s_*math.cos(a),BED[1]*s_*math.sin(a);az=rng.uniform(0,TAU);L=rng.uniform(.03,.06)
-        p0=Vector((x,y,bed_h(x,y)+.002));d=Vector((math.cos(az),math.sin(az),0));pts=[p0+d*L*t/6+Vector((0,0,.004*math.sin(t/6*math.pi)+.003*(t/6)**2)) for t in range(7)]
+    lt=K.new_bm()                                                                                  # leaf litter
+    for k in range(14):
+        a=rng.uniform(0,TAU);s_=rng.uniform(.3,.9);x,y=BED[0]*s_*math.cos(a),BED[1]*s_*math.sin(a);az=rng.uniform(0,TAU);L=rng.uniform(.03,.055)
+        p0=Vector((x,y,hf(x,y)+.002));d=Vector((math.cos(az),math.sin(az),0));pts=[p0+d*L*t/6+Vector((0,0,.004*math.sin(t/6*math.pi)+.003*(t/6)**2)) for t in range(7)]
         K.ribbon_into(lt,pts,[L*.20*math.sin(math.pi*min(.99,t/6*1.05))**.8+.0005 for t in range(7)],Vector((-d.y,d.x,0)),.45,rng.uniform(-.5,.5),5,(rng.random(),0,0))
     K.link('Chilu_Leaf_Litter',lt,[M['litter']],False)
-    gr=K.new_bm();tufts=meadow_into(gr,rng,post);K.link('Chilu_Meadow_Grass',gr,[M['grass']],False)
-    # --- the plants growing through the grass
-    st=K.new_bm();lv=K.new_bm();br=K.new_bm();umbel=[]
-    for k,cfg in enumerate(PLANTS):umbel.append(plant_into(st,lv,br,cfg,post,rng,k==0))
+    gr=K.new_bm();tufts=0                                                                          # sparse grass tufts, clear of the plants
+    for k in range(80):
+        if tufts>=17:break
+        a=rng.uniform(0,TAU);s_=rng.uniform(.25,.92);x,y=BED[0]*s_*math.cos(a),BED[1]*s_*math.sin(a)
+        if any(math.hypot(x-px,y-py)<.17*ps+.03 for px,py,ps,*_ in PLANTS):continue
+        O.tuft_into(gr,rng,Vector((x,y,hf(x,y)-.004)),.04,.12+.03*(s_>.6));tufts+=1
+    K.link('Chilu_Grass',gr,[M['grass']],False)
+    # --- the plants (the main one is gone after harvest)
+    st=K.new_bm();lv=K.new_bm();br=K.new_bm();berries=[]
+    for k,cfg in enumerate(PLANTS):
+        if post and k==0:continue
+        berries.append(plant_into(st,lv,br,cfg,post,rng))
+    if post:                                                                                        # torn leaflets dropped on the soil
+        for x,y,a,L in [(.10,-.15,.4,.10),(-.13,-.11,2.2,.085),(.18,.09,4.0,.09),(-.06,.15,5.4,.07)]:
+            d=Vector((math.cos(a),math.sin(a),0));b0=Vector((x,y,hf(x,y)+.003))-d*L*.5
+            n0=len(lv.verts);leaflet(lv,b0,d,L,L*.38,.0,.004,.1,(rng.random(),.35,0),rng)
+            for v in list(lv.verts)[n0:]:v.co.z=max(v.co.z,hf(v.co.x,v.co.y)+.0015)
     keep_st={v:ctx.vdata.pop(v) for v in st.verts if v in ctx.vdata};keep_br={v:ctx.vdata.pop(v) for v in br.verts if v in ctx.vdata}
     K.link('Chilu_Leaves',lv,[M['leaf']],True)
     ctx.vdata.update(keep_st)
+    if post:                                                                                        # torn tap root left at the pit edge
+        rt=[Vector((.07,.03,pit_h(.07,.03)+.004)),Vector((.045,.02,pit_h(.045,.02)+.008)),Vector((.02,.012,pit_h(.02,.012)+.003))]
+        rg=K.tube_into(st,curve(rt,5),[.004,.0045,.0048,.0046,.0042,.004,.0036,.0032,.003,.0028,.0026],8)
+        for v in rg[0]:K.tag_uv(v,.5,.5,(0,0,1))
     K.link('Chilu_Stem_Petioles',st,[M['stem']])
     ctx.vdata.update(keep_br)
-    if len(br.verts):K.link('Chilu_Berries' if not post else 'Chilu_Missed_Berry',br,[M['berry']])
+    if len(br.verts):K.link('Chilu_Berries',br,[M['berry']])
     else:br.free()
-    if post:
-        fb=K.new_bm()
-        for x,y in [(.10,-.12),(-.13,-.06),(.24,-.03)]:
-            n0=len(fb.verts);berry_into(fb,Vector((x,y,bed_h(x,y)+.004)),Vector((0,0,1)),.0075,(0,0,0))
-            for v in list(fb.verts)[n0:]:v.co.z=max(bed_h(x,y)+.001,bed_h(x,y)+(v.co.z-bed_h(x,y))*.45)   # crushed
-        K.link('Chilu_Crushed_Berries',fb,[M['crushed']])
-    ctx.extra.update({'umbel_positions':str(umbel),'grass_tufts':tufts,'state_change':'post: all umbels stripped, bare and broken pedicels, one missed green berry, leaf snapped and wilting, grass trampled round the main plant, crushed berries' if post else 'pre'})
+    if post:                                                                                        # loosened soil clods thrown round the pit
+        cl=bmesh.new()
+        for k in range(26):
+            a=rng.uniform(0,TAU);r=PIT[2]*rng.uniform(.95,1.6);x,y=PIT[0]+r*math.cos(a),PIT[1]+r*math.sin(a);sz=rng.uniform(.007,.018)
+            b=O.hull_block((x,y,pit_h(x,y)+sz*.25),(sz*1.2,sz,sz*.7),1300+k,18,.5,(0,0,rng.uniform(0,TAU)),rmin=.6);K.merge_into(cl,b)
+        me=bpy.data.meshes.new('Chilu_Soil_Clods_Mesh');cl.to_mesh(me);cl.free();co=bpy.data.objects.new('Chilu_Soil_Clods',me);ctx.coll.objects.link(co);co.parent=ctx.root
+        me.materials.append(M['skirt']);ctx.objs.append(co)
+        va=me.color_attributes.new('Var','FLOAT_COLOR','CORNER')
+        for i in range(len(va.data)):va.data[i].color=(.3,0,0,1)                                    # damp dark soil zone of the skirt material
+    ctx.extra.update({'reference':'ai_threeview_v002/R02b_QX_SpiritHerb_Chilu_post.png' if post else 'ai_threeview_v002/R02_QX_SpiritHerb_Chilu.png',
+                      'berries_per_plant':str(berries),'grass_tufts':tufts,
+                      'state_change':'post: main plant dug out (pit, thrown clods, torn root), side umbels stripped to broken pedicels, torn leaflets on the soil' if post else 'pre'})

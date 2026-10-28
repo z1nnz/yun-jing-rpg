@@ -62,11 +62,20 @@ def flower_into(bm,col_bm,c,f,u,sc,rng,bud=False):
     K.tube_into(col_bm,[c,c+f*.006*sc,c+f*.010*sc],[.0024*sc,.0022*sc,.0017*sc],6)                 # glowing column
     for v in col_bm.verts[-12:]:K.tag_uv(v,.5,.5,(0,0,.6))
 
-def bract_into(bm,bc,a,z0,z1,r0,r1,W,rng):
-    """Cupped pointed bract hugging a pseudobulb from height z0 (radius r0) up to z1 (radius r1)."""
-    h=Vector((math.cos(a),math.sin(a),0));side=Vector((-h.y,h.x,0));n=6
-    pts=[Vector(bc)+h*(r0+(r1-r0)*(j/n)**.8)+Vector((0,0,z0+(z1-z0)*j/n)) for j in range(n+1)]
-    K.ribbon_into(bm,pts,[W*(1-(j/n)**1.6)+.0006 for j in range(n+1)],side,-.9,rng.uniform(-.15,.15),5,(rng.random(),0,0),lambda q:q*q)
+BULB=[(0,0),(.022,.006),(.030,.024),(.026,.046),(.015,.064),(.005,.076),(0,.079)]
+
+def bulb_r(z):
+    for (r0,z0),(r1,z1) in zip(BULB,BULB[1:]):
+        if z<=z1:return r0+(r1-r0)*(z-z0)/max(z1-z0,1e-6)
+    return 0.0
+
+def bract_into(bm,bc,a,z0,z1,W,rng,lift=.0028):
+    """Pointed bract hugging the pseudobulb surface (bulb_r) from z0 to z1 above the bulb base bc, tip flared out."""
+    h=Vector((math.cos(a),math.sin(a),0));side=Vector((-h.y,h.x,0));n=7
+    pts=[]
+    for j in range(n+1):
+        t=j/n;z=z0+(z1-z0)*t;pts.append(Vector(bc)+h*(bulb_r(z)+lift+.008*t**2.5)+Vector((0,0,z)))
+    K.ribbon_into(bm,pts,[W*(1-t**1.7)*(.75+.25*math.sin(min(1,t*3)*math.pi/2))+.0005 for t in [j/n for j in range(n+1)]],side,-.30,rng.uniform(-.1,.1),5,(rng.random(),rng.uniform(.55,1.0),0),lambda q:q*q)
 
 def sheath_into(bm,base,az,L,W,rng):
     h=Vector((math.cos(az),math.sin(az),0));side=Vector((-h.y,h.x,0))
@@ -81,7 +90,7 @@ def mat_orchid_leaf(name):
     mr,mx,ad,mrng,m_=K.mul,K.mix,K.add,K.mrange,K.math_
     ax=m_(nt,'ABSOLUTE',m_(nt,'SUBTRACT',u,.5))
     veins=K.wave_t(nt,K.comb(nt,u,0),11,'X',.2,1)
-    col=K.ramp(nt,ad(nt,mr(nt,K.noise_t(nt,ob,6,4),.6),mr(nt,r,.4)),[(0,(.012,.040,.016)),(.5,(.020,.060,.024)),(1,(.034,.085,.032))])
+    col=K.ramp(nt,ad(nt,mr(nt,K.noise_t(nt,ob,6,4),.6),mr(nt,r,.4)),[(0,(.022,.064,.022)),(.5,(.036,.095,.030)),(1,(.058,.140,.042))])
     col=mx(nt,mr(nt,mrng(nt,v,.10,.0),.85),col,(.09,.12,.035))                                     # sheath base
     col=mx(nt,mr(nt,mrng(nt,ax,.04,.0),.45),col,(.06,.12,.05))                                     # keel
     col=mx(nt,mr(nt,mrng(nt,ax,.44,.5),.6),col,(.10,.12,.03))                                      # margin
@@ -150,21 +159,25 @@ def build(post):
     rb=O.hull_block((-.17,.20,.045),(.15,.10,.09),4711,70,.42,(0,0,-.5),rmin=.82);O.finish_block(rb,.02,0.0)
     G.dressed('Qinglan_Stone',rb,M['rock'],M['moss'],17,.006,.28,.38,True)
     # --- pseudobulbs and papery sheaths
-    bu=K.new_bm();sh=K.new_bm();zb=hf(0,0)-.012
+    bu=K.new_bm();zb=hf(0,0)-.012;bcs=[]
     for k in range(3):                                                                              # three big sheathed pseudobulbs (R01)
-        a=k*TAU/3-1.2;bc=Vector((.040*math.cos(a),.040*math.sin(a),zb))
-        K.lathe_into(bu,[(0,0),(.020,.006),(.028,.022),(.027,.040),(.018,.058),(.006,.068),(0,.071)],12,tuple(bc),a,.06)
-        for row,(z0,z1,r0,r1,nb) in enumerate(((zb+.004,zb+.050,.029,.014,5),(zb+.026,zb+.072,.027,.006,4))):
-            for j in range(nb):bract_into(sh,Vector((bc.x,bc.y,0)),a+j*TAU/nb+row*.6,z0,z1,r0,r1,.021 if row==0 else .016,rng)
+        a=k*TAU/3-1.2;bc=Vector((.042*math.cos(a),.042*math.sin(a),zb));bcs.append((a,bc))
+        K.lathe_into(bu,BULB,12,tuple(bc),a,0.0)
     K.link('Qinglan_Pseudobulbs',bu,[M['bulb']])
+    br=K.new_bm()                                                                                   # overlapping pointed bracts, green with browned tips
+    for a,bc in bcs:
+        for row,(z0,z1,nb,W,lift) in enumerate(((.002,.050,7,.016,.0026),(.020,.068,6,.013,.0040),(.040,.084,5,.009,.0052))):
+            for j in range(nb):bract_into(br,bc,a+j*TAU/nb+row*.5,z0,z1,W,rng,lift)
+    K.link('Qinglan_Bracts',br,[M['leaf']])
+    sh=K.new_bm()
     for k in range(5):sheath_into(sh,Vector((.012*math.cos(k*GOLDEN_A),.012*math.sin(k*GOLDEN_A),hf(0,0)-.01)),k*GOLDEN_A,rng.uniform(.05,.08),rng.uniform(.012,.016),rng)
     K.link('Qinglan_Sheaths',sh,[M['sheath']])
     # --- leaves: outer long arching ones first, inner young ones shorter and more upright
     lv=K.new_bm();z0=hf(0,0)-.005
-    for i in range(24):
-        inner=i>=19;az=i*K.GOLDEN+rng.uniform(-.2,.2)
-        L=rng.uniform(.22,.32) if inner else rng.uniform(.40,.62);W=rng.uniform(.011,.014) if inner else rng.uniform(.016,.022)
-        t0=rng.uniform(.02,.15) if inner else rng.uniform(.08,.30);t1=rng.uniform(.5,.9) if inner else rng.uniform(1.15,1.95)
+    for i in range(26):
+        inner=i>=20;az=i*K.GOLDEN+rng.uniform(-.2,.2)
+        L=rng.uniform(.26,.36) if inner else rng.uniform(.40,.58);W=rng.uniform(.017,.021) if inner else rng.uniform(.023,.031)
+        t0=rng.uniform(.03,.14) if inner else rng.uniform(.14,.42);t1=rng.uniform(.55,1.0) if inner else rng.uniform(1.45,2.25)
         n=24;pts,h=leaf_path(Vector((.016*math.cos(az),.016*math.sin(az),z0)),az,L,t0,t1,rng.uniform(-.05,.05),n)
         ws=leaf_widths(W,n);side=Vector((-h.y,h.x,0));dry=0.15 if inner else rng.choice((.25,.35,.35,.45,.6,1.0));tw=rng.uniform(-.9,.9)
         K.ribbon_into(lv,pts,ws,side,.5,tw,5,(rng.random(),dry,0),lambda u:abs(u))

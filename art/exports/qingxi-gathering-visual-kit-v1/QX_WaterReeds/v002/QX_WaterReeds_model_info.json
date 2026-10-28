@@ -1,0 +1,89 @@
+{
+  "key": "QX_WaterReeds",
+  "asset": "QX_WaterReeds",
+  "state": "base",
+  "name_zh": "水邊蘆草",
+  "state_zh": "單一狀態",
+  "version": "v002",
+  "design": "v002 to R06. About 1.9 m water-edge clump: twelve Typha shoots of broad strap leaves, many arching outward and down, green mixed with dry straw; three cattails (one bursting into fluff); two Phragmites culms with broad leaves and big pale silvery plumes; broken dead stems and dead leaves at the base of a wet mud tuft with pebbles and grass.",
+  "material_direction": "Leaves green with pale bases yellowing to straw tips, many fully dry, dead ones grey-brown; dark cinnamon velvet cattails, white fluff; pale buff-silver plumes; dead stems grey-straw; near-black wet mud with puddles and a pale silt rim.",
+  "units": "1 Blender unit = 1 m",
+  "front_axis": "-Y (Blender); GLB exported +Y up, so the front faces +Z in glTF space",
+  "origin": "bottom centre at ground level",
+  "dimensions_m": [
+    1.5288,
+    1.5246,
+    1.8766
+  ],
+  "bounds_min_m": [
+    -0.7588,
+    -0.7967,
+    -0.0604
+  ],
+  "bounds_max_m": [
+    0.77,
+    0.7279,
+    1.8162
+  ],
+  "game_triangles": 59178,
+  "game_vertices": 45869,
+  "high_poly_bake_source_faces": 11080,
+  "texture_size_px": 1024,
+  "texture_maps": {
+    "BaseColor": {
+      "file": "textures/QX_WaterReeds_BaseColor.png",
+      "uv_coverage_before_dilation": 0.1515
+    },
+    "Roughness": {
+      "file": "textures/QX_WaterReeds_Roughness.png",
+      "uv_coverage_before_dilation": 0.1515
+    },
+    "Normal": {
+      "file": "textures/QX_WaterReeds_Normal.png",
+      "uv_coverage_before_dilation": 0.1515
+    },
+    "Emission": {
+      "file": "textures/QX_WaterReeds_Emission.png",
+      "uv_coverage_before_dilation": 0.1515
+    }
+  },
+  "bake": {
+    "engine": "Cycles CPU",
+    "samples": 8,
+    "groups": {
+      "A_low_poly_from_high_poly": {
+        "cage_extrusion_m": 0.06,
+        "max_ray_m": 0.12,
+        "sources": [
+          "Reed_Pebbles_HP"
+        ]
+      },
+      "B_self": {
+        "cage_extrusion_m": 0.003,
+        "max_ray_m": 0.008,
+        "sources": 8
+      }
+    }
+  },
+  "not_reproduced_in_game_material": [
+    "leaf / petal back-light translucency",
+    "berry / blossom subsurface",
+    "crystal transmission (crystals are opaque with baked colour and emission)",
+    "iron metallic (baked as dark iron-grey dielectric: base colour mixed toward 0.055 grey by the metallic amount)"
+  ],
+  "files": {
+    "QX_WaterReeds.glb": {
+      "bytes": 4329000,
+      "sha256": "d3b2bb83ec09eb725198e1f06c16e6df585e8bbf2fc3b129123ebfb9c7f0501b"
+    },
+    "QX_WaterReeds.fbx": {
+      "bytes": 2185068,
+      "sha256": "cc72e840dfb21ff2e383c7e0b8b63729c7a69ddf51b828128bc14e1f7e55fbd6"
+    },
+    "QX_WaterReeds.blend": {
+      "bytes": 3155775,
+      "sha256": "5995be463f83f9de3c75dca7222cf5814624e2de551d9a7ee48a4b2d0e5a5726"
+    }
+  },
+  "build_seconds": 9.0
+}

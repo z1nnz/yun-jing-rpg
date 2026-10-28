@@ -1,0 +1,50 @@
+{
+  "key": "QX_SpiritHerb_Chilu_pre",
+  "source_glb": "art/exports/qingxi-gathering-visual-kit-v1/QX_SpiritHerb_Chilu/v002/QX_SpiritHerb_Chilu_pre.glb",
+  "glb_sha256": "0cacd1812e6c62a74e714d46ba252b2a8b527c2229c1ea45ce367e76af71c7a9",
+  "checks": {
+    "glb_imports": true,
+    "one_mesh_one_material": true,
+    "four_textures_embedded": true,
+    "dimensions_match_model_info_1mm": true,
+    "triangles_match_model_info": true,
+    "origin_bottom_centre": true,
+    "ten_views_1024": true
+  },
+  "all_passed": true,
+  "measured": {
+    "dimensions_m": [
+      1.0662,
+      0.8387,
+      0.2836
+    ],
+    "bounds_min_m": [
+      -0.5264,
+      -0.4229,
+      -0.012
+    ],
+    "triangles": 55854,
+    "materials": 1,
+    "textures": [
+      "QX_SpiritHerb_Chilu_pre_BaseColor",
+      "QX_SpiritHerb_Chilu_pre_Emission",
+      "QX_SpiritHerb_Chilu_pre_Normal",
+      "QX_SpiritHerb_Chilu_pre_Roughness"
+    ]
+  },
+  "model_info": {
+    "dimensions_m": [
+      1.0662,
+      0.8387,
+      0.2836
+    ],
+    "game_triangles": 55854
+  },
+  "not_checked": [
+    "Unreal / Godot import",
+    "collision",
+    "LOD",
+    "navigation",
+    "in-engine lighting"
+  ]
+}

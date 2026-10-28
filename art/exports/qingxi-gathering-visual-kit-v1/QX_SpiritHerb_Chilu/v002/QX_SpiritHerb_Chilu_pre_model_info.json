@@ -1,0 +1,95 @@
+{
+  "key": "QX_SpiritHerb_Chilu_pre",
+  "asset": "QX_SpiritHerb_Chilu",
+  "state": "pre",
+  "name_zh": "赤露參（靈草二）",
+  "state_zh": "採前",
+  "version": "v002",
+  "design": "v002 to R02/R02b. Low wide patch: one main ginseng-like plant and two smaller fruiting plants plus a young one, each a short thick stem, a flat whorl of palmate leaves (five serrated leaflets) and a straight peduncle to a dense globe of glossy crimson berries; soil, moss cushions and pebbles visible between sparse grass. Post: the main plant dug out (pit, clods, torn root), side umbels stripped to broken pedicels, torn leaflets.",
+  "material_direction": "Dark green leaflets with pinnate veins, yellowing margins and back-light; stem green flushing purple-red at the whorl; berries deep crimson, waxy (rough 0.30) with a dark stylar point, faint inner glow = the kit hot accent.",
+  "units": "1 Blender unit = 1 m",
+  "front_axis": "-Y (Blender); GLB exported +Y up, so the front faces +Z in glTF space",
+  "origin": "bottom centre at ground level",
+  "dimensions_m": [
+    1.0662,
+    0.8387,
+    0.2836
+  ],
+  "bounds_min_m": [
+    -0.5264,
+    -0.4229,
+    -0.012
+  ],
+  "bounds_max_m": [
+    0.5397,
+    0.4158,
+    0.2716
+  ],
+  "game_triangles": 55854,
+  "game_vertices": 32497,
+  "high_poly_bake_source_faces": 8490,
+  "texture_size_px": 1024,
+  "texture_maps": {
+    "BaseColor": {
+      "file": "textures/QX_SpiritHerb_Chilu_pre_BaseColor.png",
+      "uv_coverage_before_dilation": 0.5385
+    },
+    "Roughness": {
+      "file": "textures/QX_SpiritHerb_Chilu_pre_Roughness.png",
+      "uv_coverage_before_dilation": 0.5385
+    },
+    "Normal": {
+      "file": "textures/QX_SpiritHerb_Chilu_pre_Normal.png",
+      "uv_coverage_before_dilation": 0.5385
+    },
+    "Emission": {
+      "file": "textures/QX_SpiritHerb_Chilu_pre_Emission.png",
+      "uv_coverage_before_dilation": 0.5385
+    }
+  },
+  "bake": {
+    "engine": "Cycles CPU",
+    "samples": 8,
+    "groups": {
+      "A_low_poly_from_high_poly": {
+        "cage_extrusion_m": 0.06,
+        "max_ray_m": 0.12,
+        "sources": [
+          "Chilu_Pebbles_HP"
+        ]
+      },
+      "B_self": {
+        "cage_extrusion_m": 0.003,
+        "max_ray_m": 0.008,
+        "sources": 7
+      }
+    }
+  },
+  "not_reproduced_in_game_material": [
+    "leaf / petal back-light translucency",
+    "berry / blossom subsurface",
+    "crystal transmission (crystals are opaque with baked colour and emission)",
+    "iron metallic (baked as dark iron-grey dielectric: base colour mixed toward 0.055 grey by the metallic amount)"
+  ],
+  "files": {
+    "QX_SpiritHerb_Chilu_pre.glb": {
+      "bytes": 4284368,
+      "sha256": "0cacd1812e6c62a74e714d46ba252b2a8b527c2229c1ea45ce367e76af71c7a9"
+    },
+    "QX_SpiritHerb_Chilu_pre.fbx": {
+      "bytes": 1748124,
+      "sha256": "06124458042f6ad60a35b9205e89658d4bbb8745ef3337dc996ce50bde5055cb"
+    },
+    "QX_SpiritHerb_Chilu_pre.blend": {
+      "bytes": 2759816,
+      "sha256": "3329c76659acc9a0b853c1d0a6a8bf17102045ebab685114f388afae8e1950d2"
+    }
+  },
+  "build_seconds": 12.9,
+  "build_notes": {
+    "reference": "ai_threeview_v002/R02_QX_SpiritHerb_Chilu.png",
+    "berries_per_plant": "[13, 11, 12, 0]",
+    "grass_tufts": 17,
+    "state_change": "pre"
+  }
+}

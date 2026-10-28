@@ -1,0 +1,52 @@
+{
+  "key": "QX_SpiritHerb_Qinglan_post",
+  "asset": "QX_SpiritHerb_Qinglan",
+  "version": "v002",
+  "method": "Blender Decimate (collapse, triangulate) on the exported LOD0 game mesh; UVs and baked textures reused",
+  "target_triangles": 9000,
+  "ratio": 0.3286,
+  "lod0": {
+    "meshes": 1,
+    "triangles": 27386,
+    "materials": 1,
+    "images": 4,
+    "bounds_min_m": [
+      -0.4212,
+      -0.4389,
+      -0.012
+    ],
+    "bounds_max_m": [
+      0.401,
+      0.363,
+      0.3884
+    ]
+  },
+  "lod1": {
+    "meshes": 1,
+    "triangles": 9000,
+    "materials": 1,
+    "images": 4,
+    "bounds_min_m": [
+      -0.4128,
+      -0.4384,
+      -0.0123
+    ],
+    "bounds_max_m": [
+      0.401,
+      0.3617,
+      0.3887
+    ]
+  },
+  "bounds_max_abs_diff_m": 0.0084,
+  "comparison_render": "art/references/qingxi-gathering-visual-kit-v1/lod_v002/QX_SpiritHerb_Qinglan_post_LOD0_vs_LOD1_front.png",
+  "file": {
+    "name": "QX_SpiritHerb_Qinglan_post_LOD1_mobile.glb",
+    "bytes": 2940568,
+    "sha256": "5b2216e912d0596d7278149f5cf20e1c0917627ea7c58bc2cd41950eba3016b3"
+  },
+  "not_checked": [
+    "switch distance in an engine",
+    "visual pop at the switch",
+    "mobile device performance"
+  ]
+}

@@ -3,6 +3,7 @@ blender --background --python-exit-code 1 --python render_review.py -- AssetKey 
 Per state: neutral front / right / top orthographic, game-light 3/4 perspective on a ground plane,
 close-up of the focal area, and a 12 m eye-height distance shot. Writes to
 art/references/qingxi-gathering-visual-kit-v1/review/<pass>/ (pass name via QX_PASS env, default 'current').
+QX_QUICK=1: GPU, front + 3/4 + close-up only, fewer samples (iteration renders, not for delivery).
 """
 import bpy,sys,json,os,math
 from pathlib import Path
@@ -12,6 +13,18 @@ import qx_kit as K
 REPO=Path(__file__).resolve().parents[4];OUT=REPO/'art/references/qingxi-gathering-visual-kit-v1/review'/os.environ.get('QX_PASS','current')
 FOCUS={'QX_EmbeddedOre_Yumai':(Vector((0,0,.45)),1.25),'QX_GatheringLandmark':(Vector((1.22,-.1,2.75)),1.7),'QX_SpiritHerb_Chilu':(Vector((0,-.02,.27)),.6),'QX_SpiritHerb_Qinglan':(Vector((0,-.05,.36)),.45),'QX_CreekSteppingPlank':(Vector((.30,-.22,.45)),.55),'QX_WaterReeds':(Vector((0,0,1.35)),.6)}
 FAR={'QX_GatheringLandmark':('far40m',Vector((6,-40,1.6)))}
+
+QUICK=os.environ.get('QX_QUICK')=='1'
+
+def use_gpu(s):
+    prefs=bpy.context.preferences.addons['cycles'].preferences
+    for kind in ('OPTIX','CUDA'):
+        try:
+            prefs.compute_device_type=kind;prefs.get_devices()
+            if any(d.type==kind for d in prefs.devices):break
+        except TypeError:continue
+    for d in prefs.devices:d.use=d.type!='CPU'
+    s.cycles.device='GPU'
 
 def look(cam,target,loc):cam.location=loc;cam.rotation_euler=(Vector(target)-Vector(loc)).to_track_quat('-Z','Y').to_euler()
 
@@ -48,20 +61,23 @@ def main(keys):
         lo,hi=Vector(info['bounds_min_m']),Vector(info['bounds_max_m']);c=(lo+hi)/2;ext=hi-lo
         cam=bpy.data.objects.new('Cam',bpy.data.cameras.new('Cam'));s.collection.objects.link(cam);s.camera=cam;cam.data.clip_end=500
         s.render.engine='CYCLES';s.cycles.device='CPU';s.cycles.use_denoising=True;s.view_settings.view_transform='AgX';s.render.image_settings.file_format='PNG'
+        if QUICK:use_gpu(s)
         # neutral orthographic three-view
         studio=neutral(s,c,ext);world(s,(.19,.21,.22),.65);s.view_settings.exposure=-.6;s.cycles.samples=40;s.render.resolution_x=s.render.resolution_y=900
         cam.data.type='ORTHO';cam.data.ortho_scale=max(ext)*1.15
-        for name,dr in [('front',(0,-1,0)),('right',(1,0,0)),('top',(0,0,1))]:
+        for name,dr in [('front',(0,-1,0))] if QUICK else [('front',(0,-1,0)),('right',(1,0,0)),('top',(0,0,1))]:
             look(cam,c,c+Vector(dr)*max(ext)*4);s.render.filepath=str(OUT/f'{key}_{name}.png');bpy.ops.render.render(write_still=True)
         studio.hide_render=True
         # game light: sun + sky fill on a ground plane
-        game_light(s);world(s,(.30,.40,.50),.85);s.view_settings.exposure=-.35;s.cycles.samples=96
+        game_light(s);world(s,(.30,.40,.50),.85);s.view_settings.exposure=-.35;s.cycles.samples=32 if QUICK else 96
         s.render.resolution_x,s.render.resolution_y=1600,1000;cam.data.type='PERSP';cam.data.lens=50
         f,fr=FOCUS.get(aid,(c,max(ext)*.35))
+        if os.environ.get('QX_FOCUS'):*fv,fr=map(float,os.environ['QX_FOCUS'].split(','));f=Vector(fv)   # x,y,z,distance
         shots=[('beauty34',c,c+Vector((1.0,-1.35,.62)).normalized()*max(ext)*2.0),
                ('beauty_back',c,c+Vector((-1.1,1.2,.7)).normalized()*max(ext)*2.0),
                ('closeup',f,f+Vector((.75,-1.2,.55)).normalized()*fr),
                ('far12m',Vector((0,0,c.z*.8)),Vector((2.0,-12,1.6)))]+([(FAR[aid][0],Vector((0,0,c.z*.8)),FAR[aid][1])] if aid in FAR else [])
+        if QUICK:shots=shots[:1]+shots[2:3]
         for name,t,loc in shots:
             look(cam,t,loc);cam.data.lens=50 if name!='closeup' else 60;s.render.filepath=str(OUT/f'{key}_{name}.png');bpy.ops.render.render(write_still=True)
         report[key]=info;print('REVIEW',key,info['dimensions_m'],info['triangles_evaluated'],info['triangles_high_poly_bake_source'],flush=True)

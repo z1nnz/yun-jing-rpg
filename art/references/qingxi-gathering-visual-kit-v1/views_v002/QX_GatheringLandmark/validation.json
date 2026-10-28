@@ -1,0 +1,50 @@
+{
+  "key": "QX_GatheringLandmark",
+  "source_glb": "art/exports/qingxi-gathering-visual-kit-v1/QX_GatheringLandmark/v002/QX_GatheringLandmark.glb",
+  "glb_sha256": "0a8db1b781b94e38280eafebaf2097bc8007475d6613147f8dc4d3727dabbca7",
+  "checks": {
+    "glb_imports": true,
+    "one_mesh_one_material": true,
+    "four_textures_embedded": true,
+    "dimensions_match_model_info_1mm": true,
+    "triangles_match_model_info": true,
+    "origin_bottom_centre": true,
+    "ten_views_1024": true
+  },
+  "all_passed": true,
+  "measured": {
+    "dimensions_m": [
+      5.6234,
+      2.9024,
+      4.5656
+    ],
+    "bounds_min_m": [
+      -2.7466,
+      -1.4156,
+      -0.012
+    ],
+    "triangles": 103796,
+    "materials": 1,
+    "textures": [
+      "QX_GatheringLandmark_BaseColor",
+      "QX_GatheringLandmark_Emission",
+      "QX_GatheringLandmark_Normal",
+      "QX_GatheringLandmark_Roughness"
+    ]
+  },
+  "model_info": {
+    "dimensions_m": [
+      5.6234,
+      2.9024,
+      4.5656
+    ],
+    "game_triangles": 103796
+  },
+  "not_checked": [
+    "Unreal / Godot import",
+    "collision",
+    "LOD",
+    "navigation",
+    "in-engine lighting"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "key": "QX_SpiritHerb_Qinglan_pre",
+  "asset": "QX_SpiritHerb_Qinglan",
+  "state": "pre",
+  "name_zh": "青溪蘭（靈草一）",
+  "state_zh": "採前",
+  "version": "v002",
+  "design": "v002 to R01/R01b. Creek orchid clump: 26 broad keeled strap leaves with yellowed tips, three large sheathed pseudobulbs with brown bracts, four upright scapes with open white star blossoms (cyan glow at the heart) and a bud cluster at the top, a moss stone behind on the left. Post: leaves kept, scapes cut to tall stubs with pale cut faces, cut scape pieces on the soil.",
+  "material_direction": "Glossy deep jade-green leaves (rough 0.32) with fine parallel veins, pale keel, yellow-green sheath base and a few straw-dry tips; blossoms pale jade with darker veins, ivory lip with red-violet spots, soft inner glow; papery straw sheaths.",
+  "units": "1 Blender unit = 1 m",
+  "front_axis": "-Y (Blender); GLB exported +Y up, so the front faces +Z in glTF space",
+  "origin": "bottom centre at ground level",
+  "dimensions_m": [
+    0.8222,
+    0.8019,
+    0.6224
+  ],
+  "bounds_min_m": [
+    -0.4212,
+    -0.4389,
+    -0.012
+  ],
+  "bounds_max_m": [
+    0.401,
+    0.363,
+    0.6104
+  ],
+  "game_triangles": 43510,
+  "game_vertices": 29833,
+  "high_poly_bake_source_faces": 14012,
+  "texture_size_px": 1024,
+  "texture_maps": {
+    "BaseColor": {
+      "file": "textures/QX_SpiritHerb_Qinglan_pre_BaseColor.png",
+      "uv_coverage_before_dilation": 0.2865
+    },
+    "Roughness": {
+      "file": "textures/QX_SpiritHerb_Qinglan_pre_Roughness.png",
+      "uv_coverage_before_dilation": 0.2865
+    },
+    "Normal": {
+      "file": "textures/QX_SpiritHerb_Qinglan_pre_Normal.png",
+      "uv_coverage_before_dilation": 0.2865
+    },
+    "Emission": {
+      "file": "textures/QX_SpiritHerb_Qinglan_pre_Emission.png",
+      "uv_coverage_before_dilation": 0.2865
+    }
+  },
+  "bake": {
+    "engine": "Cycles CPU",
+    "samples": 8,
+    "groups": {
+      "A_low_poly_from_high_poly": {
+        "cage_extrusion_m": 0.06,
+        "max_ray_m": 0.12,
+        "sources": [
+          "Qinglan_Pebbles_HP",
+          "Qinglan_Stone_HP"
+        ]
+      },
+      "B_self": {
+        "cage_extrusion_m": 0.003,
+        "max_ray_m": 0.008,
+        "sources": 11
+      }
+    }
+  },
+  "not_reproduced_in_game_material": [
+    "leaf / petal back-light translucency",
+    "berry / blossom subsurface",
+    "crystal transmission (crystals are opaque with baked colour and emission)",
+    "iron metallic (baked as dark iron-grey dielectric: base colour mixed toward 0.055 grey by the metallic amount)"
+  ],
+  "files": {
+    "QX_SpiritHerb_Qinglan_pre.glb": {
+      "bytes": 4043260,
+      "sha256": "ed4c921554f119260c847a0613cdb869acaac8f639d5686c235dbf7c0d41c558"
+    },
+    "QX_SpiritHerb_Qinglan_pre.fbx": {
+      "bytes": 1470604,
+      "sha256": "9fc5e092803bd43dffd9bc0572223a051d7878ce6fa32cdb289eb6c58b5dd58a"
+    },
+    "QX_SpiritHerb_Qinglan_pre.blend": {
+      "bytes": 2504068,
+      "sha256": "61e336c7b0bad9d2d556d09ef4e521a4435bbe66f88d0d92ec3a9cf13d1fac69"
+    }
+  },
+  "build_seconds": 14.7,
+  "build_notes": {
+    "reference": "ai_threeview_v002/R01_QX_SpiritHerb_Qinglan.png",
+    "state_change": "pre"
+  }
+}

@@ -1,9 +1,13 @@
-"""QX_CreekSteppingPlank rebuild: creek stepping module, semi-real. One repeatable bay of a low plank walk.
-Structure, bottom to top: river cobbles packed round the pile feet (algae, wet) | four barked round piles,
-axe-trimmed flat on top, a green algae band and dark wet wood below the waterline | two hewn cross beams sat
-in saddle notches, held by forged iron cramps | three hewn deck boards, slightly cupped, with drying checks
-and a lighter, smoother worn tread down the middle, forged square-head spikes.
+"""QX_CreekSteppingPlank v002: creek stepping module, semi-real. One repeatable bay of a low plank walk.
+v002 follows the reviewed AI three-view R05 (art/references/.../ai_threeview_v002): two T supports instead of
+v001's four piles. Bottom to top: a heap of wet river cobbles round each pile foot (one big boulder in front) |
+one central round pile per support, hewn smooth with drying checks, dark and wet low down under a ragged
+green algae band | a round cross log across the full width on each pile, growth rings showing at both ends,
+lashed with hemp rope coils and forged iron I-cramps | three hewn deck boards along the walk, slightly cupped,
+with a worn tread and square-head spikes.
 The board tops are the only light, flat, continuous surface (the foot surface), 0.62 m above the base.
+Where R05's side view contradicts its front view (it draws the cross log along the walk), the front view is
+followed, as recorded in ai_threeview_v002/REVIEW.md.
 Origin: bottom centre (creek bed); front -Y; the walking direction is along Y.
 """
 import bpy,bmesh,math,random
@@ -13,84 +17,120 @@ import qx_ore as O
 import qx_gate as G
 
 TAU=math.tau
-PILES=[(-.30,-.22),(.30,-.22),(-.30,.22),(.30,.22)]
-Z_BEAM,Z_TOP=.53,.62
-WATER=.16
+SUP_Y=(-.26,.26)            # the two T supports along the walk
+PILE_R,LOG_R=.10,.068
+Z_TOP,BOARD_T=.62,.055
+Z_LOG=Z_TOP-BOARD_T-LOG_R   # log centre: the boards sit on top of the logs
+WATER=.20
 
-def pile_into(bm,gl,x,y,r,H,seed):
-    """Barked round log: irregular section, bark furrows along the length, slight lean, axe-cut top facets."""
-    rng=random.Random(seed);n=20;rows=[];lean=Vector((rng.uniform(-.015,.015),rng.uniform(-.015,.015),0))
-    for j in range(15):
-        t=j/14;z=H*t;c=Vector((x,y,z))+lean*t;row=[]
+def log_into(bm,gl,p0,p1,r,seed,n=20,rows=14,taper=.03,ends=True):
+    """Round hewn log p0->p1: slightly irregular section, faint adze flats, G = (across, across, along)
+    in metres so the timber shader grows rings round the pith and lays the grain along the log."""
+    p0,p1=Vector(p0),Vector(p1);d=p1-p0;L=d.length;ax=d/L
+    u=ax.cross(Vector((0,0,1)))
+    if u.length<.01:u=ax.cross(Vector((0,1,0)))
+    u.normalize();w=ax.cross(u);rr=[]
+    for j in range(rows+1):
+        t=j/rows;row=[]
         for i in range(n):
-            a=i*TAU/n;d=Vector((math.cos(a),math.sin(a),0))
-            fur=.16*max(0,noise.noise(Vector((a*2.6,z*1.4,seed))))+.06*noise.noise(Vector((a*7,z*6,seed)))
-            rr=r*(1+.06*noise.noise(Vector((math.cos(a)*1.5,math.sin(a)*1.5,z*2+seed)))-.04*t)*(1-fur*.35)
-            if t==1:rr*=.86
-            v=bm.verts.new(c+d*rr);v[gl]=(d.x*rr,d.y*rr,z+seed*3.1,1);row.append(v)
-        rows.append(row)
-    for a,b in zip(rows,rows[1:]):
-        for i in range(n):bm.faces.new((a[i],a[(i+1)%n],b[(i+1)%n],b[i]))
-    top=bm.verts.new(Vector((x,y,H))+lean+Vector((0,0,.004)));top[gl]=(0,0,H+seed*3.1,1)
-    for i in range(n):bm.faces.new((rows[-1][i],rows[-1][(i+1)%n],top))
-    bm.faces.new(list(reversed(rows[0])))
+            a=i*TAU/n;ca,sa=math.cos(a),math.sin(a)
+            k=r*(1-taper*t)*(1+.045*noise.noise(Vector((ca*1.3,sa*1.3,t*L*2+seed)))+.012*noise.noise(Vector((a*5,t*L*9,seed))))
+            k*=1-.035*max(0,math.cos(a*5+seed))                                                    # adze flats
+            v=bm.verts.new(p0+ax*L*t+u*ca*k+w*sa*k);v[gl]=(ca*k+.012,sa*k-.008,t*L+seed*3.1,1);row.append(v)
+        rr.append(row)
+    for a_,b_ in zip(rr,rr[1:]):
+        for i in range(n):bm.faces.new((a_[i],a_[(i+1)%n],b_[(i+1)%n],b_[i]))
+    for row,c,flip in ((rr[0],p0,True),(rr[-1],p1,False)):                                           # end grain: fan to the pith
+        cv=bm.verts.new(c+(ax*(-.003 if flip else .003)));cv[gl]=(.012,-.008,(0 if flip else L)+seed*3.1,1)
+        for i in range(n):
+            f=(row[(i+1)%n],row[i],cv) if flip else (row[i],row[(i+1)%n],cv);bm.faces.new(f)
 
-def mat_bark(name):
-    """Barked pile: dark grey-brown furrowed bark with lighter ridges, a few peeled patches showing grey
-    weathered wood; dark wet wood below the waterline, green algae band at it, pale silt line above."""
-    m,nt,bs=K.pbr(name,True,.85,.3);g=K.node(nt,'ShaderNodeAttribute',attribute_name='G').outputs['Vector'];a,b,L=K.sep(nt,g)
+def coil_into(bm,x0,x1,y,z,R,turns,r,sides=7):
+    """Rope coil wound round an X-axis log: rings framed on the radial direction, so the tube never flips
+    where the helix runs vertical; a slight ply bulge every few rings."""
+    N=int(turns*16);rows=[]
+    for j in range(N+1):
+        t=j/N;a=t*turns*TAU;c=Vector((x0+(x1-x0)*t,y+R*math.cos(a),z+R*math.sin(a)))
+        rad=Vector((0,math.cos(a),math.sin(a)));tan=Vector(((x1-x0)/(turns*TAU),-R*math.sin(a),R*math.cos(a))).normalized()
+        w=tan.cross(rad).normalized();rr=r*(1+.12*math.sin(j*2.1));row=[]
+        for i in range(sides):
+            b=i*TAU/sides;row.append(bm.verts.new(c+rad*math.cos(b)*rr+w*math.sin(b)*rr))
+        rows.append(row)
+    for p,q in zip(rows,rows[1:]):
+        for i in range(sides):bm.faces.new((p[i],p[(i+1)%sides],q[(i+1)%sides],q[i]))
+    bm.faces.new(list(reversed(rows[0])));bm.faces.new(rows[-1])
+
+def mat_pile(name):
+    """Hewn round pile: warm brown wood with flame grain and drying checks along the length; dark wet wood
+    below the waterline, a ragged green algae band climbing above it, pale silt line on top."""
+    m,nt,bs=K.pbr(name,True,.8,.3);g=K.node(nt,'ShaderNodeAttribute',attribute_name='G').outputs['Vector'];a,b,L=K.sep(nt,g)
     ob=K.coord(nt);x,y,z=K.sep(nt,ob);mr,mx,ad,mrng=K.mul,K.mix,K.add,K.mrange
-    fur=K.noise_t(nt,K.comb(nt,K.mul(nt,a,60),K.mul(nt,b,60),K.mul(nt,z,4)),2,5,.6)
-    col=K.ramp(nt,fur,[(0,(.025,.020,.016)),(.5,(.065,.052,.040)),(1,(.13,.11,.085))])
-    peel=mrng(nt,K.noise_t(nt,K.comb(nt,K.mul(nt,a,9),K.mul(nt,b,9),K.mul(nt,z,1.4)),2,4),.62,.66)
-    col=mx(nt,peel,col,K.ramp(nt,K.noise_t(nt,K.comb(nt,K.mul(nt,a,80),K.mul(nt,b,80),K.mul(nt,z,2)),1,3),[(0,(.12,.11,.095)),(1,(.22,.20,.17))]))
-    wet=mrng(nt,ad(nt,z,mr(nt,K.noise_t(nt,ob,8,3),.04)),WATER+.02,WATER-.02)
-    col=mx(nt,mr(nt,wet,.75),col,(.018,.02,.014))
-    alg=mr(nt,mr(nt,mrng(nt,z,WATER-.08,WATER-.02),mrng(nt,z,WATER+.07,WATER+.01)),mrng(nt,K.noise_t(nt,ob,14,4),.35,.55))
-    col=mx(nt,alg,col,K.ramp(nt,K.noise_t(nt,ob,90,3),[(0,(.03,.055,.018)),(1,(.07,.10,.03))]))
-    silt=mr(nt,mrng(nt,z,WATER+.03,WATER+.05),mrng(nt,z,WATER+.09,WATER+.06));col=mx(nt,mr(nt,silt,.45),col,(.15,.14,.11))
-    K.finish(nt,bs,col,mx(nt,wet,(.86,.86,.86),(.35,.35,.35)),ad(nt,mr(nt,fur,1.0),mr(nt,peel,-.3)),.6,.006);return m
+    fib=K.noise_t(nt,K.comb(nt,mr(nt,a,90),mr(nt,b,90),mr(nt,L,2.5)),1,4)
+    col=K.ramp(nt,ad(nt,mr(nt,fib,.6),mr(nt,K.noise_t(nt,g,1.5,3),.4)),[(0,(.085,.058,.036)),(.5,(.15,.105,.065)),(1,(.23,.17,.11))])
+    chk=K.voronoi_t(nt,K.comb(nt,mr(nt,a,26),mr(nt,b,26),mr(nt,L,.9)),1,'DISTANCE_TO_EDGE')
+    check=mr(nt,mrng(nt,chk,.03,.006),mrng(nt,K.noise_t(nt,g,2.2,2),.42,.55));col=mx(nt,mr(nt,check,.9),col,(.018,.012,.008))
+    col=mx(nt,mr(nt,mrng(nt,K.noise_t(nt,ob,3,3),.5,.7),.4),col,(.20,.19,.17))                      # silvered patches
+    edge=ad(nt,WATER+.10,mr(nt,ad(nt,K.noise_t(nt,ob,9,4),-.5),.22))                                 # ragged top of the algae band
+    alg=mr(nt,mrng(nt,z,edge,ad(nt,edge,-.03)),mrng(nt,K.noise_t(nt,ob,30,4),.30,.45))
+    wet=mrng(nt,ad(nt,z,mr(nt,K.noise_t(nt,ob,8,3),.05)),WATER+.04,WATER-.04)
+    col=mx(nt,mr(nt,wet,.8),col,(.022,.02,.014))
+    col=mx(nt,alg,col,K.ramp(nt,K.noise_t(nt,ob,120,3),[(0,(.022,.045,.012)),(.5,(.05,.085,.02)),(1,(.11,.13,.035))]))
+    silt=mr(nt,mrng(nt,z,ad(nt,edge,.0),ad(nt,edge,.02)),mrng(nt,z,ad(nt,edge,.07),ad(nt,edge,.04)));col=mx(nt,mr(nt,silt,.35),col,(.16,.15,.12))
+    hgt=ad(nt,ad(nt,mr(nt,fib,.4),mr(nt,check,-1.5)),mr(nt,alg,.8))
+    K.finish(nt,bs,col,mx(nt,K.math_(nt,'MAXIMUM',wet,mr(nt,alg,.6)),(.82,.82,.82),(.38,.38,.38)),hgt,.5,.004);return m
 
 def build(post):
-    rng=random.Random(3501);ctx=K.ctx
-    M={'pile':mat_bark('QX_Src_Plank_Pile_Bark'),'beam':G.mat_timber('QX_Src_Plank_Beam',.6,True),'board':G.mat_timber('QX_Src_Plank_Board',.85,tread=True),
-       'iron':G.mat_iron('QX_Src_Plank_Iron'),'stone':O.mat_rock_real('QX_Src_Plank_Cobble',False,False,[(0,(.055,.06,.062)),(.5,(.095,.10,.104)),(1,(.135,.135,.13))]),'moss':O.mat_moss_real('QX_Src_Plank_Algae_Moss')}
-    # --- river cobbles packed round the pile feet
-    cb=bmesh.new()
-    for k,(x,y) in enumerate(PILES):
-        for j in range(5):
-            a=j*TAU/5+k+rng.uniform(-.3,.3);d=rng.uniform(.09,.13);s=rng.uniform(.045,.075)
-            b=O.hull_block((x+d*math.cos(a),y+d*math.sin(a),s*.35),(s*1.4,s*1.1,s*.8),600+k*10+j,40,.5,(0,0,a),rmin=.75);O.finish_block(b,s*.15,0.0);K.merge_into(cb,b)
-    G.dressed('Plank_Cobbles',cb,M['stone'],M['moss'],41,.005,.22,.25,True)
-    # --- barked piles
+    rng=random.Random(3502);ctx=K.ctx
+    M={'pile':mat_pile('QX_Src_Plank_Pile'),'log':G.mat_timber('QX_Src_Plank_Cross_Log',.08),'board':G.mat_timber('QX_Src_Plank_Board',.15,tread=True),
+       'iron':G.mat_iron('QX_Src_Plank_Iron'),'rope':K.M['rope'],
+       'stone':O.mat_rock_real('QX_Src_Plank_Cobble',False,False,[(0,(.075,.08,.08)),(.5,(.13,.135,.135)),(1,(.19,.19,.185))]),'moss':O.mat_moss_real('QX_Src_Plank_Algae_Moss')}
+    # --- heap of river cobbles round each pile foot: one big boulder in front, a ring of mid stones, pebbles
+    cb=bmesh.new();k=0
+    for si,y in enumerate(SUP_Y):
+        stones=[(0,y-.17,.13,0)]+[(.17*math.cos(a)+rng.uniform(-.03,.03),y+.15*math.sin(a)+rng.uniform(-.03,.03),rng.uniform(.065,.10),a) for a in [j*TAU/9+si for j in range(9)]]
+        stones+=[(rng.uniform(.18,.30)*math.cos(a),y+rng.uniform(.16,.26)*math.sin(a),rng.uniform(.03,.05),a) for a in [rng.uniform(0,TAU) for _ in range(12)]]
+        stones+=[(.115*math.cos(a),y+.115*math.sin(a),rng.uniform(.06,.08),a) for a in [j*TAU/7+.4 for j in range(7)]]
+        for x,yy,s,a in stones:
+            if math.hypot(x,yy-y)<PILE_R+s*.35 and s<.12:continue
+            b=O.hull_block((x,yy,s*.50),(s*1.25,s*1.05,s*.95),620+k,90,.85,(0,0,a+rng.uniform(-.5,.5)),rmin=.96);O.finish_block(b,s*.30,0.0,10);K.merge_into(cb,b);k+=1
+    G.dressed('Plank_Cobble_Heaps',cb,M['stone'],M['moss'],42,.005,.06,.20,True)
+    # --- central round piles
     pb,pg=G.gbm()
-    for k,(x,y) in enumerate(PILES):pile_into(pb,pg,x,y,rng.uniform(.058,.066),Z_BEAM-.035,k+1)
-    G.to_obj('Plank_Barked_Piles',pb,M['pile'])
-    # --- hewn cross beams in saddle notches
-    bb,bg=G.gbm()
-    for k,y in enumerate((-.22,.22)):G.member(bb,bg,(-.41,y,Z_BEAM),(.41,y,Z_BEAM),.10,.08,(0,0,1),.25,0,.006,20+k,.1,(.03,.05))
-    G.to_obj('Plank_Hewn_Beams',bb,M['beam'])
+    for k,y in enumerate(SUP_Y):log_into(pb,pg,(rng.uniform(-.006,.006),y,0),(0,y+rng.uniform(-.006,.006),Z_LOG-LOG_R*.55),PILE_R,k+1,22,12,.04)
+    G.to_obj('Plank_Piles',pb,M['pile'])
+    # --- round cross logs across the full width, ring ends showing
+    lb,lg=G.gbm()
+    for k,y in enumerate(SUP_Y):log_into(lb,lg,(-.445,y,Z_LOG),(.445,y+rng.uniform(-.01,.01),Z_LOG+rng.uniform(-.004,.004)),LOG_R,10+k,20,16,.05)
+    G.to_obj('Plank_Cross_Logs',lb,M['log'])
     # --- three deck boards, the foot surface
-    db,dg=G.gbm();zc=Z_TOP-.025
-    for k,x in enumerate((-.25,0,.25)):
-        w=.232+rng.uniform(-.006,.004);G.member(db,dg,(x,-.36+rng.uniform(-.01,.01),zc),(x+rng.uniform(-.006,.006),.36+rng.uniform(-.01,.01),zc),w,.05,(0,0,1),.18,0,.003,30+k,.06,(.0,-.09))
+    db,dg=G.gbm();zc=Z_TOP-BOARD_T/2;XB=(-.25,0,.25)
+    for k,x in enumerate(XB):
+        w=.232+rng.uniform(-.006,.004)
+        G.member(db,dg,(x,-.39+rng.uniform(-.01,.01),zc),(x+rng.uniform(-.006,.006),.39+rng.uniform(-.01,.01),zc),w,BOARD_T,(0,0,1),.18,0,.003,30+k,.06,(.0,-.09))
     for v in db.verts:                                                                              # cupping: board edges lift a few mm
-        cx=min((-.25,0,.25),key=lambda q:abs(q-v.co.x));u=(v.co.x-cx)/.116
+        cx=min(XB,key=lambda q:abs(q-v.co.x));u=(v.co.x-cx)/.116
         if v.co.z>zc:v.co.z+=.003*u*u
     G.to_obj('Plank_Foot_Surface_Boards',db,M['board'])
-    # --- forged iron: square-head spikes through the boards, cramps over the beam-pile joints
+    # --- hemp lashing: a coil round each log near both ends
+    rp=K.new_bm()
+    for y in SUP_Y:
+        for sx in (-1,1):
+            coil_into(rp,sx*.30-.045,sx*.30+.045,y,Z_LOG,LOG_R+.012,4.2,.011)
+    K.link('Plank_Rope_Lashing',rp,[M['rope']])
+    # --- forged iron: I-cramps over each rope coil (front and back), square-head spikes through the boards
     ib=bmesh.new()
-    for x in (-.25,0,.25):
-        for y in (-.22,.22):
-            for dx in (-.06,.06):
-                c=(x+dx+rng.uniform(-.006,.006),y+rng.uniform(-.006,.006),Z_TOP+.003);sz=.016
-                bmesh.ops.create_cube(ib,size=1,matrix=Matrix.Translation(c)@Matrix.Rotation(rng.uniform(-.4,.4),4,'Z')@Matrix.Diagonal((sz,sz,.006,1)))
-    for x,y in PILES:                                                                              # flat strap dogs: beam face down onto the pile, spiked at both ends
-        for sy in (-1,1):
-            sb,sg=G.gbm();ys=y+sy*.053
-            G.member(sb,sg,(x,ys,Z_BEAM+.025),(x,ys+sy*.014,Z_BEAM-.105),.026,.006,(0,sy,0),.3,0,0,0,.05);K.merge_into(ib,sb)
-            for z,dy in ((Z_BEAM+.012,0),(Z_BEAM-.09,.012)):
-                bmesh.ops.create_cube(ib,size=1,matrix=Matrix.Translation((x,ys+sy*(dy+.006),z))@Matrix.Diagonal((.013,.006,.013,1)))
-    bmesh.ops.bevel(ib,geom=ib.edges[:],offset=.0012,segments=1,affect='EDGES',clamp_overlap=True)
+    for y in SUP_Y:
+        for sx in (-1,1):
+            for sy in (-1,1):
+                yf=y+sy*(LOG_R+.024);h=2*LOG_R+.012
+                bmesh.ops.create_cube(ib,size=1,matrix=Matrix.Translation((sx*.30,yf,Z_LOG))@Matrix.Diagonal((.020,.010,h,1)))
+                for dz in (-1,1):bmesh.ops.create_cube(ib,size=1,matrix=Matrix.Translation((sx*.30,yf-sy*.008,Z_LOG+dz*h/2))@Matrix.Diagonal((.052,.026,.014,1)))
+    for x in XB:
+        for y in SUP_Y:
+            for dx in (-.07,.07):
+                c=(x+dx+rng.uniform(-.006,.006),y+rng.uniform(-.006,.006),Z_TOP+.003);sz=.018
+                bmesh.ops.create_cube(ib,size=1,matrix=Matrix.Translation(c)@Matrix.Rotation(rng.uniform(-.4,.4),4,'Z')@Matrix.Diagonal((sz,sz,.007,1)))
+    bmesh.ops.bevel(ib,geom=ib.edges[:],offset=.0015,segments=1,affect='EDGES',clamp_overlap=True)
     G.to_obj('Plank_Forged_Iron',ib,M['iron'])
-    ctx.extra.update({'foot_surface_top_m':Z_TOP,'foot_surface_size_m':[.732,.72],'waterline_m':WATER})
+    ctx.extra.update({'reference':'ai_threeview_v002/R05_QX_CreekSteppingPlank.png','foot_surface_top_m':Z_TOP,'foot_surface_size_m':[.732,.78],
+                      'supports':'2 T supports (one central pile + one round cross log each)','support_spacing_m':SUP_Y[1]-SUP_Y[0],'waterline_m':WATER})

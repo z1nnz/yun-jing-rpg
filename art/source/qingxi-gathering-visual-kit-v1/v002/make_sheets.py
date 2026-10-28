@@ -1,6 +1,6 @@
 """Three-view sheets with sizes + the gallery page, from render_views.py output (no Blender needed).
 uv run --no-project --with pillow python make_sheets.py
-Writes references/.../threeview_semireal_v002/<key>_threeview.png and previews/.../index.html.
+Writes references/.../threeview_semireal_v002/<key>_threeview.png and previews/.../index_v002.html (v001's index.html is kept).
 """
 import json,html
 from pathlib import Path
@@ -73,7 +73,7 @@ nav{{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}}a{{color:inherit}}
 figure{{margin:0}}figcaption{{font-size:12px;color:var(--dim)}}.ok{{color:#3c8a5f}}.bad{{color:#c0503a}}</style>
 <main><h1>青溪採集路段素材 v002（半寫實，遊戲模型回匯渲染）</h1>
 <p class=dim>所有圖片都由匯出的 GLB 重新匯入 Blender 後渲染（Cycles）。三視圖同比例並標註尺寸；十視圖為同一模型；平視圖相機高 1.6 m。只列出實際執行過的檢查。</p><nav>{nav}</nav>{''.join(cards)}</main></html>"""
-    GAL.mkdir(parents=True,exist_ok=True);(GAL/'index.html').write_text(page,encoding='utf-8');return GAL/'index.html'
+    GAL.mkdir(parents=True,exist_ok=True);(GAL/'index_v002.html').write_text(page,encoding='utf-8');return GAL/'index_v002.html'
 
 if __name__=='__main__':
     keys=[k for k in ORDER if (VIEWS/k/'views.json').exists()]

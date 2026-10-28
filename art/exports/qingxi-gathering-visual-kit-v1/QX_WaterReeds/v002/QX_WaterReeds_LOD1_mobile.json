@@ -1,0 +1,52 @@
+{
+  "key": "QX_WaterReeds",
+  "asset": "QX_WaterReeds",
+  "version": "v002",
+  "method": "Blender Decimate (collapse, triangulate) on the exported LOD0 game mesh; UVs and baked textures reused",
+  "target_triangles": 12000,
+  "ratio": 0.2028,
+  "lod0": {
+    "meshes": 1,
+    "triangles": 59178,
+    "materials": 1,
+    "images": 4,
+    "bounds_min_m": [
+      -0.7588,
+      -0.7967,
+      -0.0604
+    ],
+    "bounds_max_m": [
+      0.77,
+      0.7279,
+      1.8162
+    ]
+  },
+  "lod1": {
+    "meshes": 1,
+    "triangles": 12000,
+    "materials": 1,
+    "images": 4,
+    "bounds_min_m": [
+      -0.7586,
+      -0.7963,
+      -0.0603
+    ],
+    "bounds_max_m": [
+      0.7698,
+      0.7273,
+      1.8171
+    ]
+  },
+  "bounds_max_abs_diff_m": 0.0009,
+  "comparison_render": "art/references/qingxi-gathering-visual-kit-v1/lod_v002/QX_WaterReeds_LOD0_vs_LOD1_front.png",
+  "file": {
+    "name": "QX_WaterReeds_LOD1_mobile.glb",
+    "bytes": 2299788,
+    "sha256": "6ebf457805f09f235050044eb77efebd8e57787f269b389fc12d77264a0ab2cd"
+  },
+  "not_checked": [
+    "switch distance in an engine",
+    "visual pop at the switch",
+    "mobile device performance"
+  ]
+}

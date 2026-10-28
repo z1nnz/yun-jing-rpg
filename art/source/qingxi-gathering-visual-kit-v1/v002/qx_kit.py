@@ -224,7 +224,7 @@ def mat_blade(name):
     m,nt,bs=pbr(name,False,.6,.35);u,v=uv(nt);r,g,b=attr(nt);ob=coord(nt)
     veins=wave_t(nt,comb(nt,u,0),5,'X',0,0)
     t=add(nt,mul(nt,v,mrange(nt,g,0,1,.9,3.2)),mul(nt,noise_t(nt,ob,8),.25))
-    col=ramp(nt,t,[(0,(.03,.06,.015)),(.35,(.05,.11,.025)),(.8,(.12,.14,.04)),(1,(.32,.27,.13))])
+    col=ramp(nt,t,[(0,(.03,.06,.015)),(.35,(.05,.11,.025)),(.8,(.08,.13,.03)),(1,(.28,.25,.12))])
     col=mix(nt,mul(nt,r,.3),col,(.18,.17,.07));col=mix(nt,mul(nt,veins,.15),col,(0,0,0))
     finish(nt,bs,col,mix(nt,mrange(nt,t,.8,1),(.55,.55,.55),(.85,.85,.85)),veins,.1,.001);return m
 
@@ -750,3 +750,16 @@ MATERIAL_DIRECTION.update({
  'QX_GatheringLandmark':'Silver-weathered hewn timber with growth rings and checks, pale moss-spotted stone, dark forged iron, deep jade cloth with painted emblem, warm lantern paper, pale jade pearl.',
  'QX_CreekSteppingPlank':'Board tops silver-grey weathered timber with a lighter, smoother worn tread; darker beams; dark furrowed bark with peeled patches, a green algae band and dark wet wood below the waterline; wet dark cobbles; black forged iron.',
  'QX_WaterReeds':'Leaves green with pale bases yellowing to straw tips, dead ones grey-brown; dark cinnamon velvet cattails, pale fluff; purple-brown plumes with silvery hairs; near-black wet mud with mirror puddles and a pale silt rim.'})
+# v002: descriptions follow the reviewed AI three-views R01-R06 (art/references/.../ai_threeview_v002)
+DESIGN.update({
+ 'QX_SpiritHerb_Qinglan':'v002 to R01/R01b. Creek orchid clump: 26 broad keeled strap leaves with yellowed tips, three large sheathed pseudobulbs with brown bracts, four upright scapes with open white star blossoms (cyan glow at the heart) and a bud cluster at the top, a moss stone behind on the left. Post: leaves kept, scapes cut to tall stubs with pale cut faces, cut scape pieces on the soil.',
+ 'QX_SpiritHerb_Chilu':'v002 to R02/R02b. Low wide patch: one main ginseng-like plant and two smaller fruiting plants plus a young one, each a short thick stem, a flat whorl of palmate leaves (five serrated leaflets) and a straight peduncle to a dense globe of glossy crimson berries; soil, moss cushions and pebbles visible between sparse grass. Post: the main plant dug out (pit, clods, torn root), side umbels stripped to broken pedicels, torn leaflets.',
+ 'QX_EmbeddedOre_Yumai':'v002 to R03/R03b. Split pale granite boulder with the cleft facing front, right block lower, glowing jade veins along the beds, a fan of tall milky jade crystals (main about 1.3 x the block) out of the cleft. Post: crystals snapped to dull stumps, veins unlit.',
+ 'QX_GatheringLandmark':'v002 to R04. Two-post timber paifang: cloud-carved clamp stones bound in iron, near-round posts with one outward raking strut each, through-tenoned tie beam with wedges and two pairs of drying herb bundles, wide jade plaque with emblem and cloud reliefs between studs, que-ti brackets, dou-gong row, concave grey-teal tiled roof with flying corners, barrel tiles, hip ridges, ridge scrolls and a jade pearl on a lotus base; jade banners from poles past the lintel ends, paper lantern, wicker herb basket. Clear opening 2.22 m at the ground.',
+ 'QX_CreekSteppingPlank':'v002 to R05. Stepping bay on two T supports: one central round pile per support in a heap of wet river cobbles with an algae band, a round cross log across the full width (growth rings at both ends) lashed with hemp rope coils and iron I-cramps, three cupped deck boards with square-head spikes; the board tops (0.62 m) are the only light, flat surface.',
+ 'QX_WaterReeds':'v002 to R06. About 1.9 m water-edge clump: twelve Typha shoots of broad strap leaves, many arching outward and down, green mixed with dry straw; three cattails (one bursting into fluff); two Phragmites culms with broad leaves and big pale silvery plumes; broken dead stems and dead leaves at the base of a wet mud tuft with pebbles and grass.'})
+MATERIAL_DIRECTION.update({
+ 'QX_GatheringLandmark':'Weathered hewn timber with growth rings and checks, pale cloud-carved stone with moss, dark forged iron, grey-teal fired tiles with moss and rain streaks, jade lacquer plaque, deep jade cloth with painted emblem, warm lantern paper, golden wicker, pale jade pearl.',
+ 'QX_CreekSteppingPlank':'Warm brown weathered boards with a lighter worn tread; round logs with ring ends; hewn pile dark and wet low down under a ragged green algae band; wet grey cobbles; hemp rope; dark rusty forged iron.',
+ 'QX_EmbeddedOre_Yumai':'Pale cool granite with bed tone shifts, grains, rain streaks, lichen and moss; glowing jade bed veins and cleft coat (pre); milky translucent jade crystals with inner emission (pre) / dull drained stumps (post).',
+ 'QX_WaterReeds':'Leaves green with pale bases yellowing to straw tips, many fully dry, dead ones grey-brown; dark cinnamon velvet cattails, white fluff; pale buff-silver plumes; dead stems grey-straw; near-black wet mud with puddles and a pale silt rim.'})

@@ -1,0 +1,50 @@
+{
+  "key": "QX_SpiritHerb_Qinglan_pre",
+  "source_glb": "art/exports/qingxi-gathering-visual-kit-v1/QX_SpiritHerb_Qinglan/v002/QX_SpiritHerb_Qinglan_pre.glb",
+  "glb_sha256": "ed4c921554f119260c847a0613cdb869acaac8f639d5686c235dbf7c0d41c558",
+  "checks": {
+    "glb_imports": true,
+    "one_mesh_one_material": true,
+    "four_textures_embedded": true,
+    "dimensions_match_model_info_1mm": true,
+    "triangles_match_model_info": true,
+    "origin_bottom_centre": true,
+    "ten_views_1024": true
+  },
+  "all_passed": true,
+  "measured": {
+    "dimensions_m": [
+      0.8222,
+      0.8019,
+      0.6224
+    ],
+    "bounds_min_m": [
+      -0.4212,
+      -0.4389,
+      -0.012
+    ],
+    "triangles": 43510,
+    "materials": 1,
+    "textures": [
+      "QX_SpiritHerb_Qinglan_pre_BaseColor",
+      "QX_SpiritHerb_Qinglan_pre_Emission",
+      "QX_SpiritHerb_Qinglan_pre_Normal",
+      "QX_SpiritHerb_Qinglan_pre_Roughness"
+    ]
+  },
+  "model_info": {
+    "dimensions_m": [
+      0.8222,
+      0.8019,
+      0.6224
+    ],
+    "game_triangles": 43510
+  },
+  "not_checked": [
+    "Unreal / Godot import",
+    "collision",
+    "LOD",
+    "navigation",
+    "in-engine lighting"
+  ]
+}
