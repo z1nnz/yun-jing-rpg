@@ -2,6 +2,10 @@
 
 本輪只改 `QingxiWorldPreview` 的 180 × 140 m 入口片區。`QingxiUnifiedWorld` 的大城鎮仍使用原本 Blender 匯出的 `Town_Terrain`，**尚未換成這套 Terrain**；不能把兩個場景的測試當成同一張已整合地圖。
 
+實際 Unity 場景的當前俯視截圖是 [`current-unity-overhead.png`](../../art/previews/qingxi-terrain-pilot-v1/current-unity-overhead.png)。這張圖不是早期 `qingxi-world-blockout-v1.png`；它顯示地形試點已生成，也顯示資產仍稀疏，並非完成的大世界。原始 Dondon FBX 在此 Preview 中曾以厘米單位縮到 0.01 倍，修正後只對 `CollaboratorWorldV1` 匯入件補 100 倍；原創客舍和 D02 橋保持原尺寸。
+
+截至本紀錄，協作者 PR #45（上游水路模型與線索）和 #47（回村道具與互動）仍未合併到 `main`，也未接入這個 Preview 生成器；不能把它們算作俯視圖中已擺好的物件。已合併的模型也須個別擺進場景。整合時保留原作者署名，並以實際場景截圖確認尺寸與位置。
+
 ## 已實作
 
 - `tools/qingxi-terrain/routes.json` 統一描述村口、分岔、古樹前、橋頭等路線；腳本由它產生接地驗收座標。

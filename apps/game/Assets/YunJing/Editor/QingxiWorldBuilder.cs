@@ -69,7 +69,11 @@ namespace YunJing.Editor
             var instance = (GameObject)PrefabUtility.InstantiatePrefab(source);
             instance.name = name;
             instance.transform.position = position;
-            instance.transform.localScale = Vector3.one * scale;
+            // Dondon's original FBX files use centimetre units; Unity imports
+            // them at 0.01 of the intended metre size. The original guesthouse
+            // and D02 bridge already import in metres and must stay at 1x.
+            float unitScale = folder == CollaboratorModels ? 100f : 1f;
+            instance.transform.localScale = Vector3.one * scale * unitScale;
             // Imported Z-up FBX roots may carry a corrective rotation. Keep it
             // when adding the requested world-space yaw.
             instance.transform.rotation = Quaternion.Euler(0, yaw, 0) * source.transform.rotation;
