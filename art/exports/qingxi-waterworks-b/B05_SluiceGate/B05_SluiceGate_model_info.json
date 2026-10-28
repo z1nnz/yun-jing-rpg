@@ -1,0 +1,524 @@
+{
+ "id": "B05",
+ "name": "SluiceGate",
+ "key": "B05_SluiceGate",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "Codex / OpenAI image_gen",
+ "variant_of": null,
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  0.942,
+  0.3,
+  1.5
+ ],
+ "triangles": 13822,
+ "lod_triangles": [
+  13822,
+  6910,
+  3038
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    0,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.3,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.3,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.3,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.375,
+    0,
+    0.2
+   ],
+   "size": [
+    0.15,
+    0.26,
+    0.4
+   ],
+   "note": "abutment"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.375,
+    0,
+    0.2
+   ],
+   "size": [
+    0.15,
+    0.26,
+    0.4
+   ],
+   "note": "abutment"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.34,
+    0,
+    0.95
+   ],
+   "size": [
+    0.12,
+    0.12,
+    1.1
+   ],
+   "note": "post"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.34,
+    0,
+    0.95
+   ],
+   "size": [
+    0.12,
+    0.12,
+    1.1
+   ],
+   "note": "post"
+  },
+  {
+   "type": "box",
+   "center": [
+    0,
+    0,
+    1.34
+   ],
+   "size": [
+    0.86,
+    0.14,
+    0.12
+   ],
+   "note": "top beam"
+  },
+  {
+   "type": "box",
+   "center": [
+    0,
+    0,
+    0.3
+   ],
+   "size": [
+    0.44,
+    0.05,
+    0.4
+   ],
+   "note": "gate panel (moves with node Gate)"
+  }
+ ],
+ "ports": [
+  {
+   "name": "Out_Front",
+   "position": [
+    0,
+    -0.15,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "In_Back",
+   "position": [
+    0,
+    0.15,
+    0
+   ],
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 180.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [
+  {
+   "name": "WheelMount",
+   "position": [
+    0.43,
+    -0.0365,
+    0.9
+   ],
+   "normal": [
+    1,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "type": "b06_axle",
+   "note": "B06 root (square-tip end) goes here, wheel out over the right bank; the operator stands on the bank at +X. Positive rotation about +X raises the gate."
+  }
+ ],
+ "animation": {
+  "name": "Gate_Open",
+  "frames": 48,
+  "tracks": [
+   [
+    "Gate",
+    "location",
+    2,
+    [
+     0.0,
+     0.32
+    ]
+   ],
+   [
+    "Drive",
+    "rotation",
+    0,
+    [
+     0.0,
+     10.0
+    ]
+   ]
+  ],
+  "morphs": [
+   [
+    "Water",
+    "Open",
+    [
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": {
+  "module_mm": 4,
+  "pinion_teeth": 16,
+  "pinion_pitch_radius_m": 0.032,
+  "rack_pitch_m": 0.012566,
+  "rise_m": 0.32,
+  "wheel_turn_rad": 10.0,
+  "wheel_turns": 1.592,
+  "closed_panel_bottom_z": 0.1,
+  "open_panel_bottom_z": 0.42,
+  "operating_grip_z": 1.05,
+  "axle_z": 0.9
+ },
+ "decisions": [
+  "Closed panel bears on the floor (z=0.10) in 22 mm wall slots: no leak gap.",
+  "Wheel moved to the side (user review 2026-10-29): the sheets put the B06 wheel over the water, where nobody can stand to turn it. Rack teeth now face downstream; the pinion sits in front of the rack on a cross shaft through the right stile and post to a coupling over the right bank. The pinion moved from B06 into B05."
+ ],
+ "validation": {
+  "asset": "B05",
+  "key": "B05_SluiceGate",
+  "version": "v001",
+  "reference": {
+   "file": "B05_three_view.png",
+   "sha256": "2deba7f3694e117a54fe5f97daa8a9efbf94fd902426b440c5229fc7e5c56ff5"
+  },
+  "dimensions_m": [
+   0.942,
+   0.3,
+   1.5
+  ],
+  "target_size_m": [
+   0.9,
+   0.3,
+   1.5
+  ],
+  "bbox_min": [
+   -0.471,
+   -0.15,
+   0.0
+  ],
+  "bbox_max": [
+   0.471,
+   0.15,
+   1.5
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   13822,
+   6910,
+   3038
+  ],
+  "waterTriangles": 252,
+  "budgetLOD0": 16000,
+  "withinBudget": true,
+  "vertices": 7175,
+  "nodes": [
+   "B05_SluiceGate_LOD0",
+   "B05_SluiceGate_Drive_LOD0",
+   "B05_SluiceGate_Gate_LOD0",
+   "B05_SluiceGate_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 1
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 118,
+   "oppositeContactFaces": 1024
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 2,
+   "texelDensityPxPerM": 586.0,
+   "uvCoverage": 0.5270000100135803
+  },
+  "designedJointOverlaps": 172,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B05_SluiceGate",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B05_SluiceGate_BaseColor.png",
+   "T_B05_SluiceGate_Normal.png",
+   "T_B05_SluiceGate_ORM.png"
+  ],
+  "pivots": {
+   "Gate": [
+    0.0,
+    0.0,
+    0.1
+   ],
+   "Drive": [
+    0.0,
+    -0.0365,
+    0.9
+   ]
+  },
+  "animationRange": {
+   "Gate.location[2]": [
+    0.1,
+    0.42
+   ],
+   "Drive.rotation[0]": [
+    0.0,
+    10.0
+   ]
+  },
+  "sockets": [
+   "SOCKET_Out_Front",
+   "SOCKET_In_Back",
+   "SOCKET_WheelMount"
+  ],
+  "glbAnimations": [
+   "B05_SluiceGate_Drive_LOD0",
+   "B05_SluiceGate_Gate_LOD0",
+   "B05_SluiceGate_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B05_SluiceGate": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 15.7,
+  "glbRoundTrip": {
+   "objects": [
+    "B05_SluiceGate",
+    "B05_SluiceGate_Drive_LOD0",
+    "B05_SluiceGate_Gate_LOD0",
+    "B05_SluiceGate_LOD0",
+    "B05_SluiceGate_Water",
+    "SOCKET_In_Back",
+    "SOCKET_Out_Front",
+    "SOCKET_WheelMount"
+   ],
+   "meshes": 4,
+   "triangles": 14074,
+   "bbox_min": [
+    -0.4710000157356262,
+    -0.15000000596046448,
+    0.0
+   ],
+   "bbox_max": [
+    0.4710000157356262,
+    0.15000000596046448,
+    1.5
+   ],
+   "materials": [
+    "M_B05_SluiceGate",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 4,
+   "actions": [
+    "B05_SluiceGate_Drive_LOD0",
+    "B05_SluiceGate_Gate_LOD0",
+    "B05_SluiceGate_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Open"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B05_SluiceGate",
+    "B05_SluiceGate_Drive_LOD0",
+    "B05_SluiceGate_Drive_LOD1",
+    "B05_SluiceGate_Drive_LOD2",
+    "B05_SluiceGate_Gate_LOD0",
+    "B05_SluiceGate_Gate_LOD1",
+    "B05_SluiceGate_Gate_LOD2",
+    "B05_SluiceGate_LOD0",
+    "B05_SluiceGate_LOD1",
+    "B05_SluiceGate_LOD2",
+    "B05_SluiceGate_Water",
+    "SOCKET_In_Back",
+    "SOCKET_Out_Front",
+    "SOCKET_WheelMount"
+   ],
+   "meshes": 4,
+   "triangles": 14074,
+   "bbox_min": [
+    -0.4710000157356262,
+    -0.15000000596046448,
+    -2.443810309671335e-08
+   ],
+   "bbox_max": [
+    0.4710000157356262,
+    0.15000024437904358,
+    1.5
+   ],
+   "materials": [
+    "M_B05_SluiceGate",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 4,
+   "actions": [
+    "B05_SluiceGate_Drive_LOD0|Gate_Open",
+    "B05_SluiceGate_Gate_LOD0|Gate_Open",
+    "Key|Gate_Open"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Open"
+   ],
+   "lods": [
+    "B05_SluiceGate_Drive_LOD1",
+    "B05_SluiceGate_Drive_LOD2",
+    "B05_SluiceGate_Gate_LOD1",
+    "B05_SluiceGate_Gate_LOD2",
+    "B05_SluiceGate_LOD1",
+    "B05_SluiceGate_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B05_SluiceGate.glb": {
+    "bytes": 15165704,
+    "sha256": "e035444936a12134bb7e6161821af05062531f8cf5bb435f364ac94cb8ce8fd7"
+   },
+   "B05_SluiceGate.fbx": {
+    "bytes": 1890844,
+    "sha256": "d6b249ae6ebbc52f1d3e448fd4415a0d1234aafdfe8f3f1265eaab2d38f90729"
+   },
+   "B05_SluiceGate_v001.blend": {
+    "bytes": 1003002,
+    "sha256": "7d3b95817c4848db1d1db2d2f388fce77f8d07d0f4a09aad0fc0bfee5605db6d"
+   }
+  },
+  "buildSeconds": 63.6,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "id": "B01",
+    "name": "舊水路方形基座",
+    "file": "B01_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "正、側、背及俯視水路已檢視；背面封牆已修成開口。",
+    "limitations": "上緣水花有瀑布式畫法；水路應採同高連續底面，流向以俯視箭頭為準。修圖移除了人物符號，尺度參照以本文件 175 cm 表為準。",
+    "dimensions": "140 × 140 × 40 cm；前後接口外寬60 cm、淨寬40 cm",
+    "revised": true,
+    "bytes": 2179180,
+    "sha256": "d0358b7abb1561ab051a0e625631200b0dae33a5254ba7bcba791a25f224e821",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B02",
+    "name": "可拼接直線石槽",
+    "file": "B02_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "兩端 U 形開口；俯視端牆已移除；短槽與舊版長槽不同。",
+    "limitations": "人物為獨立比例符號，不能以像素量取；接口底面保持連續。",
+    "dimensions": "100 × 60 × 40 cm；兩端開放",
+    "revised": true,
+    "bytes": 2052869,
+    "sha256": "b00f4d22e774c22f09f5262a63c5afeacc86b13757ed880b45366938d9f487e1",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B03",
+    "name": "可拼接彎角石槽",
+    "file": "B03_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "正、右側、背與 L 形俯視可辨；兩個接口與轉向已檢視。",
+    "limitations": "主圖帶俯視角度，不能作嚴格正投影描圖；形狀依俯視與標註尺寸。",
+    "dimensions": "100 × 100 × 40 cm；90°轉彎",
+    "revised": false,
+    "bytes": 2089251,
+    "sha256": "73fbb5b0922cd3440306000bcf0d26c967d9fd7d6ae98c182502f23049d2735a",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B04",
+    "name": "分流三通石槽",
+    "file": "B04_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "三通為前進、左右出、背封；右出口封牆已修正，總占地字樣已修正。",
+    "limitations": "剖面 Wall 10 cm 的箭頭仍畫成豎向，實際指左右壁的水平厚度；依規格 10 cm，不依箭頭方向。",
+    "dimensions": "120 × 100 × 40 cm；前進左右出",
+    "revised": true,
+    "bytes": 2170897,
+    "sha256": "472ce3a08af3732f46b0024451a7b76369720b74a96b8330d2b444ee11fec006",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B05",
+    "name": "木製手動閘板",
+    "file": "B05_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "三視圖與 OPEN／CLOSED 小圖、齒條和方形接口已檢視。",
+    "limitations": "關閉時板底需貼槽底，不能照畫面水色留出漏水縫；握把105 cm、閘輪軸心90 cm，以數值為準。",
+    "dimensions": "框80 × 30 × 150 cm；閘板44 × 40 × 5 cm；上提32 cm",
+    "revised": false,
+    "bytes": 1978796,
+    "sha256": "2deba7f3694e117a54fe5f97daa8a9efbf94fd902426b440c5229fc7e5c56ff5",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B06",
+    "name": "青銅水位閘輪",
+    "file": "B06_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "四輻輪、側軸、背面輪轂與 B05 接裝小圖已檢視。",
+    "limitations": "手柄側向投影與正面畫法略不同；建模以側視軸向握柄及直徑50 cm為準。20 mm 為方軸截面，非軸長。",
+    "dimensions": "輪徑50 cm；軸長35 cm；方軸20 mm；軸心距地90 cm",
+    "revised": false,
+    "bytes": 2077685,
+    "sha256": "6311fd33df9955c33b31d72237c8a2709b0bd9aef890bcb1db10ae85332ce349",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B07",
+    "name": "漏水裂縫補石",
+    "file": "B07_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "補石本體三面、墊層、木楔及漏水前後小圖已檢視。",
+    "limitations": "A 破槽來源／尺寸未提供，圖已標 A FIT: VERIFY；45×20×8 cm 僅為補石提案，不能宣稱已完成 A 接合。",
+    "dimensions": "補石45 × 20 × 8 cm；A接口待核對",
+    "revised": false,
+    "bytes": 2481954,
+    "sha256": "74e24dcf5fcaade18bda335e36a167ebed88ec01d60b17af434f58580839356c",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B08",
+    "name": "河底清淤篩",
+    "file": "B08_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "篩框、網格、柄接頭及操作小圖已檢視。",
+    "limitations": "主視圖把長柄作展示性立起，側圖為斜放姿態，不能直接逐像素對位；建模以前後一致的固定柄角重新投影。下方槽口圖只作背景接口參考，不屬篩子。",
+    "dimensions": "篩框60 × 45 × 12 cm；柄110 cm；網孔10 mm",
+    "revised": false,
+    "bytes": 1828449,
+    "sha256": "9c55741b61f217e9cb8c915ea2070238a78b5cb4f8ff0a706ba4d9237bd1015e",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B09",
+    "name": "測流浮標",
+    "file": "B09_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "浮標三面、水線、配重、錨樁及快慢對照已檢視；對照圖錨點已改上游。",
+    "limitations": "主要以繩索鬆緊、位移、尾流判讀水流；旗布不當作獨立測流依據。主視圖無流向箭頭的錨點只示組裝。",
+    "dimensions": "浮體25 × 12 × 10 cm；桅20 cm；繩60 cm",
+    "revised": true,
+    "bytes": 2037818,
+    "sha256": "3147acc91a51b1a71242a5e4f6537d99fac984d8e1155af358e7c70a3f527f2e",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B10",
+    "name": "壓水木樁組",
+    "file": "B10_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "雙樁、斜撐、木榫、銅箍及入土30 cm剖示已檢視。",
+    "limitations": "淺色石槽是安裝背景，不是B10交付件；其底部須真正貼合承梁，不能把圖面留白建成懸空間隙。50 cm 為承梁頂面，175 cm人物為尺寸參考。",
+    "dimensions": "樁截面12 × 12 cm；總長80 cm、入土30 cm；梁100 × 16 × 16 cm",
+    "revised": false,
+    "bytes": 2561846,
+    "sha256": "4d8db8def7ca2d6c4962e72dc0a540dee322158b7a0e236615116540a01ffe08",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B11",
+    "name": "水工材料推車",
+    "file": "B11_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "開放式材料車正側背、軸輪、停車腳及木石工具已檢視。",
+    "limitations": "不同視圖的鬆散載物略有變化；後續鎖定同一擺位。僅載材料工具，非正式背包或成品資產箱。",
+    "dimensions": "總長180 cm、寬85 cm；車床120 × 75 cm；輪徑60 cm",
+    "revised": false,
+    "bytes": 2088257,
+    "sha256": "96421f99c48e80cc367dafb25bcf14f2db33f2c04d52e404614d9896db8bd4bd",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "B12",
+    "name": "公共工程完工碑座",
+    "file": "B12_three_view.png",
+    "author": "Codex / OpenAI built-in image_gen",
+    "status": "AI concept generated and visually reviewed; not modeled",
+    "views": [
+      "FRONT",
+      "RIGHT SIDE",
+      "BACK"
+    ],
+    "reviewed_date": "2026-10-28",
+    "review": "正側背、替換木牌、收據槽及空白路線標記已檢視；總高110 cm標線已修正。",
+    "limitations": "高度以110 cm含25 cm底座為準；沒有姓名、付費或貢獻排行。",
+    "dimensions": "底座80 × 60 × 25 cm；含底座總高110 cm",
+    "revised": true,
+    "bytes": 2098397,
+    "sha256": "30e8164d86c19f17ec71c11eb2321876041c5f89e12c9ff187593b36006ebfed",
+    "width": 1536,
+    "height": 1024
+  }
+]

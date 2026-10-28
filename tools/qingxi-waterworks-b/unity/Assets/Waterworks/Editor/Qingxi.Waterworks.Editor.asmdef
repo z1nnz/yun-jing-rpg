@@ -1,0 +1,6 @@
+{
+  "name": "Qingxi.Waterworks.Editor",
+  "rootNamespace": "Qingxi.Waterworks.EditorTools",
+  "references": ["Qingxi.Waterworks"],
+  "includePlatforms": ["Editor"]
+}

@@ -1,0 +1,260 @@
+{
+ "id": "B06",
+ "name": "GateWheel",
+ "key": "B06_GateWheel",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "Codex / OpenAI image_gen",
+ "variant_of": null,
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "root at the square-tip end of the shaft (seats in the B05 coupling), not the base",
+ "dimensions_m": [
+  0.477,
+  0.502,
+  0.502
+ ],
+ "triangles": 3516,
+ "lod_triangles": [
+  3516,
+  1758,
+  772
+ ],
+ "collision": [
+  {
+   "type": "cylinder",
+   "axis": "X",
+   "center": [
+    0.32499999999999996,
+    0,
+    0
+   ],
+   "radius": 0.25,
+   "height": 0.05,
+   "note": "wheel"
+  },
+  {
+   "type": "cylinder",
+   "axis": "X",
+   "center": [
+    0.175,
+    0,
+    0
+   ],
+   "radius": 0.015,
+   "height": 0.35,
+   "note": "shaft"
+  }
+ ],
+ "ports": [],
+ "sockets": [],
+ "animation": {
+  "name": "Wheel_RaiseGate",
+  "frames": 48,
+  "tracks": [
+   [
+    "Body",
+    "rotation",
+    0,
+    [
+     0.0,
+     10.0
+    ]
+   ]
+  ]
+ },
+ "mechanism": {
+  "drives": "B05 pinion (16 teeth, module 4 mm) through the 20 mm square coupling",
+  "wheel_diameter_m": 0.5,
+  "shaft_length_m": 0.35,
+  "square_coupling_mm": 20,
+  "grip_radius_m": 0.18,
+  "grip_axis": "axial (+X, toward the operator)",
+  "wheel_centre_from_root_m": 0.325,
+  "turn_to_raise_rad": 10.0
+ },
+ "decisions": [
+  "Axial grip at r=0.18 (side view), not the radial grip of the front view.",
+  "Side-mounted (user review 2026-10-29): axle across the channel, wheel over the right bank so it is turned from the bank. The sheet's pinion now lives in B05; B06 is wheel + shaft + 20 mm square tip."
+ ],
+ "validation": {
+  "asset": "B06",
+  "key": "B06_GateWheel",
+  "version": "v001",
+  "reference": {
+   "file": "B06_three_view.png",
+   "sha256": "6311fd33df9955c33b31d72237c8a2709b0bd9aef890bcb1db10ae85332ce349"
+  },
+  "dimensions_m": [
+   0.477,
+   0.502,
+   0.502
+  ],
+  "target_size_m": [
+   0.5,
+   0.48,
+   0.5
+  ],
+  "bbox_min": [
+   0.0,
+   -0.251,
+   -0.251
+  ],
+  "bbox_max": [
+   0.477,
+   0.251,
+   0.251
+  ],
+  "body_min_z": -0.251,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   3516,
+   1758,
+   772
+  ],
+  "waterTriangles": 0,
+  "budgetLOD0": 9000,
+  "withinBudget": true,
+  "vertices": 1792,
+  "nodes": [
+   "B06_GateWheel_LOD0"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 0,
+   "oppositeContactFaces": 29
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 0,
+   "texelDensityPxPerM": 906.9,
+   "uvCoverage": 0.3700000047683716
+  },
+  "designedJointOverlaps": 11,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B06_GateWheel"
+  ],
+  "textureResolution": 1024,
+  "textures": [
+   "T_B06_GateWheel_BaseColor.png",
+   "T_B06_GateWheel_Normal.png",
+   "T_B06_GateWheel_ORM.png"
+  ],
+  "pivots": {
+   "Body": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "animationRange": {
+   "Body.rotation[0]": [
+    0.0,
+    10.0
+   ]
+  },
+  "sockets": [],
+  "glbAnimations": [
+   "B06_GateWheel_LOD0"
+  ],
+  "glbAlphaModes": {
+   "M_B06_GateWheel": "OPAQUE"
+  },
+  "buildSecondsBeforeRender": 4.4,
+  "glbRoundTrip": {
+   "objects": [
+    "B06_GateWheel",
+    "B06_GateWheel_LOD0"
+   ],
+   "meshes": 1,
+   "triangles": 3516,
+   "bbox_min": [
+    9.313225746154785e-09,
+    -0.25099998712539673,
+    -0.25099998712539673
+   ],
+   "bbox_max": [
+    0.47700002789497375,
+    0.25099998712539673,
+    0.25099998712539673
+   ],
+   "materials": [
+    "M_B06_GateWheel"
+   ],
+   "images": 3,
+   "imagesLoaded": 3,
+   "empties": 1,
+   "actions": [
+    "B06_GateWheel_LOD0"
+   ],
+   "shapeKeys": [],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B06_GateWheel",
+    "B06_GateWheel_LOD0",
+    "B06_GateWheel_LOD1",
+    "B06_GateWheel_LOD2"
+   ],
+   "meshes": 1,
+   "triangles": 3516,
+   "bbox_min": [
+    9.313225746154785e-09,
+    -0.2510000169277191,
+    -0.2510000169277191
+   ],
+   "bbox_max": [
+    0.47700002789497375,
+    0.2510000169277191,
+    0.2510000169277191
+   ],
+   "materials": [
+    "M_B06_GateWheel"
+   ],
+   "images": 3,
+   "imagesLoaded": 3,
+   "empties": 1,
+   "actions": [
+    "B06_GateWheel_LOD0|Wheel_RaiseGate"
+   ],
+   "shapeKeys": [],
+   "lods": [
+    "B06_GateWheel_LOD1",
+    "B06_GateWheel_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B06_GateWheel.glb": {
+    "bytes": 2458656,
+    "sha256": "b0f7f2fd62a31684349f0889059f939e1e23bf4bc2fd580fdfa448bd406858f4"
+   },
+   "B06_GateWheel.fbx": {
+    "bytes": 459004,
+    "sha256": "aa0de73bc13523569d98be9453a4ad09454670c981d9e7290e9866725a95cb20"
+   },
+   "B06_GateWheel_v001.blend": {
+    "bytes": 299180,
+    "sha256": "ec100a9e165ea5998b3bc836a549c56d0c132958eb3a9c2aea8d89e54ccd6538"
+   }
+  },
+  "buildSeconds": 49.4,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

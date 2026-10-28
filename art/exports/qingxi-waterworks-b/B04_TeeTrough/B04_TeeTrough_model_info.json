@@ -1,0 +1,436 @@
+{
+ "id": "B04",
+ "name": "TeeTrough",
+ "key": "B04_TeeTrough",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "Codex / OpenAI image_gen",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  1.2,
+  1.0388,
+  0.3995
+ ],
+ "triangles": 16191,
+ "lod_triangles": [
+  16191,
+  8096,
+  3562
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    -0.3,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.4,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.25,
+    -0.3,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.25,
+    -0.3,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0,
+    0.2,
+    0.05
+   ],
+   "size": [
+    1.2,
+    0.4,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    0,
+    -0.05,
+    0.2
+   ],
+   "size": [
+    1.2,
+    0.1,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0,
+    0.45,
+    0.2
+   ],
+   "size": [
+    1.2,
+    0.1,
+    0.4
+   ],
+   "note": "wall"
+  }
+ ],
+ "ports": [
+  {
+   "name": "In_Front",
+   "position": [
+    0,
+    -0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "Out_Left",
+   "position": [
+    -0.6,
+    0.2,
+    0
+   ],
+   "normal": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": -90.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "Out_Right",
+   "position": [
+    0.6,
+    0.2,
+    0
+   ],
+   "normal": [
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 90.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "Exactly three ports; back wall closed and coursed; splitter nose 8.5 cm high below the water surface."
+ ],
+ "validation": {
+  "asset": "B04",
+  "key": "B04_TeeTrough",
+  "version": "v001",
+  "reference": {
+   "file": "B04_three_view.png",
+   "sha256": "472ce3a08af3732f46b0024451a7b76369720b74a96b8330d2b444ee11fec006"
+  },
+  "dimensions_m": [
+   1.2,
+   1.0388,
+   0.3995
+  ],
+  "target_size_m": [
+   1.2,
+   1.0,
+   0.4
+  ],
+  "bbox_min": [
+   -0.6,
+   -0.5,
+   0.0
+  ],
+  "bbox_max": [
+   0.6,
+   0.5388,
+   0.3995
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   16191,
+   8096,
+   3562
+  ],
+  "waterTriangles": 865,
+  "budgetLOD0": 16000,
+  "withinBudget": false,
+  "vertices": 8212,
+  "nodes": [
+   "B04_TeeTrough_LOD0",
+   "B04_TeeTrough_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 3,
+   "looseVerts": 0,
+   "zeroAreaFaces": 2
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 18,
+   "oppositeContactFaces": 400
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 3,
+   "texelDensityPxPerM": 612.4,
+   "uvCoverage": 0.6000000238418579
+  },
+  "designedJointOverlaps": 20,
+  "unlistedOverlaps": [
+   [
+    "B04_CrossL_C0_0",
+    "B04_Floor"
+   ]
+  ],
+  "materials": [
+   "M_B04_TeeTrough",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B04_TeeTrough_BaseColor.png",
+   "T_B04_TeeTrough_Normal.png",
+   "T_B04_TeeTrough_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_In_Front",
+   "SOCKET_Out_Left",
+   "SOCKET_Out_Right"
+  ],
+  "glbAnimations": [
+   "B04_TeeTrough_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B04_TeeTrough": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 20.3,
+  "glbRoundTrip": {
+   "objects": [
+    "B04_TeeTrough",
+    "B04_TeeTrough_LOD0",
+    "B04_TeeTrough_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Left",
+    "SOCKET_Out_Right"
+   ],
+   "meshes": 2,
+   "triangles": 17056,
+   "bbox_min": [
+    -0.6000000238418579,
+    -0.5,
+    0.0
+   ],
+   "bbox_max": [
+    0.6000000238418579,
+    0.5388000011444092,
+    0.399525910615921
+   ],
+   "materials": [
+    "M_B04_TeeTrough",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 4,
+   "actions": [
+    "B04_TeeTrough_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B04_TeeTrough",
+    "B04_TeeTrough_LOD0",
+    "B04_TeeTrough_LOD1",
+    "B04_TeeTrough_LOD2",
+    "B04_TeeTrough_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Left",
+    "SOCKET_Out_Right"
+   ],
+   "meshes": 2,
+   "triangles": 17056,
+   "bbox_min": [
+    -0.6000000238418579,
+    -0.5,
+    -8.778166460388093e-08
+   ],
+   "bbox_max": [
+    0.6000000238418579,
+    0.538800060749054,
+    0.3995260000228882
+   ],
+   "materials": [
+    "M_B04_TeeTrough",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 4,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B04_TeeTrough_LOD1",
+    "B04_TeeTrough_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B04_TeeTrough.glb": {
+    "bytes": 16147692,
+    "sha256": "ce45dc770346b26c48fc07df7d20494f2f692e250f3021f82536982c3e553de8"
+   },
+   "B04_TeeTrough.fbx": {
+    "bytes": 2066268,
+    "sha256": "131fcc0d362d16dff0d7406d9e0233b192817834c142895e6b5cee4bb4a8632a"
+   },
+   "B04_TeeTrough_v001.blend": {
+    "bytes": 1153152,
+    "sha256": "0de85fac134db4969541f2f825371d38236d422b2f00d343a4208318b7395078"
+   }
+  },
+  "buildSeconds": 59.6,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

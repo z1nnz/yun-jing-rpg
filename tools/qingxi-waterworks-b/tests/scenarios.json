@@ -1,0 +1,48 @@
+{
+  "_note": "Action scripts replayed by both rule implementations (JS core and the Unity C# port). make-golden.mjs records what the JS core answers at every step into golden.json; the Unity EditMode tests replay the same scripts and must match.",
+  "scenarios": [
+    { "id": "direct_restore", "fixture": "all", "steps": [
+      { "op": "place", "x": 3, "y": 1, "type": "worn" }, { "op": "place", "x": 3, "y": 2, "type": "worn" },
+      { "op": "place", "x": 3, "y": 3, "type": "worn" }, { "op": "place", "x": 3, "y": 4, "type": "worn" },
+      { "op": "place", "x": 3, "y": 5, "type": "apron" }, { "op": "direction", "dir": "restore_channel" },
+      { "op": "finish" }, { "op": "finish" }, { "op": "place", "x": 2, "y": 2, "type": "straight" }, { "op": "undo" },
+      { "op": "retry" }, { "op": "finish" } ] },
+    { "id": "detour_protect", "fixture": "all", "steps": [
+      { "op": "direction", "dir": "protect_nursery" },
+      { "op": "place", "x": 3, "y": 1, "type": "bendL" }, { "op": "place", "x": 2, "y": 1, "type": "straight", "rot": 1 },
+      { "op": "place", "x": 1, "y": 1, "type": "bendR", "rot": 3 }, { "op": "place", "x": 1, "y": 2, "type": "straight" },
+      { "op": "place", "x": 1, "y": 3, "type": "straight" }, { "op": "place", "x": 1, "y": 4, "type": "straight" },
+      { "op": "place", "x": 1, "y": 5, "type": "apron" }, { "op": "place", "x": 4, "y": 2, "type": "straight" },
+      { "op": "finish" } ] },
+    { "id": "divert_clear_silt", "fixture": "all", "steps": [
+      { "op": "place", "x": 3, "y": 1, "type": "tee", "rot": 1 }, { "op": "place", "x": 2, "y": 1, "type": "straight", "rot": 1 },
+      { "op": "place", "x": 1, "y": 1, "type": "straight", "rot": 1 }, { "op": "place", "x": 0, "y": 1, "type": "apron", "rot": 3 },
+      { "op": "place", "x": 3, "y": 2, "type": "worn" }, { "op": "place", "x": 3, "y": 3, "type": "worn" },
+      { "op": "place", "x": 3, "y": 4, "type": "worn" }, { "op": "direction", "dir": "clear_silt" },
+      { "op": "finish" }, { "op": "place", "x": 3, "y": 5, "type": "apron" }, { "op": "finish" } ] },
+    { "id": "misconnect_and_fix", "fixture": "all", "steps": [
+      { "op": "place", "x": 3, "y": 1, "type": "worn" }, { "op": "place", "x": 3, "y": 2, "type": "worn", "rot": 1 },
+      { "op": "rotate", "x": 3, "y": 2 }, { "op": "place", "x": 3, "y": 3, "type": "apron", "rot": 2 },
+      { "op": "remove", "x": 3, "y": 3 }, { "op": "place", "x": 5, "y": 1, "type": "straight" },
+      { "op": "place", "x": 6, "y": 2, "type": "straight" }, { "op": "remove", "x": 9, "y": 9 }, { "op": "gate", "x": 3, "y": 1 } ] },
+    { "id": "gate_missed_nursery", "fixture": "two", "steps": [
+      { "op": "place", "x": 3, "y": 1, "type": "gate" }, { "op": "place", "x": 3, "y": 2, "type": "worn" },
+      { "op": "place", "x": 3, "y": 3, "type": "worn" }, { "op": "place", "x": 3, "y": 4, "type": "worn" },
+      { "op": "place", "x": 3, "y": 5, "type": "apron" }, { "op": "gate", "x": 3, "y": 1 },
+      { "op": "direction", "dir": "restore_channel" }, { "op": "gate", "x": 3, "y": 1 }, { "op": "finish" } ] },
+    { "id": "no_clues_surprise", "fixture": "none", "steps": [
+      { "op": "place", "x": 3, "y": 1, "type": "straight" }, { "op": "place", "x": 3, "y": 2, "type": "straight" },
+      { "op": "place", "x": 3, "y": 3, "type": "straight" }, { "op": "place", "x": 3, "y": 4, "type": "bendL" },
+      { "op": "place", "x": 2, "y": 4, "type": "bendR", "rot": 3 }, { "op": "place", "x": 2, "y": 5, "type": "apron" },
+      { "op": "direction", "dir": "restore_channel" }, { "op": "finish" } ] },
+    { "id": "rules_edges", "fixture": "one", "steps": [
+      { "op": "place", "x": 4, "y": 3, "type": "straight" }, { "op": "direction", "dir": "protect_nursery" },
+      { "op": "undo" }, { "op": "undo" }, { "op": "redo" }, { "op": "redo" }, { "op": "redo" },
+      { "op": "remove", "x": 4, "y": 3 }, { "op": "direction", "dir": "protect_nursery" },
+      { "op": "place", "x": 4, "y": 2, "type": "straight" }, { "op": "direction", "dir": "nope" },
+      { "op": "place", "x": 1, "y": 1, "type": "nope" }, { "op": "place", "x": 3, "y": 0, "type": "straight" },
+      { "op": "place", "x": 3, "y": 1, "type": "tee", "rot": 1 }, { "op": "place", "x": 2, "y": 1, "type": "tee" },
+      { "op": "place", "x": 4, "y": 1, "type": "tee", "rot": 2 }, { "op": "place", "x": 1, "y": 1, "type": "tee" },
+      { "op": "place", "x": 6, "y": 1, "type": "tee" }, { "op": "finish" } ] }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+ "id": "B03-V02",
+ "name": "BroadBendRight",
+ "key": "B03-V02_BroadBendRight",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "user-supplied variant sheet (chat, 2026-10-29)",
+ "variant_of": "B03",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  1.204,
+  1.204,
+  0.4088
+ ],
+ "triangles": 17052,
+ "lod_triangles": [
+  17052,
+  8526,
+  3750
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0.4244,
+    0.2827,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.4406,
+    0.1
+   ],
+   "note": "floor",
+   "yaw_deg": 101.25
+  },
+  {
+   "type": "box",
+   "center": [
+    0.4732,
+    0.0375,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 101.25
+  },
+  {
+   "type": "box",
+   "center": [
+    0.3756,
+    0.5279,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 101.25
+  },
+  {
+   "type": "box",
+   "center": [
+    0.1,
+    0.1483,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.4406,
+    0.1
+   ],
+   "note": "floor",
+   "yaw_deg": 123.75
+  },
+  {
+   "type": "box",
+   "center": [
+    0.2389,
+    -0.0595,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 123.75
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.0389,
+    0.3562,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 123.75
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.1483,
+    -0.1,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.4406,
+    0.1
+   ],
+   "note": "floor",
+   "yaw_deg": 146.25
+  },
+  {
+   "type": "box",
+   "center": [
+    0.0595,
+    -0.2389,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 146.25
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.3562,
+    0.0389,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 146.25
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.2827,
+    -0.4244,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.4406,
+    0.1
+   ],
+   "note": "floor",
+   "yaw_deg": 168.75
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.0375,
+    -0.4732,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 168.75
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.5279,
+    -0.3756,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.4406,
+    0.4
+   ],
+   "note": "wall",
+   "yaw_deg": 168.75
+  }
+ ],
+ "ports": [
+  {
+   "name": "In_Front",
+   "position": [
+    -0.3,
+    -0.6,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "Out_Right",
+   "position": [
+    0.6,
+    0.3,
+    0
+   ],
+   "normal": [
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 90.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "Right-hand 90 degree arc, inner wall radius 0.60, outer 1.20, bore between 0.70 and 1.10; ports on the radial end faces.",
+  "Curved blocks laid in the kit courses with staggered joints; floor in three curved flags.",
+  "Its own form: a different radius and outer edge from B03, not a scaled copy."
+ ],
+ "validation": {
+  "asset": "B03-V02",
+  "key": "B03-V02_BroadBendRight",
+  "version": "v001",
+  "reference": {
+   "file": "B03_V02_three_view.png",
+   "sha256": "b155a42bc1b72130db70d819651b6cd73ad5f3851689f58dbe3a76c9cf7126af"
+  },
+  "dimensions_m": [
+   1.204,
+   1.204,
+   0.4088
+  ],
+  "target_size_m": [
+   1.2,
+   1.2,
+   0.4
+  ],
+  "bbox_min": [
+   -0.6023,
+   -0.6017,
+   0.0
+  ],
+  "bbox_max": [
+   0.6017,
+   0.6023,
+   0.4088
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   17052,
+   8526,
+   3750
+  ],
+  "waterTriangles": 1019,
+  "budgetLOD0": 18000,
+  "withinBudget": true,
+  "vertices": 8608,
+  "nodes": [
+   "B03-V02_BroadBendRight_LOD0",
+   "B03-V02_BroadBendRight_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 0,
+   "oppositeContactFaces": 31
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 0,
+   "texelDensityPxPerM": 665.2,
+   "uvCoverage": 0.640999972820282
+  },
+  "designedJointOverlaps": 8,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B03-V02_BroadBendRight",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B03-V02_BroadBendRight_BaseColor.png",
+   "T_B03-V02_BroadBendRight_Normal.png",
+   "T_B03-V02_BroadBendRight_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_In_Front",
+   "SOCKET_Out_Right"
+  ],
+  "glbAnimations": [
+   "B03-V02_BroadBendRight_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B03-V02_BroadBendRight": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 21.3,
+  "glbRoundTrip": {
+   "objects": [
+    "B03-V02_BroadBendRight",
+    "B03-V02_BroadBendRight_LOD0",
+    "B03-V02_BroadBendRight_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Right"
+   ],
+   "meshes": 2,
+   "triangles": 18071,
+   "bbox_min": [
+    -0.6022813320159912,
+    -0.6017174124717712,
+    0.0
+   ],
+   "bbox_max": [
+    0.6017174124717712,
+    0.6022813320159912,
+    0.40880000591278076
+   ],
+   "materials": [
+    "M_B03-V02_BroadBendRight",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 3,
+   "actions": [
+    "B03-V02_BroadBendRight_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B03-V02_BroadBendRight",
+    "B03-V02_BroadBendRight_LOD0",
+    "B03-V02_BroadBendRight_LOD1",
+    "B03-V02_BroadBendRight_LOD2",
+    "B03-V02_BroadBendRight_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Right"
+   ],
+   "meshes": 2,
+   "triangles": 18071,
+   "bbox_min": [
+    -0.6022813320159912,
+    -0.6017173528671265,
+    -9.812409018650214e-08
+   ],
+   "bbox_max": [
+    0.6017174124717712,
+    0.602281391620636,
+    0.4088000953197479
+   ],
+   "materials": [
+    "M_B03-V02_BroadBendRight",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 3,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B03-V02_BroadBendRight_LOD1",
+    "B03-V02_BroadBendRight_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B03-V02_BroadBendRight.glb": {
+    "bytes": 16848732,
+    "sha256": "9aa2b4ddcd1d2d807024c025d6814f40893a25a52c0a596440d4116948d0068f"
+   },
+   "B03-V02_BroadBendRight.fbx": {
+    "bytes": 2333276,
+    "sha256": "0acfda05e6f584787936e71e70cd844d74faf96a66d512d4ba167237c9b54bf3"
+   },
+   "B03-V02_BroadBendRight_v001.blend": {
+    "bytes": 1350809,
+    "sha256": "420a251e0f640c28254e041b15cba8991428b48b569b51100f10fb3261e6d26c"
+   }
+  },
+  "buildSeconds": 60.5,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

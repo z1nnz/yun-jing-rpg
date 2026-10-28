@@ -1,0 +1,383 @@
+{
+ "id": "B02-V05",
+ "name": "SpillApron",
+ "key": "B02-V05_SpillApron",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "user-supplied variant sheet (chat, 2026-10-29)",
+ "variant_of": "B02",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "port-block floor centre at grade; apron tiers set 5 cm into the soil",
+ "dimensions_m": [
+  0.8922,
+  0.8,
+  0.509
+ ],
+ "triangles": 9874,
+ "lod_triangles": [
+  9874,
+  4936,
+  2172
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    0.3,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.2,
+    0.1
+   ],
+   "note": "port floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    0,
+    0.23,
+    0.175
+   ],
+   "size": [
+    0.4,
+    0.06,
+    0.15
+   ],
+   "note": "weir"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.25,
+    0.3,
+    0.23
+   ],
+   "size": [
+    0.1,
+    0.2,
+    0.46
+   ],
+   "note": "pilaster"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.25,
+    0.3,
+    0.23
+   ],
+   "size": [
+    0.1,
+    0.2,
+    0.46
+   ],
+   "note": "pilaster"
+  },
+  {
+   "type": "box",
+   "center": [
+    0,
+    -0.1,
+    0.0
+   ],
+   "size": [
+    0.6,
+    0.6,
+    0.1
+   ],
+   "note": "apron"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.325,
+    -0.1,
+    0.12
+   ],
+   "size": [
+    0.1,
+    0.62,
+    0.24
+   ],
+   "note": "wing wall",
+   "yaw_deg": 14.04
+  },
+  {
+   "type": "box",
+   "center": [
+    0.325,
+    -0.1,
+    0.12
+   ],
+   "size": [
+    0.1,
+    0.62,
+    0.24
+   ],
+   "note": "wing wall",
+   "yaw_deg": -14.04
+  }
+ ],
+ "ports": [
+  {
+   "name": "In_Back",
+   "position": [
+    0,
+    0.4,
+    0
+   ],
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 180.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "One standard port (In_Back); the open discharge edge is a route terminator, no second port.",
+  "A 15 cm weir sill holds the kit 0.28 water line at the port; water spills 3 cm over it onto the apron.",
+  "Sheet side labels 10 / 5 cm read as the two apron tier thicknesses: tiers top at 0.05 and 0.00, set 5 cm into the soil.",
+  "Wing walls flare from 0.60 to 0.90 and step down 0.34 / 0.25 / 0.16 toward the open end."
+ ],
+ "validation": {
+  "asset": "B02-V05",
+  "key": "B02-V05_SpillApron",
+  "version": "v001",
+  "reference": {
+   "file": "B02_V05_three_view.png",
+   "sha256": "ead3aa3fc602c5d1e8c7811a431af70b229cb7a3a221fb8e3981548549255788"
+  },
+  "dimensions_m": [
+   0.8922,
+   0.8,
+   0.509
+  ],
+  "target_size_m": [
+   0.9,
+   0.8,
+   0.46
+  ],
+  "bbox_min": [
+   -0.4467,
+   -0.4,
+   -0.05
+  ],
+  "bbox_max": [
+   0.4455,
+   0.4,
+   0.459
+  ],
+  "body_min_z": -0.05,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   9874,
+   4936,
+   2172
+  ],
+  "waterTriangles": 488,
+  "budgetLOD0": 15000,
+  "withinBudget": true,
+  "vertices": 4997,
+  "nodes": [
+   "B02-V05_SpillApron_LOD0",
+   "B02-V05_SpillApron_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 9,
+   "oppositeContactFaces": 505
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 0,
+   "texelDensityPxPerM": 940.3,
+   "uvCoverage": 0.703000009059906
+  },
+  "designedJointOverlaps": 8,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B02-V05_SpillApron",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B02-V05_SpillApron_BaseColor.png",
+   "T_B02-V05_SpillApron_Normal.png",
+   "T_B02-V05_SpillApron_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_In_Back"
+  ],
+  "glbAnimations": [
+   "B02-V05_SpillApron_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B02-V05_SpillApron": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 22.0,
+  "glbRoundTrip": {
+   "objects": [
+    "B02-V05_SpillApron",
+    "B02-V05_SpillApron_LOD0",
+    "B02-V05_SpillApron_Water",
+    "SOCKET_In_Back"
+   ],
+   "meshes": 2,
+   "triangles": 10362,
+   "bbox_min": [
+    -0.44666752219200134,
+    -0.40000003576278687,
+    -0.05000000074505806
+   ],
+   "bbox_max": [
+    0.44549843668937683,
+    0.4000000059604645,
+    0.45897218585014343
+   ],
+   "materials": [
+    "M_B02-V05_SpillApron",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 2,
+   "actions": [
+    "B02-V05_SpillApron_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B02-V05_SpillApron",
+    "B02-V05_SpillApron_LOD0",
+    "B02-V05_SpillApron_LOD1",
+    "B02-V05_SpillApron_LOD2",
+    "B02-V05_SpillApron_Water",
+    "SOCKET_In_Back"
+   ],
+   "meshes": 2,
+   "triangles": 10362,
+   "bbox_min": [
+    -0.44666752219200134,
+    -0.40000003576278687,
+    -0.050000064074993134
+   ],
+   "bbox_max": [
+    0.44549843668937683,
+    0.40000009536743164,
+    0.4589722454547882
+   ],
+   "materials": [
+    "M_B02-V05_SpillApron",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 2,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B02-V05_SpillApron_LOD1",
+    "B02-V05_SpillApron_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B02-V05_SpillApron.glb": {
+    "bytes": 16822484,
+    "sha256": "7e89eda04fa2e38adb47979fec95625408bf5674e1201cc8ac4899a3af783bcb"
+   },
+   "B02-V05_SpillApron.fbx": {
+    "bytes": 1258652,
+    "sha256": "aeef0ea739db0ae7ee9899be70c78e6b17686030693d5ff1dcf75065230f627a"
+   },
+   "B02-V05_SpillApron_v001.blend": {
+    "bytes": 770683,
+    "sha256": "5661f45d450440d7e94ba2f6daa81dc802996220293f079c10ae6d7f5823eeae"
+   }
+  },
+  "buildSeconds": 61.4,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

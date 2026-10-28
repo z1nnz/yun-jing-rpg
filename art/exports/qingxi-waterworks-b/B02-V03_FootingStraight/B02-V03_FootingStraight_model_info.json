@@ -1,0 +1,386 @@
+{
+ "id": "B02-V03",
+ "name": "FootingStraight",
+ "key": "B02-V03_FootingStraight",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "user-supplied variant sheet (chat, 2026-10-29)",
+ "variant_of": "B02",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre at grade; footing buried to z -0.20",
+ "dimensions_m": [
+  0.84,
+  1.0,
+  0.6088
+ ],
+ "triangles": 16684,
+ "lod_triangles": [
+  16684,
+  8342,
+  3670
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    0,
+    0.05
+   ],
+   "size": [
+    0.4,
+    1.0,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.0,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.0,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.36,
+    0,
+    0.1
+   ],
+   "size": [
+    0.12,
+    0.6,
+    0.2
+   ],
+   "note": "footing step"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.36,
+    0,
+    0.1
+   ],
+   "size": [
+    0.12,
+    0.6,
+    0.2
+   ],
+   "note": "footing step"
+  }
+ ],
+ "ports": [
+  {
+   "name": "End_Front",
+   "position": [
+    0,
+    -0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "End_Back",
+   "position": [
+    0,
+    0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 180.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "Floor and water at the kit levels (0.10 / 0.28); ports identical to B02.",
+  "Footing steps out to 0.84 over the middle 0.60 with 0.20 transitions and continues to z -0.20 (buried).",
+  "Validation allows z down to -0.20 for the buried footing only."
+ ],
+ "validation": {
+  "asset": "B02-V03",
+  "key": "B02-V03_FootingStraight",
+  "version": "v001",
+  "reference": {
+   "file": "B02_V03_three_view.png",
+   "sha256": "b35f95d1846bcd04306b6e434bf3ecb8cae367827e4492136d0b1465fbfb58ca"
+  },
+  "dimensions_m": [
+   0.84,
+   1.0,
+   0.6088
+  ],
+  "target_size_m": [
+   0.84,
+   1.0,
+   0.6
+  ],
+  "bbox_min": [
+   -0.42,
+   -0.5,
+   -0.2
+  ],
+  "bbox_max": [
+   0.42,
+   0.5,
+   0.4088
+  ],
+  "body_min_z": -0.2,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   16684,
+   8342,
+   3670
+  ],
+  "waterTriangles": 208,
+  "budgetLOD0": 14000,
+  "withinBudget": false,
+  "vertices": 8476,
+  "nodes": [
+   "B02-V03_FootingStraight_LOD0",
+   "B02-V03_FootingStraight_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 2
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 28,
+   "oppositeContactFaces": 1252
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 3,
+   "texelDensityPxPerM": 563.6,
+   "uvCoverage": 0.7200000286102295
+  },
+  "designedJointOverlaps": 24,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B02-V03_FootingStraight",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B02-V03_FootingStraight_BaseColor.png",
+   "T_B02-V03_FootingStraight_Normal.png",
+   "T_B02-V03_FootingStraight_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_End_Front",
+   "SOCKET_End_Back"
+  ],
+  "glbAnimations": [
+   "B02-V03_FootingStraight_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B02-V03_FootingStraight": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 25.2,
+  "glbRoundTrip": {
+   "objects": [
+    "B02-V03_FootingStraight",
+    "B02-V03_FootingStraight_LOD0",
+    "B02-V03_FootingStraight_Water",
+    "SOCKET_End_Back",
+    "SOCKET_End_Front"
+   ],
+   "meshes": 2,
+   "triangles": 16892,
+   "bbox_min": [
+    -0.41999998688697815,
+    -0.5,
+    -0.20000000298023224
+   ],
+   "bbox_max": [
+    0.41999998688697815,
+    0.5,
+    0.40880000591278076
+   ],
+   "materials": [
+    "M_B02-V03_FootingStraight",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 3,
+   "actions": [
+    "B02-V03_FootingStraight_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B02-V03_FootingStraight",
+    "B02-V03_FootingStraight_LOD0",
+    "B02-V03_FootingStraight_LOD1",
+    "B02-V03_FootingStraight_LOD2",
+    "B02-V03_FootingStraight_Water",
+    "SOCKET_End_Back",
+    "SOCKET_End_Front"
+   ],
+   "meshes": 2,
+   "triangles": 16892,
+   "bbox_min": [
+    -0.41999998688697815,
+    -0.5000000596046448,
+    -0.2000000774860382
+   ],
+   "bbox_max": [
+    0.41999998688697815,
+    0.5000000596046448,
+    0.4088000953197479
+   ],
+   "materials": [
+    "M_B02-V03_FootingStraight",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 3,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B02-V03_FootingStraight_LOD1",
+    "B02-V03_FootingStraight_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B02-V03_FootingStraight.glb": {
+    "bytes": 18012804,
+    "sha256": "ae0956bbed5fc8f85183e1550407cf0d34bc596066bcce9bcbdb97b10264dd1a"
+   },
+   "B02-V03_FootingStraight.fbx": {
+    "bytes": 2029596,
+    "sha256": "d04271c9c81b0455f29b8486b1a8dd1d813a58b698f865df3e5a886d08bab774"
+   },
+   "B02-V03_FootingStraight_v001.blend": {
+    "bytes": 1218821,
+    "sha256": "a7cdaf0889129e0c915c17d8b9aae801cc8e7c48308751f6b285bfee44f00489"
+   }
+  },
+  "buildSeconds": 64.4,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

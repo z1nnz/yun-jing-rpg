@@ -1,0 +1,10 @@
+{
+  "name": "Qingxi.Waterworks.Tests",
+  "rootNamespace": "Qingxi.Waterworks.Tests",
+  "references": ["Qingxi.Waterworks", "UnityEngine.TestRunner", "UnityEditor.TestRunner"],
+  "includePlatforms": ["Editor"],
+  "overrideReferences": true,
+  "precompiledReferences": ["nunit.framework.dll"],
+  "autoReferenced": false,
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}

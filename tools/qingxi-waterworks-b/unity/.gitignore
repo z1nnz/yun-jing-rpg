@@ -1,0 +1,12 @@
+# Unity generated
+/Library/
+/Temp/
+/Logs/
+/obj/
+/UserSettings/
+/Builds/
+*.csproj
+*.sln
+# kit copied from art/exports by Waterworks > Sync Kit (KitSync.cs); the exports are the source of truth
+/Assets/Resources/Kit/
+/Assets/Resources/Kit.meta

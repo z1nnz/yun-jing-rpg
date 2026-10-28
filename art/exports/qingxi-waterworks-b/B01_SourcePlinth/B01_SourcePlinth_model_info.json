@@ -1,0 +1,413 @@
+{
+ "id": "B01",
+ "name": "SourcePlinth",
+ "key": "B01_SourcePlinth",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "Codex / OpenAI image_gen",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  1.4176,
+  1.4176,
+  0.4594
+ ],
+ "triangles": 38900,
+ "lod_triangles": [
+  38900,
+  19450,
+  8558
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    0,
+    0.05
+   ],
+   "size": [
+    1.4,
+    1.4,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.65,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.4,
+    0.4
+   ],
+   "note": "side wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.65,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.4,
+    0.4
+   ],
+   "note": "side wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.45,
+    -0.65,
+    0.2
+   ],
+   "size": [
+    0.5,
+    0.1,
+    0.4
+   ],
+   "note": "front/back wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.45,
+    0.65,
+    0.2
+   ],
+   "size": [
+    0.5,
+    0.1,
+    0.4
+   ],
+   "note": "front/back wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.45,
+    -0.65,
+    0.2
+   ],
+   "size": [
+    0.5,
+    0.1,
+    0.4
+   ],
+   "note": "front/back wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.45,
+    0.65,
+    0.2
+   ],
+   "size": [
+    0.5,
+    0.1,
+    0.4
+   ],
+   "note": "front/back wall"
+  }
+ ],
+ "ports": [
+  {
+   "name": "Out_Front",
+   "position": [
+    0,
+    -0.7,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "In_Back",
+   "position": [
+    0,
+    0.7,
+    0
+   ],
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 180.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "Ports cut through front/back walls, floor continuous at z=0.10, no spill lip.",
+  "Walls dry-laid in two courses (bed joint 0.22) with staggered head joints, as drawn.",
+  "Cap stones sit proud of the 0.40 rim (top 0.46) as on the sheet; they stay off the port faces."
+ ],
+ "validation": {
+  "asset": "B01",
+  "key": "B01_SourcePlinth",
+  "version": "v001",
+  "reference": {
+   "file": "B01_three_view.png",
+   "sha256": "d0358b7abb1561ab051a0e625631200b0dae33a5254ba7bcba791a25f224e821"
+  },
+  "dimensions_m": [
+   1.4176,
+   1.4176,
+   0.4594
+  ],
+  "target_size_m": [
+   1.4,
+   1.4,
+   0.46
+  ],
+  "bbox_min": [
+   -0.7088,
+   -0.7088,
+   0.0
+  ],
+  "bbox_max": [
+   0.7088,
+   0.7088,
+   0.4594
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   38900,
+   19450,
+   8558
+  ],
+  "waterTriangles": 674,
+  "budgetLOD0": 26000,
+  "withinBudget": false,
+  "vertices": 19692,
+  "nodes": [
+   "B01_SourcePlinth_LOD0",
+   "B01_SourcePlinth_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 1
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 23,
+   "oppositeContactFaces": 1565
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 1,
+   "texelDensityPxPerM": 442.7,
+   "uvCoverage": 0.5640000104904175
+  },
+  "designedJointOverlaps": 40,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B01_SourcePlinth",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B01_SourcePlinth_BaseColor.png",
+   "T_B01_SourcePlinth_Normal.png",
+   "T_B01_SourcePlinth_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_Out_Front",
+   "SOCKET_In_Back"
+  ],
+  "glbAnimations": [
+   "B01_SourcePlinth_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B01_SourcePlinth": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 21.5,
+  "glbRoundTrip": {
+   "objects": [
+    "B01_SourcePlinth",
+    "B01_SourcePlinth_LOD0",
+    "B01_SourcePlinth_Water",
+    "SOCKET_In_Back",
+    "SOCKET_Out_Front"
+   ],
+   "meshes": 2,
+   "triangles": 39574,
+   "bbox_min": [
+    -0.7088000178337097,
+    -0.7088000178337097,
+    0.0
+   ],
+   "bbox_max": [
+    0.7088000178337097,
+    0.7088000178337097,
+    0.4593715965747833
+   ],
+   "materials": [
+    "M_B01_SourcePlinth",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 3,
+   "actions": [
+    "B01_SourcePlinth_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B01_SourcePlinth",
+    "B01_SourcePlinth_LOD0",
+    "B01_SourcePlinth_LOD1",
+    "B01_SourcePlinth_LOD2",
+    "B01_SourcePlinth_Water",
+    "SOCKET_In_Back",
+    "SOCKET_Out_Front"
+   ],
+   "meshes": 2,
+   "triangles": 39574,
+   "bbox_min": [
+    -0.7088000178337097,
+    -0.7088000178337097,
+    -1.1547818701274082e-07
+   ],
+   "bbox_max": [
+    0.7088000178337097,
+    0.7088000774383545,
+    0.4593717157840729
+   ],
+   "materials": [
+    "M_B01_SourcePlinth",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 3,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B01_SourcePlinth_LOD1",
+    "B01_SourcePlinth_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B01_SourcePlinth.glb": {
+    "bytes": 16922236,
+    "sha256": "06e2241d756e75f566d2388334dfd04e18f79e5dff18812912a425997ff30051"
+   },
+   "B01_SourcePlinth.fbx": {
+    "bytes": 4472668,
+    "sha256": "27c3bc03289e5948862818109278205fd1da6b47052ac1ded2f20c728c5756df"
+   },
+   "B01_SourcePlinth_v001.blend": {
+    "bytes": 2471939,
+    "sha256": "01ef7e7c1983511b5e21882d422d0f261899bcfc8f515878bfa5a852195ede86"
+   }
+  },
+  "buildSeconds": 61.2,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

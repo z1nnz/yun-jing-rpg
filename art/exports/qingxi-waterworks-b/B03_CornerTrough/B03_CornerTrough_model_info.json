@@ -1,0 +1,399 @@
+{
+ "id": "B03",
+ "name": "CornerTrough",
+ "key": "B03_CornerTrough",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "Codex / OpenAI image_gen",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  1.0615,
+  1.0615,
+  0.4088
+ ],
+ "triangles": 13769,
+ "lod_triangles": [
+  13769,
+  6884,
+  3028
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    -0.2,
+    -0.25,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.5,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.45,
+    -0.25,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.5,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.05,
+    -0.25,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.5,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.0,
+    0.2,
+    0.05
+   ],
+   "size": [
+    1.0,
+    0.4,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.0,
+    -0.05,
+    0.2
+   ],
+   "size": [
+    1.0,
+    0.1,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.0,
+    0.45,
+    0.2
+   ],
+   "size": [
+    1.0,
+    0.1,
+    0.4
+   ],
+   "note": "wall"
+  }
+ ],
+ "ports": [
+  {
+   "name": "In_Front",
+   "position": [
+    -0.2,
+    -0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "Out_Right",
+   "position": [
+    0.5,
+    0.2,
+    0
+   ],
+   "normal": [
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 90.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "Ports are direction-neutral: a left turn is this mesh placed reversed (rotation only).",
+  "Bore turns on a 0.10 m convex fillet (inner wall) and 0.12 m concave fillet (outer corner).",
+  "Fillet corners are carved one-piece stones per course; straight runs are coursed blocks."
+ ],
+ "validation": {
+  "asset": "B03",
+  "key": "B03_CornerTrough",
+  "version": "v001",
+  "reference": {
+   "file": "B03_three_view.png",
+   "sha256": "73fbb5b0922cd3440306000bcf0d26c967d9fd7d6ae98c182502f23049d2735a"
+  },
+  "dimensions_m": [
+   1.0615,
+   1.0615,
+   0.4088
+  ],
+  "target_size_m": [
+   1.0,
+   1.0,
+   0.4
+  ],
+  "bbox_min": [
+   -0.5615,
+   -0.5,
+   0.0
+  ],
+  "bbox_max": [
+   0.5,
+   0.5615,
+   0.4088
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   13769,
+   6884,
+   3028
+  ],
+  "waterTriangles": 625,
+  "budgetLOD0": 14000,
+  "withinBudget": true,
+  "vertices": 6961,
+  "nodes": [
+   "B03_CornerTrough_LOD0",
+   "B03_CornerTrough_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 3,
+   "looseVerts": 0,
+   "zeroAreaFaces": 4
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 24,
+   "oppositeContactFaces": 348
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 5,
+   "texelDensityPxPerM": 704.4,
+   "uvCoverage": 0.6690000295639038
+  },
+  "designedJointOverlaps": 16,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B03_CornerTrough",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B03_CornerTrough_BaseColor.png",
+   "T_B03_CornerTrough_Normal.png",
+   "T_B03_CornerTrough_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_In_Front",
+   "SOCKET_Out_Right"
+  ],
+  "glbAnimations": [
+   "B03_CornerTrough_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B03_CornerTrough": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 21.8,
+  "glbRoundTrip": {
+   "objects": [
+    "B03_CornerTrough",
+    "B03_CornerTrough_LOD0",
+    "B03_CornerTrough_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Right"
+   ],
+   "meshes": 2,
+   "triangles": 14394,
+   "bbox_min": [
+    -0.5615000128746033,
+    -0.5,
+    0.0
+   ],
+   "bbox_max": [
+    0.5,
+    0.5615000128746033,
+    0.40880000591278076
+   ],
+   "materials": [
+    "M_B03_CornerTrough",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 3,
+   "actions": [
+    "B03_CornerTrough_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B03_CornerTrough",
+    "B03_CornerTrough_LOD0",
+    "B03_CornerTrough_LOD1",
+    "B03_CornerTrough_LOD2",
+    "B03_CornerTrough_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Right"
+   ],
+   "meshes": 2,
+   "triangles": 14394,
+   "bbox_min": [
+    -0.5615000128746033,
+    -0.5,
+    -9.147996848923867e-08
+   ],
+   "bbox_max": [
+    0.5,
+    0.561500072479248,
+    0.4088000953197479
+   ],
+   "materials": [
+    "M_B03_CornerTrough",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 3,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B03_CornerTrough_LOD1",
+    "B03_CornerTrough_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B03_CornerTrough.glb": {
+    "bytes": 16622484,
+    "sha256": "07cc53a646366ceb2b713d00b085d4a7e86029fa3a3c0abafefd8ba4e6208d7b"
+   },
+   "B03_CornerTrough.fbx": {
+    "bytes": 1748924,
+    "sha256": "27bbfe04c85a8720dfe6eeef98b88f8c050e95ae60f12a8f6b1187d31e1f5577"
+   },
+   "B03_CornerTrough_v001.blend": {
+    "bytes": 998796,
+    "sha256": "96b580d452e37ec9bb24e139c2afee9116d08dba14f6b7fcde30cebc839e57c1"
+   }
+  },
+  "buildSeconds": 61.0,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

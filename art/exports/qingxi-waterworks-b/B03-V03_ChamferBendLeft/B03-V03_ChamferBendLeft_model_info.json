@@ -1,0 +1,414 @@
+{
+ "id": "B03-V03",
+ "name": "ChamferBendLeft",
+ "key": "B03-V03_ChamferBendLeft",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "user-supplied variant sheet (chat, 2026-10-29)",
+ "variant_of": "B03",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  0.9994,
+  1.0388,
+  0.4088
+ ],
+ "triangles": 14696,
+ "lod_triangles": [
+  14696,
+  7348,
+  3232
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    -0.25,
+    0.05
+   ],
+   "size": [
+    0.4,
+    0.5,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.25,
+    -0.25,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.5,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.25,
+    -0.25,
+    0.2
+   ],
+   "size": [
+    0.1,
+    0.5,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.15,
+    0.2,
+    0.05
+   ],
+   "size": [
+    0.7,
+    0.4,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.15,
+    -0.05,
+    0.2
+   ],
+   "size": [
+    0.7,
+    0.1,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.15,
+    0.45,
+    0.2
+   ],
+   "size": [
+    0.7,
+    0.1,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.4,
+    0.13,
+    0.11
+   ],
+   "size": [
+    0.2,
+    0.3,
+    0.22
+   ],
+   "note": "buttress"
+  }
+ ],
+ "ports": [
+  {
+   "name": "In_Front",
+   "position": [
+    0,
+    -0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "Out_Left",
+   "position": [
+    -0.5,
+    0.2,
+    0
+   ],
+   "normal": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": -90.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "Left-hand form built as its own mesh (front inlet, left outlet), not a mirror of B03.",
+  "Outer bore corner chamfered at 45 degrees; a sloping solid buttress backs the right face.",
+  "Inner corner on a 6 cm fillet stone; cedar battens and bronze bands either side of each port."
+ ],
+ "validation": {
+  "asset": "B03-V03",
+  "key": "B03-V03_ChamferBendLeft",
+  "version": "v001",
+  "reference": {
+   "file": "B03_V03_three_view.png",
+   "sha256": "f5482053285726dcffdf840a7eda8d3d5518fe47848a2d0070a9dcd14519d81f"
+  },
+  "dimensions_m": [
+   0.9994,
+   1.0388,
+   0.4088
+  ],
+  "target_size_m": [
+   1.0,
+   1.0,
+   0.4
+  ],
+  "bbox_min": [
+   -0.5,
+   -0.5,
+   0.0
+  ],
+  "bbox_max": [
+   0.4994,
+   0.5388,
+   0.4088
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   14696,
+   7348,
+   3232
+  ],
+  "waterTriangles": 495,
+  "budgetLOD0": 16000,
+  "withinBudget": true,
+  "vertices": 7520,
+  "nodes": [
+   "B03-V03_ChamferBendLeft_LOD0",
+   "B03-V03_ChamferBendLeft_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 2
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 34,
+   "oppositeContactFaces": 294
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 2,
+   "texelDensityPxPerM": 703.1,
+   "uvCoverage": 0.6399999856948853
+  },
+  "designedJointOverlaps": 32,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B03-V03_ChamferBendLeft",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B03-V03_ChamferBendLeft_BaseColor.png",
+   "T_B03-V03_ChamferBendLeft_Normal.png",
+   "T_B03-V03_ChamferBendLeft_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_In_Front",
+   "SOCKET_Out_Left"
+  ],
+  "glbAnimations": [
+   "B03-V03_ChamferBendLeft_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B03-V03_ChamferBendLeft": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 21.2,
+  "glbRoundTrip": {
+   "objects": [
+    "B03-V03_ChamferBendLeft",
+    "B03-V03_ChamferBendLeft_LOD0",
+    "B03-V03_ChamferBendLeft_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Left"
+   ],
+   "meshes": 2,
+   "triangles": 15191,
+   "bbox_min": [
+    -0.5,
+    -0.5,
+    0.0
+   ],
+   "bbox_max": [
+    0.4994295835494995,
+    0.5388000011444092,
+    0.40880000591278076
+   ],
+   "materials": [
+    "M_B03-V03_ChamferBendLeft",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 3,
+   "actions": [
+    "B03-V03_ChamferBendLeft_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B03-V03_ChamferBendLeft",
+    "B03-V03_ChamferBendLeft_LOD0",
+    "B03-V03_ChamferBendLeft_LOD1",
+    "B03-V03_ChamferBendLeft_LOD2",
+    "B03-V03_ChamferBendLeft_Water",
+    "SOCKET_In_Front",
+    "SOCKET_Out_Left"
+   ],
+   "meshes": 2,
+   "triangles": 15191,
+   "bbox_min": [
+    -0.5,
+    -0.5,
+    -8.778166460388093e-08
+   ],
+   "bbox_max": [
+    0.4994295835494995,
+    0.538800060749054,
+    0.4088000953197479
+   ],
+   "materials": [
+    "M_B03-V03_ChamferBendLeft",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 3,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B03-V03_ChamferBendLeft_LOD1",
+    "B03-V03_ChamferBendLeft_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B03-V03_ChamferBendLeft.glb": {
+    "bytes": 16520572,
+    "sha256": "d80b0511f884824f588d3610530557e06f738ab0c385a3b0234a2273c8efde27"
+   },
+   "B03-V03_ChamferBendLeft.fbx": {
+    "bytes": 1925052,
+    "sha256": "90749a07b7ead989694a6ace4f73dab16bb5035923884818cfcd1ad27012e664"
+   },
+   "B03-V03_ChamferBendLeft_v001.blend": {
+    "bytes": 1132306,
+    "sha256": "e61a402a0d8a6fc20fde72308988e081155bcb6f6afc5ae683e6873eb9e7676f"
+   }
+  },
+  "buildSeconds": 60.4,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

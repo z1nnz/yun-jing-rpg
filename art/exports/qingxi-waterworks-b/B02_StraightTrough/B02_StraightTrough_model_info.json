@@ -1,0 +1,355 @@
+{
+ "id": "B02",
+ "name": "StraightTrough",
+ "key": "B02_StraightTrough",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "Codex / OpenAI image_gen",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  0.6496,
+  1.0,
+  0.3991
+ ],
+ "triangles": 13256,
+ "lod_triangles": [
+  13256,
+  6628,
+  2916
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    0,
+    0.05
+   ],
+   "size": [
+    0.4,
+    1.0,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.0,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.0,
+    0.4
+   ],
+   "note": "wall"
+  }
+ ],
+ "ports": [
+  {
+   "name": "End_Front",
+   "position": [
+    0,
+    -0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "End_Back",
+   "position": [
+    0,
+    0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 180.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "End pilaster stones 10 cm, walls between them in two courses; clamps only on outer faces."
+ ],
+ "validation": {
+  "asset": "B02",
+  "key": "B02_StraightTrough",
+  "version": "v001",
+  "reference": {
+   "file": "B02_three_view.png",
+   "sha256": "b00f4d22e774c22f09f5262a63c5afeacc86b13757ed880b45366938d9f487e1"
+  },
+  "dimensions_m": [
+   0.6496,
+   1.0,
+   0.3991
+  ],
+  "target_size_m": [
+   0.6,
+   1.0,
+   0.4
+  ],
+  "bbox_min": [
+   -0.3248,
+   -0.5,
+   0.0
+  ],
+  "bbox_max": [
+   0.3248,
+   0.5,
+   0.3991
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   13256,
+   6628,
+   2916
+  ],
+  "waterTriangles": 208,
+  "budgetLOD0": 12000,
+  "withinBudget": false,
+  "vertices": 6766,
+  "nodes": [
+   "B02_StraightTrough_LOD0",
+   "B02_StraightTrough_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 1
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 31,
+   "oppositeContactFaces": 496
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 1,
+   "texelDensityPxPerM": 822.8,
+   "uvCoverage": 0.7039999961853027
+  },
+  "designedJointOverlaps": 24,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B02_StraightTrough",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B02_StraightTrough_BaseColor.png",
+   "T_B02_StraightTrough_Normal.png",
+   "T_B02_StraightTrough_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_End_Front",
+   "SOCKET_End_Back"
+  ],
+  "glbAnimations": [
+   "B02_StraightTrough_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B02_StraightTrough": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 22.2,
+  "glbRoundTrip": {
+   "objects": [
+    "B02_StraightTrough",
+    "B02_StraightTrough_LOD0",
+    "B02_StraightTrough_Water",
+    "SOCKET_End_Back",
+    "SOCKET_End_Front"
+   ],
+   "meshes": 2,
+   "triangles": 13464,
+   "bbox_min": [
+    -0.3248000144958496,
+    -0.5,
+    0.0
+   ],
+   "bbox_max": [
+    0.3248000144958496,
+    0.5,
+    0.3991164267063141
+   ],
+   "materials": [
+    "M_B02_StraightTrough",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 3,
+   "actions": [
+    "B02_StraightTrough_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B02_StraightTrough",
+    "B02_StraightTrough_LOD0",
+    "B02_StraightTrough_LOD1",
+    "B02_StraightTrough_LOD2",
+    "B02_StraightTrough_Water",
+    "SOCKET_End_Back",
+    "SOCKET_End_Front"
+   ],
+   "meshes": 2,
+   "triangles": 13464,
+   "bbox_min": [
+    -0.3248000144958496,
+    -0.5,
+    -8.146034247147327e-08
+   ],
+   "bbox_max": [
+    0.3248000144958496,
+    0.5000000596046448,
+    0.39911651611328125
+   ],
+   "materials": [
+    "M_B02_StraightTrough",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 3,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B02_StraightTrough_LOD1",
+    "B02_StraightTrough_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B02_StraightTrough.glb": {
+    "bytes": 17045328,
+    "sha256": "6261f6533124df28da41405f06f24ae96f9d3b8d0550ae7db9a1bdee20d6a899"
+   },
+   "B02_StraightTrough.fbx": {
+    "bytes": 1629084,
+    "sha256": "88ce7d9baea6a1361eca062596722837309469083e0db197fc639255d8cad3cf"
+   },
+   "B02_StraightTrough_v001.blend": {
+    "bytes": 960228,
+    "sha256": "a7a2e19519d3ed518ccea6e1bb4054e64c501dfa2234c5ccce0690de73ff2ba8"
+   }
+  },
+  "buildSeconds": 61.2,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}

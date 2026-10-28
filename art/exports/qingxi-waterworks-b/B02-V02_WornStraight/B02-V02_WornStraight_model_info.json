@@ -1,0 +1,358 @@
+{
+ "id": "B02-V02",
+ "name": "WornStraight",
+ "key": "B02-V02_WornStraight",
+ "author": "Claude Code (Claude Opus 5.5) for joshsu54",
+ "reference_author": "user-supplied variant sheet (chat, 2026-10-29)",
+ "variant_of": "B02",
+ "units": "metre",
+ "axes": "Blender Z-up, front -Y; glTF Y-up, front +Z",
+ "origin": "base centre",
+ "dimensions_m": [
+  0.6176,
+  1.0,
+  0.399
+ ],
+ "triangles": 10014,
+ "lod_triangles": [
+  10014,
+  5006,
+  2202
+ ],
+ "collision": [
+  {
+   "type": "box",
+   "center": [
+    0,
+    0,
+    0.05
+   ],
+   "size": [
+    0.4,
+    1.0,
+    0.1
+   ],
+   "note": "floor"
+  },
+  {
+   "type": "box",
+   "center": [
+    -0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.0,
+    0.4
+   ],
+   "note": "wall"
+  },
+  {
+   "type": "box",
+   "center": [
+    0.25,
+    0,
+    0.2
+   ],
+   "size": [
+    0.1,
+    1.0,
+    0.4
+   ],
+   "note": "wall"
+  }
+ ],
+ "ports": [
+  {
+   "name": "End_Front",
+   "position": [
+    0,
+    -0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 0.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  },
+  {
+   "name": "End_Back",
+   "position": [
+    0,
+    0.5,
+    0
+   ],
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "up": [
+    0,
+    0,
+    1
+   ],
+   "yaw_deg": 180.0,
+   "clear_width": 0.4,
+   "floor_z": 0.1,
+   "water_z": 0.28,
+   "outer": [
+    0.6,
+    0.4
+   ],
+   "type": "channel_std",
+   "compatible": [
+    "channel_std"
+   ],
+   "gasket": "shared JointGasket, one per joint"
+  }
+ ],
+ "sockets": [],
+ "animation": {
+  "name": "Water_Ripple",
+  "frames": 48,
+  "loop": true,
+  "morphs": [
+   [
+    "Water",
+    "Ripple0",
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    "Water",
+    "Ripple1",
+    [
+     1,
+     0,
+     1
+    ]
+   ]
+  ]
+ },
+ "mechanism": null,
+ "decisions": [
+  "Ports identical to the kit standard at both ends (full-height 10 cm pilasters).",
+  "Upper course broken into stepped worn runs; lowest wall top 0.34 keeps 6 cm freeboard over the 0.28 water line.",
+  "Exposed tops of the lower course and the step ends are weathered; a single strap per side as drawn."
+ ],
+ "validation": {
+  "asset": "B02-V02",
+  "key": "B02-V02_WornStraight",
+  "version": "v001",
+  "reference": {
+   "file": "B02_V02_three_view.png",
+   "sha256": "48c9fe08f77706c7134eda43c2e3a0a5d45952fb1597761168f4cbc37474c247"
+  },
+  "dimensions_m": [
+   0.6176,
+   1.0,
+   0.399
+  ],
+  "target_size_m": [
+   0.6,
+   1.0,
+   0.4
+  ],
+  "bbox_min": [
+   -0.3088,
+   -0.5,
+   0.0
+  ],
+  "bbox_max": [
+   0.3088,
+   0.5,
+   0.399
+  ],
+  "body_min_z": 0.0,
+  "groundContact": true,
+  "finiteCoordinates": true,
+  "trianglesLOD": [
+   10014,
+   5006,
+   2202
+  ],
+  "waterTriangles": 208,
+  "budgetLOD0": 13000,
+  "withinBudget": true,
+  "vertices": 5053,
+  "nodes": [
+   "B02-V02_WornStraight_LOD0",
+   "B02-V02_WornStraight_Water"
+  ],
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 2
+  },
+  "coplanar": {
+   "sameDirectionCoplanarFaces": 74,
+   "oppositeContactFaces": 485
+  },
+  "uv": {
+   "nanUV": 0,
+   "zeroAreaUVFaces": 2,
+   "texelDensityPxPerM": 866.0,
+   "uvCoverage": 0.7319999933242798
+  },
+  "designedJointOverlaps": 4,
+  "unlistedOverlaps": [],
+  "materials": [
+   "M_B02-V02_WornStraight",
+   "WW_Foam",
+   "WW_Water"
+  ],
+  "textureResolution": 2048,
+  "textures": [
+   "T_B02-V02_WornStraight_BaseColor.png",
+   "T_B02-V02_WornStraight_Normal.png",
+   "T_B02-V02_WornStraight_ORM.png"
+  ],
+  "pivots": {},
+  "animationRange": null,
+  "sockets": [
+   "SOCKET_End_Front",
+   "SOCKET_End_Back"
+  ],
+  "glbAnimations": [
+   "B02-V02_WornStraight_Water"
+  ],
+  "glbAlphaModes": {
+   "M_B02-V02_WornStraight": "OPAQUE",
+   "WW_Water": "BLEND",
+   "WW_Foam": "BLEND"
+  },
+  "buildSecondsBeforeRender": 23.6,
+  "glbRoundTrip": {
+   "objects": [
+    "B02-V02_WornStraight",
+    "B02-V02_WornStraight_LOD0",
+    "B02-V02_WornStraight_Water",
+    "SOCKET_End_Back",
+    "SOCKET_End_Front"
+   ],
+   "meshes": 2,
+   "triangles": 10222,
+   "bbox_min": [
+    -0.30880001187324524,
+    -0.5,
+    0.0
+   ],
+   "bbox_max": [
+    0.30880001187324524,
+    0.5,
+    0.39895695447921753
+   ],
+   "materials": [
+    "M_B02-V02_WornStraight",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 5,
+   "imagesLoaded": 5,
+   "empties": 3,
+   "actions": [
+    "B02-V02_WornStraight_Water"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "socketsMatch": true,
+   "animationOk": true
+  },
+  "fbxRoundTrip": {
+   "objects": [
+    "B02-V02_WornStraight",
+    "B02-V02_WornStraight_LOD0",
+    "B02-V02_WornStraight_LOD1",
+    "B02-V02_WornStraight_LOD2",
+    "B02-V02_WornStraight_Water",
+    "SOCKET_End_Back",
+    "SOCKET_End_Front"
+   ],
+   "meshes": 2,
+   "triangles": 10222,
+   "bbox_min": [
+    -0.30880001187324524,
+    -0.5,
+    -8.146034247147327e-08
+   ],
+   "bbox_max": [
+    0.30880001187324524,
+    0.5000000596046448,
+    0.3989570438861847
+   ],
+   "materials": [
+    "M_B02-V02_WornStraight",
+    "WW_Foam",
+    "WW_Water"
+   ],
+   "images": 7,
+   "imagesLoaded": 7,
+   "empties": 3,
+   "actions": [
+    "Key|Water_Ripple"
+   ],
+   "shapeKeys": [
+    "Basis",
+    "Ripple0",
+    "Ripple1"
+   ],
+   "lods": [
+    "B02-V02_WornStraight_LOD1",
+    "B02-V02_WornStraight_LOD2"
+   ],
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "lodsPresent": true
+  },
+  "files": {
+   "B02-V02_WornStraight.glb": {
+    "bytes": 16807380,
+    "sha256": "f268030822ae11bd4acf8c5f5362246721f896c7271c4cab12adcba99771ee76"
+   },
+   "B02-V02_WornStraight.fbx": {
+    "bytes": 1276956,
+    "sha256": "84b5c618998163256222bebecf1ab03298b8e994f491511b45f64c6bd6c099e8"
+   },
+   "B02-V02_WornStraight_v001.blend": {
+    "bytes": 779452,
+    "sha256": "e4f44004400db46351018f69595dbf27a02b8a6342c6e5983c9092b37036c311"
+   }
+  },
+  "buildSeconds": 62.8,
+  "notChecked": [
+   "Unity import / LOD Group setup",
+   "in-game lighting and water shader",
+   "mobile performance"
+  ]
+ }
+}
