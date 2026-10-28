@@ -6,7 +6,7 @@
 |---|---|
 | 玩家目標 | 從村口走過分岔、到古樹與橋頭，路面與草不疊面、模型不懸空 |
 | 輸入 | `art/exports/**/*.glb`、Unity `Assets/YunJing/Models/**/*.fbx`、生成後的場景 |
-| 輸出 | 模型盤點表、Unity 驗收報告、協作者接地規格草稿 |
+| 輸出 | 模型盤點表、Unity 驗收報告、協作者接地規格（[`2026-10-29/14`](../../docs/execution/2026-10-29/14-grounding-spec.md)）、[給 Codex 的下一步](../../docs/execution/qingxi-terrain-next-steps.md) |
 | 邊界 | 唯讀；不修改場景、生成器、母稿或 `tools/unity.ps1` |
 | 完成條件 | 地形示範區的驗收報告「失敗」為 0，警告逐條說明理由 |
 
