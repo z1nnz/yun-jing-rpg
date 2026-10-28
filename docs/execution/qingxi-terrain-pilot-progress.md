@@ -14,7 +14,7 @@
 - 固定 Unity `6000.0.82f1`：`./tools/unity.ps1 -Target WorldPreview` 成功。
 - `./tools/qingxi-terrain/check-grounding.ps1`：**失敗 0、警告 3、通過 18**；34 件模型接地、0 組平面路面疊面、路內沒有草；四段村口／古樹／橋頭直線膠囊試走及 NavMesh 路徑均通過。報告在本機 `artifacts/terrain-check/qingxi-world-preview.md`。
 - `node --test tools/qingxi-terrain/*.test.mjs`：9/9 通過。
-- 拉回既有 Git LFS 城鎮素材後，`./tools/unity.ps1 -Target UnifiedWorld` 生成成功；原城鎮路線報告 0 失敗，`QingxiLocalForagingSmoke` 通過。另以 `QingxiPlaySmoke.Run` 實際 Play Mode 驗證山兔逃跑、抓取，結果 PASS。這證明既有玩法沒有在本輪失效，**不代表新 Terrain 已套入 UnifiedWorld**。
+- 拉回既有 Git LFS 城鎮素材後，`./tools/unity.ps1 -Target UnifiedWorldWindows` 生成及 Windows 建置成功；原城鎮路線報告 0 失敗，`QingxiLocalForagingSmoke` 通過。另以 `QingxiPlaySmoke.Run` 實際 Play Mode 驗證山兔逃跑、抓取，結果 PASS。這證明既有玩法沒有在本輪失效，**不代表新 Terrain 已套入 UnifiedWorld**。
 
 剩餘警告為兩座橋的視覺包圍盒低於岸邊地面，以及橋頭道路橫向最高碰撞面差異。前者是橋跨水道的已知情況；後者須在玩家視角確認橋頭兩側是否真的有會絆倒角色的碰撞體，不能直接忽略。
 
