@@ -1,0 +1,2154 @@
+{
+ "generatedFrom": "art/exports/**/*.glb",
+ "groundTolerance": 0.03,
+ "assets": [
+  {
+   "key": "aptitude-plaza-v1/aptitude-plaza-v1",
+   "set": "aptitude-plaza-v1",
+   "author": "z1nnz",
+   "size": [
+    18,
+    3.745,
+    20.1
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 16352,
+   "materials": 5,
+   "animations": 0,
+   "auto": "place",
+   "class": "structure",
+   "notes": [],
+   "review": "鋪石廣場是硬質地坪，保留模型，周圍地形壓平接上",
+   "source": "glb"
+  },
+  {
+   "key": "elder-world-tree-hero-v1/elder-world-tree-hero-v1",
+   "set": "elder-world-tree-hero-v1",
+   "author": "z1nnz",
+   "size": [
+    9.626,
+    9.784,
+    6.766
+   ],
+   "bottom": 0,
+   "centreOffset": 0.118,
+   "triangles": 147222,
+   "materials": 2,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "giant-tree-v1/giant-tree",
+   "set": "giant-tree-v1",
+   "author": "z1nnz",
+   "size": [
+    90.562,
+    62.352,
+    69.768
+   ],
+   "bottom": 0,
+   "centreOffset": 1.554,
+   "triangles": 44420,
+   "materials": 7,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "irrigation-v1/cistern",
+   "set": "irrigation-v1",
+   "author": "z1nnz",
+   "size": [
+    2,
+    1.1,
+    2.28
+   ],
+   "bottom": 0,
+   "centreOffset": 0.14,
+   "triangles": 1816,
+   "materials": 7,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "irrigation-v1/spirit-bed",
+   "set": "irrigation-v1",
+   "author": "z1nnz",
+   "size": [
+    2.414,
+    0.403,
+    3.222
+   ],
+   "bottom": 0,
+   "centreOffset": 0.004,
+   "triangles": 3404,
+   "materials": 8,
+   "animations": 0,
+   "auto": "place",
+   "class": "structure",
+   "notes": [
+    "可能含地面底板：Rich soil"
+   ],
+   "review": "舊版靈田，同上",
+   "source": "glb"
+  },
+  {
+   "key": "irrigation-v1/water-channel",
+   "set": "irrigation-v1",
+   "author": "z1nnz",
+   "size": [
+    0.6,
+    0.24,
+    2
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 540,
+   "materials": 6,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "irrigation-v2/cistern",
+   "set": "irrigation-v2",
+   "author": "z1nnz",
+   "size": [
+    2,
+    1.1,
+    2.28
+   ],
+   "bottom": 0,
+   "centreOffset": 0.14,
+   "triangles": 1816,
+   "materials": 2,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "irrigation-v2/spirit-bed",
+   "set": "irrigation-v2",
+   "author": "z1nnz",
+   "size": [
+    2.414,
+    0.403,
+    3.222
+   ],
+   "bottom": 0,
+   "centreOffset": 0.004,
+   "triangles": 3404,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "structure",
+   "notes": [],
+   "review": "靈田有田埂，需要地形挖平一塊再放",
+   "source": "glb"
+  },
+  {
+   "key": "irrigation-v2/water-channel",
+   "set": "irrigation-v2",
+   "author": "z1nnz",
+   "size": [
+    0.6,
+    0.24,
+    2
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 540,
+   "materials": 2,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B01_BronzeFurnace/v001/B01_BronzeFurnace_cold",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.736,
+    0.892,
+    0.765
+   ],
+   "bottom": 0,
+   "centreOffset": 0.021,
+   "triangles": 14912,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B01_BronzeFurnace/v001/B01_BronzeFurnace_heating",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.736,
+    0.892,
+    0.765
+   ],
+   "bottom": 0,
+   "centreOffset": 0.021,
+   "triangles": 14912,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B02_FurnaceLid/v001/B02_FurnaceLid",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.544,
+    0.278,
+    0.544
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 6216,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B02_FurnaceLid/v001/B02_FurnaceLid_heating",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.544,
+    0.278,
+    0.544
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 6216,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B03_StoneMortar/v001/B03_StoneMortar",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.342,
+    0.209,
+    0.318
+   ],
+   "bottom": 0,
+   "centreOffset": 0.012,
+   "triangles": 2276,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B04_BambooSortingTrays/v001/B04_BambooSortingTrays",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.626,
+    0.665,
+    0.466
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 7824,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B05_HerbDrawerCabinet/v001/B05_HerbDrawerCabinet",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.76,
+    0.943,
+    0.48
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 7000,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B06_CeramicWaterJar/v001/B06_CeramicWaterJar",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.549,
+    0.553,
+    0.468
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 4544,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B07_WoodenFuelBox/v001/B07_WoodenFuelBox",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.695,
+    0.46,
+    0.432
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 5068,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B08_VentilatedDryingBasket/v001/B08_VentilatedDryingBasket",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.727,
+    0.21,
+    0.654
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 8956,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B09_ClothFilterFrame/v001/B09_ClothFilterFrame",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.624,
+    0.934,
+    0.42
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 6996,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B10_WaxSealedBottle/v001/B10_WaxSealedBottle_empty",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.112,
+    0.109,
+    0.076
+   ],
+   "bottom": 0,
+   "centreOffset": 0.019,
+   "triangles": 1036,
+   "materials": 2,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B10_WaxSealedBottle/v001/B10_WaxSealedBottle_filled",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.075,
+    0.119,
+    0.076
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 2612,
+   "materials": 3,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B11_BambooRecipeStand/v001/B11_BambooRecipeStand",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.572,
+    0.455,
+    0.36
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 4064,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-alchemy-b/B12_WorkshopChimney/v001/B12_WorkshopChimney",
+   "set": "qingxi-alchemy-b",
+   "author": "joshsu54",
+   "size": [
+    0.763,
+    1.945,
+    0.739
+   ],
+   "bottom": 0,
+   "centreOffset": 0.013,
+   "triangles": 6144,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-detail-props-v2/qingxi-fern-flower-v2",
+   "set": "qingxi-detail-props-v2",
+   "author": "z1nnz",
+   "size": [
+    1.211,
+    0.492,
+    1.229
+   ],
+   "bottom": -0.02,
+   "centreOffset": 0.016,
+   "triangles": 1450,
+   "materials": 6,
+   "animations": 0,
+   "auto": "scatter",
+   "class": "scatter",
+   "notes": [
+    "根部帶小土堆，散布時有助接地，不算底板"
+   ],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-detail-props-v2/qingxi-moss-boulder-v2",
+   "set": "qingxi-detail-props-v2",
+   "author": "z1nnz",
+   "size": [
+    1.882,
+    0.744,
+    1.551
+   ],
+   "bottom": -0.034,
+   "centreOffset": 0.057,
+   "triangles": 408,
+   "materials": 4,
+   "animations": 0,
+   "auto": "adjust",
+   "class": "place",
+   "notes": [
+    "底部在原點下方 0.03 m"
+   ],
+   "review": "大石，手放後依地形高度下沉一點",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-detail-props-v2/qingxi-river-reed-v2",
+   "set": "qingxi-detail-props-v2",
+   "author": "z1nnz",
+   "size": [
+    1.469,
+    1.496,
+    1.36
+   ],
+   "bottom": -0.02,
+   "centreOffset": 0.055,
+   "triangles": 576,
+   "materials": 4,
+   "animations": 0,
+   "auto": "scatter",
+   "class": "scatter",
+   "notes": [
+    "根部帶小土堆，散布時有助接地，不算底板"
+   ],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-detail-props-v2/qingxi-trail-lantern-v2",
+   "set": "qingxi-detail-props-v2",
+   "author": "z1nnz",
+   "size": [
+    1.18,
+    1.94,
+    0.655
+   ],
+   "bottom": 0,
+   "centreOffset": 0.008,
+   "triangles": 468,
+   "materials": 5,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "place",
+   "notes": [],
+   "review": "路燈，名稱含 trail 被誤判",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A01_SlopeTile",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    4.398,
+    1.538,
+    4.288
+   ],
+   "bottom": 0,
+   "centreOffset": 0.017,
+   "triangles": 11276,
+   "materials": 1,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "坡度改由地形做；表面貼圖可轉成地形材質層",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A02_HollowTile",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    6.393,
+    1.062,
+    6.434
+   ],
+   "bottom": 0,
+   "centreOffset": 0.026,
+   "triangles": 19996,
+   "materials": 1,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "兔穴凹地是玩法位置，地形照它的尺寸挖出凹地；邊緣樹根可拆成單件擺放",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A03_FallenLog",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    5.899,
+    1.457,
+    2.148
+   ],
+   "bottom": 0,
+   "centreOffset": 0.14,
+   "triangles": 8150,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A04_MossBoulderCover",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    2.517,
+    1.396,
+    1.856
+   ],
+   "bottom": 0,
+   "centreOffset": 0.074,
+   "triangles": 4900,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A05_LayeredRockCover",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    2.916,
+    2.1,
+    1.753
+   ],
+   "bottom": 0,
+   "centreOffset": 0.146,
+   "triangles": 4742,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A06_RootStump",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    2.873,
+    0.45,
+    2.589
+   ],
+   "bottom": 0,
+   "centreOffset": 0.056,
+   "triangles": 6312,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A07_RabbitTrailTile",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    2.083,
+    0.451,
+    4.085
+   ],
+   "bottom": 0,
+   "centreOffset": 0.001,
+   "triangles": 9100,
+   "materials": 1,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "兔徑改為路線資料中的窄徑，地形上畫材質",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A08_BrokenBambooFence",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    3.077,
+    1.335,
+    1.026
+   ],
+   "bottom": 0,
+   "centreOffset": 0.153,
+   "triangles": 9984,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A09_StoneShelter",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    2.88,
+    2.548,
+    2.287
+   ],
+   "bottom": 0,
+   "centreOffset": 0.069,
+   "triangles": 18056,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A10_WatchPlatform",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    2.178,
+    2.75,
+    2.797
+   ],
+   "bottom": 0,
+   "centreOffset": 0.389,
+   "triangles": 6488,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A11_WarningClothRack",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    1.64,
+    1.9,
+    0.619
+   ],
+   "bottom": 0,
+   "centreOffset": 0.01,
+   "triangles": 3876,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A12_VineDummy",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    0.96,
+    1.642,
+    0.65
+   ],
+   "bottom": 0,
+   "centreOffset": 0.001,
+   "triangles": 8128,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-encounter-a/A12_VineDummy_worn",
+   "set": "qingxi-encounter-a",
+   "author": "Johnnnny0823",
+   "size": [
+    0.857,
+    1.64,
+    0.82
+   ],
+   "bottom": 0,
+   "centreOffset": 0.062,
+   "triangles": 5928,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-entry-assets-v13/herb-basket-v13",
+   "set": "qingxi-entry-assets-v13",
+   "author": "z1nnz",
+   "size": [
+    0.544,
+    0.468,
+    0.362
+   ],
+   "bottom": 0.055,
+   "centreOffset": 0,
+   "triangles": 16776,
+   "materials": 3,
+   "animations": 0,
+   "auto": "adjust",
+   "class": "adjust",
+   "notes": [
+    "底部在原點上方 0.05 m"
+   ],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-entry-assets-v13/novice-cultivator-v13",
+   "set": "qingxi-entry-assets-v13",
+   "author": "z1nnz",
+   "size": [
+    0.98,
+    1.73,
+    0.361
+   ],
+   "bottom": 0.03,
+   "centreOffset": 0.025,
+   "triangles": 3716,
+   "materials": 8,
+   "animations": 0,
+   "auto": "adjust",
+   "class": "place",
+   "notes": [
+    "底部在原點上方 0.03 m"
+   ],
+   "review": "角色樣片，不參與地形",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-entry-assets-v13/road-dressing-v13",
+   "set": "qingxi-entry-assets-v13",
+   "author": "z1nnz",
+   "size": [
+    2.434,
+    0.272,
+    1.344
+   ],
+   "bottom": -0.004,
+   "centreOffset": 0.081,
+   "triangles": 4040,
+   "materials": 4,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "路邊點綴整片相連，拆成單叢後當散布件",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-entry-assets-v13/village-gate-v13",
+   "set": "qingxi-entry-assets-v13",
+   "author": "z1nnz",
+   "size": [
+    5.812,
+    3.695,
+    1.571
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 33204,
+   "materials": 6,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_CreekSteppingPlank/v001/QX_CreekSteppingPlank",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    0.978,
+    0.626,
+    0.795
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 10960,
+   "materials": 1,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_EmbeddedOre_Yumai/v001/QX_EmbeddedOre_Yumai_post",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    2.339,
+    0.834,
+    2.028
+   ],
+   "bottom": -0.024,
+   "centreOffset": 0.027,
+   "triangles": 44720,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_EmbeddedOre_Yumai/v001/QX_EmbeddedOre_Yumai_pre",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    2.339,
+    1.134,
+    2.028
+   ],
+   "bottom": -0.012,
+   "centreOffset": 0.027,
+   "triangles": 46332,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_GatheringLandmark/v001/QX_GatheringLandmark",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    4.397,
+    4.462,
+    2.902
+   ],
+   "bottom": -0.012,
+   "centreOffset": 0.062,
+   "triangles": 59882,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_SpiritHerb_Chilu/v001/QX_SpiritHerb_Chilu_post",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    1.04,
+    0.32,
+    0.939
+   ],
+   "bottom": -0.012,
+   "centreOffset": 0.004,
+   "triangles": 71716,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_SpiritHerb_Chilu/v001/QX_SpiritHerb_Chilu_pre",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    1.026,
+    0.324,
+    0.935
+   ],
+   "bottom": -0.012,
+   "centreOffset": 0.003,
+   "triangles": 84544,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_SpiritHerb_Qinglan/v001/QX_SpiritHerb_Qinglan_post",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    0.822,
+    0.304,
+    0.757
+   ],
+   "bottom": -0.012,
+   "centreOffset": 0.025,
+   "triangles": 23596,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_SpiritHerb_Qinglan/v001/QX_SpiritHerb_Qinglan_pre",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    0.857,
+    0.513,
+    0.757
+   ],
+   "bottom": -0.012,
+   "centreOffset": 0.025,
+   "triangles": 35320,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-gathering-visual-kit-v1/QX_WaterReeds/v001/QX_WaterReeds",
+   "set": "qingxi-gathering-visual-kit-v1",
+   "author": "joshsu54",
+   "size": [
+    1.247,
+    1.905,
+    1.083
+   ],
+   "bottom": -0.124,
+   "centreOffset": 0.051,
+   "triangles": 35166,
+   "materials": 1,
+   "animations": 0,
+   "auto": "scatter",
+   "class": "scatter",
+   "notes": [
+    "底部在原點下方 0.12 m"
+   ],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-listening-terrace-v1",
+   "set": "qingxi-listening-terrace-v1",
+   "author": "z1nnz",
+   "size": [
+    8.842,
+    4.57,
+    7.662
+   ],
+   "bottom": -0.25,
+   "centreOffset": 0.699,
+   "triangles": 9612,
+   "materials": 10,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [
+    "底部在原點下方 0.25 m"
+   ],
+   "review": "聽風台是有台階的建築平台，保留模型，地形做到台基邊",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-mountain-rabbit-v003/QingxiMountainRabbit_v003",
+   "set": "qingxi-mountain-rabbit-v003",
+   "author": "Codex",
+   "size": [
+    0.47,
+    0.758,
+    0.689
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 22192,
+   "materials": 1,
+   "animations": 5,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "角色模型，由遊戲邏輯放到地面",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-prop-kit-v1/qingxi-cobble-v1",
+   "set": "qingxi-prop-kit-v1",
+   "author": "z1nnz",
+   "size": [
+    0.888,
+    0.341,
+    0.66
+   ],
+   "bottom": 0.005,
+   "centreOffset": 0.027,
+   "triangles": 80,
+   "materials": 1,
+   "animations": 0,
+   "auto": "scatter",
+   "class": "scatter",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-prop-kit-v1/qingxi-grass-v1",
+   "set": "qingxi-prop-kit-v1",
+   "author": "z1nnz",
+   "size": [
+    0.618,
+    0.326,
+    0.662
+   ],
+   "bottom": 0,
+   "centreOffset": 0.031,
+   "triangles": 82,
+   "materials": 2,
+   "animations": 0,
+   "auto": "scatter",
+   "class": "scatter",
+   "notes": [
+    "根部帶小土堆，散布時有助接地，不算底板"
+   ],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-prop-kit-v1/qingxi-wildflower-v1",
+   "set": "qingxi-prop-kit-v1",
+   "author": "z1nnz",
+   "size": [
+    0.442,
+    0.354,
+    0.46
+   ],
+   "bottom": 0,
+   "centreOffset": 0.012,
+   "triangles": 112,
+   "materials": 4,
+   "animations": 0,
+   "auto": "scatter",
+   "class": "scatter",
+   "notes": [
+    "根部帶小土堆，散布時有助接地，不算底板"
+   ],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C01",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    0.481,
+    0.6,
+    0.392
+   ],
+   "bottom": 0,
+   "centreOffset": 0.05,
+   "triangles": 1956,
+   "materials": 3,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C02",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    1.15,
+    0.66,
+    0.635
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 1512,
+   "materials": 2,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C03",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    0.481,
+    0.281,
+    0.325
+   ],
+   "bottom": 0,
+   "centreOffset": 0.002,
+   "triangles": 2400,
+   "materials": 4,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C04",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    0.351,
+    0.162,
+    0.296
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 712,
+   "materials": 3,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C05",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    0.4,
+    0.254,
+    0.293
+   ],
+   "bottom": 0,
+   "centreOffset": 0.002,
+   "triangles": 816,
+   "materials": 4,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C06",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    0.8,
+    0.45,
+    0.335
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 972,
+   "materials": 2,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C07",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    0.28,
+    0.587,
+    0.28
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 1044,
+   "materials": 5,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-return-c/C08",
+   "set": "qingxi-return-c",
+   "author": "Eli",
+   "size": [
+    0.382,
+    0.101,
+    0.29
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 1188,
+   "materials": 5,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-riverbank-v2/qingxi-riverbank-v2",
+   "set": "qingxi-riverbank-v2",
+   "author": "z1nnz",
+   "size": [
+    11.859,
+    1.236,
+    12.093
+   ],
+   "bottom": -0.306,
+   "centreOffset": 0.832,
+   "triangles": 8716,
+   "materials": 10,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [
+    "底部在原點下方 0.31 m"
+   ],
+   "review": "河岸高差由地形做；石塊與蘆葦拆成散布件或結構件",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-riverside-house-v1/qingxi-riverside-house-v1",
+   "set": "qingxi-riverside-house-v1",
+   "author": "z1nnz",
+   "size": [
+    10.798,
+    6.64,
+    9.488
+   ],
+   "bottom": 0,
+   "centreOffset": 0.406,
+   "triangles": 11128,
+   "materials": 11,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-road-props-v12/qingxi-bridge-rail-v12",
+   "set": "qingxi-road-props-v12",
+   "author": "z1nnz",
+   "size": [
+    2.44,
+    1.06,
+    0.23
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 744,
+   "materials": 3,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-road-props-v12/qingxi-herb-rack-v12",
+   "set": "qingxi-road-props-v12",
+   "author": "z1nnz",
+   "size": [
+    1.26,
+    1.55,
+    0.484
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 1004,
+   "materials": 4,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-road-props-v12/qingxi-road-v12",
+   "set": "qingxi-road-props-v12",
+   "author": "z1nnz",
+   "size": [
+    7.969,
+    0.4,
+    12
+   ],
+   "bottom": 0.002,
+   "centreOffset": 0,
+   "triangles": 12320,
+   "materials": 9,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "泥土路改由路線＋地形材質；v13 已取代本件",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-road-props-v12/qingxi-waymarker-v12",
+   "set": "qingxi-road-props-v12",
+   "author": "z1nnz",
+   "size": [
+    0.72,
+    0.996,
+    0.43
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 384,
+   "materials": 3,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-road-props-v13/qingxi-road-v13",
+   "set": "qingxi-road-props-v13",
+   "author": "z1nnz",
+   "size": [
+    8.729,
+    0.4,
+    12
+   ],
+   "bottom": 0.002,
+   "centreOffset": 0.054,
+   "triangles": 12960,
+   "materials": 9,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "泥土路改由路線＋地形材質；路面與路緣貼圖可轉成地形材質層，作為配色基準",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-training-yard-v1/agility-post",
+   "set": "qingxi-training-yard-v1",
+   "author": "Johnnnny0823",
+   "size": [
+    1.21,
+    1.67,
+    1.098
+   ],
+   "bottom": 0,
+   "centreOffset": 0.09,
+   "triangles": 3676,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-training-yard-v1/engraved-training-stone",
+   "set": "qingxi-training-yard-v1",
+   "author": "Johnnnny0823",
+   "size": [
+    2.082,
+    0.282,
+    1.665
+   ],
+   "bottom": 0,
+   "centreOffset": 0.023,
+   "triangles": 3072,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-training-yard-v1/qi-striking-post",
+   "set": "qingxi-training-yard-v1",
+   "author": "Johnnnny0823",
+   "size": [
+    0.78,
+    1.645,
+    0.791
+   ],
+   "bottom": 0,
+   "centreOffset": 0.005,
+   "triangles": 9744,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-training-yard-v1/training-banner",
+   "set": "qingxi-training-yard-v1",
+   "author": "Johnnnny0823",
+   "size": [
+    0.84,
+    2.66,
+    0.55
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 5996,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-training-yard-v1/training-shelter",
+   "set": "qingxi-training-yard-v1",
+   "author": "Johnnnny0823",
+   "size": [
+    7.123,
+    4.326,
+    6.036
+   ],
+   "bottom": 0,
+   "centreOffset": 0.042,
+   "triangles": 61278,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-training-yard-v1/weapon-rack",
+   "set": "qingxi-training-yard-v1",
+   "author": "Johnnnny0823",
+   "size": [
+    1.9,
+    1.65,
+    0.65
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 2688,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-village-signs-v1/Q01",
+   "set": "qingxi-village-signs-v1",
+   "author": "Eli",
+   "size": [
+    1.25,
+    1.765,
+    0.553
+   ],
+   "bottom": 0,
+   "centreOffset": 0.003,
+   "triangles": 4248,
+   "materials": 5,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-village-signs-v1/Q02",
+   "set": "qingxi-village-signs-v1",
+   "author": "Eli",
+   "size": [
+    0.48,
+    0.829,
+    0.363
+   ],
+   "bottom": 0,
+   "centreOffset": 0.015,
+   "triangles": 376,
+   "materials": 2,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-village-signs-v1/Q03",
+   "set": "qingxi-village-signs-v1",
+   "author": "Eli",
+   "size": [
+    0.247,
+    1.05,
+    0.217
+   ],
+   "bottom": 0,
+   "centreOffset": 0.007,
+   "triangles": 1136,
+   "materials": 6,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [
+    "可能含地面底板：ground_stone、ground_stone.001、ground_stone.002"
+   ],
+   "review": "ground_stone 是木樁底下的墊石，屬於本件，不是地面",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-village-signs-v1/Q04",
+   "set": "qingxi-village-signs-v1",
+   "author": "Eli",
+   "size": [
+    0.85,
+    1.241,
+    0.42
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 3488,
+   "materials": 5,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-winding-road-v1/qingxi-winding-road-v1",
+   "set": "qingxi-winding-road-v1",
+   "author": "z1nnz",
+   "size": [
+    7,
+    0.469,
+    12
+   ],
+   "bottom": 0.005,
+   "centreOffset": 0,
+   "triangles": 5332,
+   "materials": 4,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "彎路造型可當路線形狀參考；路面交給地形",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-world-v1/qingxi-sacred-tree-v1",
+   "set": "qingxi-world-v1",
+   "author": "z1nnz",
+   "size": [
+    11.822,
+    13.914,
+    12.228
+   ],
+   "bottom": -0.014,
+   "centreOffset": 0,
+   "triangles": 648,
+   "materials": 5,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "qingxi-world-v1/qingxi-timber-bridge-v1",
+   "set": "qingxi-world-v1",
+   "author": "z1nnz",
+   "size": [
+    12.22,
+    2.9,
+    4.25
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 1608,
+   "materials": 3,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "glb"
+  },
+  {
+   "key": "CollaboratorNoviceV1/alchemy-furnace",
+   "set": "CollaboratorNoviceV1",
+   "author": "z1nnz",
+   "size": [
+    0.736,
+    0.892,
+    0.765
+   ],
+   "bottom": 0,
+   "centreOffset": 0.021,
+   "triangles": 14912,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorNoviceV1/forest-fallen-log",
+   "set": "CollaboratorNoviceV1",
+   "author": "z1nnz",
+   "size": [
+    5.899,
+    1.517,
+    2.148
+   ],
+   "bottom": -0.054,
+   "centreOffset": 0.14,
+   "triangles": 14700,
+   "materials": 1,
+   "animations": 0,
+   "auto": "adjust",
+   "class": "adjust",
+   "notes": [
+    "底部在原點下方 0.05 m"
+   ],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorNoviceV1/forest-layered-rock",
+   "set": "CollaboratorNoviceV1",
+   "author": "z1nnz",
+   "size": [
+    2.963,
+    2.101,
+    1.753
+   ],
+   "bottom": 0,
+   "centreOffset": 0.143,
+   "triangles": 8704,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorNoviceV1/forest-moss-cover",
+   "set": "CollaboratorNoviceV1",
+   "author": "z1nnz",
+   "size": [
+    2.517,
+    1.48,
+    1.856
+   ],
+   "bottom": 0,
+   "centreOffset": 0.074,
+   "triangles": 9016,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorNoviceV1/forest-root-stump",
+   "set": "CollaboratorNoviceV1",
+   "author": "z1nnz",
+   "size": [
+    2.873,
+    0.465,
+    2.589
+   ],
+   "bottom": -0.015,
+   "centreOffset": 0.056,
+   "triangles": 12320,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorNoviceV1/return-table",
+   "set": "CollaboratorNoviceV1",
+   "author": "z1nnz",
+   "size": [
+    1.15,
+    0.66,
+    0.635
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 1512,
+   "materials": 2,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorNoviceV1/village-board",
+   "set": "CollaboratorNoviceV1",
+   "author": "z1nnz",
+   "size": [
+    1.25,
+    1.765,
+    0.553
+   ],
+   "bottom": 0,
+   "centreOffset": 0.003,
+   "triangles": 4248,
+   "materials": 5,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/BambooClump_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    3.876,
+    5.98,
+    3.815
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 22136,
+   "materials": 6,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [
+    "草石成片，應拆成單叢交給散布"
+   ],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/CliffBoardwalk_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    3.215,
+    2.35,
+    6.23
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 5400,
+   "materials": 2,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/CommonPine_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    5.815,
+    7.289,
+    5.545
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 17864,
+   "materials": 3,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/LayeredCliff_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    36.125,
+    25,
+    16.251
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 13178,
+   "materials": 3,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/MossBoulderSet_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    3.3,
+    1.516,
+    2.156
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 2656,
+   "materials": 1,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/MountainStonePath_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    3.25,
+    0.32,
+    6
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 5292,
+   "materials": 2,
+   "animations": 0,
+   "auto": "terrain",
+   "class": "terrain",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/MountainStoneStairs_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    3.19,
+    3.55,
+    5.03
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 3888,
+   "materials": 3,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/MountainStreamBend_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    6.805,
+    1.448,
+    10.311
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 10724,
+   "materials": 6,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/QCaveEntrance_v003",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    2.81,
+    3.27,
+    0.81
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 4072,
+   "materials": 4,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/SectGate_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    9.14,
+    5.719,
+    4.54
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 62604,
+   "materials": 9,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/StarterHouse_v004",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    9.053,
+    5.618,
+    8.189
+   ],
+   "bottom": 0,
+   "centreOffset": 0.639,
+   "triangles": 105928,
+   "materials": 16,
+   "animations": 0,
+   "auto": "place",
+   "class": "place",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  },
+  {
+   "key": "CollaboratorWorldV1/StoneArchBridge_v001",
+   "set": "CollaboratorWorldV1",
+   "author": "z1nnz",
+   "size": [
+    3.94,
+    3.28,
+    9.75
+   ],
+   "bottom": 0,
+   "centreOffset": 0,
+   "triangles": 9618,
+   "materials": 3,
+   "animations": 0,
+   "auto": "structure",
+   "class": "structure",
+   "notes": [],
+   "review": "",
+   "source": "unity-fbx"
+  }
+ ]
+}

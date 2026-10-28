@@ -1,0 +1,25 @@
+{
+ "scene": "Assets/YunJing/Generated/QingxiWorldPreview.unity",
+ "groundTolerance": 0.05,
+ "buriedLimit": 0.5,
+ "maxWalkSlope": 35,
+ "comfortSlope": 20,
+ "stepHeight": 0.3,
+ "roadEdgeAllowance": 0.15,
+ "grassPattern": "grass|fern|flower|reed|clump|草",
+ "roadMeshPattern": "road|path|trail|approach|路",
+ "ignorePattern": "player|cultivator|network|camera",
+ "roads": [
+  { "id": "main-village-to-plaza", "width": 3.2, "points": [0, -20, 0, 38] },
+  { "id": "fork-to-bridge", "width": 2.6, "points": [0, 5, 22, 5] },
+  { "id": "east-forest-road", "width": 2.6, "points": [29, 5, 71, 5] },
+  { "id": "cave-trail", "width": 2.5, "points": [70, 3, 70, 51] }
+ ],
+ "checkpoints": [
+  { "name": "村口", "x": 0, "y": 0, "z": -18 },
+  { "name": "分岔", "x": 0, "y": 0, "z": 5 },
+  { "name": "古樹前", "x": -6, "y": 0, "z": 24 },
+  { "name": "橋頭", "x": 19, "y": 0, "z": 5 }
+ ],
+ "route": ["村口", "分岔", "古樹前", "分岔", "橋頭"]
+}
