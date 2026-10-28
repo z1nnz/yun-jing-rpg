@@ -1,5 +1,7 @@
 # 目前狀態
 
+**2026-10-29 青溪地形試點：** `QingxiWorldPreview` 入口已改成由路線圖生成的 Unity Terrain，地表道路、草遮罩與 NavMesh 接地驗收失敗 0／警告 3；村口、分岔、古樹前、橋頭四段直線及 NavMesh 路徑通過，34 件擺放模型納入檢查。原 `QingxiUnifiedWorld` 城鎮與山兔／採集玩法重建及 smoke 均通過，但新 Terrain **尚未替換進 UnifiedWorld**；橋頭橫坡警告、玩家視角截圖、手機效能仍待處理。詳見[試點進度](execution/qingxi-terrain-pilot-progress.md)。
+
 **2026-10-28 PR #27 收尾檢查：** 這張 PR 交付青溪入口片區與較大城鎮的統一 Unity 場景、可操作修行者試模、入口採獵／線索／引氣訣本機循環，以及橫向 PWA 的入口與獨立活動連結。已同步 main 的演武、山兔林地與煉製交付；入口 Chromium 實測協作者模型 22／22 載入、演武與林地頁無頁面錯誤，五個活動入口 HTTP 200。`node --test tools/qingxi-trial/*.test.mjs` 5／5、`npm test` 64／64；Unity `6000.0.82f1` 的 `UnifiedWorldWindows` 重新生成與建置成功（場景內 12 件協作者 FBX、六個採草點與六個線索點）。這是**本機試玩片區的交付**，並非完整新手世界：人工全路線試玩、手機效能、正式角色外觀、伺服器資產接線及多人仍列後續工作。Unity 產生的本機設定、`.meta` 與日誌留在工作樹，未納入本次提交。
 
 **2026-10-28 Heroine-01 分件參考：** 依使用者新提供的原創角色三視圖，已保存獨立的[身體衣裝、無髮頭部、髮型髮飾三張正側背參考](../art/references/heroine-01/components/README.md)。這是建模前的 AI 圖像拆件，頭與髮尚未完成 3D 網格、骨架或遊戲匯入；被遮蔽細節需以原圖人工確認。

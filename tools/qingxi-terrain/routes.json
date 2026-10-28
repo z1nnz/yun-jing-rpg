@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "units": "metres",
+  "nodes": [
+    { "id": "village", "x": 0, "z": -20 },
+    { "id": "bridge-fork", "x": 0, "z": 5 },
+    { "id": "tree-fork", "x": 0, "z": 24 },
+    { "id": "plaza", "x": 0, "z": 38 },
+    { "id": "tree", "x": -9, "z": 27 },
+    { "id": "bridgehead", "x": 19, "z": 5 },
+    { "id": "east-road", "x": 29, "z": 5 },
+    { "id": "east-forest", "x": 71, "z": 5 },
+    { "id": "cave-turn", "x": 70, "z": 3 },
+    { "id": "cave", "x": 70, "z": 51 }
+  ],
+  "edges": [
+    { "id": "village-fork", "from": "village", "to": "bridge-fork", "width": 3.2, "surface": "dirt" },
+    { "id": "fork-tree", "from": "bridge-fork", "to": "tree-fork", "width": 3.2, "surface": "dirt" },
+    { "id": "tree-plaza", "from": "tree-fork", "to": "plaza", "width": 3.2, "surface": "dirt" },
+    { "id": "tree-spur", "from": "tree-fork", "to": "tree", "width": 2.4, "surface": "dirt" },
+    { "id": "fork-bridge", "from": "bridge-fork", "to": "bridgehead", "width": 2.6, "surface": "dirt" },
+    { "id": "east-forest-road", "from": "east-road", "to": "east-forest", "width": 2.6, "surface": "dirt" },
+    { "id": "cave-trail", "from": "cave-turn", "to": "cave", "width": 2.5, "surface": "dirt" }
+  ],
+  "checkpoints": [
+    { "name": "村口", "node": "village" },
+    { "name": "分岔", "node": "bridge-fork" },
+    { "name": "古樹前", "node": "tree" },
+    { "name": "橋頭", "node": "bridgehead" }
+  ],
+  "route": ["村口", "分岔", "古樹前", "分岔", "橋頭"]
+}

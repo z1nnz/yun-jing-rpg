@@ -26,6 +26,7 @@ namespace YunJing.Editor
         public class Config
         {
             public string scene;
+            public string navMeshAsset;
             public float groundTolerance = .05f;   // a base more than this above the ground is floating
             public float buriedLimit = .5f;        // sinking deeper than this is reported as a warning
             public float maxWalkSlope = 35f;       // CharacterController.slopeLimit used by the walkers
@@ -35,6 +36,7 @@ namespace YunJing.Editor
             public string grassPattern = "grass|fern|flower|reed|clump|草";
             public string roadMeshPattern = "road|path|trail|approach|路";
             public string ignorePattern = "^$";
+            public int minPlacedModels;
             public Road[] roads = new Road[0];
             public Checkpoint[] checkpoints = new Checkpoint[0];
             public string[] route = new string[0];
@@ -70,7 +72,16 @@ namespace YunJing.Editor
             CheckGrass(config, report);
             CheckRoadGrades(config, report);
             CheckRoadMeshOverlap(config, report);
-            CheckRoute(config, report);
+            var navMesh = string.IsNullOrEmpty(config.navMeshAsset) ? null : AssetDatabase.LoadAssetAtPath<NavMeshData>(config.navMeshAsset);
+            if (!string.IsNullOrEmpty(config.navMeshAsset) && navMesh == null)
+                report.Fail("找不到地形路線 NavMesh：" + config.navMeshAsset);
+            if (navMesh != null)
+            {
+                var instance = NavMesh.AddNavMeshData(navMesh);
+                try { CheckRoute(config, report); }
+                finally { if (instance.valid) instance.Remove(); }
+            }
+            else CheckRoute(config, report);
             Write(configPath, config, report);
             return report.failures.Count;
         }
@@ -127,7 +138,9 @@ namespace YunJing.Editor
                 if (gap > config.groundTolerance) report.Fail($"懸空：{go.name} 底部比腳印內最高的地面還高 {gap:0.00} m（{Fmt(b.center)}）");
                 else if (b.min.y < samples.Min() - config.buriedLimit) report.Warn($"埋太深：{go.name} 底部低於地面 {samples.Min() - b.min.y:0.00} m（{Fmt(b.center)}）");
             }
-            report.Pass($"檢查了 {checkedCount} 個擺放模型的接地");
+            if (checkedCount < config.minPlacedModels)
+                report.Fail($"擺放模型只載入 {checkedCount} 件，低於要求的 {config.minPlacedModels} 件；請先取回 Git LFS 素材");
+            else report.Pass($"檢查了 {checkedCount} 個擺放模型的接地");
         }
 
         static float DistanceToRoad(Vector2 p, Road road, out bool inside)

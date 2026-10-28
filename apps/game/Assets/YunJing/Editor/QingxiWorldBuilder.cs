@@ -4,6 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace YunJing.Editor
 {
@@ -69,7 +70,9 @@ namespace YunJing.Editor
             instance.name = name;
             instance.transform.position = position;
             instance.transform.localScale = Vector3.one * scale;
-            instance.transform.rotation = Quaternion.Euler(0, yaw, 0);
+            // Imported Z-up FBX roots may carry a corrective rotation. Keep it
+            // when adding the requested world-space yaw.
+            instance.transform.rotation = Quaternion.Euler(0, yaw, 0) * source.transform.rotation;
             // FBX source colors are converted to URP materials for this editor preview.
             // Detailed texture, LOD and collider authoring still need an import pass.
             var converted = new Dictionary<Material, Material>();
@@ -102,6 +105,22 @@ namespace YunJing.Editor
                     materials[i] = replacement;
                 }
                 renderer.sharedMaterials = materials;
+            }
+            // Place the visual foot on the generated terrain after the FBX's
+            // import rotation and requested scale have both been applied.
+            // Bridges spanning water keep their authored levels. Stream-bank
+            // dressing needs the same grounding as the other placed pieces.
+            if (!name.Contains("bridge"))
+            {
+                var terrain = Terrain.activeTerrain;
+                var renderers = instance.GetComponentsInChildren<Renderer>();
+                if (terrain != null && renderers.Length > 0)
+                {
+                    var bounds = renderers[0].bounds;
+                    for (int i = 1; i < renderers.Length; i++) bounds.Encapsulate(renderers[i].bounds);
+                    var target = terrain.SampleHeight(instance.transform.position) + terrain.transform.position.y;
+                    instance.transform.position += Vector3.up * (target - bounds.min.y);
+                }
             }
             return instance;
         }
@@ -142,7 +161,7 @@ namespace YunJing.Editor
             ProjectBuilder.Generate();
             // Keep the current development services and player prefab. Replace only small courtyard geometry.
             foreach (string name in new[] { "Courtyard ground", "West wall", "East wall", "North wall",
-                "Restored stream", "Bridge", "Stone path" }) Remove(name);
+                "Restored stream", "Bridge", "Stone path", "Broken array" }) Remove(name);
 
             var grass = Surface("ValleyGrass", new Color(.32f,.43f,.28f));
             var woodland = Surface("Woodland", new Color(.19f,.32f,.23f));
@@ -155,14 +174,10 @@ namespace YunJing.Editor
             var roof = Surface("HouseRoof", new Color(.16f,.27f,.29f));
             var field = Surface("Field", new Color(.39f,.31f,.20f));
 
-            Block("Walkable valley foundation", new Vector3(0,-.35f,0), new Vector3(180,.7f,140), grass);
-            Block("Village to aptitude plaza path", new Vector3(0,.02f,9), new Vector3(3.2f,.04f,58), path,false);
+            // One terrain owns ground height and paint. Roads and forks are a
+            // union mask within it, not overlapping surface cubes.
+            QingxiEntranceTerrain.Create();
             ListeningTerrace(new Vector3(-8, 0, -15));
-            Block("Listening terrace approach", new Vector3(-4, .025f, -19), new Vector3(8, .05f, 2.7f), path, false);
-            Block("Listening terrace stair approach", new Vector3(-8, .025f, -18), new Vector3(2.7f, .05f, 2), path, false);
-            Block("Village to bridge path", new Vector3(15,.02f,5), new Vector3(31,.04f,2.6f),path,false);
-            Block("Eastern forest road", new Vector3(50,.02f,5), new Vector3(42,.04f,2.6f),path,false);
-            Block("Cave trail", new Vector3(70,.025f,27), new Vector3(2.5f,.05f,48),path,false);
             Block("Qingxi river channel", new Vector3(25,.03f,0), new Vector3(10,.06f,139),water,false);
             // A visible river can be crossed only at the bridge in this first playable layout.
             var south=Block("River crossing boundary south",new Vector3(25,1,-33.75f),new Vector3(.4f,2,72.5f),water);
@@ -177,9 +192,9 @@ namespace YunJing.Editor
             deck.GetComponent<Renderer>().enabled = false;
             foreach (int side in new[] {-1,1})
             {
-                var ramp=Block("Bridge approach " + side,new Vector3(25+side*6.6f,.65f,5),
-                    new Vector3(2.6f,.25f,3.2f),path);
-                ramp.transform.rotation = Quaternion.Euler(0,0,-side*25);
+                var ramp=Block("Bridge approach " + side,new Vector3(25+side*7.7f,.8f,5),
+                    new Vector3(4.8f,.25f,3.2f),path);
+                ramp.transform.rotation = Quaternion.Euler(0,0,-side*18);
             }
 
             Model("qingxi-sacred-tree-v1.fbx","Village sacred tree",new Vector3(-13,0,27),
@@ -232,10 +247,31 @@ namespace YunJing.Editor
             var camera=Camera.main;
             if(camera!=null) camera.farClipPlane=300;
             RenderSettings.fogDensity=.004f;
+            BakeEntranceNavMesh();
             EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(),ScenePath);
             EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(ScenePath,true)};
             AssetDatabase.SaveAssets();
             Debug.Log("Qingxi world preview generated at " + ScenePath);
+        }
+
+        static void BakeEntranceNavMesh()
+        {
+            Physics.SyncTransforms();
+            var bounds = new Bounds(new Vector3(0, 2, 0), new Vector3(180, 16, 140));
+            var sources = new List<NavMeshBuildSource>();
+            NavMeshBuilder.CollectSources(bounds, ~0, NavMeshCollectGeometry.PhysicsColliders,
+                0, new List<NavMeshBuildMarkup>(), sources);
+            var settings = NavMesh.GetSettingsByID(0);
+            settings.agentRadius = .35f;
+            settings.agentHeight = 1.4f;
+            settings.agentClimb = .3f;
+            settings.agentSlope = 35f;
+            var data = NavMeshBuilder.BuildNavMeshData(settings, sources, bounds, Vector3.zero, Quaternion.identity);
+            if (data == null) throw new InvalidOperationException("Entrance NavMesh bake failed");
+            const string path = "Assets/YunJing/Generated/QingxiEntranceNavMesh.asset";
+            AssetDatabase.DeleteAsset(path);
+            AssetDatabase.CreateAsset(data, path);
+            Debug.Log($"QINGXI_ENTRANCE_NAVMESH: {sources.Count} collider sources");
         }
     }
 }
