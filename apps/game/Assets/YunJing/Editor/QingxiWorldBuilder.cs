@@ -62,10 +62,10 @@ namespace YunJing.Editor
             if (obj != null) UnityEngine.Object.DestroyImmediate(obj);
         }
 
-        static GameObject CollaboratorModel(string file, string name, Vector3 position, float scale = 1f, float yaw = 0f)
+        static GameObject CollaboratorModel(string file, string name, Vector3 position, float scale = 1f, float yaw = 0f, string folder = CollaboratorModels)
         {
-            var source = AssetDatabase.LoadAssetAtPath<GameObject>(CollaboratorModels + file);
-            if (source == null) throw new FileNotFoundException("Collaborator model missing", CollaboratorModels + file);
+            var source = AssetDatabase.LoadAssetAtPath<GameObject>(folder + file);
+            if (source == null) throw new FileNotFoundException("Scene model missing", folder + file);
             var instance = (GameObject)PrefabUtility.InstantiatePrefab(source);
             instance.name = name;
             instance.transform.position = position;
@@ -123,6 +123,15 @@ namespace YunJing.Editor
                 }
             }
             return instance;
+        }
+
+        static Bounds VisualBounds(GameObject go)
+        {
+            var renderers = go.GetComponentsInChildren<Renderer>();
+            if (renderers.Length == 0) throw new InvalidOperationException("No visible geometry in " + go.name);
+            var bounds = renderers[0].bounds;
+            for (int i = 1; i < renderers.Length; i++) bounds.Encapsulate(renderers[i].bounds);
+            return bounds;
         }
 
         static void ListeningTerrace(Vector3 position)
@@ -185,8 +194,14 @@ namespace YunJing.Editor
             south.GetComponent<Renderer>().enabled=false;
             north.GetComponent<Renderer>().enabled=false;
 
-            var bridge = Model("qingxi-timber-bridge-v1.fbx","Qingxi timber bridge",new Vector3(25,0,5),
-                n => n.Contains("PaleBridgeStone") ? rock : timber);
+            // The authored D02 bridge has a 10 m deck, matching the river gap.
+            // Its pivot is the west entry, while the walk collider remains the
+            // independent, predictable surface used by the player.
+            var bridge = CollaboratorModel("SM_Bridge_Timber_A.fbx", "Qingxi timber bridge by joshsu54",
+                new Vector3(30, 1.59f, 5), folder: "Assets/YunJing/Models/QingxiIntegratedV1/");
+            var bridgeBounds = VisualBounds(bridge);
+            if (bridgeBounds.min.x > 21 || bridgeBounds.max.x < 29 || bridgeBounds.min.z > 4 || bridgeBounds.max.z < 6)
+                throw new InvalidOperationException("Authored timber bridge does not cover the river crossing: " + bridgeBounds);
             // Visual planks have deliberate gaps. A separate collision deck keeps movement predictable.
             var deck = Block("Bridge walk collision",new Vector3(25,1.45f,5),new Vector3(10.8f,.28f,3.2f),path);
             deck.GetComponent<Renderer>().enabled = false;
@@ -220,7 +235,11 @@ namespace YunJing.Editor
                 float x=-34+i*6;
                 Block("Medicinal field blockout " + i,new Vector3(x,.08f,-28),new Vector3(4,.16f,12),field);
             }
-            CollaboratorModel("StarterHouse_v004.fbx", "Riverside starter house", new Vector3(-32,.05f,-9));
+            var guesthouse = CollaboratorModel("qingxi-riverside-house-v1.fbx", "Original riverside guesthouse by z1nnz and Codex",
+                new Vector3(-32,.05f,-9), folder: "Assets/YunJing/Models/QingxiIntegratedV1/");
+            var houseBounds = VisualBounds(guesthouse);
+            if (houseBounds.size.x < 5 || houseBounds.size.z < 5 || houseBounds.size.y < 4)
+                throw new InvalidOperationException("Original guesthouse imported at an unexpected scale: " + houseBounds);
             CollaboratorModel("StarterHouse_v004.fbx", "Plaza-side starter house", new Vector3(-35,.05f,14),.90f,95f);
             CollaboratorModel("StoneArchBridge_v001.fbx", "South stone bridge", new Vector3(25,.03f,-36),1f,90f);
             CollaboratorModel("MountainStreamBend_v001.fbx", "Eastern stream bend", new Vector3(52,.04f,-26));

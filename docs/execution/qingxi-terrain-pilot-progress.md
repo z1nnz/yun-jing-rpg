@@ -8,11 +8,12 @@
 - Preview 的平面地基與五塊互相重疊的道路方塊換成 Unity Terrain。高度、四層地表材質、路口合併遮罩、路內不長草、NavMesh 都由腳本重建。
 - 移除擋路的 `Broken array`；保留 FBX 匯入旋轉並把擺放模型的視覺底部落到地形。古樹前檢查點移至樹幹外；橋面兩端的碰撞坡道改為約 18°。
 - 驗收工具要求至少載入 30 件擺放模型，避免 Git LFS 尚未取回時產生「零失敗」假象。
+- 入口河邊的早期替代房舍改為已完成三視圖及 Blender 母稿的原創臨水客舍；主跨河橋改用 joshsu54 的 D02 木造梁橋。兩件均從既有來源複製為 Unity 可匯入 FBX，保留原作者與來源，生成器並檢查它們的可見包圍盒。
 
 ## 本機驗證
 
 - 固定 Unity `6000.0.82f1`：`./tools/unity.ps1 -Target WorldPreview` 成功。
-- `./tools/qingxi-terrain/check-grounding.ps1`：**失敗 0、警告 3、通過 18**；34 件模型接地、0 組平面路面疊面、路內沒有草；四段村口／古樹／橋頭直線膠囊試走及 NavMesh 路徑均通過。報告在本機 `artifacts/terrain-check/qingxi-world-preview.md`。
+- `./tools/qingxi-terrain/check-grounding.ps1`：接入客舍與 D02 橋後**失敗 0、警告 3、通過 18**；34 件模型接地、0 組平面路面疊面、路內沒有草；四段村口／古樹／橋頭直線膠囊試走及 NavMesh 路徑均通過。報告在本機 `artifacts/terrain-check/qingxi-world-preview.md`。
 - `node --test tools/qingxi-terrain/*.test.mjs`：9/9 通過。
 - 拉回既有 Git LFS 城鎮素材後，`./tools/unity.ps1 -Target UnifiedWorldWindows` 生成及 Windows 建置成功；原城鎮路線報告 0 失敗，`QingxiLocalForagingSmoke` 通過。另以 `QingxiPlaySmoke.Run` 實際 Play Mode 驗證山兔逃跑、抓取，結果 PASS。這證明既有玩法沒有在本輪失效，**不代表新 Terrain 已套入 UnifiedWorld**。
 

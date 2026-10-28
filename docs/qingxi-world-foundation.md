@@ -1,5 +1,7 @@
 # 青溪初始世界雛形 v1
 
+> **歷史灰盒圖，不能代表目前的《雲境》模型或可玩場景。** 下方俯視圖製作於協作者素材、臨水客舍與新版木橋接入之前；圖中的平房及簡單橋只是當時確認尺度的替身。要看後來實際用模型組裝的畫面，請開啟[協作者素材組裝總覽 v2](../art/previews/qingxi-world-v2/qingxi-assembled-overview-v2.png)與[村落近景 v3](../art/previews/qingxi-world-v3/qingxi-ancient-tree-village-v3.png)。目前 Unity 入口的來源與已接入範圍見[地形試點進度](execution/qingxi-terrain-pilot-progress.md)及[素材接入表](asset-integration-register.md)；這些圖也不是 Unity 最新場景的即時截圖。
+
 這是一個可供決定比例、視線與遊玩路線的**大世界第一塊區域**，不是完整州域或完成美術。以先前選定的 [世界方向圖](../art/references/world-master-v1/yun-jing-starting-world-master.png) 為基準，先讓村落與河對岸有明確的空間關係。
 
 ![青溪世界俯視雛形](../art/previews/qingxi-world-v1/qingxi-world-blockout-v1.png)

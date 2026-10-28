@@ -7,6 +7,7 @@
 | TownLayout v004，48×54 m 街區原件 | joshsu54／Dondon，`art/incoming/dondon/TownLayout/v004/` | 是 | 整包未直接用在小入口 | 否 | 否；整包高面數，待拆件、LOD、碰撞 |
 | 較大青溪鎮，151 筆配置 | joshsu54 交接模型＋核心組場景配置，`apps/game/Assets/QingxiWorld/` | 是 | 是，原獨立生成器加上 PR #27 的統一場景 | 是，統一 Windows 試玩版已顯示城鎮 | 本機走路與兔子替身；正式採獵／背包未接 |
 | StarterHouse v004、StoneArchBridge、MountainStreamBend、MountainStonePath／Stairs、CliffBoardwalk、QCaveEntrance、SectGate、LayeredCliff、CommonPine、BambooClump、MossBoulderSet | joshsu54／Dondon 原件；選入 `apps/game/Assets/YunJing/Models/CollaboratorWorldV1/` | 是 | 是，`YunJing.Editor.QingxiWorldBuilder` 已逐件排放 | 是，視野與距離依角色位置 | 基本場景模型；不是可開門、交易或採集的成品 |
+| 原創臨水客舍 v1、D02 木造梁橋 | 客舍：z1nnz 指導／Codex 製作；D02：joshsu54，來源為 `EnvironmentTransitionKit/v001` | 是；來源母稿與匯出檔均保留 | 是，`QingxiWorldPreview` 的河邊客舍與主跨河橋已改用這兩件；舊 v1 俯視圖未同步重繪 | 是，重新生成 Preview 後可見；Unity 接地與過橋路線檢查通過 | 客舍為場景物；橋用獨立步行碰撞面，尚未完成玩家視角人工檢視 |
 | 原創聽風台與入口支路 | z1nnz 指導／Codex 製作，PR #27 | 在草稿 PR | 是，小入口與統一場景 | 是；統一版將聽風台放在較大城鎮入口 | 石構件有碰撞；未完整人工走位驗收 |
 | 道路／河岸／橋頭 31 件 EnvironmentTransitionKit | joshsu54，`art/incoming/dondon/EnvironmentTransitionKit/v001/`，PR #29 | **已合入 main** | 尚未整批匯入可玩場景 | 否 | 否；下一步按路段挑選、設材質和碰撞 |
 | 山兔 v003 骨架、動畫、LOD | Johnny0823／Codex，PR #21 | 是 | 模型交接；目前入口未接戰鬥 | 否 | 服務端掉落規則另有原型，兩者尚未接通 |
