@@ -95,7 +95,8 @@ blender -b --python-exit-code 1 --python art/source/territory-backyard-a/build_b
   - 一塊成熟田的俯視配置圖。
   - 成熟田近景。
   - 1.7 m 眼高的成熟田。
-- **燈光**：建模規格第 8 節要求用 Poly Haven 的 `kloofendal_48d_partly_cloudy_puresky` HDRI 與 EEVEE。本機還沒有這張 HDRI，所以這批暫時用 Cycles 加太陽光與天空光，**和其他人的審圖燈光不一致**。補上 HDRI 後會重算。
+- **燈光**：照建模規格第 8 節。EEVEE，世界貼圖用 Poly Haven 的 `kloofendal_48d_partly_cloudy_puresky`（CC0，2K），強度 1.0，色彩管理 AgX、Medium High Contrast。
+  - HDRI 不放進倉庫。腳本預設讀 `~/.cache/yunjing/hdri/kloofendal_48d_partly_cloudy_puresky_2k.hdr`，也可以用環境變數 `YJ_HDRI` 指定，找不到就停止出圖。
 
 ## 尚未完成或未驗證
 

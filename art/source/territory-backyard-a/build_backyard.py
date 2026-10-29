@@ -14,6 +14,7 @@ import sys
 import json
 import math
 import random
+import os
 import time
 from pathlib import Path
 
@@ -621,25 +622,37 @@ def build_asset(aid):
 
 
 # ====================================================================== review sheets (from the exported GLBs)
+HDRI = Path(os.environ.get('YJ_HDRI', Path.home() / '.cache/yunjing/hdri/kloofendal_48d_partly_cloudy_puresky_2k.hdr'))
+
+
 def outdoor_light():
-    """Morning sun ~45 deg up and a blue-grey sky. Stand-in until the spec HDRI (Poly Haven kloofendal_48d_partly_cloudy_puresky) is available."""
+    """Review lighting of modelling spec section 8: EEVEE, Poly Haven kloofendal_48d_partly_cloudy_puresky (CC0) at
+    strength 1.0, AgX Medium High Contrast. The HDRI is not in the repo (set YJ_HDRI or put it in ~/.cache/yunjing/hdri)."""
     s = bpy.context.scene
-    w = bpy.data.worlds.new('QA_Sky')
+    assert HDRI.is_file(), f'review HDRI missing: {HDRI}'
+    for eng in ('BLENDER_EEVEE', 'BLENDER_EEVEE_NEXT'):
+        try:
+            s.render.engine = eng
+            break
+        except TypeError:
+            continue
+    w = bpy.data.worlds.new('QA_HDRI')
     s.world = w
     w.use_nodes = True
-    bg = w.node_tree.nodes.get('Background')
-    bg.inputs['Color'].default_value = (0.40, 0.48, 0.56, 1)
-    bg.inputs['Strength'].default_value = 0.8
-    sd = bpy.data.lights.new('QA_Sun', 'SUN')
-    sd.energy = 3.6
-    sd.color = (1.0, 0.91, 0.78)
-    sd.angle = math.radians(2.0)
-    so = bpy.data.objects.new('QA_Sun', sd)
-    s.collection.objects.link(so)
-    so.rotation_euler = (math.radians(45), 0, math.radians(-35))
+    nt = w.node_tree
+    bg = nt.nodes.get('Background')
+    env = nt.nodes.new('ShaderNodeTexEnvironment')
+    env.image = bpy.data.images.load(str(HDRI), check_existing=True)
+    nt.links.new(env.outputs['Color'], bg.inputs['Color'])
+    bg.inputs['Strength'].default_value = 1.0
+    for attr, val in (('sun_threshold', 2.0), ('use_sun_shadow', True), ('sun_angle', math.radians(1.5))):
+        if hasattr(w, attr):          # EEVEE extracts the HDRI sun into a shadow-casting light
+            setattr(w, attr, val)
+    for attr, val in (('use_shadows', True), ('use_raytracing', True), ('use_gtao', True)):
+        if hasattr(s.eevee, attr):
+            setattr(s.eevee, attr, val)
     s.view_settings.view_transform = 'AgX'
     s.view_settings.look = 'AgX - Medium High Contrast'
-    s.cycles.use_denoising = True
     gm = bpy.data.materials.new('QA_Ground')
     gm.use_nodes = True
     gb = gm.node_tree.nodes.get('Principled BSDF')
@@ -715,6 +728,7 @@ def shot(path, cam_loc, target, lens=50, res=(1600, 1000), ortho=None, samples=9
     s.render.resolution_x, s.render.resolution_y = res
     s.render.resolution_percentage = 100
     s.cycles.samples = samples
+    s.eevee.taa_render_samples = samples
     s.render.filepath = str(path)
     s.render.image_settings.file_format = 'PNG'
     Path(path).parent.mkdir(parents=True, exist_ok=True)
