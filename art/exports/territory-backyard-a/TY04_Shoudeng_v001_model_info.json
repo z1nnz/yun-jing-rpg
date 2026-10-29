@@ -1,0 +1,131 @@
+{
+ "id": "TY04",
+ "name": "Shoudeng",
+ "file": "TY04_Shoudeng_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "placed prop",
+ "slots": [
+  "TY_Lantern (-5.2, 12.0)"
+ ],
+ "dimensions_m": [
+  0.6431,
+  0.6431,
+  1.71
+ ],
+ "triangles_lod0": 6688,
+ "triangles_per_node": {
+  "SM_TY_Shoudeng_LOD0": [
+   6688,
+   3344,
+   1002
+  ]
+ },
+ "collision": {
+  "type": "box",
+  "size": [
+   0.6,
+   0.6,
+   1.75
+  ],
+  "center": [
+   0,
+   0,
+   0.875
+  ],
+  "note": "blocks; lantern corner, not climbable"
+ },
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY04",
+  "dimensions_m": [
+   0.6431,
+   0.6431,
+   1.71
+  ],
+  "bbox_min": [
+   -0.3216,
+   -0.3216,
+   0.0
+  ],
+  "bbox_max": [
+   0.3216,
+   0.3216,
+   1.71
+  ],
+  "trianglesLOD0": 6688,
+  "trianglesPerNode": {
+   "SM_TY_Shoudeng_LOD0": [
+    6688,
+    3344,
+    1002
+   ]
+  },
+  "materials": [
+   "M_TY_Shoudeng",
+   "M_TY_Shoudeng_Paper"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_Shoudeng_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 6688,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -0.3216,
+     -0.3216,
+     0.0
+    ],
+    [
+     0.3216,
+     0.3216,
+     1.71
+    ]
+   ],
+   "materials": [
+    "M_TY_Shoudeng.001",
+    "M_TY_Shoudeng_Paper.001"
+   ]
+  },
+  "files": {
+   "TY04_Shoudeng_v001.glb": {
+    "bytes": 1255412,
+    "sha256": "0e3af286fb8228d558285075031b5560cf78d5429269822d35b12db79206e8e5"
+   },
+   "TY04_Shoudeng_v001.fbx": {
+    "bytes": 634892,
+    "sha256": "07c96349fa3c7233f372b821a60cfdeadf934675480ea8a0f9cdf93938c8ea64"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY04_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ },
+ "brightness": {
+  "material": "M_TY_Shoudeng_Paper",
+  "emissive_map": "T_TY04_Shoudeng_Emissive",
+  "levels": {
+   "0": 0.0,
+   "1": 0.2,
+   "2": 0.5,
+   "3": 0.9,
+   "4": 1.5
+  },
+  "note": "set the material emission strength from the level (0 = unlit .. 4 = warm light); optionally a warm point light at (0, 0, 1.27) m with 0 / 0.3 / 0.8 / 1.6 / 3 W-equivalent. One model, never five."
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "id": "TY09",
+ "name": "YardClutter",
+ "file": "TY09_YardClutter_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "placed props",
+ "slots": [
+  "TY_Corner_R (5.0, 11.5)"
+ ],
+ "dimensions_m": [
+  1.1322,
+  0.734,
+  1.3966
+ ],
+ "triangles_lod0": 5704,
+ "triangles_per_node": {
+  "SM_TY_YardClutter_WaterJar_LOD0": [
+   1396,
+   698,
+   208
+  ],
+  "SM_TY_YardClutter_Basket_LOD0": [
+   832,
+   416,
+   124
+  ],
+  "SM_TY_YardClutter_Hoe_LOD0": [
+   224,
+   112,
+   32
+  ],
+  "SM_TY_YardClutter_Bucket_LOD0": [
+   1448,
+   724,
+   216
+  ],
+  "SM_TY_YardClutter_Woodpile_LOD0": [
+   1344,
+   672,
+   200
+  ],
+  "SM_TY_YardClutter_Stool_LOD0": [
+   460,
+   230,
+   68
+  ]
+ },
+ "collision": {
+  "type": "per module",
+  "note": "jar cylinder r 0.28; woodpile box 1.0 x 0.4 x 0.75; basket, bucket, stool, hoe non-blocking"
+ },
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY09",
+  "dimensions_m": [
+   1.1322,
+   0.734,
+   1.3966
+  ],
+  "bbox_min": [
+   -0.5585,
+   -0.28,
+   0.0
+  ],
+  "bbox_max": [
+   0.5736,
+   0.454,
+   1.3966
+  ],
+  "trianglesLOD0": 5704,
+  "trianglesPerNode": {
+   "SM_TY_YardClutter_WaterJar_LOD0": [
+    1396,
+    698,
+    208
+   ],
+   "SM_TY_YardClutter_Basket_LOD0": [
+    832,
+    416,
+    124
+   ],
+   "SM_TY_YardClutter_Hoe_LOD0": [
+    224,
+    112,
+    32
+   ],
+   "SM_TY_YardClutter_Bucket_LOD0": [
+    1448,
+    724,
+    216
+   ],
+   "SM_TY_YardClutter_Woodpile_LOD0": [
+    1344,
+    672,
+    200
+   ],
+   "SM_TY_YardClutter_Stool_LOD0": [
+    460,
+    230,
+    68
+   ]
+  },
+  "materials": [
+   "M_TY_YardClutter"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_YardClutter_WaterJar_LOD0",
+   "SM_TY_YardClutter_Basket_LOD0",
+   "SM_TY_YardClutter_Hoe_LOD0",
+   "SM_TY_YardClutter_Bucket_LOD0",
+   "SM_TY_YardClutter_Woodpile_LOD0",
+   "SM_TY_YardClutter_Stool_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 24,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 5704,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -0.5585,
+     -0.28,
+     0.0
+    ],
+    [
+     0.5736,
+     0.454,
+     1.3966
+    ]
+   ],
+   "materials": [
+    "M_TY_YardClutter.001"
+   ]
+  },
+  "files": {
+   "TY09_YardClutter_v001.glb": {
+    "bytes": 1582800,
+    "sha256": "2f6b96789dcab04a37a101f957fe96523634f9f93749a75ac15117bc99aa0de0"
+   },
+   "TY09_YardClutter_v001.fbx": {
+    "bytes": 657084,
+    "sha256": "645ebe84d9dc83489fcdf51644283f8637d402ef0c621ebf9c583dadcaaeade7"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY09_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ }
+}

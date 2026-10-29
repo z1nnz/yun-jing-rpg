@@ -1,0 +1,128 @@
+{
+ "id": "TY08",
+ "name": "HerbRack",
+ "file": "TY08_HerbRack_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "placed prop",
+ "slots": [
+  "TY_Rack (5.4, 4.0), long side along the fence"
+ ],
+ "dimensions_m": [
+  1.9,
+  0.76,
+  1.7047
+ ],
+ "triangles_lod0": 9532,
+ "triangles_per_node": {
+  "SM_TY_HerbRack_Rack_LOD0": [
+   4780,
+   2390,
+   716
+  ],
+  "SM_TY_HerbRack_Herbs_LOD0": [
+   4752,
+   2376,
+   680
+  ]
+ },
+ "collision": {
+  "type": "box",
+  "size": [
+   1.9,
+   0.7,
+   1.7
+  ],
+  "center": [
+   0,
+   0,
+   0.85
+  ],
+  "note": "Herbs node: show after a harvest (full), hide when empty"
+ },
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY08",
+  "dimensions_m": [
+   1.9,
+   0.76,
+   1.7047
+  ],
+  "bbox_min": [
+   -0.95,
+   -0.38,
+   0.0
+  ],
+  "bbox_max": [
+   0.95,
+   0.38,
+   1.7047
+  ],
+  "trianglesLOD0": 9532,
+  "trianglesPerNode": {
+   "SM_TY_HerbRack_Rack_LOD0": [
+    4780,
+    2390,
+    716
+   ],
+   "SM_TY_HerbRack_Herbs_LOD0": [
+    4752,
+    2376,
+    680
+   ]
+  },
+  "materials": [
+   "M_TY_HerbRack"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_HerbRack_Rack_LOD0",
+   "SM_TY_HerbRack_Herbs_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 2016,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 9532,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -0.95,
+     -0.38,
+     0.0
+    ],
+    [
+     0.95,
+     0.38,
+     1.7047
+    ]
+   ],
+   "materials": [
+    "M_TY_HerbRack.001"
+   ]
+  },
+  "files": {
+   "TY08_HerbRack_v001.glb": {
+    "bytes": 1828648,
+    "sha256": "aa727612195737ffc5789a4e94df6b0025ddadc20020c235d28be34cff4cf5bc"
+   },
+   "TY08_HerbRack_v001.fbx": {
+    "bytes": 1246636,
+    "sha256": "7e75d3b8f4349ebfbda5311a7897db989da85a9ed5e197b80a6cc7af6d250860"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY08_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ }
+}

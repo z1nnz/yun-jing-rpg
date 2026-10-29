@@ -1,0 +1,129 @@
+{
+ "id": "TY10",
+ "name": "GravelPath",
+ "file": "TY10_GravelPath_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "structure (path; top <= 2 cm above ground)",
+ "slots": [
+  "along x = 0 from the back door"
+ ],
+ "dimensions_m": [
+  1.2797,
+  2.0,
+  0.0841
+ ],
+ "triangles_lod0": 14238,
+ "triangles_per_node": {
+  "SM_TY_GravelPath_StraightA_LOD0": [
+   6380,
+   3189,
+   956
+  ],
+  "SM_TY_GravelPath_StraightB_LOD0": [
+   4912,
+   2456,
+   736
+  ],
+  "SM_TY_GravelPath_End_LOD0": [
+   2946,
+   1473,
+   441
+  ]
+ },
+ "collision": {
+  "type": "none",
+  "note": "walkable; terrain provides the ground"
+ },
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY10",
+  "dimensions_m": [
+   1.2797,
+   2.0,
+   0.0841
+  ],
+  "bbox_min": [
+   -0.637,
+   -1.0,
+   0.0
+  ],
+  "bbox_max": [
+   0.6428,
+   1.0,
+   0.0841
+  ],
+  "trianglesLOD0": 14238,
+  "trianglesPerNode": {
+   "SM_TY_GravelPath_StraightA_LOD0": [
+    6380,
+    3189,
+    956
+   ],
+   "SM_TY_GravelPath_StraightB_LOD0": [
+    4912,
+    2456,
+    736
+   ],
+   "SM_TY_GravelPath_End_LOD0": [
+    2946,
+    1473,
+    441
+   ]
+  },
+  "materials": [
+   "M_TY_GravelPath"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_GravelPath_StraightA_LOD0",
+   "SM_TY_GravelPath_StraightB_LOD0",
+   "SM_TY_GravelPath_End_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 3264,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 14238,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -0.637,
+     -1.0,
+     0.0
+    ],
+    [
+     0.6428,
+     1.0,
+     0.0841
+    ]
+   ],
+   "materials": [
+    "M_TY_GravelPath.001"
+   ]
+  },
+  "files": {
+   "TY10_GravelPath_v001.glb": {
+    "bytes": 3222048,
+    "sha256": "c6448d529572108a87a155133ff3dbfad3921bef04fe1ef169449901849b12be"
+   },
+   "TY10_GravelPath_v001.fbx": {
+    "bytes": 1885884,
+    "sha256": "595fab9b358c826152db5068d5e2b44108a2f4606be81ee74eb90d5700607f6f"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY10_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ }
+}

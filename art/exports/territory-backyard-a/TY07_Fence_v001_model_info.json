@@ -1,0 +1,187 @@
+{
+ "id": "TY07",
+ "name": "Fence",
+ "file": "TY07_Fence_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "structure (modular fence; origin at each module centre, posts at -X end)",
+ "slots": [
+  "TY_Fence (four sides)"
+ ],
+ "dimensions_m": [
+  2.07,
+  0.187,
+  1.187
+ ],
+ "triangles_lod0": 18828,
+ "triangles_per_node": {
+  "SM_TY_Fence_StraightA_LOD0": [
+   6728,
+   3364,
+   1008
+  ],
+  "SM_TY_Fence_StraightB_LOD0": [
+   7384,
+   3692,
+   1106
+  ],
+  "SM_TY_Fence_Straight1m_LOD0": [
+   3048,
+   1524,
+   456
+  ],
+  "SM_TY_Fence_Corner_LOD0": [
+   216,
+   108,
+   32
+  ],
+  "SM_TY_Fence_End_LOD0": [
+   440,
+   220,
+   66
+  ],
+  "SM_TY_Fence_GateFrame_LOD0": [
+   432,
+   216,
+   64
+  ],
+  "SM_TY_Fence_GateLeaf_LOD0": [
+   580,
+   290,
+   86
+  ]
+ },
+ "collision": {
+  "type": "box per module",
+  "note": "0.12 m thick, 1.1 m high; GateLeaf rotates about its origin (the hinge), open = -100 deg"
+ },
+ "sockets": [
+  {
+   "name": "SOCKET_gate_hinge",
+   "loc": [
+    -0.44,
+    0.0,
+    0.0
+   ],
+   "forward": [
+    0.0,
+    -1.0,
+    0.0
+   ]
+  }
+ ],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY07",
+  "dimensions_m": [
+   2.07,
+   0.187,
+   1.187
+  ],
+  "bbox_min": [
+   -1.07,
+   -0.1036,
+   0.0
+  ],
+  "bbox_max": [
+   1.0,
+   0.0834,
+   1.187
+  ],
+  "trianglesLOD0": 18828,
+  "trianglesPerNode": {
+   "SM_TY_Fence_StraightA_LOD0": [
+    6728,
+    3364,
+    1008
+   ],
+   "SM_TY_Fence_StraightB_LOD0": [
+    7384,
+    3692,
+    1106
+   ],
+   "SM_TY_Fence_Straight1m_LOD0": [
+    3048,
+    1524,
+    456
+   ],
+   "SM_TY_Fence_Corner_LOD0": [
+    216,
+    108,
+    32
+   ],
+   "SM_TY_Fence_End_LOD0": [
+    440,
+    220,
+    66
+   ],
+   "SM_TY_Fence_GateFrame_LOD0": [
+    432,
+    216,
+    64
+   ],
+   "SM_TY_Fence_GateLeaf_LOD0": [
+    580,
+    290,
+    86
+   ]
+  },
+  "materials": [
+   "M_TY_Fence"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_Fence_StraightA_LOD0",
+   "SM_TY_Fence_StraightB_LOD0",
+   "SM_TY_Fence_Straight1m_LOD0",
+   "SM_TY_Fence_Corner_LOD0",
+   "SM_TY_Fence_End_LOD0",
+   "SM_TY_Fence_GateFrame_LOD0",
+   "SM_TY_Fence_GateLeaf_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 384,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 18828,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -1.07,
+     -0.1036,
+     0.0
+    ],
+    [
+     1.0,
+     0.0834,
+     1.187
+    ]
+   ],
+   "materials": [
+    "M_TY_Fence.001"
+   ]
+  },
+  "files": {
+   "TY07_Fence_v001.glb": {
+    "bytes": 2243928,
+    "sha256": "0dd218c77c25b5a205c7f27ca8d8eafee44c4d847db457370790ac1cfa02cadd"
+   },
+   "TY07_Fence_v001.fbx": {
+    "bytes": 2375660,
+    "sha256": "957f28a75c59e3e54dbef2f4bbf9ec6ebbb8906f62248b228663475be42fae80"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY07_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ }
+}

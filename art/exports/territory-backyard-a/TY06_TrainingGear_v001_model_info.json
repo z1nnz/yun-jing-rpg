@@ -1,0 +1,129 @@
+{
+ "id": "TY06",
+ "name": "TrainingGear",
+ "file": "TY06_TrainingGear_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "placed props",
+ "slots": [
+  "beside TY_Practice"
+ ],
+ "dimensions_m": [
+  1.5,
+  0.75,
+  1.83
+ ],
+ "triangles_lod0": 4716,
+ "triangles_per_node": {
+  "SM_TY_TrainingGear_StoneLock_LOD0": [
+   508,
+   254,
+   76
+  ],
+  "SM_TY_TrainingGear_StoneBarbell_LOD0": [
+   2400,
+   1200,
+   360
+  ],
+  "SM_TY_TrainingGear_WeaponRack_LOD0": [
+   1808,
+   904,
+   270
+  ]
+ },
+ "collision": {
+  "type": "per module",
+  "note": "StoneLock box 0.35 x 0.17 x 0.33; StoneBarbell capsule along X r 0.225; WeaponRack box 1.2 x 0.75 x 1.4"
+ },
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY06",
+  "dimensions_m": [
+   1.5,
+   0.75,
+   1.83
+  ],
+  "bbox_min": [
+   -0.75,
+   -0.375,
+   0.0
+  ],
+  "bbox_max": [
+   0.75,
+   0.375,
+   1.83
+  ],
+  "trianglesLOD0": 4716,
+  "trianglesPerNode": {
+   "SM_TY_TrainingGear_StoneLock_LOD0": [
+    508,
+    254,
+    76
+   ],
+   "SM_TY_TrainingGear_StoneBarbell_LOD0": [
+    2400,
+    1200,
+    360
+   ],
+   "SM_TY_TrainingGear_WeaponRack_LOD0": [
+    1808,
+    904,
+    270
+   ]
+  },
+  "materials": [
+   "M_TY_TrainingGear"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_TrainingGear_StoneLock_LOD0",
+   "SM_TY_TrainingGear_StoneBarbell_LOD0",
+   "SM_TY_TrainingGear_WeaponRack_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 0,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 4716,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -0.75,
+     -0.375,
+     0.0
+    ],
+    [
+     0.75,
+     0.375,
+     1.83
+    ]
+   ],
+   "materials": [
+    "M_TY_TrainingGear.001"
+   ]
+  },
+  "files": {
+   "TY06_TrainingGear_v001.glb": {
+    "bytes": 1176272,
+    "sha256": "17d661abf3e162124fda4e6e976b13f6187e9bc1b6265ff79195cf338b84dafe"
+   },
+   "TY06_TrainingGear_v001.fbx": {
+    "bytes": 492668,
+    "sha256": "e3229c3c9c081db6c371454a751d7fe31cb8f70bc7164aad6e9091091b2cb331"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY06_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ }
+}

@@ -1,0 +1,1 @@
+{"name":"territory-backyard-a","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test yard.test.mjs"},"dependencies":{"three":"0.170.0"}}

@@ -1,0 +1,142 @@
+{
+ "id": "TY05",
+ "name": "PracticeFloor",
+ "file": "TY05_PracticeFloor_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "structure (flush floor; terrain meets its edge)",
+ "slots": [
+  "TY_Practice (0, 10.8)"
+ ],
+ "dimensions_m": [
+  2.9893,
+  2.9866,
+  0.0971
+ ],
+ "triangles_lod0": 51428,
+ "triangles_per_node": {
+  "SM_TY_PracticeFloor_LayoutA_LOD0": [
+   16700,
+   8349,
+   2504
+  ],
+  "SM_TY_PracticeFloor_LayoutB_LOD0": [
+   34728,
+   17364,
+   5209
+  ]
+ },
+ "collision": {
+  "type": "box",
+  "size": [
+   3.0,
+   3.0,
+   0.05
+  ],
+  "center": [
+   0,
+   0,
+   0.025
+  ],
+  "note": "walkable; agility-post (existing model) stands at SOCKET_post"
+ },
+ "sockets": [
+  {
+   "name": "SOCKET_post",
+   "loc": [
+    0.0,
+    0.0,
+    0.05
+   ],
+   "forward": [
+    0.0,
+    -1.0,
+    0.0
+   ]
+  }
+ ],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY05",
+  "dimensions_m": [
+   2.9893,
+   2.9866,
+   0.0971
+  ],
+  "bbox_min": [
+   -1.4943,
+   -1.4933,
+   0.0
+  ],
+  "bbox_max": [
+   1.495,
+   1.4933,
+   0.0971
+  ],
+  "trianglesLOD0": 51428,
+  "trianglesPerNode": {
+   "SM_TY_PracticeFloor_LayoutA_LOD0": [
+    16700,
+    8349,
+    2504
+   ],
+   "SM_TY_PracticeFloor_LayoutB_LOD0": [
+    34728,
+    17364,
+    5209
+   ]
+  },
+  "materials": [
+   "M_TY_PracticeFloor"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_PracticeFloor_LayoutA_LOD0",
+   "SM_TY_PracticeFloor_LayoutB_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 5860,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 51428,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -1.4943,
+     -1.4933,
+     0.0
+    ],
+    [
+     1.495,
+     1.4933,
+     0.0971
+    ]
+   ],
+   "materials": [
+    "M_TY_PracticeFloor.001"
+   ]
+  },
+  "files": {
+   "TY05_PracticeFloor_v001.glb": {
+    "bytes": 6894556,
+    "sha256": "0772b29c3b005e500944f9174154e837d065ae976419730b94da8ca979c96dcf"
+   },
+   "TY05_PracticeFloor_v001.fbx": {
+    "bytes": 6990300,
+    "sha256": "aefda2b857c2f9103c12b4be0c0eed01e20afbc159aa8b8e7b3d44faa37ae484"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY05_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ }
+}

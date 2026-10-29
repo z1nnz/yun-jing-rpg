@@ -1,17 +1,25 @@
-# 新手領地後院（A）：第一批
+# 新手領地後院（A）
 
-依 `docs/execution/2026-10-31/01-A-territory-backyard.md`（分支 `feature/qingxi-main-scene-abc-v1`）。第一批交付內容：
-- TY01–TY04 的 AI 參考圖：`art/references/territory-backyard-a/`。
-- TY01 靈田的成品。
-- TY02 青靈草四階段的成品。
+依 `docs/execution/2026-10-31/01-A-territory-backyard.md`（分支 `feature/qingxi-main-scene-abc-v1`）。
 
-TY03–TY10 與後院展示在第二批。
+- **第一批**：
+  - TY01–TY04 的 AI 參考圖。
+  - TY01 靈田。
+  - TY02 青靈草四階段。
+- **第二批**：
+  - TY05–TY10 的 AI 參考圖。
+  - TY03–TY10 成品。
+  - 後院配置圖。
+  - 可操作的後院展示：`tools/territory-backyard-a/`，有規則測試、真按鍵實測和 31 秒短片。
+
+參考圖與檢視紀錄在 `art/references/territory-backyard-a/`。
 
 ## 檔案
 
 | 檔案 | 用途 |
 |---|---|
-| `build_backyard.py` | 幾何、材質、烘焙、LOD、匯出、回匯驗證；`-- --sheets` 從匯出的 GLB 算審圖 |
+| `build_backyard.py` | 幾何、材質、烘焙、LOD、匯出、回匯驗證；`-- --sheets`（TY01／TY02）、`-- --sheets2`（TY03–TY10 與後院配置）從匯出的 GLB 算審圖 |
+| `encode_video.py` | 把展示錄影（WebM）用 Blender 內建 FFmpeg 轉成 H.264 MP4 |
 | `kitlib.py` | 從 #45 的 `qingxi-waterhead-a/kitlib.py` 複製，只改套件名 |
 | `blend/<檔名>.blend` | 每件一個：程序分件（隱藏）＋烘焙遊戲網格＋LOD |
 
@@ -30,6 +38,9 @@ blender -b --python-exit-code 1 --python art/source/territory-backyard-a/build_b
 - **貼圖**：
   - 烘焙成 BaseColor（sRGB）／ORM（R=AO、G=Roughness、B=Metallic）／Normal（OpenGL），會發光的另有 Emissive。
   - GLB 用 WebP，FBX 用 PNG。
+- **多模組家族**（TY05–TY10）：
+  - 每個家族一個檔案、一張圖集；每個模組是獨立節點 `SM_TY_<家族>_<模組>_LOD0/1/2`，原點在各自的腳印中心。
+  - 烘焙時各模組分開擺放，AO 不會互相遮暗；匯出前再移回原點。TY02／TY03 的四個生長階段也是這樣處理。
 - **水面**：`T_WW_Water_Normal` 和 B 組水利套件、#45 河段是同一張，SHA-256 開頭 `EFF5A830`，三個套件可以共用一個水 Shader。
 
 ## TY01 領地靈田 `TY01_SpiritField_v001`
@@ -83,6 +94,131 @@ blender -b --python-exit-code 1 --python art/source/territory-backyard-a/build_b
   - 這些面用獨立材質 `M_TY_QinglingGrass_Glow`（Emissive 強度 2），引擎可以單獨調。其他面用 `M_TY_QinglingGrass`。
 - **材質**：雙面渲染（關閉背面剔除）。
 
+## TY03 淨水蓮 `TY03_ClearwaterLotus_v001`
+
+- **擺放**：
+  - 和 TY02 一樣，每個階段一個網格，涵蓋一塊田的 6 叢；原點與 TY01 相同。
+  - 搭配 TY01 的積水狀態（濕土加上水面）。
+- **階段**（門檻和 TY02 相同）：
+
+  | 節點 | 生長進度 t | 內容 | LOD0 | LOD1 | LOD2 |
+  |---|---|---|---:|---:|---:|
+  | `SM_TY_ClearwaterLotus_S1`（浮葉） | t < 0.25 | 每叢 3–4 片小圓葉平貼水面 | 6,468 | 3,234 | 969 |
+  | `SM_TY_ClearwaterLotus_S2`（立葉） | 0.25 ≤ t < 0.6 | 浮葉變大，另外兩片葉子舉出水面約 0.3 m，邊緣微捲 | 11,412 | 5,706 | 1,711 |
+  | `SM_TY_ClearwaterLotus_S3`（花苞） | 0.6 ≤ t < 1 | 再多一片立葉，一枝 0.5 m 的粉白花苞 | 16,620 | 8,310 | 2,493 |
+  | `SM_TY_ClearwaterLotus_S4`（開花） | t ≥ 1 | 花開：三層花瓣，白色帶淡粉尖，中間是蓮蓬和雄蕊 | 24,588 | 12,294 | 3,580 |
+
+- **葉片**：葉面直徑 0.15–0.35 m，大小不一；有放射葉脈、淺色中心、偏黃的葉緣和少量斑點。
+- **花心微光**：只有蓮蓬頂與雄蕊會發光，顏色是規格的月白 `#EEF2F2`，用獨立材質 `M_TY_ClearwaterLotus_Glow`（強度 1.5）。
+
+## TY04 院角舊石燈（守燈）`TY04_Shoudeng_v001`
+
+- **格位**：`TY_Lantern` (−5.2, 12.0)，上限 0.9 × 0.9 × 2.0 m。實際 0.64 × 0.64 × 1.71 m，6,688／3,344／1,002 面。
+- **構造**：
+  - 方形底板、灰青石方座（一角崩缺）、八角石柱、燈台。
+  - 燈室四面是木格紙窗，上面有翹角小石蓋與寶珠頂。
+  - 頂蓋與陰面長苔。
+- **缺月記號**：
+  - 刻在方座 −Y 面靠下，約 4 cm 寬，形狀是一彎缺了一角的月亮。
+  - 只做在法線貼圖裡，顏色略暗，不放大、不加亮。近景圖是 `base_mark_close.png`。
+- **五段亮度**：
+  - 只有一個模型。紙窗用獨立材質 `M_TY_Shoudeng_Paper`，Emissive 貼圖是暖金色 `#E8C877`。
+  - 引擎依段數設定發光強度：0／0.2／0.5／0.9／1.5。
+  - 另外建議在燈室中心 (0, 0, 1.27) m 放一盞暖色點光源，強度跟著段數調。
+- **取名三層**（照工作包第 4 節的建議，資料裡叫「守燈」）：
+  - 表面：守夜的燈。
+  - 典故：古代守燈人徹夜不讓燈滅。
+  - 伏筆：它守的是這一方水土。
+  - 這三層只寫在這份 README，遊戲文字裡不出現。
+
+## TY05 練功地面 `TY05_PracticeFloor_v001`
+
+- **格位**：`TY_Practice` (0, 10.8)，上限 3.2 × 3.2 × 0.15 m。
+  - 兩種排法都是 3.0 × 3.0 m。
+  - 石板頂面 5 cm、碎石鋪底 2 cm，草葉最高約 10 cm。
+- **A 款（不規則放射）**：
+  - 中心一塊石板放木樁，外圍一圈 8 塊、再外一圈 13 塊。
+  - 16,700 面。
+- **B 款（錯縫長石板）**：
+  - 長石板錯縫鋪，木樁四周一圈 8 × 8 的小方石。
+  - 34,728 面，多數在小方石上。
+- **共同細節**：
+  - 每款各有一塊裂成兩半、一塊下陷 1.5 cm。
+  - 越靠近木樁，石面越亮、越光滑（磨亮），周圍一圈踩痕；石縫和邊緣長草。
+- **木樁**：用自己在 #38 交過的 `agility-post`，不重做，位置在 `SOCKET_post`。
+
+## TY06 練功器材 `TY06_TrainingGear_v001`
+
+三件都做（工作包說三選二）：
+
+| 節點 | 內容 | LOD0 |
+|---|---|---:|
+| `SM_TY_TrainingGear_StoneLock` | 花崗岩石鎖 0.35 m，提把磨圓 | 508 |
+| `SM_TY_TrainingGear_StoneBarbell` | 1.5 m 木桿、兩個 0.45 m 石輪、銅轂、麻繩纏握 | 2,400 |
+| `SM_TY_TrainingGear_WeaponRack` | A 字木架、三根橫檔，插著棍、木劍、紅纓槍 | 1,808 |
+
+## TY07 圍籬 `TY07_Fence_v001`
+
+- **高度**：柱高 1.16 m（含柱帽約 1.19 m），兩根橫檔分別在 0.32 m 與 0.88 m，所有模組相同，接得起來。
+- **模組**：
+
+  | 節點 | 長 | 內容 | LOD0 |
+  |---|---:|---|---:|
+  | `StraightA` | 2 m | 劈竹片綁在兩根橫檔上，頂端高低不齊，腳下疊石 | 6,728 |
+  | `StraightB` | 2 m | 編竹：8 根竹樁，橫向 16 道竹篾上下交織 | 7,384 |
+  | `Straight1m` | 1 m | 同 A 款的短段 | 3,048 |
+  | `Corner` | — | 轉角柱 | 216 |
+  | `End` | — | 收尾柱加斜撐 | 440 |
+  | `GateFrame` | 1 m | 兩根門柱 | 432 |
+  | `GateLeaf` | 0.86 m | 木框編條門板，有斜撐與鐵鉸鏈 | 580 |
+
+- **接法**：
+  - 每段直段只帶起點（−X 端）那根柱子，下一段接上；一排的最後用 `End` 或 `Corner` 收。
+  - 至少兩種直段交錯使用，不會整圈都同一段。
+- **柴門開關**：`GateLeaf` 節點的原點就是鉸鏈軸，繞垂直軸轉 −100° 是全開；展示裡就是這樣轉。
+
+## TY08 晾藥架 `TY08_HerbRack_v001`
+
+- **格位**：`TY_Rack` (5.4, 4.0)，上限 0.8 × 2.0 × 1.8 m。實際 1.9 × 0.76 × 1.70 m，擺放時轉 90°，讓長邊貼著右側圍籬。
+- **架子** `Rack`（4,780 面）：
+  - 兩組竹 A 字架，三根橫竿，每個接點綁麻繩。
+  - 下層兩個圓竹篩。
+- **草藥** `Herbs`（4,752 面）：12 束倒掛的草藥，加上篩子上的散葉。掛滿時顯示，空架時隱藏。
+
+## TY09 生活雜物 `TY09_YardClutter_v001`
+
+- **格位**：`TY_Corner_R` (5.0, 11.5)，上限 1.6 × 1.6 × 2.0 m。
+- **6 件**：
+  - 水缸 0.6 m：舊釉、腳部露胎，有木蓋與瓢。
+  - 竹籃 0.35 m。
+  - 鋤頭 1.4 m：斜靠在圍籬上。
+  - 木桶 0.45 m：鐵箍、繩提把。
+  - 柴堆 1.0 × 0.75 m：有頂板。
+  - 矮凳 0.3 m。
+- **配置**：建議擺法寫在展示的 `app.mjs`，和 `backyard/top_slots.png` 一致。
+
+## TY10 碎石小徑 `TY10_GravelPath_v001`
+
+- **寬度與接口**：寬 1.1 m，兩端寬度相同，直段可以前後接。
+- **模組**：
+  - `StraightA`（2 m）：碎石加兩塊踏石。
+  - `StraightB`（2 m）：只有碎石，中間有踩出的淺溝。
+  - `End`（1.1 m）：圓頭，加一塊平門檻石，接後門。
+- **高度**（從 `.blend` 實測）：
+  - 碎石面 1.5 cm，踏石 2.0 cm，邊石壓到 2 cm 以內。
+  - 只有路緣的小草會高過 2 cm（草葉不是路面）。
+
+## 後院配置（`art/previews/territory-backyard-a/backyard/`）
+
+- **擺放**：照工作包第 3 節的格位擺出全部模型。場景 (x, z) 對應 Blender (x, y)。
+  - 圍籬：後面一排、左右兩側，柴門開在後排靠右。
+  - 小徑：從後門沿 x = 0 走到練功地。
+  - 屋子的後牆是灰色佔位（屋子是 B 的工作）。
+- **審圖**：
+  - `eye_1p7m_from_back_door.png`：從後門看出去，1.7 m 眼高。
+  - `eye_1p7m_from_yard_end.png`：從院子盡頭看回屋子。
+  - `top_slots.png`：俯視圖，標了格位 ID。
+
 ## 審圖（`art/previews/territory-backyard-a/`）
 
 - **TY01**：
@@ -95,11 +231,22 @@ blender -b --python-exit-code 1 --python art/source/territory-backyard-a/build_b
   - 一塊成熟田的俯視配置圖。
   - 成熟田近景。
   - 1.7 m 眼高的成熟田。
+- **TY03–TY10**：
+  - 每個家族都有正交正面、側面、背面與 3/4 透視，旁邊有 1.75 m 人形尺；多模組家族是並排一起拍。
+  - 另外還有：
+    - TY03：四階段並排、俯視、近景、1.7 m 眼高。
+    - TY04：缺月記號近景；五段亮度白天、夜晚各一張。
+    - TY05：1.7 m 眼高，帶 `agility-post`。
+- **並排比較**：
+  - TY07 和自己在 #39 交過的破竹籬 `A08_BrokenBambooFence`。
+  - TY04 原本要和村口石燈（Codex C7 的 VP01）比，但那件還沒交，這屬於要等別人的部分，所以先不做。目前先和 main 上既有的 `qingxi-trail-lantern-v2`（青溪步道燈，不是 VP01）並排，等 VP01 交了再補。
 - **燈光**：照建模規格第 8 節。EEVEE，世界貼圖用 Poly Haven 的 `kloofendal_48d_partly_cloudy_puresky`（CC0，2K），強度 1.0，色彩管理 AgX、Medium High Contrast。
   - HDRI 不放進倉庫。腳本預設讀 `~/.cache/yunjing/hdri/kloofendal_48d_partly_cloudy_puresky_2k.hdr`，也可以用環境變數 `YJ_HDRI` 指定，找不到就停止出圖。
 
 ## 尚未完成或未驗證
 
-- 第二批：TY03–TY10 的成品與後院展示。
-- 遊戲內 1.7 m 截圖：要放進 `QingxiLodgingInterior` 場景才能拍，目前只有 Blender 裡的 1.7 m 眼高圖。
+- 要等別人的部分，都先不做：
+  - 新 PR：工作包規定 #45 合併後才開。
+  - TY04 和 VP01 的並排比較：VP01 還沒交。
+  - 放進新手村或 `QingxiLodgingInterior` 場景的遊戲內截圖：需要核心組的場景。
 - 以下都還沒驗證：Unity 匯入、遊戲內光線、手機效能、LOD 切換距離。

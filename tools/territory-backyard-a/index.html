@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14231f">
+<link rel="icon" href="data:,">
+<title>領地後院</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/build/three.module.js","three/addons/":"./vendor/examples/jsm/"}}</script>
+</head>
+<body>
+<canvas id="world" aria-label="新手領地的後院，第三人稱"></canvas>
+
+<header class="hud-top">
+  <div class="title">
+    <span class="eyebrow">承天 · 鼇極 · 青溪村</span>
+    <h1>後院</h1>
+    <span class="notice">本機展示 · 刷新重置 · 不發正式資源</span>
+  </div>
+  <section class="fields" aria-label="田">
+    <div id="f0" class="field"><b>左田</b><span>空著</span><i></i></div>
+    <div id="f1" class="field"><b>右田</b><span>空著</span><i></i></div>
+  </section>
+</header>
+
+<div id="toast" class="toast" role="status"></div>
+<div id="prompt" class="prompt">從後門走進院子</div>
+<div id="hint" class="hint">WASD 移動 · 拖曳轉視角 · 1 種青靈草 · 2 種淨水蓮 · E 收成／開關柴門 · 按住 F 時間快轉 · N 傍晚／白天</div>
+
+<nav id="touch" class="touch" aria-label="觸控操作">
+  <div id="stick" class="stick"><i></i></div>
+  <div class="actions">
+    <button id="t-grass" class="act">種青靈草</button>
+    <button id="t-lotus" class="act">種淨水蓮</button>
+    <button id="t-use" class="act big">收成／柴門</button>
+    <button id="t-fast" class="act">快轉</button>
+  </div>
+</nav>
+
+<div id="loading" class="loading"><b>領地後院</b><span id="load-text">載入模型…</span><i id="load-bar"></i></div>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>

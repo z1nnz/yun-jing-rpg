@@ -123,12 +123,12 @@
   },
   "files": {
    "TY02_QinglingGrass_v001.glb": {
-    "bytes": 3020900,
-    "sha256": "9797af52abe678c32b02e7ca69bbd64f1cb39d7bd3b4195edb9a61667927b4c4"
+    "bytes": 3079328,
+    "sha256": "47b55c9ccd7293c3850430c04de64ae07032bbd91df4f9d36701def6bc7e5aa0"
    },
    "TY02_QinglingGrass_v001.fbx": {
-    "bytes": 2609372,
-    "sha256": "93cfbf2a494f247fd9db9d25e95996ebf32f6f24ef30206e8534e3ea4e83b332"
+    "bytes": 2598060,
+    "sha256": "f62d59158d75e893d9fbdd22e46845ca03a97af93f2eef4e132247117f7bdc61"
    }
   },
   "reference": "art/references/territory-backyard-a/TY02_three_view.png",
@@ -141,25 +141,29 @@
  },
  "stages": {
   "SM_TY_QinglingGrass_S1_LOD0": {
+   "stage": "sprout",
    "t_from": 0.0,
    "t_to": 0.25,
-   "height_m": 0.08
+   "approx_height_above_bed_m": 0.08
   },
   "SM_TY_QinglingGrass_S2_LOD0": {
+   "stage": "young",
    "t_from": 0.25,
    "t_to": 0.6,
-   "height_m": 0.22
+   "approx_height_above_bed_m": 0.22
   },
   "SM_TY_QinglingGrass_S3_LOD0": {
+   "stage": "grown",
    "t_from": 0.6,
    "t_to": 1.0,
-   "height_m": 0.4
+   "approx_height_above_bed_m": 0.4
   },
   "SM_TY_QinglingGrass_S4_LOD0": {
+   "stage": "mature",
    "t_from": 1.0,
    "t_to": null,
-   "height_m": 0.48
+   "approx_height_above_bed_m": 0.48
   }
  },
- "glow": "mature leaf tips use material M_TY_QinglingGrass_Glow (Emissive map, strength 2); every other face uses M_TY_QinglingGrass"
+ "glow": "glowing faces (mature tips / bloom centre) use M_TY_QinglingGrass_Glow (Emissive map, strength 2.0); every other face uses M_TY_QinglingGrass"
 }

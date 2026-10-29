@@ -56,5 +56,89 @@
   "generator": "OpenAI image generation via Codex CLI (codex exec), 2026-10-30; prompts in prompts.json + generate_three_view.sh",
   "review": "院角舊石燈（守燈）：0.6 m 寬、1.7 m 高，灰青石方座、八角柱、木格紙窗燈室、翹角小石蓋，有苔與缺角；附燈室五段亮度。圖中缺月記號在正、背面都畫得太明顯；建模時只刻在一面、刻得很淺很小。",
   "reviewed": "before modelling; build_backyard.py refuses to build an asset whose sheet is missing"
+ },
+ {
+  "id": "TY05",
+  "file": "TY05_three_view.png",
+  "bytes": 2319255,
+  "sha256": "d01ab3edb8e6afffaf815c6b73490b5bbee0107c55340187e1488f7b2d7cea16",
+  "views": [
+   "LAYOUT A",
+   "LAYOUT B",
+   "SIDE"
+  ],
+  "generator": "OpenAI image generation via Codex CLI (codex exec), 2026-10-30; prompts in prompts.json + generate_three_view.sh",
+  "review": "練功地面兩種排法：A 不規則大石板放射狀圍繞木樁，B 長方石板錯縫，木樁四周一圈小方石；中央磨亮、縫裡長草、一塊裂、一塊下陷；側面 0.1 m 厚。木樁用既有的 agility-post，不重做。",
+  "reviewed": "before modelling; build_backyard.py refuses to build an asset whose sheet is missing"
+ },
+ {
+  "id": "TY06",
+  "file": "TY06_three_view.png",
+  "bytes": 1644134,
+  "sha256": "91fbe061ede233ecb8f03d876ba345cce9681d68bb81dad66510bd48607b8045",
+  "views": [
+   "FRONT",
+   "SIDE",
+   "BACK"
+  ],
+  "generator": "OpenAI image generation via Codex CLI (codex exec), 2026-10-30; prompts in prompts.json + generate_three_view.sh",
+  "review": "石鎖（0.35 m，提把磨亮，側面雲紋）、石擔（1.5 m 木桿、兩個 0.45 m 石輪、麻繩）、兵器架（1.2 × 1.5 m，A 字木架，棍、木劍、槍）。三件都做。",
+  "reviewed": "before modelling; build_backyard.py refuses to build an asset whose sheet is missing"
+ },
+ {
+  "id": "TY07",
+  "file": "TY07_three_view.png",
+  "bytes": 1831836,
+  "sha256": "61a876d0063b5a2ee647e98173669c600a60b1953d58a0fd6bb91ea759c780bf",
+  "views": [
+   "FRONT",
+   "SIDE",
+   "BACK"
+  ],
+  "generator": "OpenAI image generation via Codex CLI (codex exec), 2026-10-30; prompts in prompts.json + generate_three_view.sh",
+  "review": "圍籬模組 1.1 m：竹片直段 2 m（A）、編竹直段 2 m（B）、直段 1 m、轉角、收尾、柴門開／關；柱與橫檔高度一致，下段疊幾塊石頭。圖中柴門開啟時多了門楣，建模不加。",
+  "reviewed": "before modelling; build_backyard.py refuses to build an asset whose sheet is missing"
+ },
+ {
+  "id": "TY08",
+  "file": "TY08_three_view.png",
+  "bytes": 1952169,
+  "sha256": "5e38706e9d6b35d20e166df41dd44735e1433726d93cf1f56939edfb7d0dd8f9",
+  "views": [
+   "FRONT",
+   "SIDE",
+   "BACK"
+  ],
+  "generator": "OpenAI image generation via Codex CLI (codex exec), 2026-10-30; prompts in prompts.json + generate_three_view.sh",
+  "review": "晾藥架 1.9 × 0.7 × 1.7 m：兩組竹 A 字架、三根橫竿、麻繩綁結、下層兩個圓竹篩；附掛滿草藥的狀態。圖中背景的竹籬不屬於這件。",
+  "reviewed": "before modelling; build_backyard.py refuses to build an asset whose sheet is missing"
+ },
+ {
+  "id": "TY09",
+  "file": "TY09_three_view.png",
+  "bytes": 1676095,
+  "sha256": "d470c86baafe779006049f2dfe7f1e27e483ea57f117c1ca1c61f53a0505f27d",
+  "views": [
+   "FRONT",
+   "SIDE",
+   "BACK"
+  ],
+  "generator": "OpenAI image generation via Codex CLI (codex exec), 2026-10-30; prompts in prompts.json + generate_three_view.sh",
+  "review": "生活雜物 6 件：水缸（0.6 m、木蓋、瓢）、竹籃 0.35 m、鋤頭 1.4 m、木桶 0.45 m、柴堆 1.0 × 0.7 m 加頂板、矮凳 0.3 m；附 1.6 × 1.6 m 院角配置俯視。",
+  "reviewed": "before modelling; build_backyard.py refuses to build an asset whose sheet is missing"
+ },
+ {
+  "id": "TY10",
+  "file": "TY10_three_view.png",
+  "bytes": 2289952,
+  "sha256": "751a4d573c8e0db51fe837f64e597d68325ae5b596783e029d48f9f29ce3a226",
+  "views": [
+   "STRAIGHT A",
+   "STRAIGHT B",
+   "END"
+  ],
+  "generator": "OpenAI image generation via Codex CLI (codex exec), 2026-10-30; prompts in prompts.json + generate_three_view.sh",
+  "review": "碎石小徑 1.1 m 寬：直段 A（碎石＋兩塊踏石）、直段 B（只有碎石、中間踩出的淺痕）、收尾（圓頭＋平門檻石）；側面高出地面不超過 2 cm。圖上面板誤標為 FRONT／SIDE／BACK，實際是三個俯視模組；收尾圖中的木門屬於屋子（B 的工作），不做。",
+  "reviewed": "before modelling; build_backyard.py refuses to build an asset whose sheet is missing"
  }
 ]

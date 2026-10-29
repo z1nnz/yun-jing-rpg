@@ -1,0 +1,169 @@
+{
+ "id": "TY03",
+ "name": "ClearwaterLotus",
+ "file": "TY03_ClearwaterLotus_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "crop stages (placed with TY01 in its flooded state, same origin)",
+ "slots": [
+  "inside TY01 (flooded)"
+ ],
+ "dimensions_m": [
+  1.5472,
+  2.3447,
+  0.7304
+ ],
+ "triangles_lod0": 59088,
+ "triangles_per_node": {
+  "SM_TY_ClearwaterLotus_S1_LOD0": [
+   6468,
+   3234,
+   969
+  ],
+  "SM_TY_ClearwaterLotus_S2_LOD0": [
+   11412,
+   5706,
+   1711
+  ],
+  "SM_TY_ClearwaterLotus_S3_LOD0": [
+   16620,
+   8310,
+   2493
+  ],
+  "SM_TY_ClearwaterLotus_S4_LOD0": [
+   24588,
+   12294,
+   3580
+  ]
+ },
+ "collision": {
+  "type": "none",
+  "note": "non-blocking plants; same t thresholds as TY02; show TY01 flooded"
+ },
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY03",
+  "dimensions_m": [
+   1.5472,
+   2.3447,
+   0.7304
+  ],
+  "bbox_min": [
+   -0.7774,
+   -1.1666,
+   0.1696
+  ],
+  "bbox_max": [
+   0.7697,
+   1.1781,
+   0.9
+  ],
+  "trianglesLOD0": 59088,
+  "trianglesPerNode": {
+   "SM_TY_ClearwaterLotus_S1_LOD0": [
+    6468,
+    3234,
+    969
+   ],
+   "SM_TY_ClearwaterLotus_S2_LOD0": [
+    11412,
+    5706,
+    1711
+   ],
+   "SM_TY_ClearwaterLotus_S3_LOD0": [
+    16620,
+    8310,
+    2493
+   ],
+   "SM_TY_ClearwaterLotus_S4_LOD0": [
+    24588,
+    12294,
+    3580
+   ]
+  },
+  "materials": [
+   "M_TY_ClearwaterLotus",
+   "M_TY_ClearwaterLotus_Glow"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_ClearwaterLotus_S1_LOD0",
+   "SM_TY_ClearwaterLotus_S2_LOD0",
+   "SM_TY_ClearwaterLotus_S3_LOD0",
+   "SM_TY_ClearwaterLotus_S4_LOD0"
+  ],
+  "originAtBase": false,
+  "meshHealth": {
+   "nonManifoldEdges": 7656,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 59088,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -0.7774,
+     -1.1666,
+     0.1696
+    ],
+    [
+     0.7697,
+     1.1781,
+     0.9
+    ]
+   ],
+   "materials": [
+    "M_TY_ClearwaterLotus.001",
+    "M_TY_ClearwaterLotus_Glow.001"
+   ]
+  },
+  "files": {
+   "TY03_ClearwaterLotus_v001.glb": {
+    "bytes": 4279480,
+    "sha256": "9f7cbe3d6308f123e124ba8152e11b66591d9ad17c2cecac79cacf0618148a93"
+   },
+   "TY03_ClearwaterLotus_v001.fbx": {
+    "bytes": 6483036,
+    "sha256": "a0db39646514fbed060610427a6e57cb182af68030e6f37ff5d671f69825a945"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY03_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ },
+ "stages": {
+  "SM_TY_ClearwaterLotus_S1_LOD0": {
+   "stage": "floating",
+   "t_from": 0.0,
+   "t_to": 0.25,
+   "approx_height_above_bed_m": 0.01
+  },
+  "SM_TY_ClearwaterLotus_S2_LOD0": {
+   "stage": "standing",
+   "t_from": 0.25,
+   "t_to": 0.6,
+   "approx_height_above_bed_m": 0.35
+  },
+  "SM_TY_ClearwaterLotus_S3_LOD0": {
+   "stage": "bud",
+   "t_from": 0.6,
+   "t_to": 1.0,
+   "approx_height_above_bed_m": 0.61
+  },
+  "SM_TY_ClearwaterLotus_S4_LOD0": {
+   "stage": "bloom",
+   "t_from": 1.0,
+   "t_to": null,
+   "approx_height_above_bed_m": 0.6
+  }
+ },
+ "glow": "glowing faces (mature tips / bloom centre) use M_TY_ClearwaterLotus_Glow (Emissive map, strength 1.5); every other face uses M_TY_ClearwaterLotus"
+}
