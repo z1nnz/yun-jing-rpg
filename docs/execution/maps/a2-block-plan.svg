@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 1170" width="1020" height="1170" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<rect width="1020" height="1170" fill="#EEF0E8"/>
+<line x1="60" y1="960" x2="60" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="60" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-50</text>
+<line x1="150" y1="960" x2="150" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="150" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-40</text>
+<line x1="240" y1="960" x2="240" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="240" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-30</text>
+<line x1="330" y1="960" x2="330" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="330" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-20</text>
+<line x1="420" y1="960" x2="420" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="420" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-10</text>
+<line x1="510" y1="960" x2="510" y2="60" stroke="#C9CEC2" stroke-width="1.6"/><text x="510" y="976" font-size="11" text-anchor="middle" fill="#6E7570">0</text>
+<line x1="600" y1="960" x2="600" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="600" y="976" font-size="11" text-anchor="middle" fill="#6E7570">10</text>
+<line x1="690" y1="960" x2="690" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="690" y="976" font-size="11" text-anchor="middle" fill="#6E7570">20</text>
+<line x1="780" y1="960" x2="780" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="780" y="976" font-size="11" text-anchor="middle" fill="#6E7570">30</text>
+<line x1="870" y1="960" x2="870" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="870" y="976" font-size="11" text-anchor="middle" fill="#6E7570">40</text>
+<line x1="960" y1="960" x2="960" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="960" y="976" font-size="11" text-anchor="middle" fill="#6E7570">50</text>
+<line x1="60" y1="960" x2="960" y2="960" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="964" font-size="11" text-anchor="end" fill="#6E7570">-150</text>
+<line x1="60" y1="870" x2="960" y2="870" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="874" font-size="11" text-anchor="end" fill="#6E7570">-140</text>
+<line x1="60" y1="780" x2="960" y2="780" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="784" font-size="11" text-anchor="end" fill="#6E7570">-130</text>
+<line x1="60" y1="690" x2="960" y2="690" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="694" font-size="11" text-anchor="end" fill="#6E7570">-120</text>
+<line x1="60" y1="600" x2="960" y2="600" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="604" font-size="11" text-anchor="end" fill="#6E7570">-110</text>
+<line x1="60" y1="510" x2="960" y2="510" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="514" font-size="11" text-anchor="end" fill="#6E7570">-100</text>
+<line x1="60" y1="420" x2="960" y2="420" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="424" font-size="11" text-anchor="end" fill="#6E7570">-90</text>
+<line x1="60" y1="330" x2="960" y2="330" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="334" font-size="11" text-anchor="end" fill="#6E7570">-80</text>
+<line x1="60" y1="240" x2="960" y2="240" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="244" font-size="11" text-anchor="end" fill="#6E7570">-70</text>
+<line x1="60" y1="150" x2="960" y2="150" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="154" font-size="11" text-anchor="end" fill="#6E7570">-60</text>
+<line x1="60" y1="60" x2="960" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="64" font-size="11" text-anchor="end" fill="#6E7570">-50</text>
+<rect x="474" y="762" width="108" height="72" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="478" y="775" font-size="12" fill="#4A4036" font-weight="bold">a2-start（高 0.2 m）</text>
+<rect x="294" y="528" width="126" height="90" fill="#D9CFBD" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="298" y="541" font-size="12" fill="#4A4036" font-weight="bold">a2-tea（高 0.9 m）</text>
+<rect x="627" y="370.5" width="72" height="63" fill="#D9CFBD" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="631" y="383.5" font-size="12" fill="#4A4036" font-weight="bold">a2-shrine（高 1.6 m）</text>
+<rect x="415.5" y="177" width="81" height="72" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="419.5" y="190" font-size="12" fill="#4A4036" font-weight="bold">a2-view（高 2.6 m）</text>
+<line x1="510" y1="951" x2="573" y2="780" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="573" y1="780" x2="465" y2="618" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="465" y1="618" x2="564" y2="438" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="564" y1="438" x2="501" y2="258" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="501" y1="258" x2="510" y2="51" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="465" y1="618" x2="420" y2="546" stroke="#A88560" stroke-width="21.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="564" y1="438" x2="609" y2="402" stroke="#A88560" stroke-width="19.8" stroke-linecap="round" stroke-opacity=".85"/>
+<g transform="translate(478.5 789) rotate(0)"><rect x="-5.3999999999999995" y="-1.8" width="10.799999999999999" height="3.6" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-1.8" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="478.5" cy="789" r="8" fill="#1C1F1E"/><text x="478.5" y="793" font-size="10" fill="#fff" text-anchor="middle">1</text>
+<g transform="translate(528 811.5) rotate(0)"><rect x="-2.6999999999999997" y="-1.8" width="5.3999999999999995" height="3.6" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-1.8" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="528" cy="811.5" r="8" fill="#1C1F1E"/><text x="528" y="815.5" font-size="10" fill="#fff" text-anchor="middle">2</text>
+<g transform="translate(348 586.5) rotate(90)"><rect x="-27" y="-22.5" width="54" height="45" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-22.5" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="348" cy="586.5" r="8" fill="#1C1F1E"/><text x="348" y="590.5" font-size="10" fill="#fff" text-anchor="middle">3</text>
+<g transform="translate(397.5 600) rotate(90)"><rect x="-13.5" y="-9" width="27" height="18" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="397.5" cy="600" r="8" fill="#1C1F1E"/><text x="397.5" y="604" font-size="10" fill="#fff" text-anchor="middle">4</text>
+<g transform="translate(348 542.4) rotate(0)"><rect x="-14.4" y="-7.2" width="28.8" height="14.4" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-7.2" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="348" cy="542.4" r="8" fill="#1C1F1E"/><text x="348" y="546.4" font-size="10" fill="#fff" text-anchor="middle">5</text>
+<g transform="translate(676.5 402) rotate(-90)"><rect x="-10.799999999999999" y="-9" width="21.599999999999998" height="18" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="676.5" cy="402" r="8" fill="#1C1F1E"/><text x="676.5" y="406" font-size="10" fill="#fff" text-anchor="middle">6</text>
+<g transform="translate(640.5 424.5) rotate(0)"><rect x="-2.6999999999999997" y="-2.6999999999999997" width="5.3999999999999995" height="5.3999999999999995" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-2.6999999999999997" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="640.5" cy="424.5" r="8" fill="#1C1F1E"/><text x="640.5" y="428.5" font-size="10" fill="#fff" text-anchor="middle">7</text>
+<g transform="translate(456 190.5) rotate(0)"><rect x="-9" y="-3.6" width="18" height="7.2" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-3.6" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="456" cy="190.5" r="8" fill="#1C1F1E"/><text x="456" y="194.5" font-size="10" fill="#fff" text-anchor="middle">8</text>
+<g transform="translate(432.59999999999997 234.60000000000005) rotate(0)"><rect x="-10.799999999999999" y="-10.799999999999999" width="21.599999999999998" height="21.599999999999998" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-10.799999999999999" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="432.59999999999997" cy="234.60000000000005" r="8" fill="#1C1F1E"/><text x="432.59999999999997" y="238.60000000000005" font-size="10" fill="#fff" text-anchor="middle">9</text>
+<g transform="translate(384 547.8) rotate(180)"><rect x="-3.6" y="-3.6" width="7.2" height="7.2" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-3.6" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="384" cy="547.8" r="8" fill="#1C1F1E"/><text x="384" y="551.8" font-size="10" fill="#fff" text-anchor="middle">10</text>
+<text x="60" y="30" font-size="20" font-weight="bold" fill="#1C1F1E">A2 村外官道與茶亭｜區塊配置圖（100 × 100 m，上方為北）</text>
+<line x1="870" y1="30" x2="960" y2="30" stroke="#1C1F1E" stroke-width="3"/><text x="915" y="22" font-size="12" text-anchor="middle">10 m</text>
+<text x="60" y="1000" font-size="12" fill="#1C1F1E">實心＝已放置　半透明＝模型已有、自動放置　虛線＝待製作（遊戲裡顯示為灰盒）。顏色＝負責人：核心組 灰藍、Codex 玉綠、joshsu54 木褐。短線＝正面方向。</text>
+<text x="60" y="1022" font-size="11" fill="#2B2B2B">1 岔路路牌（RK01）（codex，1.2×0.4×2.6 m）</text>
+<text x="360" y="1022" font-size="11" fill="#2B2B2B">2 里程石（RK02）（codex，0.6×0.4×1.2 m）</text>
+<text x="660" y="1022" font-size="11" fill="#2B2B2B">3 路邊茶亭（RK03）（codex，6×5×4.5 m）</text>
+<text x="60" y="1038" font-size="11" fill="#2B2B2B">4 茶亭旁小攤（RK04）（codex，3×2×2.6 m）</text>
+<text x="360" y="1038" font-size="11" fill="#2B2B2B">5 載貨板車（RK05）（codex，3.2×1.6×1.4 m）</text>
+<text x="660" y="1038" font-size="11" fill="#2B2B2B">6 土地祠・機緣點（RK06）（codex，2.4×2×2.8 m）</text>
+<text x="60" y="1054" font-size="11" fill="#2B2B2B">7 路燈柱（RK08）（codex，0.6×0.6×3 m）</text>
+<text x="360" y="1054" font-size="11" fill="#2B2B2B">8 觀景石凳（RK09）（codex，2×0.8×0.6 m）</text>
+<text x="660" y="1054" font-size="11" fill="#2B2B2B">9 草垛（RK10）（codex，2.4×2.4×2.2 m）</text>
+<text x="60" y="1070" font-size="11" fill="#2B2B2B">10 路人（靜態 NPC）（joshsu54，0.8×0.8×1.75 m）</text>
+</svg>

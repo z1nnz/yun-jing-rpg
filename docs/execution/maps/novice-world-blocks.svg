@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1200" width="1500" height="1200" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<rect width="1500" height="1200" fill="#EEF0E8"/>
+<text x="70" y="34" font-size="20" font-weight="bold" fill="#1C1F1E">雲境新手大世界｜區塊總圖（每格 100 × 100 m，上方為北）</text>
+<rect x="582" y="782" width="166" height="166" fill="#C9D6A3" fill-opacity="0.8" stroke="#4A4036" stroke-width="3" />
+<text x="588" y="800" font-size="14" font-weight="bold" fill="#1C1F1E">A1 青溪村核心</text>
+<text x="588" y="818" font-size="11" fill="#2B2B2B">P0–P1・高 0–1.5 m</text>
+<text x="588" y="836" font-size="11" fill="#2B2B2B">村中古樹、廣場</text>
+<rect x="582" y="952" width="166" height="166" fill="#C9D6A3" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="588" y="970" font-size="14" font-weight="bold" fill="#1C1F1E">A2 村外官道與茶亭</text>
+<text x="588" y="988" font-size="11" fill="#2B2B2B">P2・高 0–3 m</text>
+<text x="588" y="1006" font-size="11" fill="#2B2B2B">路邊茶亭、里程石</text>
+<rect x="412" y="782" width="166" height="166" fill="#C9D6A3" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="418" y="800" font-size="14" font-weight="bold" fill="#1C1F1E">A3 西溪與水磨坊</text>
+<text x="418" y="818" font-size="11" fill="#2B2B2B">P2・高 -1–2 m</text>
+<text x="418" y="836" font-size="11" fill="#2B2B2B">石拱橋、水車磨坊</text>
+<rect x="752" y="782" width="166" height="166" fill="#C9D6A3" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="758" y="800" font-size="14" font-weight="bold" fill="#1C1F1E">A4 東坡茶田</text>
+<text x="758" y="818" font-size="11" fill="#2B2B2B">P2・高 2–12 m</text>
+<text x="758" y="836" font-size="11" fill="#2B2B2B">觀景亭（看山城）</text>
+<rect x="412" y="952" width="166" height="166" fill="#C9D6A3" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="418" y="970" font-size="14" font-weight="bold" fill="#1C1F1E">A5 河灣蘆葦渡口</text>
+<text x="418" y="988" font-size="11" fill="#2B2B2B">P3・高 -2–1 m</text>
+<text x="418" y="1006" font-size="11" fill="#2B2B2B">渡口與擺渡船</text>
+<rect x="752" y="952" width="166" height="166" fill="#C9D6A3" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="758" y="970" font-size="14" font-weight="bold" fill="#1C1F1E">A6 稻田與水車</text>
+<text x="758" y="988" font-size="11" fill="#2B2B2B">P3・高 0–4 m</text>
+<text x="758" y="1006" font-size="11" fill="#2B2B2B">大水車</text>
+<rect x="582" y="612" width="166" height="166" fill="#8FAE7E" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="588" y="630" font-size="14" font-weight="bold" fill="#1C1F1E">D1 林緣獵場</text>
+<text x="588" y="648" font-size="11" fill="#2B2B2B">P1–P2・高 1–8 m</text>
+<text x="588" y="666" font-size="11" fill="#2B2B2B">瞭望台 A10</text>
+<rect x="582" y="442" width="166" height="166" fill="#8FAE7E" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="588" y="460" font-size="14" font-weight="bold" fill="#1C1F1E">D2 古樹神木</text>
+<text x="588" y="478" font-size="11" fill="#2B2B2B">P3・高 8–20 m</text>
+<text x="588" y="496" font-size="11" fill="#2B2B2B">世界古樹（giant-tree-v1，90 m 寬、62 m 高）</text>
+<rect x="412" y="612" width="166" height="166" fill="#8FAE7E" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="418" y="630" font-size="14" font-weight="bold" fill="#1C1F1E">D3 上游溪谷</text>
+<text x="418" y="648" font-size="11" fill="#2B2B2B">P2・高 3–15 m</text>
+<text x="418" y="666" font-size="11" fill="#2B2B2B">斷流石壩</text>
+<rect x="412" y="442" width="166" height="166" fill="#8FAE7E" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="418" y="460" font-size="14" font-weight="bold" fill="#1C1F1E">D4 苔石古祠</text>
+<text x="418" y="478" font-size="11" fill="#2B2B2B">P3・高 10–22 m</text>
+<text x="418" y="496" font-size="11" fill="#2B2B2B">半埋的石祠</text>
+<rect x="752" y="612" width="166" height="166" fill="#8FAE7E" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="758" y="630" font-size="14" font-weight="bold" fill="#1C1F1E">D5 蕈谷</text>
+<text x="758" y="648" font-size="11" fill="#2B2B2B">P3・高 6–14 m</text>
+<text x="758" y="666" font-size="11" fill="#2B2B2B">發光蕈群</text>
+<rect x="752" y="442" width="166" height="166" fill="#8FAE7E" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="758" y="460" font-size="14" font-weight="bold" fill="#1C1F1E">D6 古林深處・山腳</text>
+<text x="758" y="478" font-size="11" fill="#2B2B2B">P4・高 15–40 m</text>
+<text x="758" y="496" font-size="11" fill="#2B2B2B">第一段石階</text>
+<rect x="922" y="442" width="166" height="166" fill="#C9C6BD" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="928" y="460" font-size="14" font-weight="bold" fill="#1C1F1E">B1 山門石階</text>
+<text x="928" y="478" font-size="11" fill="#2B2B2B">P4・高 40–80 m</text>
+<text x="928" y="496" font-size="11" fill="#2B2B2B">宗門山門（SectGate）</text>
+<rect x="922" y="272" width="166" height="166" fill="#C9C6BD" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="928" y="290" font-size="14" font-weight="bold" fill="#1C1F1E">B2 測資廣場</text>
+<text x="928" y="308" font-size="11" fill="#2B2B2B">P4・高 80–90 m</text>
+<text x="928" y="326" font-size="11" fill="#2B2B2B">測資廣場（aptitude-plaza-v1）</text>
+<rect x="1092" y="272" width="166" height="166" fill="#C9C6BD" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="1098" y="290" font-size="14" font-weight="bold" fill="#1C1F1E">B3 宗門群</text>
+<text x="1098" y="308" font-size="11" fill="#2B2B2B">P5・高 90–120 m</text>
+<text x="1098" y="326" font-size="11" fill="#2B2B2B">宗門大殿、藏經閣</text>
+<rect x="1092" y="442" width="166" height="166" fill="#C9C6BD" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="1098" y="460" font-size="14" font-weight="bold" fill="#1C1F1E">B4 雲瀑</text>
+<text x="1098" y="478" font-size="11" fill="#2B2B2B">P5・高 60–100 m</text>
+<text x="1098" y="496" font-size="11" fill="#2B2B2B">雲中瀑布</text>
+<rect x="922" y="102" width="166" height="166" fill="#C9C6BD" fill-opacity="0.35" stroke="#4A4036" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="928" y="120" font-size="14" font-weight="bold" fill="#1C1F1E">BX1 遠景石峰群</text>
+<text x="928" y="138" font-size="11" fill="#2B2B2B">P1・高 100–250 m</text>
+<text x="928" y="156" font-size="11" fill="#2B2B2B">Codex C4 遠景套件</text>
+<rect x="1092" y="102" width="166" height="166" fill="#C9C6BD" fill-opacity="0.35" stroke="#4A4036" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="1098" y="120" font-size="14" font-weight="bold" fill="#1C1F1E">BX2 遠景石峰群</text>
+<text x="1098" y="138" font-size="11" fill="#2B2B2B">P1・高 100–250 m</text>
+<text x="1098" y="156" font-size="11" fill="#2B2B2B">Codex C4 遠景套件</text>
+<rect x="1262" y="272" width="166" height="166" fill="#C9C6BD" fill-opacity="0.35" stroke="#4A4036" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="1268" y="290" font-size="14" font-weight="bold" fill="#1C1F1E">BX3 遠景石峰群</text>
+<text x="1268" y="308" font-size="11" fill="#2B2B2B">P1・高 100–250 m</text>
+<text x="1268" y="326" font-size="11" fill="#2B2B2B">Codex C4 遠景套件</text>
+<rect x="242" y="782" width="166" height="166" fill="#9FB8C8" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="248" y="800" font-size="14" font-weight="bold" fill="#1C1F1E">C1 湖岸濕地</text>
+<text x="248" y="818" font-size="11" fill="#2B2B2B">P5・高 -3–0 m</text>
+<text x="248" y="836" font-size="11" fill="#2B2B2B">濕地藥田</text>
+<rect x="242" y="612" width="166" height="166" fill="#9FB8C8" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="248" y="630" font-size="14" font-weight="bold" fill="#1C1F1E">C2 斷橋</text>
+<text x="248" y="648" font-size="11" fill="#2B2B2B">P5・高 -3–5 m</text>
+<text x="248" y="666" font-size="11" fill="#2B2B2B">斷成兩截的古石橋</text>
+<rect x="72" y="782" width="166" height="166" fill="#9FB8C8" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="78" y="800" font-size="14" font-weight="bold" fill="#1C1F1E">C3 浮島群</text>
+<text x="78" y="818" font-size="11" fill="#2B2B2B">P5・高 -5–30 m</text>
+<text x="78" y="836" font-size="11" fill="#2B2B2B">懸根浮島</text>
+<rect x="72" y="612" width="166" height="166" fill="#9FB8C8" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="78" y="630" font-size="14" font-weight="bold" fill="#1C1F1E">C4 靈脈裂隙</text>
+<text x="78" y="648" font-size="11" fill="#2B2B2B">P5・高 -10–10 m</text>
+<text x="78" y="666" font-size="11" fill="#2B2B2B">紫色裂隙（秘境入口）</text>
+<rect x="242" y="952" width="166" height="166" fill="#9FB8C8" fill-opacity="0.8" stroke="#4A4036" stroke-width="1" />
+<text x="248" y="970" font-size="14" font-weight="bold" fill="#1C1F1E">C5 湖畔漁村</text>
+<text x="248" y="988" font-size="11" fill="#2B2B2B">P5・高 -2–2 m</text>
+<text x="248" y="1006" font-size="11" fill="#2B2B2B">高腳漁屋</text>
+<text x="70" y="1186" font-size="12" fill="#1C1F1E">實線格＝可走區塊；虛線格＝只做遠景（走不到）。粗框 A1＝目前的青溪村。</text>
+</svg>

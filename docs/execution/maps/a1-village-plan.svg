@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 1170" width="1020" height="1170" font-family="Noto Sans TC, Microsoft JhengHei, sans-serif">
+<rect width="1020" height="1170" fill="#EEF0E8"/>
+<line x1="60" y1="960" x2="60" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="60" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-50</text>
+<line x1="150" y1="960" x2="150" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="150" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-40</text>
+<line x1="240" y1="960" x2="240" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="240" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-30</text>
+<line x1="330" y1="960" x2="330" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="330" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-20</text>
+<line x1="420" y1="960" x2="420" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="420" y="976" font-size="11" text-anchor="middle" fill="#6E7570">-10</text>
+<line x1="510" y1="960" x2="510" y2="60" stroke="#C9CEC2" stroke-width="1.6"/><text x="510" y="976" font-size="11" text-anchor="middle" fill="#6E7570">0</text>
+<line x1="600" y1="960" x2="600" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="600" y="976" font-size="11" text-anchor="middle" fill="#6E7570">10</text>
+<line x1="690" y1="960" x2="690" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="690" y="976" font-size="11" text-anchor="middle" fill="#6E7570">20</text>
+<line x1="780" y1="960" x2="780" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="780" y="976" font-size="11" text-anchor="middle" fill="#6E7570">30</text>
+<line x1="870" y1="960" x2="870" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="870" y="976" font-size="11" text-anchor="middle" fill="#6E7570">40</text>
+<line x1="960" y1="960" x2="960" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="960" y="976" font-size="11" text-anchor="middle" fill="#6E7570">50</text>
+<line x1="60" y1="960" x2="960" y2="960" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="964" font-size="11" text-anchor="end" fill="#6E7570">-50</text>
+<line x1="60" y1="870" x2="960" y2="870" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="874" font-size="11" text-anchor="end" fill="#6E7570">-40</text>
+<line x1="60" y1="780" x2="960" y2="780" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="784" font-size="11" text-anchor="end" fill="#6E7570">-30</text>
+<line x1="60" y1="690" x2="960" y2="690" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="694" font-size="11" text-anchor="end" fill="#6E7570">-20</text>
+<line x1="60" y1="600" x2="960" y2="600" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="604" font-size="11" text-anchor="end" fill="#6E7570">-10</text>
+<line x1="60" y1="510" x2="960" y2="510" stroke="#C9CEC2" stroke-width="1.6"/><text x="54" y="514" font-size="11" text-anchor="end" fill="#6E7570">0</text>
+<line x1="60" y1="420" x2="960" y2="420" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="424" font-size="11" text-anchor="end" fill="#6E7570">10</text>
+<line x1="60" y1="330" x2="960" y2="330" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="334" font-size="11" text-anchor="end" fill="#6E7570">20</text>
+<line x1="60" y1="240" x2="960" y2="240" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="244" font-size="11" text-anchor="end" fill="#6E7570">30</text>
+<line x1="60" y1="150" x2="960" y2="150" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="154" font-size="11" text-anchor="end" fill="#6E7570">40</text>
+<line x1="60" y1="60" x2="960" y2="60" stroke="#C9CEC2" stroke-width="0.8"/><text x="54" y="64" font-size="11" text-anchor="end" fill="#6E7570">50</text>
+<rect x="447" y="465" width="126" height="126" fill="#D9CFBD" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="451" y="478" font-size="12" fill="#4A4036" font-weight="bold">plaza（高 0.5 m）</text>
+<rect x="330" y="483" width="90" height="90" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="334" y="496" font-size="12" fill="#4A4036" font-weight="bold">alchemy-B（高 0.15 m）</text>
+<rect x="600" y="469.5" width="117" height="117" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="604" y="482.5" font-size="12" fill="#4A4036" font-weight="bold">training-yard（高 0.6 m）</text>
+<rect x="411" y="217.5" width="180" height="207" fill="#9DB08A" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="415" y="230.5" font-size="12" fill="#4A4036" font-weight="bold">forest-A（高 1.2 m）</text>
+<rect x="600" y="631.5" width="117" height="99" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="604" y="644.5" font-size="12" fill="#4A4036" font-weight="bold">lodging（高 0.25 m）</text>
+<rect x="379.5" y="609" width="81" height="63" fill="#D9CFBD" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="383.5" y="622" font-size="12" fill="#4A4036" font-weight="bold">market（高 0.3 m）</text>
+<rect x="222" y="672" width="126" height="108" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="226" y="685" font-size="12" fill="#4A4036" font-weight="bold">fields（高 0.1 m）</text>
+<rect x="456" y="735" width="108" height="72" fill="#D9CFBD" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="460" y="748" font-size="12" fill="#4A4036" font-weight="bold">gate-square（高 0.2 m）</text>
+<rect x="645" y="249" width="216" height="189" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="649" y="262" font-size="12" fill="#4A4036" font-weight="bold">homes-ne（高 0.9 m）</text>
+<rect x="753" y="537" width="108" height="90" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="757" y="550" font-size="12" fill="#4A4036" font-weight="bold">smithy（高 0.5 m）</text>
+<rect x="744" y="654" width="126" height="108" fill="#D9CFBD" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="748" y="667" font-size="12" fill="#4A4036" font-weight="bold">shops-se（高 0.3 m）</text>
+<polyline points="240,87 258,240 276,384 280.5,492 267,582 231,600 177,618 141,708 132,816 132,933" fill="none" stroke="#9FC3C0" stroke-width="90" stroke-linejoin="round" stroke-opacity=".45"/>
+<polyline points="240,87 258,240 276,384 280.5,492 267,582 231,600 177,618 141,708 132,816 132,933" fill="none" stroke="#2E7A78" stroke-width="36" stroke-linejoin="round" stroke-opacity=".8"/>
+<line x1="510" y1="726" x2="510" y2="681" stroke="#A88560" stroke-width="27" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="681" x2="510" y2="636" stroke="#A88560" stroke-width="27" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="636" x2="510" y2="528" stroke="#A88560" stroke-width="27" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="528" x2="510" y2="411" stroke="#A88560" stroke-width="27" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="528" x2="415.5" y2="528" stroke="#A88560" stroke-width="23.400000000000002" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="528" x2="600" y2="528" stroke="#A88560" stroke-width="23.400000000000002" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="681" x2="604.5" y2="681" stroke="#A88560" stroke-width="21.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="636" x2="456" y2="636" stroke="#A88560" stroke-width="21.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="456" y1="636" x2="348" y2="699" stroke="#A88560" stroke-width="18" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="955.5" x2="510" y2="726" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="528" x2="600" y2="451.5" stroke="#A88560" stroke-width="23.400000000000002" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="600" y1="451.5" x2="753" y2="447" stroke="#A88560" stroke-width="23.400000000000002" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="510" y1="636" x2="582" y2="609" stroke="#A88560" stroke-width="23.400000000000002" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="582" y1="609" x2="744" y2="591" stroke="#A88560" stroke-width="23.400000000000002" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="744" y1="591" x2="744" y2="690" stroke="#A88560" stroke-width="21.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="330" y1="519" x2="312" y2="481.2" stroke="#A88560" stroke-width="19.8" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="244.5" y1="466.8" x2="64.5" y2="438" stroke="#A88560" stroke-width="23.400000000000002" stroke-linecap="round" stroke-opacity=".85"/>
+<line x1="753" y1="447" x2="753" y2="370.5" stroke="#A88560" stroke-width="21.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
+<circle cx="334.5" cy="429" r="5" fill="#4E6B3A"/><text x="341.5" y="433" font-size="10" fill="#2F4A2A">HerbNode_01</text>
+<circle cx="613.5" cy="357" r="5" fill="#4E6B3A"/><text x="620.5" y="361" font-size="10" fill="#2F4A2A">HerbNode_02</text>
+<circle cx="316.5" cy="609" r="5" fill="#4E6B3A"/><text x="323.5" y="613" font-size="10" fill="#2F4A2A">HerbNode_03</text>
+<g transform="translate(667.5 685.5) rotate(-90)"><rect x="-40.949999999999996" y="-36.9" width="81.89999999999999" height="73.8" fill="#B89468" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-36.9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="667.5" cy="685.5" r="8" fill="#1C1F1E"/><text x="667.5" y="689.5" font-size="10" fill="#fff" text-anchor="middle">1</text>
+<g transform="translate(614.4 664.8000000000001) rotate(-90)"><rect x="-3.6" y="-3.6" width="7.2" height="7.2" fill="#B89468" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-3.6" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="614.4" cy="664.8000000000001" r="8" fill="#1C1F1E"/><text x="614.4" y="668.8000000000001" font-size="10" fill="#fff" text-anchor="middle">2</text>
+<g transform="translate(411 621.6) rotate(90)"><rect x="-15.75" y="-8.1" width="31.5" height="16.2" fill="#B89468" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-8.1" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="411" cy="621.6" r="8" fill="#1C1F1E"/><text x="411" y="625.6" font-size="10" fill="#fff" text-anchor="middle">3</text>
+<g transform="translate(397.5 621.6) rotate(90)"><rect x="-3.6" y="-3.6" width="7.2" height="7.2" fill="#B89468" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-3.6" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="397.5" cy="621.6" r="8" fill="#1C1F1E"/><text x="397.5" y="625.6" font-size="10" fill="#fff" text-anchor="middle">4</text>
+<g transform="translate(438 616.1999999999999) rotate(0)"><rect x="-5.8500000000000005" y="-4.05" width="11.700000000000001" height="8.1" fill="#B89468" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-4.05" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="438" cy="616.1999999999999" r="8" fill="#1C1F1E"/><text x="438" y="620.1999999999999" font-size="10" fill="#fff" text-anchor="middle">5</text>
+<g transform="translate(253.5 744) rotate(0)"><rect x="-6.75" y="-6.75" width="13.5" height="13.5" fill="#7A8C9E" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-6.75" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="253.5" cy="744" r="8" fill="#1C1F1E"/><text x="253.5" y="748" font-size="10" fill="#fff" text-anchor="middle">6</text>
+<g transform="translate(283.20000000000005 744) rotate(0)"><rect x="-6.75" y="-6.75" width="13.5" height="13.5" fill="#7A8C9E" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-6.75" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="283.20000000000005" cy="744" r="8" fill="#1C1F1E"/><text x="283.20000000000005" y="748" font-size="10" fill="#fff" text-anchor="middle">7</text>
+<g transform="translate(312.9 744) rotate(0)"><rect x="-6.75" y="-6.75" width="13.5" height="13.5" fill="#7A8C9E" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-6.75" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="312.9" cy="744" r="8" fill="#1C1F1E"/><text x="312.9" y="748" font-size="10" fill="#fff" text-anchor="middle">8</text>
+<g transform="translate(253.5 703.5) rotate(0)"><rect x="-6.75" y="-6.75" width="13.5" height="13.5" fill="#7A8C9E" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-6.75" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="253.5" cy="703.5" r="8" fill="#1C1F1E"/><text x="253.5" y="707.5" font-size="10" fill="#fff" text-anchor="middle">9</text>
+<g transform="translate(235.5 685.5) rotate(0)"><rect x="-6.75" y="-6.75" width="13.5" height="13.5" fill="#7A8C9E" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-6.75" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="235.5" cy="685.5" r="8" fill="#1C1F1E"/><text x="235.5" y="689.5" font-size="10" fill="#fff" text-anchor="middle">10</text>
+<g transform="translate(312 699) rotate(135)"><rect x="-3.6" y="-3.6" width="7.2" height="7.2" fill="#B89468" fill-opacity=".85" stroke="#2B2B2B" stroke-width="1"/><line x1="0" y1="0" x2="0" y2="-3.6" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="312" cy="699" r="8" fill="#1C1F1E"/><text x="312" y="703" font-size="10" fill="#fff" text-anchor="middle">11</text>
+<g transform="translate(510 742.1999999999999) rotate(180)"><rect x="-31.5" y="-7.2" width="63" height="14.4" fill="#7A8C9E" fill-opacity=".45" stroke="#2B2B2B" stroke-width="1.6"/><line x1="0" y1="0" x2="0" y2="-7.2" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="510" cy="742.1999999999999" r="8" fill="#1C1F1E"/><text x="510" y="746.1999999999999" font-size="10" fill="#fff" text-anchor="middle">12</text>
+<g transform="translate(475.8 784.5) rotate(0)"><rect x="-14.85" y="-17.099999999999998" width="29.7" height="34.199999999999996" fill="#B89468" fill-opacity=".45" stroke="#2B2B2B" stroke-width="1.6"/><line x1="0" y1="0" x2="0" y2="-17.099999999999998" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="475.8" cy="784.5" r="8" fill="#1C1F1E"/><text x="475.8" y="788.5" font-size="10" fill="#fff" text-anchor="middle">13</text>
+<g transform="translate(477.59999999999997 753) rotate(0)"><rect x="-2.6999999999999997" y="-2.6999999999999997" width="5.3999999999999995" height="5.3999999999999995" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-2.6999999999999997" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="477.59999999999997" cy="753" r="8" fill="#1C1F1E"/><text x="477.59999999999997" y="757" font-size="10" fill="#fff" text-anchor="middle">14</text>
+<g transform="translate(542.4000000000001 753) rotate(0)"><rect x="-2.6999999999999997" y="-2.6999999999999997" width="5.3999999999999995" height="5.3999999999999995" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-2.6999999999999997" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="542.4000000000001" cy="753" r="8" fill="#1C1F1E"/><text x="542.4000000000001" y="757" font-size="10" fill="#fff" text-anchor="middle">15</text>
+<g transform="translate(472.2 486.59999999999997) rotate(0)"><rect x="-22.5" y="-22.5" width="45" height="45" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-22.5" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="472.2" cy="486.59999999999997" r="8" fill="#1C1F1E"/><text x="472.2" y="490.59999999999997" font-size="10" fill="#fff" text-anchor="middle">16</text>
+<g transform="translate(469.5 578.4) rotate(0)"><rect x="-14.85" y="-4.95" width="29.7" height="9.9" fill="#B89468" fill-opacity=".45" stroke="#2B2B2B" stroke-width="1.6"/><line x1="0" y1="0" x2="0" y2="-4.95" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="469.5" cy="578.4" r="8" fill="#1C1F1E"/><text x="469.5" y="582.4" font-size="10" fill="#fff" text-anchor="middle">17</text>
+<g transform="translate(550.5 568.5) rotate(0)"><rect x="-8.1" y="-8.1" width="16.2" height="16.2" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-8.1" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="550.5" cy="568.5" r="8" fill="#1C1F1E"/><text x="550.5" y="572.5" font-size="10" fill="#fff" text-anchor="middle">18</text>
+<g transform="translate(694.5 393) rotate(0)"><rect x="-40.949999999999996" y="-36.9" width="81.89999999999999" height="73.8" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-36.9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="694.5" cy="393" r="8" fill="#1C1F1E"/><text x="694.5" y="397" font-size="10" fill="#fff" text-anchor="middle">19</text>
+<g transform="translate(811.5 393) rotate(0)"><rect x="-40.949999999999996" y="-36.9" width="81.89999999999999" height="73.8" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-36.9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="811.5" cy="393" r="8" fill="#1C1F1E"/><text x="811.5" y="397" font-size="10" fill="#fff" text-anchor="middle">20</text>
+<g transform="translate(694.5 294) rotate(180)"><rect x="-40.949999999999996" y="-36.9" width="81.89999999999999" height="73.8" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-36.9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="694.5" cy="294" r="8" fill="#1C1F1E"/><text x="694.5" y="298" font-size="10" fill="#fff" text-anchor="middle">21</text>
+<g transform="translate(811.5 294) rotate(180)"><rect x="-40.949999999999996" y="-36.9" width="81.89999999999999" height="73.8" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-36.9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="811.5" cy="294" r="8" fill="#1C1F1E"/><text x="811.5" y="298" font-size="10" fill="#fff" text-anchor="middle">22</text>
+<g transform="translate(753 343.5) rotate(0)"><rect x="-9" y="-9" width="18" height="18" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="753" cy="343.5" r="8" fill="#1C1F1E"/><text x="753" y="347.5" font-size="10" fill="#fff" text-anchor="middle">23</text>
+<g transform="translate(816 582) rotate(-90)"><rect x="-30.599999999999998" y="-25.2" width="61.199999999999996" height="50.4" fill="#B89468" fill-opacity=".45" stroke="#2B2B2B" stroke-width="1.6"/><line x1="0" y1="0" x2="0" y2="-25.2" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="816" cy="582" r="8" fill="#1C1F1E"/><text x="816" y="586" font-size="10" fill="#fff" text-anchor="middle">24</text>
+<g transform="translate(775.5 564) rotate(-90)"><rect x="-3.6" y="-3.6" width="7.2" height="7.2" fill="#B89468" fill-opacity=".45" stroke="#2B2B2B" stroke-width="1.6"/><line x1="0" y1="0" x2="0" y2="-3.6" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="775.5" cy="564" r="8" fill="#1C1F1E"/><text x="775.5" y="568" font-size="10" fill="#fff" text-anchor="middle">25</text>
+<g transform="translate(828.6 699) rotate(-90)"><rect x="-40.949999999999996" y="-36.9" width="81.89999999999999" height="73.8" fill="#B89468" fill-opacity=".45" stroke="#2B2B2B" stroke-width="1.6"/><line x1="0" y1="0" x2="0" y2="-36.9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="828.6" cy="699" r="8" fill="#1C1F1E"/><text x="828.6" y="703" font-size="10" fill="#fff" text-anchor="middle">26</text>
+<g transform="translate(772.8000000000001 739.5) rotate(0)"><rect x="-16.2" y="-13.5" width="32.4" height="27" fill="#FFFFFF" fill-opacity=".6" stroke="#5FA89A" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-13.5" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="772.8000000000001" cy="739.5" r="8" fill="#1C1F1E"/><text x="772.8000000000001" y="743.5" font-size="10" fill="#fff" text-anchor="middle">27</text>
+<g transform="translate(279.6 474) rotate(90)"><rect x="-17.55" y="-44.1" width="35.1" height="88.2" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-44.1" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="279.6" cy="474" r="8" fill="#1C1F1E"/><text x="279.6" y="478" font-size="10" fill="#fff" text-anchor="middle">28</text>
+<text x="60" y="30" font-size="20" font-weight="bold" fill="#1C1F1E">A1 青溪村核心｜區塊配置圖（100 × 100 m，上方為北）</text>
+<line x1="870" y1="30" x2="960" y2="30" stroke="#1C1F1E" stroke-width="3"/><text x="915" y="22" font-size="12" text-anchor="middle">10 m</text>
+<text x="60" y="1000" font-size="12" fill="#1C1F1E">實心＝已放置　半透明＝模型已有、自動放置　虛線＝待製作（遊戲裡顯示為灰盒）。顏色＝負責人：核心組 灰藍、Codex 玉綠、joshsu54 木褐。短線＝正面方向。</text>
+<text x="60" y="1022" font-size="11" fill="#2B2B2B">1 借住處（joshsu54，9.1×8.2×5.6 m）</text>
+<text x="360" y="1022" font-size="11" fill="#2B2B2B">2 借住處主人（靜態）（joshsu54，0.8×0.8×1.75 m）</text>
+<text x="660" y="1022" font-size="11" fill="#2B2B2B">3 坊市草藥攤（joshsu54，3.5×1.8×2.7 m）</text>
+<text x="60" y="1038" font-size="11" fill="#2B2B2B">4 攤主（靜態）（joshsu54，0.8×0.8×1.75 m）</text>
+<text x="360" y="1038" font-size="11" fill="#2B2B2B">5 晾藥架（joshsu54，1.3×0.9×1.7 m）</text>
+<text x="660" y="1038" font-size="11" fill="#2B2B2B">6 藥田（core）</text>
+<text x="60" y="1054" font-size="11" fill="#2B2B2B">7 藥田（core）</text>
+<text x="360" y="1054" font-size="11" fill="#2B2B2B">8 藥田（core）</text>
+<text x="660" y="1054" font-size="11" fill="#2B2B2B">9 藥田（core）</text>
+<text x="60" y="1070" font-size="11" fill="#2B2B2B">10 蓄水池（core）</text>
+<text x="360" y="1070" font-size="11" fill="#2B2B2B">11 藥農（靜態）（joshsu54，0.8×0.8×1.75 m）</text>
+<text x="660" y="1070" font-size="11" fill="#2B2B2B">12 村門牌樓（核心組 v13）（core，7×1.6×5.5 m）</text>
+<text x="60" y="1086" font-size="11" fill="#2B2B2B">13 出生石台（joshsu54，3.3×3.8×1.95 m）</text>
+<text x="360" y="1086" font-size="11" fill="#2B2B2B">14 村口石燈（左）（codex，0.6×0.6×2.2 m）</text>
+<text x="660" y="1086" font-size="11" fill="#2B2B2B">15 村口石燈（右）（codex，0.6×0.6×2.2 m）</text>
+<text x="60" y="1102" font-size="11" fill="#2B2B2B">16 村中古樹（地標）（codex，5×5×10 m）</text>
+<text x="360" y="1102" font-size="11" fill="#2B2B2B">17 告示牌（joshsu54，3.3×1.1×3 m）</text>
+<text x="660" y="1102" font-size="11" fill="#2B2B2B">18 水井（codex，1.8×1.8×2.4 m）</text>
+<text x="60" y="1118" font-size="11" fill="#2B2B2B">19 民居一（藥農家）（joshsu54，9.1×8.2×5.6 m）</text>
+<text x="360" y="1118" font-size="11" fill="#2B2B2B">20 民居二（獵戶家）（joshsu54，9.1×8.2×5.6 m）</text>
+<text x="660" y="1118" font-size="11" fill="#2B2B2B">21 民居三（老夫子家）（joshsu54，9.1×8.2×5.6 m）</text>
+<text x="60" y="1134" font-size="11" fill="#2B2B2B">22 民居四（空屋，機緣）（joshsu54，9.1×8.2×5.6 m）</text>
+<text x="360" y="1134" font-size="11" fill="#2B2B2B">23 井與洗衣石（codex，2×2×2.4 m）</text>
+<text x="660" y="1134" font-size="11" fill="#2B2B2B">24 鐵匠鋪（joshsu54，6.8×5.6×5 m）</text>
+<text x="60" y="1150" font-size="11" fill="#2B2B2B">25 鐵匠（靜態）（joshsu54，0.8×0.8×1.75 m）</text>
+<text x="360" y="1150" font-size="11" fill="#2B2B2B">26 材料鋪（joshsu54，9.1×8.2×5.6 m）</text>
+<text x="660" y="1150" font-size="11" fill="#2B2B2B">27 茶棚（休息、聽傳聞）（codex，3.6×3×3 m）</text>
+<text x="60" y="1166" font-size="11" fill="#2B2B2B">28 石拱橋（取代木板踏步）（joshsu54，3.9×9.8×3.3 m）</text>
+</svg>
