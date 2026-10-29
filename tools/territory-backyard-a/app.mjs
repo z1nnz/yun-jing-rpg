@@ -249,6 +249,8 @@ const stick = { x: 0, y: 0, id: null };
 let touchFast = false;
 
 // ------------------------------------------------------------------ interaction (texts say only what is seen; the lantern is never explained)
+// Player-visible text is hardcoded here for the local demo, each line kept within 16 characters (standards section 3.1).
+// Section 3.5 wants it in packages/content/*.json, which is outside this kit's folder: TODO for the core team, listed in README.
 function toast(text) { const t = $('toast'); t.textContent = text; t.classList.remove('show'); void t.offsetWidth; t.classList.add('show'); }
 const SIDE = ['左田', '右田'];
 function act(kind) {
@@ -290,9 +292,9 @@ function promptText() {
   if (!tgt) return yard.speed > 1 ? '時間快轉中' : '';
   if (tgt.kind === 'gate') return yard.gateOpen ? 'E 關上柴門' : 'E 打開柴門';
   const f = yard.fields[tgt.i], st = yard.stage(tgt.i);
-  if (!f.crop) return `${SIDE[tgt.i]}：1 種青靈草 · 2 種淨水蓮`;
+  if (!f.crop) return `${SIDE[tgt.i]}：1 青靈草・2 淨水蓮`;
   if (st === 3) return `${SIDE[tgt.i]}：E 收成${CROPS[f.crop].name}`;
-  return `${SIDE[tgt.i]}：${CROPS[f.crop].name}・${CROPS[f.crop].stages[st]}（按住 F 快轉）`;
+  return `${SIDE[tgt.i]}：${CROPS[f.crop].name}・${CROPS[f.crop].stages[st]}`;
 }
 
 // ------------------------------------------------------------------ loop

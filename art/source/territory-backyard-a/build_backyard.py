@@ -1906,7 +1906,69 @@ def backyard_layout():
     shot(out / 'top_slots.png', (0, 7.5, 40), (0, 7.5001, 0), ortho=14.0, res=(1400, 1400))
 
 
-if __name__ == '__main__' and '--sheets2' in ARGV:
+def graybox_compare():
+    """Old vs new (common rules 4.2): the core team's current graybox yard, rebuilt from QingxiLodgingInteriorBuilder.Yard()
+    (feature/qingxi-main-scene-abc-v1), shot with the same cameras as the new layout, and the pairs placed side by side."""
+    scene()
+    mat = {}
+    for nm, c in (('Ground', (.46, .52, .32)), ('Path', (.62, .6, .55)), ('Fence', (.36, .26, .17)), ('Sprout', (.38, .66, .34))):
+        m = bpy.data.materials.new(f'QA_Gray_{nm}')
+        m.use_nodes = True
+        m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value = (*[x ** 2.2 for x in c], 1)
+        mat[nm] = m
+    Q.ACTIVE['coll'] = None
+    Q.box('GB_Ground', (12, 10, 0.1), (0, 7.5, -0.05), mat['Ground'], bevel=0.0)
+    Q.box('GB_Path', (1.1, 9.6, 0.04), (0, 7.5, 0.01), mat['Path'], bevel=0.0)
+    Q.box('GB_FenceBack', (12, 0.12, 1.1), (0, 12.5, 0.55), mat['Fence'], bevel=0.0)
+    for s in (-1, 1):
+        Q.box(f'GB_FenceSide_{s}', (0.12, 10, 1.1), (s * 6, 7.5, 0.55), mat['Fence'], bevel=0.0)
+    wall = Q.box('QA_HouseWall_Placeholder', (12.4, 0.3, 3.2), (0, 2.35, 1.6), None, bevel=0.0)
+    gm = bpy.data.materials.new('QA_Wall')
+    gm.use_nodes = True
+    gm.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value = (0.5, 0.5, 0.5, 1)
+    wall.data.materials.append(gm)
+    door = Q.box('QA_Door', (1.2, 0.5, 2.2), (0, 2.35, 1.1), None, bevel=0.0)
+    Q.boolean(wall, door)
+    Q.apply_mods(wall)
+    for x in (-2.8, 2.8):
+        before = set(bpy.data.objects)
+        bpy.ops.import_scene.gltf(filepath=str(ROOT.parents[2] / 'art/exports/irrigation-v2/spirit-bed.glb'))
+        new = [o for o in bpy.data.objects if o not in before]
+        for o in new:
+            if not o.parent:
+                o.location += Vector((x, 6.7, 0))
+        for r in range(4):
+            for c in range(3):
+                bm = bmesh.new()
+                bmesh.ops.create_uvsphere(bm, u_segments=12, v_segments=8, radius=0.08)
+                for v in bm.verts:
+                    v.co.z *= 2.75
+                Q._obj(f'GB_Sprout_{x}_{r}_{c}', bm, mat['Sprout']).location = (x + (c - 1) * 0.6, 6.7 + (r - 1.5) * 0.62, 0.52)
+    before = set(bpy.data.objects)
+    bpy.ops.import_scene.gltf(filepath=str(ROOT.parents[2] / 'art/exports/qingxi-training-yard-v1/agility-post.glb'))
+    for o in [o for o in bpy.data.objects if o not in before and not o.parent]:
+        o.location += Vector((0, 10.8, 0))
+        o.rotation_mode = 'XYZ'
+        o.rotation_euler.z += math.pi
+    bpy.context.view_layer.update()
+    out = PREV / 'backyard'
+    shot(out / '_graybox_back_door.png', (0.0, 2.9, 1.7), (0.0, 9.0, 0.6), lens=24, res=(1800, 1000))
+    shot(out / '_graybox_top.png', (0, 7.5, 40), (0, 7.5001, 0), ortho=14.0, res=(1400, 1400))
+    for a, b, name in (('_graybox_back_door.png', 'eye_1p7m_from_back_door.png', 'compare_graybox_vs_new_1p7m.png'),
+                       ('_graybox_top.png', 'top_slots.png', 'compare_graybox_vs_new_top.png')):
+        ia, ib = (bpy.data.images.load(str(out / f)) for f in (a, b))
+        pa, pb = Q._img_np(ia), Q._img_np(ib)
+        h = min(pa.shape[0], pb.shape[0])
+        gap = np.ones((h, 24, 4), np.float32)
+        Q._np_img(name, np.concatenate([pa[:h], gap, pb[:h]], axis=1), 'sRGB', out / name)
+        print('SHOT', name, flush=True)
+    for f in ('_graybox_back_door.png', '_graybox_top.png'):
+        (out / f).unlink()
+
+
+if __name__ == '__main__' and '--graybox' in ARGV:
+    graybox_compare()
+elif __name__ == '__main__' and '--sheets2' in ARGV:
     sheets2()
 elif __name__ == '__main__' and '--layout' in ARGV:
     backyard_layout()
