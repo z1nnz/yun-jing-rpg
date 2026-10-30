@@ -152,16 +152,16 @@ SPECIES = {
                     levels=[dict(n=40, angle=(30, 48), length=(.22, .04), radius=.32, start=.1, gnarl=.1, up=.22),
                             dict(n=5, angle=(25, 45), length=.5, radius=.5, start=.2, gnarl=.1, up=.2)],
                     leaf='spray', size=(.12, .2), cards=70000, cluster=.55, flat=.8, roots=4, flare=1.18,
-                    bark=dict(tint='#7c4a32', contrast=1.1, scale=(.9, 2.6)),
+                    bark=dict(tint='#6a5444', contrast=1.1, scale=(.9, 2.6)),
                     colours=['#1a3420', '#28502c', '#3e6e34', '#68923e', '#a4b858']),
     # 枯樹: an old dead giant, a twisted forked trunk, snapped limbs, a fine net of bare twigs, a few curled leaves.
-    'Withered': dict(height=10, trunk=(4.6, .6), lean=.2, bend=.5, gnarl=.15, zig=.12, split=True,
+    'Withered': dict(height=10, trunk=(4.0, .85), lean=.15, bend=.35, gnarl=.1, zig=.08, split=True,
                      levels=[dict(n=4, angle=(22, 48), length=.85, radius=.62, start=.72, gnarl=.25, up=.15, broken=.3),
                              dict(n=5, angle=(30, 58), length=.55, radius=.5, start=.25, gnarl=.28, up=.08, broken=.25),
                              dict(n=5, angle=(30, 60), length=.48, radius=.45, start=.25, gnarl=.32, up=.05, broken=.15),
                              dict(n=4, angle=(30, 65), length=.45, radius=.45, start=.3, gnarl=.35, up=.02)],
                      leaf='curl', size=(.14, .2), per_twig=0, sparse_leaves=34, spread=.2, roots=4, flare=1.2,
-                     bark=dict(tint='#9a948c', contrast=1.35, scale=(1.2, 1.4)),
+                     bark=dict(tint='#5e5650', contrast=1.4, scale=(1.2, 1.4)),
                      colours=['#3a2a1c', '#5a4026', '#7a5a34', '#9a7a4a', '#b89a6a']),
 }
 
