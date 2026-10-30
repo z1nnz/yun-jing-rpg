@@ -69,7 +69,120 @@ CAMPHOR = dict(
     palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'],
     bark='camphor', height_hint=13.5,
 )
-SPECIES = [CAMPHOR]
+# The Elder World Tree's structure from build_life_tree.py, number for number (its 4.3 m trunk; S scales it up):
+# the 7-point S trunk, the eight limbs ("the first three own the silhouette"), the ten roots and the sixteen leaf
+# clusters with their scales. Its bevel x radius products are written here as plain radii in metres.
+ELDER = dict(
+    trunk=[(0, 0, .05), (.42, -.04, .78), (.72, .04, 1.45), (.54, .10, 2.10), (-.06, .02, 2.75), (-.45, 0, 3.35), (-.12, .02, 4.30)],
+    trunk_radii=[r * .58 for r in (1.45, 1.15, .99, .85, .62, .36, .08)],
+    limbs=[((.62, .01, 1.75), (-.45, -.10, 2.80), (-3.75, -.05, 3.30)), ((.42, .02, 2.25), (1.95, -.10, 3.15), (3.80, -.25, 3.35)),
+           ((.08, .08, 2.60), (-1.10, .65, 3.32), (-2.85, 1.10, 4.05)), ((.10, .06, 2.72), (1.25, .75, 3.55), (2.60, 1.20, 4.20)),
+           ((-.30, -.02, 3.10), (-1.25, -.70, 3.82), (-2.05, -1.10, 4.70)), ((-.25, .04, 3.30), (.72, -.65, 3.98), (1.75, -1.05, 4.65)),
+           ((-.32, .08, 3.48), (-.80, .34, 4.35), (-.95, .42, 5.20)), ((-.25, .03, 3.65), (.40, .17, 4.42), (.75, .22, 5.08))],
+    roots=[((-1.82, -.54), (-.92, -.22, .04), .58, 1.35 * .23), ((1.48, -.68), (.72, -.32, .03), .58, 1.35 * .23),
+           ((.98, .82), (.34, .46, .02), .34, .8 * .18), ((-1.28, .52), (-.58, .34, .04), .34, .8 * .18),
+           ((.30, -.92), (-.08, -.46, .03), .34, .8 * .18), ((-.58, -.74), (-.34, -.31, .04), .11, .54 * .14),
+           ((1.05, .18), (.48, .08, .05), .11, .54 * .14), ((-.72, .32), (-.32, .16, .05), .11, .54 * .14),
+           ((.58, -.52), (.20, -.26, .05), .11, .54 * .14), ((.12, .64), (0, .30, .05), .11, .54 * .14)],
+    back=[((-2.95, .75, 3.90), (1.82, 1.50, 1.55)), ((-1.90, 1.35, 4.55), (1.72, 1.48, 1.65)), ((2.90, .70, 3.85), (1.90, 1.35, 1.45)),
+          ((1.85, 1.42, 4.65), (1.62, 1.55, 1.50)), ((-.85, 1.30, 5.28), (1.60, 1.50, 1.55)), ((.35, .90, 5.16), (1.68, 1.55, 1.80)),
+          ((1.10, .50, 4.85), (1.50, 1.55, 1.45)), ((-.12, 1.80, 4.60), (1.52, 1.70, 1.45))],
+    front=[((-3.10, -.58, 3.52), (1.70, 1.25, 1.40)), ((-1.80, -1.28, 3.92), (1.95, 1.50, 1.55)), ((3.15, -.62, 3.55), (1.70, 1.32, 1.35)),
+           ((1.82, -1.34, 4.05), (1.85, 1.5, 1.60)), ((-1.30, -.98, 4.75), (1.75, 1.45, 1.70)), ((-.40, -.80, 5.15), (1.72, 1.50, 1.70)),
+           ((.90, -.96, 4.76), (1.55, 1.5, 1.40)), ((.12, -1.54, 3.90), (1.65, 1.5, 1.40))],
+)
+
+
+def elder_hierarchy(i, pts, S, branches):
+    """build_life_tree.py add_branch_hierarchy, unchanged except for the scale."""
+    _, middle, original_end = (Vector(p) * S for p in pts)
+    end = middle.lerp(original_end, .67)
+    axis = (end - middle).normalized()
+    lateral = Vector((-axis.y, axis.x, 0))
+    lateral = lateral.normalized() if lateral.length > .01 else Vector((1, 0, 0))
+    for k, sign in enumerate((-1.0, 1.0), start=1):
+        st = middle.lerp(end, .28 + k * .18)
+        mid = st + (axis * (.20 + k * .04) + lateral * sign * (.20 + i % 3 * .035) + UP * (.08 + k * .03)) * S
+        en = st + (axis * (.40 + k * .05) + lateral * sign * (.42 + i % 2 * .06) + UP * (.18 + k * .04)) * S
+        branches.append(curve(f'sec_{i}_{k}', [st, mid, en], [r * .115 * S for r in (.58, .30, .04)]))
+        for j, ts_ in enumerate((-1.0, 1.0), start=1):
+            ts = mid.lerp(en, .42 + j * .14)
+            ta = (en - mid).normalized()
+            tl = Vector((-ta.y, ta.x, 0))
+            tl = tl.normalized() if tl.length > .01 else lateral
+            tm = ts + (ta * .12 + tl * ts_ * (.09 + k * .02) + UP * .06) * S
+            te = ts + (ta * .24 + tl * ts_ * (.20 + k * .025) + UP * .035) * S
+            branches.append(curve(f'twig_{i}_{k}_{j}', [ts, tm, te], [r * .07 * S for r in (.42, .20, .025)]))
+
+
+def build_elder_form(spec):
+    """A species on the Elder World Tree's own skeleton, scaled by spec['scale'], with the species' bark and leaf
+    colours: the trunk fluted as build_life_tree.py flutes it and fused with its roots, the eight limbs with their
+    secondaries and twigs, and sixteen clusters of 1875 cupped leaves."""
+    S = spec['scale']
+    name = 'Elder' + spec['name']
+    bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))   # the Elder World Tree's own bark
+    bark_src.filepath_raw = str(OUT / f'{name}_Bark.png')
+    bark_src.file_format = 'PNG'
+    bark_src.save()
+    bark_mat = material(f'{name}_Bark', bark_src)
+    leaf_mat = material(f'{name}_Leaves', palette_image(f'{name}_Leaves', spec['palette']), closest=True)
+    E = ELDER
+    trunk = to_mesh(curve('trunk', [Vector(p) * S for p in E['trunk']], [r * S for r in E['trunk_radii']]))
+    cl = [Vector(p) * S for p in E['trunk']]
+    for v in trunk.data.vertices:   # build_life_tree.py's flutes, in its own (unscaled) units
+        w = v.co / S
+        seg = next((k for k in range(6) if w.z <= cl[k + 1].z / S), 5)
+        a, b = cl[seg] / S, cl[seg + 1] / S
+        t = max(0, min(1, (w.z - a.z) / max(b.z - a.z, 1e-6)))
+        c = a.lerp(b, t)
+        radial = Vector((w.x - c.x, w.y - c.y, 0))
+        ang = math.atan2(radial.y, radial.x)
+        amp = .09 + .12 * max(0, 1 - w.z / 1.6)
+        f = math.sin(ang * 5 + w.z * 1.15) * amp + .035 * math.sin(ang * 9 - w.z * .72)
+        v.co += radial * f * S
+    roots = []
+    for k, (end, mid, z0, r) in enumerate(E['roots']):
+        roots.append(to_mesh(curve('root', [Vector((-.16 if k < 5 else -.06, 0, z0)) * S, Vector(mid) * S, Vector((end[0], end[1], -.18)) * S],
+                                   [r * S, r * .35 * S, r * .1 * S])))
+    bpy.ops.object.select_all(action='DESELECT')
+    for o in [trunk, *roots]:
+        o.select_set(True)
+    bpy.context.view_layer.objects.active = trunk
+    bpy.ops.object.join()
+    for mod, kw in (('REMESH', dict(mode='VOXEL', voxel_size=.045 * S)), ('SMOOTH', dict(factor=.75, iterations=4))):
+        m = trunk.modifiers.new(mod, mod)
+        for k_, v_ in kw.items():
+            setattr(m, k_, v_)
+        bpy.ops.object.modifier_apply(modifier=m.name)
+    d = trunk.modifiers.new('budget', 'DECIMATE')
+    d.ratio = min(1.0, 11000 / max(1, len(trunk.data.polygons) * 2))
+    bpy.ops.object.modifier_apply(modifier=d.name)
+    branches = []
+    for i, pts in enumerate(E['limbs'], start=1):
+        bevel = max(.14, .32 - i * .018)
+        branches.append(curve(f'limb_{i}', [Vector(p) * S for p in pts], [r * bevel * S for r in (1.12 if i < 4 else .88, .48, .08)]))
+        elder_hierarchy(i, pts, S, branches)
+    for o in branches:
+        to_mesh(o)
+    bpy.ops.object.select_all(action='DESELECT')
+    for o in [trunk, *branches]:
+        o.select_set(True)
+    bpy.context.view_layer.objects.active = trunk
+    bpy.ops.object.join()
+    for poly in trunk.data.polygons:
+        poly.use_smooth = True
+    box_uv(trunk.data, tile=1.6)
+    trunk.data.materials.clear()
+    trunk.data.materials.append(bark_mat)
+    trunk.data.materials.append(leaf_mat)
+    clusters = [(Vector(c) * S, Vector(sc) * S) for c, sc in E['back'] + E['front']]
+    return name, trunk, bark_mat, leaf_mat, clusters
+
+
+CAMPHOR_ELDER = dict(name='Camphor', scale=1.9, leaves_per_cluster=1875, leaf_size=(.025, .048),
+                     palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
+SPECIES = [CAMPHOR_ELDER]
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that
 
 LODS = [dict(keep=1.0, grow=1.0, wood=1.0), dict(keep=.3, grow=1.8, wood=.4), dict(keep=.08, grow=3.2, wood=.15)]
@@ -239,6 +352,9 @@ def material(name, img, closest=False):
 
 # ------------------------------------------------------------------ build
 def build(spec):
+    if 'scale' in spec:
+        name, wood, bark_mat, leaf_mat, clusters = build_elder_form(spec)
+        return finish(spec, name, wood, bark_mat, leaf_mat, clusters)
     name = 'Elder' + spec['name']
     rng = random.Random(20261031)
     bark_src = bpy.data.images.load(str(REFS / f"bark-{spec['bark']}.png"))
@@ -298,6 +414,11 @@ def build(spec):
     wood.data.materials.append(bark_mat)
     wood.data.materials.append(leaf_mat)
 
+    clusters = [(e + UP * .3, Vector(spec['cluster_scale'])) for e in ends]
+    return finish(spec, name, wood, bark_mat, leaf_mat, clusters)
+
+
+def finish(spec, name, wood, bark_mat, leaf_mat, clusters):
     root = bpy.data.objects.new(name, None)
     bpy.context.collection.objects.link(root)
     tris = []
@@ -315,8 +436,8 @@ def build(spec):
         # Crown: a cluster at every limb and secondary end, so the crown follows the authored branches.
         verts, faces, tones, norms = [], [], [], []
         crng = random.Random(77 + li)
-        for idx, e in enumerate(ends):
-            v, f, t, n = canopy(e + UP * .3, spec['cluster_scale'], idx, crng, spec, lod)
+        for idx, (c, sc) in enumerate(clusters):
+            v, f, t, n = canopy(c, tuple(sc), idx, crng, spec, lod)
             base = len(verts)
             verts += v
             faces += [tuple(base + k for k in face) for face in f]
