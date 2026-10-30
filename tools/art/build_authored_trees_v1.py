@@ -115,19 +115,56 @@ def elder_hierarchy(i, pts, S, branches):
             branches.append(curve(f'twig_{i}_{k}_{j}', [ts, tm, te], [r * .07 * S for r in (.42, .20, .025)]))
 
 
-def build_elder_form(spec):
+def lean_form(variant, spec):
+    """How one variant's trunk stands: it leans its own way by its own amount, sways sideways through its height,
+    and may be mirrored. Applied to the skeleton in the Elder tree's own units (trunk 4.3 m), the foot unmoved."""
+    rng = random.Random(hash((spec['name'], variant)) & 0xffff)
+    a = rng.uniform(0, math.tau)
+    lean = spec.get('lean', 1.0) * (.35, .9, 1.5)[variant] * rng.uniform(.85, 1.15)   # upright-ish, leaning, leaning hard
+    sway = rng.choice((-1, 1)) * rng.uniform(.5, 1.0)
+    stretch = (1.0, rng.uniform(.85, .95), rng.uniform(1.05, 1.15))[variant]
+    mirror = rng.choice((1, -1)) if variant else 1
+    d, side = Vector((math.cos(a), math.sin(a), 0)), Vector((-math.sin(a), math.cos(a), 0))
+
+    def T(p):
+        p = Vector(p)
+        p.x *= mirror
+        t = max(0.0, min(p.z / 4.3, 1.5))
+        p.z *= stretch
+        return p + d * lean * t ** 1.5 + side * sway * math.sin(math.pi * min(t, 1))
+    return T
+
+
+def build_elder_form(spec, variant=0):
     """A species on the Elder World Tree's own skeleton, scaled by spec['scale'], with the species' bark and leaf
     colours: the trunk fluted as build_life_tree.py flutes it and fused with its roots, the eight limbs with their
     secondaries and twigs, and sixteen clusters of 1875 cupped leaves."""
     S = spec['scale']
     name = 'Elder' + spec['name']
+    wide, tall = spec.get('wide', 1.0), spec.get('tall', 1.0)
+    # Every species stands on the Elder skeleton, stretched across and up in its own proportions (a ginkgo narrow
+    # and tall, a maple wide and low); the stretch is applied to the finished wood below.
     bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))   # the Elder World Tree's own bark
+    tint = spec.get('bark_tint')
+    if tint:
+        import numpy as np
+        w_, h_ = bark_src.size
+        px = np.array(bark_src.pixels[:], dtype=np.float32).reshape(-1, 4)
+        grey = px[:, :3] @ np.array([.2126, .7152, .0722], dtype=np.float32)
+        t = np.array(lin(tint), dtype=np.float32)
+        px[:, :3] = np.clip(px[:, :3] * .35 + (grey[:, None] / max(grey.mean(), 1e-3)) * t[None, :] * .65, 0, 1)
+        bark_src.pixels = px.ravel().tolist()
     bark_src.filepath_raw = str(OUT / f'{name}_Bark.png')
     bark_src.file_format = 'PNG'
     bark_src.save()
     bark_mat = material(f'{name}_Bark', bark_src)
     leaf_mat = material(f'{name}_Leaves', palette_image(f'{name}_Leaves', spec['palette']), closest=True)
-    E = ELDER
+    T = lean_form(variant, spec)
+    E = dict(ELDER)
+    E['trunk'] = [T(p) for p in ELDER['trunk']]
+    E['limbs'] = [tuple(T(p) for p in limb) for limb in ELDER['limbs']]
+    E['back'] = [(T(c), sc) for c, sc in ELDER['back']]
+    E['front'] = [(T(c), sc) for c, sc in ELDER['front']]
     trunk = to_mesh(curve('trunk', [Vector(p) * S for p in E['trunk']], [r * S for r in E['trunk_radii']]))
     cl = [Vector(p) * S for p in E['trunk']]
     for v in trunk.data.vertices:   # build_life_tree.py's flutes, in its own (unscaled) units
@@ -170,19 +207,47 @@ def build_elder_form(spec):
         o.select_set(True)
     bpy.context.view_layer.objects.active = trunk
     bpy.ops.object.join()
+    if wide != 1 or tall != 1:
+        for v in trunk.data.vertices:
+            # Proportions: limbs stretched across and the height stretched up, the trunk foot left as it is.
+            k = min(1, v.co.z / (1.5 * S))
+            v.co.x *= 1 + (wide - 1) * k
+            v.co.y *= 1 + (wide - 1) * k
+            v.co.z *= tall
     for poly in trunk.data.polygons:
         poly.use_smooth = True
     box_uv(trunk.data, tile=1.6)
     trunk.data.materials.clear()
     trunk.data.materials.append(bark_mat)
     trunk.data.materials.append(leaf_mat)
-    clusters = [(Vector(c) * S, Vector(sc) * S) for c, sc in E['back'] + E['front']]
+    cz = spec.get('crown_z', 1.0)
+    clusters = [(Vector((c[0] * S * wide, c[1] * S * wide, c[2] * S * tall)),
+                 Vector((sc[0] * S * spec.get('crown_xy', 1.0), sc[1] * S * spec.get('crown_xy', 1.0), sc[2] * S * cz)))
+                for c, sc in E['back'] + E['front']]
     return name, trunk, bark_mat, leaf_mat, clusters
 
 
 CAMPHOR_ELDER = dict(name='Camphor', scale=1.9, leaves_per_cluster=1875, leaf_size=(.025, .048),
                      palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
-SPECIES = [CAMPHOR_ELDER]
+MAPLE_ELDER = dict(name='Maple', scale=1.35, wide=1.25, tall=.85, crown_xy=1.1, crown_z=.8, leaves_per_cluster=1700,
+                   leaf_size=(.028, .05), leaf_width=1.6, bark_tint='#8a8278',
+                   palette=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454'])
+GINKGO_ELDER = dict(name='Ginkgo', scale=1.6, wide=.7, tall=1.45, crown_xy=.8, crown_z=1.15, leaves_per_cluster=1700,
+                    leaf_size=(.028, .05), leaf_width=1.5, bark_tint='#8c7f6c',
+                    palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
+WILLOW_ELDER = dict(name='Willow', scale=1.35, wide=1.05, tall=1.15, crown_xy=.62, crown_z=.6, leaves_per_cluster=2300,
+                    leaf_size=(.05, .085), leaf_width=.32, hang=1.7, bark_tint='#6e6a5e',
+                    palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
+PLUM_ELDER = dict(name='Plum', scale=.85, wide=1.1, tall=.95, crown_xy=.85, crown_z=.85, leaves_per_cluster=1500, sparse=.55,
+                  leaf_size=(.03, .05), leaf_width=1.4, bark_tint='#3e2f2a',
+                  palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
+PINE_ELDER = dict(name='Pine', scale=1.45, wide=1.15, tall=1.2, crown_xy=1.15, crown_z=.4, leaves_per_cluster=1900,
+                  leaf_size=(.03, .055), leaf_width=.25, bark_tint='#8a5a40',
+                  palette=['#16301f', '#22482a', '#3a6a34', '#6a9440', '#a8c058'])
+JUNIPER_ELDER = dict(name='Cypress', scale=1.15, wide=1.2, tall=.9, crown_xy=1.05, crown_z=.5, leaves_per_cluster=1800,
+                     leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
+                     palette=['#1a3a1e', '#2a5428', '#467a30', '#76a23a', '#b0c856'])
+SPECIES = [CAMPHOR_ELDER, MAPLE_ELDER, GINKGO_ELDER, WILLOW_ELDER, PLUM_ELDER, PINE_ELDER, JUNIPER_ELDER]
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that
 
 LODS = [dict(keep=1.0, grow=1.0, wood=1.0), dict(keep=.3, grow=1.8, wood=.4), dict(keep=.08, grow=3.2, wood=.15)]
@@ -304,7 +369,14 @@ def canopy(cluster_loc, scale, index, rng, spec, lod):
         q = normal.to_track_quat('Z', 'Y')
         spin = rng.uniform(-math.pi, math.pi)
         length = rng.uniform(*spec['leaf_size']) * mean * lod['grow']
-        width = length * rng.uniform(.43, .64)
+        width = length * rng.uniform(.43, .64) * spec.get('leaf_width', 1.0)
+        hang = spec.get('hang', 0)
+        if hang:   # willow: leaves trail down from the spray in long curtains, the outer ones furthest
+            q = Vector((rng.uniform(-.3, .3), rng.uniform(-.3, .3), -1)).normalized().to_track_quat('Y', 'Z')
+            centre = centre - Vector((0, 0, hang * mean * rng.random() ** .6 * (.4 + .6 * min(1, (centre - cluster_loc).xy.length / max(sx, 1e-3)))))
+        if spec.get('sparse'):
+            if rng.random() > spec['sparse']:
+                continue
         shape = ((0, -length, 0), (width, 0, -.005 * mean), (0, length, .008 * mean), (-width, 0, -.005 * mean), (0, 0, .011 * mean))
         base = len(verts)
         for x, y, h in shape:
@@ -351,10 +423,10 @@ def material(name, img, closest=False):
 
 
 # ------------------------------------------------------------------ build
-def build(spec):
+def build(spec, variant=0):
     if 'scale' in spec:
-        name, wood, bark_mat, leaf_mat, clusters = build_elder_form(spec)
-        return finish(spec, name, wood, bark_mat, leaf_mat, clusters)
+        name, wood, bark_mat, leaf_mat, clusters = build_elder_form(spec, variant)
+        return finish(spec, name + ('', '_B', '_C')[variant], wood, bark_mat, leaf_mat, clusters)
     name = 'Elder' + spec['name']
     rng = random.Random(20261031)
     bark_src = bpy.data.images.load(str(REFS / f"bark-{spec['bark']}.png"))
@@ -510,6 +582,9 @@ def render(roots_):
     cam.data.lens = 35
     for r in roots_:
         for c in r.children:
+            c.hide_render = True
+    for r in roots_:
+        for c in r.children:
             c.hide_render = not c.name.endswith('LOD0')
         for k, (az, tag) in enumerate(((-.35, 'front'), (1.2, 'side'))):
             cam.location = Vector((math.sin(az) * 22, -math.cos(az) * 22, 5.2))
@@ -528,12 +603,13 @@ def main():
     report = json.loads(report_path.read_text(encoding='utf-8')) if report_path.exists() else {}
     roots_ = []
     for spec in SPECIES:
-        r, info = build(spec)
-        roots_.append(r)
-        report['Elder' + spec['name']] = info
+        for variant in range(3 if 'scale' in spec else 1):
+            r, info = build(spec, variant)
+            roots_.append(r)
+            report[r.name] = info
     render(roots_)
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
-    print('AUTHORED_TREES ' + json.dumps({k: report[k] for k in ('Elder' + s['name'] for s in SPECIES)}))
+    print('AUTHORED_TREES ' + json.dumps({r.name: report[r.name]['size_m'] for r in roots_}))
 
 
 main()

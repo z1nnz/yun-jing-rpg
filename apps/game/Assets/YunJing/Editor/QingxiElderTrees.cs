@@ -17,7 +17,20 @@ namespace YunJing.Editor
         const string MaterialFolder = "Assets/QingxiWorld/Generated/Materials/ElderTrees";
         public static readonly string[] Kinds = { "ElderGuardian", "JianmuSapling", "ElderCamphor", "ElderMaple", "ElderGinkgo", "ElderWillow", "ElderPlum", "ElderPine", "ElderCypress", "ElderWithered" };
 
-        public static GameObject Source(string kind) => AssetDatabase.LoadAssetAtPath<GameObject>($"{Models}/{kind}.fbx");
+        static readonly System.Random pick = new System.Random(20261031);
+
+        /// <summary>The species' model; when it has variants (Elder<Species>_B, _C, each trunk leaning its own way),
+        /// one of them at random, so no two neighbours stand at the same angle.</summary>
+        public static GameObject Source(string kind)
+        {
+            var options = new System.Collections.Generic.List<GameObject>();
+            foreach (var suffix in new[] { "", "_B", "_C" })
+            {
+                var model = AssetDatabase.LoadAssetAtPath<GameObject>($"{Models}/{kind}{suffix}.fbx");
+                if (model != null) options.Add(model);
+            }
+            return options.Count == 0 ? null : options[pick.Next(options.Count)];
+        }
 
         /// <summary>True when the tree kit is in this checkout (art/exports/elder-trees-v1 pulled from LFS).</summary>
         public static bool Available => File.Exists(Path.Combine(Repo, "art/exports/elder-trees-v1/ElderCamphor.fbx"));
@@ -62,9 +75,11 @@ namespace YunJing.Editor
                 bark.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{Models}/{barkName}.png"));
                 bark.SetColor("_BaseColor", Color.white); bark.SetFloat("_Smoothness", .12f);
                 EditorUtility.SetDirty(bark);
-                var path = $"{Models}/{kind}.fbx";
+                foreach (var suffix in new[] { "", "_B", "_C" })
+                {
+                var path = $"{Models}/{kind}{suffix}.fbx";
                 var importer = (ModelImporter)AssetImporter.GetAtPath(path);
-                if (importer == null) throw new FileNotFoundException("Elder tree missing", path);
+                if (importer == null) { if (suffix == "") throw new FileNotFoundException("Elder tree missing", path); continue; }
                 var leaves = Mat(kind + "_Leaves");
                 // Painted foliage clusters (Elder<Species>_Foliage.png, alpha-cut) where the species has them;
                 // otherwise the palette the leaf cards point into.
@@ -85,6 +100,7 @@ namespace YunJing.Editor
                 importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), barkName), bark);
                 importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), kind + "_Leaves"), leaves);
                 importer.SaveAndReimport();
+                }
             }
         }
 
