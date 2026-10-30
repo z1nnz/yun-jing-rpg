@@ -29,8 +29,9 @@ namespace YunJing.Editor
             var root = new GameObject("QingxiBlock_" + id).transform;
             var terrain = QingxiVillageTerrain.Create(root, layout, "BlockTerrain_" + id, $"BlockTerrain_{id} (blocks/{id}.json)");
             Physics.SyncTransforms();
-            QingxiNoviceVillageBuilder.BuildBlock(root, layout, terrain);
+            QingxiNoviceVillageBuilder.BuildBlock(root, layout, terrain, id);
             Walls(root, layout.bounds, open);
+            QingxiUrpUpgrade.UpgradeSceneMaterials();   // legacy-shader models (the mossy boulders) render black under URP otherwise
             Directory.CreateDirectory(Path.GetDirectoryName(ScenePath(id)));
             if (!EditorSceneManager.SaveScene(scene, ScenePath(id))) throw new IOException("Could not save " + ScenePath(id));
             Debug.Log($"QINGXI_BLOCK_GENERATED {id}: {layout.pads.Length} pads, {layout.edges.Length} roads, {layout.placements.Length} slots -> {ScenePath(id)}");

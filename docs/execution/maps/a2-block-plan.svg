@@ -30,6 +30,10 @@
 <text x="631" y="383.5" font-size="12" fill="#4A4036" font-weight="bold">a2-shrine（高 1.6 m）</text>
 <rect x="415.5" y="177" width="81" height="72" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
 <text x="419.5" y="190" font-size="12" fill="#4A4036" font-weight="bold">a2-view（高 2.6 m）</text>
+<rect x="681" y="595.5" width="54" height="45" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="685" y="608.5" font-size="12" fill="#4A4036" font-weight="bold">a2-cart（高 1.9 m）</text>
+<rect x="211.2" y="778.2" width="57.6" height="57.6" fill="#C8B48E" fill-opacity=".75" stroke="#8C7A5E" stroke-width="1"/>
+<text x="215.2" y="791.2" font-size="12" fill="#4A4036" font-weight="bold">a2-pavilion（高 1.38 m）</text>
 <line x1="510" y1="951" x2="573" y2="780" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
 <line x1="573" y1="780" x2="465" y2="618" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
 <line x1="465" y1="618" x2="564" y2="438" stroke="#A88560" stroke-width="30.599999999999998" stroke-linecap="round" stroke-opacity=".85"/>
@@ -57,6 +61,10 @@
 <circle cx="432.59999999999997" cy="234.60000000000005" r="8" fill="#1C1F1E"/><text x="432.59999999999997" y="238.60000000000005" font-size="10" fill="#fff" text-anchor="middle">9</text>
 <g transform="translate(384 547.8) rotate(180)"><rect x="-3.6" y="-3.6" width="7.2" height="7.2" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-3.6" stroke="#2B2B2B" stroke-width="1.4"/></g>
 <circle cx="384" cy="547.8" r="8" fill="#1C1F1E"/><text x="384" y="551.8" font-size="10" fill="#fff" text-anchor="middle">10</text>
+<g transform="translate(708 618) rotate(25)"><rect x="-16.2" y="-9.9" width="32.4" height="19.8" fill="#FFFFFF" fill-opacity=".6" stroke="#B89468" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-9.9" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="708" cy="618" r="8" fill="#1C1F1E"/><text x="708" y="622" font-size="10" fill="#fff" text-anchor="middle">11</text>
+<g transform="translate(240 807) rotate(10)"><rect x="-18" y="-18" width="36" height="36" fill="#FFFFFF" fill-opacity=".6" stroke="#9A7FB0" stroke-width="2.4" stroke-dasharray="6 4"/><line x1="0" y1="0" x2="0" y2="-18" stroke="#2B2B2B" stroke-width="1.4"/></g>
+<circle cx="240" cy="807" r="8" fill="#1C1F1E"/><text x="240" y="811" font-size="10" fill="#fff" text-anchor="middle">12</text>
 <text x="60" y="30" font-size="20" font-weight="bold" fill="#1C1F1E">A2 村外官道與茶亭｜區塊配置圖（100 × 100 m，上方為北）</text>
 <line x1="870" y1="30" x2="960" y2="30" stroke="#1C1F1E" stroke-width="3"/><text x="915" y="22" font-size="12" text-anchor="middle">10 m</text>
 <text x="60" y="1000" font-size="12" fill="#1C1F1E">實心＝已放置　半透明＝模型已有、自動放置　虛線＝待製作（遊戲裡顯示為灰盒）。顏色＝負責人：核心組 灰藍、Codex 玉綠、joshsu54 木褐。短線＝正面方向。</text>
@@ -70,4 +78,6 @@
 <text x="360" y="1054" font-size="11" fill="#2B2B2B">8 觀景石凳（RK09）（codex，2×0.8×0.6 m）</text>
 <text x="660" y="1054" font-size="11" fill="#2B2B2B">9 草垛（RK10）（codex，2.4×2.4×2.2 m）</text>
 <text x="60" y="1070" font-size="11" fill="#2B2B2B">10 路人（靜態 NPC）（joshsu54，0.8×0.8×1.75 m）</text>
+<text x="360" y="1070" font-size="11" fill="#2B2B2B">11 翻倒在路旁的牛車（joshsu54，3.6×2.2×1.6 m）</text>
+<text x="660" y="1070" font-size="11" fill="#2B2B2B">12 倒塌的歇腳亭（Johnnnny0823，4×4×3.2 m）</text>
 </svg>

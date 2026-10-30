@@ -512,6 +512,7 @@ namespace YunJing.Editor
                     rock.transform.localRotation = Quaternion.Euler(0, placed * 67f, 0) * boulder.transform.localRotation;
                     rock.transform.localScale = boulder.transform.localScale * .55f;
                     rock.transform.localPosition = At(bank.x, bank.y) + Vector3.down * .2f;
+                    MossStone(rock);
                 }
             }
             if (c.crossing != null)
@@ -721,18 +722,18 @@ namespace YunJing.Editor
         // Existing reviewed environment pieces (CollaboratorWorldV1) framing the village edge.
         // K5: another block's content built by the village code on that block's data and terrain: slots (models
         // or labelled frames), the brook with its water, a scatter of pines and bamboo, and plant wind.
-        internal static void BuildBlock(Transform root, QingxiVillageTerrain.Layout blockLayout, Terrain blockTerrain)
+        internal static void BuildBlock(Transform root, QingxiVillageTerrain.Layout blockLayout, Terrain blockTerrain, string blockId)
         {
             var (oldLayout, oldTerrain) = (layout, terrain);
             layout = blockLayout; terrain = blockTerrain;
             try
             {
                 bool upstream = layout.creekKit != null && layout.creekKit.Length > 0;
-                if (upstream) QingxiWaterheadA.Copy();
+                if (upstream || layout.creek != null) QingxiWaterheadA.Copy();   // river tiles; sedge for every creek bank
                 Placements(root);
                 Creek(root);
                 if (upstream) { QingxiWaterheadA.RiverKit(root, layout); UpstreamClues(root); }
-                BlockTrees(root);
+                Dressing(root, blockId);
                 Debug.Log("QINGXI_WIND (block): " + WindFoliage(root) + " foliage renderers sway");
             }
             finally { layout = oldLayout; terrain = oldTerrain; }
@@ -766,8 +767,124 @@ namespace YunJing.Editor
             };
         }
 
+        // The dressing plan (tools/qingxi-terrain/world-dressing.json, docs/execution/novice-world-dressing-plan.md).
+        [Serializable] class DressingBiome { public string id, name; public int trees, groves, boulders, grass, sedge; }
+        [Serializable] class DressingBlock { public string id, biome, status; }
+        [Serializable] class DressingPlan { public DressingBiome[] biomes; public DressingBlock[] blocks; }
+
+        // Groves, not a grid: trees gather in a few groves with open ground between them, singles in the gaps;
+        // bamboo by the water and pine on the dry slopes; mossy boulders in clusters of two to four, half of them
+        // along the creek; withered sedge on the creek banks. Counts per 100 × 100 m come from the block's biome.
+        // Nothing on pads (3.5 m), roads (3 m), the creek or within 4 m of the block edge.
+        static void Dressing(Transform parent, string blockId)
+        {
+            var plan = JsonUtility.FromJson<DressingPlan>(File.ReadAllText(Path.Combine(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..")), "tools/qingxi-terrain/world-dressing.json")));
+            var entry = plan.blocks.FirstOrDefault(b => b.id == blockId);
+            var biome = plan.biomes.FirstOrDefault(b => entry != null && b.id == entry.biome);
+            if (biome == null) { BlockTrees(parent); return; }
+            var root = new GameObject($"Dressing ({biome.name}, world-dressing.json)").transform; root.SetParent(parent, false);
+            var pine = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/YunJing/Models/CollaboratorWorldV1/CommonPine_v001.fbx");
+            var bamboo = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/YunJing/Models/CollaboratorWorldV1/BambooClump_v001.fbx");
+            var boulder = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/YunJing/Models/CollaboratorWorldV1/MossBoulderSet_v001.fbx");
+            if (pine == null || bamboo == null || boulder == null) throw new InvalidOperationException("CollaboratorWorldV1 pine/bamboo/boulder models missing");
+            var a = layout.bounds; var random = new System.Random((int)(a.minX * 31 + a.minZ * 17) ^ blockId.GetHashCode());
+            float R() => (float)random.NextDouble();
+            float clear = layout.creek == null ? 0 : layout.creekKit != null && layout.creekKit.Length > 0 ? 5f : layout.creek.width * .5f + layout.creek.bank + 1;
+            bool Free(float x, float z, float pad = 3.5f, float road = 3f, float creekGap = -1)
+            {
+                if (x < a.minX + 4 || x > a.minX + a.sizeX - 4 || z < a.minZ + 4 || z > a.minZ + a.sizeZ - 4) return false;
+                if (QingxiVillageTerrain.PadDistance(layout, x, z, out _) < pad || QingxiVillageTerrain.RoadDistance(layout, x, z, out _) < road) return false;
+                if (QingxiVillageTerrain.CreekDistance(layout, x, z, out _) < (creekGap < 0 ? clear : creekGap)) return false;
+                return layout.placements == null || layout.placements.All(p => Vector2.Distance(new Vector2(p.x, p.z), new Vector2(x, z)) > 3f);
+            }
+            Vector2 Somewhere(Func<float, float, bool> ok)
+            {
+                for (int i = 0; i < 80; i++) { float x = a.minX + 4 + R() * (a.sizeX - 8), z = a.minZ + 4 + R() * (a.sizeZ - 8); if (ok(x, z)) return new Vector2(x, z); }
+                return new Vector2(float.NaN, float.NaN);
+            }
+            int trees = 0, rocks = 0, sedges = 0;
+            void PlantTree(float x, float z)
+            {
+                float wet = QingxiVillageTerrain.CreekDistance(layout, x, z, out _);
+                bool cane = wet < 16f ? R() < .75f : R() < .15f;
+                if (cane) Tree(bamboo, root, new Vector3(x, 0, z), 4.2f + R() * 1.8f, R() * 360);
+                else Tree(pine, root, new Vector3(x, 0, z), 7f + R() * 5.5f, R() * 360);
+                trees++;
+            }
+            // Groves: about three quarters of the trees, 4–11 m around each grove centre.
+            var groves = Enumerable.Range(0, biome.groves).Select(_ => Somewhere((x, z) => Free(x, z, 8f, 6f))).Where(g => !float.IsNaN(g.x)).ToList();
+            int inGroves = groves.Count == 0 ? 0 : biome.trees * 3 / 4;
+            for (int i = 0, tries = 0; i < inGroves && tries < inGroves * 12; tries++)
+            {
+                var g = groves[random.Next(groves.Count)];
+                float angle = R() * Mathf.PI * 2, r = 2f + R() * R() * 10f;   // denser at the heart of the grove
+                float x = g.x + Mathf.Cos(angle) * r, z = g.y + Mathf.Sin(angle) * r;
+                if (!Free(x, z)) continue;
+                PlantTree(x, z); i++;
+            }
+            for (int i = trees; i < biome.trees; i++) { var p = Somewhere((x, z) => Free(x, z)); if (!float.IsNaN(p.x)) PlantTree(p.x, p.y); }
+            // Boulder clusters; with a creek, half sit along its banks.
+            int clusters = Mathf.Max(1, biome.boulders / 3);
+            for (int c = 0; c < clusters; c++)
+            {
+                Vector2 centre;
+                if (layout.creek != null && layout.creek.Count >= 2 && c % 2 == 0)
+                {
+                    int s = random.Next(layout.creek.Count - 1);
+                    var p = Vector2.Lerp(layout.creek[s], layout.creek[s + 1], R()); var q = layout.creek[s + 1] - layout.creek[s];
+                    var side = new Vector2(-q.y, q.x).normalized * ((R() < .5f ? -1 : 1) * (clear + 1.2f + R() * 3f));
+                    centre = p + side;
+                    if (!Free(centre.x, centre.y, 3.5f, 2.5f)) continue;
+                }
+                else { centre = Somewhere((x, z) => Free(x, z, 4f, 3f)); if (float.IsNaN(centre.x)) continue; }
+                int count = 2 + random.Next(3);
+                for (int k = 0; k < count; k++)
+                {
+                    float x = centre.x + (R() - .5f) * 3.2f, z = centre.y + (R() - .5f) * 3.2f;
+                    if (!Free(x, z, 3.5f, 2.5f)) continue;
+                    var rock = (GameObject)PrefabUtility.InstantiatePrefab(boulder);
+                    rock.name = "Boulder - MossBoulderSet_v001 (CollaboratorWorldV1)";
+                    rock.transform.SetParent(root, false);
+                    float scale = .35f + R() * R() * .9f;
+                    rock.transform.localScale *= scale;
+                    rock.transform.localRotation = Quaternion.Euler(R() * 8 - 4, R() * 360, R() * 8 - 4) * boulder.transform.localRotation;
+                    rock.transform.localPosition = At(x, z) + Vector3.down * (.12f + .2f * scale);
+                    MossStone(rock);
+                    rocks++;
+                }
+            }
+            // Withered sedge on the creek banks (the PR #45 tufts, when the upstream kit is in this project).
+            if (biome.sedge > 0 && layout.creek != null && layout.creek.Count >= 2 && File.Exists(QingxiWaterheadA.ModelPath("A05_WitheredSedge_01")))
+                for (int i = 0, tries = 0; i < biome.sedge && tries < biome.sedge * 8; tries++)
+                {
+                    int s = random.Next(layout.creek.Count - 1);
+                    var p = Vector2.Lerp(layout.creek[s], layout.creek[s + 1], R()); var q = layout.creek[s + 1] - layout.creek[s];
+                    var at = p + new Vector2(-q.y, q.x).normalized * ((R() < .5f ? -1 : 1) * (clear + .3f + R() * 4.5f));
+                    if (!Free(at.x, at.y, 2f, 1.5f, clear)) continue;
+                    var tuft = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(QingxiWaterheadA.ModelPath("A05_WitheredSedge_0" + (1 + random.Next(3)))));
+                    tuft.transform.SetParent(root, false);
+                    QingxiWaterheadA.Prepare(tuft, walkable: false);
+                    tuft.transform.localRotation = Quaternion.Euler(0, R() * 360, 0) * tuft.transform.localRotation;
+                    tuft.transform.localPosition = At(at.x, at.y) + Vector3.down * .05f;
+                    i++; sedges++;
+                }
+            Debug.Log($"QINGXI_DRESSING {blockId} ({biome.name}): {trees} trees in {groves.Count} groves, {rocks} boulders, {sedges} sedge tufts");
+        }
+
+        // MossBoulderSet_v001 carries no texture and its source colour converts to near black under URP, so the
+        // boulders get one weathered grey-green stone material.
+        static void MossStone(GameObject rock)
+        {
+            var path = $"{MaterialFolder}/MossStone_URP.mat";
+            var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
+            if (mat == null) { mat = new Material(Shader.Find("Universal Render Pipeline/Lit")); AssetDatabase.CreateAsset(mat, path); }
+            mat.SetColor("_BaseColor", new Color(.47f, .49f, .44f)); mat.SetFloat("_Smoothness", .12f);
+            EditorUtility.SetDirty(mat);
+            foreach (var r in rock.GetComponentsInChildren<Renderer>()) r.sharedMaterials = Enumerable.Repeat(mat, r.sharedMaterials.Length).ToArray();
+        }
+
         // A loose grid with jitter: pines on dry ground, bamboo near water, nothing on pads, roads, the brook or
-        // in the 4 m along the block edge (where neighbouring blocks meet).
+        // in the 4 m along the block edge (where neighbouring blocks meet). Fallback for blocks with no dressing plan.
         static void BlockTrees(Transform parent)
         {
             var root = new GameObject("BlockTrees (CollaboratorWorldV1)").transform; root.SetParent(parent, false);

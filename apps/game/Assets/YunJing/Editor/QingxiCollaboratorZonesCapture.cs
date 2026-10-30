@@ -70,7 +70,7 @@ namespace YunJing.Editor
         public static void CaptureUpstream()
         {
             EditorSceneManager.OpenScene(QingxiNoviceVillageBuilder.ScenePath);
-            foreach (var id in new[] { "A3", "D3" }) EditorSceneManager.OpenScene(QingxiBlockBuilder.ScenePath(id), OpenSceneMode.Additive);
+            foreach (var id in new[] { "A2", "A3", "D3" }) EditorSceneManager.OpenScene(QingxiBlockBuilder.ScenePath(id), OpenSceneMode.Additive);
             Physics.SyncTransforms();
             var dir = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..", "artifacts", "qingxi-upstream-d3"));
             Directory.CreateDirectory(dir);
@@ -105,6 +105,11 @@ namespace YunJing.Editor
             Shot("08-ruin-to-source", new Vector3(-110, 4, 98), new Vector3(-128, 1, 120));
             Shot("09-resonance-stone", new Vector3(-126, 2, 117), new Vector3(-129.2f, .4f, 122.6f));
             Shot("10-brook-above", new Vector3(-70, 22, 70), new Vector3(-95, 0, 102));
+            // The dressing in the other built blocks (world-dressing.json).
+            Shot("11-a3-creek-dressing", new Vector3(-84, 3, 26), new Vector3(-100, 0, 4));
+            Shot("12-a3-above", new Vector3(-60, 30, 10), new Vector3(-105, 0, 0));
+            Shot("13-a2-road-dressing", new Vector3(4, 2, -112), new Vector3(-2, .5f, -80));
+            Shot("14-a2-above", new Vector3(30, 30, -70), new Vector3(-5, 0, -110));
             Debug.Log($"QINGXI_UPSTREAM_CAPTURED to {dir}");
         }
     }

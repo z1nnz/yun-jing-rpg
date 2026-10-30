@@ -124,6 +124,33 @@
       "halfZ": 5.0,
       "height": 11.0,
       "surface": "forest"
+    },
+    {
+      "id": "d3-hut",
+      "surface": "dirt",
+      "x": -114,
+      "z": 72,
+      "halfX": 7,
+      "halfZ": 5.5,
+      "height": 6.51
+    },
+    {
+      "id": "d3-shrine",
+      "surface": "dirt",
+      "x": -100,
+      "z": 65,
+      "halfX": 2.5,
+      "halfZ": 2.5,
+      "height": 5.66
+    },
+    {
+      "id": "d3-camp",
+      "surface": "dirt",
+      "x": -66,
+      "z": 102,
+      "halfX": 3.2,
+      "halfZ": 3.2,
+      "height": 6.3
     }
   ],
   "heightPoints": [
@@ -395,6 +422,86 @@
       "collider": "box",
       "author": "核心組",
       "note": "壩的主體橫在溪上，由核心組另做；這個格位放岸上的壩頭"
+    },
+    {
+      "id": "D3_AbandonedHut",
+      "zone": "d3-hut",
+      "role": "廢棄的獵人小屋（屋頂塌了一半）",
+      "model": "",
+      "x": -116.5,
+      "z": 72,
+      "yaw": 90,
+      "footprint": [
+        5.5,
+        4.5,
+        3.8
+      ],
+      "owner": "joshsu54",
+      "status": "needed",
+      "phase": "P2",
+      "collider": "box",
+      "author": "",
+      "note": "門板歪在一邊，屋裡只剩一張床架和掛在牆上的空箭袋；牆角刻著幾道計日的刻痕，刻到一半就停了"
+    },
+    {
+      "id": "D3_DryWell",
+      "zone": "d3-hut",
+      "role": "枯井（井繩斷了）",
+      "model": "",
+      "x": -109,
+      "z": 69.5,
+      "yaw": 0,
+      "footprint": [
+        1.8,
+        1.8,
+        2.2
+      ],
+      "owner": "joshsu54",
+      "status": "needed",
+      "phase": "P2",
+      "collider": "box",
+      "author": "",
+      "note": "井口石圈有一塊缺角，木架上的井繩斷了半截；往下看是乾的"
+    },
+    {
+      "id": "D3_FallenShrine",
+      "zone": "d3-shrine",
+      "role": "倒在路邊的土地公小廟",
+      "model": "",
+      "x": -100,
+      "z": 65,
+      "yaw": 200,
+      "footprint": [
+        1.6,
+        1.4,
+        1.8
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P2",
+      "collider": "box",
+      "author": "",
+      "note": "石龕歪了，香爐翻倒在一旁，裡面還有一小撮沒燒完的香"
+    },
+    {
+      "id": "D3_HunterCamp",
+      "zone": "d3-camp",
+      "role": "熄掉的營火與獵人的木凳",
+      "model": "",
+      "x": -66,
+      "z": 102,
+      "yaw": 30,
+      "footprint": [
+        3.0,
+        3.0,
+        1.2
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P2",
+      "collider": "box",
+      "author": "",
+      "note": "一圈石頭圍著冷掉的灰，旁邊一截木頭當凳子，插著一根晾皮的木架"
     }
   ],
   "herbs": [],

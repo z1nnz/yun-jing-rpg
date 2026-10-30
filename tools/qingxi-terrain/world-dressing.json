@@ -1,0 +1,373 @@
+{
+  "version": 1,
+  "note": "新手大世界的填充計畫（2026-10-31）。biomes（陣列，Unity JsonUtility 讀得到）是地被類型與每 100 × 100 m 的密度目標，Unity 的區塊生成照這裡的數字擺樹、石頭和草；blocks 是每一塊的主題與要補的東西。說明見 docs/execution/novice-world-dressing-plan.md。",
+  "biomes": [
+    {
+      "id": "village",
+      "name": "村落",
+      "colour": "#E3D3B0",
+      "cover": "鋪地、菜圃、籬笆、果樹、晾架",
+      "trees": 18,
+      "groves": 4,
+      "boulders": 8,
+      "grass": 40,
+      "sedge": 0
+    },
+    {
+      "id": "valley-meadow",
+      "name": "河谷草地",
+      "colour": "#C9DFA9",
+      "cover": "散松成叢、草叢、野花、石群",
+      "trees": 55,
+      "groves": 7,
+      "boulders": 27,
+      "grass": 120,
+      "sedge": 10
+    },
+    {
+      "id": "riverside",
+      "name": "溪岸",
+      "colour": "#A9D2C4",
+      "cover": "竹叢、蘆葦、苔石、枯草",
+      "trees": 52,
+      "groves": 8,
+      "boulders": 36,
+      "grass": 110,
+      "sedge": 30
+    },
+    {
+      "id": "terraced-hill",
+      "name": "坡地梯田",
+      "colour": "#B9D38E",
+      "cover": "茶樹列、梯田石坎、觀景亭",
+      "trees": 26,
+      "groves": 4,
+      "boulders": 16,
+      "grass": 90,
+      "sedge": 0
+    },
+    {
+      "id": "old-forest",
+      "name": "古林",
+      "colour": "#7FA77A",
+      "cover": "密松、蕨類、倒木、樹樁、苔石",
+      "trees": 95,
+      "groves": 10,
+      "boulders": 40,
+      "grass": 80,
+      "sedge": 6
+    },
+    {
+      "id": "mushroom-glen",
+      "name": "蕈谷",
+      "colour": "#8C8FB5",
+      "cover": "陰暗林下、發光蕈、霧",
+      "trees": 70,
+      "groves": 8,
+      "boulders": 30,
+      "grass": 40,
+      "sedge": 0
+    },
+    {
+      "id": "mountain",
+      "name": "山城石階",
+      "colour": "#B7B9B4",
+      "cover": "石壁、懸松、石階、雲",
+      "trees": 22,
+      "groves": 5,
+      "boulders": 48,
+      "grass": 30,
+      "sedge": 0
+    },
+    {
+      "id": "lakeshore",
+      "name": "湖岸濕地",
+      "colour": "#9CC4D6",
+      "cover": "蘆葦、淺灘、漁具、浮木",
+      "trees": 18,
+      "groves": 4,
+      "boulders": 20,
+      "grass": 90,
+      "sedge": 40
+    },
+    {
+      "id": "rift",
+      "name": "靈脈裂隙",
+      "colour": "#B59BC8",
+      "cover": "裂石、紫晶、枯樹",
+      "trees": 10,
+      "groves": 3,
+      "boulders": 60,
+      "grass": 10,
+      "sedge": 10
+    },
+    {
+      "id": "skyline",
+      "name": "遠景",
+      "colour": "#CFCFCF",
+      "cover": "石峰剪影、雲海",
+      "trees": 0,
+      "groves": 0,
+      "boulders": 0,
+      "grass": 0,
+      "sedge": 0
+    }
+  ],
+  "blocks": [
+    {
+      "id": "A1",
+      "biome": "village",
+      "status": "built",
+      "fill": [
+        "院牆與籬笆圍出各家",
+        "菜圃、晾衣架、柴堆",
+        "村中古樹下的石凳",
+        "溪邊洗衣石"
+      ]
+    },
+    {
+      "id": "A2",
+      "biome": "valley-meadow",
+      "status": "built",
+      "fill": [
+        "官道兩旁的松與里程石",
+        "茶亭前的長凳與茶棚",
+        "路邊石群與野花",
+        "遠處看得到村門"
+      ]
+    },
+    {
+      "id": "A3",
+      "biome": "riverside",
+      "status": "built",
+      "fill": [
+        "溪岸竹叢與蘆葦",
+        "磨坊旁的木柴與麻袋",
+        "釣魚點的石台",
+        "往北進 D3 的小徑"
+      ]
+    },
+    {
+      "id": "A4",
+      "biome": "terraced-hill",
+      "status": "planned",
+      "fill": [
+        "一層層茶樹梯田",
+        "梯田石坎",
+        "觀景亭看山城",
+        "採茶簍與竹架"
+      ]
+    },
+    {
+      "id": "A5",
+      "biome": "lakeshore",
+      "status": "planned",
+      "fill": [
+        "大片蘆葦",
+        "渡口木棧與擺渡船",
+        "曬網架",
+        "淺灘水鳥"
+      ]
+    },
+    {
+      "id": "A6",
+      "biome": "village",
+      "status": "planned",
+      "fill": [
+        "稻田與田埂",
+        "大水車",
+        "稻草人",
+        "田間小廟"
+      ]
+    },
+    {
+      "id": "D1",
+      "biome": "old-forest",
+      "status": "planned",
+      "fill": [
+        "林緣松林由疏到密",
+        "瞭望台與獵人小屋",
+        "倒木、樹樁",
+        "接通 A1 與 D3 的溪"
+      ]
+    },
+    {
+      "id": "D2",
+      "biome": "old-forest",
+      "status": "planned",
+      "fill": [
+        "世界古樹（90 m）",
+        "樹根下的祭壇",
+        "地面落葉與蕨",
+        "光束穿林"
+      ]
+    },
+    {
+      "id": "D3",
+      "biome": "riverside",
+      "status": "built",
+      "fill": [
+        "溪兩岸竹叢與苔石",
+        "坡上松林成片",
+        "斷流石壩（核心組）",
+        "源頭的水脈共鳴石"
+      ]
+    },
+    {
+      "id": "D4",
+      "biome": "old-forest",
+      "status": "planned",
+      "fill": [
+        "半埋的石祠",
+        "苔石與古碑",
+        "隱藏洞府入口",
+        "陰涼的蕨類地"
+      ]
+    },
+    {
+      "id": "D5",
+      "biome": "mushroom-glen",
+      "status": "planned",
+      "fill": [
+        "夜裡發光的蕈群",
+        "濃霧",
+        "倒伏的大樹",
+        "螢火"
+      ]
+    },
+    {
+      "id": "D6",
+      "biome": "old-forest",
+      "status": "planned",
+      "fill": [
+        "林子漸疏、坡變陡",
+        "第一段石階",
+        "山腳的界碑",
+        "往上看得到山城"
+      ]
+    },
+    {
+      "id": "B1",
+      "biome": "mountain",
+      "status": "planned",
+      "fill": [
+        "宗門山門",
+        "石階與索橋",
+        "懸崖上的松",
+        "雲海"
+      ]
+    },
+    {
+      "id": "B2",
+      "biome": "mountain",
+      "status": "planned",
+      "fill": [
+        "測資廣場",
+        "各宗分院的旗",
+        "石燈與香爐",
+        "人潮"
+      ]
+    },
+    {
+      "id": "B3",
+      "biome": "mountain",
+      "status": "planned",
+      "fill": [
+        "宗門大殿、藏經閣",
+        "廊橋",
+        "庭院松石",
+        "鐘樓（太玄的大鐘）"
+      ]
+    },
+    {
+      "id": "B4",
+      "biome": "mountain",
+      "status": "planned",
+      "fill": [
+        "雲中瀑布",
+        "水霧與彩虹",
+        "練功石台",
+        "懸空棧道"
+      ]
+    },
+    {
+      "id": "BX1",
+      "biome": "skyline",
+      "status": "planned",
+      "fill": [
+        "遠景石峰"
+      ]
+    },
+    {
+      "id": "BX2",
+      "biome": "skyline",
+      "status": "planned",
+      "fill": [
+        "遠景石峰"
+      ]
+    },
+    {
+      "id": "BX3",
+      "biome": "skyline",
+      "status": "planned",
+      "fill": [
+        "遠景石峰"
+      ]
+    },
+    {
+      "id": "C1",
+      "biome": "lakeshore",
+      "status": "planned",
+      "fill": [
+        "濕地藥田",
+        "木棧道",
+        "遠眺浮島",
+        "水鳥"
+      ]
+    },
+    {
+      "id": "C2",
+      "biome": "lakeshore",
+      "status": "planned",
+      "fill": [
+        "斷成兩截的古石橋",
+        "橋下急流",
+        "修橋的工具堆",
+        "岸邊石燈"
+      ]
+    },
+    {
+      "id": "C3",
+      "biome": "rift",
+      "status": "planned",
+      "fill": [
+        "懸根浮島",
+        "島上廢墟",
+        "跳躍石",
+        "瀑布從島邊落下"
+      ]
+    },
+    {
+      "id": "C4",
+      "biome": "rift",
+      "status": "planned",
+      "fill": [
+        "紫色裂隙",
+        "裂石與紫晶",
+        "枯死的樹",
+        "秘境入口"
+      ]
+    },
+    {
+      "id": "C5",
+      "biome": "lakeshore",
+      "status": "planned",
+      "fill": [
+        "高腳漁屋",
+        "曬魚架",
+        "小碼頭",
+        "漁船"
+      ]
+    }
+  ]
+}

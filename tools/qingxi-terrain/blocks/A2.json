@@ -139,6 +139,24 @@
       "halfZ": 4,
       "height": 2.6,
       "surface": "dirt"
+    },
+    {
+      "id": "a2-cart",
+      "surface": "dirt",
+      "x": 22,
+      "z": -112,
+      "halfX": 3,
+      "halfZ": 2.5,
+      "height": 1.9
+    },
+    {
+      "id": "a2-pavilion",
+      "surface": "dirt",
+      "x": -30,
+      "z": -133,
+      "halfX": 3.2,
+      "halfZ": 3.2,
+      "height": 1.38
     }
   ],
   "heightPoints": [
@@ -363,6 +381,46 @@
       "collider": "box",
       "author": "joshsu54",
       "note": ""
+    },
+    {
+      "id": "A2_OverturnedCart",
+      "zone": "a2-cart",
+      "role": "翻倒在路旁的牛車",
+      "model": "",
+      "x": 22,
+      "z": -112,
+      "yaw": 25,
+      "footprint": [
+        3.6,
+        2.2,
+        1.6
+      ],
+      "owner": "joshsu54",
+      "status": "needed",
+      "phase": "P2",
+      "collider": "box",
+      "author": "",
+      "note": "一個車輪脫落斜靠在車身上，幾袋穀子破了口，撒了一地"
+    },
+    {
+      "id": "A2_RestPavilionRuin",
+      "zone": "a2-pavilion",
+      "role": "倒塌的歇腳亭",
+      "model": "",
+      "x": -30,
+      "z": -133,
+      "yaw": 10,
+      "footprint": [
+        4.0,
+        4.0,
+        3.2
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P2",
+      "collider": "box",
+      "author": "",
+      "note": "四根柱子倒了兩根，亭頂斜壓在地上；亭裡的石桌還在，桌上刻著一個沒下完的棋盤"
     }
   ],
   "herbs": [],
