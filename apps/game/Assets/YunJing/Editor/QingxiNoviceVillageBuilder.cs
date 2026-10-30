@@ -827,8 +827,12 @@ namespace YunJing.Editor
             var a = layout.bounds; var random = new System.Random((int)(a.minX * 31 + a.minZ * 17) ^ blockId.GetHashCode());
             float R() => (float)random.NextDouble();
             float clear = layout.creek == null ? 0 : layout.creekKit != null && layout.creekKit.Length > 0 ? 5f : layout.creek.width * .5f + layout.creek.bank + 1;
+            // Trees (and bamboo) keep their distance: no two trunks closer than 4.5 m, so crowns never grow through
+            // each other.
+            var planted = new System.Collections.Generic.List<Vector2>();
             bool Free(float x, float z, float pad = 3.5f, float road = 3f, float creekGap = -1)
             {
+                foreach (var t in planted) if ((t - new Vector2(x, z)).sqrMagnitude < 4.5f * 4.5f) return false;
                 if (x < a.minX + 4 || x > a.minX + a.sizeX - 4 || z < a.minZ + 4 || z > a.minZ + a.sizeZ - 4) return false;
                 // The territory hollow keeps its yard open: trees and rocks stay on the surrounding hills.
                 if (layout.isolated && Mathf.Max(Mathf.Abs(x - (a.minX + a.sizeX / 2)), Mathf.Abs(z - (a.minZ + a.sizeZ / 2))) < a.sizeX * .28f) return false;
@@ -858,6 +862,7 @@ namespace YunJing.Editor
             string waterside = elder && !string.IsNullOrEmpty(entry.waterside) ? entry.waterside : null;
             void PlantTree(float x, float z, string kind = "")
             {
+                planted.Add(new Vector2(x, z));
                 float wet = QingxiVillageTerrain.CreekDistance(layout, x, z, out _);
                 // Bamboo only where the block allows it (the old forest is cypress alone).
                 bool cane = !entry.noBamboo && (wet < 16f ? R() < .75f : R() < .15f);
@@ -983,7 +988,7 @@ namespace YunJing.Editor
         // Each tree's full height as modelled, buried roots included (the model's origin is the ground line), so a
         // tree placed at this height keeps its modelled size.
         static readonly System.Collections.Generic.Dictionary<string, float> NaturalHeight = new System.Collections.Generic.Dictionary<string, float> {
-            ["ElderGuardian"] = 10.6f, ["JianmuSapling"] = 3.9f, ["ElderCamphor"] = 14.64f, ["ElderMaple"] = 9.22f, ["ElderGinkgo"] = 12.08f, ["ElderWillow"] = 9.42f, ["ElderPlum"] = 6.54f, ["ElderPine"] = 12.06f, ["ElderCypress"] = 9.11f, ["ElderWithered"] = 9.01f };
+            ["ElderGuardian"] = 10.6f, ["JianmuSapling"] = 3.9f, ["ElderCamphor"] = 11.66f, ["ElderMaple"] = 9.22f, ["ElderGinkgo"] = 12.08f, ["ElderWillow"] = 9.42f, ["ElderPlum"] = 6.54f, ["ElderPine"] = 12.06f, ["ElderCypress"] = 9.11f, ["ElderWithered"] = 9.01f };
 
         static bool elderCopied;
         static void ElderKit() { if (!elderCopied) { QingxiElderTrees.Copy(); elderCopied = true; } }

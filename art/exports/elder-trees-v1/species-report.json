@@ -1,16 +1,16 @@
 {
   "ElderCamphor": {
     "triangles_per_lod": [
-      194037,
-      80707,
-      34097
+      380372,
+      117467,
+      32778
     ],
     "size_m": [
-      13.44,
-      14.92,
-      14.64
+      16.83,
+      0,
+      11.64
     ],
-    "leaf": "oval"
+    "leaf": "authored"
   },
   "ElderMaple": {
     "triangles_per_lod": [
