@@ -66,6 +66,44 @@ namespace YunJing.Editor
             Debug.Log($"QINGXI_VILLAGE_CAPTURED to {dir} (pipeline: {(GraphicsSettings.currentRenderPipeline != null ? GraphicsSettings.currentRenderPipeline.name : "built-in")})");
         }
 
+        // The creek chapter in the village: the old channel before and after the repair (PR #52), the council corner (PR #47).
+        public static void CaptureCreekChapter()
+        {
+            EditorSceneManager.OpenScene(QingxiNoviceVillageBuilder.ScenePath);
+            Physics.SyncTransforms();
+            var dir = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..", "artifacts", "qingxi-creek-chapter"));
+            Directory.CreateDirectory(dir);
+            var camera = new GameObject("Review Camera").AddComponent<Camera>();
+            camera.fieldOfView = 50; camera.nearClipPlane = .05f; camera.farClipPlane = 400;
+            UnityEngine.Rendering.Universal.CameraExtensions.GetUniversalAdditionalCameraData(camera).renderPostProcessing = true;
+            var target = new RenderTexture(1600, 900, 24) { antiAliasing = 4 };
+            camera.targetTexture = target;
+            void Shot(string file, Vector3 from, Vector3 at)
+            {
+                camera.transform.position = from; camera.transform.LookAt(at); camera.Render();
+                RenderTexture.active = target;
+                var image = new Texture2D(target.width, target.height, TextureFormat.RGB24, false);
+                image.ReadPixels(new Rect(0, 0, target.width, target.height), 0, 0); image.Apply();
+                File.WriteAllBytes(Path.Combine(dir, file + ".png"), image.EncodeToPNG());
+                RenderTexture.active = null; Object.DestroyImmediate(image);
+            }
+            var site = Object.FindFirstObjectByType<QingxiWaterworksSite>();
+            var council = Object.FindFirstObjectByType<QingxiVillageReport>();
+            var p = site.point.position;
+            Shot("00-warmup", p + new Vector3(0, 30, -10), p);   // the first render has no ambient light yet
+            File.Delete(Path.Combine(dir, "00-warmup.png"));
+            site.repaired.SetActive(false);
+            Shot("01-old-channel-before", p + new Vector3(-3.5f, 2.2f, 1.5f), p + new Vector3(1.2f, 0, -1.5f));
+            site.repaired.SetActive(true);
+            Shot("02-old-channel-after", p + new Vector3(-3.5f, 2.2f, 1.5f), p + new Vector3(1.2f, 0, -1.5f));
+            Shot("03-channel-to-fields", p + new Vector3(1.5f, 6f, 6f), p + new Vector3(1.2f, 0, -4f));
+            var c = council.point.position;
+            Shot("04-council-corner", c + new Vector3(-4f, 2.4f, -4f), c);
+            Shot("05-council-eye", c + new Vector3(0, 1.6f, -4.5f), c + new Vector3(0, .6f, 0));
+            Shot("06-channel-top", p + new Vector3(1.2f, 9f, -2.5f), p + new Vector3(1.2f, 0, -2.4f));
+            Debug.Log($"QINGXI_CREEK_CHAPTER_CAPTURED to {dir}");
+        }
+
         // D3 upstream valley (PR #45): the brook tiles, the clue spots and the way in from A3, in the editor.
         public static void CaptureUpstream()
         {

@@ -63,7 +63,9 @@ namespace YunJing.Editor
             public FortuneSpot[] fortunes;   // 機緣 (K4): hidden finds, never on the map
             public Creek creek;
             public CreekKitSpan[] creekKit;   // D3: which river tiles (PR #45) line each stretch of the creek
+            public Flat[] flats;              // ground levelled under built works that are not on a pad (the old channel)
         }
+        [Serializable] public class Flat { public string id, note; public float x, z, halfX, halfZ, height, blend = 1.5f; }
         [Serializable] public class CreekKitSpan { public float from, to; public string pieces, note; }
 
         // Distance to the creek's centre line, and the land height there (the bed follows the land, so the
@@ -193,6 +195,13 @@ namespace YunJing.Editor
                 if (layout.creekKit != null && layout.creekKit.Length > 0)
                     h = Mathf.Lerp(creekLand, h, Smooth(c.width * .5f + c.bank + .6f, c.width * .5f + c.bank + 4.6f, creek));
                 h = Mathf.Lerp(bed, h, Smooth(c.width * .35f, c.width * .5f + c.bank, creek));
+            }
+            // Levelled strips under works that cross the creek bank (joshsu54's old channel): after the creek, so the
+            // intake end reaches into the water at its stated height.
+            foreach (var f in layout.flats ?? new Flat[0])
+            {
+                float edge = Mathf.Max(Mathf.Abs(x - f.x) - f.halfX, Mathf.Abs(z - f.z) - f.halfZ);
+                h = Mathf.Lerp(f.height, h, Smooth(0f, f.blend, edge));
             }
             // Pads last: each zone stands on one flat platform at its stated height.
             foreach (var p in layout.pads)

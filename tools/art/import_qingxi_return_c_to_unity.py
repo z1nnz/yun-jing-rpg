@@ -15,6 +15,8 @@ AUTHOR = "Eli-0731 / Codex"
 SETS = [
     (ROOT / "art/exports/qingxi-return-c", ROOT / "apps/game/Assets/YunJing/Models/VillageReturnC", [f"C0{i}" for i in range(1, 9)]),
     (ROOT / "art/exports/qingxi-village-signs-v1", ROOT / "apps/game/Assets/YunJing/Models/VillageSignsC", [f"Q0{i}" for i in range(1, 5)]),
+    # PR #47: the assembled 3 × 5 m water-council corner (table, buckets, damp boards, flags) for Plaza_WaterCouncil.
+    (ROOT / "art/exports/qingxi-water-report-c/variants", ROOT / "apps/game/Assets/YunJing/Models/VillageReportC", ["VillageCorner-a"]),
 ]
 
 

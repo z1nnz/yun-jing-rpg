@@ -81,6 +81,7 @@ namespace YunJing
                 stations.SortingRequested += () => SetSorting(true);
                 RefreshSorting("選一份樣本，再選去向；三個選項都自由，沒有每日清單。");
             }
+            BuildWaterPanel();
         }
 
         void UpdateCollaboratorPanels()
@@ -98,6 +99,7 @@ namespace YunJing
                     encounterMessage.text = forest.MessageFresh ? forest.Message : "";
                 }
             }
+            UpdateWaterPanel();
             if (sortingOpen && UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame)
                 SetSorting(false);
         }

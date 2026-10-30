@@ -29,6 +29,7 @@ namespace YunJing
 
         public bool SortingOpen { get; set; }
         public event System.Action SortingRequested;
+        public event System.Action<string> ChoiceRequested;   // "waterworks" or "report": the creek chapter panels
 
         void Start()
         {
@@ -66,6 +67,10 @@ namespace YunJing
             if (field != null) return field;
             var clue = QingxiUpstreamClues.Current != null ? QingxiUpstreamClues.Current.Prompt(position) : null;
             if (clue != null) return clue;
+            var works = QingxiWaterworksSite.Current != null ? QingxiWaterworksSite.Current.Prompt(position) : null;
+            if (works != null) return works;
+            var report = QingxiVillageReport.Current != null ? QingxiVillageReport.Current.Prompt(position) : null;
+            if (report != null) return report;
             return fortunes != null ? fortunes.Prompt(position) : null;
         }
 
@@ -119,6 +124,15 @@ namespace YunJing
             if (forest != null && forest.NearLadder(position)) { message = forest.ToggleClimb(); return true; }
             if (fields != null && fields.TryInteract(position, out message)) return true;
             if (QingxiUpstreamClues.Current != null && QingxiUpstreamClues.Current.TryInteract(position, out message)) return true;
+            if (QingxiWaterworksSite.Current != null && QingxiWaterworksSite.Current.Near(position))
+            {
+                if (QingxiWaterworksSite.Chosen != null) { message = "水順著新槽流過閘門，一路流進田邊的池子。"; return true; }
+                ChoiceRequested?.Invoke("waterworks"); message = "工匠和村民圍了過來"; return true;
+            }
+            if (QingxiVillageReport.Current != null && QingxiVillageReport.Current.Near(position))
+            {
+                ChoiceRequested?.Invoke("report"); message = "在議水桌旁坐下"; return true;
+            }
             return fortunes != null && fortunes.TryInteract(position, out message);
         }
     }

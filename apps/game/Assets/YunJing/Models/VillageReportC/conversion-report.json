@@ -1,0 +1,17 @@
+[
+  {
+    "id": "VillageCorner-a",
+    "originalAuthor": "Eli-0731 / Codex",
+    "source": "art/exports/qingxi-water-report-c/variants/VillageCorner-a.glb",
+    "fbx": "apps/game/Assets/YunJing/Models/VillageReportC/VillageCorner-a.fbx",
+    "meshes": 190,
+    "triangles": 21776,
+    "size_m": [
+      3.0,
+      5.0,
+      1.23
+    ],
+    "bytes": 1225564,
+    "roundtrip": true
+  }
+]

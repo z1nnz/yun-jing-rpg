@@ -750,23 +750,23 @@
     {
       "id": "Plaza_WaterCouncil",
       "role": "議水村角（C：村民回應 #47）",
-      "model": "",
+      "model": "Assets/YunJing/Models/VillageReportC/VillageCorner-a.fbx",
       "x": -4.1,
       "z": -4.75,
-      "yaw": 0,
+      "yaw": 90,
       "author": "Eli-0731（a0902285608）",
-      "collider": "box",
+      "collider": "",
       "zone": "plaza",
       "owner": "a0902285608",
-      "status": "needed",
+      "status": "placed",
       "block": "A1",
       "phase": "P2",
       "footprint": [
-        5.0,
         2.8,
+        5.0,
         1.6
       ],
-      "note": "議事桌、翻面水情板、水桶、濕度木牌等八件；原設計 3 × 5 m，配合廣場道路改為 5 × 2.8 m"
+      "note": "議事桌、翻面水情板、水桶、濕度木牌等八件；原設計 3 × 5 m，配合廣場道路改為 5 × 2.8 m；2026-10-31 接入 #47 的組裝村角 VillageCorner-a（3 × 5 m，轉 90° 放），不加整塊碰撞，人可以走進去"
     },
     {
       "id": "Plaza_Well",
@@ -1161,6 +1161,18 @@
       "condition": "night",
       "passage": "村口明明只有兩盞石燈，但入夜後有人說看見三盞。白天走近，地上只有一圈淡淡的焦痕。",
       "reward": "線索：入夜後再來看看"
+    }
+  ],
+  "flats": [
+    {
+      "id": "old-channel",
+      "note": "joshsu54 的 R1 舊水路（tools/qingxi-waterworks-b/village/r1_village_layout.json）：取水口 z −12.09 到放流坡 z −18.69，件底 0.32 m；地面整平到 0.30 m，免得溪岸把前兩段埋住",
+      "x": -30.6,
+      "z": -15.4,
+      "halfX": 1.6,
+      "halfZ": 3.5,
+      "height": 0.3,
+      "blend": 1.5
     }
   ]
 }

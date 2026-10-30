@@ -64,6 +64,14 @@ namespace YunJing.Editor
             var placed = Placements(village);
             Creek(village);
             Scenery(village);
+            // The creek chapter in the village: joshsu54's old channel (PR #52) and Eli-0731's council corner (PR #47).
+            var works = QingxiWaterworksB.Build(village);
+            var council = layout.placements.First(p => p.id == "Plaza_WaterCouncil");
+            var report = new GameObject("WaterCouncil (village-report)").AddComponent<QingxiVillageReport>();
+            report.transform.SetParent(village, false);
+            report.point = new GameObject("Council talk point").transform;
+            report.point.SetParent(report.transform, false);
+            report.point.position = At(council.x, council.z);
 
             var walker = player.GetComponent<global::QingxiWorld.QingxiFirstPerson>();
             var spots = new (string name, Vector3 at, Vector3 look)[] {
@@ -75,6 +83,8 @@ namespace YunJing.Editor
                 ("回村分揀桌", zones.returnTable.position, zones.ret.position),
                 ("坊市", At(-6, -14), At(-11, -15)),
                 ("藥田", At(-18, -21), At(-25, -24)),
+                ("舊水路", works.point.position, works.point.position + new Vector3(1.2f, 0, 0)),
+                ("議水桌", report.point.position + new Vector3(0, 0, -2.5f), report.point.position),
             };
             walker.spotNames = spots.Select(s => s.name).ToArray();
             walker.spotPositions = spots.Select(s => s.at).ToArray();
