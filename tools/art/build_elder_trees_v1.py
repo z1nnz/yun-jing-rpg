@@ -5,15 +5,11 @@ and roots, about 61 000 leaf cards coloured by vertex colour). Output: art/expor
 per tree (three LODs named <Tree>_LOD0..2 for Unity's LOD group), the bark texture, one leaf palette per tree,
 review renders and a report.
 
-The trees (species, each reshaping the same trunk, branches and leaves; see TREES and shape()):
-  ElderGuardian  the hero itself, roots and all, jade canopy (a landmark, used once per area)
-  ElderCamphor   樟: tall, slightly twisted trunk, full round crown, deep green
-  ElderMaple     楓: short bent leaning trunk, wide flat red umbrella
-  ElderGinkgo    銀杏: straight tall trunk, narrow upright golden crown
-  ElderWillow    柳: crown hanging in curtains of long leaves, by the water
-  ElderPlum      梅: gnarled and low, sparse pale pink blossom
-  ElderCypress   柏: straight and tall, dark pointed crown
-  ElderSapling   小樹: slim and straight, light green
+The trees:
+  ElderGuardian  建木, the hero itself: every leaf, roots and all (the old forest's 守脈古樹)
+  JianmuSapling  a young 建木, the same tree a third the size, hanging roots and all (the player's own plot)
+The other species (camphor, maple, ginkgo, willow, plum, cypress, withered) are grown branch by branch, each with
+its own trunk and leaf, in build_species_trees_v1.py.
 Leaf colour: Unity's lit shader ignores vertex colour, so each leaf's colour is quantised into a 64-swatch
 palette texture and the leaf's UVs point at its swatch. Recolouring a variant maps the palette by brightness.
 LODs keep a random share of the leaf cards and grow each kept card about its own centre, so the canopy keeps
@@ -39,7 +35,7 @@ SWATCHES = 64
 FOOT = 3.15   # source height of the trunk's foot, where the hanging roots begin
 
 # keep: share of leaf cards per LOD; grow: card scale per LOD; wood: decimate ratio per LOD.
-LODS = [dict(keep=.3, grow=1.45, wood=1.0), dict(keep=.07, grow=2.6, wood=.3), dict(keep=.02, grow=4.2, wood=.08)]
+LODS = [dict(keep=1.0, grow=1.0, wood=1.0), dict(keep=.07, grow=2.6, wood=.3), dict(keep=.02, grow=4.2, wood=.08)]
 
 # Each species reshapes the same trunk, branches and leaves (see shape()):
 #   girth     trunk thickness about its own centre line (the crown keeps its size)
@@ -52,30 +48,12 @@ LODS = [dict(keep=.3, grow=1.45, wood=1.0), dict(keep=.07, grow=2.6, wood=.3), d
 BASE = dict(roots=False, girth=1, stretch=1, straight=0, twist=0, lean=0, crown=(1, 1, 1), cone=0, droop=0, leafz=1,
             scale=(1, 1, 1), mirror=False, colours=None, sparse=1)
 TREES = {
-    # 守護古樹: the hero itself, roots and all.
+    # 建木: the hero itself, roots and all (the 守脈古樹 in the old forest).
     'ElderGuardian': dict(BASE, roots=True, seed=1),
-    # 樟: a tall, slightly twisted trunk under a full round crown.
-    'ElderCamphor': dict(BASE, stretch=1.35, straight=.5, twist=25, crown=(1.1, 1.1, 1.1), scale=(.85, .85, .9),
-                         colours=['#1f4a2c', '#2f6b3a', '#468a48', '#6aa85a'], seed=2),
-    # 楓: short, bent and leaning, under a wide flat umbrella of red leaves.
-    'ElderMaple': dict(BASE, stretch=.8, straight=-.4, twist=-40, lean=.1, crown=(1.3, 1.3, .72), scale=(.68, .68, .72),
-                       mirror=True, colours=['#6e1d1a', '#a8321f', '#d4592a', '#eb9a45'], seed=3),
-    # 銀杏: a straight tall trunk, a narrow upright golden crown.
-    'ElderGinkgo': dict(BASE, girth=.72, stretch=1.25, straight=1, crown=(.72, .72, 1.6), cone=.3, scale=(.72, .72, .8),
-                        colours=['#8a6a1c', '#c99a2a', '#e3c247', '#f2df85'], seed=4),
-    # 柳: the crown hangs in curtains of long leaves; by the water.
-    'ElderWillow': dict(BASE, girth=.9, stretch=1.1, straight=.3, twist=15, crown=(1.15, 1.15, .9), droop=2.6, leafz=2.2,
-                        scale=(.78, .78, .82), mirror=True, colours=['#4f6b2a', '#7a9a3a', '#a8c45a', '#d4e48e'], seed=6),
-    # 梅: gnarled and low, a sparse crown of pale pink blossom.
-    'ElderPlum': dict(BASE, girth=.8, stretch=.7, straight=-.7, twist=-60, lean=.06, crown=(1.1, 1.1, .8), scale=(.55, .55, .6),
-                      colours=['#9c4a5e', '#d27a90', '#efb3c0', '#fbe6ea'], seed=7, sparse=.55),
-    # 柏: straight and tall, a dark pointed crown.
-    'ElderCypress': dict(BASE, girth=.62, stretch=1.05, straight=1, crown=(.72, .72, 2.3), cone=.85, scale=(.78, .78, .85),
-                         colours=['#183a33', '#24524a', '#386a5a', '#5a8a72'], seed=8),
-    # 小樹: a young one, slim and straight.
-    'ElderSapling': dict(BASE, girth=.7, stretch=1.25, straight=.8, lean=.08, crown=(.8, .8, 1.05), scale=(.42, .42, .46),
-                         mirror=True, colours=['#3d6b2f', '#5d9443', '#86b95c', '#b5d888'], seed=5, sparse=.6),
+    # A young 建木: the same tree, hanging roots and all, a third the size (the one in the player's own plot).
+    'JianmuSapling': dict(BASE, roots=True, scale=(.3, .3, .3), seed=9, sparse=.5),
 }
+# The other species are grown branch by branch in build_species_trees_v1.py.
 CROWN = 6.0      # source height of the crown base
 CROWN_TOP = 9.8  # source height of the crown top
 AXIS = []        # trunk centre line: (z, x, y) every 0.25 m, from the source trunk

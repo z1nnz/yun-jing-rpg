@@ -6,15 +6,16 @@ using UnityEngine;
 namespace YunJing.Editor
 {
     // Trees built on z1nnz's Elder World Tree (elder-tree-esg; tools/art/build_elder_trees_v1.py,
-    // art/exports/elder-trees-v1): the Guardian (the hero itself, hanging roots and all) and seven species reshaped
-    // from it: camphor, maple, ginkgo, willow, plum, cypress and a sapling (each its own trunk curve, girth and crown). Each FBX carries <Tree>_LOD0..2, so Unity builds the LOD group on import.
+    // art/exports/elder-trees-v1): the Guardian (建木, the hero itself, hanging roots and all) and its young one, and
+    // seven species grown branch by branch at its level of finish (tools/art/build_species_trees_v1.py): camphor,
+    // maple, ginkgo, willow, plum, cypress and the withered tree, each with its own trunk, bark and leaf. Each FBX carries <Tree>_LOD0..2, so Unity builds the LOD group on import.
     // The leaves are coloured from a 64-swatch palette (one per tree): it must stay unfiltered and uncompressed.
     // FBX and textures are copied into a gitignored model folder, as the other collaborator kits are.
     public static class QingxiElderTrees
     {
         public const string Models = "Assets/YunJing/Models/ElderTreesV1";   // copied from art/exports, gitignored
         const string MaterialFolder = "Assets/QingxiWorld/Generated/Materials/ElderTrees";
-        public static readonly string[] Kinds = { "ElderGuardian", "ElderCamphor", "ElderMaple", "ElderGinkgo", "ElderWillow", "ElderPlum", "ElderCypress", "ElderSapling" };
+        public static readonly string[] Kinds = { "ElderGuardian", "JianmuSapling", "ElderCamphor", "ElderMaple", "ElderGinkgo", "ElderWillow", "ElderPlum", "ElderCypress", "ElderWithered" };
 
         public static GameObject Source(string kind) => AssetDatabase.LoadAssetAtPath<GameObject>($"{Models}/{kind}.fbx");
 
@@ -47,12 +48,14 @@ namespace YunJing.Editor
                     ti.wrapMode = TextureWrapMode.Clamp; ti.SaveAndReimport();
                 }
             }
-            var bark = Mat("ElderBark");
-            bark.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{Models}/ElderBark.png"));
-            bark.SetColor("_BaseColor", Color.white); bark.SetFloat("_Smoothness", .12f);
-            EditorUtility.SetDirty(bark);
             foreach (var kind in Kinds)
             {
+                // The Guardian and its sapling keep the source bark; each grown species has its own.
+                string barkName = File.Exists(Path.Combine(dst, kind + "_Bark.png")) ? kind + "_Bark" : "ElderBark";
+                var bark = Mat(barkName);
+                bark.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{Models}/{barkName}.png"));
+                bark.SetColor("_BaseColor", Color.white); bark.SetFloat("_Smoothness", .12f);
+                EditorUtility.SetDirty(bark);
                 var path = $"{Models}/{kind}.fbx";
                 var importer = (ModelImporter)AssetImporter.GetAtPath(path);
                 if (importer == null) throw new FileNotFoundException("Elder tree missing", path);
@@ -65,7 +68,7 @@ namespace YunJing.Editor
                 importer.importNormals = ModelImporterNormals.Import;   // the source's volume normals shade the canopy softly
                 importer.materialImportMode = ModelImporterMaterialImportMode.ImportViaMaterialDescription;
                 importer.materialLocation = ModelImporterMaterialLocation.InPrefab;
-                importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), "ElderBark"), bark);
+                importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), barkName), bark);
                 importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), kind + "_Leaves"), leaves);
                 importer.SaveAndReimport();
             }

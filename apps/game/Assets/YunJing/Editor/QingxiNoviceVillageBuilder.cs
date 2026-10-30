@@ -785,7 +785,9 @@ namespace YunJing.Editor
 
         // The dressing plan (tools/qingxi-terrain/world-dressing.json, docs/execution/novice-world-dressing-plan.md).
         [Serializable] class DressingBiome { public string id, name; public int trees, groves, boulders, grass, sedge; }
-        [Serializable] class DressingBlock { public string id, biome, status; }
+        [Serializable] class SpeciesWeight { public string kind; public float weight; }
+        [Serializable] class Landmark { public string kind, note; public float x, z, yaw, height, sink; }
+        [Serializable] class DressingBlock { public string id, biome, status, waterside; public SpeciesWeight[] species; public Landmark[] landmarks; }
         [Serializable] class DressingPlan { public DressingBiome[] biomes; public DressingBlock[] blocks; }
 
         // Groves, not a grid: trees gather in a few groves with open ground between them, singles in the gaps;
@@ -794,7 +796,7 @@ namespace YunJing.Editor
         // Nothing on pads (3.5 m), roads (3 m), the creek or within 4 m of the block edge.
         static void Dressing(Transform parent, string blockId)
         {
-            var plan = JsonUtility.FromJson<DressingPlan>(File.ReadAllText(Path.Combine(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..")), "tools/qingxi-terrain/world-dressing.json")));
+            var plan = Plan();
             var entry = plan.blocks.FirstOrDefault(b => b.id == blockId);
             var biome = plan.biomes.FirstOrDefault(b => entry != null && b.id == entry.biome);
             if (biome == null) { BlockTrees(parent); return; }
@@ -821,24 +823,26 @@ namespace YunJing.Editor
                 return new Vector2(float.NaN, float.NaN);
             }
             int trees = 0, rocks = 0, sedges = 0, elders = 0;
-            // Species built on z1nnz's Elder World Tree (QingxiElderTrees), mixed with the pines and bamboo. By the water:
-            // willow and bamboo. On dry ground: pine, camphor, cypress, maple, ginkgo, plum and saplings, by weight. A
-            // grove keeps one species (a stand of maples, of ginkgo, of cypress); single trees mix. Heights in metres.
+            // Tree species per block (world-dressing.json `species`): one or two that belong there, not every kind
+            // everywhere. "pine" is the CollaboratorWorldV1 pine; the others are grown from z1nnz's Elder World Tree
+            // (QingxiElderTrees). A grove keeps one species, mostly the block's main one; `waterside` grows by the
+            // creek among the bamboo. Natural heights in metres.
             bool elder = QingxiElderTrees.Available;
             if (elder) ElderKit();
-            var heights = new System.Collections.Generic.Dictionary<string, float> {
-                ["ElderCamphor"] = 7.5f, ["ElderMaple"] = 5.5f, ["ElderGinkgo"] = 8f, ["ElderWillow"] = 6f,
-                ["ElderPlum"] = 3.6f, ["ElderCypress"] = 9f, ["ElderSapling"] = 3.4f };
-            var dry = new (string kind, float weight)[] { (null, .35f), ("ElderCamphor", .2f), ("ElderCypress", .15f), ("ElderMaple", .1f),
-                ("ElderGinkgo", .08f), ("ElderPlum", .07f), ("ElderSapling", .05f) };
-            string Pick((string kind, float weight)[] table) { float t = R(); foreach (var (k, w) in table) { if ((t -= w) <= 0) return k; } return table[0].kind; }
-            string GroveKind() => !elder ? null : new[] { null, null, "ElderCamphor", "ElderCamphor", "ElderMaple", "ElderGinkgo", "ElderCypress" }[random.Next(7)];
+            var heights = NaturalHeight;
+            var mix = elder && entry.species != null && entry.species.Length > 0
+                ? entry.species.Select(w => (kind: w.kind == "pine" ? null : w.kind, weight: w.weight)).ToArray()
+                : new (string kind, float weight)[] { (null, 1f) };
+            float total = mix.Sum(m => m.weight);
+            string Pick() { float t = R() * total; foreach (var (k, w) in mix) { if ((t -= w) <= 0) return k; } return mix[0].kind; }
+            string GroveKind() => R() < .65f ? mix.OrderByDescending(m => m.weight).First().kind : Pick();
+            string waterside = elder && !string.IsNullOrEmpty(entry.waterside) ? entry.waterside : null;
             void PlantTree(float x, float z, string kind = "")
             {
                 float wet = QingxiVillageTerrain.CreekDistance(layout, x, z, out _);
                 bool cane = wet < 16f ? R() < .75f : R() < .15f;
-                if (elder && wet < 16f && R() < .4f) { cane = false; kind = "ElderWillow"; }   // willows lean over the water
-                else if (kind == "") kind = elder ? Pick(dry) : null;
+                if (waterside != null && wet < 16f && R() < .4f) { cane = false; kind = waterside; }   // willows lean over the water
+                else if (kind == "") kind = Pick();
                 if (cane) Tree(bamboo, root, new Vector3(x, 0, z), 4.2f + R() * 1.8f, R() * 360);
                 else if (kind != null)
                 {
@@ -907,14 +911,58 @@ namespace YunJing.Editor
                     tuft.transform.localPosition = At(at.x, at.y) + Vector3.down * .05f;
                     i++; sedges++;
                 }
-            // The territory's guardian: the Elder World Tree itself, roots and all, on the slope above the yard corner.
-            if (elder && blockId == "TR")
-            {
-                Tree(QingxiElderTrees.Source("ElderGuardian"), root, new Vector3(-17.5f, 0, -17.5f), 9.8f, 40);
-                elders++; trees++;
-            }
+            elders += Landmarks(root, blockId);
+            trees += entry.landmarks?.Length ?? 0;
             Debug.Log($"QINGXI_DRESSING {blockId} ({biome.name}): {trees} trees ({elders} elder-tree kin) in {groves.Count} groves, {rocks} boulders, {sedges} sedge tufts");
         }
+
+        static DressingPlan Plan() => JsonUtility.FromJson<DressingPlan>(File.ReadAllText(Path.Combine(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..")), "tools/qingxi-terrain/world-dressing.json")));
+
+        // Single trees placed on purpose (foreshadowing; docs/execution/tree-species-and-foreshadowing.md): the old
+        // forest's 建木, the young one in the player's plot, the sick tree by the stopped creek. Each stands where it
+        // is written, moved at most a few metres off a pad, road, slot or the creek.
+        static int Landmarks(Transform root, string blockId)
+        {
+            var entry = Plan().blocks.FirstOrDefault(b => b.id == blockId);
+            if (entry?.landmarks == null || !QingxiElderTrees.Available) return 0;
+            ElderKit();
+            bool Clear(Vector2 p) => QingxiVillageTerrain.PadDistance(layout, p.x, p.y, out _) > 2.5f && QingxiVillageTerrain.RoadDistance(layout, p.x, p.y, out _) > 2f
+                && QingxiVillageTerrain.CreekDistance(layout, p.x, p.y, out _) > (layout.creek != null ? layout.creek.width * .5f + 1.5f : 0)
+                && (layout.placements == null || layout.placements.All(s => Vector2.Distance(new Vector2(s.x, s.z), p) > 3f));
+            foreach (var mark in entry.landmarks)
+            {
+                var at = new Vector2(mark.x, mark.z);
+                for (int ring = 0; ring < 9 && !Clear(at); ring++)
+                    at = new Vector2(mark.x, mark.z) + new Vector2(Mathf.Cos(ring * 2.4f), Mathf.Sin(ring * 2.4f)) * (1 + ring);
+                var source = QingxiElderTrees.Source(mark.kind);
+                if (source == null) throw new FileNotFoundException("Landmark tree missing", mark.kind);
+                Tree(source, root, new Vector3(at.x, 0, at.y), mark.height, mark.yaw);
+                var placed = root.GetChild(root.childCount - 1);
+                placed.position += Vector3.down * mark.sink;   // 建木's hanging roots arch out and plunge into the soil
+                placed.name = $"Landmark {mark.kind} - {mark.note}";
+                Debug.Log($"QINGXI_LANDMARK {blockId} {mark.kind} at ({at.x:0.0}, {at.y:0.0})");
+            }
+            return entry.landmarks.Length;
+        }
+
+        /// <summary>The block's tree species (world-dressing.json): a picker returning a QingxiElderTrees kind, or null for a pine.</summary>
+        static Func<string> SpeciesPicker(string blockId, System.Random random)
+        {
+            var entry = Plan().blocks.FirstOrDefault(b => b.id == blockId);
+            if (entry?.species == null || entry.species.Length == 0 || !QingxiElderTrees.Available) return () => null;
+            ElderKit();
+            float total = entry.species.Sum(w => w.weight);
+            return () =>
+            {
+                float t = (float)random.NextDouble() * total;
+                foreach (var w in entry.species) if ((t -= w.weight) <= 0) return w.kind == "pine" ? null : w.kind;
+                return null;
+            };
+        }
+
+        static readonly System.Collections.Generic.Dictionary<string, float> NaturalHeight = new System.Collections.Generic.Dictionary<string, float> {
+            ["ElderGuardian"] = 9.8f, ["JianmuSapling"] = 2.9f, ["ElderCamphor"] = 8.4f, ["ElderMaple"] = 5.4f, ["ElderGinkgo"] = 10.5f,
+            ["ElderWillow"] = 6.5f, ["ElderPlum"] = 4.5f, ["ElderCypress"] = 11.4f, ["ElderWithered"] = 5.4f };
 
         static bool elderCopied;
         static void ElderKit() { if (!elderCopied) { QingxiElderTrees.Copy(); elderCopied = true; } }
@@ -961,6 +1009,7 @@ namespace YunJing.Editor
             var bamboo = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/YunJing/Models/CollaboratorWorldV1/BambooClump_v001.fbx");
             if (pine == null || bamboo == null) throw new InvalidOperationException("CollaboratorWorldV1 pine/bamboo models missing");
             var random = new System.Random(29);
+            var pick = SpeciesPicker("A1", new System.Random(31));
             int n = 0;
             for (float angle = 0; angle < 360; angle += 15)
             {
@@ -971,8 +1020,13 @@ namespace YunJing.Editor
                 if (QingxiVillageTerrain.PadDistance(layout, at.x, at.z, out _) < 3f || QingxiVillageTerrain.RoadDistance(layout, at.x, at.z, out _) < 3f
                     || QingxiVillageTerrain.CreekDistance(layout, at.x, at.z, out _) < 6f
                     || layout.herbs.Any(h => Vector2.Distance(new Vector2(h.x, h.z), new Vector2(at.x, at.z)) < 4f)) continue;
-                Tree(n++ % 3 == 0 ? bamboo : pine, root, at, n % 3 == 0 ? 4.5f : 9f + (float)random.NextDouble() * 3, (float)random.NextDouble() * 360);
+                // A1's species (world-dressing.json): camphor, plum and pine around the village, bamboo in between.
+                var kind = n % 3 == 0 ? null : pick();
+                if (n++ % 3 == 0) Tree(bamboo, root, at, 4.5f, (float)random.NextDouble() * 360);
+                else if (kind != null) Tree(QingxiElderTrees.Source(kind), root, at, NaturalHeight[kind] * (.85f + (float)random.NextDouble() * .3f), (float)random.NextDouble() * 360);
+                else Tree(pine, root, at, 9f + (float)random.NextDouble() * 3, (float)random.NextDouble() * 360);
             }
+            Landmarks(root, "A1");
             // a darker stand of pines behind the forest encounter
             foreach (var x in new[] { -13f, -10f, 10f, 13f, -6f, 6f })
                 Tree(pine, root, new Vector3(x, 0, 30 + Mathf.Abs(x) * .3f), 10f, x * 31);
@@ -1042,7 +1096,7 @@ namespace YunJing.Editor
         // twin that keeps its colour map, tint and alpha cut-off; the sway height and strength follow the kind of
         // plant. Matched by the name of the placed model, so a bamboo fence or a bamboo tray stays still.
         static readonly (string key, float height, float strength)[] WindKinds = {
-            ("CommonPine", 7f, .12f), ("Elder", 7f, .07f), ("BambooClump", 6f, .32f), ("QX_WaterReeds", 1.8f, .12f), ("WildShrub", 1.5f, .06f),
+            ("CommonPine", 7f, .12f), ("Elder", 7f, .07f), ("Jianmu", 3f, .05f), ("BambooClump", 6f, .32f), ("QX_WaterReeds", 1.8f, .12f), ("WildShrub", 1.5f, .06f),
         };
 
         static int WindFoliage(Transform village)

@@ -4,107 +4,29 @@
   "trees": {
     "ElderGuardian": {
       "triangles_per_lod": [
-        63388,
+        147222,
         16638,
         4597
       ],
       "size_m": [
         9.63,
-        6.8,
-        9.76
+        6.77,
+        9.78
       ],
       "min_z": 0.0
     },
-    "ElderCamphor": {
+    "JianmuSapling": {
       "triangles_per_lod": [
-        59799,
-        15744,
-        4323
+        87405,
+        12202,
+        3378
       ],
       "size_m": [
-        9.27,
-        6.51,
-        7.2
+        2.91,
+        2.04,
+        2.94
       ],
-      "min_z": 0.11
-    },
-    "ElderMaple": {
-      "triangles_per_lod": [
-        59627,
-        15570,
-        4377
-      ],
-      "size_m": [
-        8.21,
-        6.57,
-        3.61
-      ],
-      "min_z": 0.09
-    },
-    "ElderGinkgo": {
-      "triangles_per_lod": [
-        59394,
-        15339,
-        4322
-      ],
-      "size_m": [
-        5.29,
-        3.15,
-        7.67
-      ],
-      "min_z": 0.1
-    },
-    "ElderWillow": {
-      "triangles_per_lod": [
-        59377,
-        15304,
-        4339
-      ],
-      "size_m": [
-        8.68,
-        5.8,
-        5.25
-      ],
-      "min_z": 0.1
-    },
-    "ElderPlum": {
-      "triangles_per_lod": [
-        43346,
-        11651,
-        3169
-      ],
-      "size_m": [
-        5.43,
-        4.93,
-        3.02
-      ],
-      "min_z": 0.07
-    },
-    "ElderCypress": {
-      "triangles_per_lod": [
-        59262,
-        15431,
-        4265
-      ],
-      "size_m": [
-        5.59,
-        2.81,
-        9.93
-      ],
-      "min_z": 0.1
-    },
-    "ElderSapling": {
-      "triangles_per_lod": [
-        45227,
-        11983,
-        3272
-      ],
-      "size_m": [
-        3.46,
-        2.25,
-        3.46
-      ],
-      "min_z": 0.06
+      "min_z": 0.0
     }
   }
 }

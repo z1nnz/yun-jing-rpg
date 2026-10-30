@@ -1,0 +1,93 @@
+{
+  "ElderCamphor": {
+    "triangles_per_lod": [
+      149225,
+      28446,
+      9595
+    ],
+    "size_m": [
+      6.72,
+      6.81,
+      8.4
+    ],
+    "leaf": "oval"
+  },
+  "ElderMaple": {
+    "triangles_per_lod": [
+      159922,
+      28771,
+      8992
+    ],
+    "size_m": [
+      8.59,
+      9.5,
+      5.45
+    ],
+    "leaf": "palmate"
+  },
+  "ElderGinkgo": {
+    "triangles_per_lod": [
+      129320,
+      23195,
+      6837
+    ],
+    "size_m": [
+      6.52,
+      7.88,
+      10.55
+    ],
+    "leaf": "fan"
+  },
+  "ElderWillow": {
+    "triangles_per_lod": [
+      115567,
+      56106,
+      4769
+    ],
+    "size_m": [
+      3.87,
+      5.43,
+      6.52
+    ],
+    "leaf": "lance"
+  },
+  "ElderPlum": {
+    "triangles_per_lod": [
+      125225,
+      19363,
+      6414
+    ],
+    "size_m": [
+      2.64,
+      3.18,
+      4.53
+    ],
+    "leaf": "blossom"
+  },
+  "ElderCypress": {
+    "triangles_per_lod": [
+      215890,
+      34274,
+      8848
+    ],
+    "size_m": [
+      3.38,
+      3.78,
+      11.0
+    ],
+    "leaf": "spray"
+  },
+  "ElderWithered": {
+    "triangles_per_lod": [
+      9107,
+      4779,
+      2361
+    ],
+    "size_m": [
+      3.82,
+      4.61,
+      5.36
+    ],
+    "leaf": "curl"
+  }
+}

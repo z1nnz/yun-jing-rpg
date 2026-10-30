@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "新手大世界的填充計畫（2026-10-31）。biomes（陣列，Unity JsonUtility 讀得到）是地被類型與每 100 × 100 m 的密度目標，Unity 的區塊生成照這裡的數字擺樹、石頭和草；blocks 是每一塊的主題與要補的東西。說明見 docs/execution/novice-world-dressing-plan.md。",
+  "note": "新手大世界的填充計畫（2026-10-31）。biomes（陣列，Unity JsonUtility 讀得到）是地被類型與每 100 × 100 m 的密度目標，Unity 的區塊生成照這裡的數字擺樹、石頭和草；blocks 是每一塊的主題與要補的東西。說明見 docs/execution/novice-world-dressing-plan.md。species：這一塊的樹種與比重（pine＝松，其他是 elder-trees-v1 的樹），一片樹林只種一種；waterside：溪邊的樹；landmarks：刻意擺的單棵樹（伏筆），見 docs/execution/tree-species-and-foreshadowing.md。",
   "biomes": [
     {
       "id": "village",
@@ -134,6 +134,39 @@
         "菜圃、晾衣架、柴堆",
         "村中古樹下的石凳",
         "溪邊洗衣石"
+      ],
+      "species": [
+        {
+          "kind": "ElderCamphor",
+          "weight": 0.45
+        },
+        {
+          "kind": "pine",
+          "weight": 0.25
+        },
+        {
+          "kind": "ElderPlum",
+          "weight": 0.3
+        }
+      ],
+      "waterside": "ElderWillow",
+      "landmarks": [
+        {
+          "kind": "ElderWithered",
+          "x": -20,
+          "z": 9,
+          "yaw": 210,
+          "height": 5.4,
+          "note": "病樹：停了的溪邊，一群活樹當中只有它枯著。終章「萬木春」（病樹前頭萬木春）時發芽。"
+        },
+        {
+          "kind": "ElderGinkgo",
+          "x": 37,
+          "z": 31,
+          "yaw": 40,
+          "height": 9.5,
+          "note": "提案：民居四（空屋）屋後，新手世界唯一一棵銀杏。給阿穗和下一站金穗的伏筆。"
+        }
       ]
     },
     {
@@ -145,7 +178,19 @@
         "茶亭前的長凳與茶棚",
         "路邊石群與野花",
         "遠處看得到村門"
-      ]
+      ],
+      "species": [
+        {
+          "kind": "ElderCamphor",
+          "weight": 0.55
+        },
+        {
+          "kind": "pine",
+          "weight": 0.45
+        }
+      ],
+      "waterside": "ElderWillow",
+      "landmarks": []
     },
     {
       "id": "A3",
@@ -156,7 +201,19 @@
         "磨坊旁的木柴與麻袋",
         "釣魚點的石台",
         "往北進 D3 的小徑"
-      ]
+      ],
+      "species": [
+        {
+          "kind": "ElderWillow",
+          "weight": 0.6
+        },
+        {
+          "kind": "ElderCamphor",
+          "weight": 0.4
+        }
+      ],
+      "waterside": "ElderWillow",
+      "landmarks": []
     },
     {
       "id": "A4",
@@ -200,6 +257,84 @@
         "瞭望台與獵人小屋",
         "倒木、樹樁",
         "接通 A1 與 D3 的溪"
+      ],
+      "species": [
+        {
+          "kind": "ElderCypress",
+          "weight": 0.55
+        },
+        {
+          "kind": "pine",
+          "weight": 0.45
+        }
+      ],
+      "waterside": "",
+      "landmarks": [
+        {
+          "kind": "ElderGuardian",
+          "x": -5,
+          "z": 128,
+          "yaw": 30,
+          "height": 12.5,
+          "note": "建木：古林的守脈古樹（z1nnz 生命樹原版）。「各地都有一棵，是同一種樹。」",
+          "sink": 2.7
+        },
+        {
+          "kind": "ElderCypress",
+          "x": -5.0,
+          "z": 139.0,
+          "yaw": 0,
+          "height": 10.5,
+          "note": "七棵柏之一：七個同學在斷脈之夜以後為師父種的，圍著建木"
+        },
+        {
+          "kind": "ElderCypress",
+          "x": -13.6,
+          "z": 134.9,
+          "yaw": 51,
+          "height": 10.5,
+          "note": "七棵柏之二：七個同學在斷脈之夜以後為師父種的，圍著建木"
+        },
+        {
+          "kind": "ElderCypress",
+          "x": -15.7,
+          "z": 125.6,
+          "yaw": 102,
+          "height": 10.5,
+          "note": "七棵柏之三：七個同學在斷脈之夜以後為師父種的，圍著建木"
+        },
+        {
+          "kind": "ElderCypress",
+          "x": -9.8,
+          "z": 118.1,
+          "yaw": 153,
+          "height": 10.5,
+          "note": "七棵柏之四：七個同學在斷脈之夜以後為師父種的，圍著建木"
+        },
+        {
+          "kind": "ElderWithered",
+          "x": -0.2,
+          "z": 118.1,
+          "yaw": 204,
+          "height": 6.5,
+          "note": "七棵柏之一，枯了：冥道的那一個（他吊在九夜，三百年沒回來照顧）"
+        },
+        {
+          "kind": "ElderCypress",
+          "x": 5.7,
+          "z": 125.6,
+          "yaw": 255,
+          "height": 10.5,
+          "note": "七棵柏之六：七個同學在斷脈之夜以後為師父種的，圍著建木"
+        },
+        {
+          "kind": "ElderCypress",
+          "x": 3.6,
+          "z": 134.9,
+          "yaw": 306,
+          "height": 10.5,
+          "note": "七棵柏之七：七個同學在斷脈之夜以後為師父種的，圍著建木"
+        }
       ]
     },
     {
@@ -222,7 +357,19 @@
         "坡上松林成片",
         "斷流石壩（核心組）",
         "源頭的水脈共鳴石"
-      ]
+      ],
+      "species": [
+        {
+          "kind": "ElderMaple",
+          "weight": 0.75
+        },
+        {
+          "kind": "pine",
+          "weight": 0.25
+        }
+      ],
+      "waterside": "ElderWillow",
+      "landmarks": []
     },
     {
       "id": "D4",
@@ -388,6 +535,28 @@
         "四周緩坡山上的松林",
         "小泉邊的竹叢與苔石",
         "院子保持空曠，留給田和練功地"
+      ],
+      "species": [
+        {
+          "kind": "pine",
+          "weight": 0.6
+        },
+        {
+          "kind": "ElderPlum",
+          "weight": 0.4
+        }
+      ],
+      "waterside": "",
+      "landmarks": [
+        {
+          "kind": "JianmuSapling",
+          "x": 6.5,
+          "z": 2,
+          "yaw": 120,
+          "height": 3.4,
+          "note": "自家院子裡悄悄長著的小建木，和古林那棵一樣有懸空的根。不解釋。住處升級時跟著長大。",
+          "sink": 0.8
+        }
       ]
     }
   ]

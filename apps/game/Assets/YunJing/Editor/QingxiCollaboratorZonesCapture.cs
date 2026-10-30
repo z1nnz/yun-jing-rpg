@@ -53,6 +53,9 @@ namespace YunJing.Editor
             Shot("17-gate-square", new Vector3(6, 5, -40), new Vector3(0, 1, -28));
             Shot("18-homes-ne", new Vector3(14, 9, -2), new Vector3(27, 1, 18));
             Shot("19-smithy-shops", new Vector3(18, 9, -14), new Vector3(33, 1, -15));
+            // Foreshadowing trees (docs/execution/tree-species-and-foreshadowing.md).
+            Shot("20-sick-tree-by-the-creek", new Vector3(-12, 2.2f, 2), new Vector3(-20, 2.5f, 9));
+            Shot("21-lone-ginkgo-behind-house-4", new Vector3(26, 3, 20), new Vector3(37, 4, 31));
             // K5: the neighbouring blocks open next to the village, to check the seams and the far side.
             foreach (var (id, _) in QingxiBlockBuilder.Blocks)
                 if (File.Exists(QingxiBlockBuilder.ScenePath(id))) EditorSceneManager.OpenScene(QingxiBlockBuilder.ScenePath(id), OpenSceneMode.Additive);
@@ -154,6 +157,8 @@ namespace YunJing.Editor
             Shot("18-ground-closeup", new Vector3(-10, 1.2f, -95), new Vector3(-14, 0, -88));
             Shot("19-creek-junction-above", new Vector3(-22, 16, 36), new Vector3(-50, 0, 56));
             Shot("20-creek-junction-eye", new Vector3(-28, 3, 44), new Vector3(-52, 1, 56));
+            Shot("21-jianmu-in-the-old-forest", new Vector3(8, 2.2f, 114), new Vector3(-5, 4, 128));
+            Shot("22-d3-maple-valley", new Vector3(-60, 14, 70), new Vector3(-85, 0, 95));
             Debug.Log($"QINGXI_UPSTREAM_CAPTURED to {dir}");
         }
 
@@ -190,6 +195,7 @@ namespace YunJing.Editor
             Shot("07-spring", new Vector3(2, 3, 10), new Vector3(2, 0, 17.5f));
             Shot("08-rim-in-mist", new Vector3(0, 1.7f, 4), new Vector3(-22, 4, 22));
             Shot("09-top", new Vector3(0, 70, -1), new Vector3(0, 0, 0));
+            Shot("12-young-jianmu", new Vector3(8, 1.6f, -7), new Vector3(11.6f, 1.2f, -1.2f));
             var room = GameObject.Find("QingxiLodgingInterior (the room)").transform.position;
             Shot("10-room", room + new Vector3(0, 1.6f, -2.1f), room + new Vector3(0, 1, 1.5f), false);
             Shot("11-room-reverse", room + new Vector3(2.8f, 2.4f, 2f), room + new Vector3(-1, .5f, -1), false);
