@@ -118,7 +118,7 @@ Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR
 
 # 補充的樹種
 
-## 柏：cypress.png
+## 柏：cypress.png（已改成圓柏，見最後的 juniper.png，這段不用生）
 
 ```
 Please generate one image from this prompt:
@@ -210,4 +210,90 @@ Please generate one image from this prompt:
 Sprite sheet of 9 separate hand-painted foliage clusters for a stylized 3D game tree, arranged in a 3 by 3 grid with clear empty space between them, each cluster a different shape (round clumps, elongated sprays, small tufts), made of short dark twigs with five-petal pale pink and white plum blossoms and a few buds, each cluster lit from the upper left: bright warm highlights on top, soft cool shadow at the bottom, crisp painted leaf edges around the outline, no branches, no trunk, flat pure white background, square 1:1, orthographic, no shadows on the background.
 Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
 Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye, background scenery, sky, ground
+```
+
+## 圓柏・真柏（取代柏）：juniper.png
+
+照 z1nnz 給的真柏盆景：銀白枯木和褐色活樹皮扭在一起、整棵斜傾、一層層平平的葉團、有一枝往下垂。
+
+```
+Please generate one image from this prompt:
+
+Reference sheet of a single ancient Chinese juniper tree (Juniperus chinensis, the shimpaku juniper loved in bonsai) grown to full size, beside an old temple, one of a ring of seven around a sacred tree, about 7 m tall with a crown 11 m wide, silhouette: a low, heavily twisted trunk made of silver-white weathered deadwood (shari and jin, smooth and bleached like driftwood) spiralling together with a narrow living vein of reddish-brown bark, the whole tree leaning strongly to one side, a few thick limbs swinging out almost level and one limb cascading down below the crown, foliage: dense flat layered pads of fine scale-leaf sprays in rich green, bright yellow-green on top, darker underneath, pads of different sizes with clear gaps between the layers where the silver branches show, base: the trunk only slightly widens where it meets the ground and a few roots grip the soil and dive into it, a little moss at the foot. Layout: one large three-quarter view of the tree on a small patch of grass on the left two thirds, and a front view and a side view of the same tree smaller on the right, plain light warm-grey background, even soft lighting, one tree only, not in a pot.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye, bonsai pot, miniature
+```
+
+# 樹皮貼圖（無縫，可選）
+
+樹幹現在用的是生命樹樹皮換色，近看紋理太像漩渦。這七張是正方形、四邊能接的樹皮貼圖，存成標題檔名。
+
+## 樟樹皮：bark-camphor.png
+
+```
+Please generate one image from this prompt:
+
+Seamless tileable square texture of deeply furrowed warm brown camphor bark with long vertical ridges and grey lichen patches, the bark pattern running vertically, viewed straight on, real-world scale about 1 m by 1 m, hand-painted: large soft colour variation, painterly brush strokes following the bark, readable cracks and ridges, even flat lighting (no shadows, no highlights baked in), edges must tile seamlessly on all four sides, square 1:1.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
+```
+
+## 楓樹皮：bark-maple.png
+
+```
+Please generate one image from this prompt:
+
+Seamless tileable square texture of smooth pale grey-brown maple bark with faint horizontal lenticels and a few shallow cracks, the bark pattern running vertically, viewed straight on, real-world scale about 1 m by 1 m, hand-painted: large soft colour variation, painterly brush strokes following the bark, readable cracks and ridges, even flat lighting (no shadows, no highlights baked in), edges must tile seamlessly on all four sides, square 1:1.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
+```
+
+## 銀杏樹皮：bark-ginkgo.png
+
+```
+Please generate one image from this prompt:
+
+Seamless tileable square texture of grey-brown ginkgo bark with deep irregular vertical fissures and corky ridges, the bark pattern running vertically, viewed straight on, real-world scale about 1 m by 1 m, hand-painted: large soft colour variation, painterly brush strokes following the bark, readable cracks and ridges, even flat lighting (no shadows, no highlights baked in), edges must tile seamlessly on all four sides, square 1:1.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
+```
+
+## 柳樹皮：bark-willow.png
+
+```
+Please generate one image from this prompt:
+
+Seamless tileable square texture of dark grey willow bark with deep criss-crossing diamond-shaped furrows, the bark pattern running vertically, viewed straight on, real-world scale about 1 m by 1 m, hand-painted: large soft colour variation, painterly brush strokes following the bark, readable cracks and ridges, even flat lighting (no shadows, no highlights baked in), edges must tile seamlessly on all four sides, square 1:1.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
+```
+
+## 松樹皮：bark-pine.png
+
+```
+Please generate one image from this prompt:
+
+Seamless tileable square texture of reddish-brown pine bark broken into thick irregular plates with dark cracks between them, the bark pattern running vertically, viewed straight on, real-world scale about 1 m by 1 m, hand-painted: large soft colour variation, painterly brush strokes following the bark, readable cracks and ridges, even flat lighting (no shadows, no highlights baked in), edges must tile seamlessly on all four sides, square 1:1.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
+```
+
+## 圓柏樹皮：bark-juniper.png
+
+```
+Please generate one image from this prompt:
+
+Seamless tileable square texture of twisting juniper bark: reddish-brown fibrous strips spiralling around silver-white smooth weathered deadwood, the bark pattern running vertically, viewed straight on, real-world scale about 1 m by 1 m, hand-painted: large soft colour variation, painterly brush strokes following the bark, readable cracks and ridges, even flat lighting (no shadows, no highlights baked in), edges must tile seamlessly on all four sides, square 1:1.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
+```
+
+## 梅樹皮：bark-plum.png
+
+```
+Please generate one image from this prompt:
+
+Seamless tileable square texture of almost black rough plum bark with small cracks and a few grey-green lichen spots, the bark pattern running vertically, viewed straight on, real-world scale about 1 m by 1 m, hand-painted: large soft colour variation, painterly brush strokes following the bark, readable cracks and ridges, even flat lighting (no shadows, no highlights baked in), edges must tile seamlessly on all four sides, square 1:1.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
 ```

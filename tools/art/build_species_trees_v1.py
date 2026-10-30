@@ -147,13 +147,16 @@ SPECIES = {
                  leaf='needle', size=(.12, .18), cards=130000, cluster=.8, flat=.25, roots=4, flare=1.2,
                  bark=dict(tint='#8a6248', contrast=1.4, scale=(1.0, 1.0)),
                  colours=['#16301f', '#22482a', '#3a6a34', '#6a9440', '#a8c058']),
-    # 柏: straight and tall, dense rising branches in a narrow cone (the cypress ring around 建木).
-    'Cypress': dict(floor=.1, height=15, trunk=(14.5, .42), lean=.04, bend=.15, gnarl=.03, zig=0, split=False,
-                    levels=[dict(n=40, angle=(30, 48), length=(.22, .04), radius=.32, start=.1, gnarl=.1, up=.22),
-                            dict(n=5, angle=(25, 45), length=.5, radius=.5, start=.2, gnarl=.1, up=.2)],
-                    leaf='spray', size=(.12, .2), cards=70000, cluster=.55, flat=.8, roots=4, flare=1.18,
-                    bark=dict(tint='#6a5444', contrast=1.1, scale=(.9, 2.6)),
-                    colours=['#1a3420', '#28502c', '#3e6e34', '#68923e', '#a4b858']),
+    # 圓柏 / 真柏 (Chinese juniper, the bonsai z1nnz pointed to): a low trunk of silver-white deadwood twisting with a
+    # brown live vein, leaning hard to one side; limbs swing out level and one cascades down; the foliage is dense
+    # flat pads of fine scale leaves, layered and uneven, bright on top.
+    'Cypress': dict(floor=.1, height=7, trunk=(4.4, .7), lean=.55, bend=1.1, gnarl=.18, zig=0, split=True,
+                    levels=[dict(n=6, angle=(55, 95), length=1.15, radius=.62, start=.3, gnarl=.3, up=.02, zig=.2),
+                            dict(n=5, angle=(35, 70), length=.5, radius=.55, start=.2, gnarl=.3, up=.08),
+                            dict(n=4, angle=(30, 65), length=.42, radius=.5, start=.2, gnarl=.3, up=.1)],
+                    leaf='spray', size=(.1, .16), cards=120000, cluster=.85, flat=.4, roots=4, flare=1.25,
+                    bark=dict(tint='#b8b4ac', contrast=1.6, scale=(.7, 3.2)),
+                    colours=['#1a3a1e', '#2a5428', '#467a30', '#76a23a', '#b0c856']),
     # 枯樹: an old dead giant, a twisted forked trunk, snapped limbs, a fine net of bare twigs, a few curled leaves.
     'Withered': dict(height=10, trunk=(4.0, .85), lean=.15, bend=.35, gnarl=.1, zig=.08, split=True,
                      levels=[dict(n=4, angle=(22, 48), length=.85, radius=.62, start=.72, gnarl=.25, up=.15, broken=.3),
@@ -479,6 +482,76 @@ def leaf_cards(spec, trunk, rng, lod, crown_centre):
 
 
 # ---------------------------------------------------------------- materials and textures
+# ---------------------------------------------------------------- painted foliage clusters
+REFS = ROOT / 'art/references/tree-species-v1'
+
+
+def foliage_atlas(name, species):
+    """z1nnz's hand-painted leaf-cluster sheet (leaves-<species>.png: nine clusters in a 3 x 3 grid on white) made
+    into a game texture: white keyed out to alpha, the colour under transparent pixels filled with the cluster's
+    own leaf colour so mipmaps don't fringe white. None when there is no sheet for this species yet."""
+    src = REFS / f'leaves-{species}.png'
+    if not src.exists():
+        return None
+    img = bpy.data.images.load(str(src))
+    w, h = img.size
+    px = np.array(img.pixels[:], dtype=np.float32).reshape(h, w, 4)
+    rgb = px[..., :3]
+    # Distance from white: the strongest channel's shortfall (yellow highlights keep their alpha: blue is low).
+    d = (1 - rgb).max(axis=2)
+    a = np.clip((d - .12) / .14, 0, 1)
+    a = a * a * (3 - 2 * a)
+    leaf = a > .9
+    fill = rgb[leaf].mean(axis=0) if leaf.any() else np.array([.3, .5, .2], dtype=np.float32)
+    # Edge pixels are blended with the white paper: pull them toward the leaf colour so no pale fringe shows.
+    rgb = np.where(a[..., None] < .9, rgb * a[..., None] + fill * (1 - a[..., None]), rgb)
+    rgb = np.clip(rgb, 0, 1)
+    out = np.concatenate([rgb, a[..., None]], axis=2).astype(np.float32)
+    atlas = bpy.data.images.new(f'Elder{name}_Foliage', w, h, alpha=True)
+    atlas.pixels = out.ravel().tolist()
+    atlas.scale(1024, 1024)
+    atlas.filepath_raw = str(OUT / f'Elder{name}_Foliage.png')
+    atlas.file_format = 'PNG'
+    atlas.save()
+    bpy.data.images.remove(img)
+    return atlas
+
+
+def foliage_cards(spec, skeleton, rng, lod_index, crown_centre):
+    """Painted clusters on cards at the twig ends: each card faces out from the crown, stays upright (the sheet is
+    lit from above) and shows one of the nine clusters. Willow cards hang from their top edge. Fewer, larger cards
+    for the far LODs. Returns (four corners, four uvs) per card."""
+    twigs = [l for l in all_limbs(skeleton) if l.twig]
+    per, grow_, keep = [(spec.get('cards_per_twig', 3), 1.0, 1.0), (2, 1.35, .7), (1, 1.9, .45)][lod_index]
+    weep = bool(spec.get('weep'))
+    out = []
+    for l in twigs:
+        if rng.random() > keep:
+            continue
+        tip = l.pts[-1]
+        cl = spec.get('cluster', .7) * rng.uniform(.8, 1.2)
+        for _ in range(per):
+            pos = tip + Vector((rng.gauss(0, 1), rng.gauss(0, 1), rng.gauss(0, .6))) * cl * .45
+            n = (pos - crown_centre)
+            n = n.normalized() if n.length > .01 else Vector((0, -1, 0))
+            n = (n + Vector((rng.gauss(0, .25), rng.gauss(0, .25), 0))).normalized()
+            n.z = max(min(n.z, .35), -.15)
+            n.normalize()
+            up = (UP - n * n.dot(UP)).normalized()
+            up = Quaternion(n, rng.uniform(-.3, .3)) @ up
+            side = up.cross(n).normalized()
+            size = cl * rng.uniform(1.7, 2.4) * grow_
+            hw, hh = size * .5, size * (.75 if weep else .5)
+            centre = pos - up * hh * .9 if weep else pos
+            cell = rng.randrange(9)
+            cu, cv = cell % 3, 2 - cell // 3
+            m = .012
+            u0, u1, v0, v1 = cu / 3 + m, (cu + 1) / 3 - m, cv / 3 + m, (cv + 1) / 3 - m
+            corners = [centre - side * hw - up * hh, centre + side * hw - up * hh, centre + side * hw + up * hh, centre - side * hw + up * hh]
+            out.append((corners, [(u0, v0), (u1, v0), (u1, v1), (u0, v1)]))
+    return out
+
+
 def bark_image(name, src, spec):
     w, h = src.size
     px = np.array(src.pixels[:], dtype=np.float32).reshape(h, w, 4)
@@ -531,7 +604,16 @@ def material(name, img, rough):
 def build(name, spec, src_bark):
     seed = sum(map(ord, name))
     bark_mat = material(f'Elder{name}_Bark', bark_image(f'Elder{name}_Bark', src_bark, spec), .9)
-    leaf_mat = material(f'Elder{name}_Leaves', palette_image(f'Elder{name}_Leaves', spec['colours']), .75)
+    atlas = foliage_atlas(name, spec.get('atlas', name.lower()))
+    leaf_mat = material(f'Elder{name}_Leaves', atlas if atlas is not None else palette_image(f'Elder{name}_Leaves', spec['colours']), .75)
+    if atlas is not None:
+        tex = next(n for n in leaf_mat.node_tree.nodes if n.type == 'TEX_IMAGE')
+        tex.interpolation = 'Linear'
+        leaf_mat.node_tree.links.new(tex.outputs['Alpha'], next(n for n in leaf_mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED').inputs['Alpha'])
+        try:
+            leaf_mat.blend_method = 'CLIP'
+        except Exception:
+            pass
     root = bpy.data.objects.new(f'Elder{name}', None)
     bpy.context.collection.objects.link(root)
     rng = random.Random(seed)
@@ -555,7 +637,7 @@ def build(name, spec, src_bark):
             tube(bm, uv, pts, radii, lod['sides'], spec['bark']['scale'], rng_l)
         wood_faces = len(bm.faces)
         # Willow strands: very thin hanging tubes the leaves hang on (LOD0 and LOD1).
-        if spec.get('weep') and i < 2:
+        if spec.get('weep') and i < 2 and atlas is None:
             for limb in limbs:
                 for strand in limb.strands:
                     tube(bm, uv, strand, [spec['strand'] * .2] * len(strand), .3, spec['bark']['scale'], rng_l, cap=False)
@@ -565,23 +647,29 @@ def build(name, spec, src_bark):
         me.materials.append(bark_mat)
         me.materials.append(leaf_mat)
         # Leaves.
-        cards = leaf_cards(spec, skeleton, random.Random(seed * 100 + i), lod, crown_centre)
         verts, faces, uvs, norms = [], [], [], []
-        for cv, cf in cards:
-            base = len(verts)
-            verts += cv
-            for idx, t in cf:
-                faces.append([base + j for j in idx])
-                u = (min(int(t * SWATCHES), SWATCHES - 1) + .5) / SWATCHES
-                uvs.append(u)
+        if atlas is not None:
+            for corners, cuv in foliage_cards(spec, skeleton, random.Random(seed * 100 + i), i, crown_centre):
+                base = len(verts)
+                verts += corners
+                faces.append([base, base + 1, base + 2, base + 3])
+                uvs.append(cuv)
+        else:
+            for cv, cf in leaf_cards(spec, skeleton, random.Random(seed * 100 + i), lod, crown_centre):
+                base = len(verts)
+                verts += cv
+                for idx, t in cf:
+                    faces.append([base + j for j in idx])
+                    u = (min(int(t * SWATCHES), SWATCHES - 1) + .5) / SWATCHES
+                    uvs.append([(u, .5)] * len(idx))
         if verts:
             lm = bpy.data.meshes.new('leaves')
             lm.from_pydata(verts, [], faces)
             luv = lm.uv_layers.new(name='UVMap')
             for poly, u in zip(lm.polygons, uvs):
                 poly.material_index = 1
-                for li in poly.loop_indices:
-                    luv.data[li].uv = (u, .5)
+                for k, li in enumerate(poly.loop_indices):
+                    luv.data[li].uv = u[k]
             # Soft canopy shading: leaf normals lean out from the crown centre.
             lm.normals_split_custom_set([((Vector(lm.vertices[lm.loops[li].vertex_index].co) - crown_centre).normalized() * .75
                                           + lm.polygons[p.index].normal * .25).normalized()

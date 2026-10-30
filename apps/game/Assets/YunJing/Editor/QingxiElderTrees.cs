@@ -39,9 +39,15 @@ namespace YunJing.Editor
             Directory.CreateDirectory(Path.Combine(Repo, "apps/game", MaterialFolder));
             foreach (var kind in Kinds)
             {
+                var foliagePath = $"{Models}/{kind}_Foliage.png";
+                var fi = (TextureImporter)AssetImporter.GetAtPath(foliagePath);
+                if (fi != null && (!fi.alphaIsTransparency || fi.maxTextureSize != 1024))
+                {
+                    fi.alphaIsTransparency = true; fi.mipMapsPreserveCoverage = true; fi.alphaTestReferenceValue = .5f; fi.maxTextureSize = 1024; fi.SaveAndReimport();
+                }
                 var path = $"{Models}/{kind}_Leaves.png";
                 var ti = (TextureImporter)AssetImporter.GetAtPath(path);
-                if (ti == null) throw new FileNotFoundException("Elder tree palette missing", path);
+                if (ti == null) continue;   // painted foliage only
                 if (ti.filterMode != FilterMode.Point || ti.mipmapEnabled || ti.textureCompression != TextureImporterCompression.Uncompressed)
                 {
                     ti.filterMode = FilterMode.Point; ti.mipmapEnabled = false; ti.textureCompression = TextureImporterCompression.Uncompressed;
@@ -60,7 +66,15 @@ namespace YunJing.Editor
                 var importer = (ModelImporter)AssetImporter.GetAtPath(path);
                 if (importer == null) throw new FileNotFoundException("Elder tree missing", path);
                 var leaves = Mat(kind + "_Leaves");
-                leaves.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{Models}/{kind}_Leaves.png"));
+                // Painted foliage clusters (Elder<Species>_Foliage.png, alpha-cut) where the species has them;
+                // otherwise the palette the leaf cards point into.
+                var foliage = AssetDatabase.LoadAssetAtPath<Texture2D>($"{Models}/{kind}_Foliage.png");
+                leaves.SetTexture("_BaseMap", foliage != null ? foliage : AssetDatabase.LoadAssetAtPath<Texture2D>($"{Models}/{kind}_Leaves.png"));
+                leaves.SetFloat("_AlphaClip", foliage != null ? 1 : 0); leaves.SetFloat("_Cutoff", .5f);
+                if (foliage != null) leaves.EnableKeyword("_ALPHATEST_ON"); else leaves.DisableKeyword("_ALPHATEST_ON");
+                var card = Shader.Find("YunJing/QingxiFoliageCard");
+                if (foliage != null && card != null) { leaves.shader = card; leaves.SetTexture("_BaseMap", foliage); leaves.SetFloat("_Cutoff", .5f); leaves.SetFloat("_Height", 12); }
+                else leaves.shader = Shader.Find("Universal Render Pipeline/Lit");
                 leaves.SetColor("_BaseColor", Color.white); leaves.SetFloat("_Smoothness", .08f);
                 leaves.SetFloat("_Cull", 0);   // single-sided leaf cards
                 EditorUtility.SetDirty(leaves);
