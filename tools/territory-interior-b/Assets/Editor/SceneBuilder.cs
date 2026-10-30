@@ -86,26 +86,16 @@ public static class SceneBuilder
         var chestGo = Place(Art + "/Existing/StorageChest_v001.fbx", "StorageChest", 2.6f, 1.9f, 180f, false);
         Place(Art + "/Existing/MeditationCushion_v001.fbx", "Cushion", 1.2f, -.2f, 180f, false);
 
-        // shelf dressing on its sockets (TI08 props)
-        var shelf = placed["TI_Shelf"];
-        var dressing = new[] { (1, "TI08c_CeladonJar"), (2, "TI08a_KeepsakeBox"), (4, "TI08b_PaperScroll"), (6, "TI08d_MedicinePot"), (7, "TI08c_CeladonJar") };
-        foreach (var (slotN, id) in dressing)
-        {
-            var sock = FindChild(shelf.transform, "SOCKET_slot_" + slotN);
-            if (sock == null) { Report.Add("missing socket slot " + slotN); continue; }
-            var g = Place(TiPath(id), "Shelf_" + slotN + "_" + id, 0, 0, 0, true);
-            g.transform.SetPositionAndRotation(sock.position, shelf.transform.rotation * Quaternion.Euler(0, (slotN % 3 - 1) * 14f, 0));
-        }
-
         // ---------------------------------------------------------------- interactables
         var player = BuildPlayer();
+        var shelf = BuildShelf(placed["TI_Shelf"]);
         var chest = BuildChest(chestGo);
         var furnace = BuildFurnace(placed["TI_Furnace"]);
         var lamp = BuildLamp(placed["TI_Lamp_2"], true);
         var sideLamp = BuildLamp(placed["TI_Lamp_1"], false);
         var bed = BuildBed(bedGo, player);
         furnace.pantryChest = chest;
-        var items = new Interactable[] { chest, furnace, lamp, bed };
+        var items = new Interactable[] { chest, shelf, furnace, lamp, bed };
 
         // ---------------------------------------------------------------- camera, UI, control
         var camGo = new GameObject("Main Camera"); camGo.tag = "MainCamera";
@@ -142,7 +132,7 @@ public static class SceneBuilder
         var ctl = player.gameObject.AddComponent<PlayerController>(); ctl.avatar = player; ctl.interactables = items; ctl.rig = rig;
         var dir = new GameObject("DemoDirector").AddComponent<DemoDirector>();
         dir.player = player; dir.chest = chest; dir.furnace = furnace; dir.lamp = lamp; dir.bed = bed; dir.ui = ui; dir.rig = rig;
-        dir.interactables = items; dir.sun = sun; dir.sideLamp = sideLamp;
+        dir.interactables = items; dir.sun = sun; dir.sideLamp = sideLamp; dir.shelf = shelf;
 
         EditorSceneManager.SaveScene(scene, ScenePath);
         EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
@@ -252,6 +242,31 @@ public static class SceneBuilder
         chest.shotFocus = chestGo.transform.position + new Vector3(-.15f, -.18f, -.15f);   // low focus lifts the box above the storage panel
         chest.shotDistance = 3.0f; chest.shotYaw = -17f; chest.shotPitch = 68f; chest.shotFov = 38f;   // looks over the player's head; the player sits under the storage panel
         return chest;
+    }
+
+    /// Collection shelf: the 8 SOCKET_slot_N empties from the TI01 model, one hidden model per TI08 piece to copy from.
+    static ShelfDisplay BuildShelf(GameObject go)
+    {
+        var d = go.AddComponent<ShelfDisplay>();
+        for (int i = 0; i < Shelf.Slots; i++)
+        {
+            d.sockets[i] = Children(go.transform).FirstOrDefault(c => c.name == "SOCKET_slot_" + (i + 1)) ?? FindChild(go.transform, "SOCKET_slot_" + (i + 1));
+            if (d.sockets[i] == null) Report.Add("missing socket slot " + (i + 1));
+        }
+        var pieces = new[] { ("木匣", "TI08a_KeepsakeBox"), ("卷軸", "TI08b_PaperScroll"), ("青瓷罐", "TI08c_CeladonJar"), ("藥罐", "TI08d_MedicinePot") };
+        var root = new GameObject("Shelf_PieceTemplates");
+        d.pieceNames = pieces.Select(p => p.Item1).ToArray();
+        d.pieceTemplates = pieces.Select(p =>
+        {
+            var g = Place(TiPath(p.Item2), "Piece_" + p.Item2, 0, 0, 0, true);
+            g.transform.SetParent(root.transform, true); g.SetActive(false);
+            return g;
+        }).ToArray();
+        d.startSlots[1] = "木匣";                                        // one old piece already up when the house is yours
+        d.standPoint = Marker("Shelf_Stand", new Vector3(2.35f, 0, .45f), go.transform);
+        d.shotFocus = go.transform.position + new Vector3(-.25f, .95f, .55f);   // left of the shelf, so the shelf sits right of the panel
+        d.shotDistance = 2.9f; d.shotYaw = 70f; d.shotPitch = 10f; d.shotFov = 50f;
+        return d;
     }
 
     /// Existing (non-TI) prop scaled so its largest extent is `size` metres; pivot stays at the base.

@@ -19,6 +19,7 @@ public class DemoDirector : MonoBehaviour
     public CameraRig rig;
     public Interactable[] interactables;
     public Light sun;
+    public ShelfDisplay shelf;
     public PaperLamp sideLamp;      // TI_Lamp_1 by the bed, lit when night falls
     public Color dayAmbient = new Color(.36f, .33f, .30f), nightAmbient = new Color(.13f, .14f, .19f);
     public float daySun = .85f, nightSun = .14f;
@@ -38,6 +39,7 @@ public class DemoDirector : MonoBehaviour
     public void BeginDemo()
     {
         Driving = true; acts.Clear(); index = 0; begun = false; Time = 0f;
+        if (shelf) shelf.Fill();
         Script();
         SetNight(0f);
     }
@@ -86,16 +88,32 @@ public class DemoDirector : MonoBehaviour
         CursorTo(() => ui.CloseButton, .6f); Click(() => chest.Close()); Wait(.3f);
         Do(() => ui.SetCursor(false, cursorPos)); Wait(.6f);
 
-        Do(() => { Follow(); ui.SetCaption("③ 丹爐煉回春丹：材料取自乾坤袋"); });
-        Walk(new Vector3(2.0f, 0, .2f), new Vector3(2.2f, 0, -1.2f));
+        Do(() => { Follow(); ui.SetCaption("③ 收藏架：從乾坤袋選一件擺上去，也能換格、拿下"); });
+        Walk(new Vector3(2.35f, 0, .45f));
+        Face(new Vector3(1f, 0, -.45f));
+        Press(shelf);
+        Wait(1.0f);
+        CursorTo(() => ui.ShelfBagSlot("卷軸"), .7f); Click(() => ui.SelectPiece("卷軸")); Wait(.35f);
+        CursorTo(() => ui.ShelfSlot(4), .55f); Click(() => ui.DoShelfSlot(4)); Wait(1.1f);
+        CursorTo(() => ui.ShelfBagSlot("藥罐"), .6f); Click(() => ui.SelectPiece("藥罐")); Wait(.35f);
+        CursorTo(() => ui.ShelfSlot(6), .55f); Click(() => ui.DoShelfSlot(6)); Wait(1.1f);
+        CursorTo(() => ui.ShelfSlot(6), .4f); Click(() => ui.DoShelfSlot(6)); Wait(.35f);
+        CursorTo(() => ui.ShelfSlot(3), .55f); Click(() => ui.DoShelfSlot(3)); Wait(1.1f);
+        CursorTo(() => ui.ShelfSlot(2), .55f); Click(() => ui.DoShelfSlot(2)); Wait(.35f);
+        CursorTo(() => ui.ShelfTakeButton, .55f); Click(() => ui.DoShelfTake()); Wait(1.2f);
+        CursorTo(() => ui.ShelfCloseButton, .6f); Click(() => shelf.Close()); Wait(.3f);
+        Do(() => ui.SetCursor(false, cursorPos)); Wait(.5f);
+
+        Do(() => { Follow(); ui.SetCaption("④ 丹爐煉回春丹：材料取自乾坤袋"); });
+        Walk(new Vector3(1.9f, 0, -.3f), new Vector3(2.2f, 0, -1.2f));
         Face(new Vector3(.5f, 0, -.7f));
         Press(furnace);
         Wait(1.0f);
         foreach (var k in new[] { "lid", "water", "water", "minor", "lead", "fuel", "ignite", "ventDown", "ventDown", "lid" }) Alc(k, .5f);
-        Do(() => ui.SetCaption("③ 文火溫藥：一根柴、風門全關，爐溫守住火候"));
+        Do(() => ui.SetCaption("④ 文火溫藥：一根柴、風門全關，爐溫守住火候"));
         Do(() => furnace.speed = 3f);
         WaitUntil(() => furnace.sim.PhaseIndex >= 1, 30f);
-        Do(() => { furnace.speed = 1f; ui.SetCaption("③ 中火融藥：添柴、開風門，柴快燒完要補"); });
+        Do(() => { furnace.speed = 1f; ui.SetCaption("④ 中火融藥：添柴、開風門，柴快燒完要補"); });
         Alc("fuel", .5f); Alc("ventUp", .5f);
         Do(() => furnace.speed = 3f);
         WaitUntil(() => furnace.sim.PhaseIndex >= 2 || furnace.sim.Burning < 2, 40f);
@@ -103,7 +121,7 @@ public class DemoDirector : MonoBehaviour
         AlcIf(() => furnace.sim.PhaseIndex < 2, "fuel", .5f);
         Do(() => furnace.speed = 3f);
         WaitUntil(() => furnace.sim.PhaseIndex >= 2, 40f);
-        Do(() => { furnace.speed = 1f; ui.SetCaption("③ 丹香已起：丹香正濃時收丹"); });
+        Do(() => { furnace.speed = 1f; ui.SetCaption("④ 丹香已起：丹香正濃時收丹"); });
         WaitUntil(() => furnace.sim.SinceComplete >= 3.4, 10f);
         Alc("condense", .3f);
         Wait(3.2f);
@@ -112,7 +130,7 @@ public class DemoDirector : MonoBehaviour
         Alc("exit", .3f);   // 離開
         Do(() => ui.SetCursor(false, cursorPos)); Wait(.5f);
 
-        Do(() => { Follow(); ui.SetCaption("④ 開燈、關燈（天色轉暗）"); });
+        Do(() => { Follow(); ui.SetCaption("⑤ 開燈、關燈（天色轉暗）"); });
         Fade(1f, 2.2f);
         Do(() => { if (sideLamp) sideLamp.on = true; });
         Walk(new Vector3(.6f, 0, -1.0f), new Vector3(-1.6f, 0, -.5f), new Vector3(-2.3f, 0, -.25f));
@@ -121,12 +139,12 @@ public class DemoDirector : MonoBehaviour
         Press(lamp); Wait(1.1f);
         Press(lamp); Wait(1.3f);
 
-        Do(() => { Follow(); ui.SetCaption("⑤ 回床上休息：躺下後蓋好被子，頭露在外面"); });
+        Do(() => { Follow(); ui.SetCaption("⑥ 回床上休息：躺下後蓋好被子，頭露在外面"); });
         Walk(new Vector3(-1.85f, 0, .2f), new Vector3(-1.75f, 0, 1.0f));
         Face(Vector3.left);
         Press(bed, "[E] 躺下休息"); Wait(4.6f);
         Press(bed, "[E] 起身"); Wait(2.7f);
-        Do(() => { Overview(); ui.SetCaption("測試完成：箱子疊放／分類／整理、乾坤袋材料煉丹、開關燈、躺床蓋被"); });
+        Do(() => { Overview(); ui.SetCaption("測試完成：箱子疊放／分類／整理、收藏架擺放／換格／拿下、乾坤袋材料煉丹、開關燈、躺床蓋被"); });
         Wait(2.6f);
     }
 

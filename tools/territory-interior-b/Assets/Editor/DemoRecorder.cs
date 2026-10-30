@@ -11,7 +11,7 @@ public static class DemoRecorder
 {
     const int W = 1280, H = 720, Fps = 30;
 
-    public static void Preview() => Run(new[] { 1f, 13f, 30f, 55f, 70f, 77f }, false);
+    public static void Preview() => Run(new[] { 1f, 24f, 27f, 30f, 33f, 36f, 39f }, false);
     public static void Record() => Run(null, true);
 
     static void Run(float[] stills, bool all)

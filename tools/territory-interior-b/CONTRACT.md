@@ -79,5 +79,5 @@ POST /v1/actions
 |---|---|---|
 | 1 | 收藏品的 item 類別 | 展示用示意道具（TI08 盒、卷軸、小罐）；正式見聞道具由 C 做 |
 | 2 | `territory.shelf` 存放位置 | 建議放玩家個人存檔，非 `world` 共用 |
-| 3 | 收藏架擺放的 Unity 互動 | **尚未在展示裡實作**（見 PR 待辦） |
+| 3 | 收藏架擺放的 Unity 互動 | 展示已實作，規則在 `Assets/Scripts/Logic/Shelf.cs`，測試在 `Assets/Tests/EditMode/ShelfTests.cs` |
 | 4 | 文字放 `packages/content/*.json` | 展示文字目前寫在程式裡，待搬 |

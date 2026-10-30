@@ -33,7 +33,7 @@ public class InteriorUI : MonoBehaviour
     {
         Instance = this;
         for (int i = transform.childCount - 1; i >= 0; i--) DestroyImmediate(transform.GetChild(i).gameObject);
-        bagSlots.Clear(); chestSlots.Clear(); tabs.Clear(); alcButtons.Clear();
+        bagSlots.Clear(); chestSlots.Clear(); tabs.Clear(); alcButtons.Clear(); shelfBagSlots.Clear(); shelfSlots.Clear();
 
         var band = MakeImage("TitleBand", transform, new Color(0, 0, 0, .45f));
         Place(band.rectTransform, new Vector2(0, 1), new Vector2(0, 0), new Vector2(1280, 88));
@@ -55,6 +55,7 @@ public class InteriorUI : MonoBehaviour
 
         BuildStorage();
         BuildAlchemy();
+        BuildShelf();
         BuildTouch();
 
         // demo cursor (only the director moves it)
@@ -262,6 +263,84 @@ public class InteriorUI : MonoBehaviour
     public void DoPut() { if (chest && selBag != null) { chest.Put(selBag, player); selBag = null; RefreshStorage(); } }
     public void DoTake() { if (chest && selChest != null) { chest.Take(selChest, player); selChest = null; RefreshStorage(); } }
     public void DoSort() { if (!chest) return; Items.Sort(chest.contents, chest.capacity); selChest = null; Toast("箱裡的東西歸攏好了"); RefreshStorage(); }
+
+    // ================================================================ collection shelf panel
+    // Left side, so the shelf stays in view on the right. Pick a piece from the bag, then an empty slot;
+    // pick a filled slot, then an empty one to move it, or 拿下 to take it back.
+    const int ShelfCols = 2;          // the TI01 cells are two columns by four shelves, numbered row by row from the top left
+    GameObject shelfPanel;
+    RectTransform shelfBagGrid, shelfGrid;
+    Text shelfDetail, shelfCount;
+    ShelfDisplay shelfDisplay;
+    readonly List<(RectTransform rt, string item)> shelfBagSlots = new List<(RectTransform, string)>();
+    readonly List<RectTransform> shelfSlots = new List<RectTransform>();
+    string selPiece; int selSlot;
+    public RectTransform ShelfTakeButton { get; private set; }
+    public RectTransform ShelfCloseButton { get; private set; }
+
+    void BuildShelf()
+    {
+        var panel = MakeImage("ShelfPanel", transform, Panel);
+        shelfPanel = panel.gameObject;
+        Place(panel.rectTransform, new Vector2(0, .5f), new Vector2(16, -24), new Vector2(340, 410));
+        var p = panel.transform; var tl = new Vector2(0, 1);
+        var t = MakeText("Header", p, "收藏架", 22, TextAnchor.MiddleLeft, Ink); Place(t.rectTransform, tl, new Vector2(20, -12), new Vector2(120, 30));
+        shelfCount = MakeText("Count", p, "", 17, TextAnchor.MiddleRight, Line); Place(shelfCount.rectTransform, tl, new Vector2(200, -14), new Vector2(120, 26));
+        shelfDetail = MakeText("Detail", p, "", 17, TextAnchor.MiddleLeft, Dim); Place(shelfDetail.rectTransform, tl, new Vector2(20, -46), new Vector2(300, 24));
+        var b = MakeText("BagHeader", p, "乾坤袋", 17, TextAnchor.MiddleLeft, Line); Place(b.rectTransform, tl, new Vector2(184, -78), new Vector2(136, 22));
+        shelfBagGrid = MakeRect("ShelfBagGrid", p); Place(shelfBagGrid, tl, new Vector2(184, -104), new Vector2(2 * S + G, 2 * S + G));
+        var s = MakeText("ShelfHeader", p, "架上", 17, TextAnchor.MiddleLeft, Line); Place(s.rectTransform, tl, new Vector2(20, -78), new Vector2(136, 22));
+        shelfGrid = MakeRect("ShelfGrid", p); Place(shelfGrid, tl, new Vector2(20, -104), new Vector2(ShelfCols * S + (ShelfCols - 1) * G, 4 * S + 3 * G));
+        ShelfTakeButton = MakeButton("ShelfTake", p, "拿下", () => DoShelfTake()); Place(ShelfTakeButton, tl, new Vector2(184, -260), new Vector2(136, 44));
+        ShelfCloseButton = MakeButton("ShelfClose", p, "關閉", () => { if (shelfDisplay) shelfDisplay.Close(); }); Place(ShelfCloseButton, tl, new Vector2(184, -314), new Vector2(136, 44));
+        shelfPanel.SetActive(false);
+    }
+
+    public void ShowShelf(ShelfDisplay d, PlayerAvatar p) { shelfDisplay = d; player = p; selPiece = null; selSlot = 0; shelfPanel.SetActive(true); RefreshShelf(); }
+    public void HideShelf() { shelfPanel.SetActive(false); shelfDisplay = null; }
+    public bool ShelfOpen => shelfPanel != null && shelfPanel.activeSelf;
+
+    public void RefreshShelf()
+    {
+        if (!shelfDisplay) return;
+        var sh = shelfDisplay.shelf;
+        Clear(shelfBagGrid); shelfBagSlots.Clear();
+        var pieces = new List<string>();
+        foreach (var st in player.inventory) if (Shelf.IsCollectible(st.name) && !pieces.Contains(st.name)) pieces.Add(st.name);
+        for (int i = 0; i < 4; i++)
+        {
+            string n = i < pieces.Count ? pieces[i] : null;
+            var stack = n != null ? new ItemStack(n, Items.Count(player.inventory, n)) : null;
+            shelfBagSlots.Add((Slot(shelfBagGrid, i % 2, i / 2, stack, n != null && n == selPiece, () => { selPiece = n; selSlot = 0; RefreshShelf(); }), n));
+        }
+        Clear(shelfGrid); shelfSlots.Clear();
+        for (int i = 1; i <= Shelf.Slots; i++)
+        {
+            int k = i; string item = sh[i];
+            var rt = Slot(shelfGrid, (i - 1) % ShelfCols, (i - 1) / ShelfCols, item != null ? new ItemStack(item, 1) : null, selSlot == i, () => DoShelfSlot(k));
+            if (item == null) rt.gameObject.AddComponent<Button>().onClick.AddListener(() => DoShelfSlot(k));
+            var num = MakeText("No", rt, i.ToString(), 13, TextAnchor.UpperLeft, Dim); Place(num.rectTransform, new Vector2(0, 1), new Vector2(6, -3), new Vector2(20, 16));
+            shelfSlots.Add(rt);
+        }
+        shelfCount.text = $"{sh.Filled}／{Shelf.Slots} 格";
+        shelfDetail.text = selPiece != null ? selPiece : selSlot > 0 ? $"第 {selSlot} 格：{sh[selSlot]}" : "";
+        ShelfTakeButton.GetComponent<Image>().color = selSlot > 0 ? Btn : BtnOff;
+    }
+
+    // shelf actions (buttons, demo director)
+    public RectTransform ShelfBagSlot(string name) { foreach (var s in shelfBagSlots) if (s.item == name) return s.rt; return null; }
+    public RectTransform ShelfSlot(int slot) => slot >= 1 && slot <= shelfSlots.Count ? shelfSlots[slot - 1] : null;
+    public void SelectPiece(string name) { selPiece = name; selSlot = 0; RefreshShelf(); }
+    public void DoShelfSlot(int slot)
+    {
+        if (!shelfDisplay) return;
+        var item = shelfDisplay.shelf[slot];
+        if (selPiece != null && item == null) { shelfDisplay.Place(slot, selPiece); selPiece = null; }
+        else if (selSlot > 0 && item == null) { shelfDisplay.Move(selSlot, slot); selSlot = 0; }
+        else if (item != null) { selSlot = selSlot == slot ? 0 : slot; selPiece = null; }
+        RefreshShelf();
+    }
+    public void DoShelfTake() { if (shelfDisplay && selSlot > 0) { shelfDisplay.Take(selSlot); selSlot = 0; RefreshShelf(); } }
 
     // ================================================================ alchemy panel
     GameObject alcPanel, resultCard;

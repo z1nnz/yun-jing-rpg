@@ -25,6 +25,13 @@ public class PlayerController : MonoBehaviour
             if (ui) ui.SetPrompt("");
             return;
         }
+        foreach (var it in interactables)
+            if (it is ShelfDisplay sh && sh.isOpen)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E)) sh.Close();
+                if (ui) ui.SetPrompt("");
+                return;
+            }
         var furnace = FindOpenFurnace();
         if (furnace != null)
         {
