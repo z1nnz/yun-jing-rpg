@@ -745,7 +745,8 @@ namespace YunJing.Editor
                 if (upstream || layout.creek != null) QingxiWaterheadA.Copy();   // river tiles; sedge for every creek bank
                 Placements(root);
                 Creek(root);
-                if (upstream) { QingxiWaterheadA.RiverKit(root, layout); UpstreamClues(root); }
+                if (upstream) QingxiWaterheadA.RiverKit(root, layout);
+                if (upstream && layout.placements.Any(p => p.id == "D3_CrackedSluice")) UpstreamClues(root);
                 Dressing(root, blockId);
                 Debug.Log("QINGXI_WIND (block): " + WindFoliage(root) + " foliage renderers sway");
             }

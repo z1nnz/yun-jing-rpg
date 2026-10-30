@@ -152,6 +152,8 @@ namespace YunJing.Editor
             Shot("16-d1-forest-edge", new Vector3(6, 2, 66), new Vector3(-20, 0, 80));
             Shot("17-d1-above", new Vector3(40, 35, 40), new Vector3(-10, 0, 90));
             Shot("18-ground-closeup", new Vector3(-10, 1.2f, -95), new Vector3(-14, 0, -88));
+            Shot("19-creek-junction-above", new Vector3(-22, 16, 36), new Vector3(-50, 0, 56));
+            Shot("20-creek-junction-eye", new Vector3(-28, 3, 44), new Vector3(-52, 1, 56));
             Debug.Log($"QINGXI_UPSTREAM_CAPTURED to {dir}");
         }
     }

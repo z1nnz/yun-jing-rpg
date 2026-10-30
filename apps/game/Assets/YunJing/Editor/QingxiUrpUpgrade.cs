@@ -27,6 +27,13 @@ namespace YunJing.Editor
                 pipeline = UniversalRenderPipelineAsset.Create(renderer); AssetDatabase.CreateAsset(pipeline, Root + "/URP.asset");
                 pipeline.renderScale = 1; pipeline.shadowDistance = 35;
             }
+            // Soft shadows and two cascades: a single hard 2048 map stair-stepped every shadow near the camera.
+            var so = new SerializedObject(pipeline);
+            so.FindProperty("m_SoftShadowsSupported").boolValue = true;
+            so.FindProperty("m_SoftShadowQuality").intValue = 2;   // medium
+            so.FindProperty("m_ShadowCascadeCount").intValue = 2;
+            so.FindProperty("m_MainLightShadowmapResolution").intValue = 2048;
+            so.ApplyModifiedPropertiesWithoutUndo();
             GraphicsSettings.defaultRenderPipeline = pipeline; QualitySettings.renderPipeline = pipeline;
             AssetDatabase.SaveAssets();
             return pipeline;

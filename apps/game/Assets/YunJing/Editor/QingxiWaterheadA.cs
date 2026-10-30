@@ -178,7 +178,7 @@ namespace YunJing.Editor
             {
                 var span = layout.creekKit.FirstOrDefault(s => along >= s.from && along < s.to) ?? layout.creekKit.Last();
                 var keys = span.pieces.Split(',', '/').Select(k => k.Trim()).Where(k => k.StartsWith("A01_")).ToArray();
-                bool last = along > total - 8f;
+                bool last = c.sourceEnd && along > total - 8f;
                 string key = last ? "A01_end_source_01" : keys.Length > 0 ? keys[step % keys.Length] : "A01_straight_01";
                 var ahead = PointAt(line, Mathf.Min(along + 6f, total));
                 var dir = (ahead - at).normalized;
@@ -188,12 +188,12 @@ namespace YunJing.Editor
                 // The source end is terminal (no upstream socket): its body lies upstream of the downstream socket.
                 var axis = up != null ? up.position - down.position : Centre(tile) - down.position;
                 tile.transform.rotation = Quaternion.FromToRotation(Flat(axis), new Vector3(dir.x, 0, dir.y)) * tile.transform.rotation;
-                float ground = QingxiVillageTerrain.BaseHeight(layout, at.x, at.y);
+                float ground = QingxiVillageTerrain.LandAt(layout, at.x, at.y);
                 tile.transform.position += new Vector3(at.x, ground - BankTop + .03f, at.y) - down.position;
                 // Pitch the tile up the valley so its upstream end also meets the land (the brook climbs ~12 m).
                 var tip = up != null ? up.position : Centre(tile) * 2 - down.position;
                 float run = Vector2.Distance(at, new Vector2(tip.x, tip.z));
-                float rise = QingxiVillageTerrain.BaseHeight(layout, tip.x, tip.z) - ground;
+                float rise = QingxiVillageTerrain.LandAt(layout, tip.x, tip.z) - ground;
                 var right = Vector3.Cross(Vector3.up, new Vector3(dir.x, 0, dir.y));
                 tile.transform.RotateAround(down.position, right, -Mathf.Atan2(rise, run) * Mathf.Rad2Deg);
                 Prepare(tile, walkable: true);
@@ -203,7 +203,7 @@ namespace YunJing.Editor
                 along += Vector2.Distance(at, next); at = next; step++;
                 if (last) break;
             }
-            Dress(root, layout, line, total);
+            if (c.crossing != null) Dress(root, layout, line, total);   // D3's silt, crossing and sedge
             Debug.Log($"QINGXI_UPSTREAM_BROOK: {placed} tiles over {total:F0} m of creek");
             return placed;
         }
@@ -216,7 +216,7 @@ namespace YunJing.Editor
             {
                 var m = Spawn(key, root);
                 m.transform.rotation = Quaternion.Euler(0, yaw, 0) * m.transform.rotation;
-                float land = QingxiVillageTerrain.BaseHeight(layout, p.x, p.y);
+                float land = QingxiVillageTerrain.LandAt(layout, p.x, p.y);
                 m.transform.position = new Vector3(p.x, land - BankTop + .25f + lift, p.y);
                 Prepare(m, walkable: true);
                 return m;
