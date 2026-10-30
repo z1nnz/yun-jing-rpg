@@ -1,0 +1,64 @@
+{
+  "asset": "R02_BambooFence_Corner",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R02_BambooFence_Corner_Collision_00",
+      "R02_BambooFence_Corner_Collision_01",
+      "R02_BambooFence_Corner_LOD0",
+      "R02_BambooFence_Corner_LOD1",
+      "R02_BambooFence_Corner_LOD2"
+    ],
+    "lod0_size_m": [
+      1.2586,
+      1.216,
+      1.36
+    ],
+    "lod0_min_m": [
+      -1.0703,
+      -0.1459,
+      -0.2
+    ],
+    "tris": {
+      "R02_BambooFence_Corner_Collision_00": 12,
+      "R02_BambooFence_Corner_Collision_01": 12,
+      "R02_BambooFence_Corner_LOD0": 50808,
+      "R02_BambooFence_Corner_LOD1": 25404,
+      "R02_BambooFence_Corner_LOD2": 7620
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R02_BambooFence_Corner_Collision_00",
+      "R02_BambooFence_Corner_Collision_01",
+      "R02_BambooFence_Corner_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R02_BambooFence_Corner"
+    ],
+    "occlusion_texture": true,
+    "bytes": 2448624
+  },
+  "sha256": {
+    "R02_BambooFence_Corner_v001.fbx": "0bfff3de96137bc4cfeeeb2c735f11c3bdb6be2d1b2b8c8a369247c791fe0a9d",
+    "R02_BambooFence_Corner_v001.glb": "958b2a392d4ef2e7ff314e8bb507ce802ad1d98dcf032145ddb6529b88ef4874"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "asset": "H01_StoneTimberHouse",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true,
+    "within_slot_limit_w_d_h": true,
+    "door_clear_at_least_0p9_x_1p9": true,
+    "door_passage_free_of_geometry": true,
+    "door_passage_free_of_collision": true,
+    "interior_2x2_free_of_geometry": true,
+    "interior_2x2_free_of_collision": true,
+    "interior_box_is_2x2": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "H01_StoneTimberHouse_Collision_00",
+      "H01_StoneTimberHouse_Collision_01",
+      "H01_StoneTimberHouse_Collision_02",
+      "H01_StoneTimberHouse_Collision_03",
+      "H01_StoneTimberHouse_Collision_04",
+      "H01_StoneTimberHouse_Collision_05",
+      "H01_StoneTimberHouse_Collision_06",
+      "H01_StoneTimberHouse_Collision_07",
+      "H01_StoneTimberHouse_Collision_08",
+      "H01_StoneTimberHouse_Collision_09",
+      "H01_StoneTimberHouse_Collision_10",
+      "H01_StoneTimberHouse_Collision_11",
+      "H01_StoneTimberHouse_Collision_12",
+      "H01_StoneTimberHouse_Collision_13",
+      "H01_StoneTimberHouse_LOD0",
+      "H01_StoneTimberHouse_LOD1",
+      "H01_StoneTimberHouse_LOD2"
+    ],
+    "lod0_size_m": [
+      5.455,
+      4.349,
+      3.8425
+    ],
+    "lod0_min_m": [
+      -2.7275,
+      -2.1747,
+      -0.0505
+    ],
+    "tris": {
+      "H01_StoneTimberHouse_Collision_00": 12,
+      "H01_StoneTimberHouse_Collision_01": 12,
+      "H01_StoneTimberHouse_Collision_02": 12,
+      "H01_StoneTimberHouse_Collision_03": 12,
+      "H01_StoneTimberHouse_Collision_04": 12,
+      "H01_StoneTimberHouse_Collision_05": 12,
+      "H01_StoneTimberHouse_Collision_06": 12,
+      "H01_StoneTimberHouse_Collision_07": 12,
+      "H01_StoneTimberHouse_Collision_08": 12,
+      "H01_StoneTimberHouse_Collision_09": 12,
+      "H01_StoneTimberHouse_Collision_10": 12,
+      "H01_StoneTimberHouse_Collision_11": 12,
+      "H01_StoneTimberHouse_Collision_12": 12,
+      "H01_StoneTimberHouse_Collision_13": 12,
+      "H01_StoneTimberHouse_LOD0": 126870,
+      "H01_StoneTimberHouse_LOD1": 63435,
+      "H01_StoneTimberHouse_LOD2": 19020
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "H01_StoneTimberHouse_Collision_00",
+      "H01_StoneTimberHouse_Collision_01",
+      "H01_StoneTimberHouse_Collision_02",
+      "H01_StoneTimberHouse_Collision_03",
+      "H01_StoneTimberHouse_Collision_04",
+      "H01_StoneTimberHouse_Collision_05",
+      "H01_StoneTimberHouse_Collision_06",
+      "H01_StoneTimberHouse_Collision_07",
+      "H01_StoneTimberHouse_Collision_08",
+      "H01_StoneTimberHouse_Collision_09",
+      "H01_StoneTimberHouse_Collision_10",
+      "H01_StoneTimberHouse_Collision_11",
+      "H01_StoneTimberHouse_Collision_12",
+      "H01_StoneTimberHouse_Collision_13",
+      "H01_StoneTimberHouse_LOD0"
+    ],
+    "images": 12,
+    "materials": [
+      "M_WRB_H01_StoneTimberHouse_Plaster",
+      "M_WRB_H01_StoneTimberHouse_RoofTile",
+      "M_WRB_H01_StoneTimberHouse_FootingStone",
+      "M_WRB_H01_StoneTimberHouse_Timber"
+    ],
+    "occlusion_texture": true,
+    "bytes": 7254568
+  },
+  "sha256": {
+    "H01_StoneTimberHouse_v001.fbx": "94d207750b3b252723b549858f67b7eb41f6a6dc9cb1086fe8e1ef0b7afa9437",
+    "H01_StoneTimberHouse_v001.glb": "827359ccdcd088818ca36b208db1a08444af95ae42edae3e0893fb1fdcb7620e"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

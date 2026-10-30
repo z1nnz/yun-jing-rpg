@@ -1,0 +1,175 @@
+{
+  "asset": "D3_DryWell",
+  "name_zh": "枯井",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 2,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 1.6,
+  "size_m": {
+    "x": 1.769,
+    "y": 1.473,
+    "z_above_ground": 2.102,
+    "z_below_ground": 1.605
+  },
+  "bounds_m": {
+    "min": [
+      -0.899,
+      -0.734,
+      -1.605
+    ],
+    "max": [
+      0.87,
+      0.739,
+      2.102
+    ]
+  },
+  "slot_limit_m": [
+    1.8,
+    1.8,
+    2.2
+  ],
+  "triangles": {
+    "LOD0": 73236,
+    "LOD1": 36617,
+    "LOD2": 10985
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_D3_DryWell_Main",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_D3_DryWell_Main_BaseColor.png",
+        "Normal": "Textures/T_D3_DryWell_Main_Normal.png",
+        "ORM": "Textures/T_D3_DryWell_Main_ORM.png"
+      },
+      "texture_size": 2048,
+      "visible_texel_density_px_per_m": 855.2,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    },
+    {
+      "name": "M_WRB_D3_DryWell_Stone",
+      "slot": "Stone",
+      "textures": {
+        "BaseColor": "Textures/T_D3_DryWell_Stone_BaseColor.png",
+        "Normal": "Textures/T_D3_DryWell_Stone_Normal.png",
+        "ORM": "Textures/T_D3_DryWell_Stone_ORM.png"
+      },
+      "texture_size": 2048,
+      "visible_texel_density_px_per_m": 394.5,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "D3_DryWell_Collision_00",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_01",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_02",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_03",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_04",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_05",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_06",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_07",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_08",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_09",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_10",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_11",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_12",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "D3_DryWell_Collision_13",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": null,
+  "files": {
+    "fbx": "D3_DryWell_v001.fbx",
+    "glb": "D3_DryWell_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/D3_DryWell_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/D3_DryWell-three-views-v001.png",
+  "notes": [
+    "Ring 1.42 m outer / 0.88 m inner diameter, 0.68 m high; envelope within 1.8 x 1.8 x 2.2 m above ground.",
+    "The stone-lined shaft continues to 1.6 m below ground with a dry silt floor: the terrain must be cut (an 0.88 m round hole) where the well is placed, or the shaft is hidden by the ground.",
+    "One coping stone has lost its outer top corner; the rope is snapped about 0.7 m below the drum, no bucket.",
+    "Collision: twelve convex blocks round the open ring (the shaft stays open) and the two uprights."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

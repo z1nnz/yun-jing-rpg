@@ -1,0 +1,92 @@
+{
+  "asset": "R04_StoneLanternIntact",
+  "name_zh": "石燈籠（完整）",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 2,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.05,
+  "size_m": {
+    "x": 0.682,
+    "y": 0.683,
+    "z_above_ground": 1.65,
+    "z_below_ground": 0.052
+  },
+  "bounds_m": {
+    "min": [
+      -0.341,
+      -0.341,
+      -0.052
+    ],
+    "max": [
+      0.341,
+      0.342,
+      1.65
+    ]
+  },
+  "slot_limit_m": null,
+  "triangles": {
+    "LOD0": 33280,
+    "LOD1": 16640,
+    "LOD2": 4992
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_R04_StoneLanternIntact",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_R04_StoneLanternIntact_Main_BaseColor.png",
+        "Normal": "Textures/T_R04_StoneLanternIntact_Main_Normal.png",
+        "ORM": "Textures/T_R04_StoneLanternIntact_Main_ORM.png"
+      },
+      "texture_size": 1024,
+      "visible_texel_density_px_per_m": 371.2,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "R04_StoneLanternIntact_Collision_00",
+      "type": "convex hull",
+      "vertices": 556,
+      "faces": 1108
+    },
+    {
+      "name": "R04_StoneLanternIntact_Collision_01",
+      "type": "convex hull",
+      "vertices": 332,
+      "faces": 660
+    },
+    {
+      "name": "R04_StoneLanternIntact_Collision_02",
+      "type": "convex hull",
+      "vertices": 248,
+      "faces": 492
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": null,
+  "files": {
+    "fbx": "R04_StoneLanternIntact_v001.fbx",
+    "glb": "R04_StoneLanternIntact_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/R04_StoneLanternIntact_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/R04_StoneLanternIntact-three-views-v001.png",
+  "notes": [
+    "1.65 m tall, 0.68 m at the eaves; the foot is set 0.05 m into the ground.",
+    "Lamp chamber is open on four sides and sooted inside; no flame or light source in the model.",
+    "Old repair seam on the shaft at 0.50 m (upper drum reset slightly off true on a lime bed).",
+    "Collision: three convex hulls (foot, shaft, head)."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "asset": "R02_BambooFence_EndPost",
+  "name_zh": "竹籬笆・端柱（加做）",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 1,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.2,
+  "size_m": {
+    "x": 0.135,
+    "y": 0.215,
+    "z_above_ground": 1.16,
+    "z_below_ground": 0.2
+  },
+  "bounds_m": {
+    "min": [
+      -0.067,
+      -0.146,
+      -0.2
+    ],
+    "max": [
+      0.067,
+      0.069,
+      1.16
+    ]
+  },
+  "slot_limit_m": null,
+  "triangles": {
+    "LOD0": 6520,
+    "LOD1": 3260,
+    "LOD2": 978
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_R02_BambooFence_EndPost",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_R02_BambooFence_EndPost_Main_BaseColor.png",
+        "Normal": "Textures/T_R02_BambooFence_EndPost_Main_Normal.png",
+        "ORM": "Textures/T_R02_BambooFence_EndPost_Main_ORM.png"
+      },
+      "texture_size": 512,
+      "visible_texel_density_px_per_m": 397.4,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "R02_BambooFence_EndPost_Collision",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    }
+  ],
+  "has_collision": true,
+  "interfaces": {
+    "start": {
+      "centre": [
+        0,
+        0,
+        0
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ]
+    }
+  },
+  "scene_slot": null,
+  "files": {
+    "fbx": "R02_BambooFence_EndPost_v001.fbx",
+    "glb": "R02_BambooFence_EndPost_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/R02_BambooFence_EndPost_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/R02_BambooFence-three-views-v001.png",
+  "notes": [],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

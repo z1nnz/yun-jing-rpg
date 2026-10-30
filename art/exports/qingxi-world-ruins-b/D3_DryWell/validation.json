@@ -1,0 +1,102 @@
+{
+  "asset": "D3_DryWell",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true,
+    "within_slot_limit_w_d_h": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "D3_DryWell_Collision_00",
+      "D3_DryWell_Collision_01",
+      "D3_DryWell_Collision_02",
+      "D3_DryWell_Collision_03",
+      "D3_DryWell_Collision_04",
+      "D3_DryWell_Collision_05",
+      "D3_DryWell_Collision_06",
+      "D3_DryWell_Collision_07",
+      "D3_DryWell_Collision_08",
+      "D3_DryWell_Collision_09",
+      "D3_DryWell_Collision_10",
+      "D3_DryWell_Collision_11",
+      "D3_DryWell_Collision_12",
+      "D3_DryWell_Collision_13",
+      "D3_DryWell_LOD0",
+      "D3_DryWell_LOD1",
+      "D3_DryWell_LOD2"
+    ],
+    "lod0_size_m": [
+      1.7688,
+      1.4726,
+      3.707
+    ],
+    "lod0_min_m": [
+      -0.899,
+      -0.734,
+      -1.605
+    ],
+    "tris": {
+      "D3_DryWell_Collision_00": 12,
+      "D3_DryWell_Collision_01": 12,
+      "D3_DryWell_Collision_02": 12,
+      "D3_DryWell_Collision_03": 12,
+      "D3_DryWell_Collision_04": 12,
+      "D3_DryWell_Collision_05": 12,
+      "D3_DryWell_Collision_06": 12,
+      "D3_DryWell_Collision_07": 12,
+      "D3_DryWell_Collision_08": 12,
+      "D3_DryWell_Collision_09": 12,
+      "D3_DryWell_Collision_10": 12,
+      "D3_DryWell_Collision_11": 12,
+      "D3_DryWell_Collision_12": 12,
+      "D3_DryWell_Collision_13": 12,
+      "D3_DryWell_LOD0": 73236,
+      "D3_DryWell_LOD1": 36617,
+      "D3_DryWell_LOD2": 10985
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "D3_DryWell_Collision_00",
+      "D3_DryWell_Collision_01",
+      "D3_DryWell_Collision_02",
+      "D3_DryWell_Collision_03",
+      "D3_DryWell_Collision_04",
+      "D3_DryWell_Collision_05",
+      "D3_DryWell_Collision_06",
+      "D3_DryWell_Collision_07",
+      "D3_DryWell_Collision_08",
+      "D3_DryWell_Collision_09",
+      "D3_DryWell_Collision_10",
+      "D3_DryWell_Collision_11",
+      "D3_DryWell_Collision_12",
+      "D3_DryWell_Collision_13",
+      "D3_DryWell_LOD0"
+    ],
+    "images": 6,
+    "materials": [
+      "M_WRB_D3_DryWell_Main",
+      "M_WRB_D3_DryWell_Stone"
+    ],
+    "occlusion_texture": true,
+    "bytes": 6070328
+  },
+  "sha256": {
+    "D3_DryWell_v001.fbx": "4273d552c222b77f5e32a3c962009ac442ab48b3bfcb7de8c86d7f37ec7037b8",
+    "D3_DryWell_v001.glb": "347859aeb4ae12972e19804fff2ea3f59882004f02803dca88b9e174e9f33128"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

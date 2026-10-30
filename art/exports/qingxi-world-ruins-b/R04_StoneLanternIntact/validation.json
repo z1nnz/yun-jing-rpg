@@ -1,0 +1,67 @@
+{
+  "asset": "R04_StoneLanternIntact",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R04_StoneLanternIntact_Collision_00",
+      "R04_StoneLanternIntact_Collision_01",
+      "R04_StoneLanternIntact_Collision_02",
+      "R04_StoneLanternIntact_LOD0",
+      "R04_StoneLanternIntact_LOD1",
+      "R04_StoneLanternIntact_LOD2"
+    ],
+    "lod0_size_m": [
+      0.6822,
+      0.6831,
+      1.7019
+    ],
+    "lod0_min_m": [
+      -0.341,
+      -0.3413,
+      -0.0519
+    ],
+    "tris": {
+      "R04_StoneLanternIntact_Collision_00": 1108,
+      "R04_StoneLanternIntact_Collision_01": 660,
+      "R04_StoneLanternIntact_Collision_02": 492,
+      "R04_StoneLanternIntact_LOD0": 33280,
+      "R04_StoneLanternIntact_LOD1": 16640,
+      "R04_StoneLanternIntact_LOD2": 4992
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R04_StoneLanternIntact_Collision_00",
+      "R04_StoneLanternIntact_Collision_01",
+      "R04_StoneLanternIntact_Collision_02",
+      "R04_StoneLanternIntact_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R04_StoneLanternIntact"
+    ],
+    "occlusion_texture": true,
+    "bytes": 1739324
+  },
+  "sha256": {
+    "R04_StoneLanternIntact_v001.fbx": "55fb31f426058567b2f5de92de8e0ba88e58cf6dc6b09e697041fe0497559d0f",
+    "R04_StoneLanternIntact_v001.glb": "eaca9ad3cb9d58932c863aa676c74c0e423efeb50081d72940f934c87bc37bd0"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

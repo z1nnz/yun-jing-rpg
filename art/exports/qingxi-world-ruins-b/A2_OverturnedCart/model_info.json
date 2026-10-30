@@ -1,0 +1,126 @@
+{
+  "asset": "A2_OverturnedCart",
+  "name_zh": "翻覆推車",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 2,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.0,
+  "size_m": {
+    "x": 3.429,
+    "y": 1.776,
+    "z_above_ground": 1.561,
+    "z_below_ground": 0.005
+  },
+  "bounds_m": {
+    "min": [
+      -1.715,
+      -0.888,
+      -0.005
+    ],
+    "max": [
+      1.715,
+      0.888,
+      1.561
+    ]
+  },
+  "slot_limit_m": [
+    3.6,
+    2.2,
+    1.6
+  ],
+  "triangles": {
+    "LOD0": 27292,
+    "LOD1": 13644,
+    "LOD2": 4092
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_A2_OverturnedCart_Main",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_A2_OverturnedCart_Main_BaseColor.png",
+        "Normal": "Textures/T_A2_OverturnedCart_Main_Normal.png",
+        "ORM": "Textures/T_A2_OverturnedCart_Main_ORM.png"
+      },
+      "texture_size": 2048,
+      "visible_texel_density_px_per_m": 340.7,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    },
+    {
+      "name": "M_WRB_A2_OverturnedCart_Sack",
+      "slot": "Sack",
+      "textures": {
+        "BaseColor": "Textures/T_A2_OverturnedCart_Sack_BaseColor.png",
+        "Normal": "Textures/T_A2_OverturnedCart_Sack_Normal.png",
+        "ORM": "Textures/T_A2_OverturnedCart_Sack_ORM.png"
+      },
+      "texture_size": 2048,
+      "visible_texel_density_px_per_m": 1255.5,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "A2_OverturnedCart_Collision_00",
+      "type": "convex hull",
+      "vertices": 187,
+      "faces": 370
+    },
+    {
+      "name": "A2_OverturnedCart_Collision_01",
+      "type": "convex hull",
+      "vertices": 55,
+      "faces": 106
+    },
+    {
+      "name": "A2_OverturnedCart_Collision_02",
+      "type": "convex hull",
+      "vertices": 55,
+      "faces": 106
+    },
+    {
+      "name": "A2_OverturnedCart_Collision_03",
+      "type": "convex hull",
+      "vertices": 202,
+      "faces": 400
+    },
+    {
+      "name": "A2_OverturnedCart_Collision_04",
+      "type": "convex hull",
+      "vertices": 202,
+      "faces": 400
+    },
+    {
+      "name": "A2_OverturnedCart_Collision_05",
+      "type": "convex hull",
+      "vertices": 465,
+      "faces": 926
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": null,
+  "files": {
+    "fbx": "A2_OverturnedCart_v001.fbx",
+    "glb": "A2_OverturnedCart_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/A2_OverturnedCart_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/A2_OverturnedCart-three-views-v002.png",
+  "notes": [
+    "The AI reference (v002) scored 81 and is not consistent between views; it is NOT an approved modelling basis. The model keeps its parts list but its pose is computed: the cart is built upright and tipped as one rigid body onto the first stable edge of its convex hull when rolled towards -Y.",
+    "One wheel stays on the axle; the other has come off and stands on its rim behind the tail, its hub resting against the end planks. Two burlap sacks lie by the open bed; one is torn and spills grain.",
+    "Collision: convex hulls for the cart body, each shaft, both wheels and the sacks."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

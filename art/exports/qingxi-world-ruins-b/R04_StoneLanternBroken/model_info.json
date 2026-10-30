@@ -1,0 +1,92 @@
+{
+  "asset": "R04_StoneLanternBroken",
+  "name_zh": "石燈籠（殘損）",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 2,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.05,
+  "size_m": {
+    "x": 0.583,
+    "y": 0.581,
+    "z_above_ground": 1.244,
+    "z_below_ground": 0.051
+  },
+  "bounds_m": {
+    "min": [
+      -0.291,
+      -0.29,
+      -0.051
+    ],
+    "max": [
+      0.292,
+      0.29,
+      1.244
+    ]
+  },
+  "slot_limit_m": null,
+  "triangles": {
+    "LOD0": 36032,
+    "LOD1": 18010,
+    "LOD2": 5402
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_R04_StoneLanternBroken",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_R04_StoneLanternBroken_Main_BaseColor.png",
+        "Normal": "Textures/T_R04_StoneLanternBroken_Main_Normal.png",
+        "ORM": "Textures/T_R04_StoneLanternBroken_Main_ORM.png"
+      },
+      "texture_size": 1024,
+      "visible_texel_density_px_per_m": 396.0,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "R04_StoneLanternBroken_Collision_00",
+      "type": "convex hull",
+      "vertices": 501,
+      "faces": 998
+    },
+    {
+      "name": "R04_StoneLanternBroken_Collision_01",
+      "type": "convex hull",
+      "vertices": 476,
+      "faces": 948
+    },
+    {
+      "name": "R04_StoneLanternBroken_Collision_02",
+      "type": "convex hull",
+      "vertices": 534,
+      "faces": 1064
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": null,
+  "files": {
+    "fbx": "R04_StoneLanternBroken_v001.fbx",
+    "glb": "R04_StoneLanternBroken_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/R04_StoneLanternBroken_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/R04_StoneLanternBroken-three-views-v001.png",
+  "notes": [
+    "1.25 m surviving height, 0.58 m footprint; the cap and finial are gone and not modelled nearby.",
+    "Post heads and two lintels are fractured at uneven heights; fresh breaks use a lighter warm-grey stone.",
+    "Lamp basin (chamber floor) and chamber insides are sooted.",
+    "Collision: three convex hulls (foot, shaft, head)."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

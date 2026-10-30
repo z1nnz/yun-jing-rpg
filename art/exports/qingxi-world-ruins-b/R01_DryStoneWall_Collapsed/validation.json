@@ -1,0 +1,67 @@
+{
+  "asset": "R01_DryStoneWall_Collapsed",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R01_DryStoneWall_Collapsed_Collision_00",
+      "R01_DryStoneWall_Collapsed_Collision_01",
+      "R01_DryStoneWall_Collapsed_Collision_02",
+      "R01_DryStoneWall_Collapsed_LOD0",
+      "R01_DryStoneWall_Collapsed_LOD1",
+      "R01_DryStoneWall_Collapsed_LOD2"
+    ],
+    "lod0_size_m": [
+      3.0,
+      1.9002,
+      1.026
+    ],
+    "lod0_min_m": [
+      -1.5,
+      -1.5925,
+      -0.076
+    ],
+    "tris": {
+      "R01_DryStoneWall_Collapsed_Collision_00": 12,
+      "R01_DryStoneWall_Collapsed_Collision_01": 12,
+      "R01_DryStoneWall_Collapsed_Collision_02": 12,
+      "R01_DryStoneWall_Collapsed_LOD0": 36828,
+      "R01_DryStoneWall_Collapsed_LOD1": 18414,
+      "R01_DryStoneWall_Collapsed_LOD2": 5523
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R01_DryStoneWall_Collapsed_Collision_00",
+      "R01_DryStoneWall_Collapsed_Collision_01",
+      "R01_DryStoneWall_Collapsed_Collision_02",
+      "R01_DryStoneWall_Collapsed_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R01_DryStoneWall_Collapsed"
+    ],
+    "occlusion_texture": true,
+    "bytes": 4033412
+  },
+  "sha256": {
+    "R01_DryStoneWall_Collapsed_v001.fbx": "a89f1da55f545f7c2beca736d69fdbd41e588c29b9e219733296c3bc1962fd02",
+    "R01_DryStoneWall_Collapsed_v001.glb": "8ca06116e3ca86173961e710cadb0a26849b99c28ef506e84ce3b411541c1274"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

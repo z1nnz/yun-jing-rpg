@@ -1,0 +1,61 @@
+{
+  "asset": "R02_BambooFence_Leaning",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R02_BambooFence_Leaning_Collision",
+      "R02_BambooFence_Leaning_LOD0",
+      "R02_BambooFence_Leaning_LOD1",
+      "R02_BambooFence_Leaning_LOD2"
+    ],
+    "lod0_size_m": [
+      2.2011,
+      1.877,
+      1.3619
+    ],
+    "lod0_min_m": [
+      -1.1198,
+      -1.1859,
+      -0.2061
+    ],
+    "tris": {
+      "R02_BambooFence_Leaning_Collision": 12,
+      "R02_BambooFence_Leaning_LOD0": 41664,
+      "R02_BambooFence_Leaning_LOD1": 20832,
+      "R02_BambooFence_Leaning_LOD2": 6248
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R02_BambooFence_Leaning_Collision",
+      "R02_BambooFence_Leaning_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R02_BambooFence_Leaning"
+    ],
+    "occlusion_texture": true,
+    "bytes": 2115340
+  },
+  "sha256": {
+    "R02_BambooFence_Leaning_v001.fbx": "479009015ed0c79d97a5179a0487a3963ae2cac9b94ccfa69237e20aa1797380",
+    "R02_BambooFence_Leaning_v001.glb": "414e516609fe8ef500294b79a5b32245eff38a8cb3dc4db123d7787d5def5c2a"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

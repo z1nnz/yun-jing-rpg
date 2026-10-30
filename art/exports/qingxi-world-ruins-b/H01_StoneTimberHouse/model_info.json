@@ -1,0 +1,208 @@
+{
+  "asset": "H01_StoneTimberHouse",
+  "name_zh": "厚重石木屋（炭青陶瓦）",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 3,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.05,
+  "size_m": {
+    "x": 5.455,
+    "y": 4.349,
+    "z_above_ground": 3.792,
+    "z_below_ground": 0.05
+  },
+  "bounds_m": {
+    "min": [
+      -2.728,
+      -2.175,
+      -0.05
+    ],
+    "max": [
+      2.728,
+      2.174,
+      3.792
+    ]
+  },
+  "slot_limit_m": [
+    5.5,
+    4.5,
+    3.8
+  ],
+  "triangles": {
+    "LOD0": 126870,
+    "LOD1": 63435,
+    "LOD2": 19029
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_H01_StoneTimberHouse_Plaster",
+      "slot": "Plaster",
+      "textures": {
+        "BaseColor": "Textures/T_H01_StoneTimberHouse_Plaster_BaseColor.png",
+        "Normal": "Textures/T_H01_StoneTimberHouse_Plaster_Normal.png",
+        "ORM": "Textures/T_H01_StoneTimberHouse_Plaster_ORM.png"
+      },
+      "texture_size": 1024,
+      "visible_texel_density_px_per_m": 133.6,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    },
+    {
+      "name": "M_WRB_H01_StoneTimberHouse_RoofTile",
+      "slot": "RoofTile",
+      "textures": {
+        "BaseColor": "Textures/T_H01_StoneTimberHouse_RoofTile_BaseColor.png",
+        "Normal": "Textures/T_H01_StoneTimberHouse_RoofTile_Normal.png",
+        "ORM": "Textures/T_H01_StoneTimberHouse_RoofTile_ORM.png"
+      },
+      "texture_size": 1024,
+      "visible_texel_density_px_per_m": 138.5,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    },
+    {
+      "name": "M_WRB_H01_StoneTimberHouse_FootingStone",
+      "slot": "FootingStone",
+      "textures": {
+        "BaseColor": "Textures/T_H01_StoneTimberHouse_FootingStone_BaseColor.png",
+        "Normal": "Textures/T_H01_StoneTimberHouse_FootingStone_Normal.png",
+        "ORM": "Textures/T_H01_StoneTimberHouse_FootingStone_ORM.png"
+      },
+      "texture_size": 1024,
+      "visible_texel_density_px_per_m": 131.1,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    },
+    {
+      "name": "M_WRB_H01_StoneTimberHouse_Timber",
+      "slot": "Timber",
+      "textures": {
+        "BaseColor": "Textures/T_H01_StoneTimberHouse_Timber_BaseColor.png",
+        "Normal": "Textures/T_H01_StoneTimberHouse_Timber_Normal.png",
+        "ORM": "Textures/T_H01_StoneTimberHouse_Timber_ORM.png"
+      },
+      "texture_size": 1024,
+      "visible_texel_density_px_per_m": 127.0,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "H01_StoneTimberHouse_Collision_00",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_01",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_02",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_03",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_04",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_05",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_06",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_07",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_08",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_09",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_10",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_11",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_12",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    },
+    {
+      "name": "H01_StoneTimberHouse_Collision_13",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": {
+    "max_w_d_h_m": [
+      5.5,
+      4.5,
+      3.8
+    ],
+    "front": "-Y in Blender (door side)",
+    "note": "variant of the D3 slot; same footprint limit, any D3-sized plot"
+  },
+  "files": {
+    "fbx": "H01_StoneTimberHouse_v001.fbx",
+    "glb": "H01_StoneTimberHouse_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/H01_StoneTimberHouse_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/house-variants/H01_Charcoal_StoneTimber-v001.png",
+  "notes": [
+    "Walk-in: door clear opening at least 0.9 x 1.9 m; a 2 x 2 m interior area is free of geometry and collision (checked on the export, box recorded in validation).",
+    "Collision: floor slab, wall hulls following the standing wall height (door gap left open), lintel, threshold, bed, leaning door leaf, rubble mounds, lean-to posts. No roof collision.",
+    "Footing stones are embedded 5 cm below z = 0."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

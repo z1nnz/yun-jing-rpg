@@ -1,0 +1,61 @@
+{
+  "asset": "R05_Milestone",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R05_Milestone_Collision",
+      "R05_Milestone_LOD0",
+      "R05_Milestone_LOD1",
+      "R05_Milestone_LOD2"
+    ],
+    "lod0_size_m": [
+      0.8119,
+      0.4945,
+      1.6058
+    ],
+    "lod0_min_m": [
+      -0.398,
+      -0.1749,
+      -0.2584
+    ],
+    "tris": {
+      "R05_Milestone_Collision": 20,
+      "R05_Milestone_LOD0": 11036,
+      "R05_Milestone_LOD1": 5518,
+      "R05_Milestone_LOD2": 1654
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R05_Milestone_Collision",
+      "R05_Milestone_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R05_Milestone"
+    ],
+    "occlusion_texture": true,
+    "bytes": 426472
+  },
+  "sha256": {
+    "R05_Milestone_v001.fbx": "7cb6f633da361baa785beaccadc9a631a4e84eb544dd8a38513c216a4af00958",
+    "R05_Milestone_v001.glb": "db929f0788709be0fe8e483fc8bf3d4cfb3968e9653e90607a3b49ec710f5f0c"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

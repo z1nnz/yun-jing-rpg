@@ -1,0 +1,24 @@
+{
+  "asset": "R04_StoneLanternBroken",
+  "renders": [
+    "review_01_front.png",
+    "review_02_side.png",
+    "review_03_rear.png",
+    "review_04_three_quarter.png",
+    "hero.png",
+    "close_rim.png",
+    "close_foot.png",
+    "lod_strip.png"
+  ],
+  "engine": "EEVEE",
+  "colour": "AgX Medium High Contrast, exposure -0.5",
+  "sky": "Nishita physical sky + sun 5.0 (sun turned with each camera: front-left key in every view), sky strength 0.09, earth-brown ground (HDRI from spec not available locally)",
+  "figure_height_m": 1.75,
+  "ruler_ticks_m": 0.25,
+  "model": "exported LOD0 with baked textures",
+  "model_size_m": [
+    0.583,
+    0.581,
+    1.295
+  ]
+}
