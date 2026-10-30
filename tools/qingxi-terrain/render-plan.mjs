@@ -97,10 +97,12 @@ function worldMap(world) {
 
 const layout = loadLayout();
 fs.writeFileSync(path.join(outDir, 'a1-village-plan.svg'), villagePlan(layout));
-for (const [id, title] of [['A2', 'A2 村外官道與茶亭'], ['A3', 'A3 西溪與水磨坊'], ['D3', 'D3 上游溪谷']]) {
+for (const [id, title] of [['A2', 'A2 村外官道與茶亭'], ['A3', 'A3 西溪與水磨坊'], ['D3', 'D3 上游溪谷'], ['D1', 'D1 林緣獵場']]) {
   const block = JSON.parse(fs.readFileSync(path.join(root, 'tools', 'qingxi-terrain', 'blocks', id + '.json'), 'utf8'));
   fs.writeFileSync(path.join(outDir, id.toLowerCase() + '-block-plan.svg'), villagePlan(block, title));
 }
+const territory = JSON.parse(fs.readFileSync(path.join(root, 'tools', 'qingxi-terrain', 'territory.json'), 'utf8'));
+fs.writeFileSync(path.join(outDir, 'territory-plan.svg'), villagePlan(territory, '新手領地・一方小世界（場景座標）'));
 const world = JSON.parse(fs.readFileSync(path.join(root, 'tools', 'qingxi-terrain', 'novice-world-blocks.json'), 'utf8'));
 fs.writeFileSync(path.join(outDir, 'novice-world-blocks.svg'), worldMap(world));
 console.log('maps written to', path.relative(root, outDir));
