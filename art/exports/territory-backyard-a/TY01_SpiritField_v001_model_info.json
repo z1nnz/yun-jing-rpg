@@ -1,0 +1,154 @@
+{
+ "id": "TY01",
+ "name": "SpiritField",
+ "file": "TY01_SpiritField_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "structure (embedded bed; ground from terrain)",
+ "slots": [
+  "TY_Field_1 (-2.8, 6.7)",
+  "TY_Field_2 (2.8, 6.7)"
+ ],
+ "dimensions_m": [
+  2.5932,
+  3.2826,
+  0.4789
+ ],
+ "triangles_lod0": 29530,
+ "triangles_per_node": {
+  "SM_TY_SpiritField_LOD0": [
+   29354,
+   14677,
+   4402
+  ]
+ },
+ "collision": {
+  "type": "box",
+  "size": [
+   2.4,
+   3.2,
+   0.3
+  ],
+  "center": [
+   0,
+   0,
+   0.15
+  ],
+  "note": "rim 0.3 m: not meant to be walked through; plant / harvest from the side. Inlet on +X: rotate 180 deg about the vertical for TY_Field_2 so both inlets face the x = 0 path"
+ },
+ "sockets": [
+  {
+   "name": "SOCKET_inlet",
+   "loc": [
+    1.36,
+    0.55,
+    0.355
+   ],
+   "forward": [
+    -1.0,
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY01",
+  "dimensions_m": [
+   2.5932,
+   3.2826,
+   0.4789
+  ],
+  "bbox_min": [
+   -1.228,
+   -1.6361,
+   0.0
+  ],
+  "bbox_max": [
+   1.3652,
+   1.6465,
+   0.4789
+  ],
+  "trianglesLOD0": 29530,
+  "trianglesPerNode": {
+   "SM_TY_SpiritField_LOD0": [
+    29354,
+    14677,
+    4402
+   ]
+  },
+  "materials": [
+   "FieldWater",
+   "M_TY_SpiritField"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_SpiritField_LOD0",
+   "SM_TY_SpiritField_Water"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 728,
+   "looseVerts": 0,
+   "zeroAreaFaces": 2
+  },
+  "glbRoundTrip": {
+   "triangles": 29530,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -1.228,
+     -1.6361,
+     0.0
+    ],
+    [
+     1.3652,
+     1.6465,
+     0.4789
+    ]
+   ],
+   "materials": [
+    "FieldWater.001",
+    "M_TY_SpiritField.001"
+   ]
+  },
+  "files": {
+   "TY01_SpiritField_v001.glb": {
+    "bytes": 2979072,
+    "sha256": "c120a0a75fa64b1df3b74c5e3e07c56ffc07f236385e07eda263ec65a37edfa0"
+   },
+   "TY01_SpiritField_v001.fbx": {
+    "bytes": 2554172,
+    "sha256": "3cdc9b3bca3926bd2e72a1280afc4e4d15c7b1fc9b7d63a70904a35945a4ff92"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY01_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ },
+ "states": {
+  "dry": "material M_TY_SpiritField (T_TY01_SpiritField_Dry_*); hide SM_TY_SpiritField_Water",
+  "wet": "material M_TY_SpiritField_Wet (T_TY01_SpiritField_Wet_BaseColor / _ORM, normal shared); hide SM_TY_SpiritField_Water",
+  "flooded": "wet material and show SM_TY_SpiritField_Water (surface z = 0.29 m, for clearwater lotus)"
+ },
+ "planting": {
+  "rows_x": [
+   -0.62,
+   0.0,
+   0.62
+  ],
+  "plants_y": [
+   -0.96,
+   -0.32,
+   0.32,
+   0.96
+  ],
+  "note": "3 x 4 clumps, field-local; crop meshes share this origin"
+ }
+}
