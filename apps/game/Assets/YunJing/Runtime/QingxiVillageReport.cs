@@ -15,17 +15,19 @@ namespace YunJing
 
         public static QingxiVillageReport Current { get; private set; }
 
+        // Answered by villagers who already live in the village (the innkeeper, the smith, the herbalist), each about
+        // what they care for: water for the inn, stone and tools, the slope where the herbs and the young beasts are.
         public static readonly (string id, string label, string before, string after)[] Reports =
         {
             ("tell_shortage", "告訴大家水少了的事",
-                "洗衣的阿嬸嘆了口氣：「難怪這幾天井水都帶泥。好，我跟隔壁說一聲，先省著用。」",
-                "洗衣的阿嬸把木盆往溪邊一放：「水回來了，衣服總算洗得乾淨了。」"),
-            ("inspect_crack", "請石匠去看看裂開的舊槽",
-                "老石匠敲了敲菸斗：「裂在側面？那是老毛病了。明天我帶鑿子上去看看。」",
-                "老石匠摸著新補的石鞍：「補得不錯。這塊石頭，可以撐很多年。」"),
+                "客棧老闆停下腳步：「難怪這幾天井水都帶泥。我先跟客人說一聲，茶水省著點泡。」",
+                "客棧老闆提著水桶經過：「水回來了，今天的茶總算泡得清了。」"),
+            ("inspect_crack", "請鐵匠去看看裂開的舊槽",
+                "鐵匠擦了擦手：「裂在側面？那是老毛病了。明天我帶鑿子上去看看。」",
+                "鐵匠摸著新補的石鞍：「補得不錯。這塊石頭，可以撐很多年。」"),
             ("protect_nursery", "請大家別去吵溪邊的小獸",
-                "蹲在一旁的小孩抬起頭：「是那種尾巴短短的小鹿嗎？我不會去吵牠們的！」",
-                "小孩趴在溪邊小聲說：「牠們又來喝水了，你看，那邊。」"),
+                "藥農點點頭：「那片坡上的小獸？牠們常去吃落下的果子。我會跟孩子們說，別去追。」",
+                "藥農小聲說：「牠們又回來喝水了，蹄印一路到溪邊。」"),
         };
 
         void OnEnable() { Current = this; }

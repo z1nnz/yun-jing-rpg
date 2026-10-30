@@ -119,6 +119,11 @@
       "id": "homes-gate",
       "x": 27,
       "z": 7
+    },
+    {
+      "id": "north-pass",
+      "x": 12,
+      "z": 49.5
     }
   ],
   "edges": [
@@ -246,6 +251,13 @@
       "from": "homes-gate",
       "to": "homes-lane",
       "width": 2.4,
+      "surface": "dirt"
+    },
+    {
+      "id": "to-north-pass",
+      "from": "rabbit-trail",
+      "to": "north-pass",
+      "width": 2.2,
       "surface": "dirt"
     }
   ],
@@ -1174,5 +1186,7 @@
       "height": 0.3,
       "blend": 1.5
     }
-  ]
+  ],
+  "relief": 0.6,
+  "terrace": 0
 }

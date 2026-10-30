@@ -40,6 +40,16 @@
       "id": "d3-t5",
       "x": -137.9,
       "z": 114.4
+    },
+    {
+      "id": "d3-east",
+      "x": -50.5,
+      "z": 78
+    },
+    {
+      "id": "d3-ne",
+      "x": -74,
+      "z": 100
     }
   ],
   "edges": [
@@ -77,6 +87,14 @@
       "to": "d3-t5",
       "width": 2.0,
       "surface": "forest"
+    },
+    {
+      "id": "d3-from-d1",
+      "from": "d3-east",
+      "to": "d3-ne",
+      "width": 2.0,
+      "surface": "dirt",
+      "note": "從 D1 進來走溪的東北岸，到育幼區旁，再從 A08 踏石過溪接西南岸的步道"
     }
   ],
   "pads": [
@@ -507,5 +525,7 @@
   "herbs": [],
   "fortunes": [],
   "checkpoints": [],
-  "route": []
+  "route": [],
+  "relief": 3.5,
+  "terrace": 1.2
 }

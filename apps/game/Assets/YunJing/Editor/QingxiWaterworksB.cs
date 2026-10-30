@@ -127,16 +127,18 @@ namespace YunJing.Editor
             var site = new GameObject("OldChannel (PR #52, R1 layout)").AddComponent<QingxiWaterworksSite>();
             site.transform.SetParent(village, false);
             var repaired = new GameObject("After repair").transform; repaired.SetParent(site.transform, false);
+            var water = new GameObject("Water (gate open)").transform; water.SetParent(repaired, false);
             int placed = 0;
             foreach (var p in layout.pieces)
             {
                 // The old pieces stand from the start and stay; everything else appears with the repair.
                 if (Spawn(p.id, Old.Contains(p.id) ? site.transform : repaired, p) != null) placed++;
                 // Water runs through every channel piece only once the channel is repaired.
-                var water = Spawn(p.id + "_water", repaired, p);
-                if (water != null) foreach (var r in water.GetComponentsInChildren<Renderer>()) r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                var flow = Spawn(p.id + "_water", water, p);
+                if (flow != null) foreach (var r in flow.GetComponentsInChildren<Renderer>()) r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             }
             site.repaired = repaired.gameObject;
+            site.water = water.gameObject;
             // The interaction point beside the gate (B05), as joshsu54's layout notes suggest.
             var gate = layout.pieces.FirstOrDefault(p => p.id == "B05");
             var point = new GameObject("Waterworks talk point").transform; point.SetParent(site.transform, false);

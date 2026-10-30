@@ -64,6 +64,8 @@ namespace YunJing.Editor
             public Creek creek;
             public CreekKitSpan[] creekKit;   // D3: which river tiles (PR #45) line each stretch of the creek
             public Flat[] flats;              // ground levelled under built works that are not on a pad (the old channel)
+            public float relief;              // metres of broad rolling relief on open ground (roads, pads, creek stay level)
+            public float terrace;             // Liyue-style terrace step (m) on the relief; 0 for none
         }
         [Serializable] public class Flat { public string id, note; public float x, z, halfX, halfZ, height, blend = 1.5f; }
         [Serializable] public class CreekKitSpan { public float from, to; public string pieces, note; }
@@ -94,10 +96,16 @@ namespace YunJing.Editor
             return land - layout.creek.depth + layout.creek.waterLevel;
         }
 
-        static readonly string[] LayerNames = { "VillageMeadow", "VillagePackedEarth", "VillagePlazaStone", "VillageForestFloor" };
+        // Seven grounds, after Liyue's valleys (docs/execution/liyue-terrain-standard.md): lush and sun-dried meadow in
+        // patches, packed earth on the paths, stone slabs near the village, leaf-litter forest floor, creek gravel, and
+        // the warm ochre rock that shows where the ground is too steep to hold grass.
+        static readonly string[] LayerNames = { "VillageMeadow", "VillagePackedEarth", "VillagePlazaStone", "VillageForestFloor", "MeadowDry", "CreekGravel", "OchreRock" };
         static readonly Color[] Colors = {
-            new Color(.40f, .50f, .31f), new Color(.56f, .44f, .30f), new Color(.52f, .50f, .45f), new Color(.30f, .33f, .22f)
+            new Color(.38f, .50f, .29f), new Color(.55f, .43f, .29f), new Color(.55f, .53f, .48f), new Color(.29f, .30f, .20f),
+            new Color(.60f, .57f, .33f), new Color(.52f, .50f, .45f), new Color(.66f, .50f, .34f)
         };
+        static readonly string[] Kinds = { "grass", "earth", "slab", "litter", "grass", "gravel", "rock" };
+        static readonly float[] Tiles = { 5, 4, 3, 4, 6, 2.5f, 7 };
 
         // A1 (the novice village) by default; other blocks pass their file under tools/qingxi-terrain/blocks/.
         public static Layout Load(string relative = "tools/qingxi-terrain/novice-village.json")
@@ -179,6 +187,18 @@ namespace YunJing.Editor
             float h = BaseHeight(layout, x, z)
                 + layout.noise * 2f * (Mathf.PerlinNoise(x * .05f + 11f, z * .05f + 7f) - .5f)
                 + layout.noise * (Mathf.PerlinNoise(x * .17f + 53f, z * .17f + 29f) - .5f);
+            // Broad relief: two octaves of rolling hills; on terraced ground the slopes break into soft steps.
+            if (layout.relief > 0)
+            {
+                float hill = (Mathf.PerlinNoise(x * .018f + 101f, z * .018f + 57f) - .5f) * 2f * .7f + (Mathf.PerlinNoise(x * .045f + 13f, z * .045f + 91f) - .5f) * 2f * .3f;
+                float rise = hill * layout.relief;
+                if (layout.terrace > 0)
+                {
+                    float steps = rise / layout.terrace, floor = Mathf.Floor(steps), t = steps - floor;
+                    rise = Mathf.Lerp(rise, (floor + Mathf.SmoothStep(0, 1, Mathf.Clamp01((t - .65f) / .35f))) * layout.terrace, .7f);
+                }
+                h += rise;
+            }
             float road = RoadDistance(layout, x, z, out float roadHeight);
             h = Mathf.Lerp(roadHeight, h, Smooth(0f, RoadBlend, road));
             var area = layout.bounds;
@@ -252,25 +272,48 @@ namespace YunJing.Editor
                 float road = RoadDistance(layout, wx, wz, out _);
                 float pad = PadDistance(layout, wx, wz, out var nearest, 3.5f) + edgeNoise * 1.5f;
                 float inPad = 1f - Smooth(-1.2f, .6f, pad);
-                float dirt = Mathf.Max(1f - Smooth(-.25f, 1f, road + edgeNoise), nearest?.surface == "dirt" ? inPad * .7f : 0);
-                float plaza = nearest?.surface == "plaza" ? inPad * .85f : 0;
+                // Irregular paths: the worn width wanders along the road and the edge is ragged, grass creeping in.
+                float wander = (Mathf.PerlinNoise(wx * .09f + 211f, wz * .09f + 17f) - .5f) * 1.1f;
+                float ragged = (Mathf.PerlinNoise(wx * 1.3f + 5f, wz * 1.3f + 77f) - .5f) * .55f;
+                float worn = road + wander + ragged;
+                float dirt = Mathf.Max(1f - Smooth(-.35f, .9f, worn), nearest?.surface == "dirt" ? inPad * .7f : 0);
+                // Stone slabs on the village roads (A1 only), broken into stretches with earth between them.
+                bool village = area.minX == -50 && area.minZ == -50;
+                float slabRun = Smooth(.55f, .7f, Mathf.PerlinNoise(wx * .06f + 300f, wz * .06f + 300f));
+                float slabs = village ? dirt * slabRun * (1f - Smooth(-.9f, .2f, worn + .4f)) : 0;
+                float plaza = Mathf.Max(nearest?.surface == "plaza" ? inPad * .85f : 0, slabs);
                 float forest = nearest?.surface == "forest" ? (1f - Smooth(-1f, 3f, pad)) * (1f - dirt) : 0;
-                // Wet, darker banks along the creek reuse the forest-floor layer (keeps the terrain at 4 layers).
+                // Creek banks: gravel at the water's edge, darker leaf-litter and moss further up the bank.
                 float creek = CreekDistance(layout, wx, wz, out _);
-                if (layout.creek != null) forest = Mathf.Max(forest, (1f - Smooth(layout.creek.width * .5f, layout.creek.width * .5f + layout.creek.bank + 1f, creek + edgeNoise * 2f)) * (1f - dirt));
+                float gravel = 0;
+                if (layout.creek != null)
+                {
+                    float half = layout.creek.width * .5f;
+                    gravel = (1f - Smooth(half + .2f, half + 1.6f, creek + edgeNoise * 2f)) * (1f - dirt);
+                    forest = Mathf.Max(forest, (1f - Smooth(half + 1f, half + layout.creek.bank + 2.5f, creek + edgeNoise * 3f)) * (1f - dirt) * (1f - gravel));
+                }
+                // Steep ground shows the warm ochre rock; open meadow alternates lush and sun-dried patches.
+                float step = area.sizeX / PaintResolution;
+                float slope = Mathf.Max(Mathf.Abs(Height(layout, wx + step, wz) - Height(layout, wx - step, wz)), Mathf.Abs(Height(layout, wx, wz + step) - Height(layout, wx, wz - step))) / (2 * step);
+                float rock = Smooth(.45f, .8f, slope + edgeNoise * .3f) * (1f - dirt);
+                float dryPatch = Smooth(.5f, .68f, Mathf.PerlinNoise(wx * .035f + 71f, wz * .035f + 9f) + edgeNoise * .4f);
                 plaza *= 1f - dirt * .5f;
+                float open = Mathf.Max(0, 1f - dirt - plaza - forest - gravel - rock);
                 paint[z, x, 1] = dirt;
                 paint[z, x, 2] = plaza;
                 paint[z, x, 3] = forest;
-                paint[z, x, 0] = Mathf.Max(.01f, 1f - dirt - plaza - forest);
+                paint[z, x, 5] = gravel;
+                paint[z, x, 6] = rock;
+                paint[z, x, 4] = open * dryPatch * .85f;
+                paint[z, x, 0] = Mathf.Max(.01f, open - paint[z, x, 4]);
                 float sum = 0;
                 for (int l = 0; l < LayerNames.Length; l++) sum += paint[z, x, l];
                 for (int l = 0; l < LayerNames.Length; l++) paint[z, x, l] /= sum;
                 // Grass: none on roads or pads, thinning toward their edges.
-                float density = Smooth(.3f, 2.3f, road) * Smooth(.5f, 2.5f, pad)
+                float density = Smooth(.1f, 1.8f, worn) * Smooth(.5f, 2.5f, pad) * (1f - rock) * (1f - gravel)
                     * (layout.creek != null ? Smooth(layout.creek.width * .5f + .5f, layout.creek.width * .5f + 2.5f, creek) : 1f);
                 float scatter = Mathf.PerlinNoise(wx * .71f + 31f, wz * .71f + 41f);
-                detail[z, x] = density > .85f && scatter > .55f ? (scatter > .7f ? 3 : 1) : 0;
+                detail[z, x] = density > .7f && scatter > .42f ? (scatter > .66f ? 4 : scatter > .54f ? 2 : 1) : 0;
             }
             data.SetAlphamaps(0, 0, paint);
 
@@ -307,8 +350,8 @@ namespace YunJing.Editor
                 string path = Generated + "/TerrainLayer-" + LayerNames[i] + ".asset";
                 var layer = AssetDatabase.LoadAssetAtPath<TerrainLayer>(path);
                 if (layer == null) { layer = new TerrainLayer(); AssetDatabase.CreateAsset(layer, path); }
-                layer.diffuseTexture = Texture(LayerNames[i], Colors[i], 20261029 + i);
-                layer.tileSize = new Vector2(6, 6);
+                layer.diffuseTexture = Texture(LayerNames[i], Colors[i], 20261029 + i, Kinds[i]);
+                layer.tileSize = new Vector2(Tiles[i], Tiles[i]);
                 layer.smoothness = 0; layer.metallic = 0;
                 EditorUtility.SetDirty(layer);
                 result[i] = layer;
@@ -316,22 +359,72 @@ namespace YunJing.Editor
             return result;
         }
 
-        static Texture2D Texture(string name, Color color, int seed)
+        // A tileable ground texture drawn from noise: every kind has its own pattern so the ground reads as grass,
+        // earth, slabs, leaf litter, gravel or rock up close, not as one flat colour.
+        static Texture2D Texture(string name, Color color, int seed, string kind)
         {
+            const int N = 256;
             string path = Generated + "/Terrain-" + name + ".asset";
             var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
-            if (texture == null)
+            if (texture == null || texture.width != N)
             {
-                texture = new Texture2D(128, 128, TextureFormat.RGBA32, true) { name = "Terrain-" + name };
+                if (texture != null) AssetDatabase.DeleteAsset(path);
+                texture = new Texture2D(N, N, TextureFormat.RGBA32, true) { name = "Terrain-" + name };
                 AssetDatabase.CreateAsset(texture, path);
             }
-            var pixels = new Color[128 * 128];
             var rng = new System.Random(seed);
-            for (int i = 0; i < pixels.Length; i++)
+            float ox = rng.Next(1000), oz = rng.Next(1000);
+            // Tileable noise: blend four copies shifted by one tile, so opposite edges meet without bending the pattern.
+            float Tile(float u, float v, float freq)
             {
-                float change = (float)rng.NextDouble() * .1f - .05f;
+                float N(float x, float y) => Mathf.PerlinNoise(ox + x * freq, oz + y * freq);
+                return N(u, v) * (1 - u) * (1 - v) + N(u - 1, v) * u * (1 - v) + N(u, v - 1) * (1 - u) * v + N(u - 1, v - 1) * u * v;
+            }
+            float Fbm(float u, float v, float f) => Tile(u, v, f) * .55f + Tile(u, v, f * 2.1f) * .3f + Tile(u, v, f * 4.3f) * .15f;
+            // Cell centres (wrapping) for pebbles, slabs and leaves; z is the cell's own shade.
+            var cells = Enumerable.Range(0, 70).Select(_ => new Vector3((float)rng.NextDouble(), (float)rng.NextDouble(), (float)rng.NextDouble())).ToArray();
+            float Distance(float u, float v, Vector3 k)
+            {
+                float du = Mathf.Abs(u - k.x), dv = Mathf.Abs(v - k.y); du = Mathf.Min(du, 1 - du); dv = Mathf.Min(dv, 1 - dv);
+                return Mathf.Sqrt(du * du + dv * dv);
+            }
+            var pixels = new Color[N * N];
+            for (int y = 0; y < N; y++)
+            for (int x = 0; x < N; x++)
+            {
+                float u = x / (float)N, v = y / (float)N, light = Fbm(u, v, 6) - .5f, tint = Fbm(u, v, 2.5f) - .5f;
+                float d1 = 9, d2 = 9; var cell = cells[0];
+                foreach (var k in cells) { float d = Distance(u, v, k); if (d < d1) { d2 = d1; d1 = d; cell = k; } else if (d < d2) d2 = d; }
+                Color c = color;
+                switch (kind)
+                {
+                    case "grass":   // fine speckle of blades in every direction, darker tufts, a warmer hue in places
+                        float speck = Tile(u, v, 64) - .5f, tuft = Tile(u, v, 18) - .5f;
+                        c = color * (1 + light * .35f + speck * .3f + tuft * .2f) + new Color(tint * .08f, tint * .05f, -tint * .03f);
+                        break;
+                    case "earth":   // packed earth with clumps and a few small stones
+                        c = color * (1 + light * .45f + (Tile(u, v, 48) - .5f) * .2f);
+                        // A few small stones, different sizes, only slightly paler than the earth.
+                        if (cell.z > .45f && d1 < .004f + cell.z * .006f) c = Color.Lerp(c, color * (1.05f + cell.z * .15f), .55f);
+                        break;
+                    case "slab":    // stone slabs with dark joints, each slab its own shade
+                        c = color * (.88f + cell.z * .22f + light * .25f);
+                        if (d2 - d1 < .006f) c *= .55f;
+                        break;
+                    case "litter":  // leaf litter and moss over dark soil
+                        c = color * (1 + light * .5f);
+                        if (Tile(u, v, 26) > .62f) c = Color.Lerp(c, cell.z > .5f ? new Color(.52f, .38f, .2f) : new Color(.35f, .42f, .22f), .55f);
+                        break;
+                    case "gravel":  // rounded pebbles of several greys
+                        c = Color.Lerp(color * .62f, color * (.85f + cell.z * .35f), Mathf.Clamp01((1 - d1 / .055f) * 1.6f)) * (1 + light * .2f);
+                        break;
+                    case "rock":    // ochre rock with horizontal strata
+                        float band = Mathf.Sin((v + light * .08f) * Mathf.PI * 2 * 9) * .5f + .5f;
+                        c = color * (.82f + band * .22f + light * .35f);
+                        break;
+                }
                 // URP Terrain Lit reads smoothness from the albedo alpha when there is no mask map: keep it matte.
-                pixels[i] = new Color(Mathf.Clamp01(color.r + change), Mathf.Clamp01(color.g + change), Mathf.Clamp01(color.b + change), .08f);
+                pixels[y * N + x] = new Color(Mathf.Clamp01(c.r), Mathf.Clamp01(c.g), Mathf.Clamp01(c.b), .06f);
             }
             texture.SetPixels(pixels);
             texture.wrapMode = TextureWrapMode.Repeat;

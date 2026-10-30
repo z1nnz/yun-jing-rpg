@@ -11,6 +11,7 @@ namespace YunJing
         [System.Serializable] public class Clue { public string id; public Transform at; }
 
         public Clue[] points = new Clue[0];
+        public GameObject siltBlocked, siltCleared;   // A04 silt bar, before and after the newcomer chose to clear it
         const float Reach = 2.6f;
         const string Saved = "yj.upstream";
 
@@ -24,7 +25,13 @@ namespace YunJing
             ["nursery_tracks"] = ("F 看看濕泥上的痕跡", "濕泥上有一串小小的蹄印，往淺灘那頭去了。附近有小獸在這裡喝水。"),
         };
 
-        void OnEnable() { Current = this; }
+        void OnEnable()
+        {
+            Current = this;
+            bool cleared = QingxiWaterworksSite.Chosen == "clear_silt";
+            if (siltBlocked != null) siltBlocked.SetActive(!cleared);
+            if (siltCleared != null) siltCleared.SetActive(cleared);
+        }
         void OnDisable() { if (Current == this) Current = null; }
 
         static float Flat(Vector3 a, Vector3 b) => Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));

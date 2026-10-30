@@ -19,6 +19,9 @@ namespace YunJing.Editor
 
         public static string ModelPath(string key) => $"{Models}/{key}.fbx";
 
+        /// <summary>The silt bar and its cleared state from the last RiverKit, handed to the clue spots.</summary>
+        public static GameObject SiltBlocked, SiltCleared;
+
         public static void Copy()
         {
             string repo = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", ".."));
@@ -209,16 +212,19 @@ namespace YunJing.Editor
         // crossing to the nursery bank, and withered sedge along the middle stretch.
         static void Dress(Transform root, QingxiVillageTerrain.Layout layout, List<Vector2> line, float total)
         {
-            void Put(string key, Vector2 p, float yaw, float lift = 0)
+            GameObject Put(string key, Vector2 p, float yaw, float lift = 0)
             {
                 var m = Spawn(key, root);
                 m.transform.rotation = Quaternion.Euler(0, yaw, 0) * m.transform.rotation;
                 float land = QingxiVillageTerrain.BaseHeight(layout, p.x, p.y);
                 m.transform.position = new Vector3(p.x, land - BankTop + .25f + lift, p.y);
                 Prepare(m, walkable: true);
+                return m;
             }
             float Heading(float d) { var a = PointAt(line, d); var b = PointAt(line, Mathf.Min(d + 2, total)); return Mathf.Atan2(b.x - a.x, b.y - a.y) * Mathf.Rad2Deg; }
-            Put("A04_SiltBar", SiltPoint(layout), Heading(42));
+            SiltBlocked = Put("A04_SiltBar", SiltPoint(layout), Heading(42));
+            SiltCleared = Put("A04_SiltBar_cleared", SiltPoint(layout), Heading(42));
+            SiltCleared.SetActive(false);
             Put("A04_SiltJam_03", PointAt(line, 48), Heading(48));
             var crossing = layout.creek.crossing != null ? new Vector2(layout.creek.crossing.x, layout.creek.crossing.z) : PointAt(line, 62);
             Put("A08_slabs_stagger_01", crossing, Heading(62) + 90);

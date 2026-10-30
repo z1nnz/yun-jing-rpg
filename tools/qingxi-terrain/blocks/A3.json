@@ -375,5 +375,7 @@
   "herbs": [],
   "fortunes": [],
   "checkpoints": [],
-  "route": []
+  "route": [],
+  "relief": 1.6,
+  "terrace": 0
 }

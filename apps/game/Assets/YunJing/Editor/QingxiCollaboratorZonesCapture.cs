@@ -108,7 +108,7 @@ namespace YunJing.Editor
         public static void CaptureUpstream()
         {
             EditorSceneManager.OpenScene(QingxiNoviceVillageBuilder.ScenePath);
-            foreach (var id in new[] { "A2", "A3", "D3" }) EditorSceneManager.OpenScene(QingxiBlockBuilder.ScenePath(id), OpenSceneMode.Additive);
+            foreach (var id in new[] { "A2", "A3", "D3", "D1" }) EditorSceneManager.OpenScene(QingxiBlockBuilder.ScenePath(id), OpenSceneMode.Additive);
             Physics.SyncTransforms();
             var dir = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..", "artifacts", "qingxi-upstream-d3"));
             Directory.CreateDirectory(dir);
@@ -148,6 +148,10 @@ namespace YunJing.Editor
             Shot("12-a3-above", new Vector3(-60, 30, 10), new Vector3(-105, 0, 0));
             Shot("13-a2-road-dressing", new Vector3(4, 2, -112), new Vector3(-2, .5f, -80));
             Shot("14-a2-above", new Vector3(30, 30, -70), new Vector3(-5, 0, -110));
+            Shot("15-a1-north-ridge-to-d1", new Vector3(8, 1.7f, 36), new Vector3(10, 1, 62));
+            Shot("16-d1-forest-edge", new Vector3(6, 2, 66), new Vector3(-20, 0, 80));
+            Shot("17-d1-above", new Vector3(40, 35, 40), new Vector3(-10, 0, 90));
+            Shot("18-ground-closeup", new Vector3(-10, 1.2f, -95), new Vector3(-14, 0, -88));
             Debug.Log($"QINGXI_UPSTREAM_CAPTURED to {dir}");
         }
     }

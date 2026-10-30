@@ -77,6 +77,7 @@ namespace YunJing
             {
                 if (ok) return;
                 Debug.LogWarning($"QINGXI_SERVER {action.kind} refused: {error}");
+                if (action.kind == "waterworks-commit") QingxiWaterworksSite.Refused();
                 // Tell the player why (for example no spirit root yet, or still regrowing), in the server's words.
                 var message = (error ?? "").Split('·')[0].Trim();
                 if (message.Length > 0) FindAnyObjectByType<QingxiLocalForaging>()?.Notice("伺服器：" + message);

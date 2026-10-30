@@ -44,7 +44,7 @@ namespace YunJing
             {
                 bool works = kind == "waterworks";
                 waterTitle.text = works ? "舊水路・怎麼把水引回來" : "議水桌・說說上游看到的事";
-                waterBody.text = works ? "工匠和村民圍在閘門旁。三個做法都可以，選了就動工。" : "桌邊坐著洗衣的阿嬸、老石匠，還有一個蹲在旁邊的小孩。";
+                waterBody.text = works ? "工匠和村民圍在閘門旁。三個做法都可以，選了就動工。" : "議水桌上攤著水情板。村裡的人路過時，會停下來聽你說。";
                 for (int i = 0; i < 3; i++)
                     waterCaptions[i].text = works ? QingxiWaterworksSite.Choices[i].label + "：" + QingxiWaterworksSite.Choices[i].line : QingxiVillageReport.Reports[i].label;
                 foreach (var t in waterCaptions) { t.fontSize = 15; t.fontStyle = FontStyle.Normal; }

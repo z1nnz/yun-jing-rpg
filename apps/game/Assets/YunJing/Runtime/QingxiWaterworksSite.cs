@@ -10,7 +10,7 @@ namespace YunJing
     public sealed class QingxiWaterworksSite : MonoBehaviour
     {
         public Transform point;
-        public GameObject repaired;
+        public GameObject repaired, water;
         const float Reach = 2.6f;
         const string Saved = "yj.waterworks";
         const int MinClues = 2;   // waterline.json minObservations
@@ -38,7 +38,21 @@ namespace YunJing
             }
         }
 
-        void Show() { if (repaired != null) repaired.SetActive(Chosen != null); }
+        // Clearing the silt first keeps the new gate shut today (waterline: the fields get nothing yet); the other two
+        // ways send the water down the new channel.
+        void Show()
+        {
+            var chosen = Chosen;
+            if (repaired != null) repaired.SetActive(chosen != null);
+            if (water != null) water.SetActive(chosen != null && chosen != "clear_silt");
+        }
+
+        /// <summary>The server turned the repair down (no stone yet, or no clues): undo what this device showed.</summary>
+        public static void Refused()
+        {
+            try { PlayerPrefs.DeleteKey(Saved); PlayerPrefs.Save(); } catch { }
+            Current?.Show();
+        }
 
         static float Flat(Vector3 a, Vector3 b) => Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
         public bool Near(Vector3 position) => point != null && Flat(position, point.position) <= Reach;
@@ -63,7 +77,7 @@ namespace YunJing
             try { PlayerPrefs.SetString(Saved, id); PlayerPrefs.Save(); } catch { }
             QingxiServerLink.Current?.Submit(new GameAction { kind = "waterworks-commit", choice = id });
             Show();
-            return "大家一起動手。" + (id == "clear_silt" ? "上游的泥沙清開了。" : "舊槽補好了，水順著新槽往田裡去。");
+            return "大家一起動手。" + (id == "clear_silt" ? "上游的泥沙清開了，新閘門先關著，等水勢穩了再開。" : "舊槽補好了，水順著新槽往田裡去。");
         }
     }
 }

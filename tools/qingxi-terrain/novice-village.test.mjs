@@ -9,7 +9,7 @@ import { loadLayout, buildConfig } from './village-checks.mjs';
 const here = dirname(fileURLToPath(import.meta.url));
 const village = loadLayout();
 const blocks = { A1: village };
-for (const id of ['A2', 'A3', 'D3']) blocks[id] = JSON.parse(readFileSync(join(here, 'blocks', id + '.json'), 'utf8'));
+for (const id of ['A2', 'A3', 'D3', 'D1']) blocks[id] = JSON.parse(readFileSync(join(here, 'blocks', id + '.json'), 'utf8'));
 
 const padEdge = (p, x, z) => Math.max(Math.abs(x - p.x) - p.halfX, Math.abs(z - p.z) - p.halfZ);
 
@@ -161,9 +161,9 @@ for (const [name, layout] of Object.entries(blocks)) {
 }
 
 // Blocks join: a road that leaves one block must continue in the next within a metre of the border.
-test('roads continue across block borders (A1 → A2 south, A1 → A3 west, A3 → D3 north)', () => {
+test('roads continue across block borders (A1 → A2 south, A1 → A3 west, A3 → D3 north, A1 → D1 north, D1 → D3 west)', () => {
   const node = (layout, id) => layout.nodes.find(n => n.id === id);
-  for (const [a, aid, b, bid] of [['A1', 'village-entry', 'A2', 'a2-north'], ['A1', 'west-road', 'A3', 'a3-east'], ['A3', 'a3-north', 'D3', 'd3-south']]) {
+  for (const [a, aid, b, bid] of [['A1', 'village-entry', 'A2', 'a2-north'], ['A1', 'west-road', 'A3', 'a3-east'], ['A3', 'a3-north', 'D3', 'd3-south'], ['A1', 'north-pass', 'D1', 'd1-south'], ['D1', 'd1-west', 'D3', 'd3-east']]) {
     const p = node(blocks[a], aid), q = node(blocks[b], bid);
     assert.ok(Math.hypot(p.x - q.x, p.z - q.z) <= 1, `${a}.${aid} and ${b}.${bid} do not meet`);
   }

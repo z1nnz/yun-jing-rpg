@@ -282,10 +282,10 @@ namespace YunJing.Editor
 
         // Keep the traveller inside the review village; tall enough for the hills at the edge.
         // K5: the south side opens onto A2 and the west side onto A3 (streamed in by QingxiBlockStreamer), so only
-        // the north and east are walled until those blocks exist.
+        // the east is walled until that block exists (the north opens onto D1, the forest edge).
         static void Boundary(Transform village)
         {
-            foreach (var (x, z, w, d) in new[] { (0f, 45f, 90f, 1f), (45f, 0f, 1f, 90f) })
+            foreach (var (x, z, w, d) in new[] { (45f, 0f, 1f, 90f) })
             {
                 var wall = new GameObject("Boundary"); wall.transform.SetParent(village, false);
                 wall.transform.localPosition = new Vector3(x, 5, z);
@@ -620,6 +620,9 @@ namespace YunJing.Editor
                 model.transform.SetParent(root, false);
                 // PR #45 pieces: LOD group and their own convex collision shells.
                 if (QingxiWaterheadA.Owns(p.model)) QingxiWaterheadA.Prepare(model, walkable: false);
+                // Layout proxies (the 3 × 5 m plate under Eli-0731's assembled corner) mark an area, they are not ground.
+                foreach (var proxy in model.GetComponentsInChildren<Transform>(true).Where(t => t.name.StartsWith("layout_proxy")).ToArray())
+                    UnityEngine.Object.DestroyImmediate(proxy.gameObject);
                 model.transform.localRotation = Quaternion.Euler(0, p.yaw, 0) * source.transform.localRotation;
                 if (p.scale > 0) model.transform.localScale *= p.scale;
                 model.transform.localPosition = At(p.x, p.z);
@@ -769,6 +772,7 @@ namespace YunJing.Editor
             var silt = QingxiWaterheadA.SiltPoint(layout);
             var trail = layout.nodes.OrderBy(n => Vector2.Distance(new Vector2(n.x, n.z), silt)).First();
             var bank = silt + (new Vector2(trail.x, trail.z) - silt).normalized * 3.2f;
+            clues.siltBlocked = QingxiWaterheadA.SiltBlocked; clues.siltCleared = QingxiWaterheadA.SiltCleared;
             clues.points = new[]
             {
                 new QingxiUpstreamClues.Clue { id = "cracked_sluice", at = Point("cracked_sluice", Slot("D3_CrackedSluice")) },
