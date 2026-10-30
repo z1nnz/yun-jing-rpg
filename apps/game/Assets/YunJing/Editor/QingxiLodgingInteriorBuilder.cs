@@ -132,10 +132,11 @@ namespace YunJing.Editor
             lamp.type = LightType.Point; lamp.range = 8; lamp.intensity = 2.2f; lamp.color = new Color(1f, .82f, .6f); lamp.shadows = LightShadows.Soft;
             var sun = new GameObject("Territory sun").AddComponent<Light>();
             sun.transform.SetParent(world, false); sun.transform.rotation = Quaternion.Euler(48, -35, 0);
-            sun.type = LightType.Directional; sun.intensity = 1.15f; sun.color = new Color(1f, .93f, .82f); sun.shadows = LightShadows.Soft;
+            sun.type = LightType.Directional; sun.intensity = 1.35f; sun.color = new Color(1f, .9f, .74f); sun.shadows = LightShadows.Soft;
             RenderSettings.sun = sun;
             RenderSettings.skybox = QingxiNoviceVillageBuilder.Sky();
             // K11: the hollow's sky follows the same clock as the village; the room keeps its lantern.
+            QingxiNoviceVillageBuilder.PostCard(world);   // the same golden grade as the big world
             var dayNight = new GameObject("Qingxi Day and Night (K11)").AddComponent<QingxiDayNight>();
             dayNight.sun = sun; dayNight.sky = RenderSettings.skybox;
             dayNight.fogScale = .6f;   // the clock drives the fog at run time; keep it close so the rim stays misty

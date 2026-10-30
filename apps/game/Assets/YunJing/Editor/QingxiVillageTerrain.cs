@@ -13,7 +13,7 @@ namespace YunJing.Editor
     public static class QingxiVillageTerrain
     {
         const string Generated = "Assets/YunJing/Generated";
-        const int HeightResolution = 257, PaintResolution = 256;
+        const int HeightResolution = 513, PaintResolution = 512;   // 0.2 m per sample on a 100 m block: no stair-stepped banks
         const float BaseY = -1f, HeightRange = 24f;   // D3 climbs to 15 m; 16-bit heights keep sub-millimetre steps
         const float RoadBlend = 2.5f, PadBlend = 3f;
 
@@ -104,8 +104,8 @@ namespace YunJing.Editor
         // the warm ochre rock that shows where the ground is too steep to hold grass.
         static readonly string[] LayerNames = { "VillageMeadow", "VillagePackedEarth", "VillagePlazaStone", "VillageForestFloor", "MeadowDry", "CreekGravel", "OchreRock" };
         static readonly Color[] Colors = {
-            new Color(.38f, .50f, .29f), new Color(.55f, .43f, .29f), new Color(.55f, .53f, .48f), new Color(.29f, .30f, .20f),
-            new Color(.60f, .57f, .33f), new Color(.52f, .50f, .45f), new Color(.66f, .50f, .34f)
+            new Color(.32f, .5f, .22f), new Color(.55f, .43f, .29f), new Color(.55f, .53f, .48f), new Color(.29f, .30f, .20f),
+            new Color(.58f, .62f, .30f), new Color(.52f, .50f, .45f), new Color(.6f, .52f, .42f)
         };
         static readonly string[] Kinds = { "grass", "earth", "slab", "litter", "grass", "gravel", "rock" };
         static readonly float[] Tiles = { 5, 4, 4, 4, 6, 2.5f, 7 };
@@ -226,7 +226,7 @@ namespace YunJing.Editor
                 if (layout.terrace > 0)
                 {
                     float steps = rise / layout.terrace, floor = Mathf.Floor(steps), t = steps - floor;
-                    rise = Mathf.Lerp(rise, (floor + Mathf.SmoothStep(0, 1, Mathf.Clamp01((t - .65f) / .35f))) * layout.terrace, .7f);
+                    rise = Mathf.Lerp(rise, (floor + Mathf.SmoothStep(0, 1, Mathf.Clamp01((t - .5f) / .5f))) * layout.terrace, .35f);   // soft shelves, not sawtooth
                 }
                 h += rise;
             }
@@ -254,11 +254,15 @@ namespace YunJing.Editor
                 float edge = Mathf.Max(Mathf.Abs(x - f.x) - f.halfX, Mathf.Abs(z - f.z) - f.halfZ);
                 h = Mathf.Lerp(f.height, h, Smooth(0f, f.blend, edge));
             }
-            // Pads last: each zone stands on one flat platform at its stated height.
+            // Pads last: each zone stands on one flat platform at its stated height. The edge wanders so the platform
+            // is not a box cut into the hill, and the bank around it is wider the more it has to climb or fall, so it
+            // stays a slope you could walk (about 1 in 2) instead of a cut wall.
             foreach (var p in layout.pads)
             {
-                float edge = Mathf.Max(Mathf.Abs(x - p.x) - p.halfX, Mathf.Abs(z - p.z) - p.halfZ);
-                h = Mathf.Lerp(p.height, h, Smooth(0f, PadBlend, edge));
+                float wobble = (Mathf.PerlinNoise(x * .21f + p.x * .37f, z * .21f + p.z * .37f) - .5f) * 2.2f;
+                float edge = Mathf.Max(Mathf.Abs(x - p.x) - p.halfX, Mathf.Abs(z - p.z) - p.halfZ) + wobble;
+                float blend = Mathf.Max(PadBlend, Mathf.Abs(p.height - h) * 2.2f);
+                h = Mathf.Lerp(p.height, h, Smooth(0f, blend, edge));
             }
             return h;
         }
@@ -294,6 +298,9 @@ namespace YunJing.Editor
             data.alphamapResolution = PaintResolution;
             var paint = new float[PaintResolution, PaintResolution, LayerNames.Length];
             var detail = new int[PaintResolution, PaintResolution];
+            var cover = new float[PaintResolution, PaintResolution];   // how much grass belongs here (0..1)
+            var dryness = new float[PaintResolution, PaintResolution];
+            var edgeOf = new float[PaintResolution, PaintResolution];  // near a pad, road or rock: taller grass
             for (int z = 0; z < PaintResolution; z++)
             for (int x = 0; x < PaintResolution; x++)
             {
@@ -326,7 +333,12 @@ namespace YunJing.Editor
                 // Steep ground shows the warm ochre rock; open meadow alternates lush and sun-dried patches.
                 float step = area.sizeX / PaintResolution;
                 float slope = Mathf.Max(Mathf.Abs(Height(layout, wx + step, wz) - Height(layout, wx - step, wz)), Mathf.Abs(Height(layout, wx, wz + step) - Height(layout, wx, wz - step))) / (2 * step);
-                float rock = (layout.isolated ? Smooth(.85f, 1.2f, slope + edgeNoise * .3f) : Smooth(.45f, .8f, slope + edgeNoise * .3f)) * (1f - dirt);   // the hollow's slopes stay grassy
+                // Rock shows only where the ground is really steep, in outcrops (not along every bank); moderate
+                // banks are bare earth broken by grass.
+                float outcrop = Smooth(.4f, .6f, Mathf.PerlinNoise(wx * .09f + 13f, wz * .09f + 57f));
+                float rock = (layout.isolated ? Smooth(.85f, 1.2f, slope + edgeNoise * .3f) : Smooth(.62f, .95f, slope + edgeNoise * .3f) * outcrop) * (1f - dirt);   // the hollow's slopes stay grassy
+                float bank = layout.isolated ? 0 : Smooth(.32f, .62f, slope + edgeNoise * .25f) * Smooth(.35f, .65f, Mathf.PerlinNoise(wx * .23f + 91f, wz * .23f + 3f)) * (1f - rock) * (1f - dirt) * .75f;
+                dirt = Mathf.Max(dirt, bank);
                 float dryPatch = Smooth(.5f, .68f, Mathf.PerlinNoise(wx * .035f + 71f, wz * .035f + 9f) + edgeNoise * .4f);
                 plaza *= 1f - dirt * .5f;
                 float open = Mathf.Max(0, 1f - dirt - plaza - forest - gravel - rock);
@@ -345,18 +357,43 @@ namespace YunJing.Editor
                     * (layout.creek != null ? Smooth(layout.creek.width * .5f + .5f, layout.creek.width * .5f + 2.5f, creek) : 1f);
                 float scatter = Mathf.PerlinNoise(wx * .71f + 31f, wz * .71f + 41f);
                 detail[z, x] = density > .7f && scatter > .42f ? (scatter > .66f ? 4 : scatter > .54f ? 2 : 1) : 0;
+                cover[z, x] = density;
+                dryness[z, x] = dryPatch;
+                edgeOf[z, x] = Mathf.Max(1f - Smooth(2.5f, 6f, Mathf.Min(pad, worn)), Smooth(.25f, .5f, slope));
             }
             data.SetAlphamaps(0, 0, paint);
 
-            // Existing low-grass mesh from the ArtV001 kit as a detail prototype, not a new model.
-            var grass = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/QingxiWorld/Models/ArtV001/SM_LowGrass_LOD0.fbx");
-            if (grass == null) throw new FileNotFoundException("Grass detail mesh missing (Git LFS pulled?)", "SM_LowGrass_LOD0.fbx");
-            data.SetDetailResolution(PaintResolution, 8);
-            data.detailPrototypes = new[] { new DetailPrototype {
-                prototype = grass, usePrototypeMesh = true, renderMode = DetailRenderMode.VertexLit, useInstancing = true,
-                minWidth = .9f, maxWidth = 1.5f, minHeight = .8f, maxHeight = 1.4f, healthyColor = Color.white, dryColor = Color.white
-            }};
-            data.SetDetailLayer(0, 0, 0, detail);
+            // Meadow (QingxiGroundKit): stands of grass with turf between them (about a third of the ground), lush or sun-dried by patch,
+            // taller along paths, platforms and rock, and flowers in drifts (white, yellow or blue by area).
+            const int D = PaintResolution / 2;
+            var kinds = QingxiGroundKit.Prototypes();
+            var layers = new int[kinds.Length][,];
+            for (int k = 0; k < layers.Length; k++) layers[k] = new int[D, D];
+            var rnd = new System.Random((int)(area.minX * 7 + area.minZ * 13));
+            for (int z = 0; z < D; z++)
+            for (int x = 0; x < D; x++)
+            {
+                float c = cover[z * 2, x * 2];
+                if (c < .3f) continue;
+                float wx = area.minX + (x + .5f) * area.sizeX / D, wz = area.minZ + (z + .5f) * area.sizeZ / D;
+                double r = rnd.NextDouble();
+                float drift = Mathf.PerlinNoise(wx * .12f + 5f, wz * .12f + 9f);
+                if (drift > .64f && r < .32f * c)
+                {
+                    float hue = Mathf.PerlinNoise(wx * .04f + 31f, wz * .04f + 2f);
+                    layers[hue < .42f ? 3 : hue < .62f ? 4 : 5][z, x] = 1;
+                }
+                // Grass grows in stands (painted turf shows between them), thicker along edges and banks.
+                else if (r < .45f * c * Mathf.SmoothStep(0, 1, Mathf.InverseLerp(.35f, .75f, Mathf.PerlinNoise(wx * .06f + 77f, wz * .06f + 15f) + edgeOf[z * 2, x * 2] * .15f)))
+                {
+                    int kind = dryness[z * 2, x * 2] > .55f ? 2 : edgeOf[z * 2, x * 2] > .7f && rnd.NextDouble() < .2 ? 1 : 0;
+                    layers[kind][z, x] = 1;
+                }
+            }
+            data.SetDetailScatterMode(DetailScatterMode.InstanceCountMode);
+            data.SetDetailResolution(D, 16);
+            data.detailPrototypes = kinds;
+            for (int k = 0; k < kinds.Length; k++) data.SetDetailLayer(0, 0, k, layers[k]);
             EditorUtility.SetDirty(data);
 
             var go = Terrain.CreateTerrainGameObject(data);
@@ -366,10 +403,10 @@ namespace YunJing.Editor
             var terrain = go.GetComponent<Terrain>();
             terrain.heightmapPixelError = 4;
             terrain.basemapDistance = 70;
-            terrain.detailObjectDistance = 35;
+            terrain.detailObjectDistance = 80; terrain.detailObjectDensity = 1;
             terrain.materialTemplate = AssetDatabase.LoadAssetAtPath<Material>("Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat");
             AssetDatabase.SaveAssets();
-            Debug.Log($"QINGXI_VILLAGE_TERRAIN: {area.sizeX}x{area.sizeZ} m, height {data.bounds.min.y + BaseY:F2}..{data.bounds.max.y + BaseY:F2} m, grass cells {detail.Cast<int>().Count(v => v > 0)}");
+            Debug.Log($"QINGXI_VILLAGE_TERRAIN: {area.sizeX}x{area.sizeZ} m, height {data.bounds.min.y + BaseY:F2}..{data.bounds.max.y + BaseY:F2} m, meadow clumps {layers.Sum(l => l.Cast<int>().Sum())}");
             return terrain;
         }
 
@@ -440,18 +477,21 @@ namespace YunJing.Editor
                 float d1 = 9, d2 = 9; var cell = cells[0];
                 foreach (var k in cells) { float d = Distance(u, v, k); if (d < d1) { d2 = d1; d1 = d; cell = k; } else if (d < d2) d2 = d; }
                 Color c = color; float h = .5f + light * .3f;
+                float crack = Mathf.SmoothStep(0, 1, Mathf.Clamp01((d2 - d1) / .01f));   // 0 on a cell boundary
                 switch (kind)
                 {
                     case "grass":   // fine speckle of blades in every direction, darker tufts, a warmer hue in places
                         float speck = Tile(u, v, 64) - .5f, tuft = Tile(u, v, 18) - .5f;
-                        c = color * (1 + light * .35f + speck * .3f + tuft * .2f) + new Color(tint * .08f, tint * .05f, -tint * .03f);
+                        c = color * (1 + light * .22f + speck * .1f + tuft * .1f) + new Color(tint * .06f, tint * .05f, -tint * .02f);   // soft, painterly
                         h = .5f + tuft * .6f + speck * .3f;
                         break;
-                    case "earth":   // packed earth with clumps and a few small stones
-                        c = color * (1 + light * .45f + (Tile(u, v, 48) - .5f) * .2f);
-                        h = .45f + light * .5f;
-                        // A few small stones, different sizes, only slightly paler than the earth.
-                        if (cell.z > .45f && d1 < .004f + cell.z * .006f) { c = Color.Lerp(c, color * (1.05f + cell.z * .15f), .55f); h += .3f; }
+                    case "earth":   // packed earth: clods, dry cracks, small stones and bits of grass
+                        float clod = Fbm(u * 1.3f, v * 1.3f, 20) - .5f;
+                        c = color * (1 + light * .4f + clod * .35f + (Tile(u, v, 90) - .5f) * .16f);
+                        h = .45f + clod * .6f + light * .3f;
+                        if (cell.z < .5f && Tile(u, v, 5) > .56f) { c = Color.Lerp(c * .82f, c, crack); h -= (1 - crack) * .2f; }   // dried cracks, here and there
+                        if (cell.z > .35f && d1 < .003f + cell.z * .007f) { c = Color.Lerp(c, color * (1.08f + cell.z * .2f), .6f); h += .35f; }
+                        if (Tile(u, v, 55) > .7f) c = Color.Lerp(c, new Color(.34f, .42f, .22f), .3f);   // grass creeping in
                         break;
                     case "slab":    // laid flagstones: each its own shade and wear, dark soft joints, moss in some of them
                         float joint = Mathf.SmoothStep(0, 1, Mathf.Clamp01((d2 - d1) / .018f));   // 0 in the joint, 1 on the stone
@@ -472,10 +512,13 @@ namespace YunJing.Editor
                         c = Color.Lerp(color * (.72f + light * .2f), color * (.85f + cell.z * .35f), pebble) * (1 + light * .2f);
                         h = Mathf.Sqrt(pebble) * .9f;
                         break;
-                    case "rock":    // ochre rock with horizontal strata
-                        float band = Mathf.Sin((v + light * .08f) * Mathf.PI * 2 * 9) * .5f + .5f;
-                        c = color * (.82f + band * .22f + light * .35f);
-                        h = band * .6f + light * .5f;
+                    case "rock":    // weathered stone: cracked blocks of different shades, grain, lichen (no stripes,
+                                    // which the top-down terrain projection would stretch on steep faces)
+                        float grain = Fbm(u * 1.7f, v * 1.7f, 14) - .5f;
+                        c = color * (.8f + light * .35f + grain * .35f + (cell.z - .5f) * .2f);
+                        c = Color.Lerp(c * .5f, c, crack);
+                        if (Tile(u, v, 26) > .63f) c = Color.Lerp(c, new Color(.44f, .5f, .36f), .32f);   // lichen
+                        h = crack * (.6f + grain * .5f) + cell.z * .25f;
                         break;
                 }
                 // URP Terrain Lit reads smoothness from the albedo alpha when there is no mask map: keep it matte.

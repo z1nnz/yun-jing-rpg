@@ -164,13 +164,14 @@ namespace YunJing.Editor
         {
             var sun = new GameObject("Sun").AddComponent<Light>();
             sun.transform.SetParent(village, false);
-            sun.type = LightType.Directional; sun.intensity = 1.15f; sun.shadows = LightShadows.Soft; sun.color = new Color(1f, .95f, .86f);
-            sun.transform.rotation = Quaternion.Euler(48, -35, 0);
+            // The direction images' light: a warm, lowish sun that rims the trees and fills the valley with haze.
+            sun.type = LightType.Directional; sun.intensity = 1.35f; sun.shadows = LightShadows.Soft; sun.color = new Color(1f, .9f, .74f);
+            sun.transform.rotation = Quaternion.Euler(34, -35, 0);
             RenderSettings.sun = sun;
             RenderSettings.ambientMode = AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = new Color(.62f, .7f, .78f); RenderSettings.ambientEquatorColor = new Color(.55f, .58f, .52f); RenderSettings.ambientGroundColor = new Color(.32f, .3f, .26f);
-            RenderSettings.fog = true; RenderSettings.fogMode = FogMode.Linear; RenderSettings.fogColor = new Color(.78f, .83f, .84f);
-            RenderSettings.fogStartDistance = 45; RenderSettings.fogEndDistance = 120;
+            RenderSettings.ambientSkyColor = new Color(.62f, .7f, .82f); RenderSettings.ambientEquatorColor = new Color(.62f, .6f, .5f); RenderSettings.ambientGroundColor = new Color(.34f, .3f, .24f);
+            RenderSettings.fog = true; RenderSettings.fogMode = FogMode.Linear; RenderSettings.fogColor = new Color(.86f, .85f, .8f);
+            RenderSettings.fogStartDistance = 35; RenderSettings.fogEndDistance = 140;
             RenderSettings.skybox = Sky();
             PostCard(village);
         }
@@ -246,9 +247,12 @@ namespace YunJing.Editor
             var path = MaterialFolder + "/QingxiSky_Procedural.mat";
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat == null) { mat = new Material(Shader.Find("Skybox/Procedural")); AssetDatabase.CreateAsset(mat, path); }
+            // Clear blue deepening overhead, haze at the horizon, drifting cumulus (YunJing/QingxiSky).
+            var sky = Shader.Find("YunJing/QingxiSky");
+            if (sky != null) { mat.shader = sky; mat.SetFloat("_Clouds", .5f); }
             mat.SetFloat("_SunSize", .035f); mat.SetFloat("_SunSizeConvergence", 6);
             mat.SetFloat("_AtmosphereThickness", .85f); mat.SetFloat("_Exposure", 1.2f);
-            mat.SetColor("_SkyTint", new Color(.5f, .62f, .74f)); mat.SetColor("_GroundColor", new Color(.66f, .72f, .7f));
+            mat.SetColor("_SkyTint", new Color(.5f, .62f, .74f)); mat.SetColor("_GroundColor", new Color(.78f, .83f, .84f));
             EditorUtility.SetDirty(mat);
             return mat;
         }
@@ -269,10 +273,10 @@ namespace YunJing.Editor
             }
             var tone = Get<UnityEngine.Rendering.Universal.Tonemapping>(); tone.mode.Override(UnityEngine.Rendering.Universal.TonemappingMode.ACES);
             var colour = Get<UnityEngine.Rendering.Universal.ColorAdjustments>();
-            colour.postExposure.Override(.25f); colour.contrast.Override(12); colour.saturation.Override(10);
-            var white = Get<UnityEngine.Rendering.Universal.WhiteBalance>(); white.temperature.Override(8); white.tint.Override(-3);
+            colour.postExposure.Override(.2f); colour.contrast.Override(8); colour.saturation.Override(4);
+            var white = Get<UnityEngine.Rendering.Universal.WhiteBalance>(); white.temperature.Override(14); white.tint.Override(-2);   // golden morning
             var bloom = Get<UnityEngine.Rendering.Universal.Bloom>();
-            bloom.threshold.Override(1.05f); bloom.intensity.Override(.35f); bloom.scatter.Override(.7f); bloom.highQualityFiltering.Override(false);
+            bloom.threshold.Override(.92f); bloom.intensity.Override(.55f); bloom.scatter.Override(.75f); bloom.highQualityFiltering.Override(false);
             var vignette = Get<UnityEngine.Rendering.Universal.Vignette>(); vignette.intensity.Override(.2f); vignette.smoothness.Override(.45f);
             EditorUtility.SetDirty(profile);
             var volume = new GameObject("PostCard Volume").AddComponent<UnityEngine.Rendering.Volume>();
@@ -960,9 +964,10 @@ namespace YunJing.Editor
             };
         }
 
+        // Each tree's full height as modelled, buried roots included (the model's origin is the ground line), so a
+        // tree placed at this height keeps its modelled size.
         static readonly System.Collections.Generic.Dictionary<string, float> NaturalHeight = new System.Collections.Generic.Dictionary<string, float> {
-            ["ElderGuardian"] = 9.8f, ["JianmuSapling"] = 2.9f, ["ElderCamphor"] = 8.4f, ["ElderMaple"] = 5.4f, ["ElderGinkgo"] = 10.5f,
-            ["ElderWillow"] = 6.5f, ["ElderPlum"] = 4.5f, ["ElderCypress"] = 11.4f, ["ElderWithered"] = 5.4f };
+            ["ElderGuardian"] = 9.78f, ["JianmuSapling"] = 2.94f, ["ElderCamphor"] = 8.40f, ["ElderMaple"] = 5.45f, ["ElderGinkgo"] = 10.55f, ["ElderWillow"] = 6.52f, ["ElderPlum"] = 4.53f, ["ElderCypress"] = 11.00f, ["ElderWithered"] = 5.36f };
 
         static bool elderCopied;
         static void ElderKit() { if (!elderCopied) { QingxiElderTrees.Copy(); elderCopied = true; } }
