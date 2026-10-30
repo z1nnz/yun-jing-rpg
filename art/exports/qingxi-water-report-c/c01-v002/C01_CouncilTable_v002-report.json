@@ -1,0 +1,41 @@
+{
+ "asset": "C01_CouncilTable_v002",
+ "authors": "Eli-0731",
+ "reference": "art/references/qingxi-water-report-c/C01-three-view.png",
+ "dimensions_xyz_m": [
+  1.0944,
+  1.0965,
+  0.625
+ ],
+ "uv0_in_unit_square": true,
+ "stats": {
+  "C01_CouncilTable_LOD0": {
+   "triangles": 6932,
+   "vertices": 3550,
+   "materials": 1
+  },
+  "C01_CouncilTable_LOD1": {
+   "triangles": 2528,
+   "vertices": 1318,
+   "materials": 1
+  },
+  "C01_CouncilTable_LOD2": {
+   "triangles": 708,
+   "vertices": 392,
+   "materials": 1
+  },
+  "C01_CouncilTable_Collider": {
+   "triangles": 44,
+   "vertices": 24,
+   "materials": 0
+  }
+ },
+ "textures": {
+  "C01_CouncilTable_v002_Albedo.png": "1024x1024",
+  "C01_CouncilTable_v002_MaskURP.png": "1024x1024",
+  "C01_CouncilTable_v002_Normal.png": "1024x1024",
+  "C01_CouncilTable_v002_ORM.png": "1024x1024"
+ },
+ "lods": "hand-authored per-LOD geometry (build_c01_v002.py LODS); LOD1/LOD2 reuse the LOD0 bake through UV data transfer",
+ "unity": "not imported on this machine (no Unity Editor installed)"
+}

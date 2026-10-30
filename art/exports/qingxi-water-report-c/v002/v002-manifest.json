@@ -1,0 +1,436 @@
+{
+ "C02": {
+  "id": "C02",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.72,
+   0.36,
+   1.11
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 6964,
+   "LOD1": 2092,
+   "LOD2": 1044
+  },
+  "lod_ratio": [
+   1,
+   0.3,
+   0.15
+  ],
+  "materials": 1,
+  "state_parts": [],
+  "interfaces": [
+   "C02_GroundOrigin",
+   "StatusPivot"
+  ],
+  "pivot_groups": [
+   "StatusPivot"
+  ],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.72,
+    0.36,
+    1.11
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C04": {
+  "id": "C04",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   1.2549,
+   0.0613,
+   0.3089
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 7792,
+   "LOD1": 2424,
+   "LOD2": 1168
+  },
+  "lod_ratio": [
+   1,
+   0.31,
+   0.15
+  ],
+  "materials": 1,
+  "state_parts": [],
+  "interfaces": [
+   "C04_GroundOrigin"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    1.255,
+    0.061,
+    0.309
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C07": {
+  "id": "C07",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.4823,
+   0.28,
+   0.3318
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 7308,
+   "LOD1": 2420,
+   "LOD2": 1096
+  },
+  "lod_ratio": [
+   1,
+   0.33,
+   0.15
+  ],
+  "materials": 1,
+  "state_parts": [],
+  "interfaces": [
+   "C07_GroundOrigin"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.482,
+    0.28,
+    0.332
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C08": {
+  "id": "C08",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.6,
+   0.26,
+   0.919
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 4878,
+   "LOD1": 1378,
+   "LOD2": 730
+  },
+  "lod_ratio": [
+   1,
+   0.28,
+   0.15
+  ],
+  "materials": 1,
+  "state_parts": [],
+  "interfaces": [
+   "C08_GroundOrigin"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.6,
+    0.26,
+    0.919
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C03_tall_01": {
+  "id": "C03_tall_01",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.372,
+   0.3411,
+   0.4204
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 7966,
+   "LOD1": 2462,
+   "LOD2": 1206
+  },
+  "lod_ratio": [
+   1,
+   0.31,
+   0.15
+  ],
+  "materials": 2,
+  "state_parts": [
+   "WaterSurface_C03_tall_01"
+  ],
+  "interfaces": [
+   "C03_tall_01_GroundOrigin",
+   "C03_tall_01__Lift_L",
+   "C03_tall_01__Lift_R"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.372,
+    0.341,
+    0.42
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C03_low_02": {
+  "id": "C03_low_02",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.45,
+   0.4391,
+   0.3226
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 5374,
+   "LOD1": 1630,
+   "LOD2": 810
+  },
+  "lod_ratio": [
+   1,
+   0.3,
+   0.15
+  ],
+  "materials": 2,
+  "state_parts": [
+   "WaterSurface_C03_low_02"
+  ],
+  "interfaces": [
+   "C03_low_02_GroundOrigin",
+   "C03_low_02__Lift_L",
+   "C03_low_02__Lift_R"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.45,
+    0.439,
+    0.323
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C03_bail_03": {
+  "id": "C03_bail_03",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.3646,
+   0.3646,
+   0.5678
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 13866,
+   "LOD1": 4082,
+   "LOD2": 2098
+  },
+  "lod_ratio": [
+   1,
+   0.29,
+   0.15
+  ],
+  "materials": 2,
+  "state_parts": [
+   "WaterSurface_C03_bail_03"
+  ],
+  "interfaces": [
+   "C03_bail_03_GroundOrigin",
+   "C03_bail_03__Lift_L",
+   "C03_bail_03__Lift_R"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.365,
+    0.365,
+    0.568
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C05_notch_01": {
+  "id": "C05_notch_01",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.3,
+   0.14,
+   0.8197
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 1764,
+   "LOD1": 756,
+   "LOD2": 508
+  },
+  "lod_ratio": [
+   1,
+   0.43,
+   0.29
+  ],
+  "materials": 4,
+  "state_parts": [
+   "SoilMoisturePatch_C05_notch_01",
+   "SoilSampleDisc",
+   "SoilSampleDisc.001",
+   "SoilSampleDisc.002"
+  ],
+  "interfaces": [
+   "C05_notch_01_GroundOrigin",
+   "C05_notch_01__GroundSocket",
+   "C05_notch_01__PanelMount"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.3,
+    0.14,
+    0.82
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C05_fork_02": {
+  "id": "C05_fork_02",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.36,
+   0.14,
+   0.74
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 2032,
+   "LOD1": 784,
+   "LOD2": 548
+  },
+  "lod_ratio": [
+   1,
+   0.39,
+   0.27
+  ],
+  "materials": 4,
+  "state_parts": [
+   "SoilMoisturePatch_C05_fork_02",
+   "SoilSampleDisc.003",
+   "SoilSampleDisc.004",
+   "SoilSampleDisc.005"
+  ],
+  "interfaces": [
+   "C05_fork_02_GroundOrigin",
+   "C05_fork_02__GroundSocket",
+   "C05_fork_02__PanelMount"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.36,
+    0.14,
+    0.74
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C06_fork_01": {
+  "id": "C06_fork_01",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.46,
+   0.22,
+   0.85
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 2928,
+   "LOD1": 1536,
+   "LOD2": 1466
+  },
+  "lod_ratio": [
+   1,
+   0.52,
+   0.5
+  ],
+  "materials": 4,
+  "state_parts": [
+   "CompleteClosedCircle",
+   "CompleteFlowMark",
+   "WorkCloth_C06_fork_01",
+   "WorkOpenCircle",
+   "WorkProgressStrip",
+   "WorkProgressStrip.001"
+  ],
+  "interfaces": [
+   "C06_fork_01_GroundOrigin",
+   "C06_fork_01__ClothTie_Center",
+   "C06_fork_01__ClothTie_Left",
+   "C06_fork_01__ClothTie_Right"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.46,
+    0.22,
+    0.85
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ },
+ "C06_slant_02": {
+  "id": "C06_slant_02",
+  "source": "WaterReportC_variants.blend (v001, from saved AI three-views)",
+  "dimensions_xyz_m": [
+   0.46,
+   0.22,
+   0.85
+  ],
+  "origin": "ground centre (v001 GroundOrigin)",
+  "triangles": {
+   "LOD0": 2932,
+   "LOD1": 1540,
+   "LOD2": 1470
+  },
+  "lod_ratio": [
+   1,
+   0.53,
+   0.5
+  ],
+  "materials": 4,
+  "state_parts": [
+   "CompleteClosedCircle.001",
+   "CompleteFlowMark.001",
+   "WorkCloth_C06_slant_02",
+   "WorkOpenCircle.001",
+   "WorkProgressStrip.002",
+   "WorkProgressStrip.003"
+  ],
+  "interfaces": [
+   "C06_slant_02_GroundOrigin",
+   "C06_slant_02__ClothTie_Center",
+   "C06_slant_02__ClothTie_Left",
+   "C06_slant_02__ClothTie_Right"
+  ],
+  "pivot_groups": [],
+  "collision": {
+   "shape": "box",
+   "size_m": [
+    0.46,
+    0.22,
+    0.85
+   ]
+  },
+  "textures": "1024² Albedo/Normal/MaskURP/ORM"
+ }
+}

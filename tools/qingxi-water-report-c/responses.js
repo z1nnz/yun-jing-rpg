@@ -1,28 +1,28 @@
 /* Eli-0731 / Codex. Source: response-data.json */
 (function(root){const data={
   "none": {
-    "tell_shortage": "上游斷流，村裡水少，原因還待確認，先把你看到的缺水記下來。",
-    "inspect_crack": "槽邊是否破損還待確認，可以先請工匠檢查舊水路。",
-    "protect_nursery": "上游斷流，村裡水少，可以先留意溪畔幼獸與育幼區。"
+    "tell_shortage": "老人：「田裡的土一捏就散。我種了四十年地，沒見過這條溪這樣。」",
+    "inspect_crack": "工匠：「舊槽那段我還沒下去摸過。你帶路，我去看哪裡乾得最兇。」",
+    "protect_nursery": "小孩：「溪邊那窩小獸好幾天沒出來喝水了。我們去看看牠們好不好？」"
   },
   "pending": {
-    "tell_shortage": "上游已有缺水跡象，水還沒導回來，可以先把看到的情況告知大家。",
-    "inspect_crack": "水還沒導回來，槽邊狀況需要確認，可以先把線索交給工匠。",
-    "protect_nursery": "水還沒導回來，溪畔幼獸也需要留意，可以先保護育幼區。"
+    "tell_shortage": "洗衣的婦人：「洗衣石露出一大截，水只到腳背。大家都在問上頭怎麼了。」",
+    "inspect_crack": "工匠：「你說槽邊有裂？我把鑿子帶上。先看了再說，別急著補。」",
+    "protect_nursery": "小孩：「阿娘不讓我去溪邊了。可是石縫裡那窩小獸還在叫，我聽得到。」"
   },
   "partial": {
-    "tell_shortage": "水只部分恢復，先把你看到的缺水記下來，別急著說修好。",
-    "inspect_crack": "水只部分恢復，可以請工匠檢查舊槽，看看哪段仍在漏水。",
-    "protect_nursery": "水只部分恢復，溪畔幼獸仍可能受影響，可以先保護育幼區。"
+    "tell_shortage": "老人：「水是回來一點了，東邊的田還乾著。先別跟人說修好了。」",
+    "inspect_crack": "工匠：「水聲不對，還有一段在漏。你聽，這底下嘶嘶的。」",
+    "protect_nursery": "小孩：「水淺了，小獸肯出來了，可是只敢貼著石頭邊喝。」"
   },
   "restored": {
-    "tell_shortage": "水已恢復，先把你看到的先前缺水記下來，讓後人知道。",
-    "inspect_crack": "水已恢復，可以請工匠看看舊槽，確認槽邊還穩不穩。",
-    "protect_nursery": "水已恢復，溪畔幼獸也可能回來，可以繼續留意育幼區。"
+    "tell_shortage": "洗衣的婦人：「今早衣裳洗得透，水又涼又滿。這幾天的事，得讓大家記著。」",
+    "inspect_crack": "工匠：「水是滿了。槽口那塊老石頭倒是溫的，旁邊的都涼，怪得很。」",
+    "protect_nursery": "小孩：「小獸回來了！牠們在淺灘那裡踩水，我數到三隻。」"
   },
   "protected": {
-    "tell_shortage": "育幼區已保護，村田仍部分供水，先把你看到的缺水記下來。",
-    "inspect_crack": "育幼區已保護，村田仍部分供水，可以先請工匠檢查舊槽。",
-    "protect_nursery": "育幼區已保護，村田仍部分供水，接下來也能再看看村田的需要。"
+    "tell_shortage": "老人：「溪邊那窩小東西保住了。田裡的水還不夠，稻葉尖都捲了。」",
+    "inspect_crack": "工匠：「育幼那頭攔好了。村田的槽我還沒碰，那段木頭都乾裂了。」",
+    "protect_nursery": "小孩：「我在石縫邊插了樹枝，小獸都躲在裡面。田那邊的大人還在嘆氣。」"
   }
 };if(typeof module!=="undefined")module.exports=data;else root.WaterReportResponses=data;})(typeof globalThis!=="undefined"?globalThis:this);
