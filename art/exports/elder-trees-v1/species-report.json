@@ -2,11 +2,11 @@
   "ElderCamphor": {
     "triangles_per_lod": [
       143090,
-      45202,
+      45203,
       13063
     ],
     "size_m": [
-      18.48,
+      18.56,
       0,
       12.07
     ],
@@ -14,12 +14,12 @@
   },
   "ElderMaple": {
     "triangles_per_lod": [
-      131892,
-      41873,
-      12166
+      131884,
+      41872,
+      12165
     ],
     "size_m": [
-      15.69,
+      15.74,
       0,
       7.24
     ],
@@ -27,12 +27,12 @@
   },
   "ElderGinkgo": {
     "triangles_per_lod": [
-      131888,
-      41873,
+      131892,
+      41875,
       12166
     ],
     "size_m": [
-      11.37,
+      11.36,
       0,
       14.21
     ],
@@ -53,9 +53,9 @@
   },
   "ElderPlum": {
     "triangles_per_lod": [
-      75876,
-      24938,
-      7734
+      75880,
+      24939,
+      7735
     ],
     "size_m": [
       8.22,
@@ -66,12 +66,12 @@
   },
   "ElderPine": {
     "triangles_per_lod": [
-      144692,
-      45714,
-      13190
+      144688,
+      45715,
+      13191
     ],
     "size_m": [
-      16.22,
+      16.27,
       0,
       9.81
     ],
@@ -79,12 +79,12 @@
   },
   "ElderCypress": {
     "triangles_per_lod": [
-      138294,
-      43796,
-      12679
+      138290,
+      43794,
+      12678
     ],
     "size_m": [
-      12.7,
+      12.76,
       0,
       6.08
     ],
@@ -105,157 +105,157 @@
   },
   "ElderCamphor_B": {
     "triangles_per_lod": [
-      143090,
-      45202,
+      143084,
+      45201,
       13062
     ],
     "size_m": [
-      18.5,
+      18.34,
       0,
-      11.0
+      10.61
     ],
     "leaf": "authored"
   },
   "ElderCamphor_C": {
     "triangles_per_lod": [
       143092,
-      45203,
-      13062
+      45204,
+      13063
     ],
     "size_m": [
-      18.71,
+      18.26,
       0,
-      12.65
+      13.01
     ],
     "leaf": "authored"
   },
   "ElderMaple_B": {
     "triangles_per_lod": [
-      131894,
-      41876,
-      12166
+      131890,
+      41874,
+      12167
     ],
     "size_m": [
-      15.57,
+      15.71,
       0,
-      6.37
+      6.94
     ],
     "leaf": "authored"
   },
   "ElderMaple_C": {
     "triangles_per_lod": [
-      131894,
-      41876,
+      131888,
+      41873,
       12166
     ],
     "size_m": [
       15.85,
       0,
-      7.65
+      7.94
     ],
     "leaf": "authored"
   },
   "ElderGinkgo_B": {
     "triangles_per_lod": [
-      131894,
-      41876,
-      12167
+      131884,
+      41872,
+      12166
     ],
     "size_m": [
-      11.61,
+      11.43,
       0,
-      13.27
+      13.33
     ],
     "leaf": "authored"
   },
   "ElderGinkgo_C": {
     "triangles_per_lod": [
-      131892,
-      41876,
-      12166
+      131896,
+      41875,
+      12167
     ],
     "size_m": [
-      11.45,
+      11.58,
       0,
-      15.42
+      15.36
     ],
     "leaf": "authored"
   },
   "ElderWillow_B": {
     "triangles_per_lod": [
-      170296,
-      53396,
-      15240
+      170290,
+      53394,
+      15238
     ],
     "size_m": [
-      11.88,
+      11.71,
       0,
-      8.01
+      8.42
     ],
     "leaf": "authored"
   },
   "ElderWillow_C": {
     "triangles_per_lod": [
-      170290,
-      53394,
+      170292,
+      53395,
       15239
     ],
     "size_m": [
-      11.82,
+      11.77,
       0,
-      9.65
+      10.05
     ],
     "leaf": "authored"
   },
   "ElderPlum_B": {
     "triangles_per_lod": [
-      75882,
-      24940,
+      75878,
+      24939,
       7735
     ],
     "size_m": [
-      8.4,
+      8.33,
       0,
-      4.49
+      4.4
     ],
     "leaf": "authored"
   },
   "ElderPlum_C": {
     "triangles_per_lod": [
-      75878,
+      75880,
       24939,
       7734
     ],
     "size_m": [
-      8.23,
+      8.3,
       0,
-      5.45
+      5.5
     ],
     "leaf": "authored"
   },
   "ElderPine_B": {
     "triangles_per_lod": [
-      144692,
-      45716,
+      144688,
+      45714,
       13191
     ],
     "size_m": [
-      16.11,
+      16.13,
       0,
-      9.09
+      9.15
     ],
     "leaf": "authored"
   },
   "ElderPine_C": {
     "triangles_per_lod": [
-      144692,
-      45716,
-      13191
+      144694,
+      45717,
+      13192
     ],
     "size_m": [
-      16.38,
+      16.31,
       0,
-      10.37
+      10.72
     ],
     "leaf": "authored"
   },
@@ -263,25 +263,25 @@
     "triangles_per_lod": [
       138292,
       43795,
-      12678
+      12679
     ],
     "size_m": [
       12.76,
       0,
-      5.38
+      5.41
     ],
     "leaf": "authored"
   },
   "ElderCypress_C": {
     "triangles_per_lod": [
-      138292,
-      43795,
-      12678
+      138296,
+      43796,
+      12679
     ],
     "size_m": [
-      12.96,
+      12.85,
       0,
-      6.73
+      6.44
     ],
     "leaf": "authored"
   }

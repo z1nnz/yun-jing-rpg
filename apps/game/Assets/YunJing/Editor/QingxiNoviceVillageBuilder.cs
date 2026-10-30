@@ -827,12 +827,23 @@ namespace YunJing.Editor
             var a = layout.bounds; var random = new System.Random((int)(a.minX * 31 + a.minZ * 17) ^ blockId.GetHashCode());
             float R() => (float)random.NextDouble();
             float clear = layout.creek == null ? 0 : layout.creekKit != null && layout.creekKit.Length > 0 ? 5f : layout.creek.width * .5f + layout.creek.bank + 1;
-            // Trees (and bamboo) keep their distance: no two trunks closer than 4.5 m, so crowns never grow through
-            // each other.
-            var planted = new System.Collections.Generic.List<Vector2>();
+            // Placement rules (docs/execution/tree-species-and-foreshadowing.md, 擺放規則):
+            //   1. crowns don't overlap: two trees stand at least 0.8 x the sum of their crown radii apart
+            //      (a broadleaf crown here is 6-9 m across the radius; bamboo 2 m);
+            //   2. roads and pads keep 8 m clear, the creek its banks;
+            //   3. groves frame the block: their centres sit in the outer band, the middle meadow stays open;
+            //   4. single trees only as accents, at road bends and creek bends;
+            //   5. about forty per cent fewer trees than the biome's old count.
+            var planted = new System.Collections.Generic.List<(Vector2 at, float r)>();
+            const float Crown = 6.5f;
+            bool Spaced(float x, float z, float r = Crown)
+            {
+                foreach (var t in planted) if ((t.at - new Vector2(x, z)).magnitude < .8f * (t.r + r)) return false;
+                return true;
+            }
             bool Free(float x, float z, float pad = 3.5f, float road = 3f, float creekGap = -1)
             {
-                foreach (var t in planted) if ((t - new Vector2(x, z)).sqrMagnitude < 4.5f * 4.5f) return false;
+                if (!Spaced(x, z)) return false;
                 if (x < a.minX + 4 || x > a.minX + a.sizeX - 4 || z < a.minZ + 4 || z > a.minZ + a.sizeZ - 4) return false;
                 // The territory hollow keeps its yard open: trees and rocks stay on the surrounding hills.
                 if (layout.isolated && Mathf.Max(Mathf.Abs(x - (a.minX + a.sizeX / 2)), Mathf.Abs(z - (a.minZ + a.sizeZ / 2))) < a.sizeX * .28f) return false;
@@ -862,12 +873,12 @@ namespace YunJing.Editor
             string waterside = elder && !string.IsNullOrEmpty(entry.waterside) ? entry.waterside : null;
             void PlantTree(float x, float z, string kind = "")
             {
-                planted.Add(new Vector2(x, z));
                 float wet = QingxiVillageTerrain.CreekDistance(layout, x, z, out _);
                 // Bamboo only where the block allows it (the old forest is cypress alone).
                 bool cane = !entry.noBamboo && (wet < 16f ? R() < .75f : R() < .15f);
                 if (waterside != null && wet < 16f && R() < .4f) { cane = false; kind = waterside; }   // willows lean over the water
                 else if (kind == "") kind = Pick();
+                planted.Add((new Vector2(x, z), cane ? 2f : Crown));
                 if (cane) Tree(bamboo, root, new Vector3(x, 0, z), 4.2f + R() * 1.8f, R() * 360);
                 else if (kind != null)
                 {
@@ -878,19 +889,34 @@ namespace YunJing.Editor
                 else Tree(pine, root, new Vector3(x, 0, z), 7f + R() * 5.5f, R() * 360);
                 trees++;
             }
-            // Groves: about three quarters of the trees, 4–11 m around each grove centre.
-            var groves = Enumerable.Range(0, biome.groves).Select(_ => Somewhere((x, z) => Free(x, z, 8f, 6f))).Where(g => !float.IsNaN(g.x)).ToList();
+            int target = Mathf.RoundToInt(biome.trees * .6f);
+            // Groves frame the block: centres in the outer band (within 22 m of the edge), the middle left open.
+            bool Outer(float x, float z) => Mathf.Min(Mathf.Min(x - a.minX, a.minX + a.sizeX - x), Mathf.Min(z - a.minZ, a.minZ + a.sizeZ - z)) < 22f;
+            var groves = Enumerable.Range(0, biome.groves).Select(_ => Somewhere((x, z) => Outer(x, z) && Free(x, z, 8f, 8f))).Where(g => !float.IsNaN(g.x)).ToList();
             var groveKinds = groves.Select(_ => GroveKind()).ToList();
-            int inGroves = groves.Count == 0 ? 0 : biome.trees * 3 / 4;
-            for (int i = 0, tries = 0; i < inGroves && tries < inGroves * 12; tries++)
+            int inGroves = groves.Count == 0 ? 0 : target * 3 / 4;
+            for (int i = 0, tries = 0; i < inGroves && tries < inGroves * 20; tries++)
             {
                 int gi = random.Next(groves.Count); var g = groves[gi];
-                float angle = R() * Mathf.PI * 2, r = 2f + R() * R() * 10f;   // denser at the heart of the grove
+                float angle = R() * Mathf.PI * 2, r = 4f + R() * 16f;
                 float x = g.x + Mathf.Cos(angle) * r, z = g.y + Mathf.Sin(angle) * r;
-                if (!Free(x, z)) continue;
+                if (!Free(x, z, 8f, 8f)) continue;
                 PlantTree(x, z, groveKinds[gi]); i++;
             }
-            for (int i = trees; i < biome.trees; i++) { var p = Somewhere((x, z) => Free(x, z)); if (!float.IsNaN(p.x)) PlantTree(p.x, p.y); }
+            // Accents: single trees at road bends and creek bends, set back from the way.
+            var bends = new System.Collections.Generic.List<Vector2>();
+            foreach (var n in layout.nodes) if (layout.edges.Count(e => e.from == n.id || e.to == n.id) >= 2) bends.Add(new Vector2(n.x, n.z));
+            if (layout.creek != null) for (int k = 1; k + 1 < layout.creek.Count; k++) bends.Add(layout.creek[k]);
+            foreach (var b in bends.OrderBy(_ => R()))
+            {
+                if (trees >= target) break;
+                for (int k = 0; k < 6; k++)
+                {
+                    float ang = R() * Mathf.PI * 2, d = 9f + R() * 5f;
+                    float x = b.x + Mathf.Cos(ang) * d, z = b.y + Mathf.Sin(ang) * d;
+                    if (Free(x, z, 8f, 8f)) { PlantTree(x, z); break; }
+                }
+            }
             // Boulder clusters; with a creek, half sit along its banks.
             int clusters = Mathf.Max(1, biome.boulders / 3);
             for (int c = 0; c < clusters; c++)

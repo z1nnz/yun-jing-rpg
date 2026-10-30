@@ -93,7 +93,7 @@ ELDER = dict(
 )
 
 
-def elder_hierarchy(i, pts, S, branches):
+def elder_hierarchy(i, pts, S, branches, g=1.0):
     """build_life_tree.py add_branch_hierarchy, unchanged except for the scale."""
     _, middle, original_end = (Vector(p) * S for p in pts)
     end = middle.lerp(original_end, .67)
@@ -104,7 +104,7 @@ def elder_hierarchy(i, pts, S, branches):
         st = middle.lerp(end, .28 + k * .18)
         mid = st + (axis * (.20 + k * .04) + lateral * sign * (.20 + i % 3 * .035) + UP * (.08 + k * .03)) * S
         en = st + (axis * (.40 + k * .05) + lateral * sign * (.42 + i % 2 * .06) + UP * (.18 + k * .04)) * S
-        branches.append(curve(f'sec_{i}_{k}', [st, mid, en], [r * .115 * S for r in (.58, .30, .04)]))
+        branches.append(curve(f'sec_{i}_{k}', [st, mid, en], [r * .115 * S * g for r in (.58, .30, .04)]))
         for j, ts_ in enumerate((-1.0, 1.0), start=1):
             ts = mid.lerp(en, .42 + j * .14)
             ta = (en - mid).normalized()
@@ -112,7 +112,7 @@ def elder_hierarchy(i, pts, S, branches):
             tl = tl.normalized() if tl.length > .01 else lateral
             tm = ts + (ta * .12 + tl * ts_ * (.09 + k * .02) + UP * .06) * S
             te = ts + (ta * .24 + tl * ts_ * (.20 + k * .025) + UP * .035) * S
-            branches.append(curve(f'twig_{i}_{k}_{j}', [ts, tm, te], [r * .07 * S for r in (.42, .20, .025)]))
+            branches.append(curve(f'twig_{i}_{k}_{j}', [ts, tm, te], [r * .07 * S * g for r in (.42, .20, .025)]))
 
 
 def lean_form(variant, spec):
@@ -160,12 +160,17 @@ def build_elder_form(spec, variant=0):
     bark_mat = material(f'{name}_Bark', bark_src)
     leaf_mat = material(f'{name}_Leaves', palette_image(f'{name}_Leaves', spec['palette']), closest=True)
     T = lean_form(variant, spec)
+    # Girth: the Elder World Tree is a fantasy giant with a trunk as thick as it is tall to the fork; an ordinary
+    # tree of the same height has a far slimmer one. g brings the trunk foot to the species' real radius
+    # (spec['trunk_r'], metres); limbs thin a little less, twigs least, so the crown keeps its reach.
+    g = spec.get('trunk_r', .84 * S) / (.84 * S)
+    g_limb, g_twig = g ** .6, g ** .4
     E = dict(ELDER)
     E['trunk'] = [T(p) for p in ELDER['trunk']]
     E['limbs'] = [tuple(T(p) for p in limb) for limb in ELDER['limbs']]
     E['back'] = [(T(c), sc) for c, sc in ELDER['back']]
     E['front'] = [(T(c), sc) for c, sc in ELDER['front']]
-    trunk = to_mesh(curve('trunk', [Vector(p) * S for p in E['trunk']], [r * S for r in E['trunk_radii']]))
+    trunk = to_mesh(curve('trunk', [Vector(p) * S for p in E['trunk']], [r * S * g for r in E['trunk_radii']]))
     cl = [Vector(p) * S for p in E['trunk']]
     for v in trunk.data.vertices:   # build_life_tree.py's flutes, in its own (unscaled) units
         w = v.co / S
@@ -177,17 +182,21 @@ def build_elder_form(spec, variant=0):
         ang = math.atan2(radial.y, radial.x)
         amp = .09 + .12 * max(0, 1 - w.z / 1.6)
         f = math.sin(ang * 5 + w.z * 1.15) * amp + .035 * math.sin(ang * 9 - w.z * .72)
-        v.co += radial * f * S
+        v.co += radial * f * S * g
     roots = []
     for k, (end, mid, z0, r) in enumerate(E['roots']):
-        roots.append(to_mesh(curve('root', [Vector((-.16 if k < 5 else -.06, 0, z0)) * S, Vector(mid) * S, Vector((end[0], end[1], -.18)) * S],
-                                   [r * S, r * .35 * S, r * .1 * S])))
+        # The root's reach shrinks with the girth (a slim trunk has short roots), so none sticks out like a leg.
+        reach = max(g, .3) * 1.1
+        roots.append(to_mesh(curve('root', [Vector((-.16 if k < 5 else -.06, 0, z0 * max(g, .4))) * S,
+                                            Vector((mid[0] * reach, mid[1] * reach, mid[2])) * S,
+                                            Vector((end[0] * reach, end[1] * reach, -.18)) * S],
+                                   [r * S * g, r * .35 * S * g, r * .1 * S * g])))
     bpy.ops.object.select_all(action='DESELECT')
     for o in [trunk, *roots]:
         o.select_set(True)
     bpy.context.view_layer.objects.active = trunk
     bpy.ops.object.join()
-    for mod, kw in (('REMESH', dict(mode='VOXEL', voxel_size=.045 * S)), ('SMOOTH', dict(factor=.75, iterations=4))):
+    for mod, kw in (('REMESH', dict(mode='VOXEL', voxel_size=.045 * S * max(g, .35))), ('SMOOTH', dict(factor=.75, iterations=4))):
         m = trunk.modifiers.new(mod, mod)
         for k_, v_ in kw.items():
             setattr(m, k_, v_)
@@ -198,8 +207,8 @@ def build_elder_form(spec, variant=0):
     branches = []
     for i, pts in enumerate(E['limbs'], start=1):
         bevel = max(.14, .32 - i * .018)
-        branches.append(curve(f'limb_{i}', [Vector(p) * S for p in pts], [r * bevel * S for r in (1.12 if i < 4 else .88, .48, .08)]))
-        elder_hierarchy(i, pts, S, branches)
+        branches.append(curve(f'limb_{i}', [Vector(p) * S for p in pts], [r * bevel * S * g_limb for r in (1.12 if i < 4 else .88, .48, .08)]))
+        elder_hierarchy(i, pts, S, branches, g_twig)
     for o in branches:
         to_mesh(o)
     bpy.ops.object.select_all(action='DESELECT')
@@ -227,24 +236,24 @@ def build_elder_form(spec, variant=0):
     return name, trunk, bark_mat, leaf_mat, clusters
 
 
-CAMPHOR_ELDER = dict(name='Camphor', scale=1.9, leaves_per_cluster=1875, leaf_size=(.025, .048),
+CAMPHOR_ELDER = dict(trunk_r=1.05, name='Camphor', scale=1.9, leaves_per_cluster=1875, leaf_size=(.025, .048),
                      palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
-MAPLE_ELDER = dict(name='Maple', scale=1.35, wide=1.25, tall=.85, crown_xy=1.1, crown_z=.8, leaves_per_cluster=1700,
+MAPLE_ELDER = dict(trunk_r=0.5, name='Maple', scale=1.35, wide=1.25, tall=.85, crown_xy=1.1, crown_z=.8, leaves_per_cluster=1700,
                    leaf_size=(.028, .05), leaf_width=1.6, bark_tint='#8a8278',
                    palette=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454'])
-GINKGO_ELDER = dict(name='Ginkgo', scale=1.6, wide=.7, tall=1.45, crown_xy=.8, crown_z=1.15, leaves_per_cluster=1700,
+GINKGO_ELDER = dict(trunk_r=0.62, name='Ginkgo', scale=1.6, wide=.7, tall=1.45, crown_xy=.8, crown_z=1.15, leaves_per_cluster=1700,
                     leaf_size=(.028, .05), leaf_width=1.5, bark_tint='#8c7f6c',
                     palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
-WILLOW_ELDER = dict(name='Willow', scale=1.35, wide=1.05, tall=1.15, crown_xy=.62, crown_z=.6, leaves_per_cluster=2300,
+WILLOW_ELDER = dict(trunk_r=0.58, name='Willow', scale=1.35, wide=1.05, tall=1.15, crown_xy=.62, crown_z=.6, leaves_per_cluster=2300,
                     leaf_size=(.05, .085), leaf_width=.32, hang=1.7, bark_tint='#6e6a5e',
                     palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
-PLUM_ELDER = dict(name='Plum', scale=.85, wide=1.1, tall=.95, crown_xy=.85, crown_z=.85, leaves_per_cluster=1500, sparse=.55,
+PLUM_ELDER = dict(trunk_r=0.28, name='Plum', scale=.85, wide=1.1, tall=.95, crown_xy=.85, crown_z=.85, leaves_per_cluster=1500, sparse=.55,
                   leaf_size=(.03, .05), leaf_width=1.4, bark_tint='#3e2f2a',
                   palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
-PINE_ELDER = dict(name='Pine', scale=1.45, wide=1.15, tall=1.2, crown_xy=1.15, crown_z=.4, leaves_per_cluster=1900,
+PINE_ELDER = dict(trunk_r=0.62, name='Pine', scale=1.45, wide=1.15, tall=1.2, crown_xy=1.15, crown_z=.4, leaves_per_cluster=1900,
                   leaf_size=(.03, .055), leaf_width=.25, bark_tint='#8a5a40',
                   palette=['#16301f', '#22482a', '#3a6a34', '#6a9440', '#a8c058'])
-JUNIPER_ELDER = dict(name='Cypress', scale=1.15, wide=1.2, tall=.9, crown_xy=1.05, crown_z=.5, leaves_per_cluster=1800,
+JUNIPER_ELDER = dict(trunk_r=0.62, name='Cypress', scale=1.15, wide=1.2, tall=.9, crown_xy=1.05, crown_z=.5, leaves_per_cluster=1800,
                      leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
                      palette=['#1a3a1e', '#2a5428', '#467a30', '#76a23a', '#b0c856'])
 SPECIES = [CAMPHOR_ELDER, MAPLE_ELDER, GINKGO_ELDER, WILLOW_ELDER, PLUM_ELDER, PINE_ELDER, JUNIPER_ELDER]
