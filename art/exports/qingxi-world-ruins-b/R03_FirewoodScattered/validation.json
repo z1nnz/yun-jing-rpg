@@ -1,0 +1,67 @@
+{
+  "asset": "R03_FirewoodScattered",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R03_FirewoodScattered_Collision_00",
+      "R03_FirewoodScattered_Collision_01",
+      "R03_FirewoodScattered_Collision_02",
+      "R03_FirewoodScattered_LOD0",
+      "R03_FirewoodScattered_LOD1",
+      "R03_FirewoodScattered_LOD2"
+    ],
+    "lod0_size_m": [
+      2.7806,
+      2.0638,
+      0.7305
+    ],
+    "lod0_min_m": [
+      -1.2887,
+      -1.386,
+      0.002
+    ],
+    "tris": {
+      "R03_FirewoodScattered_Collision_00": 228,
+      "R03_FirewoodScattered_Collision_01": 314,
+      "R03_FirewoodScattered_Collision_02": 166,
+      "R03_FirewoodScattered_LOD0": 32008,
+      "R03_FirewoodScattered_LOD1": 16004,
+      "R03_FirewoodScattered_LOD2": 4800
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R03_FirewoodScattered_Collision_00",
+      "R03_FirewoodScattered_Collision_01",
+      "R03_FirewoodScattered_Collision_02",
+      "R03_FirewoodScattered_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R03_FirewoodScattered"
+    ],
+    "occlusion_texture": true,
+    "bytes": 1920096
+  },
+  "sha256": {
+    "R03_FirewoodScattered_v001.fbx": "cbb82aee513cbe55a53fa2614b32f14472e95e109fa4fe2af4fc1d1c81f24ea9",
+    "R03_FirewoodScattered_v001.glb": "bc179ebb9a018480ce90aec4cb93e80795f4840f53fdb0b3b0cf50a59325253b"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

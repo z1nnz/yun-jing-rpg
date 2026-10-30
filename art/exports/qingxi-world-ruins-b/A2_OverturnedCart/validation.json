@@ -1,0 +1,78 @@
+{
+  "asset": "A2_OverturnedCart",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true,
+    "within_slot_limit_w_d_h": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "A2_OverturnedCart_Collision_00",
+      "A2_OverturnedCart_Collision_01",
+      "A2_OverturnedCart_Collision_02",
+      "A2_OverturnedCart_Collision_03",
+      "A2_OverturnedCart_Collision_04",
+      "A2_OverturnedCart_Collision_05",
+      "A2_OverturnedCart_LOD0",
+      "A2_OverturnedCart_LOD1",
+      "A2_OverturnedCart_LOD2"
+    ],
+    "lod0_size_m": [
+      3.4293,
+      1.7763,
+      1.5663
+    ],
+    "lod0_min_m": [
+      -1.7146,
+      -0.8881,
+      -0.005
+    ],
+    "tris": {
+      "A2_OverturnedCart_Collision_00": 370,
+      "A2_OverturnedCart_Collision_01": 106,
+      "A2_OverturnedCart_Collision_02": 106,
+      "A2_OverturnedCart_Collision_03": 400,
+      "A2_OverturnedCart_Collision_04": 400,
+      "A2_OverturnedCart_Collision_05": 926,
+      "A2_OverturnedCart_LOD0": 27292,
+      "A2_OverturnedCart_LOD1": 13644,
+      "A2_OverturnedCart_LOD2": 4092
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "A2_OverturnedCart_Collision_00",
+      "A2_OverturnedCart_Collision_01",
+      "A2_OverturnedCart_Collision_02",
+      "A2_OverturnedCart_Collision_03",
+      "A2_OverturnedCart_Collision_04",
+      "A2_OverturnedCart_Collision_05",
+      "A2_OverturnedCart_LOD0"
+    ],
+    "images": 6,
+    "materials": [
+      "M_WRB_A2_OverturnedCart_Main",
+      "M_WRB_A2_OverturnedCart_Sack"
+    ],
+    "occlusion_texture": true,
+    "bytes": 4006872
+  },
+  "sha256": {
+    "A2_OverturnedCart_v001.fbx": "f83a0a2b8db7204b7c1743c96dadf544d6ee616b0606a91c0a61fb1a473f009f",
+    "A2_OverturnedCart_v001.glb": "c40f4be2425c6939af825d91e3717d75ac71eda672e12827b758f5b26afcc262"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

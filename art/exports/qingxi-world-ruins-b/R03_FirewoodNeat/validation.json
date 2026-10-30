@@ -1,0 +1,61 @@
+{
+  "asset": "R03_FirewoodNeat",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R03_FirewoodNeat_Collision",
+      "R03_FirewoodNeat_LOD0",
+      "R03_FirewoodNeat_LOD1",
+      "R03_FirewoodNeat_LOD2"
+    ],
+    "lod0_size_m": [
+      1.6442,
+      0.778,
+      0.9709
+    ],
+    "lod0_min_m": [
+      -0.8221,
+      -0.389,
+      -0.0154
+    ],
+    "tris": {
+      "R03_FirewoodNeat_Collision": 12,
+      "R03_FirewoodNeat_LOD0": 60148,
+      "R03_FirewoodNeat_LOD1": 30074,
+      "R03_FirewoodNeat_LOD2": 9022
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R03_FirewoodNeat_Collision",
+      "R03_FirewoodNeat_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R03_FirewoodNeat"
+    ],
+    "occlusion_texture": true,
+    "bytes": 4648224
+  },
+  "sha256": {
+    "R03_FirewoodNeat_v001.fbx": "7c443d8637acec493e3cdf62deb6871a68a77a28eae37e687e07feb124a8cf75",
+    "R03_FirewoodNeat_v001.glb": "d29a87f549e43948a8ea21f2d7ec6cbdb53512482000493555ee6625ae52243b"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "asset": "R01_DryStoneWall_Straight",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R01_DryStoneWall_Straight_Collision",
+      "R01_DryStoneWall_Straight_LOD0",
+      "R01_DryStoneWall_Straight_LOD1",
+      "R01_DryStoneWall_Straight_LOD2"
+    ],
+    "lod0_size_m": [
+      3.0,
+      0.6243,
+      1.0275
+    ],
+    "lod0_min_m": [
+      -1.5,
+      -0.3167,
+      -0.0754
+    ],
+    "tris": {
+      "R01_DryStoneWall_Straight_Collision": 12,
+      "R01_DryStoneWall_Straight_LOD0": 39712,
+      "R01_DryStoneWall_Straight_LOD1": 19856,
+      "R01_DryStoneWall_Straight_LOD2": 5956
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R01_DryStoneWall_Straight_Collision",
+      "R01_DryStoneWall_Straight_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R01_DryStoneWall_Straight"
+    ],
+    "occlusion_texture": true,
+    "bytes": 4176216
+  },
+  "sha256": {
+    "R01_DryStoneWall_Straight_v001.fbx": "33f3aa0a9ded5f5a38dcb9221a7085e70f201f415db1d3ee6ac4fd95c5dcf299",
+    "R01_DryStoneWall_Straight_v001.glb": "520869653a911180b8885507a394b56fe26f464c7815bba35150b73374f85729"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

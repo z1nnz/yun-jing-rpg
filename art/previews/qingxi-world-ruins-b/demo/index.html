@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>青溪廢墟套件 B：WASD 試走</title>
+<!--
+  Local walk-through of the qingxi-world-ruins-b exports (LOD0 GLB with baked textures) laid out as a small ruined lane.
+  Serve the repository root over HTTP (file:// cannot fetch the GLBs), e.g. from the repo root:
+      uv run --no-project python -m http.server 8765 --bind 127.0.0.1
+  then open http://127.0.0.1:8765/art/previews/qingxi-world-ruins-b/demo/
+  three.js is pinned to 0.160.0 from unpkg. Not part of the game build.
+-->
+<style>
+  :root { --ink: #f2ecdf; --panel: rgba(20, 18, 15, .72); }
+  html, body { margin: 0; height: 100%; background: #9fb3bf; overflow: hidden; font-family: "Microsoft JhengHei", system-ui, sans-serif; }
+  canvas { display: block; }
+  #hud { position: fixed; left: 16px; top: 16px; max-width: min(420px, calc(100vw - 32px)); padding: 12px 14px; border-radius: 8px;
+         background: var(--panel); color: var(--ink); font-size: 14px; line-height: 1.55; }
+  #hud b { color: #ffd894; }
+  #load { margin-top: 6px; font-size: 13px; opacity: .85; }
+  #near { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); padding: 6px 12px; border-radius: 6px;
+          background: var(--panel); color: var(--ink); font-size: 14px; display: none; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: rgba(255,255,255,.7); }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="hud">
+  <b>青溪廢墟套件 B・試走</b><br>
+  點畫面鎖定滑鼠・<b>WASD</b> 移動・<b>Shift</b> 跑・<b>F</b> 切換飛行（Space / C 升降）・<b>Esc</b> 解除<br>
+  人物視高 1.6 m；碰撞使用各資產的 _Collision 凸包（以包圍盒近似）。
+  <div id="load">載入中…</div>
+</div>
+<div id="cross"></div>
+<div id="near"></div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+
+const EXP = '../../../exports/qingxi-world-ruins-b/';
+const ZH = {
+  H01_StoneTimberHouse: 'H01 石基木構屋',
+  D3_DryWell: 'D3 乾枯水井', A2_OverturnedCart: 'A2 翻覆推車', R01_DryStoneWall_Straight: 'R01 乾砌石牆・直段',
+  R01_DryStoneWall_Collapsed: 'R01 乾砌石牆・崩塌段', R01_DryStoneWall_Corner: 'R01 乾砌石牆・轉角', R01_DryStoneWall_EndCap: 'R01 乾砌石牆・端頭',
+  R02_BambooFence_Straight: 'R02 竹籬・直段', R02_BambooFence_Leaning: 'R02 竹籬・傾倒段', R02_BambooFence_Corner: 'R02 竹籬・轉角',
+  R02_BambooFence_EndPost: 'R02 竹籬・端柱', R03_FirewoodNeat: 'R03 柴堆・整齊', R03_FirewoodScattered: 'R03 柴堆・散落',
+  R04_StoneLanternIntact: 'R04 石燈籠・完整', R04_StoneLanternBroken: 'R04 石燈籠・破損', R05_Milestone: 'R05 里程石',
+};
+
+// Layout in Blender coordinates (x east, y north, rot about Z, radians); converted to three.js (x, 0, -y) below.
+const P = [];
+const put = (id, x, y, rot = 0) => P.push({ id, x, y, rot });
+// the lane runs east-west along y = 0; the house faces it from the north (model front = -Y in Blender)
+// (only H01 is in this release; the other houses follow in a later one)
+put('H01_StoneTimberHouse', -22, 8.5, 0);
+const WELL = { x: 15, y: -5 };
+put('D3_DryWell', WELL.x, WELL.y, .3);
+put('A2_OverturnedCart', 11, 1.6, .18);
+put('R04_StoneLanternIntact', -28, 2.6, 0); put('R04_StoneLanternBroken', -28, -2.6, Math.PI);
+put('R05_Milestone', -31.5, 2.4, -Math.PI / 2);
+put('R03_FirewoodNeat', -18.4, 9.2, Math.PI / 2);
+put('R03_FirewoodScattered', 21.6, 4.6, .4);
+
+// dry-stone wall behind the north row, chained by its interfaces (3 m segments, start at local -1.5, end at +1.5)
+{ const x0 = -27, n = 12;
+  for (let k = 0; k < n; k++) put(k === 5 ? 'R01_DryStoneWall_Collapsed' : 'R01_DryStoneWall_Straight', x0 + 1.5 + 3 * k, 13.5, 0);
+  put('R01_DryStoneWall_Corner', x0 + 3 * n + 1.5, 13.5, 0);                  // turns north at the east end
+  put('R01_DryStoneWall_EndCap', x0 - .25, 13.5, Math.PI);                   // start interface faces back along the wall
+}
+// bamboo fence behind the south row: 2 m segments, one leaning, end posts at both ends
+{ const x0 = -26, n = 17;
+  for (let k = 0; k < n; k++) put(k === 9 ? 'R02_BambooFence_Leaning' : 'R02_BambooFence_Straight', x0 + 1 + 2 * k, -13.5, Math.PI);
+  put('R02_BambooFence_EndPost', x0, -13.5, 0);
+  put('R02_BambooFence_Corner', x0 + 2 * n + 1, -13.5, 0);                   // start meets the last segment, turns north
+}
+
+// ---------------------------------------------------------------- renderer, sky, ground
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#a9bcc6');
+scene.fog = new THREE.Fog('#a9bcc6', 35, 110);
+scene.add(new THREE.HemisphereLight('#dfe8ee', '#5a4a38', 1.1));
+const sun = new THREE.DirectionalLight('#fff1dc', 2.6);
+sun.position.set(-30, 40, 22); sun.castShadow = true;
+sun.shadow.mapSize.set(4096, 4096);
+Object.assign(sun.shadow.camera, { left: -45, right: 45, top: 45, bottom: -45, near: 1, far: 140 });
+sun.shadow.bias = -.0004; sun.shadow.normalBias = .03;
+scene.add(sun);
+
+// ground with a hole where the well shaft goes down (the well is modelled 1.6 m below ground)
+const shape = new THREE.Shape();
+shape.moveTo(-70, -70); shape.lineTo(70, -70); shape.lineTo(70, 70); shape.lineTo(-70, 70); shape.lineTo(-70, -70);
+const hole = new THREE.Path(); hole.absarc(WELL.x, WELL.y, .45, 0, Math.PI * 2, true); shape.holes.push(hole);
+const ground = new THREE.Mesh(new THREE.ShapeGeometry(shape, 48), new THREE.MeshStandardMaterial({ color: '#6f6450', roughness: .97 }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+const lane = new THREE.Mesh(new THREE.PlaneGeometry(70, 3.4), new THREE.MeshStandardMaterial({ color: '#8a7a60', roughness: 1 }));
+lane.rotation.x = -Math.PI / 2; lane.position.y = .004; lane.receiveShadow = true; scene.add(lane);
+
+// ---------------------------------------------------------------- loading
+const camera = new THREE.PerspectiveCamera(70, innerWidth / innerHeight, .05, 300);
+const controls = new PointerLockControls(camera, document.body);
+camera.position.set(-34, 1.6, 0); camera.lookAt(-20, 1.4, 0);
+renderer.domElement.addEventListener('click', () => controls.lock());
+
+const loader = new GLTFLoader();
+const cache = new Map();
+const obstacles = [];          // { box: Box3, id }
+const labels = [];             // { pos: Vector3, id }
+const loadEl = document.getElementById('load');
+// ?lite skips the house (about 7 MB of the 46 MB) for slow machines
+// ?only=R02,R05 keeps just the assets whose ID starts with one of the given prefixes
+const qs = new URLSearchParams(location.search);
+if (qs.has('lite')) for (let i = P.length - 1; i >= 0; i--) if (/^H0/.test(P[i].id)) P.splice(i, 1);
+if (qs.get('only')) { const keep = qs.get('only').split(','); for (let i = P.length - 1; i >= 0; i--) if (!keep.some(k => P[i].id.startsWith(k))) P.splice(i, 1); }
+const ids = [...new Set(P.map(p => p.id))];
+let done = 0;
+
+function prep(root) {
+  const coll = [];
+  root.traverse(o => {
+    if (!o.isMesh) return;
+    if (/collision/i.test(o.name)) { coll.push(o); o.visible = false; return; }
+    o.castShadow = true; o.receiveShadow = true;
+  });
+  return coll;
+}
+
+// one download at a time (a simple local server resets when 23 large files are requested at once), three tries each
+let queue = Promise.resolve();
+// fetch the whole file first: GLTFLoader's streamed download never settles when the connection resets mid-file
+const fetchBuf = url => fetch(url).then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.arrayBuffer(); });
+const tryLoad = (url, n = 3) => fetchBuf(url).then(buf => loader.parseAsync(buf, ''))
+  .catch(e => n > 1 ? new Promise(r => setTimeout(r, 800)).then(() => tryLoad(url, n - 1)) : Promise.reject(e));
+function get(id) {
+  if (!cache.has(id)) {
+    const url = `${EXP}${id}/${id}_v001.glb`;
+    const job = queue.then(() => tryLoad(url)).then(g => {
+      loadEl.textContent = `載入中… ${++done} / ${ids.length}（${ZH[id] || id}）`; return g.scene; });
+    queue = job.catch(() => {});
+    cache.set(id, job);
+  }
+  return cache.get(id);
+}
+
+for (const p of P) {
+  get(p.id).then(src => {
+    const inst = src.clone(true);
+    const coll = prep(inst);
+    inst.position.set(p.x, 0, -p.y); inst.rotation.y = p.rot;
+    scene.add(inst); inst.updateMatrixWorld(true);
+    for (const c of coll) obstacles.push({ box: new THREE.Box3().setFromObject(c), id: p.id });
+    labels.push({ pos: new THREE.Vector3(p.x, 0, -p.y), id: p.id });
+    if (done === ids.length) loadEl.textContent = `完成：${ids.length} 種資產、${P.length} 個擺放。`;
+  }).catch(e => { loadEl.textContent = `載入失敗：${p.id}（${e.message}）`; console.error(e); });
+}
+
+// ---------------------------------------------------------------- movement and collision
+const keys = {}; let fly = false;
+addEventListener('keydown', e => { keys[e.code] = true; if (e.code === 'KeyF') fly = !fly; });
+addEventListener('keyup', e => { keys[e.code] = false; });
+const R = .3, EYE = 1.6;
+function blocked(pos) {
+  if (fly) return false;
+  for (const o of obstacles) {
+    const b = o.box;
+    if (b.max.y < .35 || b.min.y > EYE) continue;            // low rubble you can step over, or overhead
+    if (pos.x > b.min.x - R && pos.x < b.max.x + R && pos.z > b.min.z - R && pos.z < b.max.z + R) return true;
+  }
+  return false;
+}
+const near = document.getElementById('near');
+const clock = new THREE.Clock();
+const fwd = new THREE.Vector3(), side = new THREE.Vector3();
+function tick() {
+  const dt = Math.min(clock.getDelta(), .05);
+  if (controls.isLocked) {
+    const sp = (keys.ShiftLeft || keys.ShiftRight ? 6 : 2.6) * dt;
+    camera.getWorldDirection(fwd); if (!fly) fwd.y = 0; fwd.normalize();
+    side.crossVectors(fwd, camera.up).normalize();
+    const mv = new THREE.Vector3();
+    if (keys.KeyW) mv.add(fwd); if (keys.KeyS) mv.sub(fwd);
+    if (keys.KeyD) mv.add(side); if (keys.KeyA) mv.sub(side);
+    if (mv.lengthSq()) {
+      mv.normalize().multiplyScalar(sp);
+      const p = camera.position;
+      const tx = p.clone(); tx.x += mv.x; if (!blocked(tx)) p.x = tx.x;      // slide along obstacles axis by axis
+      const tz = p.clone(); tz.z += mv.z; if (!blocked(tz)) p.z = tz.z;
+      if (fly) p.y = Math.max(.3, p.y + mv.y);
+    }
+    if (fly) { if (keys.Space) camera.position.y += sp; if (keys.KeyC) camera.position.y = Math.max(.3, camera.position.y - sp); }
+    else camera.position.y = EYE;
+  }
+  // name of the nearest asset within 3.5 m
+  let best = null, bd = 3.5;
+  for (const l of labels) { const d = Math.hypot(l.pos.x - camera.position.x, l.pos.z - camera.position.z); if (d < bd) { bd = d; best = l; } }
+  near.style.display = best ? 'block' : 'none'; if (best) near.textContent = ZH[best.id] || best.id;
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+tick();
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+window.__demo = { scene, camera, obstacles, P };
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "asset": "R01_DryStoneWall_EndCap",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R01_DryStoneWall_EndCap_Collision",
+      "R01_DryStoneWall_EndCap_LOD0",
+      "R01_DryStoneWall_EndCap_LOD1",
+      "R01_DryStoneWall_EndCap_LOD2"
+    ],
+    "lod0_size_m": [
+      0.5138,
+      0.5838,
+      1.0185
+    ],
+    "lod0_min_m": [
+      -0.25,
+      -0.3037,
+      -0.0698
+    ],
+    "tris": {
+      "R01_DryStoneWall_EndCap_Collision": 12,
+      "R01_DryStoneWall_EndCap_LOD0": 6028,
+      "R01_DryStoneWall_EndCap_LOD1": 3014,
+      "R01_DryStoneWall_EndCap_LOD2": 904
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R01_DryStoneWall_EndCap_Collision",
+      "R01_DryStoneWall_EndCap_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R01_DryStoneWall_EndCap"
+    ],
+    "occlusion_texture": true,
+    "bytes": 906068
+  },
+  "sha256": {
+    "R01_DryStoneWall_EndCap_v001.fbx": "90ffaaccbe754ec9f019d772d8074b5a864992aae8575ba28a365597f08e6f32",
+    "R01_DryStoneWall_EndCap_v001.glb": "e04ed9aa0786bf78d1bea6f37a57b268d7dc063e03eb6a04029b5e4d13743006"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

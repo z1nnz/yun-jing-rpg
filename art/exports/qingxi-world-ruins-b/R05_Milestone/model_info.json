@@ -1,0 +1,79 @@
+{
+  "asset": "R05_Milestone",
+  "name_zh": "里程石",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 2,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.25,
+  "size_m": {
+    "x": 0.812,
+    "y": 0.494,
+    "z_above_ground": 1.347,
+    "z_below_ground": 0.258
+  },
+  "bounds_m": {
+    "min": [
+      -0.398,
+      -0.175,
+      -0.258
+    ],
+    "max": [
+      0.414,
+      0.32,
+      1.347
+    ]
+  },
+  "slot_limit_m": null,
+  "triangles": {
+    "LOD0": 11036,
+    "LOD1": 5518,
+    "LOD2": 1654
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_R05_Milestone",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_R05_Milestone_Main_BaseColor.png",
+        "Normal": "Textures/T_R05_Milestone_Main_Normal.png",
+        "ORM": "Textures/T_R05_Milestone_Main_ORM.png"
+      },
+      "texture_size": 512,
+      "visible_texel_density_px_per_m": 288.4,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "R05_Milestone_Collision",
+      "type": "convex hull",
+      "vertices": 12,
+      "faces": 20
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": null,
+  "files": {
+    "fbx": "R05_Milestone_v001.fbx",
+    "glb": "R05_Milestone_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/R05_Milestone_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/R05_Milestone-three-views-v001.png",
+  "notes": [
+    "Blank inscription panel 0.34 x 0.65 m on the -Y face, bottom edge 0.33 m above ground; no carved text (place names are added in game).",
+    "Set 0.25 m into the ground; the base is roughly squared so it also stands on a slight slope.",
+    "Collision: one convex hull of the stone."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

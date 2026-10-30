@@ -1,0 +1,61 @@
+{
+  "asset": "R02_BambooFence_EndPost",
+  "version": "v001",
+  "checks": {
+    "origin_footprint_centre_xy": true,
+    "bottom_at_design_embed": true,
+    "fbx_has_LOD0_LOD1_LOD2": true,
+    "fbx_has_collision": true,
+    "fbx_lod0_size_matches_blender": true,
+    "lod1_45_55_percent": true,
+    "lod2_12_18_percent": true,
+    "texel_density_at_least_min_px_m": true,
+    "glb_reimports": true
+  },
+  "passed": true,
+  "fbx_reimport": {
+    "objects": [
+      "R02_BambooFence_EndPost_Collision",
+      "R02_BambooFence_EndPost_LOD0",
+      "R02_BambooFence_EndPost_LOD1",
+      "R02_BambooFence_EndPost_LOD2"
+    ],
+    "lod0_size_m": [
+      0.1345,
+      0.2148,
+      1.36
+    ],
+    "lod0_min_m": [
+      -0.0673,
+      -0.1459,
+      -0.2
+    ],
+    "tris": {
+      "R02_BambooFence_EndPost_Collision": 12,
+      "R02_BambooFence_EndPost_LOD0": 6520,
+      "R02_BambooFence_EndPost_LOD1": 3260,
+      "R02_BambooFence_EndPost_LOD2": 978
+    }
+  },
+  "glb_reimport": {
+    "meshes": [
+      "R02_BambooFence_EndPost_Collision",
+      "R02_BambooFence_EndPost_LOD0"
+    ],
+    "images": 3,
+    "materials": [
+      "M_WRB_R02_BambooFence_EndPost"
+    ],
+    "occlusion_texture": true,
+    "bytes": 401684
+  },
+  "sha256": {
+    "R02_BambooFence_EndPost_v001.fbx": "cfd13f5876606291e2249831856117113096f9ed5a285020b7997b670320ca96",
+    "R02_BambooFence_EndPost_v001.glb": "219c4ddd698d06ec16720f50720f53bc5140f89bfb45561c40b06619d3e5bb47"
+  },
+  "not_checked": [
+    "Unity import and LODGroup distances",
+    "in-game lighting",
+    "mobile performance"
+  ]
+}

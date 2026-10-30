@@ -1,0 +1,91 @@
+{
+  "asset": "R03_FirewoodScattered",
+  "name_zh": "柴堆（散亂）",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 2,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.0,
+  "size_m": {
+    "x": 2.781,
+    "y": 2.064,
+    "z_above_ground": 0.732,
+    "z_below_ground": 0
+  },
+  "bounds_m": {
+    "min": [
+      -1.289,
+      -1.386,
+      0.002
+    ],
+    "max": [
+      1.492,
+      0.678,
+      0.732
+    ]
+  },
+  "slot_limit_m": null,
+  "triangles": {
+    "LOD0": 32008,
+    "LOD1": 16004,
+    "LOD2": 4800
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_R03_FirewoodScattered",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_R03_FirewoodScattered_Main_BaseColor.png",
+        "Normal": "Textures/T_R03_FirewoodScattered_Main_Normal.png",
+        "ORM": "Textures/T_R03_FirewoodScattered_Main_ORM.png"
+      },
+      "texture_size": 1024,
+      "visible_texel_density_px_per_m": 275.2,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "R03_FirewoodScattered_Collision_00",
+      "type": "convex hull",
+      "vertices": 116,
+      "faces": 228
+    },
+    {
+      "name": "R03_FirewoodScattered_Collision_01",
+      "type": "convex hull",
+      "vertices": 159,
+      "faces": 314
+    },
+    {
+      "name": "R03_FirewoodScattered_Collision_02",
+      "type": "convex hull",
+      "vertices": 85,
+      "faces": 166
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": null,
+  "files": {
+    "fbx": "R03_FirewoodScattered_v001.fbx",
+    "glb": "R03_FirewoodScattered_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/R03_FirewoodScattered_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/R03_FirewoodScattered-three-views-v001.png",
+  "notes": [
+    "Low asymmetric heap within about 1.85 x 1.1 x 0.62 m, plus three loose pieces alongside.",
+    "Placement is settled procedurally: every billet rests on the ground or on billets placed before it.",
+    "Collision: three convex hulls (west, middle, east thirds of the heap)."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}

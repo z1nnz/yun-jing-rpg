@@ -1,0 +1,80 @@
+{
+  "asset": "R03_FirewoodNeat",
+  "name_zh": "柴堆（整齊）",
+  "version": "v001",
+  "kit": "qingxi-world-ruins-b",
+  "batch": 2,
+  "units": "1 unit = 1 m; Blender Z-up, FBX/GLB exported Y-up; front faces -Y in Blender (-Z forward in FBX)",
+  "origin": "footprint centre, z = 0 at ground level",
+  "design_embed_depth_m": 0.0,
+  "size_m": {
+    "x": 1.644,
+    "y": 0.778,
+    "z_above_ground": 0.955,
+    "z_below_ground": 0.015
+  },
+  "bounds_m": {
+    "min": [
+      -0.822,
+      -0.389,
+      -0.015
+    ],
+    "max": [
+      0.822,
+      0.389,
+      0.955
+    ]
+  },
+  "slot_limit_m": null,
+  "triangles": {
+    "LOD0": 60148,
+    "LOD1": 30074,
+    "LOD2": 9022
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "materials": [
+    {
+      "name": "M_WRB_R03_FirewoodNeat",
+      "slot": "Main",
+      "textures": {
+        "BaseColor": "Textures/T_R03_FirewoodNeat_Main_BaseColor.png",
+        "Normal": "Textures/T_R03_FirewoodNeat_Main_Normal.png",
+        "ORM": "Textures/T_R03_FirewoodNeat_Main_ORM.png"
+      },
+      "texture_size": 2048,
+      "visible_texel_density_px_per_m": 402.3,
+      "orm": "R = ambient occlusion, G = roughness, B = metallic (linear)",
+      "normal": "OpenGL tangent space"
+    }
+  ],
+  "collision": [
+    {
+      "name": "R03_FirewoodNeat_Collision",
+      "type": "convex hull",
+      "vertices": 8,
+      "faces": 12
+    }
+  ],
+  "has_collision": true,
+  "interfaces": null,
+  "scene_slot": null,
+  "files": {
+    "fbx": "R03_FirewoodNeat_v001.fbx",
+    "glb": "R03_FirewoodNeat_v001.glb",
+    "blend": "art/source/qingxi-world-ruins-b/blend/R03_FirewoodNeat_v001.blend"
+  },
+  "reference": "art/references/qingxi-world-ruins-b/R03_FirewoodNeat-three-views-v002.png",
+  "notes": [
+    "About 1.7 x 0.74 x 0.9 m. Split billets run front to back, so front and back both show cut ends.",
+    "Two timber sleepers carry the stack; small round billets are cribbed at both ends behind stakes.",
+    "Top: one long half log and a bundle of three round logs tied with two hemp wraps.",
+    "Collision: one box around the stack."
+  ],
+  "bake": {
+    "device": "OPTIX",
+    "fast_lookdev": false
+  }
+}
