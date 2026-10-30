@@ -104,11 +104,11 @@ namespace YunJing.Editor
         // the warm ochre rock that shows where the ground is too steep to hold grass.
         static readonly string[] LayerNames = { "VillageMeadow", "VillagePackedEarth", "VillagePlazaStone", "VillageForestFloor", "MeadowDry", "CreekGravel", "OchreRock" };
         static readonly Color[] Colors = {
-            new Color(.32f, .5f, .22f), new Color(.55f, .43f, .29f), new Color(.55f, .53f, .48f), new Color(.29f, .30f, .20f),
+            new Color(.32f, .5f, .22f), new Color(.55f, .43f, .29f), new Color(.55f, .53f, .48f), new Color(.42f, .4f, .26f),
             new Color(.58f, .62f, .30f), new Color(.52f, .50f, .45f), new Color(.6f, .52f, .42f)
         };
         static readonly string[] Kinds = { "grass", "earth", "slab", "litter", "grass", "gravel", "rock" };
-        static readonly float[] Tiles = { 5, 4, 4, 4, 6, 2.5f, 7 };
+        static readonly float[] Tiles = { 3, 4, 4, 4, 4, 2.5f, 7 };
 
         // A1 (the novice village) by default; other blocks pass their file under tools/qingxi-terrain/blocks/.
         public static Layout Load(string relative = "tools/qingxi-terrain/novice-village.json")
@@ -217,11 +217,19 @@ namespace YunJing.Editor
         {
             float h = BaseHeight(layout, x, z)
                 + layout.noise * 2f * (Mathf.PerlinNoise(x * .05f + 11f, z * .05f + 7f) - .5f)
-                + layout.noise * (Mathf.PerlinNoise(x * .17f + 53f, z * .17f + 29f) - .5f);
+                + layout.noise * (Mathf.PerlinNoise(x * .17f + 53f, z * .17f + 29f) - .5f)
+                // Ground grain: hummocks and hollows a few metres across, so light and shade break up the slopes.
+                + .4f * (Mathf.PerlinNoise(x * .22f + 401f, z * .22f + 77f) - .5f)
+                + .16f * (Mathf.PerlinNoise(x * .7f + 13f, z * .7f + 211f) - .5f);
             // Broad relief: two octaves of rolling hills; on terraced ground the slopes break into soft steps.
             if (layout.relief > 0)
             {
-                float hill = (Mathf.PerlinNoise(x * .018f + 101f, z * .018f + 57f) - .5f) * 2f * .7f + (Mathf.PerlinNoise(x * .045f + 13f, z * .045f + 91f) - .5f) * 2f * .3f;
+                // Warp the sample point so hills bend into spurs and hollows instead of round domes, and add a
+                // ridged octave so the high ground runs in crests with shoulders falling away on either side.
+                float wx = x + 14f * (Mathf.PerlinNoise(x * .012f + 7f, z * .012f + 3f) - .5f), wz = z + 14f * (Mathf.PerlinNoise(x * .012f + 41f, z * .012f + 19f) - .5f);
+                float ridge = 1f - Mathf.Abs(Mathf.PerlinNoise(wx * .026f + 211f, wz * .026f + 97f) * 2f - 1f);
+                float hill = (Mathf.PerlinNoise(wx * .018f + 101f, wz * .018f + 57f) - .5f) * 2f * .55f + (ridge * ridge - .35f) * .55f
+                    + (Mathf.PerlinNoise(wx * .06f + 13f, wz * .06f + 91f) - .5f) * 2f * .2f;
                 float rise = hill * layout.relief;
                 if (layout.terrace > 0)
                 {
@@ -301,6 +309,7 @@ namespace YunJing.Editor
             var cover = new float[PaintResolution, PaintResolution];   // how much grass belongs here (0..1)
             var dryness = new float[PaintResolution, PaintResolution];
             var edgeOf = new float[PaintResolution, PaintResolution];  // near a pad, road or rock: taller grass
+            var pathEdge = new float[PaintResolution, PaintResolution];   // the worn edge of a path or the creek bank: pebbles
             for (int z = 0; z < PaintResolution; z++)
             for (int x = 0; x < PaintResolution; x++)
             {
@@ -339,7 +348,7 @@ namespace YunJing.Editor
                 float rock = (layout.isolated ? Smooth(.85f, 1.2f, slope + edgeNoise * .3f) : Smooth(.62f, .95f, slope + edgeNoise * .3f) * outcrop) * (1f - dirt);   // the hollow's slopes stay grassy
                 float bank = layout.isolated ? 0 : Smooth(.32f, .62f, slope + edgeNoise * .25f) * Smooth(.35f, .65f, Mathf.PerlinNoise(wx * .23f + 91f, wz * .23f + 3f)) * (1f - rock) * (1f - dirt) * .75f;
                 dirt = Mathf.Max(dirt, bank);
-                float dryPatch = Smooth(.5f, .68f, Mathf.PerlinNoise(wx * .035f + 71f, wz * .035f + 9f) + edgeNoise * .4f);
+                float dryPatch = Smooth(.46f, .72f, Mathf.PerlinNoise(wx * .03f + 71f, wz * .03f + 9f) * .7f + Mathf.PerlinNoise(wx * .22f + 5f, wz * .22f + 33f) * .3f + edgeNoise * .3f);
                 plaza *= 1f - dirt * .5f;
                 float open = Mathf.Max(0, 1f - dirt - plaza - forest - gravel - rock);
                 paint[z, x, 1] = dirt;
@@ -358,6 +367,7 @@ namespace YunJing.Editor
                 float scatter = Mathf.PerlinNoise(wx * .71f + 31f, wz * .71f + 41f);
                 detail[z, x] = density > .7f && scatter > .42f ? (scatter > .66f ? 4 : scatter > .54f ? 2 : 1) : 0;
                 cover[z, x] = density;
+                pathEdge[z, x] = Mathf.Max(1f - Mathf.Abs(worn - .6f) / 1.1f, layout.creek != null ? 1f - Mathf.Abs(creek - layout.creek.width * .5f - .8f) / 1.5f : 0);
                 dryness[z, x] = dryPatch;
                 edgeOf[z, x] = Mathf.Max(1f - Smooth(2.5f, 6f, Mathf.Min(pad, worn)), Smooth(.25f, .5f, slope));
             }
@@ -373,6 +383,10 @@ namespace YunJing.Editor
             for (int z = 0; z < D; z++)
             for (int x = 0; x < D; x++)
             {
+                // Stones first: pebbles along path edges and creek banks, a few mossy stones out in the meadow.
+                float edge = pathEdge[z * 2, x * 2];
+                if (edge > 0 && rnd.NextDouble() < .1 * edge) { layers[6][z, x] = 1; continue; }
+                if (cover[z * 2, x * 2] > .5f && rnd.NextDouble() < .0015) { layers[7][z, x] = 1; continue; }
                 float c = cover[z * 2, x * 2];
                 if (c < .3f) continue;
                 float wx = area.minX + (x + .5f) * area.sizeX / D, wz = area.minZ + (z + .5f) * area.sizeZ / D;
@@ -481,9 +495,16 @@ namespace YunJing.Editor
                 switch (kind)
                 {
                     case "grass":   // fine speckle of blades in every direction, darker tufts, a warmer hue in places
-                        float speck = Tile(u, v, 64) - .5f, tuft = Tile(u, v, 18) - .5f;
-                        c = color * (1 + light * .22f + speck * .1f + tuft * .1f) + new Color(tint * .06f, tint * .05f, -tint * .02f);   // soft, painterly
-                        h = .5f + tuft * .6f + speck * .3f;
+                        // Painted turf: patches of darker and lighter green the size of a hand, short directional strokes
+                        // (blades lying in the wind), clover dots, and soil showing through in a few places.
+                        float patch = Fbm(u, v, 9) - .5f, speck = Tile(u, v, 64) - .5f;
+                        // Strokes: noise stretched along one direction (u repeated 4x keeps it tileable), not a sine (moiré).
+                        float stroke = Tile(Mathf.Repeat(u * 4f, 1f), v, 26);
+                        c = color * (1 + light * .35f + patch * .55f + (stroke - .5f) * .18f + speck * .12f)
+                            + new Color(tint * .1f + patch * .04f, tint * .07f, -tint * .04f);
+                        if (cell.z > .62f && d1 < .006f + cell.z * .004f) c = Color.Lerp(c, color * new Color(.8f, 1.2f, .75f), .6f);   // clover
+                        if (Tile(u, v, 34) > .72f) c = Color.Lerp(c, new Color(.42f, .36f, .24f), .45f);   // soil showing through
+                        h = .5f + patch * .7f + (stroke - .5f) * .25f + speck * .2f;
                         break;
                     case "earth":   // packed earth: clods, dry cracks, small stones and bits of grass
                         float clod = Fbm(u * 1.3f, v * 1.3f, 20) - .5f;

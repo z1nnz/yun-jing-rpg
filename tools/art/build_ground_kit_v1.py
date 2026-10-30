@@ -93,6 +93,54 @@ KITS = {
 }
 
 
+def stone(bm, col, rng, centre, size, colours):
+    """A rounded, slightly flattened stone, sunk about a third into the ground: warm grey, moss on top."""
+    dark, mid = lin(colours[0]), lin(colours[1])
+    moss = lin(colours[2]) if colours[2] else mid
+    res = bmesh.ops.create_icosphere(bm, subdivisions=2, radius=1)
+    verts = res['verts']
+    sx, sy, sz = size * rng.uniform(.8, 1.2), size * rng.uniform(.7, 1.0), size * rng.uniform(.6, .85)
+    seed = rng.random() * 100
+    for v in verts:
+        n = v.co.normalized()
+        bump = 1 + .14 * math.sin(n.x * 5 + seed) * math.cos(n.y * 4 + seed) + .06 * math.sin(n.z * 9 + seed * 2)
+        v.co = centre + Vector((n.x * sx, n.y * sy, n.z * sz)) * bump - Vector((0, 0, sz * .3))
+    for f in {f for v in verts for f in v.link_faces}:
+        for loop in f.loops:
+            n = (loop.vert.co - centre).normalized()
+            t = min(max(n.z * 1.4 + rng.uniform(-.1, .1), 0), 1)
+            c = mix(dark, mid, min(max(n.z + .6, 0), 1))
+            if n.z > .55 and colours[2]:
+                c = mix(c, moss, min((n.z - .55) * 2.5, .8))
+            loop[col] = (*c, 1)
+
+
+STONES = {
+    # Pebbles along paths and creeks: 5-9 small stones, 5-18 cm.
+    'Pebbles': dict(count=(5, 9), size=(.05, .18), spread=.5, colours=('#6e6a62', '#b0a898', '')),
+    # A few bigger half-buried stones in the meadow, mossy on top.
+    'StonesMossy': dict(count=(1, 3), size=(.2, .42), spread=.4, colours=('#6a665c', '#a8a090', '#6a8a3a')),
+}
+
+
+def build_stones(name, k, rng):
+    me = bpy.data.meshes.new(name)
+    bm = bmesh.new()
+    col = bm.loops.layers.color.new('Col')
+    for _ in range(rng.randint(*k['count'])):
+        a, r = rng.uniform(0, math.tau), k['spread'] * math.sqrt(rng.random())
+        stone(bm, col, rng, Vector((math.cos(a) * r, math.sin(a) * r, 0)), rng.uniform(*k['size']), k['colours'])
+    bm.to_mesh(me)
+    bm.free()
+    for p in me.polygons:
+        p.use_smooth = True
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.collection.objects.link(ob)
+    mat = bpy.data.materials.get('QingxiStone') or bpy.data.materials.new('QingxiStone')
+    me.materials.append(mat)
+    return ob
+
+
 def build(name, k, rng):
     me = bpy.data.meshes.new(name)
     bm = bmesh.new()
@@ -129,8 +177,8 @@ def main():
     PREVIEW.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.read_factory_settings(use_empty=True)
     objs = []
-    for i, (name, k) in enumerate(KITS.items()):
-        ob = build(name, k, random.Random(i + 7))
+    for i, (name, k) in enumerate(list(KITS.items()) + list(STONES.items())):
+        ob = (build_stones if name in STONES else build)(name, k, random.Random(i + 7))
         bpy.ops.object.select_all(action='DESELECT')
         ob.select_set(True)
         bpy.ops.export_scene.fbx(filepath=str(OUT / f'{name}.fbx'), use_selection=True, object_types={'MESH'},

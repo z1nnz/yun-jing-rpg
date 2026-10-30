@@ -18,6 +18,7 @@ namespace YunJing.Editor
         {
             ("GrassLush", .3f, .05f), ("GrassTall", .48f, .08f), ("GrassDry", .26f, .05f),
             ("FlowerWhite", .3f, .04f), ("FlowerYellow", .3f, .04f), ("FlowerBlue", .3f, .04f),
+            ("Pebbles", .2f, 0f), ("StonesMossy", .4f, 0f),
         };
 
         static bool copied;
@@ -37,6 +38,17 @@ namespace YunJing.Editor
                 };
             }
             return result;
+        }
+
+        // Stones: lit like the boulders (warm grey, matte), not with the grass shader's soft upward light.
+        static Material Stone()
+        {
+            var path = $"{MaterialFolder}/GroundStone_URP.mat";
+            var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
+            if (mat == null) { mat = new Material(Shader.Find("Universal Render Pipeline/Lit")); AssetDatabase.CreateAsset(mat, path); }
+            mat.SetColor("_BaseColor", new Color(.38f, .37f, .33f)); mat.SetFloat("_Smoothness", .05f); mat.enableInstancing = true;
+            EditorUtility.SetDirty(mat);
+            return mat;
         }
 
         static void Copy()
@@ -62,13 +74,14 @@ namespace YunJing.Editor
                 mat.shader = shader; mat.enableInstancing = true;
                 mat.SetFloat("_Height", height); mat.SetFloat("_Wind", wind); mat.SetColor("_Tint", Color.white);
                 // The meadow turf's colour (QingxiVillageTerrain layer 0, or the sun-dried layer for dry grass).
-                mat.SetColor("_Ground", name == "GrassDry" ? new Color(.5f, .52f, .28f) : new Color(.32f, .5f, .22f));
+                mat.SetColor("_Ground", name == "GrassDry" ? new Color(.5f, .52f, .28f) : name.StartsWith("Pebbles") || name.StartsWith("Stones") ? new Color(.42f, .4f, .36f) : new Color(.32f, .5f, .22f));
                 EditorUtility.SetDirty(mat);
                 var importer = (ModelImporter)AssetImporter.GetAtPath($"{Models}/{name}.fbx");
                 importer.bakeAxisConversion = true; importer.importAnimation = false; importer.importCameras = false; importer.importLights = false;
                 importer.importNormals = ModelImporterNormals.Import;
                 importer.materialImportMode = ModelImporterMaterialImportMode.ImportViaMaterialDescription;
                 importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), "QingxiGrass"), mat);
+                importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), "QingxiStone"), Stone());
                 importer.SaveAndReimport();
             }
             AssetDatabase.SaveAssets();
