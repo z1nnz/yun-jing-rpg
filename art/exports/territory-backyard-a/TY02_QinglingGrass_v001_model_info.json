@@ -1,0 +1,169 @@
+{
+ "id": "TY02",
+ "name": "QinglingGrass",
+ "file": "TY02_QinglingGrass_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "crop stages (placed with TY01, same origin)",
+ "slots": [
+  "inside TY01"
+ ],
+ "dimensions_m": [
+  1.9497,
+  2.7213,
+  0.5618
+ ],
+ "triangles_lod0": 20736,
+ "triangles_per_node": {
+  "SM_TY_QinglingGrass_S1_LOD0": [
+   432,
+   216,
+   64
+  ],
+  "SM_TY_QinglingGrass_S2_LOD0": [
+   2448,
+   1224,
+   365
+  ],
+  "SM_TY_QinglingGrass_S3_LOD0": [
+   7920,
+   3960,
+   1176
+  ],
+  "SM_TY_QinglingGrass_S4_LOD0": [
+   9936,
+   4968,
+   1477
+  ]
+ },
+ "collision": {
+  "type": "none",
+  "note": "non-blocking plants; swap S1..S4 by growth t: <0.25 S1, <0.6 S2, <1 S3, >=1 S4"
+ },
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY02",
+  "dimensions_m": [
+   1.9497,
+   2.7213,
+   0.5618
+  ],
+  "bbox_min": [
+   -0.9855,
+   -1.3467,
+   0.1736
+  ],
+  "bbox_max": [
+   0.9642,
+   1.3745,
+   0.7354
+  ],
+  "trianglesLOD0": 20736,
+  "trianglesPerNode": {
+   "SM_TY_QinglingGrass_S1_LOD0": [
+    432,
+    216,
+    64
+   ],
+   "SM_TY_QinglingGrass_S2_LOD0": [
+    2448,
+    1224,
+    365
+   ],
+   "SM_TY_QinglingGrass_S3_LOD0": [
+    7920,
+    3960,
+    1176
+   ],
+   "SM_TY_QinglingGrass_S4_LOD0": [
+    9936,
+    4968,
+    1477
+   ]
+  },
+  "materials": [
+   "M_TY_QinglingGrass",
+   "M_TY_QinglingGrass_Glow"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_QinglingGrass_S1_LOD0",
+   "SM_TY_QinglingGrass_S2_LOD0",
+   "SM_TY_QinglingGrass_S3_LOD0",
+   "SM_TY_QinglingGrass_S4_LOD0"
+  ],
+  "originAtBase": false,
+  "meshHealth": {
+   "nonManifoldEdges": 12504,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 20736,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "bbox": [
+    [
+     -0.9855,
+     -1.3467,
+     0.1736
+    ],
+    [
+     0.9642,
+     1.3745,
+     0.7354
+    ]
+   ],
+   "materials": [
+    "M_TY_QinglingGrass.001",
+    "M_TY_QinglingGrass_Glow.001"
+   ]
+  },
+  "files": {
+   "TY02_QinglingGrass_v001.glb": {
+    "bytes": 3079328,
+    "sha256": "47b55c9ccd7293c3850430c04de64ae07032bbd91df4f9d36701def6bc7e5aa0"
+   },
+   "TY02_QinglingGrass_v001.fbx": {
+    "bytes": 2598060,
+    "sha256": "f62d59158d75e893d9fbdd22e46845ca03a97af93f2eef4e132247117f7bdc61"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY02_three_view.png",
+  "notChecked": [
+   "Unity import",
+   "in-game lighting",
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ },
+ "stages": {
+  "SM_TY_QinglingGrass_S1_LOD0": {
+   "stage": "sprout",
+   "t_from": 0.0,
+   "t_to": 0.25,
+   "approx_height_above_bed_m": 0.08
+  },
+  "SM_TY_QinglingGrass_S2_LOD0": {
+   "stage": "young",
+   "t_from": 0.25,
+   "t_to": 0.6,
+   "approx_height_above_bed_m": 0.22
+  },
+  "SM_TY_QinglingGrass_S3_LOD0": {
+   "stage": "grown",
+   "t_from": 0.6,
+   "t_to": 1.0,
+   "approx_height_above_bed_m": 0.4
+  },
+  "SM_TY_QinglingGrass_S4_LOD0": {
+   "stage": "mature",
+   "t_from": 1.0,
+   "t_to": null,
+   "approx_height_above_bed_m": 0.48
+  }
+ },
+ "glow": "glowing faces (mature tips / bloom centre) use M_TY_QinglingGrass_Glow (Emissive map, strength 2.0); every other face uses M_TY_QinglingGrass"
+}
