@@ -49,9 +49,9 @@ BASE = dict(roots=False, girth=1, stretch=1, straight=0, twist=0, lean=0, crown=
             scale=(1, 1, 1), mirror=False, colours=None, sparse=1)
 TREES = {
     # 建木: the hero itself, roots and all (the 守脈古樹 in the old forest).
-    'ElderGuardian': dict(BASE, roots=True, seed=1),
+    'ElderGuardian': dict(BASE, roots=True, dive=True, seed=1),
     # A young 建木: the same tree, hanging roots and all, a third the size (the one in the player's own plot).
-    'JianmuSapling': dict(BASE, roots=True, scale=(.3, .3, .3), seed=9, sparse=.5),
+    'JianmuSapling': dict(BASE, roots=True, dive=True, dive_rate=.9, scale=(.3, .3, .3), seed=9, sparse=.5),
 }
 # The other species are grown branch by branch in build_species_trees_v1.py.
 CROWN = 6.0      # source height of the crown base
@@ -238,8 +238,16 @@ def build_wood(name, trunk, branches, spec, ratio, drop):
     ob = bpy.data.objects.new(name + '_wood', me)
     bpy.context.collection.objects.link(ob)
     ob.data.materials.append(bpy.data.materials['ElderBark'])
+    foot = centre(FOOT)
     for v in me.vertices:
-        v.co = shape(v.co, spec)[0]
+        p = v.co.copy()
+        # Planted in the ground: the hanging roots leave the trunk, arch a little, then bend down and dive into
+        # the soil, more steeply the further out they reach, so none lies along the ground like a leg.
+        if spec.get('dive') and p.z < FOOT + .9:
+            d = math.hypot(p.x - foot.x, p.y - foot.y)
+            if d > 1.0:
+                p.z -= spec.get('dive_rate', .35) * (d - 1.0) ** 1.35 * min(max((FOOT + .9 - p.z) / .9, 0), 1)
+        v.co = shape(p, spec)[0]
         v.co.z -= drop
     if ratio < 1:
         mod = ob.modifiers.new('decimate', 'DECIMATE')
@@ -316,7 +324,8 @@ def main():
         swatches = palette(cards, spec['colours'])
         img = save_palette(name + '_Leaves', swatches)
         mat = leaf_material(name + '_Leaves', img)
-        drop = 0 if spec['roots'] else FOOT - .12   # without the hanging roots the trunk's foot comes down to the ground
+        # Without the hanging roots, or with them diving into the soil, the trunk's foot comes down to the ground.
+        drop = FOOT - .3 if spec.get('dive') else 0 if spec['roots'] else FOOT - .12
         root = bpy.data.objects.new(name, None)
         bpy.context.collection.objects.link(root)
         tris = []

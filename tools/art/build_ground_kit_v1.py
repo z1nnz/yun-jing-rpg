@@ -117,7 +117,7 @@ def stone(bm, col, rng, centre, size, colours):
 
 STONES = {
     # Pebbles along paths and creeks: 5-9 small stones, 5-18 cm.
-    'Pebbles': dict(count=(5, 9), size=(.05, .18), spread=.5, colours=('#6e6a62', '#b0a898', '')),
+    'Pebbles': dict(count=(3, 6), size=(.03, .1), spread=.5, colours=('#6e6a62', '#b0a898', '')),
     # A few bigger half-buried stones in the meadow, mossy on top.
     'StonesMossy': dict(count=(1, 3), size=(.2, .42), spread=.4, colours=('#6a665c', '#a8a090', '#6a8a3a')),
 }

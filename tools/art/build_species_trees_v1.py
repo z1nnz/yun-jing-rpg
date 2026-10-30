@@ -78,61 +78,90 @@ def petal(angle, r=.5):
     return [(x * c * r * 1.3 - y * s * r * 1.3 + 0, x * s * r * 1.3 + y * c * r * 1.3) for x, y in shape]
 
 
-SHAPES = {'oval': [(0, 0), (-.38, .3), (-.3, .72), (0, 1), (.3, .72), (.38, .3)],
+SHAPES = {'oval': [(0, 0), (-.4, .45), (0, 1), (.4, .45)],   # four corners, like the Elder World Tree's cards
           'palmate': [(0, 0)] + [(math.sin(math.radians(a)) * r, .42 + math.cos(math.radians(a)) * r)
                                  for a, r in ((-128, .26), (-100, .58), (-74, .3), (-48, .6), (-22, .32), (0, .58),
                                               (22, .32), (48, .6), (74, .3), (100, .58), (128, .26))],
           'fan': [(0, 0), (-.52, .72), (-.2, 1), (0, .86), (.2, 1), (.52, .72)],
           'lance': outline_lance(),
           'spray': [(0, 0), (-.36, .34), (-.14, .44), (-.3, .74), (0, 1), (.3, .74), (.14, .44), (.36, .34)],
-          'curl': outline_curl()}
+          'curl': outline_curl(),
+          'needle': [(0, 0), (-.08, .5), (0, 1), (.08, .5)]}
 
 # ---------------------------------------------------------------- species
 # Per level (0 = trunk): count of children, spread angle (deg), length ratio, radius ratio, gnarl, tropism.
 SPECIES = {
-    'Camphor': dict(height=9, trunk=(2.6, .36), lean=.04, gnarl=.1, zig=0, split=True,
-                    levels=[dict(n=5, angle=(28, 48), length=1.45, radius=.62, start=.92, gnarl=.14, up=.25),
-                            dict(n=5, angle=(35, 55), length=.5, radius=.5, start=.3, gnarl=.18, up=.12),
-                            dict(n=4, angle=(35, 60), length=.48, radius=.55, start=.25, gnarl=.2, up=.05)],
-                    leaf='oval', size=(.1, .17), cards=30000, spread=.75, roots=6, flare=1.7,
-                    bark=dict(tint='#7a5a40', contrast=1.0, scale=(1.6, 1.0)),
-                    colours=['#1d4a46', '#2c6448', '#4a8650', '#78a85a', '#b6d07c']),
-    'Maple': dict(height=6.5, trunk=(1.7, .27), lean=.12, gnarl=.12, zig=0, split=True,
-                  levels=[dict(n=6, angle=(55, 75), length=2.2, radius=.6, start=.88, gnarl=.15, up=-.02),
-                          dict(n=5, angle=(35, 55), length=.45, radius=.5, start=.25, gnarl=.15, up=.08),
-                          dict(n=4, angle=(30, 55), length=.45, radius=.55, start=.25, gnarl=.15, up=.06)],
-                  leaf='palmate', size=(.13, .2), cards=13000, spread=.55, roots=5, flare=1.4,
-                  bark=dict(tint='#8a8278', contrast=.45, scale=(1.4, .7)),
-                  colours=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454']),
-    'Ginkgo': dict(height=10, trunk=(9.5, .3), lean=.01, gnarl=.03, zig=0, split=False,
-                   levels=[dict(n=16, angle=(58, 72), length=(.36, .1), radius=.38, start=.22, gnarl=.06, up=.1),
-                           dict(n=6, angle=(35, 60), length=.4, radius=.5, start=.2, gnarl=.1, up=.12)],
-                   leaf='fan', size=(.1, .15), cards=26000, spread=.5, roots=4, flare=1.3,
-                   bark=dict(tint='#8c7f6c', contrast=1.15, scale=(1.2, 1.6)),
-                   colours=['#7f7a24', '#b39220', '#dbb22a', '#eecd4e', '#f8e8a0']),
-    'Willow': dict(height=7, trunk=(2.3, .42), lean=.08, gnarl=.12, zig=0, split=True,
-                   levels=[dict(n=6, angle=(40, 62), length=1.6, radius=.6, start=.9, gnarl=.14, up=.3),
-                           dict(n=6, angle=(30, 50), length=.42, radius=.45, start=.35, gnarl=.15, up=.15)],
-                   leaf='lance', size=(.12, .2), weep=(1.6, 3.6), strand=.075, spread=.0, cards=30000, roots=6, flare=1.8,
-                   bark=dict(tint='#6e6a5e', contrast=1.3, scale=(1.3, 1.3)),
-                   colours=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e']),
-    'Plum': dict(height=4.2, trunk=(1.9, .19), lean=.18, gnarl=.1, zig=.55, split=True,
-                 levels=[dict(n=4, angle=(40, 70), length=1.15, radius=.62, start=.85, gnarl=.1, up=.12, zig=.5),
-                         dict(n=8, angle=(30, 55), length=.5, radius=.45, start=.15, gnarl=.03, up=.35, zig=0)],
-                 leaf='blossom', size=(.16, .24), cards=9000, along=1, spread=.08, roots=4, flare=1.3,
+    # Shapes follow the reference sheets in art/references/tree-species-v1/ (z1nnz, 2026-10-30): S-curved leaning
+    # trunks, winding limbs, and foliage in many small clumps at the twig ends (bright tops, teal undersides) with
+    # sky between them. trunk = (length, radius); lean/bend shape the trunk's S; cluster = clump radius (m); flat
+    # squashes the clump vertically (pine pads).
+    # 樟 (camphor.png): a massive twisting trunk leaning, splitting into four great winding limbs; a broad crown of
+    # many leafy clumps.
+    'Camphor': dict(height=12, trunk=(4.2, 1.0), lean=.3, bend=.95, gnarl=.12, zig=0, split=True,
+                    levels=[dict(n=6, angle=(42, 68), length=1.6, radius=.7, start=.62, gnarl=.14, up=.2),
+                            dict(n=5, angle=(30, 55), length=.55, radius=.6, start=.2, gnarl=.22, up=.12),
+                            dict(n=4, angle=(30, 60), length=.48, radius=.55, start=.25, gnarl=.25, up=.1),
+                            dict(n=3, angle=(25, 50), length=.45, radius=.5, start=.3, gnarl=.25, up=.15)],
+                    leaf='oval', size=(.12, .19), cards=130000, cluster=.85, flat=.75, roots=4, flare=1.18,
+                    bark=dict(tint='#8a6a4a', contrast=1.0, scale=(1.6, 1.0)),
+                    colours=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d4e64a']),
+    # 楓 (maple.png): a pale S-curved trunk, limbs reaching out in long curves; red to orange clumps.
+    'Maple': dict(height=8, trunk=(3.4, .52), lean=.3, bend=.75, gnarl=.12, zig=0, split=True,
+                  levels=[dict(n=5, angle=(40, 70), length=1.15, radius=.6, start=.65, gnarl=.32, up=.05),
+                          dict(n=4, angle=(30, 55), length=.55, radius=.55, start=.25, gnarl=.3, up=.08),
+                          dict(n=4, angle=(30, 55), length=.45, radius=.5, start=.25, gnarl=.3, up=.1),
+                          dict(n=3, angle=(25, 50), length=.4, radius=.5, start=.3, gnarl=.3, up=.12)],
+                  leaf='palmate', size=(.12, .18), cards=24000, cluster=.55, flat=.7, roots=4, flare=1.18,
+                  bark=dict(tint='#a49c8e', contrast=.5, scale=(1.4, .7)),
+                  colours=['#6a1420', '#b0201e', '#e0381c', '#f07428', '#f8b040']),
+    # 銀杏 (ginkgo.png): a leaning twisting trunk that carries on to the top, branches all the way up; airy gold.
+    'Ginkgo': dict(floor=.25, height=12, trunk=(9.0, .62), lean=.42, bend=.85, gnarl=.1, zig=0, split=False,
+                   levels=[dict(n=11, angle=(40, 70), length=(.5, .18), radius=.45, start=.25, gnarl=.26, up=.08),
+                           dict(n=4, angle=(30, 55), length=.45, radius=.55, start=.25, gnarl=.28, up=.12),
+                           dict(n=3, angle=(25, 50), length=.42, radius=.5, start=.3, gnarl=.28, up=.15)],
+                   leaf='fan', size=(.11, .16), cards=90000, cluster=.75, flat=.7, roots=4, flare=1.2,
+                   bark=dict(tint='#8c8070', contrast=1.15, scale=(1.2, 1.6)),
+                   colours=['#8a5a06', '#cc8a0c', '#eeb014', '#f8d22c', '#fcea7a']),
+    # 柳 (willow.png): a gnarled trunk leaning hard over the water, long arching limbs, curtains hanging.
+    'Willow': dict(height=8, trunk=(3.0, .74), lean=.6, bend=.45, gnarl=.12, zig=0, split=True,
+                   levels=[dict(n=5, angle=(35, 65), length=1.5, radius=.6, start=.7, gnarl=.3, up=.12),
+                           dict(n=5, angle=(30, 55), length=.5, radius=.5, start=.3, gnarl=.28, up=.15),
+                           dict(n=4, angle=(25, 50), length=.45, radius=.5, start=.3, gnarl=.25, up=.2),
+                           dict(n=3, angle=(25, 50), length=.4, radius=.5, start=.3, gnarl=.25, up=.15)],
+                   leaf='lance', size=(.12, .2), weep=(.9, 3.0), strand=.075, spread=.0, cards=150000, strands=6, roots=4, flare=1.18,
+                   bark=dict(tint='#7a7062', contrast=1.3, scale=(1.3, 1.3)),
+                   colours=['#4a7448', '#76a444', '#b0d044', '#dcea58', '#f6f8a0']),
+    # 梅: a zigzag gnarled dark trunk, angular limbs, blossom along the shoots (no reference sheet yet).
+    'Plum': dict(height=5, trunk=(2.0, .3), lean=.25, bend=.6, gnarl=.12, zig=.55, split=True,
+                 levels=[dict(n=5, angle=(40, 75), length=1.4, radius=.62, start=.75, gnarl=.12, up=.1, zig=.5),
+                         dict(n=5, angle=(30, 60), length=.55, radius=.5, start=.2, gnarl=.1, up=.18, zig=.3),
+                         dict(n=5, angle=(25, 50), length=.45, radius=.45, start=.15, gnarl=.03, up=.35, zig=0)],
+                 leaf='blossom', size=(.18, .26), cards=8000, along=1, spread=.08, roots=4, flare=1.18,
                  bark=dict(tint='#3e2f2a', contrast=1.25, scale=(1.0, .8)),
                  colours=['#5e1a2c', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6']),
-    'Cypress': dict(height=10.5, trunk=(10.2, .2), lean=.0, gnarl=.02, zig=0, split=False,
-                    levels=[dict(n=34, angle=(30, 48), length=(.24, .04), radius=.32, start=.1, gnarl=.06, up=.22),
-                            dict(n=5, angle=(25, 45), length=.5, radius=.5, start=.2, gnarl=.06, up=.2)],
-                    leaf='spray', size=(.12, .2), cards=30000, spread=.42, roots=4, flare=1.3,
+    # 松 (pine.png): a twisting S trunk, long near-level limbs that zigzag out, flat pads of needles at their ends.
+    'Pine': dict(floor=.3, height=10, trunk=(8.5, .58), lean=.3, bend=.8, gnarl=.1, zig=0, split=False,
+                 levels=[dict(n=7, angle=(70, 88), length=(.8, .3), radius=.5, start=.42, gnarl=.3, up=-.02, zig=.35),
+                         dict(n=4, angle=(30, 60), length=.4, radius=.5, start=.35, gnarl=.3, up=.05),
+                         dict(n=3, angle=(25, 55), length=.4, radius=.5, start=.3, gnarl=.3, up=.1)],
+                 leaf='needle', size=(.12, .18), cards=130000, cluster=.8, flat=.25, roots=4, flare=1.2,
+                 bark=dict(tint='#8a6248', contrast=1.4, scale=(1.0, 1.0)),
+                 colours=['#16301f', '#22482a', '#3a6a34', '#6a9440', '#a8c058']),
+    # 柏: straight and tall, dense rising branches in a narrow cone (the cypress ring around 建木).
+    'Cypress': dict(floor=.1, height=15, trunk=(14.5, .42), lean=.04, bend=.15, gnarl=.03, zig=0, split=False,
+                    levels=[dict(n=40, angle=(30, 48), length=(.22, .04), radius=.32, start=.1, gnarl=.1, up=.22),
+                            dict(n=5, angle=(25, 45), length=.5, radius=.5, start=.2, gnarl=.1, up=.2)],
+                    leaf='spray', size=(.12, .2), cards=36000, cluster=.4, flat=.8, roots=4, flare=1.18,
                     bark=dict(tint='#7c4a32', contrast=1.1, scale=(.9, 2.6)),
                     colours=['#0f2e2e', '#1a4542', '#2a5c4e', '#3f7658', '#6a9672']),
-    'Withered': dict(height=6, trunk=(3.6, .32), lean=.1, gnarl=.22, zig=.15, split=True, twist=.6,
-                     levels=[dict(n=4, angle=(30, 60), length=.8, radius=.55, start=.6, gnarl=.25, up=.1, broken=.45),
-                             dict(n=3, angle=(30, 60), length=.45, radius=.45, start=.3, gnarl=.25, up=0, broken=.3)],
-                     leaf='curl', size=(.14, .2), per_twig=0, sparse_leaves=18, spread=.2, roots=6, flare=1.6,
-                     bark=dict(tint='#8a8580', contrast=.9, scale=(1.2, 1.4)),
+    # 枯樹: an old dead giant, a twisted forked trunk, snapped limbs, a fine net of bare twigs, a few curled leaves.
+    'Withered': dict(height=10, trunk=(4.6, .6), lean=.2, bend=.5, gnarl=.15, zig=.12, split=True,
+                     levels=[dict(n=4, angle=(22, 48), length=.85, radius=.62, start=.72, gnarl=.25, up=.15, broken=.3),
+                             dict(n=5, angle=(30, 58), length=.55, radius=.5, start=.25, gnarl=.28, up=.08, broken=.25),
+                             dict(n=5, angle=(30, 60), length=.48, radius=.45, start=.25, gnarl=.32, up=.05, broken=.15),
+                             dict(n=4, angle=(30, 65), length=.45, radius=.45, start=.3, gnarl=.35, up=.02)],
+                     leaf='curl', size=(.14, .2), per_twig=0, sparse_leaves=34, spread=.2, roots=4, flare=1.2,
+                     bark=dict(tint='#9a948c', contrast=1.35, scale=(1.2, 1.4)),
                      colours=['#3a2a1c', '#5a4026', '#7a5a34', '#9a7a4a', '#b89a6a']),
 }
 
@@ -170,7 +199,7 @@ def perpendicular(d):
     return p.normalized()
 
 
-def walk(start, direction, length, r0, r1, gnarl, up, zig, rng, twist=0):
+def walk(start, direction, length, r0, r1, gnarl, up, zig, rng, twist=0, floor=-1e9, ceiling=1e9):
     n = max(4, int(length / .35))
     pts, radii = [start.copy()], [r0]
     d = direction.normalized()
@@ -181,6 +210,13 @@ def walk(start, direction, length, r0, r1, gnarl, up, zig, rng, twist=0):
             d = rotate_towards(d, perpendicular(d).lerp(side, .5).normalized(), (rng.random() - .5) * zig * 2.2)
         d = rotate_towards(d, perpendicular(d), (rng.random() - .5) * gnarl)
         d = (d + UP * up * (1 / n) * 4).normalized()
+        # Branches stay in the crown: none sags to the ground, and the top spreads out into a dome instead of
+        # climbing on as a spire.
+        z = pts[-1].z
+        if z < floor and d.z < .15:
+            d = (d + UP * .5).normalized()
+        if z > ceiling and d.z > -.05:
+            d = Vector((d.x, d.y, d.z * .3 - .05)).normalized()
         if twist:
             side = Quaternion(d, twist / n) @ side
         pts.append(pts[-1] + d * length / n)
@@ -200,8 +236,21 @@ def point_at(limb, t):
 
 def grow(spec, rng):
     h, r = spec['trunk']
-    lean = Vector((spec['lean'], 0, 1)).normalized()
-    pts, radii = walk(Vector((0, 0, 0)), lean, h, r, r * (.62 if spec['split'] else .1), spec['gnarl'], .15, spec['zig'], rng, spec.get('twist', 0))
+    # The trunk's S: it leans one way, bends back over its length and drifts a little sideways, plus a little
+    # gnarl. Radius tapers to the fork (split) or toward the top (a leader that carries on).
+    az = rng.uniform(0, math.tau)
+    d, side = Vector((math.cos(az), math.sin(az), 0)), Vector((-math.sin(az), math.cos(az), 0))
+    n = max(8, int(h / .3))
+    bend, lean = spec.get('bend', 0), spec['lean']
+    pts, radii = [], []
+    wob = Vector()
+    for i in range(n + 1):
+        t = i / n
+        if i:
+            wob += Vector((rng.gauss(0, 1), rng.gauss(0, 1), 0)) * spec['gnarl'] * .08
+        off = d * (lean * h * t ** 1.8 + bend * h * .32 * math.sin(math.pi * t * 1.6) * t) + side * (bend * h * .14 * math.sin(math.tau * t * .8) * t)
+        pts.append(off + wob * t + Vector((0, 0, h * t)))
+        radii.append(r * (1 - (1 - (.58 if spec['split'] else .12)) * t ** .9))
     trunk = Limb(pts, radii, 0)
     levels = spec['levels']
 
@@ -230,7 +279,8 @@ def grow(spec, rng):
                 length *= rng.uniform(.25, .5)   # a snapped limb: short and blunt
             cr = max(pr * lv['radius'], .012)
             start = p - d * pr * .6   # start inside the parent so the joint has no seam
-            cpts, cradii = walk(start, d, length, cr, max(cr * .18, .006), lv['gnarl'], lv['up'], lv.get('zig', 0), rng)
+            cpts, cradii = walk(start, d, length, cr, max(cr * .32, .006), lv['gnarl'], lv['up'], lv.get('zig', 0), rng,
+                               floor=h * spec.get('floor', .55), ceiling=spec['height'] * spec.get('dome', 1.0))
             child = Limb(cpts, cradii, depth + 1)
             child.broken = lv.get('broken') and length < plen * ratio * .55 if not isinstance(lv['length'], tuple) else False
             parent.children.append(child)
@@ -241,7 +291,7 @@ def grow(spec, rng):
     if spec.get('weep'):
         for limb in all_limbs(trunk):
             if limb.twig:
-                for _ in range(3):
+                for _ in range(spec.get('strands', 3)):
                     p, _, d = point_at(limb, rng.uniform(.4, 1))
                     length = rng.uniform(*spec['weep'])
                     out = Vector((d.x, d.y, 0)).normalized() * .25
@@ -288,8 +338,8 @@ def tube(bm, uv, pts, radii, sides_scale, bark_scale, rng, flare=0, cap=True):
             v += (pts[i] - pts[i - 1]).length
         binormal = tangent[i].cross(normal)
         r = radii[i]
-        if flare and i < len(pts) * .12:   # the root flare at the foot of the trunk
-            r *= 1 + (flare - 1) * (1 - i / (len(pts) * .12)) ** 2
+        if flare and i < len(pts) * .06:   # a slight widening where the trunk meets the ground
+            r *= 1 + (flare - 1) * (1 - i / (len(pts) * .06)) ** 2
         ring = []
         for s in range(sides + 1):
             a = math.tau * s / sides
@@ -318,12 +368,10 @@ def roots(spec, trunk, rng):
     for k in range(spec['roots']):
         a = math.tau * (k + rng.random() * .5) / spec['roots']
         d = Vector((math.cos(a), math.sin(a), 0))
-        reach = r0 * rng.uniform(3, 5.5)
-        pts = [Vector((0, 0, r0 * 1.6)) + d * r0 * .3]
-        for i in range(1, 7):
-            t = i / 6
-            pts.append(d * (r0 * .3 + reach * t) + Vector((0, 0, r0 * 1.6 * (1 - t) ** 1.6 - .08 * t)))
-        out.append((pts, [r0 * .55 * (1 - t * .85) for t in (i / 6 for i in range(7))]))
+        # A short root swelling out of the trunk foot and diving into the soil (no root legs, no swollen skirt).
+        reach, rise, depth = r0 * rng.uniform(1.3, 2.0), r0 * rng.uniform(.45, .8), r0 * rng.uniform(.8, 1.2)
+        pts = [d * (r0 * .2 + reach * (i / 8) ** .75) + Vector((0, 0, rise * (1 - i / 8) ** 1.8 - depth * (i / 8) ** 2.2)) for i in range(9)]
+        out.append((pts, [r0 * .3 * (1 - .5 * i / 8) for i in range(9)]))
     return out
 
 
@@ -403,21 +451,30 @@ def leaf_cards(spec, trunk, rng, lod, crown_centre):
             p, _, d = point_at(l, rng.uniform(.5, 1))
             cards.append(card(p, (d + Vector((0, 0, -1.5))).normalized(), perpendicular(d), rng.uniform(lo, hi) * lod['grow'], rng.random()))
         return cards
-    per_twig = spec['cards'] // max(len(twigs), 1)
+    # Clumps at the twig ends (the reference sheets): each twig carries a clump of leaves around its tip and a few
+    # along its last third. Each clump has its own shade; within it, leaves on top catch the sun and leaves
+    # underneath fall into cool shade, so the crown reads as many small lit clumps with sky between them.
+    per = spec['cards'] // max(len(twigs), 1)
     for l in twigs:
-        for k in range(per_twig):
+        tip = l.pts[-1]
+        cl = spec['cluster'] * rng.uniform(.75, 1.25)
+        centre = tip + UP * cl * .2
+        shade = rng.uniform(-.14, .14) + .1 * ((tip.z - crown_centre.z) / max(spec['height'] * .5, 1))
+        for k in range(per):
             if rng.random() > keep:
                 continue
-            p, _, d = point_at(l, rng.uniform(.25, 1))
-            out = (p - crown_centre)
-            out = (out.normalized() if out.length > .01 else UP)
             u = Vector((rng.gauss(0, 1), rng.gauss(0, 1), rng.gauss(0, 1))).normalized()
-            u.z *= .7   # pads are flatter than balls
-            pos = p + u * spec['spread'] * rng.random() ** .35
-            axis = (d * .4 + u * .6 + Vector((rng.random() - .5, rng.random() - .5, rng.random() - .5)) * .6).normalized()
-            height = (pos.z - crown_centre.z) / max(spec['height'] * .5, 1)
-            t = .48 + .4 * u.z + .18 * height + .1 * min((pos - crown_centre).length / max(spec['height'] * .5, 1), 1) + (rng.random() - .5) * .3
-            cards.append(card(pos, axis, (out * .5 + u).normalized(), rng.uniform(lo, hi) * lod['grow'], min(max(t, .02), .99)))
+            if u.z < -.3:
+                u.z = -.3 - (u.z + .3) * .3   # a flatter underside
+            depth = rng.random() ** .3
+            if rng.random() < .1:   # a few leaves along the twig itself
+                p, _, d = point_at(l, rng.uniform(.45, .95))
+                pos = p + u * cl * .35 * depth
+            else:
+                pos = centre + Vector((u.x * cl, u.y * cl, u.z * cl * spec['flat'])) * depth
+            axis = (u + Vector((rng.random() - .5, rng.random() - .5, rng.random() - .5)) * .8).normalized()
+            t = .48 + .5 * u.z + shade - (1 - depth) * .38 + (rng.random() - .5) * .12
+            cards.append(card(pos, axis, u, rng.uniform(lo, hi) * lod['grow'], min(max(t, .02), .99)))
     return cards
 
 
@@ -492,7 +549,8 @@ def build(name, spec, src_bark):
         for limb in limbs:
             if limb.level > max_level:
                 continue
-            tube(bm, uv, limb.pts, limb.radii, lod['sides'], spec['bark']['scale'], rng_l, flare=spec['flare'] if limb.level == 0 else 0)
+            tube(bm, uv, limb.pts, limb.radii, lod['sides'], spec['bark']['scale'], rng_l, flare=spec['flare'] if limb.level == 0 else 0,
+                 cap=not (limb.level == 0 and spec['split']))
         for pts, radii in rootlist:
             tube(bm, uv, pts, radii, lod['sides'], spec['bark']['scale'], rng_l)
         wood_faces = len(bm.faces)
@@ -582,6 +640,14 @@ def render(roots_):
         xs = [v.co.x for c in r.children if c.name.endswith('LOD0') for v in c.data.vertices]
         r.location.x = x - min(xs)
         x += max(xs) - min(xs) + 1.5
+    # Ground, so the review shows the trees as planted: buried roots hidden, only the part above the soil.
+    bpy.ops.mesh.primitive_plane_add(size=1, location=(x / 2, 0, 0))
+    ground = bpy.context.active_object
+    ground.scale = (x + 40, 60, 1)
+    soil = bpy.data.materials.new('ReviewSoil')
+    soil.use_nodes = True
+    next(n for n in soil.node_tree.nodes if n.type == 'BSDF_PRINCIPLED').inputs['Base Color'].default_value = (.24, .3, .14, 1)
+    ground.data.materials.append(soil)
     cam = bpy.data.objects.new('cam', bpy.data.cameras.new('cam'))
     scene.collection.objects.link(cam)
     scene.camera = cam
@@ -590,19 +656,20 @@ def render(roots_):
     cam.rotation_euler = (math.radians(88), 0, 0)
     scene.render.filepath = str(PREVIEW / 'species-lineup.png')
     bpy.ops.render.render(write_still=True)
-    # Close-ups at the same framing for every tree (the Guardian's is the bar): the crown fills the frame
-    # from outside it, as the player sees a tree from a few metres away.
+    # Each tree whole, three-quarter view from a little above eye height, as on the reference sheets, so they can be
+    # compared side by side with art/references/tree-species-v1/<species>.png.
+    scene.render.resolution_x, scene.render.resolution_y = 1200, 1000
+    cam.data.lens = 35
     for r in roots_:
         lod0 = next(c for c in r.children if c.name.endswith('LOD0'))
-        top = max(v.co.z for v in lod0.data.vertices)
-        span = max(max(v.co.x for v in lod0.data.vertices) - min(v.co.x for v in lod0.data.vertices), top)
-        target = Vector((r.location.x + (max(v.co.x for v in lod0.data.vertices) + min(v.co.x for v in lod0.data.vertices)) / 2, 0, top * .62))
-        cam.location = target + Vector((0, -span * .55 - 1.5, 0))
-        cam.rotation_euler = (target - cam.location).to_track_quat('-Z', 'Y').to_euler()
-        scene.render.resolution_x, scene.render.resolution_y = 1200, 900
-        scene.render.filepath = str(PREVIEW / f'{r.name}-close.png')
+        vs = [r.matrix_world @ v.co for v in lod0.data.vertices]
+        lo = Vector((min(v.x for v in vs), min(v.y for v in vs), 0)); hi = Vector((max(v.x for v in vs), max(v.y for v in vs), max(v.z for v in vs)))
+        c = (lo + hi) / 2
+        size = max(hi.x - lo.x, hi.y - lo.y, hi.z)
+        cam.location = c + Vector((size * .55, -size * 1.25, -hi.z * .5 + 1.7 + size * .08))
+        cam.rotation_euler = (c - cam.location).to_track_quat('-Z', 'Y').to_euler()
+        scene.render.filepath = str(PREVIEW / f'{r.name}-full.png')
         bpy.ops.render.render(write_still=True)
-
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)

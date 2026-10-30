@@ -828,14 +828,14 @@ namespace YunJing.Editor
             }
             int trees = 0, rocks = 0, sedges = 0, elders = 0;
             // Tree species per block (world-dressing.json `species`): one or two that belong there, not every kind
-            // everywhere. "pine" is the CollaboratorWorldV1 pine; the others are grown from z1nnz's Elder World Tree
+            // everywhere. "pine" is the grown Elder pine (pine.png); all are grown from z1nnz's Elder World Tree
             // (QingxiElderTrees). A grove keeps one species, mostly the block's main one; `waterside` grows by the
             // creek among the bamboo. Natural heights in metres.
             bool elder = QingxiElderTrees.Available;
             if (elder) ElderKit();
             var heights = NaturalHeight;
             var mix = elder && entry.species != null && entry.species.Length > 0
-                ? entry.species.Select(w => (kind: w.kind == "pine" ? null : w.kind, weight: w.weight)).ToArray()
+                ? entry.species.Select(w => (kind: w.kind == "pine" ? "ElderPine" : w.kind, weight: w.weight)).ToArray()
                 : new (string kind, float weight)[] { (null, 1f) };
             float total = mix.Sum(m => m.weight);
             string Pick() { float t = R() * total; foreach (var (k, w) in mix) { if ((t -= w) <= 0) return k; } return mix[0].kind; }
@@ -959,7 +959,7 @@ namespace YunJing.Editor
             return () =>
             {
                 float t = (float)random.NextDouble() * total;
-                foreach (var w in entry.species) if ((t -= w.weight) <= 0) return w.kind == "pine" ? null : w.kind;
+                foreach (var w in entry.species) if ((t -= w.weight) <= 0) return w.kind == "pine" ? "ElderPine" : w.kind;
                 return null;
             };
         }
@@ -967,7 +967,7 @@ namespace YunJing.Editor
         // Each tree's full height as modelled, buried roots included (the model's origin is the ground line), so a
         // tree placed at this height keeps its modelled size.
         static readonly System.Collections.Generic.Dictionary<string, float> NaturalHeight = new System.Collections.Generic.Dictionary<string, float> {
-            ["ElderGuardian"] = 9.78f, ["JianmuSapling"] = 2.94f, ["ElderCamphor"] = 8.40f, ["ElderMaple"] = 5.45f, ["ElderGinkgo"] = 10.55f, ["ElderWillow"] = 6.52f, ["ElderPlum"] = 4.53f, ["ElderCypress"] = 11.00f, ["ElderWithered"] = 5.36f };
+            ["ElderGuardian"] = 10.6f, ["JianmuSapling"] = 3.9f, ["ElderCamphor"] = 14.97f, ["ElderMaple"] = 9.50f, ["ElderGinkgo"] = 13.31f, ["ElderWillow"] = 9.81f, ["ElderPlum"] = 5.87f, ["ElderPine"] = 10.56f, ["ElderCypress"] = 16.24f, ["ElderWithered"] = 9.58f };
 
         static bool elderCopied;
         static void ElderKit() { if (!elderCopied) { QingxiElderTrees.Copy(); elderCopied = true; } }

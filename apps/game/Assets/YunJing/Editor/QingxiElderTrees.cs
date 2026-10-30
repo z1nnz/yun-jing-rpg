@@ -8,14 +8,14 @@ namespace YunJing.Editor
     // Trees built on z1nnz's Elder World Tree (elder-tree-esg; tools/art/build_elder_trees_v1.py,
     // art/exports/elder-trees-v1): the Guardian (建木, the hero itself, hanging roots and all) and its young one, and
     // seven species grown branch by branch at its level of finish (tools/art/build_species_trees_v1.py): camphor,
-    // maple, ginkgo, willow, plum, cypress and the withered tree, each with its own trunk, bark and leaf. Each FBX carries <Tree>_LOD0..2, so Unity builds the LOD group on import.
+    // maple, ginkgo, willow, plum, pine, cypress and the withered tree, each with its own trunk, bark and leaf. Each FBX carries <Tree>_LOD0..2, so Unity builds the LOD group on import.
     // The leaves are coloured from a 64-swatch palette (one per tree): it must stay unfiltered and uncompressed.
     // FBX and textures are copied into a gitignored model folder, as the other collaborator kits are.
     public static class QingxiElderTrees
     {
         public const string Models = "Assets/YunJing/Models/ElderTreesV1";   // copied from art/exports, gitignored
         const string MaterialFolder = "Assets/QingxiWorld/Generated/Materials/ElderTrees";
-        public static readonly string[] Kinds = { "ElderGuardian", "JianmuSapling", "ElderCamphor", "ElderMaple", "ElderGinkgo", "ElderWillow", "ElderPlum", "ElderCypress", "ElderWithered" };
+        public static readonly string[] Kinds = { "ElderGuardian", "JianmuSapling", "ElderCamphor", "ElderMaple", "ElderGinkgo", "ElderWillow", "ElderPlum", "ElderPine", "ElderCypress", "ElderWithered" };
 
         public static GameObject Source(string kind) => AssetDatabase.LoadAssetAtPath<GameObject>($"{Models}/{kind}.fbx");
 

@@ -385,7 +385,7 @@ namespace YunJing.Editor
             {
                 // Stones first: pebbles along path edges and creek banks, a few mossy stones out in the meadow.
                 float edge = pathEdge[z * 2, x * 2];
-                if (edge > 0 && rnd.NextDouble() < .1 * edge) { layers[6][z, x] = 1; continue; }
+                if (edge > 0 && rnd.NextDouble() < .035 * edge) { layers[6][z, x] = 1; continue; }
                 if (cover[z * 2, x * 2] > .5f && rnd.NextDouble() < .0015) { layers[7][z, x] = 1; continue; }
                 float c = cover[z * 2, x * 2];
                 if (c < .3f) continue;
@@ -432,14 +432,60 @@ namespace YunJing.Editor
                 string path = Generated + "/TerrainLayer-" + LayerNames[i] + ".asset";
                 var layer = AssetDatabase.LoadAssetAtPath<TerrainLayer>(path);
                 if (layer == null) { layer = new TerrainLayer(); AssetDatabase.CreateAsset(layer, path); }
-                layer.diffuseTexture = Texture(LayerNames[i], Colors[i], 20261029 + i, Kinds[i], out var relief);
-                layer.normalMapTexture = NormalMap(LayerNames[i], relief, Kinds[i] == "slab" || Kinds[i] == "rock" ? 2.2f : Kinds[i] == "grass" ? .5f : 1.4f);
-                layer.tileSize = new Vector2(Tiles[i], Tiles[i]);
+                // Hand-painted textures (art/references/ground-textures-v1, generated from the style guide's
+                // prompts) where we have them; the procedural ones otherwise (the village flagstones).
+                float[] paintedRelief = null, relief;
+                var painted = Painted[i] != null ? PaintedTexture(Painted[i], out paintedRelief) : null;
+                if (painted != null) { layer.diffuseTexture = painted; relief = paintedRelief; }
+                else layer.diffuseTexture = Texture(LayerNames[i], Colors[i], 20261029 + i, Kinds[i], out relief);
+                layer.normalMapTexture = NormalMap(LayerNames[i], relief, Kinds[i] == "slab" || Kinds[i] == "rock" ? 2.2f : Kinds[i] == "grass" ? .8f : 1.6f);
+                float tile = painted != null ? PaintedTile[i] : Tiles[i];
+                layer.tileSize = new Vector2(tile, tile);
+                // The sun-dried meadow is the meadow painting, warmed toward straw.
+                layer.diffuseRemapMin = Vector4.zero;
+                layer.diffuseRemapMax = LayerNames[i] == "MeadowDry" ? new Vector4(1.0f, .92f, .56f, 1) : LayerNames[i] == "VillageMeadow" ? new Vector4(.78f, .86f, .7f, 1) : Vector4.one;
                 layer.smoothness = 0; layer.metallic = 0;
                 EditorUtility.SetDirty(layer);
                 result[i] = layer;
             }
             return result;
+        }
+
+        // Painted texture per layer (null = procedural) and its tile size in metres (the scale the prompt asked for).
+        static readonly string[] Painted = { "ground-meadow", "ground-path", null, "ground-forest", "ground-meadow", "ground-gravel", "ground-rock" };
+        static readonly float[] PaintedTile = { 3, 2.5f, 4, 2.5f, 3, 1.8f, 3.5f };
+        const string PaintedFolder = "Assets/YunJing/Models/GroundTexturesV1";   // copied from art/references, gitignored
+
+        static Texture2D PaintedTexture(string name, out float[] relief)
+        {
+            relief = null;
+            string repo = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", ".."));
+            string src = Path.Combine(repo, "art/references/ground-textures-v1", name + ".png");
+            if (!File.Exists(src) || new FileInfo(src).Length < 1024) return null;
+            string dstDir = Path.Combine(repo, "apps/game", PaintedFolder);
+            Directory.CreateDirectory(dstDir);
+            string dst = Path.Combine(dstDir, name + ".png");
+            if (!File.Exists(dst) || new FileInfo(dst).Length != new FileInfo(src).Length) { File.Copy(src, dst, true); AssetDatabase.Refresh(); }
+            string asset = PaintedFolder + "/" + name + ".png";
+            var ti = (TextureImporter)AssetImporter.GetAtPath(asset);
+            if (ti != null && (ti.wrapMode != TextureWrapMode.Repeat || ti.maxTextureSize != 2048 || ti.anisoLevel != 4))
+            {
+                ti.wrapMode = TextureWrapMode.Repeat; ti.maxTextureSize = 2048; ti.anisoLevel = 4; ti.mipmapEnabled = true; ti.sRGBTexture = true;
+                ti.SaveAndReimport();
+            }
+            // Relief for the normal map from the painting's brightness (stones and clumps light, gaps dark), at 512 px.
+            var tmp = new Texture2D(2, 2);
+            tmp.LoadImage(File.ReadAllBytes(src));
+            const int N = 512;
+            relief = new float[N * N];
+            for (int y = 0; y < N; y++)
+            for (int x = 0; x < N; x++)
+            {
+                var c = tmp.GetPixelBilinear((x + .5f) / N, (y + .5f) / N);
+                relief[y * N + x] = c.r * .3f + c.g * .55f + c.b * .15f;
+            }
+            UnityEngine.Object.DestroyImmediate(tmp);
+            return AssetDatabase.LoadAssetAtPath<Texture2D>(asset);
         }
 
         // A tileable ground texture drawn from noise: every kind has its own pattern so the ground reads as grass,
