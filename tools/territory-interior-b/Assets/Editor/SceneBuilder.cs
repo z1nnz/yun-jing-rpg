@@ -67,24 +67,36 @@ public static class SceneBuilder
         foreach (var z in new[] { -1.6f, 0f, 1.6f }) shut.Add(Slab(room, "Ceiling_Beam", new Vector3(0, H - .05f, z), new Vector3(7f, .12f, .14f), trimM));
         foreach (var g in shut) g.GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 
-        // ---------------------------------------------------------------- furniture (brief slot table; front wall/curtain omitted for the camera)
+        // ---------------------------------------------------------------- furniture (brief 02-B §3 slot table, same layout as the Blender review renders)
         var layout = new (string slot, string id, float x, float z, string face)[]
         {
             ("TI_Shelf", "TI01_BoguShelf", 3.25f, -.6f, "-x"),
-            ("TI_Desk", "TI03_JournalDesk", -2.6f, -1.35f, "+x"),
+            ("TI_Desk", "TI03_JournalDesk", -2.6f, -1.6f, "+x"),
             ("TI_Furnace", "TI02_HomeFurnace", 2.7f, -1.9f, "-x"),
             ("TI_Lamp_1", "TI04_PaperLamp", -1.6f, 2.1f, "-z"),
-            ("TI_Lamp_2", "TI04_PaperLamp", -3.1f, -.55f, "+x"),       // against the left wall between desk and bed
-            ("TI_Screen", "TI05_LandscapeScreen", -1.55f, -2.3f, "+z"), // against the front wall, left of the front door
+            ("TI_Lamp_2", "TI04_PaperLamp", 1.45f, -2.1f, "+z"),       // brief 1.9: keeps a 0.6 m standing zone in front of the furnace
+            ("TI_Screen", "TI05_LandscapeScreen", -1.2f, .4f, "-z"),     // brief -1.4: clears the 2.12 m bed; painted side to the desk, back to the bed
             ("TI_Rug", "TI06_WovenMat", .6f, 0f, "-z"),
+            ("TI_Curtain_F", "TI07_LinenCurtain", 0f, -2.5f, "+z"),
             ("TI_Curtain_B", "TI07_LinenCurtain", 0f, 2.5f, "-z"),
         };
         var placed = new Dictionary<string, GameObject>();
         foreach (var (slot, id, x, z, face) in layout)
             placed[slot] = Place(TiPath(id), slot, x, z, Face[face], true);
+        // the shoulder camera stops at the front curtain instead of looking through it from outside
+        var curtainStop = new GameObject("Curtain_F_CameraStop").AddComponent<BoxCollider>();
+        curtainStop.transform.SetParent(room.transform, false);
+        curtainStop.transform.SetPositionAndRotation(new Vector3(0, 1.1f, -2.5f), Quaternion.identity);
+        curtainStop.size = new Vector3(1.3f, 2.2f, .12f);
+        // brief: bed 90°, but the 2.12 m bed 0.75 m off the wall only fits lengthwise along the wall (see README)
         var bedGo = Place(Art + "/Existing/DiscipleBed_v001.fbx", "Bed", -2.75f, 1.0f, 180f, false);
         var chestGo = Place(Art + "/Existing/StorageChest_v001.fbx", "StorageChest", 2.6f, 1.9f, 180f, false);
-        Place(Art + "/Existing/MeditationCushion_v001.fbx", "Cushion", 1.2f, -.2f, 180f, false);
+        Place(Art + "/Existing/MeditationCushion_v001.fbx", "Cushion", 1.2f, -.2f, 0f, false);
+        foreach (var kv in placed.Append(new KeyValuePair<string, GameObject>("Bed", bedGo)))
+        {
+            var fb = WorldBounds(kv.Value);
+            Report.Add($"{kv.Key} footprint x {fb.min.x:0.00}..{fb.max.x:0.00} z {fb.min.z:0.00}..{fb.max.z:0.00} h {fb.size.y:0.00}");
+        }
 
         // ---------------------------------------------------------------- interactables
         var player = BuildPlayer();
@@ -94,8 +106,9 @@ public static class SceneBuilder
         var lamp = BuildLamp(placed["TI_Lamp_2"], true);
         var sideLamp = BuildLamp(placed["TI_Lamp_1"], false);
         var bed = BuildBed(bedGo, player);
+        var journal = BuildJournal(placed["TI_Desk"]);
         furnace.pantryChest = chest;
-        var items = new Interactable[] { chest, shelf, furnace, lamp, bed };
+        var items = new Interactable[] { chest, shelf, furnace, lamp, journal, bed };
 
         // ---------------------------------------------------------------- camera, UI, control
         var camGo = new GameObject("Main Camera"); camGo.tag = "MainCamera";
@@ -132,7 +145,7 @@ public static class SceneBuilder
         var ctl = player.gameObject.AddComponent<PlayerController>(); ctl.avatar = player; ctl.interactables = items; ctl.rig = rig;
         var dir = new GameObject("DemoDirector").AddComponent<DemoDirector>();
         dir.player = player; dir.chest = chest; dir.furnace = furnace; dir.lamp = lamp; dir.bed = bed; dir.ui = ui; dir.rig = rig;
-        dir.interactables = items; dir.sun = sun; dir.sideLamp = sideLamp; dir.shelf = shelf;
+        dir.interactables = items; dir.sun = sun; dir.sideLamp = sideLamp; dir.shelf = shelf; dir.journal = journal;
 
         EditorSceneManager.SaveScene(scene, ScenePath);
         EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
@@ -335,10 +348,10 @@ public static class SceneBuilder
         var pill = Prop(Art + "/Existing/QPillBottle_v002.fbx", "Pill_Bottle", .14f); pill.transform.SetParent(go.transform, true); pill.SetActive(false); f.pillPrefab = pill;
         f.standPoint = Marker("Furnace_Stand", new Vector3(2.2f, 0, -1.2f), go.transform);
         // close-up from the room side, furnace on the left third (the alchemy panel takes the right)
-        float yaw = 100f; Vector3 right = Quaternion.Euler(0, yaw, 0) * Vector3.right;
+        float yaw = 125f; Vector3 right = Quaternion.Euler(0, yaw, 0) * Vector3.right;   // north of TI_Lamp_2, which stands west of the furnace
         f.shotFocus = go.transform.position + Vector3.up * .5f + right * .38f;
         f.shotFocus.z = Mathf.Max(f.shotFocus.z, -2.2f);
-        f.shotDistance = 2.7f; f.shotYaw = yaw; f.shotPitch = 24f; f.shotFov = 42f;
+        f.shotDistance = 2.7f; f.shotYaw = yaw; f.shotPitch = 28f; f.shotFov = 42f;
         foreach (var o in f.fireObjects) o.SetActive(false);
         Report.Add($"furnace fire objects {f.fireObjects.Length}, lid parts {f.lidParts.Length}, mouth {(f.mouth != go.transform)}");
         return f;
@@ -354,11 +367,24 @@ public static class SceneBuilder
         lamp.lampLight = l;
         if (interactive)
         {
-            lamp.standPoint = Marker("Lamp_Stand", new Vector3(-2.3f, 0, -.25f), go.transform);
-            // from the south-east so the player stands to the right of the lamp, not in front of it
-            lamp.shotFocus = go.transform.position + Vector3.up * 1.0f; lamp.shotDistance = 2.2f; lamp.shotYaw = -60f; lamp.shotPitch = 16f; lamp.shotFov = 46f;
+            lamp.standPoint = Marker("Lamp_Stand", new Vector3(1.0f, 0, -1.5f), go.transform);
+            // from the room, east of the player, so the player stands left of the lamp, not in front of it
+            lamp.shotFocus = go.transform.position + Vector3.up * 1.0f; lamp.shotDistance = 2.2f; lamp.shotYaw = -155f; lamp.shotPitch = 16f; lamp.shotFov = 46f;
         }
         return lamp;
+    }
+
+    /// 旅途手札 on the desk (TI03 SOCKET_journal): E frames the open book, then the book overlay opens on screen.
+    static JournalDesk BuildJournal(GameObject go)
+    {
+        var j = go.AddComponent<JournalDesk>();
+        var sock = FindChild(go.transform, "SOCKET_journal");
+        if (sock == null) Report.Add("missing SOCKET_journal");
+        Vector3 at = sock ? sock.position : go.transform.position + Vector3.up * .8f;
+        j.standPoint = Marker("Journal_Stand", new Vector3(-1.75f, 0, -.85f), go.transform);
+        j.shotFocus = at; j.shotDistance = 1.5f; j.shotYaw = -95f; j.shotPitch = 52f; j.shotFov = 40f;   // from the room side, south of the player, looking down onto the open page
+        Report.Add($"journal socket {at}");
+        return j;
     }
 
     static BedRest BuildBed(GameObject go, PlayerAvatar player)

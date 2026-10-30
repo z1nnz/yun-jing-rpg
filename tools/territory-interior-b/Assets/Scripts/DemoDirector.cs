@@ -21,6 +21,7 @@ public class DemoDirector : MonoBehaviour
     public Light sun;
     public ShelfDisplay shelf;
     public PaperLamp sideLamp;      // TI_Lamp_1 by the bed, lit when night falls
+    public JournalDesk journal;
     public Color dayAmbient = new Color(.36f, .33f, .30f), nightAmbient = new Color(.13f, .14f, .19f);
     public float daySun = .85f, nightSun = .14f;
 
@@ -68,7 +69,7 @@ public class DemoDirector : MonoBehaviour
     // ---------------------------------------------------------------- the walkthrough
     void Script()
     {
-        Do(() => { Overview(); ui.SetCaption("領地小屋的家具已擺入；鏡頭改為角色背後跟隨（滑鼠轉視角、遇牆自動拉近）"); });
+        Do(() => { Overview(); ui.SetCaption("領地小屋的家具照工作單格位擺好；鏡頭在角色背後跟隨（滑鼠轉視角、遇牆自動拉近）"); });
         Wait(2.8f);
         Do(() => { Follow(); ui.SetCaption("① 走到儲物箱（背後跟隨鏡頭）"); });
         Walk(new Vector3(.6f, 0, .2f), new Vector3(2.0f, 0, .75f), new Vector3(2.95f, 0, .8f));
@@ -133,18 +134,31 @@ public class DemoDirector : MonoBehaviour
         Do(() => { Follow(); ui.SetCaption("⑤ 開燈、關燈（天色轉暗）"); });
         Fade(1f, 2.2f);
         Do(() => { if (sideLamp) sideLamp.on = true; });
-        Walk(new Vector3(.6f, 0, -1.0f), new Vector3(-1.6f, 0, -.5f), new Vector3(-2.3f, 0, -.25f));
-        Face(new Vector3(-.8f, 0, -.3f));
+        Walk(new Vector3(1.6f, 0, -1.0f), new Vector3(1.0f, 0, -1.5f));
+        Face(new Vector3(.45f, 0, -.6f));
         Press(lamp); Wait(1.3f);
         Press(lamp); Wait(1.1f);
         Press(lamp); Wait(1.3f);
 
-        Do(() => { Follow(); ui.SetCaption("⑥ 回床上休息：躺下後蓋好被子，頭露在外面"); });
-        Walk(new Vector3(-1.85f, 0, .2f), new Vector3(-1.75f, 0, 1.0f));
+        Do(() => { Follow(); ui.SetCaption("⑥ 書案上的旅途手札：翻開、翻頁、合上"); });
+        Walk(new Vector3(-.4f, 0, -.9f), new Vector3(-1.75f, 0, -.85f));
+        Face(new Vector3(-1f, 0, -.6f));
+        Press(journal);
+        WaitUntil(() => journal.book != null && journal.book.State == Journal.Phase.Open, 4f);
+        Wait(.6f);
+        Page(() => ui.JournalNextButton, () => journal.Next());
+        Page(() => ui.JournalNextButton, () => journal.Next());
+        Page(() => ui.JournalPrevButton, () => journal.Prev());
+        CursorTo(() => ui.JournalCloseButton, .5f); Click(() => journal.Close());
+        WaitUntil(() => !journal.isOpen, 3f);
+        Do(() => ui.SetCursor(false, cursorPos)); Wait(.5f);
+
+        Do(() => { Follow(); ui.SetCaption("⑦ 回床上休息：躺下後蓋好被子，頭露在外面"); });
+        Walk(new Vector3(.05f, 0, -.4f), new Vector3(.05f, 0, .95f), new Vector3(-1.75f, 0, 1.0f));
         Face(Vector3.left);
         Press(bed, "[E] 躺下休息"); Wait(4.6f);
         Press(bed, "[E] 起身"); Wait(2.7f);
-        Do(() => { Overview(); ui.SetCaption("測試完成：箱子疊放／分類／整理、收藏架擺放／換格／拿下、乾坤袋材料煉丹、開關燈、躺床蓋被"); });
+        Do(() => { Overview(); ui.SetCaption("測試完成：箱子疊放／分類／整理、收藏架擺放／換格／拿下、乾坤袋材料煉丹、開關燈、翻手札、躺床蓋被"); });
         Wait(2.6f);
     }
 
@@ -244,6 +258,13 @@ public class DemoDirector : MonoBehaviour
         CursorTo(() => go ? ui.AlchemyButton(key) : null, .45f);
         Do(() => { if (go) { ui.Click(); ui.AlchemyButton(key).GetComponent<UnityEngine.UI.Button>().onClick.Invoke(); } });
         Wait(after);
+    }
+    /// Click a journal page button and let the leaf finish turning.
+    void Page(Func<RectTransform> button, Action turn)
+    {
+        CursorTo(button, .45f); Click(turn);
+        WaitUntil(() => journal.book.State == Journal.Phase.Open, 2f);
+        Wait(.7f);
     }
     void WaitUntil(Func<bool> cond, float timeout) { float t = 0; acts.Add(new Act { begin = () => t = 0, step = dt => cond() || (t += dt) >= timeout }); }
 }

@@ -21,7 +21,7 @@ public class CameraRig : MonoBehaviour
     void LateUpdate()
     {
         if (DemoDirector.Driving) return;
-        bool panel = InteriorUI.Instance && (InteriorUI.Instance.StorageOpen || InteriorUI.Instance.AlchemyOpen || InteriorUI.Instance.ShelfOpen);
+        bool panel = InteriorUI.Instance && (InteriorUI.Instance.StorageOpen || InteriorUI.Instance.AlchemyOpen || InteriorUI.Instance.ShelfOpen || InteriorUI.Instance.JournalOpen);
         var touch = TouchControls.Instance;
         bool touching = touch && touch.Active;
         bool free = panel || touching || Input.GetKey(KeyCode.LeftAlt);

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// Play-mode control: WASD walks relative to the camera (mouse looks, Alt frees the cursor), E uses the nearest item,
-/// Esc / E closes the chest panel, Esc leaves the furnace (hold F to fast-forward the fire).
+/// Esc / E closes the chest panel, Esc leaves the furnace (hold F to fast-forward the fire), → / ← turn the journal's pages.
 /// Disabled while DemoDirector is driving.
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +29,15 @@ public class PlayerController : MonoBehaviour
             if (it is ShelfDisplay sh && sh.isOpen)
             {
                 if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E)) sh.Close();
+                if (ui) ui.SetPrompt("");
+                return;
+            }
+        foreach (var it in interactables)
+            if (it is JournalDesk jd && jd.isOpen)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E)) jd.Close();
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) jd.Next();
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) jd.Prev();
                 if (ui) ui.SetPrompt("");
                 return;
             }

@@ -11,7 +11,14 @@ public static class DemoRecorder
 {
     const int W = 1280, H = 720, Fps = 30;
 
-    public static void Preview() => Run(new[] { 1f, 24f, 27f, 30f, 33f, 36f, 39f }, false);
+    /// Still times in seconds; TI18_STILLS="1,24,27" overrides them.
+    public static void Preview()
+    {
+        var env = System.Environment.GetEnvironmentVariable("TI18_STILLS");
+        var times = string.IsNullOrEmpty(env) ? new[] { 1f, 24f, 27f, 30f, 33f, 36f, 39f }
+            : env.Split(',').Select(s => float.Parse(s, System.Globalization.CultureInfo.InvariantCulture)).ToArray();
+        Run(times, false);
+    }
     public static void Record() => Run(null, true);
 
     static void Run(float[] stills, bool all)

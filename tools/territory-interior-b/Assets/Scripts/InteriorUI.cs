@@ -56,6 +56,7 @@ public class InteriorUI : MonoBehaviour
         BuildStorage();
         BuildAlchemy();
         BuildShelf();
+        BuildJournal();
         BuildTouch();
 
         // demo cursor (only the director moves it)
@@ -110,6 +111,7 @@ public class InteriorUI : MonoBehaviour
             if (k >= 1f) { clickT = -1f; cursorRing.gameObject.SetActive(false); }
         }
         if (AlchemyOpen) RefreshAlchemy();
+        if (journalDesk) RefreshJournal();
     }
 
     void Update()
@@ -341,6 +343,195 @@ public class InteriorUI : MonoBehaviour
         RefreshShelf();
     }
     public void DoShelfTake() { if (shelfDisplay && selSlot > 0) { shelfDisplay.Take(selSlot); selSlot = 0; RefreshShelf(); } }
+
+    // ================================================================ 旅途手札 overlay
+    // A thread-bound book, spine on the right as in old string-bound books: page 1 is the right page, page 2 the left,
+    // leaves turn from left to right. bookRoot's x = 0 is the spine. The cover and the turning leaf flip about the
+    // spine with scale.x = cos(angle) (flat, nothing swings towards the camera); a back face un-mirrors itself.
+    const float PW = 330f, PH = 440f;
+    static readonly Color Paper = new Color(.90f, .85f, .74f), Cloth = new Color(.17f, .22f, .27f), Rule = new Color(.62f, .30f, .22f, .32f),
+        Brown = new Color(.42f, .32f, .22f);
+    static readonly string[] Numerals = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" };
+    class PageView { public RectTransform rt; public Text body, number; }
+    GameObject journalPanel;
+    CanvasGroup journalFade;
+    RectTransform bookRoot, boardR, cover, coverFront, coverBack, leaf, leafFront, leafBack;
+    Image coverShade, leafShade;
+    PageView leftPage, rightPage, coverPage, leafFrontPage, leafBackPage;
+    JournalDesk journalDesk;
+    public RectTransform JournalPrevButton { get; private set; }
+    public RectTransform JournalNextButton { get; private set; }
+    public RectTransform JournalCloseButton { get; private set; }
+
+    void BuildJournal()
+    {
+        var dim = MakeImage("JournalPanel", transform, new Color(0, 0, 0, .6f));
+        journalPanel = dim.gameObject; Fill(dim.rectTransform);
+        journalFade = journalPanel.AddComponent<CanvasGroup>();
+        bookRoot = MakeRect("Book", journalPanel.transform);
+        Place(bookRoot, new Vector2(.5f, .5f), new Vector2(0, 26), new Vector2(2 * PW, PH)); bookRoot.pivot = new Vector2(.5f, .5f);
+
+        Board("BoardL", -1);
+        boardR = Board("BoardR", +1);
+        leftPage = MakePage("LeftPage", bookRoot, -1);
+        rightPage = MakePage("RightPage", bookRoot, +1);
+
+        // the turning leaf: front over the left page, back lands on the right
+        leaf = Leaf("Leaf", PW, PH, out leafFront, out leafBack, out leafShade);
+        leafFrontPage = MakePage("Front", leafFront, 0); leafBackPage = MakePage("Back", leafBack, 0);
+
+        // the front cover: indigo cloth, title slip, thread binding along the spine
+        cover = Leaf("Cover", PW + 8, PH + 14, out coverFront, out coverBack, out coverShade);
+        var cloth = MakeImage("Cloth", coverFront, Cloth); Fill(cloth.rectTransform);
+        var csh = cloth.gameObject.AddComponent<Shadow>(); csh.effectColor = new Color(0, 0, 0, .55f); csh.effectDistance = new Vector2(9, -12);
+        var slip = MakeImage("TitleSlip", coverFront, Paper);
+        Place(slip.rectTransform, new Vector2(0, 1), new Vector2(34, -34), new Vector2(54, 210));
+        slip.gameObject.AddComponent<Outline>().effectColor = new Color(.55f, .45f, .30f, .8f);
+        var tt = MakeText("Title", slip.transform, "旅\n途\n手\n札", 30, TextAnchor.MiddleCenter, new Color(.16f, .12f, .09f));
+        Fill(tt.rectTransform); tt.lineSpacing = .9f;
+        var thread = MakeImage("ThreadLine", coverFront, new Color(.82f, .78f, .66f, .9f));
+        Place(thread.rectTransform, new Vector2(1, .5f), new Vector2(-14, 0), new Vector2(2, PH - 20));
+        for (int i = 0; i < 5; i++)
+        {
+            var st = MakeImage("Stitch", coverFront, new Color(.82f, .78f, .66f, .9f));
+            Place(st.rectTransform, new Vector2(1, 1), new Vector2(0, -(PH + 14) * (i + .5f) / 5f), new Vector2(15, 3));
+        }
+        coverPage = MakePage("Inside", coverBack, 0);   // inset so that, flipped onto the right, it lies exactly where the right page is
+        coverPage.rt.offsetMin = new Vector2(0, 7); coverPage.rt.offsetMax = new Vector2(-8, -7);
+
+        JournalPrevButton = MakeButton("JournalPrev", journalPanel.transform, "上一頁", () => { if (journalDesk) journalDesk.Prev(); });
+        Place(JournalPrevButton, new Vector2(.5f, .5f), new Vector2(-150, -PH / 2f - 6), new Vector2(120, 44)); JournalPrevButton.pivot = new Vector2(.5f, 1);
+        JournalCloseButton = MakeButton("JournalClose", journalPanel.transform, "合上", () => { if (journalDesk) journalDesk.Close(); });
+        Place(JournalCloseButton, new Vector2(.5f, .5f), new Vector2(0, -PH / 2f - 6), new Vector2(120, 44)); JournalCloseButton.pivot = new Vector2(.5f, 1);
+        JournalNextButton = MakeButton("JournalNext", journalPanel.transform, "下一頁", () => { if (journalDesk) journalDesk.Next(); });
+        Place(JournalNextButton, new Vector2(.5f, .5f), new Vector2(150, -PH / 2f - 6), new Vector2(120, 44)); JournalNextButton.pivot = new Vector2(.5f, 1);
+        journalPanel.SetActive(false);
+    }
+
+    RectTransform Board(string name, int side)
+    {
+        var b = MakeImage(name, bookRoot, Cloth).rectTransform;
+        b.anchorMin = b.anchorMax = new Vector2(.5f, .5f); b.pivot = new Vector2(side > 0 ? 0 : 1, .5f);
+        b.anchoredPosition = Vector2.zero; b.sizeDelta = new Vector2(PW + 8, PH + 14);
+        var sh = b.gameObject.AddComponent<Shadow>(); sh.effectColor = new Color(0, 0, 0, .55f); sh.effectDistance = new Vector2(9, -12);
+        return b;
+    }
+
+    /// A flap hinged on the spine, lying over the left page at angle 0 (pivot on its right edge).
+    RectTransform Leaf(string name, float w, float h, out RectTransform front, out RectTransform back, out Image shade)
+    {
+        var l = MakeRect(name, bookRoot);
+        l.anchorMin = l.anchorMax = new Vector2(.5f, .5f); l.pivot = new Vector2(1, .5f); l.anchoredPosition = Vector2.zero; l.sizeDelta = new Vector2(w, h);
+        front = MakeRect("FrontFace", l); Fill(front);
+        back = MakeRect("BackFace", l); Fill(back); back.pivot = new Vector2(.5f, .5f); back.localScale = new Vector3(-1, 1, 1);
+        shade = MakeImage("Shade", l, new Color(0, 0, 0, 0)); Fill(shade.rectTransform); shade.raycastTarget = false;
+        return l;
+    }
+
+    /// side -1 / +1: the left / right page of the open book; 0: fills its parent (cover inside, leaf faces).
+    PageView MakePage(string name, Transform parent, int side)
+    {
+        var img = MakeImage(name, parent, Paper); var rt = img.rectTransform;
+        if (side == 0) Fill(rt);
+        else { rt.anchorMin = rt.anchorMax = new Vector2(.5f, .5f); rt.pivot = new Vector2(side > 0 ? 0 : 1, .5f); rt.anchoredPosition = Vector2.zero; rt.sizeDelta = new Vector2(PW, PH); }
+        // 朱絲欄: a ruled frame with eight columns
+        const float m = 26f;
+        var frame = MakeRect("Rules", rt); Fill(frame); frame.offsetMin = new Vector2(m, m + 14); frame.offsetMax = new Vector2(-m, -m);
+        foreach (var (a, horiz) in new[] { (0f, true), (1f, true), (0f, false), (1f, false) })
+        {
+            var r = MakeImage("Edge", frame, Rule).rectTransform;
+            r.anchorMin = horiz ? new Vector2(0, a) : new Vector2(a, 0); r.anchorMax = horiz ? new Vector2(1, a) : new Vector2(a, 1);
+            r.pivot = new Vector2(.5f, .5f); r.anchoredPosition = Vector2.zero; r.sizeDelta = horiz ? new Vector2(0, 2) : new Vector2(2, 0);
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            var r = MakeImage("Column", frame, new Color(Rule.r, Rule.g, Rule.b, Rule.a * .6f)).rectTransform;
+            r.anchorMin = new Vector2(i / 8f, 0); r.anchorMax = new Vector2(i / 8f, 1); r.pivot = new Vector2(.5f, .5f);
+            r.anchoredPosition = Vector2.zero; r.sizeDelta = new Vector2(1, 0);
+        }
+        var gutter = MakeImage("Gutter", rt, new Color(.35f, .25f, .15f, .14f)).rectTransform;
+        gutter.anchorMin = gutter.anchorMax = new Vector2(side < 0 ? 1 : 0, .5f); gutter.pivot = gutter.anchorMin;
+        gutter.anchoredPosition = Vector2.zero; gutter.sizeDelta = new Vector2(side == 0 ? 0 : 16, PH);
+        // the stack of pages under this one, seen on the outer edge
+        for (int i = 0; side != 0 && i < 3; i++)
+        {
+            var e = MakeImage("PageEdge", rt, new Color(.62f, .55f, .44f, .7f)).rectTransform;
+            e.anchorMin = e.anchorMax = new Vector2(side < 0 ? 0 : 1, .5f); e.pivot = new Vector2(.5f, .5f);
+            e.anchoredPosition = new Vector2(-side * (3 + 4 * i), 0); e.sizeDelta = new Vector2(1, PH - 6);
+        }
+        var body = MakeText("Body", frame, "", 18, TextAnchor.UpperLeft, new Color(.20f, .15f, .10f)); Fill(body.rectTransform);
+        body.rectTransform.offsetMin = new Vector2(10, 10); body.rectTransform.offsetMax = new Vector2(-10, -10);
+        body.horizontalOverflow = HorizontalWrapMode.Wrap;
+        var num = MakeText("Number", rt, "", 15, TextAnchor.LowerCenter, Brown);
+        Place(num.rectTransform, new Vector2(.5f, 0), new Vector2(0, 12), new Vector2(80, 22)); num.rectTransform.pivot = new Vector2(.5f, 0);
+        return new PageView { rt = rt, body = body, number = num };
+    }
+
+    public void ShowJournal(JournalDesk d) { journalDesk = d; journalPanel.SetActive(false); }
+    public void HideJournal() { journalPanel.SetActive(false); journalDesk = null; }
+    public bool JournalOpen => journalDesk != null;
+
+    void SetPage(PageView v, int page)
+    {
+        v.number.text = page >= 1 && page <= Numerals.Length ? Numerals[page - 1] : page.ToString();
+        v.body.text = journalDesk ? journalDesk.PageText(page) : "";
+    }
+
+    /// Flap angle 0 (over the left page) .. 180 (over the right page): flat flip plus a slight lift and shading.
+    static void Flip(RectTransform flap, RectTransform front, RectTransform back, Image shade, float deg)
+    {
+        float a = deg * Mathf.Deg2Rad, c = Mathf.Cos(a), s = Mathf.Sin(a);
+        flap.localScale = new Vector3(Mathf.Abs(c) < .002f ? .002f : c, 1f + .045f * s, 1f);
+        front.gameObject.SetActive(c >= 0f); back.gameObject.SetActive(c < 0f);
+        shade.color = new Color(0, 0, 0, .32f * s);
+    }
+
+    void RefreshJournal()
+    {
+        var b = journalDesk.book;
+        bool shown = b != null && b.Shown;
+        journalPanel.SetActive(shown);
+        if (!shown) return;
+        float t = Mathf.SmoothStep(0f, 1f, b.T);
+        int s = b.Spread;
+        // cover: 0 = closed over the left page, 180 = open on the right
+        float coverDeg = b.State == Journal.Phase.Opening ? 180f * Mathf.SmoothStep(0f, 1f, Mathf.Clamp01((b.T - .2f) / .8f))
+                       : b.State == Journal.Phase.Closing ? 180f * (1f - Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(b.T / .75f))) : 180f;
+        bool coverMoving = b.State == Journal.Phase.Opening || b.State == Journal.Phase.Closing;
+        float open = (1f - Mathf.Cos(coverDeg * Mathf.Deg2Rad)) * .5f;
+        bookRoot.anchoredPosition = new Vector2(PW * .5f * (1f - open), 26f + (b.State == Journal.Phase.Opening ? -40f * (1f - Mathf.Clamp01(b.T / .25f)) : 0f));
+        journalFade.alpha = b.State == Journal.Phase.Opening ? Mathf.Clamp01(b.T / .2f) : b.State == Journal.Phase.Closing ? 1f - Mathf.Clamp01((b.T - .7f) / .3f) : 1f;
+
+        cover.gameObject.SetActive(coverMoving);
+        if (coverMoving) { Flip(cover, coverFront, coverBack, coverShade, coverDeg); SetPage(coverPage, 2 * s + 1); }
+        boardR.gameObject.SetActive(coverDeg > 90f);
+        rightPage.rt.gameObject.SetActive(!coverMoving);
+
+        bool turning = b.State == Journal.Phase.Turning;
+        leaf.gameObject.SetActive(turning);
+        if (turning)
+        {
+            bool fwd = b.TurnDir > 0;
+            int from = s, to = s + b.TurnDir;
+            // forward: the old left leaf swings right and becomes the new right page; back: the reverse
+            SetPage(leafFrontPage, 2 * (fwd ? from : to) + 2);
+            SetPage(leafBackPage, 2 * (fwd ? to : from) + 1);
+            SetPage(leftPage, 2 * (fwd ? to : from) + 2);
+            SetPage(rightPage, 2 * (fwd ? from : to) + 1);
+            Flip(leaf, leafFront, leafBack, leafShade, fwd ? 180f * t : 180f * (1f - t));
+        }
+        else { SetPage(leftPage, 2 * s + 2); SetPage(rightPage, 2 * s + 1); }
+
+        bool idle = b.State == Journal.Phase.Open;
+        Enable(JournalPrevButton, b.CanPrev); Enable(JournalNextButton, b.CanNext); Enable(JournalCloseButton, idle);
+        JournalPrevButton.gameObject.SetActive(!coverMoving); JournalNextButton.gameObject.SetActive(!coverMoving); JournalCloseButton.gameObject.SetActive(!coverMoving);
+    }
+
+    void Enable(RectTransform btn, bool on)
+    {
+        btn.GetComponent<Image>().color = on ? Btn : BtnOff;
+        btn.GetComponentInChildren<Text>().color = on ? Ink : Dim;
+    }
 
     // ================================================================ alchemy panel
     GameObject alcPanel, resultCard;
