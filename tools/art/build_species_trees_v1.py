@@ -207,7 +207,7 @@ def walk(start, direction, length, r0, r1, gnarl, up, zig, rng, twist=0, floor=-
     wobble), reaches toward the light, and the longer and thinner it is the more its outer part sags under its own
     weight. `gnarl` is how much it curves overall; `up` how strongly it seeks the light; plum's `zig` adds the
     angular turns of an old flowering branch at a few nodes."""
-    n = max(6, int(length / .22))
+    n = max(3 if length < 1 else 6, int(length / (.4 if r0 < .03 else .22)))
     pts, radii = [start.copy()], [r0]
     d = direction.normalized()
     plane = (Quaternion(d, rng.uniform(0, math.tau)) @ perpendicular(d)).normalized()
@@ -266,9 +266,19 @@ def grow(spec, rng):
     trunk = Limb(pts, radii, 0)
     levels = spec['levels']
 
+    # Fine twigs past every branch end (not on willow, whose strands hang there, or plum, whose shoots bloom):
+    # short, forking at varied angles, kinking a little at each fork and turning up at the tips. They reach into
+    # the foliage clusters, so the leaves are seen to grow on twigs.
+    fine = [] if spec.get('weep') or spec.get('along') else [
+        dict(n=3, angle=(28, 55), length=.42, radius=.62, start=.35, gnarl=.35, up=.22, zig=.18, fine=True),
+        dict(n=3, angle=(25, 55), length=.4, radius=.6, start=.3, gnarl=.4, up=.28, zig=.14, fine=True)]
+    levels = levels + fine
+    leaf_level = len(spec['levels'])
+
     def branch(parent, depth):
-        if depth >= len(levels):
+        if depth == leaf_level:
             parent.twig = True
+        if depth >= len(levels):
             return
         lv = levels[depth]
         az = rng.random() * math.tau
@@ -294,6 +304,7 @@ def grow(spec, rng):
             cpts, cradii = walk(start, d, length, cr, max(cr * .32, .006), lv['gnarl'], lv['up'], lv.get('zig', 0), rng,
                                floor=h * spec.get('floor', .55), ceiling=spec['height'] * spec.get('dome', 1.0))
             child = Limb(cpts, cradii, depth + 1)
+            child.fine = lv.get('fine', False)
             child.broken = lv.get('broken') and length < plen * ratio * .55 if not isinstance(lv['length'], tuple) else False
             parent.children.append(child)
             branch(child, depth + 1)
@@ -337,13 +348,15 @@ def smooth(pts, radii, k=2):
     return pts, radii
 
 
-def tube(bm, uv, pts, radii, sides_scale, bark_scale, rng, flare=0, cap=True):
-    pts, radii = smooth(pts, radii, 2 if len(pts) < 30 else 1)
-    sides = max(4, min(16, int(max(radii) * 46 * sides_scale) + 3))
+def tube(bm, uv, pts, radii, sides_scale, bark_scale, rng, flare=0, cap=True, flute=0.0):
+    thin = max(radii) < .03   # fine twigs: three sides, no extra rings (they are seen against the sky, not up close)
+    pts, radii = smooth(pts, radii, 0 if thin else 2 if len(pts) < 30 else 1)
+    sides = 3 if thin else max(4, min(16, int(max(radii) * 46 * sides_scale) + 3))
     tangent = [(pts[min(i + 1, len(pts) - 1)] - pts[max(i - 1, 0)]).normalized() for i in range(len(pts))]
     normal = perpendicular(tangent[0])
     rings, v = [], 0.0
     bump = [rng.random() for _ in range(sides)]
+    lobes, spin, ph1, ph2 = rng.choice((3, 4, 5)), rng.uniform(-.6, .6), rng.uniform(0, math.tau), rng.uniform(0, math.tau)
     for i, p in enumerate(pts):
         if i:
             normal = (tangent[i - 1].rotation_difference(tangent[i]) @ normal).normalized()
@@ -356,6 +369,10 @@ def tube(bm, uv, pts, radii, sides_scale, bark_scale, rng, flare=0, cap=True):
         for s in range(sides + 1):
             a = math.tau * s / sides
             ridge = 1 + .08 * (bump[s % sides] - .5) * (1 if r > .05 else 0)
+            if flute:
+                # Flutes running up the stem and twisting slowly, plus gentle swelling and thinning along it.
+                ridge *= 1 + flute * (math.sin(lobes * a + spin * v + ph1) + .45 * math.sin(2 * lobes * a - spin * v + ph2))
+                ridge *= 1 + flute * .6 * math.sin(v * 1.3 + ph2)
             ring.append(bm.verts.new(p + (normal * math.cos(a) + binormal * math.sin(a)) * r * ridge))
         rings.append((ring, v))
     for i in range(len(rings) - 1):
@@ -650,12 +667,13 @@ def build(name, spec, src_bark):
         bm = bmesh.new()
         uv = bm.loops.layers.uv.new('UVMap')
         rng_l = random.Random(seed * 10 + i)
-        max_level = len(spec['levels']) + (lod['levels'] if lod['levels'] < 0 else 0)
+        # LOD0 keeps both levels of fine twigs, LOD1 one, LOD2 none and drops the last species level too.
+        max_level = len(spec['levels']) + 2 + (lod['levels'] * 2 if lod['levels'] < 0 else 0)
         for limb in limbs:
             if limb.level > max_level:
                 continue
             tube(bm, uv, limb.pts, limb.radii, lod['sides'], spec['bark']['scale'], rng_l, flare=spec['flare'] if limb.level == 0 else 0,
-                 cap=not (limb.level == 0 and spec['split']))
+                 cap=not (limb.level == 0 and spec['split']), flute=.11 if limb.level == 0 else .06 if limb.level == 1 else 0)
         for pts, radii in rootlist:
             tube(bm, uv, pts, radii, lod['sides'], spec['bark']['scale'], rng_l)
         wood_faces = len(bm.faces)
