@@ -1,0 +1,140 @@
+{
+  "asset": "TI03_JournalDesk",
+  "version": "v002",
+  "name_zh": "行記書案與椅凳",
+  "interior_slot": "TI_Desk",
+  "naming_three_layers": {
+    "surface": "寫旅途手札的書案",
+    "allusion": "遊記與文房器用",
+    "foreshadowing_internal_only": "桌面舊刻痕暗示過往使用者，不解釋其身分"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    1.2681,
+    0.66,
+    0.8394
+  ],
+  "design_target_m": [
+    1.28,
+    0.68,
+    0.84
+  ],
+  "slot_limit_m": [
+    1.3,
+    0.7,
+    0.85
+  ],
+  "lods": {
+    "LOD0": {
+      "TI03_JournalDesk_LOD0": 16175
+    },
+    "LOD1": {
+      "TI03_JournalDesk_LOD1": 6825
+    },
+    "LOD2": {
+      "TI03_JournalDesk_LOD2": 2477
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI03_JournalDesk_JournalPage",
+    "M_TI03_JournalDesk_Main"
+  ],
+  "textures": [
+    "TI03_JournalDesk_BaseColor.png",
+    "TI03_JournalDesk_JournalPage_Blank.png",
+    "TI03_JournalDesk_Metallic.png",
+    "TI03_JournalDesk_MetallicSmoothness.png",
+    "TI03_JournalDesk_Normal.png",
+    "TI03_JournalDesk_Roughness.png"
+  ],
+  "texture_size_px": 4096,
+  "own_uv_textures": {
+    "page": "TI03_JournalDesk_JournalPage_Blank.png"
+  },
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI03_JournalDesk_BaseColor.png",
+    "Normal": "TI03_JournalDesk_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI03_JournalDesk_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": null,
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {
+    "SOCKET_journal": [
+      0.22,
+      0.02,
+      0.7506
+    ],
+    "SOCKET_seat": [
+      0.0,
+      -0.16,
+      0.4356
+    ]
+  },
+  "sockets_fbx_reimport_xyz": {
+    "SOCKET_journal.001": [
+      0.22,
+      0.02,
+      0.7506
+    ],
+    "SOCKET_seat.001": [
+      0.0,
+      -0.16,
+      0.4356
+    ]
+  },
+  "states": [],
+  "state_renders": {},
+  "fbx_objects": [
+    "SOCKET_journal.001",
+    "SOCKET_seat.001",
+    "TI03_JournalDesk.001",
+    "TI03_JournalDesk_LOD0.001",
+    "TI03_JournalDesk_LOD1.001",
+    "TI03_JournalDesk_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)",
+  "supersedes": "v001 (LOD0, materials, textures and sockets unchanged; LOD1/LOD2 rebuilt)",
+  "files": {
+    "fbx": "TI03_JournalDesk_v002.fbx",
+    "blend": "art/source/territory-interior-b/blend/TI03_JournalDesk_v002.blend",
+    "textures": "Textures/ (same as v001)"
+  },
+  "lod_rule": "LOD1 ~50%, LOD2 ~15% of LOD0 triangles (00-overview 4.2); small parts dropped only while enough triangles remain, then collapse decimate",
+  "lod_triangles_total": {
+    "LOD0": 16175,
+    "LOD1": 8087,
+    "LOD2": 2425
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "lod_groups": {
+    "TI03_JournalDesk": {
+      "LOD0": 16175,
+      "LOD1": 8087,
+      "LOD1_drop_part_detail_ge": 2,
+      "LOD2": 2425,
+      "LOD2_drop_part_detail_ge": 1
+    }
+  },
+  "v001_lod_triangles_total": {
+    "LOD0": 16175,
+    "LOD1": 6825,
+    "LOD2": 2477
+  }
+}

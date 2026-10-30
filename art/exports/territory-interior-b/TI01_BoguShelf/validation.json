@@ -1,0 +1,103 @@
+{
+  "asset": "TI01_BoguShelf",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.88,
+          -0.214,
+          0.0
+        ],
+        "max": [
+          0.88,
+          0.214,
+          1.96
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          1.76,
+          0.428,
+          1.96
+        ],
+        "limit_m": [
+          1.8,
+          0.45,
+          2.0
+        ]
+      }
+    },
+    {
+      "check": "near_design_target",
+      "pass": true,
+      "detail": {
+        "target_m": [
+          1.76,
+          0.42,
+          1.96
+        ],
+        "deviation_m": [
+          -0.0,
+          0.008,
+          0.0
+        ],
+        "tolerance_m": 0.03
+      }
+    },
+    {
+      "check": "shelf_8_slots_fit_collectible_block",
+      "pass": true,
+      "detail": "see shelf_fit_test in model_info.json"
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          1.76,
+          0.428,
+          1.96
+        ],
+        "blend_dims_m": [
+          1.76,
+          0.428,
+          1.96
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI01_BoguShelf_LOD0": 19788
+        },
+        "LOD1": {
+          "TI01_BoguShelf_LOD1": 7914
+        },
+        "LOD2": {
+          "TI01_BoguShelf_LOD2": 2058
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 222,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}

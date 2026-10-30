@@ -1,0 +1,81 @@
+{
+  "asset": "TI08a_KeepsakeBox",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.1159,
+          -0.092,
+          0.0
+        ],
+        "max": [
+          0.1159,
+          0.092,
+          0.145
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          0.2318,
+          0.1839,
+          0.145
+        ],
+        "limit_m": [
+          0.35,
+          0.3,
+          0.35
+        ]
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          0.2318,
+          0.1839,
+          0.145
+        ],
+        "blend_dims_m": [
+          0.2318,
+          0.1839,
+          0.145
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI08a_KeepsakeBox_LOD0": 8628
+        },
+        "LOD1": {
+          "TI08a_KeepsakeBox_LOD1": 3882
+        },
+        "LOD2": {
+          "TI08a_KeepsakeBox_LOD2": 548
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 84,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}

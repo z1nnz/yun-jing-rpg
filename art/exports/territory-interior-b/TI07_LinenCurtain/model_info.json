@@ -1,0 +1,82 @@
+{
+  "asset": "TI07_LinenCurtain",
+  "version": "v001",
+  "name_zh": "歸居門簾",
+  "interior_slot": "TI_Curtain_F/TI_Curtain_B",
+  "naming_three_layers": {
+    "surface": "遮擋門口視線的布簾",
+    "allusion": "布簾分隔內外",
+    "foreshadowing_internal_only": "從外出回到私人空間；左片低處有補丁"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    1.262,
+    0.0637,
+    2.1435
+  ],
+  "design_target_m": [
+    1.28,
+    0.09,
+    2.16
+  ],
+  "slot_limit_m": [
+    1.3,
+    0.1,
+    2.2
+  ],
+  "lods": {
+    "LOD0": {
+      "TI07_LinenCurtain_LOD0": 46876
+    },
+    "LOD1": {
+      "TI07_LinenCurtain_LOD1": 20888
+    },
+    "LOD2": {
+      "TI07_LinenCurtain_LOD2": 8804
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI07_LinenCurtain_Main"
+  ],
+  "textures": [
+    "TI07_LinenCurtain_BaseColor.png",
+    "TI07_LinenCurtain_Metallic.png",
+    "TI07_LinenCurtain_MetallicSmoothness.png",
+    "TI07_LinenCurtain_Normal.png",
+    "TI07_LinenCurtain_Roughness.png"
+  ],
+  "texture_size_px": 2048,
+  "own_uv_textures": {},
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI07_LinenCurtain_BaseColor.png",
+    "Normal": "TI07_LinenCurtain_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI07_LinenCurtain_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": null,
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {},
+  "sockets_fbx_reimport_xyz": {},
+  "states": [],
+  "state_renders": {},
+  "fbx_objects": [
+    "TI07_LinenCurtain.001",
+    "TI07_LinenCurtain_LOD0.001",
+    "TI07_LinenCurtain_LOD1.001",
+    "TI07_LinenCurtain_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)"
+}

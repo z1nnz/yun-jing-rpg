@@ -1,0 +1,177 @@
+{
+  "asset": "TI01_BoguShelf",
+  "version": "v002",
+  "checks": {
+    "fbx_reimport_has_every_group_LOD0_LOD1_LOD2": true,
+    "fbx_reimport_triangles_match": true,
+    "fbx_reimport_sockets": true,
+    "LOD1_ratio_45_55_percent": true,
+    "LOD2_ratio_12_18_percent": true,
+    "shelf_8_slots_fit_test_blocks_LOD0_LOD1_LOD2": true
+  },
+  "passed": true,
+  "fbx_reimport_LOD0_dimensions_m": [
+    1.76,
+    0.428,
+    1.96
+  ],
+  "fbx_sha256": "0f07fdb7cdd36004d0fadafcd25e29d0693ac5d8e199adccdeedc89ccbd63383",
+  "comparison_render": "art/previews/territory-interior-b/TI01_BoguShelf/TI01_BoguShelf_lod_v001_v002.png",
+  "not_checked": [
+    "Unity import of v002 (the Unity demo still loads v001; LOD0 is identical)",
+    "LODGroup switch distances"
+  ],
+  "shelf_slot_fit_v002": {
+    "method": "same as v001: BVH triangle overlap between each LOD mesh and an axis-aligned block resting 2 mm above the socket",
+    "blocks": {
+      "collectible_0.35x0.30x0.35": [
+        {
+          "slot": 1,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 2,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 3,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 4,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 5,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 6,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 7,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 8,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        }
+      ],
+      "clearance_0.36x0.31x0.36": [
+        {
+          "slot": 1,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 2,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 3,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 4,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 5,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 6,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 7,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 8,
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        }
+      ]
+    }
+  }
+}

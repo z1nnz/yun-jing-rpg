@@ -1,0 +1,23 @@
+{
+  "asset": "TI02_HomeFurnace",
+  "version": "v002",
+  "checks": {
+    "fbx_reimport_has_every_group_LOD0_LOD1_LOD2": true,
+    "fbx_reimport_triangles_match": true,
+    "fbx_reimport_sockets": true,
+    "LOD1_ratio_45_55_percent": true,
+    "LOD2_ratio_12_18_percent": true
+  },
+  "passed": true,
+  "fbx_reimport_LOD0_dimensions_m": [
+    0.7505,
+    0.762,
+    1.075
+  ],
+  "fbx_sha256": "111ae1b71a8c2201fe3a2f458cf43e8c5f1b77f97195abb6c8994503d45bc560",
+  "comparison_render": "art/previews/territory-interior-b/TI02_HomeFurnace/TI02_HomeFurnace_lod_v001_v002.png",
+  "not_checked": [
+    "Unity import of v002 (the Unity demo still loads v001; LOD0 is identical)",
+    "LODGroup switch distances"
+  ]
+}

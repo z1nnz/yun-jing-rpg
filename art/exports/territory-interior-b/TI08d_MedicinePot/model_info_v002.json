@@ -1,0 +1,108 @@
+{
+  "asset": "TI08d_MedicinePot",
+  "version": "v002",
+  "name_zh": "陶藥罐",
+  "interior_slot": "TI01 sockets (display only)",
+  "naming_three_layers": {
+    "surface": "收藏架展示用的陶藥罐",
+    "allusion": "木匣、卷軸與陶瓷器",
+    "foreshadowing_internal_only": "無劇情伏筆；正式見聞道具由 C 製作"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.138,
+    0.138,
+    0.1752
+  ],
+  "design_target_m": null,
+  "slot_limit_m": [
+    0.35,
+    0.3,
+    0.35
+  ],
+  "lods": {
+    "LOD0": {
+      "TI08d_MedicinePot_LOD0": 6112
+    },
+    "LOD1": {
+      "TI08d_MedicinePot_LOD1": 2750
+    },
+    "LOD2": {
+      "TI08d_MedicinePot_LOD2": 952
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI08d_MedicinePot_Main"
+  ],
+  "textures": [
+    "TI08d_MedicinePot_BaseColor.png",
+    "TI08d_MedicinePot_Metallic.png",
+    "TI08d_MedicinePot_MetallicSmoothness.png",
+    "TI08d_MedicinePot_Normal.png",
+    "TI08d_MedicinePot_Roughness.png"
+  ],
+  "texture_size_px": 1024,
+  "own_uv_textures": {},
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI08d_MedicinePot_BaseColor.png",
+    "Normal": "TI08d_MedicinePot_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI08d_MedicinePot_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": null,
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {},
+  "sockets_fbx_reimport_xyz": {},
+  "states": [],
+  "state_renders": {},
+  "fbx_objects": [
+    "TI08d_MedicinePot.001",
+    "TI08d_MedicinePot_LOD0.001",
+    "TI08d_MedicinePot_LOD1.001",
+    "TI08d_MedicinePot_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)",
+  "supersedes": "v001 (LOD0, materials, textures and sockets unchanged; LOD1/LOD2 rebuilt)",
+  "files": {
+    "fbx": "TI08d_MedicinePot_v002.fbx",
+    "blend": "art/source/territory-interior-b/blend/TI08d_MedicinePot_v002.blend",
+    "textures": "Textures/ (same as v001)"
+  },
+  "lod_rule": "LOD1 ~50%, LOD2 ~15% of LOD0 triangles (00-overview 4.2); small parts dropped only while enough triangles remain, then collapse decimate",
+  "lod_triangles_total": {
+    "LOD0": 6112,
+    "LOD1": 3056,
+    "LOD2": 916
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "lod_groups": {
+    "TI08d_MedicinePot": {
+      "LOD0": 6112,
+      "LOD1": 3056,
+      "LOD1_drop_part_detail_ge": 2,
+      "LOD2": 916,
+      "LOD2_drop_part_detail_ge": 1
+    }
+  },
+  "v001_lod_triangles_total": {
+    "LOD0": 6112,
+    "LOD1": 2750,
+    "LOD2": 952
+  }
+}

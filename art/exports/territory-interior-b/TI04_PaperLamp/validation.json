@@ -1,0 +1,98 @@
+{
+  "asset": "TI04_PaperLamp",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.2142,
+          -0.2128,
+          0.0
+        ],
+        "max": [
+          0.2142,
+          0.2128,
+          1.64
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          0.4284,
+          0.4256,
+          1.64
+        ],
+        "limit_m": [
+          0.45,
+          0.45,
+          1.7
+        ]
+      }
+    },
+    {
+      "check": "near_design_target",
+      "pass": true,
+      "detail": {
+        "target_m": [
+          0.42,
+          0.42,
+          1.64
+        ],
+        "deviation_m": [
+          0.0084,
+          0.0056,
+          -0.0
+        ],
+        "tolerance_m": 0.03
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          0.4284,
+          0.4256,
+          1.64
+        ],
+        "blend_dims_m": [
+          0.4284,
+          0.4256,
+          1.64
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI04_PaperLamp_LOD0": 11032
+        },
+        "LOD1": {
+          "TI04_PaperLamp_LOD1": 4604
+        },
+        "LOD2": {
+          "TI04_PaperLamp_LOD2": 1412
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 92,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}

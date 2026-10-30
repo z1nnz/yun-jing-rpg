@@ -1,0 +1,58 @@
+{
+  "batch": "TerritoryInterior18",
+  "date": "2026-10-30",
+  "assets": {
+    "TI01_BoguShelf": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI02_HomeFurnace": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI03_JournalDesk": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI04_PaperLamp": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI05_LandscapeScreen": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI06_WovenMat": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI07_LinenCurtain": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI08a_KeepsakeBox": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI08b_PaperScroll": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI08c_CeladonJar": {
+      "all_pass": true,
+      "failed": []
+    },
+    "TI08d_MedicinePot": {
+      "all_pass": true,
+      "failed": []
+    }
+  },
+  "layout_check_pass": true,
+  "not_verified": [
+    "Unity import and LODGroup creation",
+    "in-engine lighting/emission values",
+    "collision",
+    "C2 interior kit side-by-side",
+    "performance"
+  ]
+}

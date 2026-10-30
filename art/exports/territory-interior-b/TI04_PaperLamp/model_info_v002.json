@@ -1,0 +1,133 @@
+{
+  "asset": "TI04_PaperLamp",
+  "version": "v002",
+  "name_zh": "歸明燈架",
+  "interior_slot": "TI_Lamp_1/TI_Lamp_2",
+  "naming_three_layers": {
+    "surface": "回家點的燈",
+    "allusion": "燈火待歸的意象",
+    "foreshadowing_internal_only": "夜晚讓空屋成為自己的家"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.4284,
+    0.4256,
+    1.64
+  ],
+  "design_target_m": [
+    0.42,
+    0.42,
+    1.64
+  ],
+  "slot_limit_m": [
+    0.45,
+    0.45,
+    1.7
+  ],
+  "lods": {
+    "LOD0": {
+      "TI04_PaperLamp_LOD0": 11032
+    },
+    "LOD1": {
+      "TI04_PaperLamp_LOD1": 4604
+    },
+    "LOD2": {
+      "TI04_PaperLamp_LOD2": 1412
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI04_PaperLamp_Main",
+    "M_TI04_PaperLamp_ShadePaper"
+  ],
+  "textures": [
+    "TI04_PaperLamp_BaseColor.png",
+    "TI04_PaperLamp_Emission.png",
+    "TI04_PaperLamp_Metallic.png",
+    "TI04_PaperLamp_MetallicSmoothness.png",
+    "TI04_PaperLamp_Normal.png",
+    "TI04_PaperLamp_Roughness.png"
+  ],
+  "texture_size_px": 2048,
+  "own_uv_textures": {},
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI04_PaperLamp_BaseColor.png",
+    "Normal": "TI04_PaperLamp_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI04_PaperLamp_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": "TI04_PaperLamp_Emission.png",
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {
+    "SOCKET_lamp_light": [
+      0.0,
+      0.0,
+      1.26
+    ]
+  },
+  "sockets_fbx_reimport_xyz": {
+    "SOCKET_lamp_light.001": [
+      0.0,
+      0.0,
+      1.26
+    ]
+  },
+  "states": [
+    "off",
+    "on"
+  ],
+  "state_renders": {
+    "off": "state_off.png",
+    "on": "state_on.png"
+  },
+  "fbx_objects": [
+    "SOCKET_lamp_light.001",
+    "TI04_PaperLamp.001",
+    "TI04_PaperLamp_LOD0.001",
+    "TI04_PaperLamp_LOD1.001",
+    "TI04_PaperLamp_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)",
+  "supersedes": "v001 (LOD0, materials, textures and sockets unchanged; LOD1/LOD2 rebuilt)",
+  "files": {
+    "fbx": "TI04_PaperLamp_v002.fbx",
+    "blend": "art/source/territory-interior-b/blend/TI04_PaperLamp_v002.blend",
+    "textures": "Textures/ (same as v001)"
+  },
+  "lod_rule": "LOD1 ~50%, LOD2 ~15% of LOD0 triangles (00-overview 4.2); small parts dropped only while enough triangles remain, then collapse decimate",
+  "lod_triangles_total": {
+    "LOD0": 11032,
+    "LOD1": 5516,
+    "LOD2": 1654
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "lod_groups": {
+    "TI04_PaperLamp": {
+      "LOD0": 11032,
+      "LOD1": 5516,
+      "LOD1_drop_part_detail_ge": 2,
+      "LOD2": 1654,
+      "LOD2_drop_part_detail_ge": 1
+    }
+  },
+  "v001_lod_triangles_total": {
+    "LOD0": 11032,
+    "LOD1": 4604,
+    "LOD2": 1412
+  }
+}

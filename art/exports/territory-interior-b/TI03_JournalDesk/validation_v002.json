@@ -1,0 +1,23 @@
+{
+  "asset": "TI03_JournalDesk",
+  "version": "v002",
+  "checks": {
+    "fbx_reimport_has_every_group_LOD0_LOD1_LOD2": true,
+    "fbx_reimport_triangles_match": true,
+    "fbx_reimport_sockets": true,
+    "LOD1_ratio_45_55_percent": true,
+    "LOD2_ratio_12_18_percent": true
+  },
+  "passed": true,
+  "fbx_reimport_LOD0_dimensions_m": [
+    1.2681,
+    0.66,
+    0.8394
+  ],
+  "fbx_sha256": "5744b9e72086f672265438f66fc4f28cfcfade3dc561911cf4e204daf4033317",
+  "comparison_render": "art/previews/territory-interior-b/TI03_JournalDesk/TI03_JournalDesk_lod_v001_v002.png",
+  "not_checked": [
+    "Unity import of v002 (the Unity demo still loads v001; LOD0 is identical)",
+    "LODGroup switch distances"
+  ]
+}

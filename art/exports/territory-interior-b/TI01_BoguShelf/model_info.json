@@ -1,0 +1,460 @@
+{
+  "asset": "TI01_BoguShelf",
+  "version": "v001",
+  "name_zh": "博古架",
+  "interior_slot": "TI_Shelf",
+  "naming_three_layers": {
+    "surface": "擺放旅途收藏的架子",
+    "allusion": "文人博古陳設",
+    "foreshadowing_internal_only": "一件件收藏拼成歷史；最上層左格比其他格舊，像以前常放東西"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    1.76,
+    0.428,
+    1.96
+  ],
+  "design_target_m": [
+    1.76,
+    0.42,
+    1.96
+  ],
+  "slot_limit_m": [
+    1.8,
+    0.45,
+    2.0
+  ],
+  "lods": {
+    "LOD0": {
+      "TI01_BoguShelf_LOD0": 19788
+    },
+    "LOD1": {
+      "TI01_BoguShelf_LOD1": 7914
+    },
+    "LOD2": {
+      "TI01_BoguShelf_LOD2": 2058
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI01_BoguShelf_Main"
+  ],
+  "textures": [
+    "TI01_BoguShelf_BaseColor.png",
+    "TI01_BoguShelf_Metallic.png",
+    "TI01_BoguShelf_MetallicSmoothness.png",
+    "TI01_BoguShelf_Normal.png",
+    "TI01_BoguShelf_Roughness.png"
+  ],
+  "texture_size_px": 4096,
+  "own_uv_textures": {},
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI01_BoguShelf_BaseColor.png",
+    "Normal": "TI01_BoguShelf_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI01_BoguShelf_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": null,
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {
+    "SOCKET_slot_1": [
+      -0.425,
+      -0.014,
+      1.43
+    ],
+    "SOCKET_slot_2": [
+      0.37,
+      -0.014,
+      1.43
+    ],
+    "SOCKET_slot_3": [
+      -0.345,
+      -0.014,
+      0.98
+    ],
+    "SOCKET_slot_4": [
+      0.45,
+      -0.014,
+      0.98
+    ],
+    "SOCKET_slot_5": [
+      -0.445,
+      -0.014,
+      0.57
+    ],
+    "SOCKET_slot_6": [
+      0.35,
+      -0.014,
+      0.57
+    ],
+    "SOCKET_slot_7": [
+      -0.375,
+      -0.014,
+      0.14
+    ],
+    "SOCKET_slot_8": [
+      0.42,
+      -0.014,
+      0.14
+    ]
+  },
+  "sockets_fbx_reimport_xyz": {
+    "SOCKET_slot_1.001": [
+      -0.425,
+      -0.014,
+      1.43
+    ],
+    "SOCKET_slot_2.001": [
+      0.37,
+      -0.014,
+      1.43
+    ],
+    "SOCKET_slot_3.001": [
+      -0.345,
+      -0.014,
+      0.98
+    ],
+    "SOCKET_slot_4.001": [
+      0.45,
+      -0.014,
+      0.98
+    ],
+    "SOCKET_slot_5.001": [
+      -0.445,
+      -0.014,
+      0.57
+    ],
+    "SOCKET_slot_6.001": [
+      0.35,
+      -0.014,
+      0.57
+    ],
+    "SOCKET_slot_7.001": [
+      -0.375,
+      -0.014,
+      0.14
+    ],
+    "SOCKET_slot_8.001": [
+      0.42,
+      -0.014,
+      0.14
+    ]
+  },
+  "states": [
+    "empty",
+    "half",
+    "full"
+  ],
+  "state_renders": {},
+  "fbx_objects": [
+    "SOCKET_slot_1.001",
+    "SOCKET_slot_2.001",
+    "SOCKET_slot_3.001",
+    "SOCKET_slot_4.001",
+    "SOCKET_slot_5.001",
+    "SOCKET_slot_6.001",
+    "SOCKET_slot_7.001",
+    "SOCKET_slot_8.001",
+    "TI01_BoguShelf.001",
+    "TI01_BoguShelf_LOD0.001",
+    "TI01_BoguShelf_LOD1.001",
+    "TI01_BoguShelf_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)",
+  "shelf_fit_test": {
+    "method": "BVH triangle overlap between each LOD mesh and an axis-aligned test block resting 2 mm above the socket; block centred on the socket in X and Y",
+    "blocks": {
+      "collectible_0.35x0.30x0.35": [
+        {
+          "slot": 1,
+          "socket_blender_xyz": [
+            -0.425,
+            -0.014,
+            1.43
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 2,
+          "socket_blender_xyz": [
+            0.37,
+            -0.014,
+            1.43
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 3,
+          "socket_blender_xyz": [
+            -0.345,
+            -0.014,
+            0.98
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 4,
+          "socket_blender_xyz": [
+            0.45,
+            -0.014,
+            0.98
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 5,
+          "socket_blender_xyz": [
+            -0.445,
+            -0.014,
+            0.57
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 6,
+          "socket_blender_xyz": [
+            0.35,
+            -0.014,
+            0.57
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 7,
+          "socket_blender_xyz": [
+            -0.375,
+            -0.014,
+            0.14
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 8,
+          "socket_blender_xyz": [
+            0.42,
+            -0.014,
+            0.14
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        }
+      ],
+      "clearance_0.36x0.31x0.36": [
+        {
+          "slot": 1,
+          "socket_blender_xyz": [
+            -0.425,
+            -0.014,
+            1.43
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 2,
+          "socket_blender_xyz": [
+            0.37,
+            -0.014,
+            1.43
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 3,
+          "socket_blender_xyz": [
+            -0.345,
+            -0.014,
+            0.98
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 4,
+          "socket_blender_xyz": [
+            0.45,
+            -0.014,
+            0.98
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 5,
+          "socket_blender_xyz": [
+            -0.445,
+            -0.014,
+            0.57
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 6,
+          "socket_blender_xyz": [
+            0.35,
+            -0.014,
+            0.57
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 7,
+          "socket_blender_xyz": [
+            -0.375,
+            -0.014,
+            0.14
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        },
+        {
+          "slot": 8,
+          "socket_blender_xyz": [
+            0.42,
+            -0.014,
+            0.14
+          ],
+          "overlapping_triangles": {
+            "LOD0": 0,
+            "LOD1": 0,
+            "LOD2": 0
+          },
+          "pass": true
+        }
+      ]
+    },
+    "cell_interiors_from_construction": [
+      {
+        "slot": 1,
+        "inner_width_m": 0.7,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.39
+      },
+      {
+        "slot": 2,
+        "inner_width_m": 0.81,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.39
+      },
+      {
+        "slot": 3,
+        "inner_width_m": 0.86,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.42
+      },
+      {
+        "slot": 4,
+        "inner_width_m": 0.65,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.42
+      },
+      {
+        "slot": 5,
+        "inner_width_m": 0.66,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.38
+      },
+      {
+        "slot": 6,
+        "inner_width_m": 0.85,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.38
+      },
+      {
+        "slot": 7,
+        "inner_width_m": 0.8,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.4
+      },
+      {
+        "slot": 8,
+        "inner_width_m": 0.71,
+        "inner_depth_m": 0.354,
+        "inner_height_m": 0.4
+      }
+    ],
+    "pass": true
+  }
+}

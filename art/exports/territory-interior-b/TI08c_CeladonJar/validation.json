@@ -1,0 +1,81 @@
+{
+  "asset": "TI08c_CeladonJar",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.0709,
+          -0.0709,
+          0.0
+        ],
+        "max": [
+          0.0709,
+          0.0709,
+          0.2317
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          0.1418,
+          0.1418,
+          0.2317
+        ],
+        "limit_m": [
+          0.35,
+          0.3,
+          0.35
+        ]
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          0.1418,
+          0.1418,
+          0.2317
+        ],
+        "blend_dims_m": [
+          0.1418,
+          0.1418,
+          0.2317
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI08c_CeladonJar_LOD0": 4160
+        },
+        "LOD1": {
+          "TI08c_CeladonJar_LOD1": 1872
+        },
+        "LOD2": {
+          "TI08c_CeladonJar_LOD2": 582
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 69,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}
