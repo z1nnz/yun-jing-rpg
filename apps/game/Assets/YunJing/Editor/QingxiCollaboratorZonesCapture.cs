@@ -156,5 +156,44 @@ namespace YunJing.Editor
             Shot("20-creek-junction-eye", new Vector3(-28, 3, 44), new Vector3(-52, 1, 56));
             Debug.Log($"QINGXI_UPSTREAM_CAPTURED to {dir}");
         }
+
+        // The territory pocket world (territory.json): the hollow from above and at eye height, each facility,
+        // the rim in mist, and the room. Output: artifacts/qingxi-territory/*.png
+        public static void CaptureTerritory()
+        {
+            EditorSceneManager.OpenScene(QingxiLodgingInteriorBuilder.ScenePath);
+            var dir = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..", "artifacts", "qingxi-territory"));
+            Directory.CreateDirectory(dir);
+            var camera = new GameObject("Review Camera").AddComponent<Camera>();
+            camera.fieldOfView = 55; camera.nearClipPlane = .05f; camera.farClipPlane = 400;
+            UnityEngine.Rendering.Universal.CameraExtensions.GetUniversalAdditionalCameraData(camera).renderPostProcessing = true;
+            var target = new RenderTexture(1600, 900, 24) { antiAliasing = 4 };
+            camera.targetTexture = target;
+            var terrain = Terrain.activeTerrain;
+            void Shot(string file, Vector3 from, Vector3 at, bool lift = true)
+            {
+                if (lift) { from += Vector3.up * QingxiVillageTerrain.Ground(terrain, from.x, from.z); at += Vector3.up * QingxiVillageTerrain.Ground(terrain, at.x, at.z); }
+                camera.transform.position = from; camera.transform.LookAt(at); camera.Render();
+                RenderTexture.active = target;
+                var image = new Texture2D(target.width, target.height, TextureFormat.RGB24, false);
+                image.ReadPixels(new Rect(0, 0, target.width, target.height), 0, 0); image.Apply();
+                File.WriteAllBytes(Path.Combine(dir, file + ".png"), image.EncodeToPNG());
+                RenderTexture.active = null; Object.DestroyImmediate(image);
+            }
+            Shot("00-warmup", new Vector3(0, 30, -40), Vector3.zero);
+            Shot("01-overview", new Vector3(0, 34, -44), new Vector3(0, 0, 2));
+            Shot("02-arrive-at-gate", new Vector3(0, 1.7f, -20.5f), new Vector3(0, 1.4f, -6));
+            Shot("03-house-front", new Vector3(5, 2.4f, -15), new Vector3(0, 1.5f, -4));
+            Shot("04-fields", new Vector3(-4, 3.2f, 0), new Vector3(-10.5f, 0, 7));
+            Shot("05-practice", new Vector3(6, 2.4f, 2), new Vector3(11, .5f, 7));
+            Shot("06-corner-and-pavilion", new Vector3(0, 3, -14), new Vector3(0, 1, -9));
+            Shot("07-spring", new Vector3(2, 3, 10), new Vector3(2, 0, 17.5f));
+            Shot("08-rim-in-mist", new Vector3(0, 1.7f, 4), new Vector3(-22, 4, 22));
+            Shot("09-top", new Vector3(0, 70, -1), new Vector3(0, 0, 0));
+            var room = GameObject.Find("QingxiLodgingInterior (the room)").transform.position;
+            Shot("10-room", room + new Vector3(0, 1.6f, -2.1f), room + new Vector3(0, 1, 1.5f), false);
+            Shot("11-room-reverse", room + new Vector3(2.8f, 2.4f, 2f), room + new Vector3(-1, .5f, -1), false);
+            Debug.Log($"QINGXI_TERRITORY_CAPTURED to {dir}");
+        }
     }
 }

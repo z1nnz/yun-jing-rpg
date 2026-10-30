@@ -481,7 +481,8 @@ namespace YunJing.Editor
                 QingxiVillageTerrain.CreekDistance(layout, c.crossing.x, c.crossing.z, out float land);
                 Debug.Log($"QINGXI_CREEK: crossing land {land:0.00} m, terrain bed {ground:0.00} m, water {QingxiVillageTerrain.WaterHeight(layout, c.crossing.x, c.crossing.z):0.00} m, ribbon vertices {verts.Count}");
             }
-            AssetDatabase.CreateAsset(mesh, "Assets/YunJing/Generated/NoviceVillageCreekWater.asset");
+            // One mesh per block: blocks used to share one asset path and overwrite each other's water.
+            AssetDatabase.CreateAsset(mesh, $"Assets/YunJing/Generated/{(string.IsNullOrEmpty(layout.block) ? "NoviceVillage" : layout.block)}CreekWater.asset");
             var water = new GameObject("CreekWater");
             water.transform.SetParent(root, false);
             water.AddComponent<MeshFilter>().sharedMesh = mesh;
@@ -574,7 +575,7 @@ namespace YunJing.Editor
 
         static Material WaterMaterial()
         {
-            var path = $"{MaterialFolder}/VillageCreekWater_URP.mat";
+            var path = $"{MaterialFolder}/{(string.IsNullOrEmpty(layout.block) ? "Village" : layout.block)}CreekWater_URP.mat";   // per block: _Width is the block's creek width
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat == null) { mat = new Material(Shader.Find("Universal Render Pipeline/Lit")); AssetDatabase.CreateAsset(mat, path); }
             // Flowing water (K1): ripples drifting downstream, shallow banks, sky reflection, sun glints, foam.
@@ -808,6 +809,8 @@ namespace YunJing.Editor
             bool Free(float x, float z, float pad = 3.5f, float road = 3f, float creekGap = -1)
             {
                 if (x < a.minX + 4 || x > a.minX + a.sizeX - 4 || z < a.minZ + 4 || z > a.minZ + a.sizeZ - 4) return false;
+                // The territory hollow keeps its yard open: trees and rocks stay on the surrounding hills.
+                if (layout.isolated && Mathf.Max(Mathf.Abs(x - (a.minX + a.sizeX / 2)), Mathf.Abs(z - (a.minZ + a.sizeZ / 2))) < a.sizeX * .28f) return false;
                 if (QingxiVillageTerrain.PadDistance(layout, x, z, out _) < pad || QingxiVillageTerrain.RoadDistance(layout, x, z, out _) < road) return false;
                 if (QingxiVillageTerrain.CreekDistance(layout, x, z, out _) < (creekGap < 0 ? clear : creekGap)) return false;
                 return layout.placements == null || layout.placements.All(p => Vector2.Distance(new Vector2(p.x, p.z), new Vector2(x, z)) > 3f);
@@ -817,25 +820,46 @@ namespace YunJing.Editor
                 for (int i = 0; i < 80; i++) { float x = a.minX + 4 + R() * (a.sizeX - 8), z = a.minZ + 4 + R() * (a.sizeZ - 8); if (ok(x, z)) return new Vector2(x, z); }
                 return new Vector2(float.NaN, float.NaN);
             }
-            int trees = 0, rocks = 0, sedges = 0;
-            void PlantTree(float x, float z)
+            int trees = 0, rocks = 0, sedges = 0, elders = 0;
+            // Species built on z1nnz's Elder World Tree (QingxiElderTrees), mixed with the pines and bamboo. By the water:
+            // willow and bamboo. On dry ground: pine, camphor, cypress, maple, ginkgo, plum and saplings, by weight. A
+            // grove keeps one species (a stand of maples, of ginkgo, of cypress); single trees mix. Heights in metres.
+            bool elder = QingxiElderTrees.Available;
+            if (elder) ElderKit();
+            var heights = new System.Collections.Generic.Dictionary<string, float> {
+                ["ElderCamphor"] = 7.5f, ["ElderMaple"] = 5.5f, ["ElderGinkgo"] = 8f, ["ElderWillow"] = 6f,
+                ["ElderPlum"] = 3.6f, ["ElderCypress"] = 9f, ["ElderSapling"] = 3.4f };
+            var dry = new (string kind, float weight)[] { (null, .35f), ("ElderCamphor", .2f), ("ElderCypress", .15f), ("ElderMaple", .1f),
+                ("ElderGinkgo", .08f), ("ElderPlum", .07f), ("ElderSapling", .05f) };
+            string Pick((string kind, float weight)[] table) { float t = R(); foreach (var (k, w) in table) { if ((t -= w) <= 0) return k; } return table[0].kind; }
+            string GroveKind() => !elder ? null : new[] { null, null, "ElderCamphor", "ElderCamphor", "ElderMaple", "ElderGinkgo", "ElderCypress" }[random.Next(7)];
+            void PlantTree(float x, float z, string kind = "")
             {
                 float wet = QingxiVillageTerrain.CreekDistance(layout, x, z, out _);
                 bool cane = wet < 16f ? R() < .75f : R() < .15f;
+                if (elder && wet < 16f && R() < .4f) { cane = false; kind = "ElderWillow"; }   // willows lean over the water
+                else if (kind == "") kind = elder ? Pick(dry) : null;
                 if (cane) Tree(bamboo, root, new Vector3(x, 0, z), 4.2f + R() * 1.8f, R() * 360);
+                else if (kind != null)
+                {
+                    float h = heights[kind];
+                    Tree(QingxiElderTrees.Source(kind), root, new Vector3(x, 0, z), h * (.82f + R() * .36f), R() * 360);
+                    elders++;
+                }
                 else Tree(pine, root, new Vector3(x, 0, z), 7f + R() * 5.5f, R() * 360);
                 trees++;
             }
             // Groves: about three quarters of the trees, 4–11 m around each grove centre.
             var groves = Enumerable.Range(0, biome.groves).Select(_ => Somewhere((x, z) => Free(x, z, 8f, 6f))).Where(g => !float.IsNaN(g.x)).ToList();
+            var groveKinds = groves.Select(_ => GroveKind()).ToList();
             int inGroves = groves.Count == 0 ? 0 : biome.trees * 3 / 4;
             for (int i = 0, tries = 0; i < inGroves && tries < inGroves * 12; tries++)
             {
-                var g = groves[random.Next(groves.Count)];
+                int gi = random.Next(groves.Count); var g = groves[gi];
                 float angle = R() * Mathf.PI * 2, r = 2f + R() * R() * 10f;   // denser at the heart of the grove
                 float x = g.x + Mathf.Cos(angle) * r, z = g.y + Mathf.Sin(angle) * r;
                 if (!Free(x, z)) continue;
-                PlantTree(x, z); i++;
+                PlantTree(x, z, groveKinds[gi]); i++;
             }
             for (int i = trees; i < biome.trees; i++) { var p = Somewhere((x, z) => Free(x, z)); if (!float.IsNaN(p.x)) PlantTree(p.x, p.y); }
             // Boulder clusters; with a creek, half sit along its banks.
@@ -883,8 +907,17 @@ namespace YunJing.Editor
                     tuft.transform.localPosition = At(at.x, at.y) + Vector3.down * .05f;
                     i++; sedges++;
                 }
-            Debug.Log($"QINGXI_DRESSING {blockId} ({biome.name}): {trees} trees in {groves.Count} groves, {rocks} boulders, {sedges} sedge tufts");
+            // The territory's guardian: the Elder World Tree itself, roots and all, on the slope above the yard corner.
+            if (elder && blockId == "TR")
+            {
+                Tree(QingxiElderTrees.Source("ElderGuardian"), root, new Vector3(-17.5f, 0, -17.5f), 9.8f, 40);
+                elders++; trees++;
+            }
+            Debug.Log($"QINGXI_DRESSING {blockId} ({biome.name}): {trees} trees ({elders} elder-tree kin) in {groves.Count} groves, {rocks} boulders, {sedges} sedge tufts");
         }
+
+        static bool elderCopied;
+        static void ElderKit() { if (!elderCopied) { QingxiElderTrees.Copy(); elderCopied = true; } }
 
         // MossBoulderSet_v001 carries no texture and its source colour converts to near black under URP, so the
         // boulders get one weathered grey-green stone material.
@@ -1009,7 +1042,7 @@ namespace YunJing.Editor
         // twin that keeps its colour map, tint and alpha cut-off; the sway height and strength follow the kind of
         // plant. Matched by the name of the placed model, so a bamboo fence or a bamboo tray stays still.
         static readonly (string key, float height, float strength)[] WindKinds = {
-            ("CommonPine", 7f, .12f), ("BambooClump", 6f, .32f), ("QX_WaterReeds", 1.8f, .12f), ("WildShrub", 1.5f, .06f),
+            ("CommonPine", 7f, .12f), ("Elder", 7f, .07f), ("BambooClump", 6f, .32f), ("QX_WaterReeds", 1.8f, .12f), ("WildShrub", 1.5f, .06f),
         };
 
         static int WindFoliage(Transform village)

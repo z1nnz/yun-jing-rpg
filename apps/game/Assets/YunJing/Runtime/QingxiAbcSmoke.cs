@@ -297,7 +297,18 @@ namespace YunJing
                     Teleport(walker, inside.training.qiPost.position + Vector3.back * .9f);
                     yield return Frames(5);
                     Check("cushion offers breathing", (indoorForaging.Prompt(walker.transform.position) ?? "").Contains("蒲團"));
-                    // K23 territory: the backyard has two spirit fields and the practice post.
+                    // The room's door opens onto the hollow in front of the house; the house door leads back in.
+                    if (inside.roomDoor != null && inside.houseDoor != null)
+                    {
+                        Teleport(walker, inside.roomDoor.position);
+                        yield return Frames(5);
+                        Check("the room door leads out to the yard", (indoorForaging.Prompt(walker.transform.position) ?? "").Contains("院子"));
+                        indoorForaging.TryInteract(walker.transform.position, out _);
+                        yield return new WaitForSecondsRealtime(1.4f);
+                        Check($"out in front of the house (at {walker.transform.position}, door {inside.houseDoor.position})", Vector3.Distance(walker.transform.position, inside.houseDoor.position) < 1.5f);
+                        Check("the house door leads in", (indoorForaging.Prompt(walker.transform.position) ?? "").Contains("進屋"));
+                    }
+                    // K23 territory: the hollow has two spirit fields and the practice post.
                     var fields = inside.fields;
                     Check("the territory has two spirit fields", fields != null && fields.fields.Length == 2);
                     if (fields != null && fields.fields.Length == 2)
@@ -326,7 +337,7 @@ namespace YunJing
                         }
                         Teleport(walker, inside.training.blockPost.position + Vector3.back * 1.4f);
                         yield return Frames(5);
-                        Check("the yard practice post offers blocking", (indoorForaging.Prompt(walker.transform.position) ?? "").Contains("武技格擋"));
+                        Check("the practice ground post offers blocking", (indoorForaging.Prompt(walker.transform.position) ?? "").Contains("武技格擋"));
                     }
                     Teleport(walker, inside.exitDoor.position);
                     yield return Frames(5);

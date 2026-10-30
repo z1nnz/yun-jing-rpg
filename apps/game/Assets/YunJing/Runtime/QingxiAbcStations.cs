@@ -17,7 +17,8 @@ namespace YunJing
 
         public Transform alchemyDoor, returnTable;
         public Transform lodgingDoor;              // village: front door of the lodging house
-        public Transform exitDoor, bed, chest;     // lodging interior
+        public Transform exitDoor, bed, chest;     // territory: the wicker gate back to the village, the room's bed and chest
+        public Transform houseDoor, roomDoor;      // territory: the old house's door in the hollow and the room's door
         public QingxiForestEncounter forest;
         public QingxiFirstPerson walker;
         public QingxiTrainingPractice training;   // Johnnnny0823's training drills (posts, or the cushion indoors)
@@ -38,7 +39,7 @@ namespace YunJing
             var foraging = GetComponent<QingxiLocalForaging>();
             if (ReturningFromAlchemy && alchemyDoor != null) { ReturningFromAlchemy = false; Place(alchemyDoor); foraging?.RestoreCarried(); }
             else if (ReturningFromLodging && lodgingDoor != null) { ReturningFromLodging = false; Place(lodgingDoor); foraging?.RestoreCarried("走出借住處，回到青溪村"); }
-            else if (exitDoor != null) foraging?.RestoreCarried("進入借住處");
+            else if (exitDoor != null) foraging?.RestoreCarried("回到自己的領地");
         }
 
         void Place(Transform door)
@@ -57,7 +58,9 @@ namespace YunJing
             var practice = training != null ? training.Prompt(position) : null;
             if (practice != null) return practice;
             if (lodgingDoor != null && Flat(position, lodgingDoor.position) <= Reach) return "F 推門回到自己的領地";
-            if (exitDoor != null && Flat(position, exitDoor.position) <= Reach) return "F 推門出去，回到青溪村";
+            if (exitDoor != null && Flat(position, exitDoor.position) <= Reach) return "F 推開柴門，回到青溪村";
+            if (houseDoor != null && Flat(position, houseDoor.position) <= Reach) return "F 推門進屋";
+            if (roomDoor != null && Flat(position, roomDoor.position) <= Reach) return "F 推門出去，到院子裡";
             if (bed != null && Flat(position, bed.position) <= Reach) return "F 在床上歇息片刻";
             if (chest != null && Flat(position, chest.position) <= Reach) return "F 打開儲物箱";
             if (alchemyDoor != null && Flat(position, alchemyDoor.position) <= Reach) return "F 進入溪畔丹房（joshsu54 煉製玩法，需本機 API）";
@@ -92,6 +95,18 @@ namespace YunJing
                 foraging?.Carry();
                 ReturningFromLodging = true;
                 QingxiSceneFade.ThroughDoor(VillageScene, walker, exitDoor);
+                message = "推門出去";
+                return true;
+            }
+            if (houseDoor != null && roomDoor != null && Flat(position, houseDoor.position) <= Reach)
+            {
+                QingxiSceneFade.Within(walker, roomDoor);
+                message = "推門進屋";
+                return true;
+            }
+            if (houseDoor != null && roomDoor != null && Flat(position, roomDoor.position) <= Reach)
+            {
+                QingxiSceneFade.Within(walker, houseDoor);
                 message = "推門出去";
                 return true;
             }

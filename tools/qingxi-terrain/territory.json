@@ -3,61 +3,353 @@
   "units": "m",
   "block": "TR",
   "note": "新手領地：每個人自己的一方小世界（場景座標，不在大世界地圖上）。從青溪借住處的門進來，出柴門回到大世界。四周是一圈緩坡山和雲霧，北邊一道小泉流過。規劃見 docs/execution/territory-small-world-plan.md。",
-  "bounds": { "minX": -30, "minZ": -30, "sizeX": 60, "sizeZ": 60 },
+  "bounds": {
+    "minX": -30,
+    "minZ": -30,
+    "sizeX": 60,
+    "sizeZ": 60
+  },
   "noise": 0.2,
   "relief": 0.8,
   "terrace": 0,
+  "isolated": true,
   "nodes": [
-    { "id": "tr-gate", "x": 0, "z": -21 },
-    { "id": "tr-door", "x": 0, "z": -9 },
-    { "id": "tr-yard", "x": 0, "z": 3 },
-    { "id": "tr-fields", "x": -9, "z": 6 },
-    { "id": "tr-practice", "x": 10, "z": 9 },
-    { "id": "tr-spring", "x": 2, "z": 17 }
+    {
+      "id": "tr-gate",
+      "x": 0,
+      "z": -21
+    },
+    {
+      "id": "tr-door",
+      "x": 0,
+      "z": -9
+    },
+    {
+      "id": "tr-yard",
+      "x": 0,
+      "z": 3
+    },
+    {
+      "id": "tr-fields",
+      "x": -9,
+      "z": 6
+    },
+    {
+      "id": "tr-practice",
+      "x": 10,
+      "z": 9
+    },
+    {
+      "id": "tr-spring",
+      "x": 2,
+      "z": 13
+    }
   ],
   "edges": [
-    { "id": "tr-front", "from": "tr-gate", "to": "tr-door", "width": 1.8, "surface": "dirt" },
-    { "id": "tr-back", "from": "tr-door", "to": "tr-yard", "width": 1.4, "surface": "dirt" },
-    { "id": "tr-to-fields", "from": "tr-yard", "to": "tr-fields", "width": 1.2, "surface": "dirt" },
-    { "id": "tr-to-practice", "from": "tr-yard", "to": "tr-practice", "width": 1.2, "surface": "dirt" },
-    { "id": "tr-to-spring", "from": "tr-yard", "to": "tr-spring", "width": 1.1, "surface": "dirt" }
+    {
+      "id": "tr-front",
+      "from": "tr-gate",
+      "to": "tr-door",
+      "width": 1.8,
+      "surface": "dirt"
+    },
+    {
+      "id": "tr-back",
+      "from": "tr-door",
+      "to": "tr-yard",
+      "width": 1.4,
+      "surface": "dirt"
+    },
+    {
+      "id": "tr-to-fields",
+      "from": "tr-yard",
+      "to": "tr-fields",
+      "width": 1.2,
+      "surface": "dirt"
+    },
+    {
+      "id": "tr-to-practice",
+      "from": "tr-yard",
+      "to": "tr-practice",
+      "width": 1.2,
+      "surface": "dirt"
+    },
+    {
+      "id": "tr-to-spring",
+      "from": "tr-yard",
+      "to": "tr-spring",
+      "width": 1.1,
+      "surface": "dirt"
+    }
   ],
   "pads": [
-    { "id": "tr-gate", "surface": "dirt", "x": 0, "z": -23, "halfX": 2.5, "halfZ": 1.5, "height": 0.6 },
-    { "id": "tr-home", "surface": "dirt", "x": 0, "z": -3.5, "halfX": 6, "halfZ": 5, "height": 0.4 },
-    { "id": "tr-fields", "surface": "dirt", "x": -10.5, "z": 6.5, "halfX": 5.5, "halfZ": 3.5, "height": 0.3 },
-    { "id": "tr-practice", "surface": "dirt", "x": 11, "z": 7, "halfX": 3.5, "halfZ": 3.5, "height": 0.5 },
-    { "id": "tr-corner", "surface": "dirt", "x": -12, "z": -9, "halfX": 3, "halfZ": 3, "height": 0.4 },
-    { "id": "tr-pavilion", "surface": "dirt", "x": 12, "z": -9, "halfX": 3.5, "halfZ": 3.5, "height": 0.6 }
+    {
+      "id": "tr-gate",
+      "surface": "dirt",
+      "x": 0,
+      "z": -23,
+      "halfX": 2.5,
+      "halfZ": 1.5,
+      "height": 0.6
+    },
+    {
+      "id": "tr-home",
+      "surface": "dirt",
+      "x": 0,
+      "z": -3.5,
+      "halfX": 6,
+      "halfZ": 5,
+      "height": 0.4
+    },
+    {
+      "id": "tr-fields",
+      "surface": "dirt",
+      "x": -10.5,
+      "z": 6.5,
+      "halfX": 5.5,
+      "halfZ": 3.5,
+      "height": 0.3
+    },
+    {
+      "id": "tr-practice",
+      "surface": "dirt",
+      "x": 11,
+      "z": 7,
+      "halfX": 3.5,
+      "halfZ": 3.5,
+      "height": 0.5
+    },
+    {
+      "id": "tr-corner",
+      "surface": "dirt",
+      "x": -12,
+      "z": -9,
+      "halfX": 3,
+      "halfZ": 3,
+      "height": 0.4
+    },
+    {
+      "id": "tr-pavilion",
+      "surface": "dirt",
+      "x": 12,
+      "z": -9,
+      "halfX": 3.5,
+      "halfZ": 3.5,
+      "height": 0.6
+    }
   ],
   "heightPoints": [
-    { "x": 0, "z": 0, "height": 0.4 },
-    { "x": -27, "z": -27, "height": 6.5 },
-    { "x": 27, "z": -27, "height": 7.0 },
-    { "x": -27, "z": 27, "height": 9.0 },
-    { "x": 27, "z": 27, "height": 8.0 },
-    { "x": 0, "z": 28, "height": 7.5 },
-    { "x": -28, "z": 0, "height": 6.0 },
-    { "x": 28, "z": 0, "height": 6.5 }
+    {
+      "x": 0,
+      "z": 0,
+      "height": 0.4
+    },
+    {
+      "x": -28,
+      "z": 28,
+      "height": 9.0
+    }
   ],
   "creek": {
-    "note": "一道小泉：從東北的山坳冒出來，流過院子北邊，往西隱進雲霧。",
+    "note": "一道小泉：從東北的山腳冒出來，沿院子北邊流過，在西邊的平地滲進草裡。地形是一個碗：中間 15 m 平地，往外 13 m 升到山脊，柴門那邊是山口（QingxiVillageTerrain.Bowl）。",
     "width": 1.4,
     "depth": 0.5,
     "bank": 1.5,
     "waterLevel": 0.3,
-    "points": [ 22, 20, 12, 17.5, 4, 17, -6, 18, -16, 16, -24, 18 ]
+    "points": [
+      18,
+      16,
+      12,
+      14.5,
+      4,
+      14,
+      -6,
+      14.6,
+      -13,
+      14
+    ]
   },
   "placements": [
-    { "id": "TR_House", "zone": "tr-home", "role": "青溪借給新人的老房子（外觀；推門進屋內場景）", "model": "Assets/YunJing/Models/CollaboratorWorldV1/StarterHouse_v004.fbx", "x": 0, "z": -3.5, "yaw": 180, "footprint": [ 9.5, 8.5, 6.0 ], "owner": "joshsu54", "status": "placed", "phase": "P1", "collider": "box", "author": "joshsu54", "note": "屋內仍是 QingxiLodgingInterior（B 的 10/31 屋內工作包）" },
-    { "id": "TR_Gate", "zone": "tr-gate", "role": "院子的柴門（出去就是大世界）", "model": "", "x": 0, "z": -23, "yaw": 0, "footprint": [ 3.0, 0.8, 2.4 ], "owner": "core", "status": "needed", "phase": "P1", "collider": "pillars", "author": "", "note": "推開柴門，回到進來的地方（現在是青溪借住處的門口）" },
-    { "id": "TY_Field_1", "zone": "tr-fields", "role": "領地靈田（TY01）", "model": "", "x": -13.3, "z": 6.5, "yaw": 0, "footprint": [ 2.6, 3.4, 0.5 ], "owner": "Johnnnny0823", "status": "needed", "phase": "P1", "collider": "", "author": "", "note": "10/31 A 工作包；種田玩法已接伺服器" },
-    { "id": "TY_Field_2", "zone": "tr-fields", "role": "領地靈田（TY01）", "model": "", "x": -7.7, "z": 6.5, "yaw": 0, "footprint": [ 2.6, 3.4, 0.5 ], "owner": "Johnnnny0823", "status": "needed", "phase": "P1", "collider": "", "author": "", "note": "10/31 A 工作包" },
-    { "id": "TY_Practice", "zone": "tr-practice", "role": "練功地面（TY05）", "model": "", "x": 11, "z": 7, "yaw": 0, "footprint": [ 3.2, 3.2, 0.15 ], "owner": "Johnnnny0823", "status": "needed", "phase": "P1", "collider": "", "author": "", "note": "10/31 A 工作包；木樁放中央" },
-    { "id": "TY_Lantern", "zone": "tr-corner", "role": "院角舊石燈・守燈（TY04）", "model": "", "x": -13, "z": -10, "yaw": 0, "footprint": [ 0.9, 0.9, 2.0 ], "owner": "Johnnnny0823", "status": "needed", "phase": "P1", "collider": "box", "author": "", "note": "10/31 A 工作包；隨種田慢慢變亮" },
-    { "id": "TY_Corner_R", "zone": "tr-corner", "role": "生活雜物組（TY09）", "model": "", "x": -10.5, "z": -8, "yaw": 30, "footprint": [ 1.6, 1.6, 2.0 ], "owner": "Johnnnny0823", "status": "needed", "phase": "P1", "collider": "box", "author": "", "note": "10/31 A 工作包" },
-    { "id": "TY_Rack", "zone": "tr-fields", "role": "晾藥架（TY08）", "model": "", "x": -10.5, "z": 9.2, "yaw": 0, "footprint": [ 0.8, 2.0, 1.8 ], "owner": "Johnnnny0823", "status": "needed", "phase": "P1", "collider": "box", "author": "", "note": "10/31 A 工作包" },
-    { "id": "TR_Pavilion", "zone": "tr-pavilion", "role": "收藏小亭（博古架放這裡；之後可以擴建）", "model": "", "x": 12, "z": -9, "yaw": 0, "footprint": [ 4.0, 4.0, 3.6 ], "owner": "core", "status": "needed", "phase": "P2", "collider": "pillars", "author": "", "note": "見聞道具擺在這裡；朋友來拜訪時會看到" }
+    {
+      "id": "TR_House",
+      "zone": "tr-home",
+      "role": "青溪借給新人的老房子（外觀；推門進屋內場景）",
+      "model": "Assets/YunJing/Models/CollaboratorWorldV1/StarterHouse_v004.fbx",
+      "x": 0,
+      "z": -3.5,
+      "yaw": 180,
+      "footprint": [
+        9.5,
+        8.5,
+        6.0
+      ],
+      "owner": "joshsu54",
+      "status": "placed",
+      "phase": "P1",
+      "collider": "box",
+      "author": "joshsu54",
+      "note": "屋內仍是 QingxiLodgingInterior（B 的 10/31 屋內工作包）"
+    },
+    {
+      "id": "TR_Gate",
+      "zone": "tr-gate",
+      "role": "院子的柴門（出去就是大世界）",
+      "model": "",
+      "x": 0,
+      "z": -23,
+      "yaw": 0,
+      "footprint": [
+        3.0,
+        0.8,
+        2.4
+      ],
+      "owner": "core",
+      "status": "needed",
+      "phase": "P1",
+      "collider": "pillars",
+      "author": "",
+      "note": "推開柴門，回到進來的地方（現在是青溪借住處的門口）"
+    },
+    {
+      "id": "TY_Field_1",
+      "zone": "tr-fields",
+      "role": "領地靈田（TY01）",
+      "model": "",
+      "x": -13.3,
+      "z": 6.5,
+      "yaw": 0,
+      "footprint": [
+        2.6,
+        3.4,
+        0.5
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P1",
+      "collider": "",
+      "author": "",
+      "note": "10/31 A 工作包；種田玩法已接伺服器"
+    },
+    {
+      "id": "TY_Field_2",
+      "zone": "tr-fields",
+      "role": "領地靈田（TY01）",
+      "model": "",
+      "x": -7.7,
+      "z": 6.5,
+      "yaw": 0,
+      "footprint": [
+        2.6,
+        3.4,
+        0.5
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P1",
+      "collider": "",
+      "author": "",
+      "note": "10/31 A 工作包"
+    },
+    {
+      "id": "TY_Practice",
+      "zone": "tr-practice",
+      "role": "練功地面（TY05）",
+      "model": "",
+      "x": 11,
+      "z": 7,
+      "yaw": 0,
+      "footprint": [
+        3.2,
+        3.2,
+        0.15
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P1",
+      "collider": "",
+      "author": "",
+      "note": "10/31 A 工作包；木樁放中央"
+    },
+    {
+      "id": "TY_Lantern",
+      "zone": "tr-corner",
+      "role": "院角舊石燈・守燈（TY04）",
+      "model": "",
+      "x": -13,
+      "z": -10,
+      "yaw": 0,
+      "footprint": [
+        0.9,
+        0.9,
+        2.0
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P1",
+      "collider": "box",
+      "author": "",
+      "note": "10/31 A 工作包；隨種田慢慢變亮"
+    },
+    {
+      "id": "TY_Corner_R",
+      "zone": "tr-corner",
+      "role": "生活雜物組（TY09）",
+      "model": "",
+      "x": -10.5,
+      "z": -8,
+      "yaw": 30,
+      "footprint": [
+        1.6,
+        1.6,
+        2.0
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P1",
+      "collider": "box",
+      "author": "",
+      "note": "10/31 A 工作包"
+    },
+    {
+      "id": "TY_Rack",
+      "zone": "tr-fields",
+      "role": "晾藥架（TY08）",
+      "model": "",
+      "x": -10.5,
+      "z": 9.2,
+      "yaw": 0,
+      "footprint": [
+        0.8,
+        2.0,
+        1.8
+      ],
+      "owner": "Johnnnny0823",
+      "status": "needed",
+      "phase": "P1",
+      "collider": "box",
+      "author": "",
+      "note": "10/31 A 工作包"
+    },
+    {
+      "id": "TR_Pavilion",
+      "zone": "tr-pavilion",
+      "role": "涼亭（入宗後解鎖；朋友來時喝茶、下棋）",
+      "model": "",
+      "x": 12,
+      "z": -9,
+      "yaw": 0,
+      "footprint": [
+        4.0,
+        4.0,
+        3.6
+      ],
+      "owner": "core",
+      "status": "needed",
+      "phase": "P2",
+      "collider": "pillars",
+      "author": "",
+      "note": "博古架在屋內（TI01）；這裡平時是空地"
+    }
   ],
   "herbs": [],
   "fortunes": [],

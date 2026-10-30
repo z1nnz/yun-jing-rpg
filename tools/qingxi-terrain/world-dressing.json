@@ -111,6 +111,17 @@
       "boulders": 0,
       "grass": 0,
       "sedge": 0
+    },
+    {
+      "id": "territory",
+      "name": "自家山坳",
+      "colour": "#C2D8A0",
+      "cover": "四周山坡的松與竹、小泉邊的苔石",
+      "trees": 26,
+      "groves": 5,
+      "boulders": 12,
+      "grass": 60,
+      "sedge": 0
     }
   ],
   "blocks": [
@@ -367,6 +378,16 @@
         "曬魚架",
         "小碼頭",
         "漁船"
+      ]
+    },
+    {
+      "id": "TR",
+      "biome": "territory",
+      "status": "built",
+      "fill": [
+        "四周緩坡山上的松林",
+        "小泉邊的竹叢與苔石",
+        "院子保持空曠，留給田和練功地"
       ]
     }
   ]

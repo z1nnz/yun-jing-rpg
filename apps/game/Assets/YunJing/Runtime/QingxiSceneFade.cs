@@ -31,6 +31,32 @@ namespace YunJing
 
         public static void Blink() { if (!Busy) Runner().StartCoroutine(runner.BlinkRoutine()); }
 
+        /// <summary>A door inside one scene (the territory's house and room): fade out, stand the player at the
+        /// other door looking the way it faces, fade back in.</summary>
+        public static void Within(QingxiFirstPerson walker, Transform to)
+        {
+            if (Busy || walker == null || to == null) return;
+            Runner().StartCoroutine(runner.WithinRoutine(walker, to));
+        }
+
+        IEnumerator WithinRoutine(QingxiFirstPerson walker, Transform to)
+        {
+            Busy = true;
+            walker.SetMenuOpen(true);
+            for (float t = 0; t < .4f; t += Time.unscaledDeltaTime) { alpha = t / .4f; yield return null; }
+            alpha = 1;
+            var body = walker.GetComponent<CharacterController>();
+            if (body != null) body.enabled = false;
+            walker.transform.position = to.position + Vector3.up * .05f;
+            walker.transform.rotation = Quaternion.LookRotation(to.forward);
+            if (body != null) body.enabled = true;
+            yield return null;
+            walker.SetMenuOpen(false);
+            for (float t = 0; t < .4f; t += Time.unscaledDeltaTime) { alpha = 1 - t / .4f; yield return null; }
+            alpha = 0;
+            Busy = false;
+        }
+
         IEnumerator Door(string scene, QingxiFirstPerson walker, Transform door)
         {
             Busy = true;

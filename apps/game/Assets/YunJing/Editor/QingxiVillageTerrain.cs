@@ -67,6 +67,8 @@ namespace YunJing.Editor
             public Flat[] flats;              // ground levelled under built works that are not on a pad (the old channel)
             public float relief;              // metres of broad rolling relief on open ground (roads, pads, creek stay level)
             public float terrace;             // Liyue-style terrace step (m) on the relief; 0 for none
+            public string block;              // block id; names the generated creek water mesh
+            public bool isolated;             // a pocket world of its own (the territory): no blend to the shared world height
         }
         [Serializable] public class Flat { public string id, note; public float x, z, halfX, halfZ, height, blend = 1.5f; }
         [Serializable] public class CreekKitSpan { public float from, to; public string pieces, note; }
@@ -136,11 +138,12 @@ namespace YunJing.Editor
         {
             var area = layout.bounds;
             float border = Mathf.Min(Mathf.Min(x - area.minX, area.minX + area.sizeX - x), Mathf.Min(z - area.minZ, area.minZ + area.sizeZ - z));
-            return Mathf.Lerp(WorldBase(x, z), BaseHeight(layout, x, z), Smooth(1f, 12f, border));
+            return layout.isolated ? BaseHeight(layout, x, z) : Mathf.Lerp(WorldBase(x, z), BaseHeight(layout, x, z), Smooth(1f, 12f, border));
         }
 
         internal static float BaseHeight(Layout layout, float x, float z)
         {
+            if (layout.isolated) return Bowl(layout, x, z);
             float sum = 0, weights = 0;
             void Add(float px, float pz, float h)
             {
@@ -151,6 +154,24 @@ namespace YunJing.Editor
             foreach (var p in layout.pads) Add(p.x, p.z, p.height);
             foreach (var p in layout.heightPoints ?? new HeightPoint[0]) Add(p.x, p.z, p.height);
             return weights > 0 ? sum / weights : 0;
+        }
+
+        // The territory hollow: a flat yard (the lowest height point) out to 15 m from the centre, rising over the next
+        // 13 m to an uneven rim. The rim height wanders between the outer height points' range, so the skyline has
+        // low saddles and higher shoulders instead of separate domes.
+        static float Bowl(Layout layout, float x, float z)
+        {
+            var a = layout.bounds;
+            float cx = a.minX + a.sizeX / 2, cz = a.minZ + a.sizeZ / 2, dx = Mathf.Abs(x - cx), dz = Mathf.Abs(z - cz);
+            float r = Mathf.Pow(Mathf.Pow(dx, 4) + Mathf.Pow(dz, 4), .25f);   // a rounded square, like the bounds
+            var points = layout.heightPoints ?? new HeightPoint[0];
+            float floor = points.Length > 0 ? points.Min(p => p.height) : 0, top = points.Length > 0 ? points.Max(p => p.height) : 6;
+            float angle = Mathf.Atan2(z - cz, x - cx), wander = Mathf.PerlinNoise(Mathf.Cos(angle) * 1.6f + 40f, Mathf.Sin(angle) * 1.6f + 7.5f);   // no seam where the angle wraps
+            float rim = Mathf.Lerp(top * .65f, top, wander);
+            // A saddle in the south rim where the path leaves through the wicker gate.
+            float fromSouth = Mathf.Abs(Mathf.DeltaAngle(angle * Mathf.Rad2Deg, -90f));
+            rim = Mathf.Lerp(floor + .6f, rim, Smooth(6f, 30f, fromSouth));
+            return Mathf.Lerp(floor, rim, Smooth(15f, 28f, r));
         }
 
         // Signed distance to the road union (negative inside), and the centre-line height nearest to the point.
@@ -213,7 +234,7 @@ namespace YunJing.Editor
             h = Mathf.Lerp(roadHeight, h, Smooth(0f, RoadBlend, road));
             var area = layout.bounds;
             float border = Mathf.Min(Mathf.Min(x - area.minX, area.minX + area.sizeX - x), Mathf.Min(z - area.minZ, area.minZ + area.sizeZ - z));
-            h = Mathf.Lerp(WorldBase(x, z), h, Smooth(1f, 12f, border));
+            if (!layout.isolated) h = Mathf.Lerp(WorldBase(x, z), h, Smooth(1f, 12f, border));
             // Creek: a flat bed (depth below the land at the centre line) easing up the banks.
             float creek = CreekDistance(layout, x, z, out float creekLand);
             if (!float.IsPositiveInfinity(creek))
@@ -305,7 +326,7 @@ namespace YunJing.Editor
                 // Steep ground shows the warm ochre rock; open meadow alternates lush and sun-dried patches.
                 float step = area.sizeX / PaintResolution;
                 float slope = Mathf.Max(Mathf.Abs(Height(layout, wx + step, wz) - Height(layout, wx - step, wz)), Mathf.Abs(Height(layout, wx, wz + step) - Height(layout, wx, wz - step))) / (2 * step);
-                float rock = Smooth(.45f, .8f, slope + edgeNoise * .3f) * (1f - dirt);
+                float rock = (layout.isolated ? Smooth(.85f, 1.2f, slope + edgeNoise * .3f) : Smooth(.45f, .8f, slope + edgeNoise * .3f)) * (1f - dirt);   // the hollow's slopes stay grassy
                 float dryPatch = Smooth(.5f, .68f, Mathf.PerlinNoise(wx * .035f + 71f, wz * .035f + 9f) + edgeNoise * .4f);
                 plaza *= 1f - dirt * .5f;
                 float open = Mathf.Max(0, 1f - dirt - plaza - forest - gravel - rock);
