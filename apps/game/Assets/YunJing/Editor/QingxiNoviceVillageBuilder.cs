@@ -51,6 +51,7 @@ namespace YunJing.Editor
             Boundary(village);
 
             var player = Player(village, At(0, -22));
+            player.AddComponent<QingxiNoviceArrival>();   // day 1: a newcomer's first arrival is on the road by the tea pavilion
             var zones = QingxiCollaboratorZonesBuilder.PlaceAt(player,
                 At(0, 24), 0,                                     // A: shelter (local -z) faces the plaza
                 At(-15, -2), Facing(new Vector3(-15, 0, -2), Vector3.zero),
@@ -752,6 +753,7 @@ namespace YunJing.Editor
                 Creek(root);
                 if (upstream) QingxiWaterheadA.RiverKit(root, layout);
                 if (upstream && layout.placements.Any(p => p.id == "D3_CrackedSluice")) UpstreamClues(root);
+                if (blockId == "A2") TeaPavilion(root);
                 Dressing(root, blockId);
                 Debug.Log("QINGXI_WIND (block): " + WindFoliage(root) + " foliage renderers sway");
             }
@@ -787,11 +789,24 @@ namespace YunJing.Editor
             };
         }
 
+        // Day 1 (QingxiNoviceDays): the old man at the roadside tea pavilion (A2_TeaPavilion), shown as a planned slot
+        // until his model exists, and the place to sit with him by the pavilion's door.
+        static void TeaPavilion(Transform parent)
+        {
+            var spots = new GameObject("DayOne TeaPavilion (QingxiDayOneSpots)").AddComponent<QingxiDayOneSpots>();
+            spots.transform.SetParent(parent, false);
+            var door = layout.nodes.First(n => n.id == "a2-tea-door");
+            spots.teaPoint = new GameObject("Tea seat").transform; spots.teaPoint.SetParent(spots.transform, false);
+            spots.teaPoint.position = At(door.x - 2.5f, door.z - 1.5f);
+            PlannedSlot(spots.transform, new QingxiVillageTerrain.Placement { id = "A2_TeaMaster", role = "茶亭老人（NPC）", owner = "core", status = "needed", yaw = 120, footprint = new[] { .6f, .6f, 1.65f } },
+                At(door.x - 4.2f, door.z - 2.2f));
+        }
+
         // The dressing plan (tools/qingxi-terrain/world-dressing.json, docs/execution/novice-world-dressing-plan.md).
         [Serializable] class DressingBiome { public string id, name; public int trees, groves, boulders, grass, sedge; }
         [Serializable] class SpeciesWeight { public string kind; public float weight; }
         [Serializable] class Landmark { public string kind, note; public float x, z, yaw, height, sink; }
-        [Serializable] class DressingBlock { public string id, biome, status, waterside; public SpeciesWeight[] species; public Landmark[] landmarks; }
+        [Serializable] class DressingBlock { public string id, biome, status, waterside; public bool noBamboo; public SpeciesWeight[] species; public Landmark[] landmarks; }
         [Serializable] class DressingPlan { public DressingBiome[] biomes; public DressingBlock[] blocks; }
 
         // Groves, not a grid: trees gather in a few groves with open ground between them, singles in the gaps;
@@ -844,7 +859,8 @@ namespace YunJing.Editor
             void PlantTree(float x, float z, string kind = "")
             {
                 float wet = QingxiVillageTerrain.CreekDistance(layout, x, z, out _);
-                bool cane = wet < 16f ? R() < .75f : R() < .15f;
+                // Bamboo only where the block allows it (the old forest is cypress alone).
+                bool cane = !entry.noBamboo && (wet < 16f ? R() < .75f : R() < .15f);
                 if (waterside != null && wet < 16f && R() < .4f) { cane = false; kind = waterside; }   // willows lean over the water
                 else if (kind == "") kind = Pick();
                 if (cane) Tree(bamboo, root, new Vector3(x, 0, z), 4.2f + R() * 1.8f, R() * 360);

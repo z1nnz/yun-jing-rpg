@@ -46,6 +46,22 @@ namespace YunJing.Editor
             var result = new QingxiCollaboratorZonesBuilder.Result();
             var practicePost = QingxiCollaboratorZonesBuilder.PlaceTrainingProp("agility-post", world, Ground(practice.x, practice.y), 180, result).transform;
             TerritorySlots(room);
+            // Day 1: the plum seedling from the tea pavilion goes in front of the house, beside the path.
+            var dayOne = new GameObject("DayOne PlumSpot (QingxiDayOneSpots)").AddComponent<QingxiDayOneSpots>();
+            dayOne.transform.SetParent(world, false);
+            dayOne.plumPoint = new GameObject("Plum spot").transform; dayOne.plumPoint.SetParent(dayOne.transform, false);
+            dayOne.plumPoint.position = Ground(-3.2f, -11.5f);
+            var plum = QingxiElderTrees.Available ? QingxiElderTrees.Source("ElderPlum") : null;
+            if (plum != null)
+            {
+                var seedling = (GameObject)PrefabUtility.InstantiatePrefab(plum);
+                seedling.name = "Planted plum seedling - ElderPlum";
+                seedling.transform.SetParent(dayOne.transform, false);
+                seedling.transform.localRotation = plum.transform.localRotation;
+                seedling.transform.localScale *= 1.8f / 5.87f;   // a young tree, 1.8 m (the modelled plum is 5.87 m)
+                seedling.transform.position = dayOne.plumPoint.position;
+                dayOne.plumTree = seedling;
+            }
 
             var bed = Furniture("DiscipleBed", "DiscipleBed_v001", room, new Vector3(-W / 2 + .75f, 0, 1.0f), 90f);
             var chest = Furniture("StorageChest", "StorageChest_v001", room, new Vector3(W / 2 - .9f, 0, D / 2 - .6f), 180f);

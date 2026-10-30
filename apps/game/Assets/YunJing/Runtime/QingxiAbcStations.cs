@@ -57,6 +57,7 @@ namespace YunJing
         {
             var practice = training != null ? training.Prompt(position) : null;
             if (practice != null) return practice;
+            foreach (var spot in QingxiDayOneSpots.All) { var line = spot.Prompt(position); if (line != null) return line; }
             if (lodgingDoor != null && Flat(position, lodgingDoor.position) <= Reach) return "F 推門回到自己的領地";
             if (exitDoor != null && Flat(position, exitDoor.position) <= Reach) return "F 推開柴門，回到青溪村";
             if (houseDoor != null && Flat(position, houseDoor.position) <= Reach) return "F 推門進屋";
@@ -81,11 +82,13 @@ namespace YunJing
         {
             message = null;
             if (training != null && training.TryInteract(position, out message)) return true;
+            foreach (var spot in QingxiDayOneSpots.All) if (spot.TryInteract(position, out message)) return true;
             var foraging = GetComponent<QingxiLocalForaging>();
             if (lodgingDoor != null && Flat(position, lodgingDoor.position) <= Reach)
             {
                 if (!Application.CanStreamedLevelBeLoaded(LodgingScene)) { message = "借住處室內未包含在這個建置"; return true; }
                 foraging?.Carry();
+                QingxiNoviceDays.Mark("house");   // day 1: the empty house Qingxi lends the newcomer
                 QingxiSceneFade.ThroughDoor(LodgingScene, walker, lodgingDoor);
                 message = "推門進屋";
                 return true;
@@ -113,7 +116,7 @@ namespace YunJing
             if (bed != null && Flat(position, bed.position) <= Reach)
             {
                 QingxiSceneFade.Blink();
-                message = "歇息片刻，氣息平穩。（本機演練，不會跳過現實時間）";
+                message = QingxiNoviceDays.Rest() ?? "歇息片刻，氣息平穩。（本機演練，不會跳過現實時間）";
                 return true;
             }
             if (chest != null && Flat(position, chest.position) <= Reach)

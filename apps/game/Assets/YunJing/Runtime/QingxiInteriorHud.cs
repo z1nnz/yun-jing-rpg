@@ -19,6 +19,8 @@ namespace YunJing
             var previous = GUI.matrix;
             GUI.matrix = Matrix4x4.Scale(Vector3.one * scale);
             string prompt = stations != null ? stations.Prompt(walker.transform.position) : null;
+            var today = QingxiNoviceDays.Objective;
+            if (today != null) GUI.Box(new Rect(16, 96, 420, 30), $"新手第 {QingxiNoviceDays.Day} 天：{today}");
             GUI.Box(new Rect(16, 16, 420, 74), $"{place}\n{prompt ?? "WASD／搖桿 走動　F 互動"}\n{walker.LastLog}");
             GUI.matrix = previous;
         }

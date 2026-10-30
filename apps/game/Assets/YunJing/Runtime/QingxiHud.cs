@@ -24,7 +24,7 @@ namespace YunJing
         Button journalButton;
         Font font;
         Canvas hudCanvas;
-        Text fortuneText;
+        Text fortuneText, guideTitle, guideBody;
         bool open;
         int width, height;
 
@@ -61,9 +61,9 @@ namespace YunJing
 
             var guide = Panel("Freedom Guide", safe, new Vector2(1, 1), new Vector2(1, 1),
                 new Vector2(-22, -22), new Vector2(312, 108), new Color(.035f, .07f, .09f, .78f));
-            Label("Guide Title", guide, "現在可以做", 19, FontStyle.Bold,
+            guideTitle = Label("Guide Title", guide, "現在可以做", 19, FontStyle.Bold,
                 new Vector2(16, -12), new Vector2(270, 28), new Color(.94f, .87f, .66f));
-            Label("Guide Body", guide, "觀察線索 · 練氣 · 採藥 · 煉製 · 追兔 · 逛坊市", 15, FontStyle.Normal,
+            guideBody = Label("Guide Body", guide, "觀察線索 · 練氣 · 採藥 · 煉製 · 追兔 · 逛坊市", 15, FontStyle.Normal,
                 new Vector2(16, -48), new Vector2(280, 44), new Color(.88f, .91f, .88f));
 
             journalButton = Action("Journey Button", safe, "旅途手札  [M]", new Vector2(1, 1),
@@ -152,6 +152,10 @@ namespace YunJing
             if (foraging != null && interactionText != null)
                 interactionText.text = foraging.Prompt(walker.transform.position);
             UpdateCollaboratorPanels();
+            // The novice days (QingxiNoviceDays): today's thread, when there is one.
+            var today = QingxiNoviceDays.Objective;
+            if (guideTitle != null) guideTitle.text = today != null ? $"新手第 {QingxiNoviceDays.Day} 天" : "現在可以做";
+            if (guideBody != null) guideBody.text = today ?? "觀察線索 · 練氣 · 採藥 · 煉製 · 追兔 · 逛坊市";
         }
 
         void RefreshForaging()

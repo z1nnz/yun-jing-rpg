@@ -263,11 +263,7 @@
       "species": [
         {
           "kind": "ElderCypress",
-          "weight": 0.55
-        },
-        {
-          "kind": "pine",
-          "weight": 0.45
+          "weight": 1.0
         }
       ],
       "waterside": "",
@@ -344,7 +340,8 @@
           "note": "七棵柏之七：七個同學在斷脈之夜以後為師父種的，圍著建木",
           "sink": 0
         }
-      ]
+      ],
+      "noBamboo": true
     },
     {
       "id": "D2",
