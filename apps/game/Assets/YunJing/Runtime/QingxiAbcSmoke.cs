@@ -222,6 +222,38 @@ namespace YunJing
                 yield return Frames(5);
             }
 
+            // D3 upstream valley (PR #45): through A3's north path; the brook tiles and the clue spots stream in.
+            var d3 = streamer != null ? streamer.blocks.FirstOrDefault(b => b.id == "D3") : null;
+            if (d3 != null && Application.CanStreamedLevelBeLoaded(d3.scene))
+            {
+                Teleport(walker, new Vector3(-48, 2, 8));
+                float until = Time.realtimeSinceStartup + 15;
+                while (!streamer.IsLoaded("A3") && Time.realtimeSinceStartup < until) yield return null;
+                yield return Frames(3);
+                var north = Physics.RaycastAll(new Vector3(-66, 60, 46), Vector3.down, 200f, ~0, QueryTriggerInteraction.Ignore).FirstOrDefault(h => h.collider is TerrainCollider);
+                if (north.collider != null) Teleport(walker, north.point);
+                until = Time.realtimeSinceStartup + 20;
+                while ((!streamer.IsLoaded("D3") || QingxiUpstreamClues.Current == null) && Time.realtimeSinceStartup < until) yield return null;
+                Check("walking up A3's north path streams in the upstream valley D3", streamer.IsLoaded("D3") && QingxiUpstreamClues.Current != null);
+                Check("the upstream brook is laid with PR #45 river tiles", GameObject.Find("UpstreamBrook (creekKit, PR #45)") is GameObject brook && brook.transform.childCount >= 15);
+                var clues = QingxiUpstreamClues.Current;
+                if (clues != null)
+                {
+                    foreach (var id in new[] { "cracked_sluice", "nursery_tracks" })
+                    {
+                        var spot = clues.points.First(p => p.id == id).at.position;
+                        var ground = Physics.RaycastAll(spot + Vector3.up * 40, Vector3.down, 80f, ~0, QueryTriggerInteraction.Ignore).Where(h => !h.collider.isTrigger).OrderByDescending(h => h.point.y).FirstOrDefault();
+                        Teleport(walker, ground.collider != null ? ground.point : spot);
+                        yield return Frames(20);
+                        var prompt = stations.Prompt(walker.transform.position);
+                        bool read = stations.TryInteract(walker.transform.position, out var reading);
+                        Check($"upstream clue {id}: prompt \"{prompt}\", reads \"{reading}\"", read && !string.IsNullOrEmpty(reading) && QingxiUpstreamClues.Seen().Contains(id));
+                    }
+                }
+                Spot(walker, "村口");
+                yield return Frames(5);
+            }
+
             // B: the door loads joshsu54's AlchemyRoom scene; Backspace / the button returns to the door.
             Spot(walker, "溪畔丹房");
             yield return Frames(5);

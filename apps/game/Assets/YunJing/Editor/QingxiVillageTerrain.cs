@@ -14,7 +14,7 @@ namespace YunJing.Editor
     {
         const string Generated = "Assets/YunJing/Generated";
         const int HeightResolution = 257, PaintResolution = 256;
-        const float BaseY = -1f, HeightRange = 8f;
+        const float BaseY = -1f, HeightRange = 24f;   // D3 climbs to 15 m; 16-bit heights keep sub-millimetre steps
         const float RoadBlend = 2.5f, PadBlend = 3f;
 
         [Serializable] public class Area { public float minX, minZ, sizeX, sizeZ; }
@@ -62,7 +62,9 @@ namespace YunJing.Editor
             public Herb[] herbs;
             public FortuneSpot[] fortunes;   // 機緣 (K4): hidden finds, never on the map
             public Creek creek;
+            public CreekKitSpan[] creekKit;   // D3: which river tiles (PR #45) line each stretch of the creek
         }
+        [Serializable] public class CreekKitSpan { public float from, to; public string pieces, note; }
 
         // Distance to the creek's centre line, and the land height there (the bed follows the land, so the
         // water runs downhill). Returns +infinity when the layout has no creek.
@@ -117,7 +119,7 @@ namespace YunJing.Editor
         }
 
         // Inverse-distance blend of the pad heights and the extra height points: smooth, no ridges.
-        static float BaseHeight(Layout layout, float x, float z)
+        internal static float BaseHeight(Layout layout, float x, float z)
         {
             float sum = 0, weights = 0;
             void Add(float px, float pz, float h)
@@ -186,6 +188,10 @@ namespace YunJing.Editor
             {
                 var c = layout.creek;
                 float bed = creekLand - c.depth + .05f * (Mathf.PerlinNoise(x * .4f, z * .4f) - .5f);
+                // D3: the river tiles (PR #45) are 7 m wide and level across, so the corridor under them is a flat
+                // shelf at the centre-line land (no noise, no side slope) that eases back into the hillside.
+                if (layout.creekKit != null && layout.creekKit.Length > 0)
+                    h = Mathf.Lerp(creekLand, h, Smooth(c.width * .5f + c.bank + .6f, c.width * .5f + c.bank + 4.6f, creek));
                 h = Mathf.Lerp(bed, h, Smooth(c.width * .35f, c.width * .5f + c.bank, creek));
             }
             // Pads last: each zone stands on one flat platform at its stated height.

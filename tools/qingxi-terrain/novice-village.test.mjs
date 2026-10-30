@@ -161,9 +161,9 @@ for (const [name, layout] of Object.entries(blocks)) {
 }
 
 // Blocks join: a road that leaves one block must continue in the next within a metre of the border.
-test('roads continue across block borders (A1 → A2 south, A1 → A3 west)', () => {
+test('roads continue across block borders (A1 → A2 south, A1 → A3 west, A3 → D3 north)', () => {
   const node = (layout, id) => layout.nodes.find(n => n.id === id);
-  for (const [a, aid, b, bid] of [['A1', 'village-entry', 'A2', 'a2-north'], ['A1', 'west-road', 'A3', 'a3-east']]) {
+  for (const [a, aid, b, bid] of [['A1', 'village-entry', 'A2', 'a2-north'], ['A1', 'west-road', 'A3', 'a3-east'], ['A3', 'a3-north', 'D3', 'd3-south']]) {
     const p = node(blocks[a], aid), q = node(blocks[b], bid);
     assert.ok(Math.hypot(p.x - q.x, p.z - q.z) <= 1, `${a}.${aid} and ${b}.${bid} do not meet`);
   }

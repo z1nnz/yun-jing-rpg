@@ -64,6 +64,8 @@ namespace YunJing
             if (forest != null && forest.NearLadder(position)) return forest.Climbed ? "F 爬下觀察台" : "F 爬上觀察台（安全點）";
             var field = fields != null ? fields.Prompt(position) : null;
             if (field != null) return field;
+            var clue = QingxiUpstreamClues.Current != null ? QingxiUpstreamClues.Current.Prompt(position) : null;
+            if (clue != null) return clue;
             return fortunes != null ? fortunes.Prompt(position) : null;
         }
 
@@ -116,6 +118,7 @@ namespace YunJing
             }
             if (forest != null && forest.NearLadder(position)) { message = forest.ToggleClimb(); return true; }
             if (fields != null && fields.TryInteract(position, out message)) return true;
+            if (QingxiUpstreamClues.Current != null && QingxiUpstreamClues.Current.TryInteract(position, out message)) return true;
             return fortunes != null && fortunes.TryInteract(position, out message);
         }
     }

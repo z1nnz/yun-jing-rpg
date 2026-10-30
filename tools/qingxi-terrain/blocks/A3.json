@@ -50,6 +50,11 @@
       "id": "a3-fish-path",
       "x": -110.5,
       "z": -14
+    },
+    {
+      "id": "a3-north",
+      "x": -66,
+      "z": 49.5
     }
   ],
   "edges": [
@@ -92,6 +97,13 @@
       "id": "a3-to-fish",
       "from": "a3-bank-west",
       "to": "a3-fish-path",
+      "width": 2.0,
+      "surface": "dirt"
+    },
+    {
+      "id": "a3-to-upstream",
+      "from": "a3-fork",
+      "to": "a3-north",
       "width": 2.0,
       "surface": "dirt"
     }

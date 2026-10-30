@@ -119,6 +119,7 @@ namespace YunJing.Editor
             new GameObject("Qingxi ABC build smoke (--abc-smoke)").AddComponent<QingxiAbcSmoke>();
             new GameObject("Qingxi Server Link (K7)").AddComponent<QingxiServerLink>();   // online when the game server runs, offline otherwise
             var streamer = new GameObject("Qingxi Block Streamer (K5)").AddComponent<QingxiBlockStreamer>();
+            streamer.gameObject.AddComponent<QingxiUpstreamShots>();   // --upstream-shots: review views of D3
             streamer.blocks = QingxiBlockBuilder.Blocks.Select(b =>
             {
                 var a = QingxiVillageTerrain.Load($"tools/qingxi-terrain/blocks/{b.id}.json").bounds;
@@ -434,6 +435,8 @@ namespace YunJing.Editor
         {
             var c = layout.creek;
             if (c == null || c.Count < 2) return;
+            // D3: the river tiles of PR #45 carry their own water, banks and grass (QingxiWaterheadA.RiverKit).
+            if (layout.creekKit != null && layout.creekKit.Length > 0) return;
             var root = new GameObject("WestCreek (novice-village.json)").transform; root.SetParent(village, false);
 
             // Resample the centre line every metre so the ribbon bends smoothly.
@@ -604,6 +607,8 @@ namespace YunJing.Editor
                 var model = (GameObject)PrefabUtility.InstantiatePrefab(source);
                 model.name = $"{p.id} - {p.author}";
                 model.transform.SetParent(root, false);
+                // PR #45 pieces: LOD group and their own convex collision shells.
+                if (QingxiWaterheadA.Owns(p.model)) QingxiWaterheadA.Prepare(model, walkable: false);
                 model.transform.localRotation = Quaternion.Euler(0, p.yaw, 0) * source.transform.localRotation;
                 if (p.scale > 0) model.transform.localScale *= p.scale;
                 model.transform.localPosition = At(p.x, p.z);
@@ -722,12 +727,43 @@ namespace YunJing.Editor
             layout = blockLayout; terrain = blockTerrain;
             try
             {
+                bool upstream = layout.creekKit != null && layout.creekKit.Length > 0;
+                if (upstream) QingxiWaterheadA.Copy();
                 Placements(root);
                 Creek(root);
+                if (upstream) { QingxiWaterheadA.RiverKit(root, layout); UpstreamClues(root); }
                 BlockTrees(root);
                 Debug.Log("QINGXI_WIND (block): " + WindFoliage(root) + " foliage renderers sway");
             }
             finally { layout = oldLayout; terrain = oldTerrain; }
+        }
+
+        // D3: the three places where the upstream clues are read (server waterline.json observations). The
+        // cracked sluice and the nursery tracks are their slots; the silt is read from the bank beside the silt bar.
+        static void UpstreamClues(Transform parent)
+        {
+            var clues = new GameObject("UpstreamClues (observe-upstream)").AddComponent<QingxiUpstreamClues>();
+            clues.transform.SetParent(parent, false);
+            Transform Point(string name, Vector2 at)
+            {
+                var t = new GameObject("Clue " + name).transform; t.SetParent(clues.transform, false);
+                t.position = At(at.x, at.y); return t;
+            }
+            Vector2 Slot(string id)
+            {
+                var p = layout.placements.FirstOrDefault(s => s.id == id);
+                if (p == null) throw new InvalidDataException("D3 slot missing: " + id);
+                return new Vector2(p.x, p.z);
+            }
+            var silt = QingxiWaterheadA.SiltPoint(layout);
+            var trail = layout.nodes.OrderBy(n => Vector2.Distance(new Vector2(n.x, n.z), silt)).First();
+            var bank = silt + (new Vector2(trail.x, trail.z) - silt).normalized * 3.2f;
+            clues.points = new[]
+            {
+                new QingxiUpstreamClues.Clue { id = "cracked_sluice", at = Point("cracked_sluice", Slot("D3_CrackedSluice")) },
+                new QingxiUpstreamClues.Clue { id = "silt_buildup", at = Point("silt_buildup", bank) },
+                new QingxiUpstreamClues.Clue { id = "nursery_tracks", at = Point("nursery_tracks", Slot("D3_NurseryTracks")) },
+            };
         }
 
         // A loose grid with jitter: pines on dry ground, bamboo near water, nothing on pads, roads, the brook or

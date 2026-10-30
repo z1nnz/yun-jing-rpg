@@ -65,5 +65,47 @@ namespace YunJing.Editor
             Shot("24-a1-to-a3-seam", new Vector3(-36, 12, 22), new Vector3(-62, 0, 6));
             Debug.Log($"QINGXI_VILLAGE_CAPTURED to {dir} (pipeline: {(GraphicsSettings.currentRenderPipeline != null ? GraphicsSettings.currentRenderPipeline.name : "built-in")})");
         }
+
+        // D3 upstream valley (PR #45): the brook tiles, the clue spots and the way in from A3, in the editor.
+        public static void CaptureUpstream()
+        {
+            EditorSceneManager.OpenScene(QingxiNoviceVillageBuilder.ScenePath);
+            foreach (var id in new[] { "A3", "D3" }) EditorSceneManager.OpenScene(QingxiBlockBuilder.ScenePath(id), OpenSceneMode.Additive);
+            Physics.SyncTransforms();
+            var dir = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "..", "artifacts", "qingxi-upstream-d3"));
+            Directory.CreateDirectory(dir);
+            var camera = new GameObject("Review Camera").AddComponent<Camera>();
+            camera.fieldOfView = 55; camera.nearClipPlane = .05f; camera.farClipPlane = 400;
+            UnityEngine.Rendering.Universal.CameraExtensions.GetUniversalAdditionalCameraData(camera).renderPostProcessing = true;
+            var target = new RenderTexture(1600, 900, 24) { antiAliasing = 4 };
+            camera.targetTexture = target;
+            // Heights are above whatever is underfoot (terrain or the river tiles), so eye-level shots stand on the bank.
+            Vector3 Lift(Vector3 p)
+            {
+                var hits = Physics.RaycastAll(new Vector3(p.x, 200, p.z), Vector3.down, 400).Where(h => !h.collider.isTrigger).ToArray();
+                return p + Vector3.up * (hits.Length > 0 ? hits.Max(h => h.point.y) : 0);
+            }
+            void Shot(string file, Vector3 from, Vector3 at)
+            {
+                camera.transform.position = Lift(from); camera.transform.LookAt(Lift(at)); camera.Render();
+                RenderTexture.active = target;
+                var image = new Texture2D(target.width, target.height, TextureFormat.RGB24, false);
+                image.ReadPixels(new Rect(0, 0, target.width, target.height), 0, 0); image.Apply();
+                File.WriteAllBytes(Path.Combine(dir, file + ".png"), image.EncodeToPNG());
+                RenderTexture.active = null; Object.DestroyImmediate(image);
+            }
+            Shot("00-overview", new Vector3(-40, 60, 30), new Vector3(-92, 0, 98));
+            Shot("01-way-in-from-a3", new Vector3(-66, 1.7f, 40), new Vector3(-72, 1.2f, 66));
+            Shot("02-brook-downstream-eye", new Vector3(-56, 1.7f, 56), new Vector3(-66, .5f, 72));
+            Shot("03-silt-narrows", new Vector3(-66, 3.5f, 68), new Vector3(-74, 0, 82));
+            Shot("04-cracked-sluice", new Vector3(-82, 2.5f, 77), new Vector3(-86.1f, .3f, 83.1f));
+            Shot("05-gauge-and-marker", new Vector3(-72, 2.2f, 66), new Vector3(-77.5f, .6f, 68.1f));
+            Shot("06-crossing-to-nursery", new Vector3(-94, 2.5f, 96), new Vector3(-86, .3f, 108));
+            Shot("07-nursery-tracks", new Vector3(-82, 2.2f, 106), new Vector3(-85.6f, 0, 110.3f));
+            Shot("08-ruin-to-source", new Vector3(-110, 4, 98), new Vector3(-128, 1, 120));
+            Shot("09-resonance-stone", new Vector3(-126, 2, 117), new Vector3(-129.2f, .4f, 122.6f));
+            Shot("10-brook-above", new Vector3(-70, 22, 70), new Vector3(-95, 0, 102));
+            Debug.Log($"QINGXI_UPSTREAM_CAPTURED to {dir}");
+        }
     }
 }
