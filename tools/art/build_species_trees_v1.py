@@ -97,7 +97,7 @@ SPECIES = {
     # squashes the clump vertically (pine pads).
     # 樟 (camphor.png): a massive twisting trunk leaning, splitting into four great winding limbs; a broad crown of
     # many leafy clumps.
-    'Camphor': dict(height=12, trunk=(4.2, 1.0), lean=.3, bend=.95, gnarl=.12, zig=0, split=True,
+    'Camphor': dict(barkref='camphor', height=12, trunk=(4.2, 1.0), lean=.3, bend=.95, gnarl=.12, zig=0, split=True,
                     levels=[dict(n=6, angle=(42, 68), length=1.6, radius=.7, start=.62, gnarl=.14, up=.2),
                             dict(n=5, angle=(30, 55), length=.55, radius=.6, start=.2, gnarl=.22, up=.12),
                             dict(n=4, angle=(30, 60), length=.48, radius=.55, start=.25, gnarl=.25, up=.1),
@@ -106,7 +106,7 @@ SPECIES = {
                     bark=dict(tint='#8a6a4a', contrast=1.0, scale=(1.6, 1.0)),
                     colours=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d4e64a']),
     # 楓 (maple.png): a pale S-curved trunk, limbs reaching out in long curves; red to orange clumps.
-    'Maple': dict(height=8, trunk=(3.4, .52), lean=.3, bend=.75, gnarl=.12, zig=0, split=True,
+    'Maple': dict(barkref='maple', height=8, trunk=(3.4, .52), lean=.3, bend=.75, gnarl=.12, zig=0, split=True,
                   levels=[dict(n=5, angle=(40, 70), length=1.15, radius=.6, start=.65, gnarl=.32, up=.05),
                           dict(n=4, angle=(30, 55), length=.55, radius=.55, start=.25, gnarl=.3, up=.08),
                           dict(n=4, angle=(30, 55), length=.45, radius=.5, start=.25, gnarl=.3, up=.1),
@@ -115,7 +115,7 @@ SPECIES = {
                   bark=dict(tint='#a49c8e', contrast=.5, scale=(1.4, .7)),
                   colours=['#6a1420', '#b0201e', '#e0381c', '#f07428', '#f8b040']),
     # 銀杏 (ginkgo.png): a leaning twisting trunk that carries on to the top, branches all the way up; airy gold.
-    'Ginkgo': dict(floor=.25, height=12, trunk=(9.0, .7), lean=.7, bend=1.0, gnarl=.1, zig=0, split=False,
+    'Ginkgo': dict(barkref='ginkgo', floor=.25, height=12, trunk=(9.0, .7), lean=.7, bend=1.0, gnarl=.1, zig=0, split=False,
                    levels=[dict(n=11, angle=(40, 70), length=(.5, .18), radius=.45, start=.25, gnarl=.26, up=.08),
                            dict(n=4, angle=(30, 55), length=.45, radius=.55, start=.25, gnarl=.28, up=.12),
                            dict(n=3, angle=(25, 50), length=.42, radius=.5, start=.3, gnarl=.28, up=.15)],
@@ -123,7 +123,7 @@ SPECIES = {
                    bark=dict(tint='#8c8070', contrast=1.15, scale=(1.2, 1.6)),
                    colours=['#8a5a06', '#cc8a0c', '#eeb014', '#f8d22c', '#fcea7a']),
     # 柳 (willow.png): a gnarled trunk leaning hard over the water, long arching limbs, curtains hanging.
-    'Willow': dict(height=8, trunk=(3.0, .74), lean=.6, bend=.45, gnarl=.12, zig=0, split=True,
+    'Willow': dict(barkref='willow', height=8, trunk=(3.0, .74), lean=.6, bend=.45, gnarl=.12, zig=0, split=True,
                    levels=[dict(n=5, angle=(35, 65), length=1.5, radius=.6, start=.7, gnarl=.3, up=.12),
                            dict(n=5, angle=(30, 55), length=.5, radius=.5, start=.3, gnarl=.28, up=.15),
                            dict(n=4, angle=(25, 50), length=.45, radius=.5, start=.3, gnarl=.25, up=.2),
@@ -132,7 +132,7 @@ SPECIES = {
                    bark=dict(tint='#7a7062', contrast=1.3, scale=(1.3, 1.3)),
                    colours=['#4a7448', '#76a444', '#b0d044', '#dcea58', '#f6f8a0']),
     # 梅: a zigzag gnarled dark trunk, angular limbs, blossom along the shoots (no reference sheet yet).
-    'Plum': dict(height=5, trunk=(2.0, .3), lean=.25, bend=.6, gnarl=.12, zig=.55, split=True,
+    'Plum': dict(barkref='plum', height=5, trunk=(2.0, .3), lean=.25, bend=.6, gnarl=.12, zig=.55, split=True,
                  levels=[dict(n=5, angle=(40, 75), length=1.4, radius=.62, start=.75, gnarl=.12, up=.1, zig=.5),
                          dict(n=5, angle=(30, 60), length=.55, radius=.5, start=.2, gnarl=.1, up=.18, zig=.3),
                          dict(n=5, angle=(25, 50), length=.45, radius=.45, start=.15, gnarl=.03, up=.35, zig=0)],
@@ -140,7 +140,7 @@ SPECIES = {
                  bark=dict(tint='#3e2f2a', contrast=1.25, scale=(1.0, .8)),
                  colours=['#5e1a2c', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6']),
     # 松 (pine.png): a twisting S trunk, long near-level limbs that zigzag out, flat pads of needles at their ends.
-    'Pine': dict(floor=.3, height=10, trunk=(8.5, .58), lean=.3, bend=.8, gnarl=.1, zig=0, split=False,
+    'Pine': dict(barkref='pine', floor=.3, height=10, trunk=(8.5, .58), lean=.3, bend=.8, gnarl=.1, zig=0, split=False,
                  levels=[dict(n=7, angle=(70, 88), length=(.8, .3), radius=.5, start=.42, gnarl=.3, up=-.02, zig=.35),
                          dict(n=4, angle=(30, 60), length=.4, radius=.5, start=.35, gnarl=.3, up=.05),
                          dict(n=3, angle=(25, 55), length=.4, radius=.5, start=.3, gnarl=.3, up=.1)],
@@ -150,7 +150,7 @@ SPECIES = {
     # 圓柏 / 真柏 (Chinese juniper, the bonsai z1nnz pointed to): a low trunk of silver-white deadwood twisting with a
     # brown live vein, leaning hard to one side; limbs swing out level and one cascades down; the foliage is dense
     # flat pads of fine scale leaves, layered and uneven, bright on top.
-    'Cypress': dict(floor=.1, height=7, trunk=(4.4, .7), lean=.55, bend=1.1, gnarl=.18, zig=0, split=True,
+    'Cypress': dict(barkref='juniper', floor=.4, height=7, trunk=(4.4, .7), lean=.55, bend=1.1, gnarl=.18, zig=0, split=True,
                     levels=[dict(n=6, angle=(55, 95), length=1.15, radius=.62, start=.3, gnarl=.3, up=.02, zig=.2),
                             dict(n=5, angle=(35, 70), length=.5, radius=.55, start=.2, gnarl=.3, up=.08),
                             dict(n=4, angle=(30, 65), length=.42, radius=.5, start=.2, gnarl=.3, up=.1)],
@@ -158,7 +158,7 @@ SPECIES = {
                     bark=dict(tint='#b8b4ac', contrast=1.6, scale=(.7, 3.2)),
                     colours=['#1a3a1e', '#2a5428', '#467a30', '#76a23a', '#b0c856']),
     # 枯樹: an old dead giant, a twisted forked trunk, snapped limbs, a fine net of bare twigs, a few curled leaves.
-    'Withered': dict(height=10, trunk=(4.0, .85), lean=.15, bend=.35, gnarl=.1, zig=.08, split=True,
+    'Withered': dict(barkref='juniper', height=10, trunk=(4.0, .85), lean=.15, bend=.35, gnarl=.1, zig=.08, split=True,
                      levels=[dict(n=4, angle=(22, 48), length=.85, radius=.62, start=.72, gnarl=.25, up=.15, broken=.3),
                              dict(n=5, angle=(30, 58), length=.55, radius=.5, start=.25, gnarl=.28, up=.08, broken=.25),
                              dict(n=5, angle=(30, 60), length=.48, radius=.45, start=.25, gnarl=.32, up=.05, broken=.15),
@@ -203,27 +203,36 @@ def perpendicular(d):
 
 
 def walk(start, direction, length, r0, r1, gnarl, up, zig, rng, twist=0, floor=-1e9, ceiling=1e9):
-    n = max(4, int(length / .35))
+    """A branch as real ones grow: it bends smoothly along one curve whose plane turns slowly (no step-by-step
+    wobble), reaches toward the light, and the longer and thinner it is the more its outer part sags under its own
+    weight. `gnarl` is how much it curves overall; `up` how strongly it seeks the light; plum's `zig` adds the
+    angular turns of an old flowering branch at a few nodes."""
+    n = max(6, int(length / .22))
     pts, radii = [start.copy()], [r0]
     d = direction.normalized()
-    side = perpendicular(d)
+    plane = (Quaternion(d, rng.uniform(0, math.tau)) @ perpendicular(d)).normalized()
+    curve = rng.gauss(0, 1) * gnarl * 2.2                    # total bend over the branch, radians
+    wave, phase = rng.uniform(.6, 1.4), rng.uniform(0, math.tau)
+    turn = rng.gauss(0, 1) * gnarl * 1.5                     # how far the bending plane rotates along the branch
+    sag = max(0.0, length * .045 - r0 * 1.5) * (1 if up < .3 else .4)
+    nodes = {int(n * f) for f in (rng.uniform(.25, .4), rng.uniform(.55, .7), rng.uniform(.8, .9))} if zig else set()
     for i in range(1, n + 1):
         t = i / n
-        if zig and i % 2 == 0:   # plum: angular turns, the branch changes its mind every other step
-            d = rotate_towards(d, perpendicular(d).lerp(side, .5).normalized(), (rng.random() - .5) * zig * 2.2)
-        d = rotate_towards(d, perpendicular(d), (rng.random() - .5) * gnarl)
-        d = (d + UP * up * (1 / n) * 4).normalized()
-        # Branches stay in the crown: none sags to the ground, and the top spreads out into a dome instead of
-        # climbing on as a spire.
+        k = curve * (1 + .6 * math.sin(math.tau * wave * t + phase)) / n
+        plane = (Quaternion(d, turn / n) @ plane).normalized()
+        d = (Quaternion(plane.cross(d).normalized() if plane.cross(d).length > 1e-6 else perpendicular(d), k) @ d).normalized()
+        if i in nodes:
+            d = (Quaternion(perpendicular(d), rng.choice((-1, 1)) * zig * rng.uniform(.5, .9)) @ d).normalized()
+        d = (d + UP * up * 3.0 / n - UP * sag * t * 2.2 / n).normalized()
         z = pts[-1].z
         if z < floor and d.z < .15:
             d = (d + UP * .5).normalized()
         if z > ceiling and d.z > -.05:
             d = Vector((d.x, d.y, d.z * .3 - .05)).normalized()
         if twist:
-            side = Quaternion(d, twist / n) @ side
+            plane = Quaternion(d, twist / n) @ plane
         pts.append(pts[-1] + d * length / n)
-        radii.append(r0 + (r1 - r0) * t)
+        radii.append(r0 + (r1 - r0) * t ** .8)
     return pts, radii
 
 
@@ -461,7 +470,7 @@ def leaf_cards(spec, trunk, rng, lod, crown_centre):
     for l in twigs:
         tip = l.pts[-1]
         cl = spec['cluster'] * rng.uniform(.75, 1.25)
-        centre = tip + UP * cl * .2
+        centre = tip + UP * cl * .35
         shade = rng.uniform(-.14, .14) + .1 * ((tip.z - crown_centre.z) / max(spec['height'] * .5, 1))
         for k in range(per):
             if rng.random() > keep:
@@ -522,7 +531,9 @@ def foliage_cards(spec, skeleton, rng, lod_index, crown_centre):
     lit from above) and shows one of the nine clusters. Willow cards hang from their top edge. Fewer, larger cards
     for the far LODs. Returns (four corners, four uvs) per card."""
     twigs = [l for l in all_limbs(skeleton) if l.twig]
-    per, grow_, keep = [(spec.get('cards_per_twig', 3), 1.0, 1.0), (2, 1.35, .7), (1, 1.9, .45)][lod_index]
+    # The bar is z1nnz's Elder World Tree (art/references/tree-species-v1/benchmark-elder-tree.jpg): a thin, airy
+    # layer of foliage on the branch ends with sky and limbs showing through, not a stuffed crown.
+    per, grow_, keep = [(spec.get('cards_per_twig', 2), 1.0, .95), (1, 1.5, .8), (1, 2.0, .55)][lod_index]
     weep = bool(spec.get('weep'))
     out = []
     for l in twigs:
@@ -531,7 +542,7 @@ def foliage_cards(spec, skeleton, rng, lod_index, crown_centre):
         tip = l.pts[-1]
         cl = spec.get('cluster', .7) * rng.uniform(.8, 1.2)
         for _ in range(per):
-            pos = tip + Vector((rng.gauss(0, 1), rng.gauss(0, 1), rng.gauss(0, .6))) * cl * .45
+            pos = tip + Vector((rng.gauss(0, 1), rng.gauss(0, 1), rng.gauss(0, .5))) * cl * .2
             n = (pos - crown_centre)
             n = n.normalized() if n.length > .01 else Vector((0, -1, 0))
             n = (n + Vector((rng.gauss(0, .25), rng.gauss(0, .25), 0))).normalized()
@@ -540,7 +551,7 @@ def foliage_cards(spec, skeleton, rng, lod_index, crown_centre):
             up = (UP - n * n.dot(UP)).normalized()
             up = Quaternion(n, rng.uniform(-.3, .3)) @ up
             side = up.cross(n).normalized()
-            size = cl * rng.uniform(1.7, 2.4) * grow_
+            size = cl * rng.uniform(1.3, 1.9) * grow_
             hw, hh = size * .5, size * (.75 if weep else .5)
             centre = pos - up * hh * .9 if weep else pos
             cell = rng.randrange(9)
@@ -553,6 +564,18 @@ def foliage_cards(spec, skeleton, rng, lod_index, crown_centre):
 
 
 def bark_image(name, src, spec):
+    painted = REFS / f"bark-{spec.get('barkref', name.lower())}.png"
+    if painted.exists():
+        img = bpy.data.images.load(str(painted))
+        img.scale(1024, 1024)
+        img.filepath_raw = str(OUT / f'{name}.png')
+        img.file_format = 'PNG'
+        img.save()
+        return img
+    return bark_image_from_elder(name, src, spec)
+
+
+def bark_image_from_elder(name, src, spec):
     w, h = src.size
     px = np.array(src.pixels[:], dtype=np.float32).reshape(h, w, 4)
     grey = px[..., :3] @ np.array([.2126, .7152, .0722], dtype=np.float32)
