@@ -1,0 +1,104 @@
+{
+  "asset": "TI02_HomeFurnace",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.3752,
+          -0.381,
+          0.0
+        ],
+        "max": [
+          0.3752,
+          0.381,
+          1.075
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          0.7505,
+          0.762,
+          1.075
+        ],
+        "limit_m": [
+          0.8,
+          0.8,
+          1.1
+        ]
+      }
+    },
+    {
+      "check": "near_design_target",
+      "pass": true,
+      "detail": {
+        "target_m": [
+          0.78,
+          0.76,
+          1.06
+        ],
+        "deviation_m": [
+          -0.0295,
+          0.002,
+          0.015
+        ],
+        "tolerance_m": 0.03
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          0.7505,
+          0.762,
+          1.075
+        ],
+        "blend_dims_m": [
+          0.7505,
+          0.762,
+          1.075
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI02_HomeFurnace_LOD0": 32787,
+          "TI02_HomeFurnace_Fire_LOD0": 1180,
+          "TI02_HomeFurnace_Lid_LOD0": 2732
+        },
+        "LOD1": {
+          "TI02_HomeFurnace_LOD1": 12909,
+          "TI02_HomeFurnace_Fire_LOD1": 530,
+          "TI02_HomeFurnace_Lid_LOD1": 1228
+        },
+        "LOD2": {
+          "TI02_HomeFurnace_LOD2": 3381,
+          "TI02_HomeFurnace_Fire_LOD2": 236,
+          "TI02_HomeFurnace_Lid_LOD2": 502
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 118,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}

@@ -1,0 +1,16 @@
+Library/
+Temp/
+Logs/
+UserSettings/
+obj/
+Build/
+Recording/
+*.csproj
+*.sln
+# art binaries are copied in by sync_art.ps1 from art/exports and art/incoming (only the .meta files are kept so GUIDs stay stable)
+Assets/Art/TI18/**
+!Assets/Art/TI18/**/
+!Assets/Art/TI18/**/*.meta
+Assets/Art/Existing/*
+!Assets/Art/Existing/*.meta
+!Assets/Art/Existing/FirewoodStack_v002.fbx

@@ -1,0 +1,98 @@
+{
+  "asset": "TI03_JournalDesk",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.6341,
+          -0.33,
+          0.0
+        ],
+        "max": [
+          0.6341,
+          0.33,
+          0.8394
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          1.2681,
+          0.66,
+          0.8394
+        ],
+        "limit_m": [
+          1.3,
+          0.7,
+          0.85
+        ]
+      }
+    },
+    {
+      "check": "near_design_target",
+      "pass": true,
+      "detail": {
+        "target_m": [
+          1.28,
+          0.68,
+          0.84
+        ],
+        "deviation_m": [
+          -0.0119,
+          -0.02,
+          -0.0006
+        ],
+        "tolerance_m": 0.03
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          1.2681,
+          0.66,
+          0.8394
+        ],
+        "blend_dims_m": [
+          1.2681,
+          0.66,
+          0.8394
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI03_JournalDesk_LOD0": 16175
+        },
+        "LOD1": {
+          "TI03_JournalDesk_LOD1": 6825
+        },
+        "LOD2": {
+          "TI03_JournalDesk_LOD2": 2477
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 228,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}

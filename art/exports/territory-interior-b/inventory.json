@@ -1,0 +1,1267 @@
+[
+ {
+  "asset": "TI01_BoguShelf",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/01_front.png",
+    "bytes": 1076361,
+    "sha256": "07f42b9852352e74897ffe7ce6b0281527b8503f7c5263b8cd5687a218aa93eb"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/02_right.png",
+    "bytes": 1030978,
+    "sha256": "c8b25a4921b3eea0cbc1e59cf465823a81ab47e62002e42b118595c431b590b3"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/03_rear.png",
+    "bytes": 1092305,
+    "sha256": "3ca003afa64aa4e94f31585f7aca4a8438edb77b21915ea9f5b857221b458517"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/04_left.png",
+    "bytes": 1023764,
+    "sha256": "8c9de1720e8a673faf64629584b3a212413c5b8ef095817d7ea7ab9b96e5099d"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/05_front_right.png",
+    "bytes": 1237564,
+    "sha256": "bb386245b8c1771d37195c8bfe5e41bda6704c802201db4924ae6c6f0becd345"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/06_rear_right.png",
+    "bytes": 1182662,
+    "sha256": "b77edb7cbfc8ffe73b9d1c5712d3c3aee784dd70d24b9708b3b7d6ece786d978"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/07_rear_left.png",
+    "bytes": 1192762,
+    "sha256": "ac4de6c1940ec6787d685fddf9be594f96f57d571cb21923e966bc6cc1b5dfcb"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/08_front_left.png",
+    "bytes": 1216091,
+    "sha256": "fad910fae81724210158231e6d588c2a5d06d6bf550e0f60df34cb8b9d7db417"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/09_top.png",
+    "bytes": 1019857,
+    "sha256": "dab224b9596c2c28f0d89a613916260522d8f9d75065af2e73b86e4f2bfd08a8"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI01_BoguShelf_v001/10_high_front.png",
+    "bytes": 1105191,
+    "sha256": "85f142593e73847bed2c1f2d2deafef55f3921b0e91198e5d0b0184254f0f3e3"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/model_info.json",
+    "bytes": 10216,
+    "sha256": "c49ae9484539d746b6efe5de6a40d4e0e3eb6627ac77dd158be5986de1a1a8d7"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/Textures/TI01_BoguShelf_BaseColor.png",
+    "bytes": 15240007,
+    "sha256": "bb748d80735220a7eef08e69e9bd4a8db86d586d1f2755228ac8a0d55d573ae4"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/Textures/TI01_BoguShelf_Metallic.png",
+    "bytes": 756360,
+    "sha256": "2fdba8ab4238e73ccbf796e769cf3dedaaeec7cacfc5a98e78d8eb3d5815147e"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/Textures/TI01_BoguShelf_MetallicSmoothness.png",
+    "bytes": 37084081,
+    "sha256": "4656323f13070c69035e65ea32cdf37f7378c3b2cfce4f2df0db4a087d1d1200"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/Textures/TI01_BoguShelf_Normal.png",
+    "bytes": 62513989,
+    "sha256": "61e460fd255c8b2f4b916f9e8a933dfcac84156206b8a7168b8905b114f5fdf3"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/Textures/TI01_BoguShelf_Roughness.png",
+    "bytes": 36355542,
+    "sha256": "fc0bbbe34d351bd22578b8b77e583bcac535c39220dfa18a721744de0251fb14"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/TI01_BoguShelf_hero.png",
+    "bytes": 1218466,
+    "sha256": "784c3f8defd95317ab2d9d38f55229f374940d693f14203f3562491fbf8a4728"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/TI01_BoguShelf_LOD_comparison.png",
+    "bytes": 3364453,
+    "sha256": "f8a75cc1c85a9062a90204cde192b0d3bc7b6d1db428b58c942eb2e3c0325c5c"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/TI01_BoguShelf_v001.blend",
+    "bytes": 903127,
+    "sha256": "f3f349274425b58a54e94aeca6384c6ea7337135325d0b32412f22f0530576d0"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/TI01_BoguShelf_v001.fbx",
+    "bytes": 910940,
+    "sha256": "e571f0082e13154ebbfaa7e482d11040c4857793b81b2bca8d066e98d7871f7e"
+   },
+   {
+    "file": "Models/TI01_BoguShelf/v001/validation.json",
+    "bytes": 1977,
+    "sha256": "0cdd6bf91fb639d5adf65c4760ebff79816770e2485ea264c09718a007c7ba8d"
+   }
+  ]
+ },
+ {
+  "asset": "TI02_HomeFurnace",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/01_front.png",
+    "bytes": 1103001,
+    "sha256": "6d26e5811a965b28b9d73a8e4351719c02e15a95f8d9cf444fe79d465c56b5ae"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/02_right.png",
+    "bytes": 1100723,
+    "sha256": "f858221fb6e53046051abac5764cba7a1bd4e645c0549897db5113c502dbc9b9"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/03_rear.png",
+    "bytes": 1090760,
+    "sha256": "82f1ab4402563e9c8eba0c9d4c35449583c993ae49984a272b0b21122154c377"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/04_left.png",
+    "bytes": 1088919,
+    "sha256": "c1e7a9028370d9939d66bd4a3b939c80d5b9e553f05f4a2deec0692df1f960b0"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/05_front_right.png",
+    "bytes": 1149979,
+    "sha256": "d37929a0d23d7d57a80d99ce9d4b8cbfdb52108e03eccd39dc2068d39fae077f"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/06_rear_right.png",
+    "bytes": 1143729,
+    "sha256": "a5d6707472ecb326aded5d336586b1c8afe730d99ab3b9d6b538684ff778fdba"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/07_rear_left.png",
+    "bytes": 1109830,
+    "sha256": "a12ddb150c4a492951221edbb67f5c89ba3841fea59b1043928bc5cd1aaaf519"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/08_front_left.png",
+    "bytes": 1141961,
+    "sha256": "7a1d0aeb38c141312f0cc35a06c885011bc6f3b8e293f6239063f1fc2a533a2c"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/09_top.png",
+    "bytes": 1079984,
+    "sha256": "0309ac806e663b92eee5841d9476302025a91394f96aaa98ab17132ce1945712"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI02_HomeFurnace_v001/10_high_front.png",
+    "bytes": 1159582,
+    "sha256": "c081b5da46a71f3d0b97e5753f02a681263c44b4c5fb41c78e5fcbaa12af8932"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/model_info.json",
+    "bytes": 3544,
+    "sha256": "da5c048fe3e65442e005fd53b779ca35e11bcaaf2cc055044389454e4959c919"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/state_burning.png",
+    "bytes": 1127810,
+    "sha256": "7687a15d8dd0c7239f2b06d60e9ca9611ea354f761460d91079592f4136ad6c3"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/state_cold.png",
+    "bytes": 1116135,
+    "sha256": "042471a0bd6a2b979aa74519e08eabecb18ed68bdf784d2642ca3bbc8317270d"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/Textures/TI02_HomeFurnace_BaseColor.png",
+    "bytes": 4053654,
+    "sha256": "fddd3c5769c11a879a2f3a96985c69c8bde5e2f1734113cce3d999a2c573e14e"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/Textures/TI02_HomeFurnace_Emission.png",
+    "bytes": 362677,
+    "sha256": "b852fb1609cfbcc6cf00f7343e326239c5a97dd5f4cd3d4cd8386d19a942a286"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/Textures/TI02_HomeFurnace_Metallic.png",
+    "bytes": 3162622,
+    "sha256": "a1c3e92a306437293a5c3d92145d9907f965b98168a9a141de4364b4f01b91d5"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/Textures/TI02_HomeFurnace_MetallicSmoothness.png",
+    "bytes": 10256071,
+    "sha256": "9863c96636cedcf95dc38b69a155c146f90e4f4b141843f9a815133956dbae65"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/Textures/TI02_HomeFurnace_Normal.png",
+    "bytes": 14138854,
+    "sha256": "149d37f0f79b5b92e639a63bc01744c45b28b0961f4d89cd625e18c3b3db9e63"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/Textures/TI02_HomeFurnace_Roughness.png",
+    "bytes": 9197993,
+    "sha256": "e9896fb622259b37508b74626fbd56cdd470247efbe3ee10b0567a0ee17db73e"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/TI02_HomeFurnace_hero.png",
+    "bytes": 1145411,
+    "sha256": "9ef32fab090f621dfe83858529b5908e6ca7cf00ac8983f35222c5571aa214c6"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/TI02_HomeFurnace_LOD_comparison.png",
+    "bytes": 2985669,
+    "sha256": "7d15b997b84c3cdc4595529b9178a37785daff3d0f7daf4abf4b2473aa46d449"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/TI02_HomeFurnace_v001.blend",
+    "bytes": 1613237,
+    "sha256": "9db1b06a8b240a4b7fb36bbdf7fcbc9224bd8848d04f84fd4351700ad96b90b8"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/TI02_HomeFurnace_v001.fbx",
+    "bytes": 1714988,
+    "sha256": "cc1f973f6b229519cc50eada65300a4b92ee3e61819b53eec66f40436dc7b6bb"
+   },
+   {
+    "file": "Models/TI02_HomeFurnace/v001/validation.json",
+    "bytes": 2132,
+    "sha256": "fc42586eb2555700f60e783e2ecc3f2c80c233662b4605c74669a6b218e2206f"
+   }
+  ]
+ },
+ {
+  "asset": "TI03_JournalDesk",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/01_front.png",
+    "bytes": 1054138,
+    "sha256": "5591faf6667848f8b375a165b4e7a2e5ad3a2bd4dbc5bd3eefc601b0f1ed299e"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/02_right.png",
+    "bytes": 1029104,
+    "sha256": "e2f022a97862adb9f9eca39c83162882f39104793cfdf44f470dd5e1513071d7"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/03_rear.png",
+    "bytes": 1044978,
+    "sha256": "cd034e796f10c6f076fc6f1f2c10ee7c0c2a73b4f253e05411713db220e02358"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/04_left.png",
+    "bytes": 1022474,
+    "sha256": "ecc3c23a710560dad860014ad9989bd571f4550e32e68a45ede49607b765ca1d"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/05_front_right.png",
+    "bytes": 1174912,
+    "sha256": "915879cba48822d41d6a2be7ad3df0c9802e4688fb86f17cdff302101813dfa6"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/06_rear_right.png",
+    "bytes": 1169292,
+    "sha256": "642aee5d3559f9c1433b9bf9b1c3387f2c28f9c0fdc02a2f6c50f0f1857cd336"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/07_rear_left.png",
+    "bytes": 1168596,
+    "sha256": "c8d9cb60098a4b60260d58886bb2bd59abfcfdaddc200a0625d3e525c18b91ab"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/08_front_left.png",
+    "bytes": 1165371,
+    "sha256": "548b7a949cace8dd3093528c019559bab8ab2decd77b4fc580cc4a66a759c9ef"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/09_top.png",
+    "bytes": 1090817,
+    "sha256": "85bd9b938ba73f11ba689e50de71652717bce84771d3578ccd8f06fb93e0a3fc"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI03_JournalDesk_v001/10_high_front.png",
+    "bytes": 1111125,
+    "sha256": "c8435e57b5ef89e89f4586c5f3df1715377607cb50a3ae37acf1073779eb24b8"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/desk_top_closeup.png",
+    "bytes": 1264476,
+    "sha256": "098aca0b4fedf4053c630dbafba20105e7e57ef64939c265d76804d4e7a29491"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/model_info.json",
+    "bytes": 3014,
+    "sha256": "27c27d169d79ca240da8655dbe5e7a76d6394c5d8c6fdc8a7162e54bca2e9946"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/Textures/TI03_JournalDesk_BaseColor.png",
+    "bytes": 12389546,
+    "sha256": "9be8ef16c611088eb26f73a5d61dfd9e870b79eb04f1011482df5f98a8c79243"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/Textures/TI03_JournalDesk_JournalPage_Blank.png",
+    "bytes": 741882,
+    "sha256": "d3a3aa8269365d003f1a115336516f2271ab730f0736ad79fe013aca2664b819"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/Textures/TI03_JournalDesk_Metallic.png",
+    "bytes": 547268,
+    "sha256": "d4776dd963f2f79cae51929c1a35611313e5920c9cf0dea72be36a781a771d67"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/Textures/TI03_JournalDesk_MetallicSmoothness.png",
+    "bytes": 33173297,
+    "sha256": "e3cacc25d1f52afb8137bd8a6ae300bdee512d20a2ae698d97a1b670c26f4127"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/Textures/TI03_JournalDesk_Normal.png",
+    "bytes": 64995644,
+    "sha256": "352d99499a959c52d1d2817a4182cfb2cdbc587c0fdf5f1e97925112c022f077"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/Textures/TI03_JournalDesk_Roughness.png",
+    "bytes": 32987881,
+    "sha256": "ea37d3206dbba263328bb6bf4b78536afcba8b669140988975db232ad6b77261"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/TI03_JournalDesk_hero.png",
+    "bytes": 1166612,
+    "sha256": "9910cb462314d0d3e2af7cc327664972f34ee871e31e3eed7c2eeb476a9b5f53"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/TI03_JournalDesk_LOD_comparison.png",
+    "bytes": 3117297,
+    "sha256": "f716e34b9b11429da34cf1ba269d53a41cb928976e6094dbc1d28779d712d5a2"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/TI03_JournalDesk_v001.blend",
+    "bytes": 889748,
+    "sha256": "4895fe1bb2af21e5e6f76aa80780bb75bd37576aa8dfc1d4dfb25fae1001bad6"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/TI03_JournalDesk_v001.fbx",
+    "bytes": 825660,
+    "sha256": "67f888b8c584a71c62186082aeeb75ebc00e317ef22c0fe205ee0d6189aaf8b8"
+   },
+   {
+    "file": "Models/TI03_JournalDesk/v001/validation.json",
+    "bytes": 1857,
+    "sha256": "e6d1fb65bc6ee3d0a2bc8b3ef28c44c7bf8654f1880569ef63f3bc1064eaec52"
+   }
+  ]
+ },
+ {
+  "asset": "TI04_PaperLamp",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/01_front.png",
+    "bytes": 1043702,
+    "sha256": "2ccdb64a4ee6a537be577663b931755fd41a66cb8524f559204af5ed50c403fe"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/02_right.png",
+    "bytes": 1043073,
+    "sha256": "659524a76dd994b224e0d56a8319a8af72eb22a3275321576beccaa5f0253544"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/03_rear.png",
+    "bytes": 1044807,
+    "sha256": "7d90afebcf8df67d246090c906d7b183079c64a4dd8d45335bb355597b883bba"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/04_left.png",
+    "bytes": 1044508,
+    "sha256": "5d75ad021da692738464b6fbaa1714e0b7c8ce2df7e8a69184a62226805aa78d"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/05_front_right.png",
+    "bytes": 1097049,
+    "sha256": "bfab09714b374e90c89a67d740cc808b01daf905ef01ad1b6dbcae5fbb9f32c5"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/06_rear_right.png",
+    "bytes": 1102494,
+    "sha256": "78c0ca38d7db2ea6cd6cc2634cc1061be5814ce4c61de9754cebc6ed00423e0f"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/07_rear_left.png",
+    "bytes": 1102554,
+    "sha256": "391ca169df4cb30295643a57c10b2011b9b362de91f5d6b092cbcea134222d5c"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/08_front_left.png",
+    "bytes": 1096876,
+    "sha256": "d40da70c93fdb2974ce57bcb8d62c64f946f9ed8158cc3019bd23156edaa9576"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/09_top.png",
+    "bytes": 1044880,
+    "sha256": "0ed4f31f2c39bf5ff0026284d21761eec8c2e035a1de76b5b27c75b70bcd2eb3"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI04_PaperLamp_v001/10_high_front.png",
+    "bytes": 1077650,
+    "sha256": "f0391883c7913d73d0fe6bb804a903f1ac9283c1d885f4c6a7354ed6754f0dd1"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/model_info.json",
+    "bytes": 2822,
+    "sha256": "009e86b89ce647bd187bba4835c68a601901795fd252becd4cf87efcd6f97db7"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/state_off.png",
+    "bytes": 1091930,
+    "sha256": "3ffb1c067e3bdc4705bccf5d0460a4f71ea826d14789781c5ad394a6b5d0483a"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/state_on.png",
+    "bytes": 1098154,
+    "sha256": "9b1a3f9a0c0b24d25a446796adb3ce364182911e20948012550f1ffbb04a3a33"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/Textures/TI04_PaperLamp_BaseColor.png",
+    "bytes": 4189173,
+    "sha256": "d8a5da852642daa09b8fc07d751b31d2c0c2652dc449500eeab782b54b5d6ab6"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/Textures/TI04_PaperLamp_Emission.png",
+    "bytes": 1288362,
+    "sha256": "43601731830aa852db1f972f84a732cce83034212453990457e3d947ace68f53"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/Textures/TI04_PaperLamp_Metallic.png",
+    "bytes": 385619,
+    "sha256": "004f1787b7d05d3101adc52f69c8cb4b66ba84e64ff204f144488f190da58523"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/Textures/TI04_PaperLamp_MetallicSmoothness.png",
+    "bytes": 7831105,
+    "sha256": "c4d66f97479b3d9b0a0e8a9ec80d7e2403720fbdc5160f5795122a25c4379ae2"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/Textures/TI04_PaperLamp_Normal.png",
+    "bytes": 16219361,
+    "sha256": "3b6d7e3f98de85a1495d5b1cb1eaff191aaac63b0dce92b129145ba7500a4203"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/Textures/TI04_PaperLamp_Roughness.png",
+    "bytes": 7524066,
+    "sha256": "ff8ada72313cad51affb877966942441552c519e4086fb14056f13f33338a112"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/TI04_PaperLamp_hero.png",
+    "bytes": 1091584,
+    "sha256": "f6f992d60ac6f9bd5c21cb89fc48142387125aa03cb17d76febcf92b8cecc0ff"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/TI04_PaperLamp_LOD_comparison.png",
+    "bytes": 2830759,
+    "sha256": "6887fbcc199486be3d16c94cc671681efef6143647159bb08a8082b513ce93a5"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/TI04_PaperLamp_v001.blend",
+    "bytes": 607145,
+    "sha256": "71bb1641948259c95edec2c8a6a6df46d8e539c581fec0ec404b746bd2b181b2"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/TI04_PaperLamp_v001.fbx",
+    "bytes": 576812,
+    "sha256": "e47b351c0109835ff9bc6f15befba844d8c16c7a6be589203d162517635d0d9c"
+   },
+   {
+    "file": "Models/TI04_PaperLamp/v001/validation.json",
+    "bytes": 1848,
+    "sha256": "ca22941a3f5dd67fd445f9d5bf954acb730ccbf530aca9c608ea6e409b6b23f0"
+   }
+  ]
+ },
+ {
+  "asset": "TI05_LandscapeScreen",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/01_front.png",
+    "bytes": 1095858,
+    "sha256": "3e1190482f7415e055a8025cff2512ef69dda32eaad0ad4949c824590e927632"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/02_right.png",
+    "bytes": 1017225,
+    "sha256": "9fe0c4d88007e8030e6fe37bdee90ffdc9fb2ef08901bc097bc21bf4af37d5ae"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/03_rear.png",
+    "bytes": 1125519,
+    "sha256": "5f2ef895446e72b4cbad3b23f61b56357d444be8f6f030bbab721212624c23e3"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/04_left.png",
+    "bytes": 1023349,
+    "sha256": "a0809d6f3c83484065e03a171a57a4dac09a6b6490e414ff04e657441260e8fc"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/05_front_right.png",
+    "bytes": 1122318,
+    "sha256": "0c40a0bb454080e662de8479674c7c39343496a9af922e95f1a09b7a2016d176"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/06_rear_right.png",
+    "bytes": 1129324,
+    "sha256": "10ebc26b1ee1d69f1160bfbb160907b0f65622992e2df5661130cfde54710da5"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/07_rear_left.png",
+    "bytes": 1150066,
+    "sha256": "971264501b9262e1980159b2241f1e520f4214b259977ed725b406fb5607dbca"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/08_front_left.png",
+    "bytes": 1113035,
+    "sha256": "9004bef76f419c7c51607acfdd9712f9a7d1c372ee6eb89d248ac9edc2e35370"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/09_top.png",
+    "bytes": 1016322,
+    "sha256": "7adec796f559fdbafa1669b8582dc71b491cba2d5d987af9276ca2bae24bbd54"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI05_LandscapeScreen_v001/10_high_front.png",
+    "bytes": 1108477,
+    "sha256": "511e1d7d326b6e28dde97c90f3ee6bb92f58f1c9058cc74fb33144a06cc14ccb"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/model_info.json",
+    "bytes": 2723,
+    "sha256": "b36247b61740db9976520f6ba22fb8c17562f7c3710453810c2b40c001bd403a"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/rear_crescent_closeup.png",
+    "bytes": 1035192,
+    "sha256": "e5534bef59bcbecf79de0b602284946fadc807c90cdc5365cb45bd5053f03297"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/rear_crescent_overview.png",
+    "bytes": 1157070,
+    "sha256": "bc9ef634c98d35477dd2309789f134dffa32a62a4d33829ccbc30ef204ad4ab3"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/Textures/TI05_LandscapeScreen_BaseColor.png",
+    "bytes": 2471091,
+    "sha256": "7c16276de5c3968986421aba1688936b7af4b884bb7d93654b4eb9cc08a2d075"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/Textures/TI05_LandscapeScreen_Metallic.png",
+    "bytes": 229214,
+    "sha256": "afdd1e12463ada24c5d7f4758329537df477b7555e3eb32cc861bc0f6b20e867"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/Textures/TI05_LandscapeScreen_MetallicSmoothness.png",
+    "bytes": 6320089,
+    "sha256": "d2b58ec80e2076153430adecb92f5a068e16b65d1d02217e7aa030bb195a9b36"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/Textures/TI05_LandscapeScreen_Normal.png",
+    "bytes": 14719853,
+    "sha256": "6c18f6c3b062ced1c62c08d098af59be2e8a64f2e59d2bb61d498be3c4f2431c"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/Textures/TI05_LandscapeScreen_PaintedLinen.png",
+    "bytes": 7505164,
+    "sha256": "509a0096b1381f66fb38c7e954de3a5df934757531e032420e85682c714e9665"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/Textures/TI05_LandscapeScreen_Roughness.png",
+    "bytes": 6024959,
+    "sha256": "b468bdef83e142646ef290981af4eba06594f236cf539feecc73401bd73805e7"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/TI05_LandscapeScreen_hero.png",
+    "bytes": 1122721,
+    "sha256": "c50540da6eb6a4c3eddba4023c7c04dc8e1ad3da5c80589fd60c8dfaa8cdcbbc"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/TI05_LandscapeScreen_LOD_comparison.png",
+    "bytes": 3004583,
+    "sha256": "9d7f48b547a6c99c58c819610eaab7032fb28049636053a9c8649f5e7d688df0"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/TI05_LandscapeScreen_v001.blend",
+    "bytes": 577646,
+    "sha256": "8a6f2f385a607f26d657d7ef8f2086219ccffbac985b6f63075f2c9a45713ded"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/TI05_LandscapeScreen_v001.fbx",
+    "bytes": 536524,
+    "sha256": "bb8b36058bd40886bc13d68a5d5743487eef39e58d26e222b9c745f397e6d1ef"
+   },
+   {
+    "file": "Models/TI05_LandscapeScreen/v001/validation.json",
+    "bytes": 1873,
+    "sha256": "7246dc5102d8b773d9d6cdfb958fdb1d5b6b3f423ac0afdd4ef2dd72696eb85a"
+   }
+  ]
+ },
+ {
+  "asset": "TI06_WovenMat",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/01_front.png",
+    "bytes": 996888,
+    "sha256": "9123704aa193175737b3c0124f57bad9ba7d153ada3752791250bafc085f18e6"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/02_right.png",
+    "bytes": 995677,
+    "sha256": "552d4bec3079f6c7cdc0e1016cfa592e407a9033ff18f36eb385b8ec47a64c86"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/03_rear.png",
+    "bytes": 996667,
+    "sha256": "4c39052e69eaa513f45dec71f6ef0e3e1fc819471d48112233ad5109664389ba"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/04_left.png",
+    "bytes": 994859,
+    "sha256": "a2a16e5fa26c359d427ca7a74815598d0369bfbde35874ef85c087e2cfa16cfb"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/05_front_right.png",
+    "bytes": 1079568,
+    "sha256": "c5ddcc64b93bda5f66b297f6b87a13c42842f35e2e064c4b0db818b43a93145e"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/06_rear_right.png",
+    "bytes": 1074452,
+    "sha256": "4e42b87aaaef10de6eae3395f3bfb815c724ee1f88a18ceb55efb3ea01a28c53"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/07_rear_left.png",
+    "bytes": 1077336,
+    "sha256": "5a291b0bccfa176905ac4af32e8a8cba4b6a1d0e310bfc4da2e148c1b0473080"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/08_front_left.png",
+    "bytes": 1076479,
+    "sha256": "b7348cf2eb9b2893646264011d625620a4ef3409f91c4eb5972a70c36a5f8044"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/09_top.png",
+    "bytes": 1273460,
+    "sha256": "1782147609a645017439f08c9c2cd535ea2732be06554548c4f09fb23f447207"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI06_WovenMat_v001/10_high_front.png",
+    "bytes": 1197013,
+    "sha256": "fc9a86bf7d39d322e33058f9412d1d42f4b3cb16acef03203957ccb0b0e1b7b3"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/model_info.json",
+    "bytes": 2620,
+    "sha256": "1fcbddafdba58f76ce3e94b7d022c1538917173399a53fe5b9f29405fcce6572"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/Textures/TI06_WovenMat_BaseColor.png",
+    "bytes": 4433822,
+    "sha256": "87f196ddcebcd91fb420679dec7172bfcad553f4ae5b18faab69b00e536006b8"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/Textures/TI06_WovenMat_Metallic.png",
+    "bytes": 110227,
+    "sha256": "757b60ce47d82862612f11bfd23b9bd698e4a6feeeb7fbcbba76c8419c4f8390"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/Textures/TI06_WovenMat_MetallicSmoothness.png",
+    "bytes": 9163274,
+    "sha256": "ce919640bd4e4ffe21d83de5767d1c96e23d6ba729ecfce4afff20a29a527887"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/Textures/TI06_WovenMat_Normal.png",
+    "bytes": 19384227,
+    "sha256": "ca6857d948ef7625e01cf35f6efa7697d235f6472aebaabdc1aef0b7c2106b00"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/Textures/TI06_WovenMat_Roughness.png",
+    "bytes": 9142135,
+    "sha256": "f4a2a0acb11f248a33464e33c9e35a555535ce733a7a49d0e6f3590f4d74a40b"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/TI06_WovenMat_hero.png",
+    "bytes": 1087544,
+    "sha256": "489a16bdd6e57ea5c9d205bd86742e3a777027773e8162d40fe148441ceafaa5"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/TI06_WovenMat_LOD_comparison.png",
+    "bytes": 2816097,
+    "sha256": "0888eca08738640324f81253d4a888b414dfaee784ca9efdc7a1e034ec2dd017"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/TI06_WovenMat_v001.blend",
+    "bytes": 359366,
+    "sha256": "8fcabf686d3a999c178d8a5452ee376b0e36c41f4bb2aba1584f41b33ec69814"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/TI06_WovenMat_v001.fbx",
+    "bytes": 212924,
+    "sha256": "03dee6f07920f2b503dc011f178005616db732e8aec7c5cd2f06e256f7468e8d"
+   },
+   {
+    "file": "Models/TI06_WovenMat/v001/validation.json",
+    "bytes": 1853,
+    "sha256": "58f173df2f441430084a7df8957f23477bb78bb58895ecbd143e82409bb26df9"
+   }
+  ]
+ },
+ {
+  "asset": "TI07_LinenCurtain",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/01_front.png",
+    "bytes": 1102804,
+    "sha256": "02d0f145224a25914e7147b8b3ab18726aa69c492f3815a5c7159c2ddb987f7b"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/02_right.png",
+    "bytes": 1014224,
+    "sha256": "89df8d844021c7c2675cd966b7f4f8d0103b06de8a5498a740502fb49377273b"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/03_rear.png",
+    "bytes": 1097077,
+    "sha256": "b16782d3ee4de1e7402f238bb557484e2d560932de5396309441f6781e013883"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/04_left.png",
+    "bytes": 1012075,
+    "sha256": "1e393f0ce6394897cfbaa842af17cafa73d8c667d6da7ed0c36c7fd9b2ec809a"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/05_front_right.png",
+    "bytes": 1088726,
+    "sha256": "25185ed429e1b1bd0f8d121d1b3eba094bcb195f0949a92f14bc0b3fd1ff07fa"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/06_rear_right.png",
+    "bytes": 1091196,
+    "sha256": "04b770d6e6ce1d8155280aa801837c061fb88a4dd2210b6a03de66f87b4c56b1"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/07_rear_left.png",
+    "bytes": 1088692,
+    "sha256": "3e709b5a8f328ebc94b3dea9cd5dfd4e0fbbb8cc9113a8272e1fa4d8fe9482c8"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/08_front_left.png",
+    "bytes": 1094957,
+    "sha256": "0cc48cf45cc325ab785a4b1012eb5d6e00e7f028406abf85891e37cbb040d067"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/09_top.png",
+    "bytes": 1005540,
+    "sha256": "a8ba129505a4b8cb1bc236a1b8abf097934da23bdc975146499b3dd2c5ed59b2"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI07_LinenCurtain_v001/10_high_front.png",
+    "bytes": 1075581,
+    "sha256": "61ac92308b1a723076a2dcfaa1733bb5ca57fe638ee17f3ff1ab0556f2e9a6e7"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/model_info.json",
+    "bytes": 2540,
+    "sha256": "38ca2fc340d5cac6c2ea359b4aa70a0d39031535cfb806f139f6e6b98bbd4f5d"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/Textures/TI07_LinenCurtain_BaseColor.png",
+    "bytes": 3510994,
+    "sha256": "09cc4692d0b20e59496f2fc6b53f660fdd529ec3f3d3d1579600ccb5e34c9992"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/Textures/TI07_LinenCurtain_Metallic.png",
+    "bytes": 148394,
+    "sha256": "bee26623c8fa4846c8467a908115d4cde7509bae176913097df7e5f031770348"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/Textures/TI07_LinenCurtain_MetallicSmoothness.png",
+    "bytes": 6062672,
+    "sha256": "d0d24ab187d59b5676aa3415011a0bf6352218d57034788985836e83f52adf53"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/Textures/TI07_LinenCurtain_Normal.png",
+    "bytes": 16158768,
+    "sha256": "46398d901a8735c86696982bd76a2db7d33ee5604431b8186e144180c87f3865"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/Textures/TI07_LinenCurtain_Roughness.png",
+    "bytes": 5740445,
+    "sha256": "4f0a322381e74af9e32c038a6a56d9c55af6e9e6e1ea0719f26bc8b9f3bbb1f9"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/TI07_LinenCurtain_hero.png",
+    "bytes": 1089983,
+    "sha256": "de77583944e905b9fcb6e16d790567462894a2de519533a8daf9ee0ca6c4ecd8"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/TI07_LinenCurtain_LOD_comparison.png",
+    "bytes": 2905332,
+    "sha256": "7f4aab5eb1c748af8e824f4244d7bf7ec1387612be6ae62f765266c8cf1ab2ff"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/TI07_LinenCurtain_v001.blend",
+    "bytes": 2343415,
+    "sha256": "bc1ff9b654d28c6ad44d3e0986e642a09412f35d6562274a518abe3c4f62cf53"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/TI07_LinenCurtain_v001.fbx",
+    "bytes": 2455324,
+    "sha256": "492b2cb98d3fe98b88e07011d52e3255d4be942d7d35d4933922c4f5c04e7539"
+   },
+   {
+    "file": "Models/TI07_LinenCurtain/v001/validation.json",
+    "bytes": 1866,
+    "sha256": "dab095d9c098a5eef6bc09fb9b2aad5b432ec4a9710b4d7f6e6af045126e4c73"
+   }
+  ]
+ },
+ {
+  "asset": "TI08a_KeepsakeBox",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/01_front.png",
+    "bytes": 1081791,
+    "sha256": "4189e98b9776bace0f9c74fb00fb5731c71bf5dc9008054d82f937ec83ea87c8"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/02_right.png",
+    "bytes": 1064734,
+    "sha256": "e25143625ca2c20c3c19473c6430ffcdeac819fae6fd6cbe6c5db56c3718212c"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/03_rear.png",
+    "bytes": 1078575,
+    "sha256": "92945873cd4b5cee827d235ae8243e678c4851fa6deb2bc684bf0747a667fb44"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/04_left.png",
+    "bytes": 1063328,
+    "sha256": "be8951df44f103980c5b77d6f6a554f3351935d82a5157118ae92fdf6b7a1968"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/05_front_right.png",
+    "bytes": 1185360,
+    "sha256": "9c19ef8d24805eb07061aff8aad47a9f8de232348ca066b412fbc7b666c85295"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/06_rear_right.png",
+    "bytes": 1173436,
+    "sha256": "00ba0bb24be3d0e06c9afb9536fe1341ff7d14efdbcbd46be2a0c0142450f7be"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/07_rear_left.png",
+    "bytes": 1172726,
+    "sha256": "a0c16b6601248e8983e033e817a8bd85e15b1f2821f2b167f610c2c11e2eb388"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/08_front_left.png",
+    "bytes": 1168386,
+    "sha256": "a470e3fc0498005cdf61c026c442ff313e9bf5bc6d9588fd19283414e8bb29fa"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/09_top.png",
+    "bytes": 1061644,
+    "sha256": "b5ce2cdc395a411bcea42b94a99c5222a98a17ffd4ee5f77b9405230f57c633b"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08a_KeepsakeBox_v001/10_high_front.png",
+    "bytes": 1105280,
+    "sha256": "d8febd0088084c9db2977353a6be0d976bc97010cf9a4c1f7a55fa46c41bd5ad"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/model_info.json",
+    "bytes": 2507,
+    "sha256": "54b8c2213020e0ad3cdd92fc883dea6ec25963b7350339aa5ce032a92365c8cb"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/Textures/TI08a_KeepsakeBox_BaseColor.png",
+    "bytes": 990730,
+    "sha256": "e8bf39c05cf25218a3f2aac38d96cb3512ca112756f06cf6c54c736cba34c872"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/Textures/TI08a_KeepsakeBox_Metallic.png",
+    "bytes": 165386,
+    "sha256": "94eac27ab6c8105a745b8d7e00e158fe436d74e5c17b3712169b09ab906fef78"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/Textures/TI08a_KeepsakeBox_MetallicSmoothness.png",
+    "bytes": 2415874,
+    "sha256": "f3cc466b8c7466c7203c2af597d49297d7c1186d41c0b943603486e5d9b96792"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/Textures/TI08a_KeepsakeBox_Normal.png",
+    "bytes": 4067050,
+    "sha256": "475130995a5d13ff3d04be0d12d25ffe264095ccda36b2336ed96c5b8cd572e0"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/Textures/TI08a_KeepsakeBox_Roughness.png",
+    "bytes": 2206943,
+    "sha256": "75fdb9d4d36b02904b3be765cc63e55c8665263cad444b24717ce2b00dfb070f"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/TI08a_KeepsakeBox_hero.png",
+    "bytes": 1189531,
+    "sha256": "2923a4584db89c662c5b41eae1fc99045984d5a8f4066011747e745e4e32ac3c"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/TI08a_KeepsakeBox_LOD_comparison.png",
+    "bytes": 3261365,
+    "sha256": "f90227388187079293a8a6b362f0bae7020d1e53ce51ce9faa35995f0168e40f"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/TI08a_KeepsakeBox_v001.blend",
+    "bytes": 455256,
+    "sha256": "ca9543f7a0b26b8fb2d7f6bfa2413ca4426c95d4150ed7beb7e2a97e1f6345b1"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/TI08a_KeepsakeBox_v001.fbx",
+    "bytes": 393212,
+    "sha256": "2f6a71656e79c04d014305f018b956c4b0a9a533b5ba60b3ee7a873593231768"
+   },
+   {
+    "file": "Models/TI08a_KeepsakeBox/v001/validation.json",
+    "bytes": 1552,
+    "sha256": "de8489f4802b546ab30705d0f8b0bccf0fe318625bbb3e76e52d7807b0a528ca"
+   }
+  ]
+ },
+ {
+  "asset": "TI08b_PaperScroll",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/01_front.png",
+    "bytes": 1064876,
+    "sha256": "136773266d07fdcffef324d310835ac1291a4c55d8d896265d9630c960eaed2b"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/02_right.png",
+    "bytes": 1037449,
+    "sha256": "891293106a409ede07440dbc946b0bc5c88fb45bc4820b6ff575384d3103817a"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/03_rear.png",
+    "bytes": 1054012,
+    "sha256": "34945c7647bd3c7c9cf81269adafcb0a039c676db3f3e0283687c7d84839b424"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/04_left.png",
+    "bytes": 1035196,
+    "sha256": "ca2da77052aba6a8e675ce699b0ca42933e81eccbcb87667cbede65361f6e0f8"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/05_front_right.png",
+    "bytes": 1093908,
+    "sha256": "45a4cc06db0e8cc7f179719fee77e40475a5fb70782ed11610a26e2d18f9d4a8"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/06_rear_right.png",
+    "bytes": 1096011,
+    "sha256": "a88734b28b234a1ecf0d87fe84af686aae736337e86aa8debbc4651203145349"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/07_rear_left.png",
+    "bytes": 1090057,
+    "sha256": "5e29d578139b4711c0aa3c9a907c3845969dde19d0d29a9f4cd6cf73745fc6c8"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/08_front_left.png",
+    "bytes": 1096760,
+    "sha256": "6bceabb1cdee3ef86d8a1dbae53eec9cc291e1aa62ee4cdce18d44ac8d3d3545"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/09_top.png",
+    "bytes": 1048759,
+    "sha256": "711f08d9f4a5873a9e82091afa1a8bb1db8d85a8825aee469750450a8fedae74"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08b_PaperScroll_v001/10_high_front.png",
+    "bytes": 1054058,
+    "sha256": "74e0dbb2f3a123eaafaa751248d45cfc8cf08866e761ba86eddbe78772a34b06"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/model_info.json",
+    "bytes": 2506,
+    "sha256": "7cea6c042e6d8f2d4fddb790421798019beb108ee635256a3ff20dfca48eb3af"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/Textures/TI08b_PaperScroll_BaseColor.png",
+    "bytes": 911973,
+    "sha256": "a590660f6043ceb974519fe2d3eed53fd496f36ecab3abf7d1b96d1552828c3d"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/Textures/TI08b_PaperScroll_Metallic.png",
+    "bytes": 173796,
+    "sha256": "015c58622eda7a0446f30f1ee8ea7ce0381352d6cb30244b542d3ed13ace3d17"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/Textures/TI08b_PaperScroll_MetallicSmoothness.png",
+    "bytes": 1665980,
+    "sha256": "4c7b5aca98bc6cd0e51d879fd16d06507f443f0b45a8017ba1d14e410624b60c"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/Textures/TI08b_PaperScroll_Normal.png",
+    "bytes": 4668005,
+    "sha256": "17f7ffd75d8c42a3a784bedcac3e6850e8268d3d90f2d053434a12d9b76173fc"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/Textures/TI08b_PaperScroll_Roughness.png",
+    "bytes": 1497687,
+    "sha256": "7bf22d05ad6df18aa07c4dce3b0e2f17b238e975a2928365b40b7e696745d7f9"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/TI08b_PaperScroll_hero.png",
+    "bytes": 1096550,
+    "sha256": "dbccdad336d457e2d200f93f09bcaa8fde422ea58183a5f59016a9902602c441"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/TI08b_PaperScroll_LOD_comparison.png",
+    "bytes": 2801332,
+    "sha256": "e86af016a365a6fb7080462730b06854958ddf87d4825db8d17cef59fc413ec7"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/TI08b_PaperScroll_v001.blend",
+    "bytes": 375423,
+    "sha256": "a3950a184253c04441e408a9ceb3b669f2a11f36b98d234d96ce2b5e98a4c8b9"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/TI08b_PaperScroll_v001.fbx",
+    "bytes": 300620,
+    "sha256": "5cce6d2a75f507f2ee7476d22ddf4299f6c4229762de253cd69ae9a92fd794ef"
+   },
+   {
+    "file": "Models/TI08b_PaperScroll/v001/validation.json",
+    "bytes": 1550,
+    "sha256": "8fd2186156e95692d36bdf1d41dc1b9d5e1ad45eecc55cc189336f9f66205a62"
+   }
+  ]
+ },
+ {
+  "asset": "TI08c_CeladonJar",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/01_front.png",
+    "bytes": 1052471,
+    "sha256": "c3f9a1a2f389df52b76fa762cb8093ab9999fa7d6d0008d106ef6816c2b35df3"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/02_right.png",
+    "bytes": 1052535,
+    "sha256": "7a0d3d9580223ca67717374869aa3b73d4f198359300ab0407fede9efe815d48"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/03_rear.png",
+    "bytes": 1054780,
+    "sha256": "354aa1ae623231c1bb6a91bb7c72ada447706088141dfb05298777e638190290"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/04_left.png",
+    "bytes": 1050037,
+    "sha256": "8d63e76584bedf48585f097814d5aa6ec78a8c73b038eb395730a3ee62bd5c84"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/05_front_right.png",
+    "bytes": 1054572,
+    "sha256": "b0c70a6cee159d8ce224a60778503999e2d483f2c72dbc84a667fb945abde4e5"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/06_rear_right.png",
+    "bytes": 1054144,
+    "sha256": "5f1b56b457887ace0265dd09efa9407ef7e63d734bb5ca88f442db91dff0857f"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/07_rear_left.png",
+    "bytes": 1058792,
+    "sha256": "ffc8548826b637b722c1179f8d260ac70fac192f76e02191dc396258994ffaae"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/08_front_left.png",
+    "bytes": 1056311,
+    "sha256": "464f30d08256325f8aa674a038c6c1d4d33de818de86acac2767470df2bda4a7"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/09_top.png",
+    "bytes": 1030860,
+    "sha256": "e774e1e5626256a724983b8d9cd9f158389903dd65d847dbad1518748c950f3e"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08c_CeladonJar_v001/10_high_front.png",
+    "bytes": 1046099,
+    "sha256": "d74dfcc26c15d693926083ce881da18069b00115881c5f59c4517d7077779552"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/model_info.json",
+    "bytes": 2497,
+    "sha256": "0964fa84174204e08cf9edae8f882b57c0d2dc54d15e908e69205f9b0bf5cc8a"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/Textures/TI08c_CeladonJar_BaseColor.png",
+    "bytes": 729670,
+    "sha256": "291ec19381298b84d8fd908f5f085c6dc73ee21e425217027d309a4f738efa83"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/Textures/TI08c_CeladonJar_Metallic.png",
+    "bytes": 27749,
+    "sha256": "cfdc1f47e218f9d66f6422f8cc2e489e03ce211052defba65a0ae9256a6adb3d"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/Textures/TI08c_CeladonJar_MetallicSmoothness.png",
+    "bytes": 1185381,
+    "sha256": "a92b9f030a21999d8768b1efc5100eb89d0c204dd520bb071e3c8b29f74698f3"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/Textures/TI08c_CeladonJar_Normal.png",
+    "bytes": 2974309,
+    "sha256": "a0687c068742999cd523016e2abd8be7fee918e4d760b13b8d2135a58481ca93"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/Textures/TI08c_CeladonJar_Roughness.png",
+    "bytes": 1135356,
+    "sha256": "57049554d9cf031d053efe1f3e7358bcec0249af1a07c9e764c68f56400e157a"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/TI08c_CeladonJar_hero.png",
+    "bytes": 1051213,
+    "sha256": "8749235cc13eac432ddd8ff6f4a615f013e56c142066d72af3c3c6909da46d84"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/TI08c_CeladonJar_LOD_comparison.png",
+    "bytes": 2748870,
+    "sha256": "1a368402ed231c1c074bfa788d29609f69d3a8fa3b9fd82a834e639ed4bf6a43"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/TI08c_CeladonJar_v001.blend",
+    "bytes": 258544,
+    "sha256": "b4cc5ceaa57e1879c53fddee7375467a30a3a4f093239467359767ff2c0dccc8"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/TI08c_CeladonJar_v001.fbx",
+    "bytes": 195548,
+    "sha256": "d624763a3d7ab6f8cb0f8355759fbea1d297c455130ab771edace49fd51ac355"
+   },
+   {
+    "file": "Models/TI08c_CeladonJar/v001/validation.json",
+    "bytes": 1554,
+    "sha256": "f73a858149a892a66695a0a991ff86c2a2a62618eeb2860192118299a168ed85"
+   }
+  ]
+ },
+ {
+  "asset": "TI08d_MedicinePot",
+  "files": [
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/01_front.png",
+    "bytes": 1047945,
+    "sha256": "e09c6b61c81ad49d5a5ade46caeda61759b30ca6d641be410964072bdf9c5a56"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/02_right.png",
+    "bytes": 1052454,
+    "sha256": "25cb3128754142ea6ea6fd280ada768c6d8707a8ee4fc557bd65ad6896b80a15"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/03_rear.png",
+    "bytes": 1047860,
+    "sha256": "946039b32663abad3c209ae49a93ff676d9eaec4959616142d7bc8227758ab10"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/04_left.png",
+    "bytes": 1046891,
+    "sha256": "ac39d74171e58f51fd21e601ce6a4a077a8bbcf0af5a3553fc2ce4e869b667a0"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/05_front_right.png",
+    "bytes": 1055493,
+    "sha256": "898c892718004fe387a69bf92c98f8f0a4959d0e040d3a5dc7ed50986be3bb2a"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/06_rear_right.png",
+    "bytes": 1052299,
+    "sha256": "4fe3653827b0431429a80bf7ce81afea6a16bea6de4fdb7d7ddfa0870e689ffd"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/07_rear_left.png",
+    "bytes": 1054136,
+    "sha256": "4d00de3295804d0a1cb7230fcdf981e0e0a40164ae72bca016a0842d295ad5ad"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/08_front_left.png",
+    "bytes": 1056837,
+    "sha256": "3dbbddea926d337192eee616bb5f618248dd464f1f08cff1ccebd1bfa57f63c1"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/09_top.png",
+    "bytes": 1047704,
+    "sha256": "6fab6dec547b832ccf92a2dee3f72424c5a647c38b384730f8c6621cebba48ed"
+   },
+   {
+    "file": "ArtLibrary/Turnarounds/TI08d_MedicinePot_v001/10_high_front.png",
+    "bytes": 1055377,
+    "sha256": "d2ab67afead142a2c8efc041662faa1708382cf5d88a9985c365ecef5ff910fe"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/model_info.json",
+    "bytes": 2512,
+    "sha256": "6333893c9a57cd4a065579ddb8dd91aa77a12d85a7baec62d2f9b4dc7f7f368d"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/Textures/TI08d_MedicinePot_BaseColor.png",
+    "bytes": 742432,
+    "sha256": "1c5475ad2a7180da08088b385e71e7f5a21c913df6de44088cd2a39f07e728a5"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/Textures/TI08d_MedicinePot_Metallic.png",
+    "bytes": 27749,
+    "sha256": "cfdc1f47e218f9d66f6422f8cc2e489e03ce211052defba65a0ae9256a6adb3d"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/Textures/TI08d_MedicinePot_MetallicSmoothness.png",
+    "bytes": 1182844,
+    "sha256": "ea96687a4206383c66f8c0d6e8518dd2e579b1eb62887432f3a8a339769bd262"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/Textures/TI08d_MedicinePot_Normal.png",
+    "bytes": 3754364,
+    "sha256": "12932e29dec5c6f5ec70a1c11d8b19f62b02f832b0aa646354e52afd3e41c925"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/Textures/TI08d_MedicinePot_Roughness.png",
+    "bytes": 1135888,
+    "sha256": "b52e6d0b6a39e9aaebcacaa421f3e2a2869f58ebefc550d42d04ca42825c6010"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/TI08d_MedicinePot_hero.png",
+    "bytes": 1061702,
+    "sha256": "eff6d852fbe259790c3cf669014eea445ebdb0c76810fd76b62a1fa4597ef169"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/TI08d_MedicinePot_LOD_comparison.png",
+    "bytes": 2751253,
+    "sha256": "9ab2eaf73e489358b063778151f698b72f96a38d8171977ce1760446a652e120"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/TI08d_MedicinePot_v001.blend",
+    "bytes": 372301,
+    "sha256": "fda13f22881464f4b000aa2b5ed5ff9acc65a7f075b8d2569e348b476d6011b6"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/TI08d_MedicinePot_v001.fbx",
+    "bytes": 304220,
+    "sha256": "3f65e8307c38c490e11dcb1c97ce5c8a4a288addb095824c9802563ed214ac4d"
+   },
+   {
+    "file": "Models/TI08d_MedicinePot/v001/validation.json",
+    "bytes": 1548,
+    "sha256": "764ffab51d2e31daed333d67966eb4be6eed5fcf6680b6fa5d69f1b72fc1b36e"
+   }
+  ]
+ }
+]

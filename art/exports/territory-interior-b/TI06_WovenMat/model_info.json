@@ -1,0 +1,95 @@
+{
+  "asset": "TI06_WovenMat",
+  "version": "v001",
+  "name_zh": "安坐地蓆",
+  "interior_slot": "TI_Rug",
+  "naming_three_layers": {
+    "surface": "承托蒲團的草蓆",
+    "allusion": "草蓆坐具",
+    "foreshadowing_internal_only": "中央坐痕與邊緣磨損呈現生活延續"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    1.9664,
+    1.3662,
+    0.0241
+  ],
+  "design_target_m": [
+    1.96,
+    1.36,
+    0.025
+  ],
+  "slot_limit_m": [
+    2.0,
+    1.4,
+    0.03
+  ],
+  "lods": {
+    "LOD0": {
+      "TI06_WovenMat_LOD0": 4976
+    },
+    "LOD1": {
+      "TI06_WovenMat_LOD1": 1098
+    },
+    "LOD2": {
+      "TI06_WovenMat_LOD2": 338
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI06_WovenMat_Main"
+  ],
+  "textures": [
+    "TI06_WovenMat_BaseColor.png",
+    "TI06_WovenMat_Metallic.png",
+    "TI06_WovenMat_MetallicSmoothness.png",
+    "TI06_WovenMat_Normal.png",
+    "TI06_WovenMat_Roughness.png"
+  ],
+  "texture_size_px": 2048,
+  "own_uv_textures": {},
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI06_WovenMat_BaseColor.png",
+    "Normal": "TI06_WovenMat_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI06_WovenMat_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": null,
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {
+    "SOCKET_cushion": [
+      -0.0001,
+      0.0,
+      0.018
+    ]
+  },
+  "sockets_fbx_reimport_xyz": {
+    "SOCKET_cushion.001": [
+      -0.0001,
+      0.0,
+      0.018
+    ]
+  },
+  "states": [],
+  "state_renders": {},
+  "fbx_objects": [
+    "SOCKET_cushion.001",
+    "TI06_WovenMat.001",
+    "TI06_WovenMat_LOD0.001",
+    "TI06_WovenMat_LOD1.001",
+    "TI06_WovenMat_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)"
+}

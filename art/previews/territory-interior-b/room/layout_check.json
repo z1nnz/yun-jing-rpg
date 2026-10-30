@@ -1,0 +1,235 @@
+{
+  "footprints_xy_min_max_and_height": {
+    "TI_Shelf": [
+      3.036,
+      -1.48,
+      3.464,
+      0.28,
+      1.96
+    ],
+    "TI_Desk": [
+      -2.93,
+      -2.234,
+      -2.27,
+      -0.966,
+      0.839
+    ],
+    "TI_Furnace": [
+      2.319,
+      -2.275,
+      3.081,
+      -1.525,
+      1.075
+    ],
+    "TI_Lamp_1": [
+      -1.814,
+      1.887,
+      -1.386,
+      2.313,
+      1.64
+    ],
+    "TI_Lamp_2": [
+      1.236,
+      -2.313,
+      1.664,
+      -1.887,
+      1.64
+    ],
+    "TI_Screen": [
+      -2.093,
+      0.241,
+      -0.307,
+      0.559,
+      1.72
+    ],
+    "TI_Rug": [
+      -0.383,
+      -0.683,
+      1.583,
+      0.683,
+      0.024
+    ],
+    "TI_Curtain_F": [
+      -0.631,
+      -2.532,
+      0.631,
+      -2.468,
+      2.143
+    ],
+    "TI_Curtain_B": [
+      -0.631,
+      2.468,
+      0.631,
+      2.532,
+      2.143
+    ],
+    "Bed": [
+      -3.35,
+      -0.06,
+      -2.15,
+      2.06,
+      0.975
+    ],
+    "StorageChest": [
+      1.875,
+      1.447,
+      3.325,
+      2.353,
+      0.794
+    ],
+    "Cushion": [
+      0.735,
+      -0.665,
+      1.665,
+      0.265,
+      0.185
+    ]
+  },
+  "room": {
+    "x0": -3.5,
+    "x1": 3.5,
+    "y0": -2.5,
+    "y1": 2.5,
+    "h": 3.2,
+    "door_w": 1.2,
+    "door_h": 2.2
+  },
+  "conflicts": [],
+  "door_clearance": {
+    "front": {
+      "zone_xy": [
+        -0.6,
+        -2.5,
+        0.6,
+        -1.3
+      ],
+      "blocking": [],
+      "pass": true
+    },
+    "back": {
+      "zone_xy": [
+        -0.6,
+        1.3,
+        0.6,
+        2.5
+      ],
+      "blocking": [],
+      "pass": true
+    }
+  },
+  "approach": {
+    "TI_Shelf": {
+      "zone_xy": [
+        2.436,
+        -0.9,
+        3.036,
+        -0.3
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    },
+    "TI_Desk": {
+      "zone_xy": [
+        -2.27,
+        -1.9,
+        -1.67,
+        -1.3
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    },
+    "TI_Furnace": {
+      "zone_xy": [
+        1.719,
+        -2.2,
+        2.319,
+        -1.6
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    },
+    "TI_Lamp_1": {
+      "zone_xy": [
+        -1.9,
+        1.287,
+        -1.3,
+        1.887
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    },
+    "TI_Lamp_2": {
+      "zone_xy": [
+        1.15,
+        -1.887,
+        1.75,
+        -1.287
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    },
+    "TI_Screen": {
+      "zone_xy": [
+        -1.5,
+        -0.359,
+        -0.9,
+        0.241
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    },
+    "Bed": {
+      "zone_xy": [
+        -3.05,
+        -0.66,
+        -2.45,
+        -0.06
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    },
+    "StorageChest": {
+      "zone_xy": [
+        2.3,
+        0.847,
+        2.9,
+        1.447
+      ],
+      "inside_room": true,
+      "blocking": [],
+      "pass": true
+    }
+  },
+  "pass": true,
+  "shelf_states": {
+    "empty": {},
+    "half": {
+      "1": "TI08c_CeladonJar",
+      "4": "TI08a_KeepsakeBox",
+      "6": "TI08b_PaperScroll",
+      "7": "TI08d_MedicinePot"
+    },
+    "full": {
+      "1": "TI08c_CeladonJar",
+      "2": "TI08a_KeepsakeBox",
+      "3": "TI08b_PaperScroll",
+      "4": "TI08d_MedicinePot",
+      "5": "TI08a_KeepsakeBox",
+      "6": "TI08c_CeladonJar",
+      "7": "TI08d_MedicinePot",
+      "8": "TI08b_PaperScroll"
+    }
+  },
+  "notes": [
+    "Footprints are axis-aligned bounds of LOD0 meshes placed per the brief; walls/floor are a placeholder shell.",
+    "Rug, cushion and curtains are excluded from blocking tests (walkable or in the doorway by design).",
+    "Bed/chest/cushion orientation from the brief (90 / 180 / 0 deg) was interpreted so each fits inside the room; see README."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "asset": "TI05_LandscapeScreen",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.8927,
+          -0.1586,
+          0.0
+        ],
+        "max": [
+          0.8927,
+          0.1586,
+          1.72
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          1.7854,
+          0.3173,
+          1.72
+        ],
+        "limit_m": [
+          1.8,
+          0.35,
+          1.75
+        ]
+      }
+    },
+    {
+      "check": "near_design_target",
+      "pass": true,
+      "detail": {
+        "target_m": [
+          1.76,
+          0.32,
+          1.72
+        ],
+        "deviation_m": [
+          0.0254,
+          -0.0027,
+          0.0
+        ],
+        "tolerance_m": 0.03
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          1.7854,
+          0.3173,
+          1.72
+        ],
+        "blend_dims_m": [
+          1.7854,
+          0.3173,
+          1.72
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI05_LandscapeScreen_LOD0": 10464
+        },
+        "LOD1": {
+          "TI05_LandscapeScreen_LOD1": 3988
+        },
+        "LOD2": {
+          "TI05_LandscapeScreen_LOD2": 1424
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 116,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}

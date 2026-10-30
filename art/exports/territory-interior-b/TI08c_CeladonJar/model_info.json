@@ -1,0 +1,78 @@
+{
+  "asset": "TI08c_CeladonJar",
+  "version": "v001",
+  "name_zh": "青瓷罐",
+  "interior_slot": "TI01 sockets (display only)",
+  "naming_three_layers": {
+    "surface": "收藏架展示用的青瓷罐",
+    "allusion": "木匣、卷軸與陶瓷器",
+    "foreshadowing_internal_only": "無劇情伏筆；正式見聞道具由 C 製作"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.1418,
+    0.1418,
+    0.2317
+  ],
+  "design_target_m": null,
+  "slot_limit_m": [
+    0.35,
+    0.3,
+    0.35
+  ],
+  "lods": {
+    "LOD0": {
+      "TI08c_CeladonJar_LOD0": 4160
+    },
+    "LOD1": {
+      "TI08c_CeladonJar_LOD1": 1872
+    },
+    "LOD2": {
+      "TI08c_CeladonJar_LOD2": 582
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI08c_CeladonJar_Main"
+  ],
+  "textures": [
+    "TI08c_CeladonJar_BaseColor.png",
+    "TI08c_CeladonJar_Metallic.png",
+    "TI08c_CeladonJar_MetallicSmoothness.png",
+    "TI08c_CeladonJar_Normal.png",
+    "TI08c_CeladonJar_Roughness.png"
+  ],
+  "texture_size_px": 1024,
+  "own_uv_textures": {},
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI08c_CeladonJar_BaseColor.png",
+    "Normal": "TI08c_CeladonJar_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI08c_CeladonJar_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": null,
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {},
+  "sockets_fbx_reimport_xyz": {},
+  "states": [],
+  "state_renders": {},
+  "fbx_objects": [
+    "TI08c_CeladonJar.001",
+    "TI08c_CeladonJar_LOD0.001",
+    "TI08c_CeladonJar_LOD1.001",
+    "TI08c_CeladonJar_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)"
+}

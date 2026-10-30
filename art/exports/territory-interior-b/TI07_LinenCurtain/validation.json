@@ -1,0 +1,98 @@
+{
+  "asset": "TI07_LinenCurtain",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.631,
+          -0.0319,
+          0.0
+        ],
+        "max": [
+          0.631,
+          0.0319,
+          2.1435
+        ]
+      }
+    },
+    {
+      "check": "within_slot_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          1.262,
+          0.0637,
+          2.1435
+        ],
+        "limit_m": [
+          1.3,
+          0.1,
+          2.2
+        ]
+      }
+    },
+    {
+      "check": "near_design_target",
+      "pass": true,
+      "detail": {
+        "target_m": [
+          1.28,
+          0.09,
+          2.16
+        ],
+        "deviation_m": [
+          -0.018,
+          -0.0263,
+          -0.0165
+        ],
+        "tolerance_m": 0.03
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          1.262,
+          0.0637,
+          2.1435
+        ],
+        "blend_dims_m": [
+          1.262,
+          0.0637,
+          2.1435
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    },
+    {
+      "check": "lod_triangle_order",
+      "pass": true,
+      "detail": {
+        "LOD0": {
+          "TI07_LinenCurtain_LOD0": 46876
+        },
+        "LOD1": {
+          "TI07_LinenCurtain_LOD1": 20888
+        },
+        "LOD2": {
+          "TI07_LinenCurtain_LOD2": 8804
+        }
+      }
+    }
+  ],
+  "all_pass": true,
+  "seconds": 83,
+  "not_checked": [
+    "Unity import",
+    "in-engine lighting match",
+    "collision",
+    "player clearance in the real room (see presentation renders)"
+  ]
+}
