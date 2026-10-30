@@ -1,0 +1,23 @@
+{
+  "asset": "TI04_PaperLamp",
+  "version": "v002",
+  "checks": {
+    "fbx_reimport_has_every_group_LOD0_LOD1_LOD2": true,
+    "fbx_reimport_triangles_match": true,
+    "fbx_reimport_sockets": true,
+    "LOD1_ratio_45_55_percent": true,
+    "LOD2_ratio_12_18_percent": true
+  },
+  "passed": true,
+  "fbx_reimport_LOD0_dimensions_m": [
+    0.4284,
+    0.4256,
+    1.64
+  ],
+  "fbx_sha256": "75505094a55aface7213f2346e4cea2f9779e1c1e81890732acc9a2606472f07",
+  "comparison_render": "art/previews/territory-interior-b/TI04_PaperLamp/TI04_PaperLamp_lod_v001_v002.png",
+  "not_checked": [
+    "Unity import of v002 (the Unity demo still loads v001; LOD0 is identical)",
+    "LODGroup switch distances"
+  ]
+}

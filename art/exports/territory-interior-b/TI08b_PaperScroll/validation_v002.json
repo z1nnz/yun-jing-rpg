@@ -1,0 +1,23 @@
+{
+  "asset": "TI08b_PaperScroll",
+  "version": "v002",
+  "checks": {
+    "fbx_reimport_has_every_group_LOD0_LOD1_LOD2": true,
+    "fbx_reimport_triangles_match": true,
+    "fbx_reimport_sockets": true,
+    "LOD1_ratio_45_55_percent": true,
+    "LOD2_ratio_12_18_percent": true
+  },
+  "passed": true,
+  "fbx_reimport_LOD0_dimensions_m": [
+    0.29,
+    0.0814,
+    0.0788
+  ],
+  "fbx_sha256": "df92dd26d5b5545f5b6cde747e93746b9c3cd84b058b8025b19530d456139013",
+  "comparison_render": "art/previews/territory-interior-b/TI08b_PaperScroll/TI08b_PaperScroll_lod_v001_v002.png",
+  "not_checked": [
+    "Unity import of v002 (the Unity demo still loads v001; LOD0 is identical)",
+    "LODGroup switch distances"
+  ]
+}

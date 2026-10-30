@@ -6,6 +6,7 @@ using UnityEngine;
 /// Batch-mode entry points:
 ///   -executeMethod DemoRecorder.Preview   builds the scene and writes a handful of stills (Recording/preview_*.png)
 ///   -executeMethod DemoRecorder.Record    builds the scene and writes every frame at 30 fps (Recording/frames/)
+///   -executeMethod DemoRecorder.RecordShort   the same for the under-a-minute cut (door, lamp, shelf, furnace)
 /// Time is stepped by DemoDirector, so the result does not depend on editor frame rate.
 public static class DemoRecorder
 {
@@ -20,8 +21,15 @@ public static class DemoRecorder
         Run(times, false);
     }
     public static void Record() => Run(null, true);
+    /// The under-a-minute cut (brief 02-B §10); TI18_STILLS set → stills only.
+    public static void RecordShort()
+    {
+        var env = System.Environment.GetEnvironmentVariable("TI18_STILLS");
+        if (string.IsNullOrEmpty(env)) Run(null, true, true);
+        else Run(env.Split(',').Select(s => float.Parse(s, System.Globalization.CultureInfo.InvariantCulture)).ToArray(), false, true);
+    }
 
-    static void Run(float[] stills, bool all)
+    static void Run(float[] stills, bool all, bool shortCut = false)
     {
         var root = Path.GetFullPath("Recording");
         Directory.CreateDirectory(root);
@@ -31,6 +39,7 @@ public static class DemoRecorder
         var dir = SceneBuilder.Build().GetComponent<DemoDirector>();
         File.WriteAllLines(Path.Combine(root, "build_report.txt"), SceneBuilder.Report);
         dir.ui.Build();
+        dir.shortCut = shortCut;
         dir.BeginDemo();
 
         var cam = dir.rig.GetComponent<Camera>();

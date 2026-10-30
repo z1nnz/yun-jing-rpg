@@ -62,6 +62,7 @@ U="C:/Program Files/Unity/Hub/Editor/6000.0.85f1/Editor/Unity.exe"
 "$U" -batchmode -projectPath "$(cygpath -w $PWD)" -runTests -testPlatform EditMode -testResults "$(cygpath -w $PWD)/Logs/editmode_results.xml" -logFile Logs/tests.log
 "$U" -batchmode -quit -projectPath "$(cygpath -w $PWD)" -executeMethod DemoRecorder.Preview -logFile Logs/preview.log
 "$U" -batchmode -quit -projectPath "$(cygpath -w $PWD)" -executeMethod DemoRecorder.Record -logFile Logs/record.log
+"$U" -batchmode -quit -projectPath "$(cygpath -w $PWD)" -executeMethod DemoRecorder.RecordShort -logFile Logs/short.log   # 1 分鐘內短版
 ```
 
 ## 已驗證／未驗證
@@ -71,5 +72,12 @@ U="C:/Program Files/Unity/Hub/Editor/6000.0.85f1/Editor/Unity.exe"
 
 ## 尚未完成（對照工作單 02-B）
 - 手札的世界觀介紹內容與動畫（等世界觀定稿）。
-- 錄影縮到 1 分鐘內（推門、點燈、擺收藏、點丹爐）。
-- 模型 LOD1／LOD2 比例調到約 50%／15%；四向審圖加 1.75 m 人形比例尺。
+- 與 Codex C2 室內套件的並排比較（等 C2 交件）。
+- 文字搬到 `packages/content`（核心組決定格式後）。
+
+## 錄影
+`art/previews/territory-interior-b/demo/` 下有兩支：
+- `TI18_InteriorShort_v001.mp4`：工作單要的 1 分鐘內短版。依序是推門（角色穿過前門簾，門簾被推開後擺回）、點燈、把卷軸擺上收藏架、添柴點丹爐。
+- `TI18_InteriorDemo_v009.mp4`：完整走一遍，包含箱子、收藏架、煉丹、燈、手札、床。
+
+門簾的擺動是 `CurtainSway`：角色穿過門口時，門簾往角色行進的方向推開，再像彈簧一樣擺回靜止。遊玩時活動範圍只到門內，走近門口時門簾會被推動，但走不出去。

@@ -100,6 +100,7 @@ public static class SceneBuilder
 
         // ---------------------------------------------------------------- interactables
         var player = BuildPlayer();
+        var curtains = new[] { "TI_Curtain_F", "TI_Curtain_B" }.Select(k => Sway(placed[k], player.transform)).ToArray();
         var shelf = BuildShelf(placed["TI_Shelf"]);
         var chest = BuildChest(chestGo);
         var furnace = BuildFurnace(placed["TI_Furnace"]);
@@ -145,7 +146,7 @@ public static class SceneBuilder
         var ctl = player.gameObject.AddComponent<PlayerController>(); ctl.avatar = player; ctl.interactables = items; ctl.rig = rig;
         var dir = new GameObject("DemoDirector").AddComponent<DemoDirector>();
         dir.player = player; dir.chest = chest; dir.furnace = furnace; dir.lamp = lamp; dir.bed = bed; dir.ui = ui; dir.rig = rig;
-        dir.interactables = items; dir.sun = sun; dir.sideLamp = sideLamp; dir.shelf = shelf; dir.journal = journal;
+        dir.interactables = items; dir.sun = sun; dir.sideLamp = sideLamp; dir.shelf = shelf; dir.journal = journal; dir.curtains = curtains;
 
         EditorSceneManager.SaveScene(scene, ScenePath);
         EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
@@ -374,6 +375,17 @@ public static class SceneBuilder
         return lamp;
     }
 
+    /// Hangs a door curtain from a pivot on its top rail so walking through swings it.
+    static CurtainSway Sway(GameObject curtain, Transform walker)
+    {
+        var b = WorldBounds(curtain);
+        var pivot = new GameObject(curtain.name + "_Rail");
+        pivot.transform.position = new Vector3(curtain.transform.position.x, b.max.y, curtain.transform.position.z);
+        curtain.transform.SetParent(pivot.transform, true);
+        var s = pivot.AddComponent<CurtainSway>(); s.walker = walker;
+        return s;
+    }
+
     /// 旅途手札 on the desk (TI03 SOCKET_journal): E frames the open book, then the book overlay opens on screen.
     static JournalDesk BuildJournal(GameObject go)
     {
@@ -382,7 +394,7 @@ public static class SceneBuilder
         if (sock == null) Report.Add("missing SOCKET_journal");
         Vector3 at = sock ? sock.position : go.transform.position + Vector3.up * .8f;
         j.standPoint = Marker("Journal_Stand", new Vector3(-1.75f, 0, -.85f), go.transform);
-        j.shotFocus = at; j.shotDistance = 1.5f; j.shotYaw = -95f; j.shotPitch = 52f; j.shotFov = 40f;   // from the room side, south of the player, looking down onto the open page
+        j.shotFocus = at; j.shotDistance = 1.4f; j.shotYaw = -121f; j.shotPitch = 72f; j.shotFov = 40f;   // from behind the player, steeply down over the head, so the move in never sweeps past the face
         Report.Add($"journal socket {at}");
         return j;
     }

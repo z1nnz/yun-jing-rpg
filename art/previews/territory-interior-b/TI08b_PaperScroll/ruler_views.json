@@ -1,0 +1,18 @@
+{
+  "asset": "TI08b_PaperScroll",
+  "model": "TI08b_PaperScroll_v002.fbx LOD0 (same mesh as v001)",
+  "figure_height_m": 1.75,
+  "ruler_ticks_m": 0.25,
+  "camera": "orthographic, 8 deg above horizontal",
+  "views": [
+    "ruler_01_front.png",
+    "ruler_02_side.png",
+    "ruler_03_rear.png",
+    "ruler_04_three_quarter.png"
+  ],
+  "model_dimensions_m": [
+    0.29,
+    0.081,
+    0.079
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "asset": "TI02_HomeFurnace",
+  "version": "v002",
+  "name_zh": "守溫小丹爐",
+  "interior_slot": "TI_Furnace",
+  "naming_three_layers": {
+    "surface": "在家煉簡單藥物的小爐",
+    "allusion": "守火、溫養的煉藥意象",
+    "foreshadowing_internal_only": "家中開始有自己的生活節奏"
+  },
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.7505,
+    0.762,
+    1.075
+  ],
+  "design_target_m": [
+    0.78,
+    0.76,
+    1.06
+  ],
+  "slot_limit_m": [
+    0.8,
+    0.8,
+    1.1
+  ],
+  "lods": {
+    "LOD0": {
+      "TI02_HomeFurnace_LOD0": 32787,
+      "TI02_HomeFurnace_Fire_LOD0": 1180,
+      "TI02_HomeFurnace_Lid_LOD0": 2732
+    },
+    "LOD1": {
+      "TI02_HomeFurnace_LOD1": 12909,
+      "TI02_HomeFurnace_Fire_LOD1": 530,
+      "TI02_HomeFurnace_Lid_LOD1": 1228
+    },
+    "LOD2": {
+      "TI02_HomeFurnace_LOD2": 3381,
+      "TI02_HomeFurnace_Fire_LOD2": 236,
+      "TI02_HomeFurnace_Lid_LOD2": 502
+    }
+  },
+  "lod_rules": {
+    "LOD1": "drop rivets/stitches/fibres (detail 2), collapse decimate 0.45",
+    "LOD2": "also drop small brackets/notches (detail 1), collapse decimate 0.20"
+  },
+  "materials": [
+    "M_TI02_HomeFurnace_FireInsert",
+    "M_TI02_HomeFurnace_Main"
+  ],
+  "textures": [
+    "TI02_HomeFurnace_BaseColor.png",
+    "TI02_HomeFurnace_Emission.png",
+    "TI02_HomeFurnace_Metallic.png",
+    "TI02_HomeFurnace_MetallicSmoothness.png",
+    "TI02_HomeFurnace_Normal.png",
+    "TI02_HomeFurnace_Roughness.png"
+  ],
+  "texture_size_px": 2048,
+  "own_uv_textures": {},
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI02_HomeFurnace_BaseColor.png",
+    "Normal": "TI02_HomeFurnace_Normal.png (OpenGL +Y, Unity default)",
+    "MetallicSmoothness": "TI02_HomeFurnace_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": "TI02_HomeFurnace_Emission.png",
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import"
+  },
+  "sockets_blender_xyz": {
+    "SOCKET_fire_light": [
+      -0.0748,
+      0.054,
+      0.283
+    ]
+  },
+  "sockets_fbx_reimport_xyz": {
+    "SOCKET_fire_light.001": [
+      -0.0748,
+      0.054,
+      0.283
+    ]
+  },
+  "states": [
+    "cold",
+    "burning"
+  ],
+  "state_renders": {
+    "cold": "state_cold.png",
+    "burning": "state_burning.png"
+  },
+  "fbx_objects": [
+    "SOCKET_fire_light.001",
+    "TI02_HomeFurnace.001",
+    "TI02_HomeFurnace_Fire_LOD0.001",
+    "TI02_HomeFurnace_Fire_LOD1.001",
+    "TI02_HomeFurnace_Fire_LOD2.001",
+    "TI02_HomeFurnace_LOD0.001",
+    "TI02_HomeFurnace_LOD1.001",
+    "TI02_HomeFurnace_LOD2.001",
+    "TI02_HomeFurnace_Lid_LOD0.001",
+    "TI02_HomeFurnace_Lid_LOD1.001",
+    "TI02_HomeFurnace_Lid_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (BlenderSource/build_territory_interior18.py); procedural shaders baked to a UV atlas",
+  "uv_baked": true,
+  "collision": false,
+  "collision_note": "none exported; use a box collider at dimensions_m (props: no collider needed on the shelf)",
+  "unity_import_verified": false,
+  "unreal_import_verified": false,
+  "reference": "art/references/territory-interior-b/v001 (AI design sheets, not measured)",
+  "separate_objects": {
+    "lid": "TI02_HomeFurnace_Lid_LOD*",
+    "fire_insert": "TI02_HomeFurnace_Fire_LOD* (toggle for cold/burning)"
+  },
+  "supersedes": "v001 (LOD0, materials, textures and sockets unchanged; LOD1/LOD2 rebuilt)",
+  "files": {
+    "fbx": "TI02_HomeFurnace_v002.fbx",
+    "blend": "art/source/territory-interior-b/blend/TI02_HomeFurnace_v002.blend",
+    "textures": "Textures/ (same as v001)"
+  },
+  "lod_rule": "LOD1 ~50%, LOD2 ~15% of LOD0 triangles (00-overview 4.2); small parts dropped only while enough triangles remain, then collapse decimate",
+  "lod_triangles_total": {
+    "LOD0": 36699,
+    "LOD1": 18349,
+    "LOD2": 5501
+  },
+  "lod_ratio": {
+    "LOD1": 0.5,
+    "LOD2": 0.15
+  },
+  "lod_groups": {
+    "TI02_HomeFurnace_Fire": {
+      "LOD0": 1180,
+      "LOD1": 590,
+      "LOD1_drop_part_detail_ge": 2,
+      "LOD2": 176,
+      "LOD2_drop_part_detail_ge": 1
+    },
+    "TI02_HomeFurnace": {
+      "LOD0": 32787,
+      "LOD1": 16393,
+      "LOD1_drop_part_detail_ge": 2,
+      "LOD2": 4917,
+      "LOD2_drop_part_detail_ge": 1
+    },
+    "TI02_HomeFurnace_Lid": {
+      "LOD0": 2732,
+      "LOD1": 1366,
+      "LOD1_drop_part_detail_ge": 2,
+      "LOD2": 408,
+      "LOD2_drop_part_detail_ge": 1
+    }
+  },
+  "v001_lod_triangles_total": {
+    "LOD0": 36699,
+    "LOD1": 14667,
+    "LOD2": 4119
+  }
+}

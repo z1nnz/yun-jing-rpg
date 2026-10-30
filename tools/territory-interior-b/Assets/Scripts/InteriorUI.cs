@@ -15,10 +15,27 @@ public class InteriorUI : MonoBehaviour
     float toastT, clickT = -1f;
     static Font font;
 
-    static readonly Color Panel = new Color(.09f, .10f, .10f, .9f), Line = new Color(.55f, .75f, .66f, 1f),
-        Ink = new Color(.93f, .90f, .83f), Dim = new Color(.62f, .60f, .55f), Gold = new Color(.95f, .80f, .45f),
-        Row = new Color(.18f, .19f, .19f, .9f), Empty = new Color(.12f, .12f, .12f, .9f), Frame = new Color(.32f, .32f, .30f, .9f),
-        Btn = new Color(.42f, .30f, .16f, .95f), BtnOff = new Color(.25f, .22f, .19f, .9f), Bad = new Color(.85f, .35f, .25f, 1f);
+    // warm old wood and dark lacquer, so the panels sit with the furniture and the journal
+    static readonly Color Panel = new Color(.12f, .095f, .07f, .93f), Line = new Color(.55f, .75f, .66f, 1f),
+        Ink = new Color(.93f, .90f, .83f), Dim = new Color(.66f, .61f, .53f), Gold = new Color(.95f, .80f, .45f),
+        Row = new Color(.21f, .17f, .13f, .92f), Empty = new Color(.14f, .11f, .085f, .92f), Frame = new Color(.38f, .30f, .21f, .92f),
+        Btn = new Color(.45f, .31f, .16f, .97f), BtnOff = new Color(.25f, .21f, .17f, .92f), Bad = new Color(.85f, .35f, .25f, 1f),
+        Wood = new Color(.33f, .21f, .12f, 1f), Trim = new Color(.80f, .64f, .38f, .55f);
+
+    /// Wooden rim with a thin brass inlay just inside it.
+    static void Framed(Image panel)
+    {
+        var o = panel.gameObject.AddComponent<Outline>(); o.effectColor = Wood; o.effectDistance = new Vector2(4, -4);
+        var o2 = panel.gameObject.AddComponent<Outline>(); o2.effectColor = new Color(0, 0, 0, .5f); o2.effectDistance = new Vector2(6, -6);
+        var inlay = MakeRect("Inlay", panel.transform); Fill(inlay); inlay.offsetMin = new Vector2(6, 6); inlay.offsetMax = new Vector2(-6, -6);
+        inlay.SetAsFirstSibling();
+        foreach (var (a, horiz) in new[] { (0f, true), (1f, true), (0f, false), (1f, false) })
+        {
+            var r = MakeImage("Edge", inlay, Trim); r.raycastTarget = false; var rt = r.rectTransform;
+            rt.anchorMin = horiz ? new Vector2(0, a) : new Vector2(a, 0); rt.anchorMax = horiz ? new Vector2(1, a) : new Vector2(a, 1);
+            rt.pivot = new Vector2(.5f, .5f); rt.anchoredPosition = Vector2.zero; rt.sizeDelta = horiz ? new Vector2(0, 1) : new Vector2(1, 0);
+        }
+    }
 
     void OnEnable() { Build(); }
 
@@ -44,11 +61,11 @@ public class InteriorUI : MonoBehaviour
         status = MakeText("Status", transform, "", 18, TextAnchor.UpperRight, Ink);
         Place(status.rectTransform, new Vector2(1, 1), new Vector2(-24, -20), new Vector2(520, 30));
 
-        promptBg = MakeImage("PromptBg", transform, Panel);
+        promptBg = MakeImage("PromptBg", transform, Panel); Framed(promptBg);
         Place(promptBg.rectTransform, new Vector2(.5f, 0), new Vector2(0, 70), new Vector2(320, 52));
         prompt = MakeText("Prompt", promptBg.transform, "", 24, TextAnchor.MiddleCenter, Ink);
         Fill(prompt.rectTransform);
-        toastBg = MakeImage("ToastBg", transform, new Color(.12f, .16f, .14f, .9f));
+        toastBg = MakeImage("ToastBg", transform, new Color(.16f, .12f, .08f, .9f));
         Place(toastBg.rectTransform, new Vector2(.5f, 1), new Vector2(0, -96), new Vector2(440, 48));
         toast = MakeText("Toast", toastBg.transform, "", 22, TextAnchor.MiddleCenter, Ink);
         Fill(toast.rectTransform);
@@ -99,7 +116,7 @@ public class InteriorUI : MonoBehaviour
         {
             toastT -= dt;
             float a = Mathf.Clamp01(toastT / .4f);
-            toast.color = new Color(Ink.r, Ink.g, Ink.b, a); toastBg.color = new Color(.12f, .16f, .14f, .9f * a);
+            toast.color = new Color(Ink.r, Ink.g, Ink.b, a); toastBg.color = new Color(.16f, .12f, .08f, .9f * a);
             if (toastT <= 0f) toastBg.gameObject.SetActive(false);
         }
         if (clickT >= 0f)
@@ -143,7 +160,7 @@ public class InteriorUI : MonoBehaviour
 
     void BuildStorage()
     {
-        var panel = MakeImage("StoragePanel", transform, Panel);
+        var panel = MakeImage("StoragePanel", transform, Panel); Framed(panel);
         storagePanel = panel.gameObject;
         Place(panel.rectTransform, new Vector2(.5f, 0), new Vector2(0, 14), new Vector2(1010, 296));
         var p = panel.transform; var tl = new Vector2(0, 1);
@@ -282,7 +299,7 @@ public class InteriorUI : MonoBehaviour
 
     void BuildShelf()
     {
-        var panel = MakeImage("ShelfPanel", transform, Panel);
+        var panel = MakeImage("ShelfPanel", transform, Panel); Framed(panel);
         shelfPanel = panel.gameObject;
         Place(panel.rectTransform, new Vector2(0, .5f), new Vector2(16, -24), new Vector2(340, 410));
         var p = panel.transform; var tl = new Vector2(0, 1);
@@ -543,7 +560,7 @@ public class InteriorUI : MonoBehaviour
 
     void BuildAlchemy()
     {
-        var panel = MakeImage("AlchemyPanel", transform, Panel);
+        var panel = MakeImage("AlchemyPanel", transform, Panel); Framed(panel);
         alcPanel = panel.gameObject;
         Place(panel.rectTransform, new Vector2(1, .5f), new Vector2(-16, -28), new Vector2(430, 590));
         var p = panel.transform; var tl = new Vector2(0, 1);
@@ -585,10 +602,10 @@ public class InteriorUI : MonoBehaviour
         alcPanel.SetActive(false);
 
         // result card on the left, beside the furnace
-        var card = MakeImage("ResultCard", transform, new Color(.08f, .09f, .08f, .92f));
+        var card = MakeImage("ResultCard", transform, Panel); Framed(card);
         resultCard = card.gameObject;
         Place(card.rectTransform, new Vector2(0, .5f), new Vector2(28, -150), new Vector2(420, 236));
-        card.gameObject.AddComponent<Outline>().effectColor = new Color(Gold.r, Gold.g, Gold.b, .6f);
+
         resTitle = MakeText("ResTitle", card.transform, "", 30, TextAnchor.UpperLeft, Gold); Place(resTitle.rectTransform, tl, new Vector2(20, -14), new Vector2(380, 40));
         resBody = MakeText("ResBody", card.transform, "", 16, TextAnchor.UpperLeft, Ink); Place(resBody.rectTransform, tl, new Vector2(20, -62), new Vector2(380, 170));
         resultCard.SetActive(false);

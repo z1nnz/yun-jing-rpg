@@ -22,7 +22,9 @@ public class DemoDirector : MonoBehaviour
     public ShelfDisplay shelf;
     public PaperLamp sideLamp;      // TI_Lamp_1 by the bed, lit when night falls
     public JournalDesk journal;
-    public Color dayAmbient = new Color(.36f, .33f, .30f), nightAmbient = new Color(.13f, .14f, .19f);
+    public CurtainSway[] curtains;
+    public bool shortCut;           // the under-a-minute cut: push in through the door, light the lamp, shelve a piece, light the furnace
+    public Color dayAmbient = new Color(.36f, .33f, .30f), nightAmbient = new Color(.17f, .17f, .22f);   // the desk corner stays readable at night
     public float daySun = .85f, nightSun = .14f;
 
     class Act { public Action begin; public Func<float, bool> step; }
@@ -41,7 +43,7 @@ public class DemoDirector : MonoBehaviour
     {
         Driving = true; acts.Clear(); index = 0; begun = false; Time = 0f;
         if (shelf) shelf.Fill();
-        Script();
+        if (shortCut) ScriptShort(); else Script();
         SetNight(0f);
     }
 
@@ -60,6 +62,7 @@ public class DemoDirector : MonoBehaviour
         player.Tick(frameDt);
         foreach (var it in interactables) it.Tick(frameDt);
         if (sideLamp) sideLamp.Tick(frameDt);
+        if (curtains != null) foreach (var c in curtains) if (c) c.Tick(frameDt);
         ui.Tick(frameDt);
         ui.SetStatus(PlayerController.StatusLine(interactables));
         rig.Tick(frameDt);
@@ -160,6 +163,46 @@ public class DemoDirector : MonoBehaviour
         Press(bed, "[E] 起身"); Wait(2.7f);
         Do(() => { Overview(); ui.SetCaption("測試完成：箱子疊放／分類／整理、收藏架擺放／換格／拿下、乾坤袋材料煉丹、開關燈、翻手札、躺床蓋被"); });
         Wait(2.6f);
+    }
+
+    /// Brief 02-B §10: under a minute — push in through the door, light the lamp, put a piece on the shelf, light the furnace.
+    void ScriptShort()
+    {
+        Do(() =>
+        {
+            player.transform.SetPositionAndRotation(new Vector3(0, 0, -3.1f), Quaternion.identity);   // just outside the front door
+            rig.useOverride = true; rig.focusOverride = new Vector3(0, 1.0f, -2.2f);
+            rig.targetDistance = 3.0f; rig.targetYaw = 196f; rig.targetPitch = 8f; rig.targetFov = 54f;   // from east of the screen
+            ui.SetCaption("推門回家");
+        });
+        Fade(.35f, .1f);
+        Wait(1.2f);
+        Walk(new Vector3(0, 0, -1.6f));
+        Wait(1.4f);
+
+        Do(() => { Follow(); ui.SetCaption("點燈"); });
+        Walk(new Vector3(1.0f, 0, -1.5f));
+        Face(new Vector3(.45f, 0, -.6f));
+        Press(lamp); Wait(1.8f);
+
+        Do(() => { Follow(); ui.SetCaption("把收藏擺上架"); });
+        Walk(new Vector3(1.8f, 0, -.5f), new Vector3(2.35f, 0, .45f));
+        Face(new Vector3(1f, 0, -.45f));
+        Press(shelf); Wait(.9f);
+        CursorTo(() => ui.ShelfBagSlot("卷軸"), .7f); Click(() => ui.SelectPiece("卷軸")); Wait(.45f);
+        CursorTo(() => ui.ShelfSlot(4), .6f); Click(() => ui.DoShelfSlot(4)); Wait(1.6f);
+        CursorTo(() => ui.ShelfCloseButton, .6f); Click(() => shelf.Close()); Wait(.3f);
+        Do(() => ui.SetCursor(false, cursorPos)); Wait(.4f);
+
+        Do(() => { Follow(); ui.SetCaption("點丹爐"); });
+        Walk(new Vector3(2.2f, 0, -1.2f));
+        Face(new Vector3(.5f, 0, -.7f));
+        Press(furnace); Wait(.9f);
+        Alc("fuel", 1.0f); Alc("ignite", 2.6f); Alc("exit", .3f);
+        Do(() => ui.SetCursor(false, cursorPos));
+
+        Do(() => { Overview(); ui.SetCaption(""); });
+        Wait(3.4f);
     }
 
     // ---------------------------------------------------------------- act builders

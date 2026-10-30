@@ -1,0 +1,23 @@
+{
+  "asset": "TI08a_KeepsakeBox",
+  "version": "v002",
+  "checks": {
+    "fbx_reimport_has_every_group_LOD0_LOD1_LOD2": true,
+    "fbx_reimport_triangles_match": true,
+    "fbx_reimport_sockets": true,
+    "LOD1_ratio_45_55_percent": true,
+    "LOD2_ratio_12_18_percent": true
+  },
+  "passed": true,
+  "fbx_reimport_LOD0_dimensions_m": [
+    0.2318,
+    0.1839,
+    0.145
+  ],
+  "fbx_sha256": "c09fa7721d15a63900c9b223a9731aee8d7413cf39e05d7309bf3cfaa29ee85a",
+  "comparison_render": "art/previews/territory-interior-b/TI08a_KeepsakeBox/TI08a_KeepsakeBox_lod_v001_v002.png",
+  "not_checked": [
+    "Unity import of v002 (the Unity demo still loads v001; LOD0 is identical)",
+    "LODGroup switch distances"
+  ]
+}
