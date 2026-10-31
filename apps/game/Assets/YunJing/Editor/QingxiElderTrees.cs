@@ -95,7 +95,7 @@ namespace YunJing.Editor
                 // Light through the leaves (the Genshin crowns glow even in shade): the palette itself, a third as
                 // emission, so the shaded side stays a clear bright green instead of going dark.
                 leaves.EnableKeyword("_EMISSION"); leaves.globalIlluminationFlags = MaterialGlobalIlluminationFlags.None;
-                leaves.SetTexture("_EmissionMap", leaves.GetTexture("_BaseMap")); leaves.SetColor("_EmissionColor", new Color(.32f, .32f, .32f));
+                leaves.SetTexture("_EmissionMap", leaves.GetTexture("_BaseMap")); leaves.SetColor("_EmissionColor", new Color(.16f, .16f, .16f));
                 leaves.SetFloat("_SpecularHighlights", 0); leaves.EnableKeyword("_SPECULARHIGHLIGHTS_OFF");
                 EditorUtility.SetDirty(leaves);
                 importer.bakeAxisConversion = true; importer.importAnimation = false; importer.importCameras = false; importer.importLights = false;

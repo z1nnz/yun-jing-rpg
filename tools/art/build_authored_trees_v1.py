@@ -169,14 +169,15 @@ def build_traced_form(spec, variant=0):
     mx = 1
     sz = spec.get('tall', 1.0)   # as drawn: stretching up made every trunk a straight pole
     bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))
-    tint = spec.get('bark_tint')
-    if tint:
-        import numpy as np
-        px = np.array(bark_src.pixels[:], dtype=np.float32).reshape(-1, 4)
-        grey = px[:, :3] @ np.array([.2126, .7152, .0722], dtype=np.float32)
-        t = np.array(lin(tint), dtype=np.float32)
-        px[:, :3] = np.clip(px[:, :3] * .35 + (grey[:, None] / max(grey.mean(), 1e-3)) * t[None, :] * .65, 0, 1)
-        bark_src.pixels = px.ravel().tolist()
+    tint = spec.get('bark_tint', '#6a5a4c')
+    import numpy as np
+    px = np.array(bark_src.pixels[:], dtype=np.float32).reshape(-1, 4)
+    grey = px[:, :3] @ np.array([.2126, .7152, .0722], dtype=np.float32)
+    rel = grey / max(grey.mean(), 1e-3)
+    rel = 1 + (rel - 1) * .35   # low contrast: the trunk reads as one smooth painted surface
+    t = np.array(lin(tint), dtype=np.float32) * .62   # darker than the swatch: trunks sit in the crown's shade
+    px[:, :3] = np.clip(rel[:, None] * t[None, :], 0, 1)
+    bark_src.pixels = px.ravel().tolist()
     bark_src.filepath_raw = str(OUT / f'{name}_Bark.png')
     bark_src.file_format = 'PNG'
     bark_src.save()
@@ -420,7 +421,7 @@ MAPLE_ELDER = dict(trunk_r=0.5, name='Maple', scale=1.35, wide=1.25, tall=1.06, 
                    palette=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454'])
 GINKGO_ELDER = dict(trunk_r=0.62, name='Ginkgo', scale=1.6, wide=.7, tall=1.45, crown_xy=.8, crown_z=1.15, leaves_per_cluster=1700,
                     leaf_size=(.028, .05), leaf_width=1.5, bark_tint='#8c7f6c',
-                    palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
+                    palette=['#8a6200', '#c89000', '#f2bf10', '#ffe02e', '#fff27a'])
 WILLOW_ELDER = dict(trunk_r=0.58, name='Willow', scale=1.35, wide=1.05, tall=1.15, crown_xy=.62, crown_z=.6, leaves_per_cluster=2300,
                     leaf_size=(.05, .085), leaf_width=.32, hang=2.3, bark_tint='#6e6a5e',
                     palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
@@ -437,9 +438,9 @@ JUNIPER_ELDER = dict(trunk_r=0.66, name='Cypress', scale=1.15, wide=1.0, tall=1.
 CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_total=38400, leaf_size=(0.050, 0.090), crown_z=.7,
                       palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
 GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=34560, leaf_size=(0.050, 0.090), leaf_width=1.5,
-                     crown_z=.8, bark_tint='#8c7f6c', palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
-WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.2, leaves_total=28800, leaf_size=(0.080, 0.140), leaf_width=.32,
-                     hang=1.6, crown_z=.6, bark_tint='#6e6a5e', palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
+                     crown_z=.8, bark_tint='#8c7f6c', palette=['#8a6200', '#c89000', '#f2bf10', '#ffe02e', '#fff27a'])
+WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.4, leaves_total=40000, leaf_size=(0.060, 0.100), leaf_width=.28,
+                     hang=1.9, crown_z=.5, bark_tint='#5e5a50', palette=['#1e4430', '#2f6a3a', '#4f9040', '#86b84a', '#c4dc78'])
 PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=11520, sparse=.6, leaf_size=(0.060, 0.100), leaf_width=1.4,
                    crown_z=.7, bark_tint='#3e2f2a', palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
 JUNIPER_TRACED = dict(name='Cypress', skeleton='juniper', cluster=1.3, leaves_total=30720, leaf_size=(0.044, 0.080), leaf_width=.6,
@@ -455,7 +456,7 @@ JUNIPER_TRACED = dict(JUNIPER_TRACED, sheets=['skeleton-juniper-2', 'skeleton-ju
 CAMPHOR_TRACED = dict(CAMPHOR_TRACED, sheets=['skeleton-camphor', 'skeleton-camphor-3', 'skeleton-plum'])
 GINKGO_TRACED = dict(GINKGO_TRACED, sheets=['skeleton-ginkgo-2', 'skeleton-ginkgo-3'])
 PLUM_TRACED = dict(PLUM_TRACED, sheets=['skeleton-plum-2', 'skeleton-plum-3', 'skeleton-ginkgo'])
-WILLOW_TRACED = dict(WILLOW_TRACED, sheets=['skeleton-willow', 'skeleton-willow-3'])
+WILLOW_TRACED = dict(WILLOW_TRACED, sheets=['skeleton-willow-3'])   # the tall narrow ones read as a column, not a weeping willow
 SPECIES = [CAMPHOR_TRACED, MAPLE_TRACED, GINKGO_TRACED, WILLOW_TRACED, PLUM_TRACED, PINE_TRACED, JUNIPER_TRACED]
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that
 
@@ -582,7 +583,7 @@ def canopy(cluster_loc, scale, index, rng, spec, lod):
         out = Vector((out.x / max(sx, 1e-3), out.y / max(sy, 1e-3), out.z / max(sz, 1e-3)))
         normal = (out.normalized() * .8 + Vector((0, 0, .45))).normalized() if out.length > 1e-4 else Vector((0, 0, 1))
         spin = rng.uniform(-math.pi, math.pi)
-        length = rng.uniform(*spec['leaf_size']) * mean * lod['grow'] * spec.get('leaf_scale', 1.15)
+        length = rng.uniform(*spec['leaf_size']) * mean * lod['grow'] * spec.get('leaf_scale', .8)
         width = length * rng.uniform(.62, .85) * spec.get('leaf_width', 1.0)
         hang = spec.get('hang', 0)
         if hang:   # willow: leaves trail down from the spray in long curtains, the outer ones furthest
@@ -606,7 +607,7 @@ def canopy(cluster_loc, scale, index, rng, spec, lod):
         # Painted tone: the sunlit upper side light, the underside and the inside of the clump in cool shade.
         sun = normal.dot(Vector((.35, -.3, .89)).normalized()) * .5 + .5
         depth = min(1.0, out.length)
-        exposure = .12 + .76 * sun * (.6 + .4 * depth)   # saturated middle of the palette; the palest swatch only on the sunlit tips
+        exposure = .05 + .85 * sun * (.3 + .7 * depth) ** 1.3   # saturated middle of the palette; the palest swatch only on the sunlit tips
         tones.append(max(0, min(.999, exposure + rng.uniform(-.05, .05))))
     return verts, faces, tones, norms
 
@@ -648,7 +649,7 @@ def build(spec, variant=0):
     if 'skeleton' in spec:
         name, wood, bark_mat, leaf_mat, clusters = build_traced_form(spec, variant)
         n = max(len(clusters), 1)
-        spec = dict(spec, leaves_per_cluster=max(150, spec.get('leaves_total', 30000) // n))
+        spec = dict(spec, leaves_per_cluster=max(200, int(spec.get('leaves_total', 30000) * 1.6) // n))
         return finish(spec, name + SUFFIX[variant], wood, bark_mat, leaf_mat, clusters)
     if 'scale' in spec:
         name, wood, bark_mat, leaf_mat, clusters = build_elder_form(spec, variant)
