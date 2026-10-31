@@ -164,13 +164,24 @@ def build_traced_form(spec, variant=0):
     girth = spec.get('girth', .7)   # the drawings' trunks are heavy for a game tree
     pieces, tips = [], []
     branches = data['branches']
-    has_child = {b['parent'] for b in branches}
+    low = 1.2 if spec.get('hang') else max(2.6, data['height'] * sz * .3)   # as low as leaf clusters are kept
+    built = {}   # branch index -> its points as built, so children can start on them
     for i, b in enumerate(branches):
         pts = [Vector((x * mx, y, z * sz)) for x, y, z in b['points']]
         if len(pts) < 2:
             continue
-        if b['depth'] > 0 and min(p.z for p in pts) < 1.2:   # limbs drooping to the ground in the drawing: left out
-            continue
+        if b['parent'] >= 0:
+            if b['parent'] not in built:   # its parent was left out: so is it, or it would hang in the air
+                continue
+            # Each limb is turned round the trunk by its own angle, so a child's foot drifts off its parent in depth:
+            # move the whole child so its foot sits on the nearest point of the parent.
+            par = built[b['parent']]
+            near = min((pa.lerp(pb, t / 8) for pa, pb in zip(par, par[1:]) for t in range(9)), key=lambda q: (q - pts[0]).length)
+            off = near - pts[0]
+            pts = [q + off for q in pts]
+        if b['depth'] > 0 and (min(p.z for p in pts) < 1.2 or (pts[-1].z < low and pts[-1].z < pts[0].z)):
+            continue   # limbs reaching the ground, or hanging below the leafy crown where they would stay bare
+        built[i] = [q.copy() for q in pts]
         # Traced thickness wobbles pixel to pixel: smooth it along the branch and never let it grow outward.
         raw = b['radii']
         sm = [sum(raw[max(0, k - 3):k + 4]) / len(raw[max(0, k - 3):k + 4]) for k in range(len(raw))]
@@ -179,9 +190,9 @@ def build_traced_form(spec, variant=0):
         radii = [max(r * girth, .012) for r in sm]
         if b['parent'] >= 0:   # start inside the parent so the joint has no seam
             pts[0] = pts[0] - (pts[1] - pts[0]).normalized() * radii[0] * .5
-        if i not in has_child:
-            tips.append(pts[-1])
         pieces.append(to_mesh(curve(f'b{i}', pts, radii)))
+    parents = {branches[i]['parent'] for i in built}
+    tips = [pts[-1] for i, pts in built.items() if i not in parents]   # leaves over the ends actually built
     trunk = pieces[0]
     # Flutes on the trunk (as build_life_tree.py), fading out above the first fork.
     cl = [Vector((x * mx, y, z * sz)) for x, y, z in branches[0]['points']]
@@ -361,7 +372,7 @@ def build_elder_form(spec, variant=0):
 
 CAMPHOR_ELDER = dict(trunk_r=1.05, name='Camphor', scale=1.9, leaves_per_cluster=1875, leaf_size=(.025, .048),
                      palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
-MAPLE_ELDER = dict(trunk_r=0.35, name='Maple', scale=1.35, wide=1.25, tall=1.06, crown_xy=1.1, crown_z=.8, leaves_per_cluster=2550,
+MAPLE_ELDER = dict(trunk_r=0.5, name='Maple', scale=1.35, wide=1.25, tall=1.06, crown_xy=1.1, crown_z=.8, leaves_per_cluster=2550,
                    leaf_size=(.028, .05), leaf_width=1.6, bark_tint='#8a8278',
                    palette=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454'])
 GINKGO_ELDER = dict(trunk_r=0.62, name='Ginkgo', scale=1.6, wide=.7, tall=1.45, crown_xy=.8, crown_z=1.15, leaves_per_cluster=1700,
