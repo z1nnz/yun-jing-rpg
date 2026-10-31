@@ -167,7 +167,7 @@ def build_traced_form(spec, variant=0):
     data['height'] = HEIGHT_M[spec['skeleton']]
     name = 'Elder' + spec['name']
     mx = 1
-    sz = spec.get('tall', 1.3)
+    sz = spec.get('tall', 1.0)   # as drawn: stretching up made every trunk a straight pole
     bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))
     tint = spec.get('bark_tint')
     if tint:
@@ -239,6 +239,28 @@ def build_traced_form(spec, variant=0):
         o.select_set(True)
     bpy.context.view_layer.objects.active = trunk
     bpy.ops.object.join()
+    # Gesture (z1nnz 2026-10-31: 太直了，學學原神): the whole tree bends as one smooth field, so every joint stays
+    # joined. The trunk leans out and swings back in an S as it climbs, its own way per variant, and the crown
+    # spreads wider than it is tall (limbs away from the trunk pushed outward); the foot stays where it stands.
+    H = max((v.co.z for v in trunk.data.vertices), default=1.0)
+    rg = random.Random(sum(map(ord, name)) * 31 + variant * 7)
+    ang = rg.uniform(0, math.tau)
+    lean_dir = Vector((math.cos(ang), math.sin(ang), 0))
+    side_dir = Vector((-lean_dir.y, lean_dir.x, 0))
+    lean, swing, twist = rg.uniform(.10, .18) * spec.get('gesture', 1), rg.uniform(.05, .1) * spec.get('gesture', 1), rg.uniform(-.06, .06)
+    spread = spec.get('spread', 1.3)
+
+    def warp(p):
+        t = max(0.0, min(1.0, p.z / H))
+        q = p.copy()
+        axis_off = lean_dir * H * (lean * math.sin(t * math.pi * .55) - swing * t * t) + side_dir * H * twist * math.sin(t * math.pi)
+        d = Vector((q.x, q.y, 0)).length
+        k = 1 + (spread - 1) * max(0.0, min(1.0, (d - .8) / 3.0))
+        q.x, q.y = q.x * k, q.y * k
+        return q + axis_off
+    for v in trunk.data.vertices:
+        v.co = warp(v.co)
+    tips = [warp(tp) for tp in tips]
     for poly in trunk.data.polygons:
         poly.use_smooth = True
     box_uv(trunk.data, tile=1.6)
