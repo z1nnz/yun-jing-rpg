@@ -805,7 +805,7 @@ namespace YunJing.Editor
         // The dressing plan (tools/qingxi-terrain/world-dressing.json, docs/execution/novice-world-dressing-plan.md).
         [Serializable] class DressingBiome { public string id, name; public int trees, groves, boulders, grass, sedge; }
         [Serializable] class SpeciesWeight { public string kind; public float weight; }
-        [Serializable] class Landmark { public string kind, note; public float x, z, yaw, height, sink; }
+        [Serializable] class Landmark { public string kind, note; public float x, z, yaw, height, sink, slim; }
         [Serializable] class DressingBlock { public string id, biome, status, waterside; public bool noBamboo; public SpeciesWeight[] species; public Landmark[] landmarks; }
         [Serializable] class DressingPlan { public DressingBiome[] biomes; public DressingBlock[] blocks; }
 
@@ -989,7 +989,8 @@ namespace YunJing.Editor
                 if (source == null) throw new FileNotFoundException("Landmark tree missing", mark.kind);
                 Tree(source, root, new Vector3(at.x, 0, at.y), mark.height, mark.yaw);
                 var placed = root.GetChild(root.childCount - 1);
-                placed.position += Vector3.down * mark.sink;   // 建木's hanging roots arch out and plunge into the soil
+                placed.position += Vector3.down * mark.sink;
+                if (mark.slim > 0) placed.localScale = new Vector3(placed.localScale.x * mark.slim, placed.localScale.y, placed.localScale.z * mark.slim);   // slimmer, same height   // 建木's hanging roots arch out and plunge into the soil
                 placed.name = $"Landmark {mark.kind} - {mark.note}";
                 Debug.Log($"QINGXI_LANDMARK {blockId} {mark.kind} at ({at.x:0.0}, {at.y:0.0})");
             }
@@ -1014,7 +1015,7 @@ namespace YunJing.Editor
         // Each tree's full height as modelled, buried roots included (the model's origin is the ground line), so a
         // tree placed at this height keeps its modelled size.
         static readonly System.Collections.Generic.Dictionary<string, float> NaturalHeight = new System.Collections.Generic.Dictionary<string, float> {
-            ["ElderGuardian"] = 10.6f, ["JianmuSapling"] = 3.9f, ["ElderCamphor"] = 12.40f, ["ElderMaple"] = 7.24f, ["ElderGinkgo"] = 14.22f, ["ElderWillow"] = 10.06f, ["ElderPlum"] = 6.10f, ["ElderPine"] = 10.99f, ["ElderCypress"] = 7.66f, ["ElderWithered"] = 9.01f };
+            ["ElderGuardian"] = 10.6f, ["JianmuSapling"] = 3.9f, ["ElderCamphor"] = 15.81f, ["ElderMaple"] = 8.71f, ["ElderGinkgo"] = 18.42f, ["ElderWillow"] = 13.10f, ["ElderPlum"] = 8.00f, ["ElderPine"] = 13.59f, ["ElderCypress"] = 9.46f, ["ElderWithered"] = 9.01f };
 
         static bool elderCopied;
         static void ElderKit() { if (!elderCopied) { QingxiElderTrees.Copy(); elderCopied = true; } }

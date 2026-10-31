@@ -146,7 +146,7 @@ def build_traced_form(spec, variant=0):
     data = json.loads(src.read_text(encoding='utf-8'))
     name = 'Elder' + spec['name']
     mx = -1 if variant == 2 else 1
-    sz = .9 if variant == 2 else 1.0
+    sz = (.9 if variant == 2 else 1.0) * spec.get('tall', 1.3)
     bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))
     tint = spec.get('bark_tint')
     if tint:
@@ -161,7 +161,7 @@ def build_traced_form(spec, variant=0):
     bark_src.save()
     bark_mat = material(f'{name}_Bark', bark_src)
     leaf_mat = material(f'{name}_Leaves', palette_image(f'{name}_Leaves', spec['palette']), closest=True)
-    girth = spec.get('girth', 1.0)
+    girth = spec.get('girth', .7)   # the drawings' trunks are heavy for a game tree
     pieces, tips = [], []
     branches = data['branches']
     has_child = {b['parent'] for b in branches}
@@ -361,7 +361,7 @@ def build_elder_form(spec, variant=0):
 
 CAMPHOR_ELDER = dict(trunk_r=1.05, name='Camphor', scale=1.9, leaves_per_cluster=1875, leaf_size=(.025, .048),
                      palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
-MAPLE_ELDER = dict(trunk_r=0.5, name='Maple', scale=1.35, wide=1.25, tall=.85, crown_xy=1.1, crown_z=.8, leaves_per_cluster=1700,
+MAPLE_ELDER = dict(trunk_r=0.35, name='Maple', scale=1.35, wide=1.25, tall=1.06, crown_xy=1.1, crown_z=.8, leaves_per_cluster=1700,
                    leaf_size=(.028, .05), leaf_width=1.6, bark_tint='#8a8278',
                    palette=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454'])
 GINKGO_ELDER = dict(trunk_r=0.62, name='Ginkgo', scale=1.6, wide=.7, tall=1.45, crown_xy=.8, crown_z=1.15, leaves_per_cluster=1700,
@@ -373,10 +373,10 @@ WILLOW_ELDER = dict(trunk_r=0.58, name='Willow', scale=1.35, wide=1.05, tall=1.1
 PLUM_ELDER = dict(trunk_r=0.28, name='Plum', scale=.85, wide=1.1, tall=.95, crown_xy=.85, crown_z=.85, leaves_per_cluster=1500, sparse=.55,
                   leaf_size=(.03, .05), leaf_width=1.4, bark_tint='#3e2f2a',
                   palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
-PINE_ELDER = dict(trunk_r=0.62, name='Pine', scale=1.45, wide=1.0, tall=1.55, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.3, leaves_per_cluster=1900,
+PINE_ELDER = dict(trunk_r=0.43, name='Pine', scale=1.45, wide=1.0, tall=1.94, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.3, leaves_per_cluster=1900,
                   leaf_size=(.03, .055), leaf_width=.25, bark_tint='#8a5a40',
                   palette=['#14301e', '#1f4a28', '#356a32', '#5e8c3c', '#9ab456'])
-JUNIPER_ELDER = dict(trunk_r=.95, name='Cypress', scale=1.15, wide=1.0, tall=1.35, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.8, leaves_per_cluster=1800,
+JUNIPER_ELDER = dict(trunk_r=0.66, name='Cypress', scale=1.15, wide=1.0, tall=1.69, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.8, leaves_per_cluster=1800,
                      leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
                      palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
 # Species traced from z1nnz's skeleton sheets (skeleton-<species>.png -> .json); maple and pine keep the Elder form.
