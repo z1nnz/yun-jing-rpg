@@ -1026,7 +1026,7 @@ namespace YunJing.Editor
             var path = $"{MaterialFolder}/MossStone_URP.mat";
             var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat == null) { mat = new Material(Shader.Find("Universal Render Pipeline/Lit")); AssetDatabase.CreateAsset(mat, path); }
-            mat.SetColor("_BaseColor", new Color(.47f, .49f, .44f)); mat.SetFloat("_Smoothness", .12f);
+            mat.SetColor("_BaseColor", new Color(.33f, .35f, .29f)); mat.SetFloat("_Smoothness", .06f);   // darker: the warm sun and grade wash a pale grey to white
             EditorUtility.SetDirty(mat);
             foreach (var r in rock.GetComponentsInChildren<Renderer>()) r.sharedMaterials = Enumerable.Repeat(mat, r.sharedMaterials.Length).ToArray();
         }

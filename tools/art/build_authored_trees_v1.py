@@ -208,7 +208,8 @@ def build_elder_form(spec, variant=0):
     for i, pts in enumerate(E['limbs'], start=1):
         bevel = max(.14, .32 - i * .018)
         branches.append(curve(f'limb_{i}', [Vector(p) * S for p in pts], [r * bevel * S * g_limb for r in (1.12 if i < 4 else .88, .48, .08)]))
-        elder_hierarchy(i, pts, S, branches, g_twig)
+        if not spec.get('hang'):   # a weeping tree has no upward twigs: its curtains hang from the limbs
+            elder_hierarchy(i, pts, S, branches, g_twig)
     for o in branches:
         to_mesh(o)
     bpy.ops.object.select_all(action='DESELECT')
@@ -233,6 +234,10 @@ def build_elder_form(spec, variant=0):
     clusters = [(Vector((c[0] * S * wide, c[1] * S * wide, c[2] * S * tall)),
                  Vector((sc[0] * S * spec.get('crown_xy', 1.0), sc[1] * S * spec.get('crown_xy', 1.0), sc[2] * S * cz)))
                 for c, sc in E['back'] + E['front']]
+    if spec.get('hang'):
+        # Weeping trees: curtains also hang from every limb end, so no bare tip sticks up out of the crown.
+        clusters += [(Vector((c[0] * S * wide, c[1] * S * wide, c[2] * S * tall)), Vector((.9, .9, .6)) * S)
+                     for c in (limb[2] for limb in E['limbs'])]
     return name, trunk, bark_mat, leaf_mat, clusters
 
 
@@ -245,7 +250,7 @@ GINKGO_ELDER = dict(trunk_r=0.62, name='Ginkgo', scale=1.6, wide=.7, tall=1.45, 
                     leaf_size=(.028, .05), leaf_width=1.5, bark_tint='#8c7f6c',
                     palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
 WILLOW_ELDER = dict(trunk_r=0.58, name='Willow', scale=1.35, wide=1.05, tall=1.15, crown_xy=.62, crown_z=.6, leaves_per_cluster=2300,
-                    leaf_size=(.05, .085), leaf_width=.32, hang=1.7, bark_tint='#6e6a5e',
+                    leaf_size=(.05, .085), leaf_width=.32, hang=2.3, bark_tint='#6e6a5e',
                     palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
 PLUM_ELDER = dict(trunk_r=0.28, name='Plum', scale=.85, wide=1.1, tall=.95, crown_xy=.85, crown_z=.85, leaves_per_cluster=1500, sparse=.55,
                   leaf_size=(.03, .05), leaf_width=1.4, bark_tint='#3e2f2a',
