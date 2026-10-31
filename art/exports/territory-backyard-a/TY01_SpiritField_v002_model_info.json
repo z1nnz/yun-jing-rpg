@@ -1,0 +1,119 @@
+{
+ "id": "TY01",
+ "name": "SpiritField",
+ "file": "TY01_SpiritField_v002",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "structure (embedded bed; ground from terrain)",
+ "slots": [
+  "TY_Field_1 (-2.8, 6.7)",
+  "TY_Field_2 (2.8, 6.7)"
+ ],
+ "dimensions_m": [
+  2.5861,
+  3.3815,
+  0.4865
+ ],
+ "triangles_lod0": 30352,
+ "triangles_per_node": {
+  "SM_TY_SpiritField_LOD0": [
+   30352,
+   15175,
+   4552
+  ]
+ },
+ "collision": [
+  "SM_TY_SpiritField_Collision"
+ ],
+ "note": "rim 0.27 m blocks the player; plant and harvest from the side. Inlet on +X: rotate 180 deg for TY_Field_2 so both inlets face the x = 0 path",
+ "sockets": [
+  {
+   "name": "SOCKET_inlet",
+   "loc": [
+    1.23,
+    0.6,
+    0.14
+   ],
+   "forward": [
+    -1.0,
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY01",
+  "dimensions_m": [
+   2.5861,
+   3.3815,
+   0.4865
+  ],
+  "bbox_min": [
+   -1.2908,
+   -1.6876,
+   0.0
+  ],
+  "bbox_max": [
+   1.2953,
+   1.6938,
+   0.4865
+  ],
+  "trianglesLOD0": 30352,
+  "materials": [
+   "M_TY_SpiritField"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_SpiritField_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 760,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 30352,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "materials": [
+    "M_TY_SpiritField.001"
+   ]
+  },
+  "files": {
+   "TY01_SpiritField_v002.glb": {
+    "bytes": 2675580,
+    "sha256": "0d403408582fd4e2f2aa6f7250f22a0310cb0db30432d558398f039cb6030dc0"
+   },
+   "TY01_SpiritField_v002.fbx": {
+    "bytes": 3338828,
+    "sha256": "dbb5a730a17d522533bcb7ee3865145b17b4c2e56dba5b36397f89e4b95181cf"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY01/selected.png",
+  "notChecked": [
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ },
+ "states": {
+  "dry": "material M_TY_SpiritField (T_TY01_SpiritField_v002_Dry_*)",
+  "wet": "BaseColor and ORM from T_TY01_SpiritField_v002_Wet_*, normal shared with dry"
+ },
+ "planting": {
+  "rows_x": [
+   -0.66,
+   0.0,
+   0.66
+  ],
+  "plants_y": [
+   -1.02,
+   -0.34,
+   0.34,
+   1.02
+  ],
+  "note": "3 x 4 clumps, field-local; crop meshes share this origin"
+ }
+}

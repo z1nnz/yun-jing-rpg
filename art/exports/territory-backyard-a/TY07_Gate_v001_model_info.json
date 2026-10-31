@@ -1,0 +1,111 @@
+{
+ "id": "TY07",
+ "name": "Gate",
+ "file": "TY07_Gate_v001",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "structure with two moving leaves",
+ "slots": [
+  "the yard gate (position decided by the core team; fence postponed)"
+ ],
+ "dimensions_m": [
+  3.0516,
+  0.6472,
+  2.4235
+ ],
+ "triangles_lod0": 40792,
+ "triangles_per_node": {
+  "SM_TY_Gate_Frame_LOD0": [
+   6192,
+   3096,
+   928
+  ],
+  "SM_TY_Gate_LeafL_LOD0": [
+   17572,
+   8786,
+   2626
+  ],
+  "SM_TY_Gate_LeafR_LOD0": [
+   17028,
+   8514,
+   2544
+  ]
+ },
+ "collision": [
+  "SM_TY_Gate_Frame_Collision",
+  "SM_TY_Gate_LeafL_Collision",
+  "SM_TY_Gate_LeafR_Collision"
+ ],
+ "note": "closed: leaves at rotation 0; open: rotate LeafL by -100 deg and LeafR by +100 deg about the vertical (their origin is the hinge), with their _Collision nodes",
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY07",
+  "dimensions_m": [
+   3.0516,
+   0.6472,
+   2.4235
+  ],
+  "bbox_min": [
+   -1.5271,
+   -0.3294,
+   0.0
+  ],
+  "bbox_max": [
+   1.5245,
+   0.3178,
+   2.4235
+  ],
+  "trianglesLOD0": 40792,
+  "materials": [
+   "M_TY_Gate"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_Gate_Frame_LOD0",
+   "SM_TY_Gate_LeafL_LOD0",
+   "SM_TY_Gate_LeafR_LOD0"
+  ],
+  "originAtBase": true,
+  "meshHealth": {
+   "nonManifoldEdges": 1440,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 40792,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "materials": [
+    "M_TY_Gate.001"
+   ]
+  },
+  "files": {
+   "TY07_Gate_v001.glb": {
+    "bytes": 4527168,
+    "sha256": "c837c14d3e27719d42560e95ac976ed1437444a4d2f6a4fecaa58a7daff55a6a"
+   },
+   "TY07_Gate_v001.fbx": {
+    "bytes": 5356476,
+    "sha256": "3b3b3eafd20819f9d8c9c1297977f6df7a4e01986e37b492e8f47e3c8497c24c"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY07/selected.png",
+  "notChecked": [
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ },
+ "gate": {
+  "leaves": [
+   "SM_TY_Gate_LeafL_LOD0",
+   "SM_TY_Gate_LeafR_LOD0"
+  ],
+  "open_degrees": {
+   "LeafL": -100,
+   "LeafR": 100
+  },
+  "note": "rotate about the vertical at the node origin (the hinge)"
+ }
+}
