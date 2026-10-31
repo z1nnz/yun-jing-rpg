@@ -166,13 +166,14 @@ namespace YunJing.Editor
             var sun = new GameObject("Sun").AddComponent<Light>();
             sun.transform.SetParent(village, false);
             // The direction images' light: a warm, lowish sun that rims the trees and fills the valley with haze.
-            sun.type = LightType.Directional; sun.intensity = 1.35f; sun.shadows = LightShadows.Soft; sun.color = new Color(1f, .9f, .74f);
+            sun.type = LightType.Directional; sun.intensity = 1.35f; sun.shadows = LightShadows.Soft; sun.color = new Color(1f, .96f, .86f);
             sun.transform.rotation = Quaternion.Euler(34, -35, 0);
             RenderSettings.sun = sun;
             RenderSettings.ambientMode = AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = new Color(.62f, .7f, .82f); RenderSettings.ambientEquatorColor = new Color(.62f, .6f, .5f); RenderSettings.ambientGroundColor = new Color(.34f, .3f, .24f);
-            RenderSettings.fog = true; RenderSettings.fogMode = FogMode.Linear; RenderSettings.fogColor = new Color(.86f, .85f, .8f);
-            RenderSettings.fogStartDistance = 35; RenderSettings.fogEndDistance = 140;
+            RenderSettings.ambientSkyColor = new Color(.52f, .66f, .9f); RenderSettings.ambientEquatorColor = new Color(.56f, .64f, .66f); RenderSettings.ambientGroundColor = new Color(.34f, .36f, .3f);
+            // Clear-day haze is blue, not grey (the Genshin reference): far hills fade into the sky's own colour.
+            RenderSettings.fog = true; RenderSettings.fogMode = FogMode.Linear; RenderSettings.fogColor = new Color(.66f, .79f, .94f);
+            RenderSettings.fogStartDistance = 60; RenderSettings.fogEndDistance = 170;
             RenderSettings.skybox = Sky();
             PostCard(village);
         }
@@ -250,10 +251,10 @@ namespace YunJing.Editor
             if (mat == null) { mat = new Material(Shader.Find("Skybox/Procedural")); AssetDatabase.CreateAsset(mat, path); }
             // Clear blue deepening overhead, haze at the horizon, drifting cumulus (YunJing/QingxiSky).
             var sky = Shader.Find("YunJing/QingxiSky");
-            if (sky != null) { mat.shader = sky; mat.SetFloat("_Clouds", .5f); }
+            if (sky != null) { mat.shader = sky; mat.SetFloat("_Clouds", .58f); }
             mat.SetFloat("_SunSize", .035f); mat.SetFloat("_SunSizeConvergence", 6);
             mat.SetFloat("_AtmosphereThickness", .85f); mat.SetFloat("_Exposure", 1.2f);
-            mat.SetColor("_SkyTint", new Color(.5f, .62f, .74f)); mat.SetColor("_GroundColor", new Color(.78f, .83f, .84f));
+            mat.SetColor("_SkyTint", new Color(.3f, .52f, .88f)); mat.SetColor("_GroundColor", new Color(.7f, .82f, .95f));
             EditorUtility.SetDirty(mat);
             return mat;
         }
@@ -274,8 +275,8 @@ namespace YunJing.Editor
             }
             var tone = Get<UnityEngine.Rendering.Universal.Tonemapping>(); tone.mode.Override(UnityEngine.Rendering.Universal.TonemappingMode.ACES);
             var colour = Get<UnityEngine.Rendering.Universal.ColorAdjustments>();
-            colour.postExposure.Override(.2f); colour.contrast.Override(8); colour.saturation.Override(4);
-            var white = Get<UnityEngine.Rendering.Universal.WhiteBalance>(); white.temperature.Override(14); white.tint.Override(-2);   // golden morning
+            colour.postExposure.Override(.25f); colour.contrast.Override(10); colour.saturation.Override(14);
+            var white = Get<UnityEngine.Rendering.Universal.WhiteBalance>(); white.temperature.Override(2); white.tint.Override(-2);   // clear day, a touch warm
             var bloom = Get<UnityEngine.Rendering.Universal.Bloom>();
             bloom.threshold.Override(.92f); bloom.intensity.Override(.55f); bloom.scatter.Override(.75f); bloom.highQualityFiltering.Override(false);
             var vignette = Get<UnityEngine.Rendering.Universal.Vignette>(); vignette.intensity.Override(.2f); vignette.smoothness.Override(.45f);

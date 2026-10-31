@@ -268,7 +268,7 @@ def build_traced_form(spec, variant=0):
     trunk.data.materials.append(bark_mat)
     trunk.data.materials.append(leaf_mat)
     # Crown: tips gathered into clusters about `cluster` metres across, one leaf cluster over each.
-    cell = spec.get('cluster', 1.6)
+    cell = spec.get('cluster', 1.6) * 1.5   # fewer, bigger clumps: the crown reads as a few soft masses
     groups = {}
     for tp in tips:
         groups.setdefault((round(tp.x / cell), round(tp.y / cell), round(tp.z / cell)), []).append(tp)
@@ -574,11 +574,16 @@ def canopy(cluster_loc, scale, index, rng, spec, lod):
                         .34 * math.sin(t * math.pi + spray * .65) + .20 * math.cos(heading) + direction.z * scatter))
         local = Vector((local.x * math.cos(twist) - local.y * math.sin(twist), local.x * math.sin(twist) + local.y * math.cos(twist), local.z))
         centre = cluster_loc + Vector((local.x * sx, local.y * sy, local.z * sz))
-        normal = (direction * .5 + Vector((0, 0, .68))).normalized()
-        q = normal.to_track_quat('Z', 'Y')
+        # The leaf card faces out of its spray, but it SHADES as part of one soft ball (the Genshin look, z1nnz
+        # 2026-10-31): its normal points from the cluster's centre through the leaf, tipped a little up, so the
+        # whole clump lights as one volume with a broad light-to-shade gradient instead of a glitter of facets.
+        q = (direction * .5 + Vector((0, 0, .68))).normalized().to_track_quat('Z', 'Y')
+        out = centre - cluster_loc
+        out = Vector((out.x / max(sx, 1e-3), out.y / max(sy, 1e-3), out.z / max(sz, 1e-3)))
+        normal = (out.normalized() * .8 + Vector((0, 0, .45))).normalized() if out.length > 1e-4 else Vector((0, 0, 1))
         spin = rng.uniform(-math.pi, math.pi)
-        length = rng.uniform(*spec['leaf_size']) * mean * lod['grow']
-        width = length * rng.uniform(.43, .64) * spec.get('leaf_width', 1.0)
+        length = rng.uniform(*spec['leaf_size']) * mean * lod['grow'] * spec.get('leaf_scale', 1.15)
+        width = length * rng.uniform(.62, .85) * spec.get('leaf_width', 1.0)
         hang = spec.get('hang', 0)
         if hang:   # willow: leaves trail down from the spray in long curtains, the outer ones furthest
             q = Vector((rng.uniform(-.3, .3), rng.uniform(-.3, .3), -1)).normalized().to_track_quat('Y', 'Z')
@@ -586,16 +591,23 @@ def canopy(cluster_loc, scale, index, rng, spec, lod):
         if spec.get('sparse'):
             if rng.random() > spec['sparse']:
                 continue
-        shape = ((0, -length, 0), (width, 0, -.005 * mean), (0, length, .008 * mean), (-width, 0, -.005 * mean), (0, 0, .011 * mean))
+        # A rounded leaf (the Genshin crowns are soft round discs, not points): six rim points on an ellipse, a
+        # little cupped, around a raised centre.
+        rim = spec.get('rim', 6)
+        shape = [(width * math.sin(a), length * math.cos(a) * .85, -.005 * mean) for a in (k * math.tau / rim for k in range(rim))]
+        shape.append((0, 0, .011 * mean))
         base = len(verts)
         for x, y, h in shape:
             sp = Vector((x * math.cos(spin) - y * math.sin(spin), x * math.sin(spin) + y * math.cos(spin), h))
             verts.append(centre + q @ sp)
             norms.append(normal)
-        for k in range(4):
-            faces.append((base + 4, base + k, base + (k + 1) % 4))
-        exposure = max(0, min(1, (local.z + .54) / 1.08))
-        tones.append(max(0, min(.999, exposure + rng.uniform(-.03, .03))))
+        for k in range(rim):
+            faces.append((base + rim, base + k, base + (k + 1) % rim))
+        # Painted tone: the sunlit upper side light, the underside and the inside of the clump in cool shade.
+        sun = normal.dot(Vector((.35, -.3, .89)).normalized()) * .5 + .5
+        depth = min(1.0, out.length)
+        exposure = .12 + .76 * sun * (.6 + .4 * depth)   # saturated middle of the palette; the palest swatch only on the sunlit tips
+        tones.append(max(0, min(.999, exposure + rng.uniform(-.05, .05))))
     return verts, faces, tones, norms
 
 
@@ -734,7 +746,7 @@ def finish(spec, name, wood, bark_mat, leaf_mat, clusters):
         uv = lm.uv_layers.new(name='UVMap')
         for p in lm.polygons:
             p.material_index = 1
-            u = (min(int(tones[p.index // 4] * SWATCHES), SWATCHES - 1) + .5) / SWATCHES
+            u = (min(int(tones[p.index // spec.get('rim', 6)] * SWATCHES), SWATCHES - 1) + .5) / SWATCHES
             for idx in p.loop_indices:
                 uv.data[idx].uv = (u, .5)
         lm.normals_split_custom_set([norms[lm.loops[i].vertex_index] for i in range(len(lm.loops))])

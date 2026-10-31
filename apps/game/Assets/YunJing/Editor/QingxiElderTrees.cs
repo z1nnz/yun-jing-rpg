@@ -92,6 +92,11 @@ namespace YunJing.Editor
                 else leaves.shader = Shader.Find("Universal Render Pipeline/Lit");
                 leaves.SetColor("_BaseColor", Color.white); leaves.SetFloat("_Smoothness", .08f);
                 leaves.SetFloat("_Cull", 0);   // single-sided leaf cards
+                // Light through the leaves (the Genshin crowns glow even in shade): the palette itself, a third as
+                // emission, so the shaded side stays a clear bright green instead of going dark.
+                leaves.EnableKeyword("_EMISSION"); leaves.globalIlluminationFlags = MaterialGlobalIlluminationFlags.None;
+                leaves.SetTexture("_EmissionMap", leaves.GetTexture("_BaseMap")); leaves.SetColor("_EmissionColor", new Color(.32f, .32f, .32f));
+                leaves.SetFloat("_SpecularHighlights", 0); leaves.EnableKeyword("_SPECULARHIGHLIGHTS_OFF");
                 EditorUtility.SetDirty(leaves);
                 importer.bakeAxisConversion = true; importer.importAnimation = false; importer.importCameras = false; importer.importLights = false;
                 importer.importNormals = ModelImporterNormals.Import;   // the source's volume normals shade the canopy softly
