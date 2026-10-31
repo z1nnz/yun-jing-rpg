@@ -1,0 +1,270 @@
+{
+ "cases": [
+  {
+   "name": "wild-medium-good",
+   "tea": "qingxi-wild-tea",
+   "scoops": 3,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 2
+    },
+    {
+     "t": 401,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 401,
+     "k": "leaves"
+    },
+    {
+     "t": 731,
+     "k": "pour"
+    }
+   ],
+   "result": "good",
+   "score": 76,
+   "strength": 23.4561,
+   "brewTemp": 90.1
+  },
+  {
+   "name": "wild-early-weak",
+   "tea": "qingxi-wild-tea",
+   "scoops": 3,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 2
+    },
+    {
+     "t": 401,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 401,
+     "k": "leaves"
+    },
+    {
+     "t": 461,
+     "k": "pour"
+    }
+   ],
+   "result": "weak",
+   "score": 10,
+   "strength": 5.5903,
+   "brewTemp": 90.1
+  },
+  {
+   "name": "wild-late-bitter",
+   "tea": "qingxi-wild-tea",
+   "scoops": 3,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 2
+    },
+    {
+     "t": 401,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 401,
+     "k": "leaves"
+    },
+    {
+     "t": 1501,
+     "k": "pour"
+    }
+   ],
+   "result": "bitter",
+   "score": 33,
+   "strength": 43.5008,
+   "brewTemp": 90.1
+  },
+  {
+   "name": "wild-cold",
+   "tea": "qingxi-wild-tea",
+   "scoops": 3,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 1
+    },
+    {
+     "t": 205,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 205,
+     "k": "leaves"
+    },
+    {
+     "t": 2205,
+     "k": "pour"
+    }
+   ],
+   "result": "weak",
+   "score": 17,
+   "strength": 10.039,
+   "brewTemp": 40
+  },
+  {
+   "name": "wild-heavy",
+   "tea": "qingxi-wild-tea",
+   "scoops": 5,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 3
+    },
+    {
+     "t": 203,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 203,
+     "k": "leaves"
+    },
+    {
+     "t": 533,
+     "k": "pour"
+    }
+   ],
+   "result": "bitter",
+   "score": 45,
+   "strength": 40.3276,
+   "brewTemp": 92.1
+  },
+  {
+   "name": "plum-fisheye-good",
+   "tea": "plum-blossom-tea",
+   "scoops": 2,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 2
+    },
+    {
+     "t": 317,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 317,
+     "k": "leaves"
+    },
+    {
+     "t": 537,
+     "k": "pour"
+    }
+   ],
+   "result": "good",
+   "score": 80,
+   "strength": 18.0058,
+   "brewTemp": 78
+  },
+  {
+   "name": "plum-roaring-scorched",
+   "tea": "plum-blossom-tea",
+   "scoops": 2,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 3
+    },
+    {
+     "t": 226,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 226,
+     "k": "leaves"
+    },
+    {
+     "t": 526,
+     "k": "pour"
+    }
+   ],
+   "result": "bitter",
+   "score": 10,
+   "strength": 40.7994,
+   "brewTemp": 99.2
+  },
+  {
+   "name": "plum-light",
+   "tea": "plum-blossom-tea",
+   "scoops": 1,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 2
+    },
+    {
+     "t": 317,
+     "k": "fire",
+     "v": 0
+    },
+    {
+     "t": 317,
+     "k": "leaves"
+    },
+    {
+     "t": 537,
+     "k": "pour"
+    }
+   ],
+   "result": "weak",
+   "score": 31,
+   "strength": 9.0029,
+   "brewTemp": 78
+  },
+  {
+   "name": "wild-fire-changes",
+   "tea": "qingxi-wild-tea",
+   "scoops": 3,
+   "log": [
+    {
+     "t": 0,
+     "k": "fire",
+     "v": 3
+    },
+    {
+     "t": 120,
+     "k": "fire",
+     "v": 1
+    },
+    {
+     "t": 260,
+     "k": "fire",
+     "v": 2
+    },
+    {
+     "t": 400,
+     "k": "leaves"
+    },
+    {
+     "t": 720,
+     "k": "pour"
+    }
+   ],
+   "result": "good",
+   "score": 78,
+   "strength": 23.7647,
+   "brewTemp": 92.3
+  }
+ ]
+}

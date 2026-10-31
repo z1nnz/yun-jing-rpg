@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "note": "Day 1 home tea brewing (work pack B). Light and short: boil water on the home tea stove (TI_TeaStove) reading the steam, add one of two teas by the scoop, pour at the right moment. Result is weak / good / bitter. Every brew still gives a cup and a rest bonus, so nothing is wasted; abandoning before the leaves go in returns them. Deterministic, no random rolls; TeaSim.cs mirrors simulate().",
+  "station": "TI_TeaStove",
+  "lessonMilestone": "tea:taught",
+  "lesson": { "npc": "茶亭老人", "grant": [{ "item": "qingxi-wild-tea", "quantity": 4 }, { "item": "plum-blossom-tea", "quantity": 4 }] },
+  "step": 0.1,
+  "maxLogSeconds": 240,
+  "ambient": 20,
+  "boil": 100,
+  "cooling": 0.012,
+  "steepCooling": 0.02,
+  "fires": [
+    { "id": 0, "label": "熄火", "heat": 0 },
+    { "id": 1, "label": "小火", "heat": 1.1 },
+    { "id": 2, "label": "中火", "heat": 2.2 },
+    { "id": 3, "label": "大火", "heat": 4.0 }
+  ],
+  "steam": [
+    { "id": "still", "label": "無聲無煙", "from": 0, "hint": "水還涼，壺口沒有動靜" },
+    { "id": "whisper", "label": "壺口微煙", "from": 55, "hint": "壺底冒出細如蝦眼的小泡" },
+    { "id": "fisheye", "label": "一沸・魚目", "from": 72, "hint": "泡如魚眼，壺口一縷細白煙" },
+    { "id": "pearls", "label": "二沸・連珠", "from": 85, "hint": "邊緣湧泉連珠，白煙成束" },
+    { "id": "roaring", "label": "三沸・騰波", "from": 96, "hint": "水面翻滾，壺蓋輕跳，煙勢大" }
+  ],
+  "minScoops": 1,
+  "maxScoops": 5,
+  "teas": [
+    {
+      "id": "qingxi-wild-tea", "label": "青溪野茶", "idealTemp": [85, 96], "idealScoops": 3,
+      "strength": { "weakBelow": 22, "bitterAbove": 36 },
+      "describe": { "weak": "湯色淺黃，入口只有水味", "good": "湯色金黃，山野清香回甘", "bitter": "湯色發暗，苦澀壓住了香氣" },
+      "hint": "野茶耐泡，水要二沸，三匙恰好"
+    },
+    {
+      "id": "plum-blossom-tea", "label": "梅花茶", "idealTemp": [72, 86], "idealScoops": 2,
+      "strength": { "weakBelow": 16, "bitterAbove": 28 },
+      "describe": { "weak": "梅香若有似無，湯淡如水", "good": "梅香清幽，湯色微粉", "bitter": "花瓣燙熟，香氣轉澀" },
+      "hint": "梅花嬌嫩，魚目時就該投茶，兩匙即可"
+    }
+  ],
+  "extraction": { "base": 1.0, "perDegree": 0.015, "minFactor": 0.2, "coldBelow": 60, "coldRate": 0.25, "scorchPerDegree": 0.8 },
+  "results": [
+    { "id": "weak", "label": "淡", "restMultiplier": 1.05 },
+    { "id": "good", "label": "好", "restMultiplier": 1.25 },
+    { "id": "bitter", "label": "苦", "restMultiplier": 1.0 }
+  ],
+  "restBonusMinutes": 30,
+  "advice": {
+    "early": "出湯太早，多等幾息再倒",
+    "cold": "水溫不夠，茶葉沒有舒展，看到魚目再投茶",
+    "light": "茶葉少了，下次多一匙",
+    "late": "出湯太晚，茶葉悶久就苦",
+    "hot": "水太滾，嫩葉燙傷，火關小或早點投茶",
+    "heavy": "茶葉太多，下次少一匙"
+  }
+}

@@ -10,7 +10,8 @@ import fortuneContent from '../../../packages/content/fortunes.json';
 import villageContent from '../../../packages/content/village.json';
 import waterlineContent from '../../../packages/content/waterline.json';
 import { AlchemyEvent, alchemyContent, judge, levelOf, modsFor, profileFor, simulate, validateLog, xpGain } from './alchemy';
-import { AlchemyRecord, AlchemyState, AlchemyView, HuntDeath, HuntReceipt, HuntReward } from '../../../packages/contracts/types';
+import { judge as judgeTea, simulate as simulateTea, TeaEvent, teaById, teaContent, validateLog as validateTeaLog } from './tea';
+import { AlchemyRecord, AlchemyState, AlchemyView, HuntDeath, HuntReceipt, HuntReward, TeaState, TeaView } from '../../../packages/contracts/types';
 
 export { content, estateContent, huntingContent, techniqueContent };
 export const SELECTION_DELAY_MS = 10 * 24 * 60 * 60 * 1000;
@@ -30,6 +31,18 @@ function settleStudy(player: Player, birth: Birth, now: number) {
   }
   if (study.focus) study.since = Math.max(study.since ?? now, now);
   player.study = study;
+}
+export function teaOf(player: Player): TeaState {
+  player.tea ??= { brews: 0, best: {}, session: null, restBonus: null, history: [] };
+  return player.tea;
+}
+export function teaView(player: Player, now: number): TeaView {
+  const t = player.tea ?? { brews: 0, best: {}, session: null, restBonus: null, history: [] };
+  return {
+    taught: player.milestones.includes(teaContent.lessonMilestone), brews: t.brews, session: t.session,
+    restBonus: t.restBonus && t.restBonus.until > now ? t.restBonus : null, last: t.history[0] ?? null,
+    teas: teaContent.teas.map(x => ({ id: x.id, label: x.label, owned: owned(player, x.id), idealScoops: x.idealScoops, hint: x.hint, best: t.best[x.id] ?? null })),
+  };
 }
 export function alchemyOf(player: Player): AlchemyState {
   player.alchemy ??= { xp: 0, identified: [], recipes: {}, perfect: [], session: null, history: [] };
@@ -209,7 +222,7 @@ export class Game {
     if (birth && projected.study) settleStudy(projected, birth, this.now());
     if (hidden && projected.study) projected.study.progressMs = {};
     const publicPlayer={...projected,roots:hidden?null:[...player.roots],apertures:hidden?null:player.apertures};
-    return { player:publicPlayer, world, birth:hidden?null:birth, birthAssigned:!!birth, version, serverTime: this.now(), contentVersion: content.version, speed: this.speed, journal: buildJournal(player, birth), alchemy: alchemyView(player) };
+    return { player:publicPlayer, world, birth:hidden?null:birth, birthAssigned:!!birth, version, serverTime: this.now(), contentVersion: content.version, speed: this.speed, journal: buildJournal(player, birth), alchemy: alchemyView(player), tea: teaView(player, this.now()) };
   }
   private async lock(tx: Sql, id: string) {
     // All gameplay mutations use this lock order. One shared prototype world, no client authority.
@@ -536,6 +549,36 @@ export class Game {
         ensure(player.sect && (player.path === 'body' ? player.body : player.qi) >= 100, 'CULTIVATION_REQUIRED', '主修進度需達 100');
         ensure(player.clues.length === 3 && player.milestones.includes('project-reward') && player.milestones.some(x => x.startsWith('crafted:')), 'TRIAL_REQUIRED', '完成調查、煉製與共同工程成果後再來試煉');
         player.realm = 1; mark(player, 'first-breakthrough'); break;
+      }
+      case 'tea-lesson': {
+        ensure(!player.milestones.includes(teaContent.lessonMilestone), 'ALREADY_TAUGHT', '茶亭老人已經教過你泡茶了', 409);
+        for (const g of teaContent.lesson.grant) grant(player, g.item, g.quantity, true);
+        mark(player, teaContent.lessonMilestone); break;
+      }
+      case 'tea-begin': {
+        ensure(player.milestones.includes(teaContent.lessonMilestone), 'TEA_NOT_TAUGHT', '先到茶亭向老人學泡茶', 409);
+        const t = teaOf(player); ensure(!t.session, 'TEA_BUSY', '茶爐上已經有一壺水了', 409);
+        const tea = teaById(action.tea); ensure(tea, 'INVALID_TEA', '請選擇青溪野茶或梅花茶');
+        const scoops = integer(action.scoops, teaContent.minScoops, teaContent.maxScoops);
+        t.session = { tea: tea.id, scoops, bound: spend(player, tea.id, scoops).bound, startedAt: now }; break;
+      }
+      case 'tea-abandon': {
+        const t = teaOf(player); const s = t.session; ensure(s, 'NO_TEA', '茶爐上沒有在燒的水', 409);
+        grant(player, s.tea, s.scoops, s.bound); t.session = null; break;   // leaves never go to waste
+      }
+      case 'tea-finish': {
+        const t = teaOf(player); const s = t.session; ensure(s, 'NO_TEA', '茶爐上沒有在燒的水', 409);
+        const invalid = validateTeaLog(action.log); ensure(!invalid, 'INVALID_LOG', `泡茶紀錄不合法（${invalid}）`);
+        const log = action.log as TeaEvent[];
+        ensure(now - s.startedAt + 1500 >= log[log.length - 1].t * 100 / this.speed, 'LOG_TOO_FAST', '泡茶紀錄比實際經過時間更長', 409);
+        const tea = teaById(s.tea)!;
+        const out = judgeTea(simulateTea(log, tea, s.scoops), tea, s.scoops);
+        const brew = { at: now, tea: tea.id, scoops: s.scoops, result: out.result, label: out.label, score: out.score, brewTemp: out.brewTemp, steepSeconds: out.steepSeconds, describe: out.describe, reasons: out.reasons };
+        // Every cup is drunk: the rest bonus is a parameter for bed rest healing (not wired to healing yet).
+        t.restBonus = { multiplier: out.restMultiplier, until: now + teaContent.restBonusMinutes * 60_000 / this.speed };
+        t.brews++; if (out.result === 'good') t.best[tea.id] = Math.max(t.best[tea.id] ?? 0, out.score);
+        t.history.unshift(brew); t.history = t.history.slice(0, 10);
+        t.session = null; mark(player, 'tea:brewed'); if (out.result === 'good') mark(player, `tea:good:${tea.id}`); break;
       }
       case 'alchemy-identify': {
         const a = alchemyOf(player); const herb = alchemyContent.herbs.find(x => x.id === action.item);

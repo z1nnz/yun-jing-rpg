@@ -1,0 +1,222 @@
+{
+  "asset": "TI10_TeaSet",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.2203,
+          -0.1903,
+          0.0
+        ],
+        "max": [
+          0.2203,
+          0.1903,
+          0.256
+        ]
+      }
+    },
+    {
+      "check": "within_size_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          0.4407,
+          0.3807,
+          0.256
+        ],
+        "limit_m": [
+          0.45,
+          0.4,
+          0.27
+        ]
+      }
+    },
+    {
+      "check": "piece_size_max",
+      "pass": true,
+      "detail": {
+        "piece_max_m": 0.25,
+        "pieces_m": {
+          "CaddyGreen": 0.212,
+          "CaddyGreenLid": 0.158,
+          "CaddyPink": 0.212,
+          "CaddyPinkLid": 0.158,
+          "Teapot": 0.2334,
+          "TeapotLid": 0.1002,
+          "CupA": 0.082,
+          "LiquidA": 0.0672,
+          "CupB": 0.082,
+          "LiquidB": 0.0672
+        }
+      }
+    },
+    {
+      "check": "lod_ratios_50_15",
+      "pass": true,
+      "detail": {
+        "triangles": {
+          "LOD0": 27054,
+          "LOD1": 13527,
+          "LOD2": 4048
+        },
+        "LOD1": 0.5,
+        "LOD2": 0.15,
+        "per_group": {
+          "CaddyGreen": {
+            "LOD0": 3432,
+            "LOD1": 1716,
+            "LOD2": 514
+          },
+          "CaddyGreenLid": {
+            "LOD0": 3420,
+            "LOD1": 1710,
+            "LOD2": 512
+          },
+          "CaddyPink": {
+            "LOD0": 3328,
+            "LOD1": 1664,
+            "LOD2": 498
+          },
+          "CaddyPinkLid": {
+            "LOD0": 3420,
+            "LOD1": 1710,
+            "LOD2": 512
+          },
+          "Teapot": {
+            "LOD0": 7192,
+            "LOD1": 3596,
+            "LOD2": 1077
+          },
+          "TeapotLid": {
+            "LOD0": 1696,
+            "LOD1": 848,
+            "LOD2": 254
+          },
+          "CupA": {
+            "LOD0": 2072,
+            "LOD1": 1036,
+            "LOD2": 310
+          },
+          "LiquidA": {
+            "LOD0": 128,
+            "LOD1": 64,
+            "LOD2": 18
+          },
+          "CupB": {
+            "LOD0": 2238,
+            "LOD1": 1119,
+            "LOD2": 335
+          },
+          "LiquidB": {
+            "LOD0": 128,
+            "LOD1": 64,
+            "LOD2": 18
+          }
+        }
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          0.4407,
+          0.3807,
+          0.256
+        ],
+        "blend_dims_m": [
+          0.4407,
+          0.3807,
+          0.256
+        ]
+      }
+    },
+    {
+      "check": "fbx_has_lod0_1_2_and_collision",
+      "pass": true,
+      "detail": [
+        "SOCKET_CaddyGreen_scoop.001",
+        "SOCKET_CaddyPink_scoop.001",
+        "SOCKET_cupa_pour.001",
+        "SOCKET_cupb_pour.001",
+        "SOCKET_spout.001",
+        "TI10_TeaSet.001",
+        "TI10_TeaSet_CaddyGreenLid_LOD0.001",
+        "TI10_TeaSet_CaddyGreenLid_LOD1.001",
+        "TI10_TeaSet_CaddyGreenLid_LOD2.001",
+        "TI10_TeaSet_CaddyGreen_LOD0.001",
+        "TI10_TeaSet_CaddyGreen_LOD1.001",
+        "TI10_TeaSet_CaddyGreen_LOD2.001",
+        "TI10_TeaSet_CaddyPinkLid_LOD0.001",
+        "TI10_TeaSet_CaddyPinkLid_LOD1.001",
+        "TI10_TeaSet_CaddyPinkLid_LOD2.001",
+        "TI10_TeaSet_CaddyPink_LOD0.001",
+        "TI10_TeaSet_CaddyPink_LOD1.001",
+        "TI10_TeaSet_CaddyPink_LOD2.001",
+        "TI10_TeaSet_CupA_LOD0.001",
+        "TI10_TeaSet_CupA_LOD1.001",
+        "TI10_TeaSet_CupA_LOD2.001",
+        "TI10_TeaSet_CupB_LOD0.001",
+        "TI10_TeaSet_CupB_LOD1.001",
+        "TI10_TeaSet_CupB_LOD2.001",
+        "TI10_TeaSet_LiquidA_LOD0.001",
+        "TI10_TeaSet_LiquidA_LOD1.001",
+        "TI10_TeaSet_LiquidA_LOD2.001",
+        "TI10_TeaSet_LiquidB_LOD0.001",
+        "TI10_TeaSet_LiquidB_LOD1.001",
+        "TI10_TeaSet_LiquidB_LOD2.001",
+        "TI10_TeaSet_TeapotLid_LOD0.001",
+        "TI10_TeaSet_TeapotLid_LOD1.001",
+        "TI10_TeaSet_TeapotLid_LOD2.001",
+        "TI10_TeaSet_Teapot_LOD0.001",
+        "TI10_TeaSet_Teapot_LOD1.001",
+        "TI10_TeaSet_Teapot_LOD2.001"
+      ]
+    },
+    {
+      "check": "fbx_sockets",
+      "pass": true,
+      "detail": {
+        "SOCKET_CaddyGreen_scoop.001": [
+          -0.0476,
+          0.1024,
+          0.25
+        ],
+        "SOCKET_CaddyPink_scoop.001": [
+          0.1374,
+          0.1074,
+          0.25
+        ],
+        "SOCKET_cupa_pour.001": [
+          0.0724,
+          -0.0476,
+          0.07
+        ],
+        "SOCKET_cupb_pour.001": [
+          0.1674,
+          -0.0426,
+          0.07
+        ],
+        "SOCKET_spout.001": [
+          -0.2126,
+          -0.0426,
+          0.095
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    }
+  ],
+  "all_pass": true,
+  "seconds": 134,
+  "not_checked": [
+    "Unity import and LODGroup switch distances",
+    "in-engine lighting",
+    "collision tested by walking a character"
+  ]
+}
