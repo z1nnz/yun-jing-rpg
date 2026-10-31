@@ -1,0 +1,131 @@
+{
+ "id": "TY02",
+ "name": "QinglingGrass",
+ "file": "TY02_QinglingGrass_v002",
+ "units": "metre",
+ "forward": "-Y (Blender) / +Z (glTF)",
+ "origin": "footprint centre, base z = 0",
+ "category": "crop stages",
+ "slots": [
+  "inside TY01, same origin"
+ ],
+ "dimensions_m": [
+  2.2628,
+  2.9588,
+  0.6259
+ ],
+ "triangles_lod0": 45792,
+ "triangles_per_node": {
+  "SM_TY_QinglingGrass_S1_LOD0": [
+   1920,
+   960,
+   276
+  ],
+  "SM_TY_QinglingGrass_S2_LOD0": [
+   7056,
+   3519,
+   1022
+  ],
+  "SM_TY_QinglingGrass_S3_LOD0": [
+   16368,
+   8160,
+   2419
+  ],
+  "SM_TY_QinglingGrass_S4_LOD0": [
+   20448,
+   10187,
+   3019
+  ]
+ },
+ "collision": [],
+ "note": "non-blocking plants; swap S1..S4 by growth t: <0.25 S1, <0.6 S2, <1 S3, >=1 S4",
+ "sockets": [],
+ "author": "Johnnnny0823",
+ "validation": {
+  "asset": "TY02",
+  "dimensions_m": [
+   2.2628,
+   2.9588,
+   0.6259
+  ],
+  "bbox_min": [
+   -1.1233,
+   -1.4705,
+   0.1926
+  ],
+  "bbox_max": [
+   1.1395,
+   1.4884,
+   0.8185
+  ],
+  "trianglesLOD0": 45792,
+  "materials": [
+   "M_TY_QinglingGrass",
+   "M_TY_QinglingGrass_Glow"
+  ],
+  "textureResolution": 2048,
+  "nodes": [
+   "SM_TY_QinglingGrass_S1_LOD0",
+   "SM_TY_QinglingGrass_S2_LOD0",
+   "SM_TY_QinglingGrass_S3_LOD0",
+   "SM_TY_QinglingGrass_S4_LOD0"
+  ],
+  "originAtBase": false,
+  "meshHealth": {
+   "nonManifoldEdges": 23232,
+   "looseVerts": 0,
+   "zeroAreaFaces": 0
+  },
+  "glbRoundTrip": {
+   "triangles": 45792,
+   "trianglesMatch": true,
+   "bboxMatch": true,
+   "materials": [
+    "M_TY_QinglingGrass.001",
+    "M_TY_QinglingGrass_Glow.001"
+   ]
+  },
+  "files": {
+   "TY02_QinglingGrass_v002.glb": {
+    "bytes": 4822376,
+    "sha256": "af2f5ea600b4efbaca8d5e0841fe1cc38269515762a5caf681172f78e11161c6"
+   },
+   "TY02_QinglingGrass_v002.fbx": {
+    "bytes": 5099884,
+    "sha256": "6b015c0d1d8aec046764ad56fcdb45a176cac24cb89b419a92a4c90b280244d8"
+   }
+  },
+  "reference": "art/references/territory-backyard-a/TY02/selected.png",
+  "notChecked": [
+   "mobile performance",
+   "LOD screen-size thresholds"
+  ]
+ },
+ "stages": {
+  "SM_TY_QinglingGrass_S1_LOD0": {
+   "stage": "sprout",
+   "t_from": 0.0,
+   "t_to": 0.25,
+   "height_m": 0.2
+  },
+  "SM_TY_QinglingGrass_S2_LOD0": {
+   "stage": "young",
+   "t_from": 0.25,
+   "t_to": 0.6,
+   "height_m": 0.35
+  },
+  "SM_TY_QinglingGrass_S3_LOD0": {
+   "stage": "grown",
+   "t_from": 0.6,
+   "t_to": 1.0,
+   "height_m": 0.5
+  },
+  "SM_TY_QinglingGrass_S4_LOD0": {
+   "stage": "mature",
+   "t_from": 1.0,
+   "t_to": null,
+   "height_m": 0.6
+  }
+ },
+ "glow": "mature leaf tips use M_TY_QinglingGrass_Glow (Emissive map, strength 1.4); every other face uses M_TY_QinglingGrass"
+}

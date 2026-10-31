@@ -24,7 +24,7 @@ namespace YunJing
 
         public Rules.BreathSession Breath { get; private set; }
         public Rules.BlockSession Block { get; private set; }
-        public bool Active => Breath != null || Block != null || showingResult;
+        public bool Active => Breath != null || Block != null || showingResult || (Lesson != null && Lesson.Running);
         public string LastResult { get; private set; }
         public bool Frozen { get; private set; }
         public static bool Practising { get; private set; }   // a drill or its result card is on screen
@@ -34,13 +34,28 @@ namespace YunJing
         string pendingTouchSide, lastKind, toast;
         float toastUntil;
 
+        QingxiBodyLesson lesson;
+        // 沈岳的第一堂練體課 runs on the agility post until it has been passed once; after that the post is the plain drill.
+        QingxiBodyLesson Lesson
+        {
+            get
+            {
+                if (lesson != null || blockPost == null) return lesson;
+                lesson = GetComponent<QingxiBodyLesson>();
+                if (lesson == null) lesson = gameObject.AddComponent<QingxiBodyLesson>();
+                lesson.training = this;
+                return lesson;
+            }
+        }
+
         static float Flat(Vector3 a, Vector3 b) => Vector2.Distance(new Vector2(a.x, a.z), new Vector2(b.x, b.z));
 
         public string Prompt(Vector3 position)
         {
             if (Active) return null;
             if (qiPost != null && Flat(position, qiPost.position) <= Reach) return $"F 引氣呼吸・{qiLabel}";
-            if (blockPost != null && Flat(position, blockPost.position) <= Reach) return "F 武技格擋・身法木樁";
+            if (blockPost != null && Flat(position, blockPost.position) <= Reach)
+                return Lesson != null && !Lesson.EverPassed && Lesson.PromptText != null ? Lesson.PromptText : "F 武技格擋・身法木樁";
             return null;
         }
 
@@ -49,7 +64,11 @@ namespace YunJing
             message = null;
             if (Active) return false;
             if (qiPost != null && Flat(position, qiPost.position) <= Reach) { StartQi(); message = "凝神：金圈擴張時按住，收回時放開"; return true; }
-            if (blockPost != null && Flat(position, blockPost.position) <= Reach) { StartBlock(); message = "木臂蓄勢：光圈收到時按 A／S／D 格擋"; return true; }
+            if (blockPost != null && Flat(position, blockPost.position) <= Reach)
+            {
+                if (Lesson != null && !Lesson.EverPassed && Lesson.Begin()) return true;
+                StartBlock(); message = "木臂蓄勢：光圈收到時按 A／S／D 格擋"; return true;
+            }
             return false;
         }
 
@@ -109,14 +128,16 @@ namespace YunJing
         {
             string args = string.Join(" ", System.Environment.GetCommandLineArgs()) + " " + Application.absoluteURL;
             bool qi = args.Contains("drill-qi") || args.Contains("drill=qi"), body = args.Contains("drill-block") || args.Contains("drill=block");
-            if (!qi && !body) yield break;
+            bool lessonHook = args.Contains("drill-lesson") || args.Contains("drill=lesson");
+            if (!qi && !body && !lessonHook) yield break;
             yield return new WaitForSeconds(1.5f);
-            var post = qi ? qiPost : blockPost;
+            var post = qi && !lessonHook ? qiPost : blockPost;
             if (post == null) yield break;
             if (walker == null) walker = QingxiFirstPerson.Current;
             var cc = walker != null ? walker.GetComponent<CharacterController>() : null;
             if (cc != null) { cc.enabled = false; walker.transform.position = post.position + Vector3.back * 1.6f + Vector3.up * .1f; cc.enabled = true; }
             yield return null;
+            if (lessonHook) { Lesson?.Begin(); yield break; }
             if (qi) StartQi(); else StartBlock();
             if (!args.Contains("drill-shots")) yield break;
             var folder = System.IO.Path.GetDirectoryName(Application.dataPath);
@@ -276,6 +297,36 @@ namespace YunJing
 
         void Toast(string text) { toast = text; toastUntil = Time.time + 2.5f; }
 
+        // ------------------------------------------------------------------ lent to QingxiBodyLesson (same camera, arms, sound and HUD as the drills)
+        internal void LessonStyles() => Styles();
+        internal void LessonHold(bool on)
+        {
+            if (on) { Stop(false); Freeze(true); BeginCamera(blockPost, 3.1f); }
+            else { RestArms(); RestoreCamera(); Freeze(false); LastResult = "練體課"; }
+        }
+        internal void LessonTick(float dt) { shake = Mathf.Max(0, shake - dt * .6f); }
+        internal void LessonArmsSetUp() => SetUpArms();
+        internal void LessonArmsRest() => RestArms();
+        internal void LessonArmPose(string side, double eta)
+        {
+            RestArms();
+            if (eta >= -.35 && arms.TryGetValue(side, out var arm)) arm.t.RotateAround(arm.pivot, arm.axis, arm.degrees * ArmAmount(eta));
+        }
+        // A sideways step: the camera slides off and back, so the dodge reads without a player model.
+        internal void LessonStep(string side) { stepOffset = (side == "left" ? -1 : 1) * .55f; Sfx.Tick(true); }
+        float stepOffset;
+        internal void LessonEffects(string kind, string side)
+        {
+            switch (kind)
+            {
+                case "perfect": Sfx.Clack(1); Sfx.Chime(1.5f); Burst(ArmTip(side), new Color(1, .88f, .63f)); shake = .05f; break;
+                case "good": Sfx.Clack(.7f); Burst(ArmTip(side), new Color(1, .95f, .86f)); shake = .05f; break;
+                case "hit": Sfx.Thud(); shake = .14f; break;
+                case "tick": Sfx.Tick(false); shake = .03f; break;
+                case "chime": Sfx.Chime(1.2f); break;
+            }
+        }
+
         // ------------------------------------------------------------------ camera
         Transform cam;
         Vector3 camLocalPos, camFrom, camTo, lookAt;
@@ -319,6 +370,11 @@ namespace YunJing
             cam.position = Vector3.Lerp(camFrom, camTo, e);
             cam.rotation = Quaternion.Slerp(camFromRot, Quaternion.LookRotation(lookAt - camTo), e);
             if (shake > 0) cam.position += cam.right * ((Random.value - .5f) * shake) + cam.up * ((Random.value - .5f) * shake);
+            if (stepOffset != 0)
+            {
+                cam.position += cam.right * stepOffset;
+                stepOffset = Mathf.MoveTowards(stepOffset, 0, Time.deltaTime * 1.1f);
+            }
             if (disc != null && cam != null) disc.transform.rotation = Quaternion.LookRotation(disc.transform.position - cam.position);
         }
 
@@ -511,8 +567,8 @@ namespace YunJing
         string judge, blockTip, resultKind, resultGrade, resultDetail;
         float judgeAt;
         readonly Dictionary<string, float> pressedUntil = new Dictionary<string, float> { { "left", 0 }, { "low", 0 }, { "right", 0 } };
-        static Texture2D ringTex, dashTex, discTex, softTex, barTex, vignetteTex, panelTex, pillTex;
-        GUIStyle small, body, serifBig, serifMid, title, eyebrow;
+        internal static Texture2D ringTex, dashTex, discTex, softTex, barTex, vignetteTex, panelTex, pillTex;
+        internal GUIStyle small, body, serifBig, serifMid, title, eyebrow;
         static readonly Color Ink = new Color(.055f, .1f, .09f, .82f), Gold = new Color(.84f, .7f, .42f), Gold2 = new Color(.95f, .84f, .59f),
             Paper = new Color(.94f, .9f, .82f), Muted = new Color(.73f, .69f, .61f), Red = new Color(.88f, .34f, .25f);
 
@@ -592,19 +648,19 @@ namespace YunJing
             return tex;
         }
 
-        static void Draw(Rect r, Texture tex, Color colour)
+        internal static void Draw(Rect r, Texture tex, Color colour)
         {
             var old = GUI.color; GUI.color = colour; GUI.DrawTexture(r, tex); GUI.color = old;
         }
 
-        static void Panel(Rect r, Texture2D tex, int border)
+        internal static void Panel(Rect r, Texture2D tex, int border)
         {
             var style = new GUIStyle { normal = { background = tex }, border = new RectOffset(border, border, border, border) };
             if (Event.current.type == EventType.Repaint) style.Draw(r, false, false, false, false);
         }
 
         // Rounded strip that keeps its round ends at any length (9-slice), tinted.
-        static void Sliced(Rect r, Texture2D tex, int border, Color colour)
+        internal static void Sliced(Rect r, Texture2D tex, int border, Color colour)
         {
             if (Event.current.type != EventType.Repaint) return;
             var old = GUI.color; GUI.color = colour;
@@ -612,7 +668,7 @@ namespace YunJing
             GUI.color = old;
         }
 
-        static Rect Centred(Vector2 c, float size) => new Rect(c.x - size / 2, c.y - size / 2, size, size);
+        internal static Rect Centred(Vector2 c, float size) => new Rect(c.x - size / 2, c.y - size / 2, size, size);
 
         void Text(Rect r, string s, GUIStyle style, Color glow)
         {
@@ -632,6 +688,7 @@ namespace YunJing
             var previous = GUI.matrix;
             GUI.matrix = Matrix4x4.Scale(Vector3.one * scale);
             float w = Screen.width / scale, h = Screen.height / scale;
+            if (Lesson != null && Lesson.Running) { GUI.matrix = previous; return; }
             if (!Active)
             {
                 if (toast != null && Time.time < toastUntil) { var r = new Rect(w / 2 - 110, h * .2f, 220, 40); Panel(r, pillTex, 20); GUI.Label(r, toast, small); }

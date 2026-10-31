@@ -1,0 +1,73 @@
+{
+  "id": "body-training-lesson-1",
+  "title": "第一堂練體課",
+  "teacher": "沈岳",
+  "day": 2,
+  "result": { "discipline": "body", "label": "練體入門" },
+  "failure": { "retry": "same-stage", "cost": "none" },
+  "demoSeconds": 3.0,
+  "stages": [
+    {
+      "id": "stance",
+      "kind": "stance",
+      "label": "站樁",
+      "leadIn": 1.5,
+      "holdSeconds": 15.0,
+      "zone": 0.32,
+      "limit": 0.85,
+      "rise": 0.62,
+      "fall": 0.62,
+      "swayA": 0.2,
+      "swayB": 0.1,
+      "swayRateA": 1.1,
+      "swayRateB": 2.3
+    },
+    {
+      "id": "block",
+      "kind": "block",
+      "label": "格擋",
+      "count": 5,
+      "required": 3,
+      "firstAt": 2.4,
+      "gaps": [1.9, 1.6, 1.7, 1.4],
+      "jitter": 0.15,
+      "windup": 0.75,
+      "perfectWindow": 0.09,
+      "goodWindow": 0.22,
+      "stiffSeconds": 0.45
+    },
+    {
+      "id": "dodge",
+      "kind": "dodge",
+      "label": "閃避",
+      "count": 3,
+      "required": 2,
+      "firstAt": 2.6,
+      "gaps": [2.5, 2.2],
+      "jitter": 0.15,
+      "windup": 1.0,
+      "dodgeBefore": 0.55,
+      "dodgeAfter": 0.06,
+      "recoverSeconds": 0.8,
+      "stumbleSeconds": 1.6
+    }
+  ],
+  "texts": {
+    "prompt": "F 沈岳的第一堂課",
+    "demo": { "stance": "看著：氣穩在中間", "block": "看著：拳到才擋", "dodge": "看著：腿來就閃" },
+    "tip": {
+      "stance": "按住提氣，放開沉氣",
+      "stanceDrift": "氣偏了，拉回中間",
+      "stanceReset": "太偏了，從頭站",
+      "block": "拳到眼前再格擋",
+      "blockEarly": "太早，架勢鬆了",
+      "dodge": "腿掃來時往旁閃",
+      "dodgeEarly": "閃太早，站穩再來"
+    },
+    "judge": { "perfect": "精準", "good": "擋下", "hit": "中拳", "dodged": "閃過", "swept": "被掃" },
+    "button": { "hold": "提氣", "block": "格擋", "left": "左閃", "right": "右閃", "retry": "再來一次", "leave": "收功離開" },
+    "stagePassed": "這段過了",
+    "stageFailed": "沒過，馬上再來",
+    "passed": "練體入門"
+  }
+}
