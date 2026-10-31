@@ -24,6 +24,7 @@ export interface Player {
   journey?: Journey;
   study?: TechniqueStudy;
   alchemy?: AlchemyState;
+  tea?: TeaState;        // 第 1 天・在家泡茶 (packages/content/tea-brewing-v1.json)
   upstream?: string[];  // 斷流第一章: upstream signs this character found (ids from packages/content/waterline.json)
   waterReport?: string; // 斷流第一章: what this character told the village (tell_shortage | inspect_crack | protect_nursery)
   vein?: number;        // 脈息: harvests that fed the spirit vein; hidden from players for now
@@ -45,7 +46,7 @@ export interface Journal {
 }
 // Null means undisclosed, not "no spiritual root" / "zero apertures".
 export type PublicPlayer = Omit<Player, 'roots' | 'apertures'> & { roots: string[] | null; apertures: number | null };
-export interface Snapshot { player: PublicPlayer; birth: Birth | null; birthAssigned: boolean; world: World; serverTime: number; version: number; contentVersion: string; speed: number; journal: Journal; alchemy?: AlchemyView }
+export interface Snapshot { player: PublicPlayer; birth: Birth | null; birthAssigned: boolean; world: World; serverTime: number; version: number; contentVersion: string; speed: number; journal: Journal; alchemy?: AlchemyView; tea?: TeaView }
 export interface Action { kind: string; [key: string]: unknown }
 export interface HuntDeath {
   deathId: string;
@@ -77,6 +78,13 @@ export interface AlchemyHistory { at: number; recipe: string | null; label: stri
 export interface AlchemyState {
   xp: number; identified: string[]; recipes: Record<string, AlchemyRecord>; perfect: string[];
   session: AlchemySession | null; history: AlchemyHistory[];
+}
+export interface TeaSession { tea: string; scoops: number; bound: boolean; startedAt: number }
+export interface TeaBrew { at: number; tea: string; scoops: number; result: 'weak' | 'good' | 'bitter'; label: string; score: number; brewTemp: number; steepSeconds: number; describe: string; reasons: string[] }
+export interface TeaState { brews: number; best: Record<string, number>; session: TeaSession | null; restBonus: { multiplier: number; until: number } | null; history: TeaBrew[] }
+export interface TeaView {
+  taught: boolean; brews: number; session: TeaSession | null; restBonus: { multiplier: number; until: number } | null; last: TeaBrew | null;
+  teas: { id: string; label: string; owned: number; idealScoops: number; hint: string; best: number | null }[];
 }
 export interface AlchemyView {
   level: number; xp: number; into: number; need: number; manualTier: number;

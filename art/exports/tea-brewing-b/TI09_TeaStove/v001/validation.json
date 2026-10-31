@@ -1,0 +1,122 @@
+{
+  "asset": "TI09_TeaStove",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -0.2514,
+          -0.247,
+          -0.0
+        ],
+        "max": [
+          0.2514,
+          0.247,
+          0.8844
+        ]
+      }
+    },
+    {
+      "check": "within_size_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          0.5028,
+          0.494,
+          0.8844
+        ],
+        "limit_m": [
+          0.7,
+          0.7,
+          0.9
+        ]
+      }
+    },
+    {
+      "check": "lod_ratios_50_15",
+      "pass": true,
+      "detail": {
+        "triangles": {
+          "LOD0": 27858,
+          "LOD1": 13928,
+          "LOD2": 4176
+        },
+        "LOD1": 0.5,
+        "LOD2": 0.15,
+        "per_group": {
+          "Main": {
+            "LOD0": 26770,
+            "LOD1": 13384,
+            "LOD2": 4014
+          },
+          "Fire": {
+            "LOD0": 1088,
+            "LOD1": 544,
+            "LOD2": 162
+          }
+        }
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          0.5028,
+          0.494,
+          0.8844
+        ],
+        "blend_dims_m": [
+          0.5028,
+          0.494,
+          0.8844
+        ]
+      }
+    },
+    {
+      "check": "fbx_has_lod0_1_2_and_collision",
+      "pass": true,
+      "detail": [
+        "SOCKET_fire_light.001",
+        "SOCKET_steam.001",
+        "TI09_TeaStove.001",
+        "TI09_TeaStove_Collision.001",
+        "TI09_TeaStove_Fire_LOD0.001",
+        "TI09_TeaStove_Fire_LOD1.001",
+        "TI09_TeaStove_Fire_LOD2.001",
+        "TI09_TeaStove_LOD0.001",
+        "TI09_TeaStove_LOD1.001",
+        "TI09_TeaStove_LOD2.001"
+      ]
+    },
+    {
+      "check": "fbx_sockets",
+      "pass": true,
+      "detail": {
+        "SOCKET_fire_light.001": [
+          0.0224,
+          -0.052,
+          0.252
+        ],
+        "SOCKET_steam.001": [
+          -0.2416,
+          0.018,
+          0.756
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    }
+  ],
+  "all_pass": true,
+  "seconds": 123,
+  "not_checked": [
+    "Unity import and LODGroup switch distances",
+    "in-engine lighting",
+    "collision tested by walking a character"
+  ]
+}

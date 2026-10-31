@@ -1,0 +1,205 @@
+{
+  "asset": "RK04_TeaStall",
+  "version": "v001",
+  "name_zh": "茶亭旁的小茶攤",
+  "slot": "A2_TeaStall (-12.5, -110), yaw 90",
+  "note": "攤位內側可站 NPC（SOCKET_vendor）；凳子不擋人，讓玩家可以走到櫃台前",
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    2.9665,
+    1.9611,
+    2.5645
+  ],
+  "size_limit_m": [
+    3.0,
+    2.0,
+    2.6
+  ],
+  "lods": {
+    "Main": {
+      "LOD0": 122944,
+      "LOD1": 61472,
+      "LOD2": 18441
+    }
+  },
+  "lod_totals": {
+    "LOD0": 122944,
+    "LOD1": 61472,
+    "LOD2": 18441
+  },
+  "lod_rule": "LOD1 about 50%, LOD2 about 15% of LOD0 (small parts dropped first, then collapse decimate)",
+  "materials": [
+    "M_RK04_TeaStall_Lantern",
+    "M_RK04_TeaStall_Main"
+  ],
+  "textures": [
+    "RK04_TeaStall_BaseColor.png",
+    "RK04_TeaStall_Emission.png",
+    "RK04_TeaStall_Metallic.png",
+    "RK04_TeaStall_MetallicSmoothness.png",
+    "RK04_TeaStall_Normal.png",
+    "RK04_TeaStall_Roughness.png"
+  ],
+  "texture_size_px": 4096,
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "RK04_TeaStall_BaseColor.png",
+    "Normal": "RK04_TeaStall_Normal.png (OpenGL +Y)",
+    "MetallicSmoothness": "RK04_TeaStall_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": "RK04_TeaStall_Emission.png",
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import",
+    "collision": "RK04_TeaStall_Collision: add a MeshCollider (convex off) or replace with primitive colliders; hide its renderer"
+  },
+  "collision": true,
+  "collision_shapes": [
+    [
+      "box",
+      [
+        0,
+        -0.27,
+        0.45
+      ],
+      [
+        2.56,
+        0.5,
+        0.9
+      ]
+    ],
+    [
+      "box",
+      [
+        0,
+        0.62,
+        1.0
+      ],
+      [
+        2.7,
+        0.1,
+        2.0
+      ]
+    ],
+    [
+      "box",
+      [
+        -1.38,
+        0.32,
+        1.0
+      ],
+      [
+        0.1,
+        0.55,
+        2.0
+      ]
+    ],
+    [
+      "box",
+      [
+        1.38,
+        0.32,
+        1.0
+      ],
+      [
+        0.1,
+        0.55,
+        2.0
+      ]
+    ],
+    [
+      "box",
+      [
+        -1.32,
+        -0.45,
+        1.0
+      ],
+      [
+        0.2,
+        0.2,
+        2.0
+      ]
+    ],
+    [
+      "box",
+      [
+        1.32,
+        -0.45,
+        1.0
+      ],
+      [
+        0.2,
+        0.2,
+        2.0
+      ]
+    ]
+  ],
+  "sockets_blender_xyz": {
+    "SOCKET_lantern_light": [
+      -1.1882,
+      -0.5635,
+      1.6095
+    ],
+    "SOCKET_vendor": [
+      -0.0082,
+      0.0765,
+      0.0095
+    ],
+    "SOCKET_customer_1": [
+      -0.6582,
+      -0.9235,
+      0.0095
+    ],
+    "SOCKET_customer_2": [
+      0.5418,
+      -0.9235,
+      0.0095
+    ]
+  },
+  "sockets_fbx_reimport_xyz": {
+    "SOCKET_customer_1.001": [
+      -0.6582,
+      -0.9235,
+      0.0095
+    ],
+    "SOCKET_customer_2.001": [
+      0.5418,
+      -0.9235,
+      0.0095
+    ],
+    "SOCKET_lantern_light.001": [
+      -1.1882,
+      -0.5635,
+      1.6095
+    ],
+    "SOCKET_vendor.001": [
+      -0.0082,
+      0.0765,
+      0.0095
+    ]
+  },
+  "states": [
+    "lantern_off",
+    "lantern_on"
+  ],
+  "state_renders": {
+    "lantern_on": "state_lantern_on.png"
+  },
+  "fbx_objects": [
+    "RK04_TeaStall.001",
+    "RK04_TeaStall_Collision.001",
+    "RK04_TeaStall_LOD0.001",
+    "RK04_TeaStall_LOD1.001",
+    "RK04_TeaStall_LOD2.001",
+    "SOCKET_customer_1.001",
+    "SOCKET_customer_2.001",
+    "SOCKET_lantern_light.001",
+    "SOCKET_vendor.001"
+  ],
+  "modeling_method": "procedural mesh construction (art/source/tea-brewing-b/tb_assets.py); procedural shaders baked to a UV atlas",
+  "reference": "art/references/tea-brewing-b-v1/RK04/selected.png (AI three-view, not measured)",
+  "unity_import_verified": false,
+  "separate_objects": {
+    "lantern_paper": "Lantern slot material: emission on at night"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "asset": "TI09_TeaStove",
+  "version": "v001",
+  "name_zh": "家用茶爐",
+  "slot": "TI_TeaStove",
+  "note": "泡茶玩法用；SOCKET_steam 在壺嘴，蒸汽特效掛這裡；Fire 群組切換冷爐／燒火",
+  "units": "meters",
+  "front": "-Y (Blender)",
+  "up": "+Z (Blender); FBX exported Y-up, -Z forward, transforms baked",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.5028,
+    0.494,
+    0.8844
+  ],
+  "size_limit_m": [
+    0.7,
+    0.7,
+    0.9
+  ],
+  "lods": {
+    "Main": {
+      "LOD0": 26770,
+      "LOD1": 13384,
+      "LOD2": 4014
+    },
+    "Fire": {
+      "LOD0": 1088,
+      "LOD1": 544,
+      "LOD2": 162
+    }
+  },
+  "lod_totals": {
+    "LOD0": 27858,
+    "LOD1": 13928,
+    "LOD2": 4176
+  },
+  "lod_rule": "LOD1 about 50%, LOD2 about 15% of LOD0 (small parts dropped first, then collapse decimate)",
+  "materials": [
+    "M_TI09_TeaStove_FireInsert",
+    "M_TI09_TeaStove_Main"
+  ],
+  "textures": [
+    "TI09_TeaStove_BaseColor.png",
+    "TI09_TeaStove_Emission.png",
+    "TI09_TeaStove_Metallic.png",
+    "TI09_TeaStove_MetallicSmoothness.png",
+    "TI09_TeaStove_Normal.png",
+    "TI09_TeaStove_Roughness.png"
+  ],
+  "texture_size_px": 2048,
+  "unity": {
+    "pipeline": "URP Lit",
+    "BaseColor": "TI09_TeaStove_BaseColor.png",
+    "Normal": "TI09_TeaStove_Normal.png (OpenGL +Y)",
+    "MetallicSmoothness": "TI09_TeaStove_MetallicSmoothness.png (R metallic, A smoothness)",
+    "Emission": "TI09_TeaStove_Emission.png",
+    "lod_group": "objects end in _LOD0/_LOD1/_LOD2 under one root, so Unity builds a LODGroup on import",
+    "collision": "TI09_TeaStove_Collision: add a MeshCollider (convex off) or replace with primitive colliders; hide its renderer"
+  },
+  "collision": true,
+  "collision_shapes": [
+    [
+      "cyl",
+      [
+        0,
+        0,
+        0.3
+      ],
+      0.225,
+      0.6
+    ]
+  ],
+  "sockets_blender_xyz": {
+    "SOCKET_fire_light": [
+      0.0224,
+      -0.052,
+      0.252
+    ],
+    "SOCKET_steam": [
+      -0.2416,
+      0.018,
+      0.756
+    ]
+  },
+  "sockets_fbx_reimport_xyz": {
+    "SOCKET_fire_light.001": [
+      0.0224,
+      -0.052,
+      0.252
+    ],
+    "SOCKET_steam.001": [
+      -0.2416,
+      0.018,
+      0.756
+    ]
+  },
+  "states": [
+    "cold",
+    "burning"
+  ],
+  "state_renders": {
+    "cold": "state_cold.png",
+    "burning": "state_burning.png"
+  },
+  "fbx_objects": [
+    "SOCKET_fire_light.001",
+    "SOCKET_steam.001",
+    "TI09_TeaStove.001",
+    "TI09_TeaStove_Collision.001",
+    "TI09_TeaStove_Fire_LOD0.001",
+    "TI09_TeaStove_Fire_LOD1.001",
+    "TI09_TeaStove_Fire_LOD2.001",
+    "TI09_TeaStove_LOD0.001",
+    "TI09_TeaStove_LOD1.001",
+    "TI09_TeaStove_LOD2.001"
+  ],
+  "modeling_method": "procedural mesh construction (art/source/tea-brewing-b/tb_assets.py); procedural shaders baked to a UV atlas",
+  "reference": "art/references/tea-brewing-b-v1/TI09/selected.png (AI three-view, not measured)",
+  "unity_import_verified": false,
+  "separate_objects": {
+    "fire_insert": "TI09_TeaStove_Fire_LOD* (toggle for cold/burning; emission strength 0 when cold)"
+  }
+}

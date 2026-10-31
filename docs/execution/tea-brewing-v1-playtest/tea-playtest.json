@@ -1,0 +1,166 @@
+{
+    "started": "2026-10-31T15:18:01",
+    "resolution": "1280x720",
+    "pass": true,
+    "frameEvery": 0.20000000298023225,
+    "frames": 950,
+    "steps": [
+        {
+            "index": 1,
+            "name": "start",
+            "pass": true,
+            "note": "茶爐與面板就緒",
+            "seconds": 0.0002503395080566406,
+            "shot": ""
+        },
+        {
+            "index": 2,
+            "name": "1_wild_good_choose",
+            "pass": true,
+            "note": "青溪野茶 3 匙",
+            "seconds": 2.2001495361328127,
+            "shot": "02_1_wild_good_choose.png"
+        },
+        {
+            "index": 3,
+            "name": "1_wild_good_boil",
+            "pass": true,
+            "note": "中火",
+            "seconds": 2.800072193145752,
+            "shot": ""
+        },
+        {
+            "index": 4,
+            "name": "1_wild_good_steam_fisheye",
+            "pass": true,
+            "note": "一沸・魚目",
+            "seconds": 30.600406646728517,
+            "shot": "04_1_wild_good_steam_fisheye.png"
+        },
+        {
+            "index": 5,
+            "name": "1_wild_good_steam_pearls",
+            "pass": true,
+            "note": "二沸・連珠",
+            "seconds": 39.30049133300781,
+            "shot": "05_1_wild_good_steam_pearls.png"
+        },
+        {
+            "index": 6,
+            "name": "1_wild_good_leaves",
+            "pass": true,
+            "note": "投茶水溫 85.6",
+            "seconds": 39.701637268066409,
+            "shot": "06_1_wild_good_liquor.png"
+        },
+        {
+            "index": 7,
+            "name": "1_wild_good_result",
+            "pass": true,
+            "note": "好 100 分 浸 52.8s 理由：",
+            "seconds": 92.82928466796875,
+            "shot": "07_1_wild_good_result.png"
+        },
+        {
+            "index": 8,
+            "name": "2_plum_scorched_choose",
+            "pass": true,
+            "note": "梅花茶 2 匙",
+            "seconds": 98.02540588378906,
+            "shot": "08_2_plum_scorched_choose.png"
+        },
+        {
+            "index": 9,
+            "name": "2_plum_scorched_boil",
+            "pass": true,
+            "note": "大火",
+            "seconds": 98.62812805175781,
+            "shot": ""
+        },
+        {
+            "index": 10,
+            "name": "2_plum_scorched_steam_fisheye",
+            "pass": true,
+            "note": "一沸・魚目",
+            "seconds": 112.82589721679688,
+            "shot": "10_2_plum_scorched_steam_fisheye.png"
+        },
+        {
+            "index": 11,
+            "name": "2_plum_scorched_steam_roaring",
+            "pass": true,
+            "note": "三沸・騰波",
+            "seconds": 120.22586059570313,
+            "shot": "11_2_plum_scorched_steam_roaring.png"
+        },
+        {
+            "index": 12,
+            "name": "2_plum_scorched_leaves",
+            "pass": true,
+            "note": "投茶水溫 97.4",
+            "seconds": 120.62632751464844,
+            "shot": "12_2_plum_scorched_liquor.png"
+        },
+        {
+            "index": 13,
+            "name": "2_plum_scorched_result",
+            "pass": true,
+            "note": "苦 50 分 浸 19.9s 理由：水太滾，嫩葉燙傷，火關小或早點投茶",
+            "seconds": 140.8264617919922,
+            "shot": "13_2_plum_scorched_result.png"
+        },
+        {
+            "index": 14,
+            "name": "3_plum_early_choose",
+            "pass": true,
+            "note": "梅花茶 2 匙",
+            "seconds": 146.03578186035157,
+            "shot": "14_3_plum_early_choose.png"
+        },
+        {
+            "index": 15,
+            "name": "3_plum_early_boil",
+            "pass": true,
+            "note": "中火",
+            "seconds": 146.63613891601563,
+            "shot": ""
+        },
+        {
+            "index": 16,
+            "name": "3_plum_early_steam_fisheye",
+            "pass": true,
+            "note": "一沸・魚目",
+            "seconds": 174.43624877929688,
+            "shot": "16_3_plum_early_steam_fisheye.png"
+        },
+        {
+            "index": 17,
+            "name": "3_plum_early_leaves",
+            "pass": true,
+            "note": "投茶水溫 72.7",
+            "seconds": 174.83628845214845,
+            "shot": "17_3_plum_early_liquor.png"
+        },
+        {
+            "index": 18,
+            "name": "3_plum_early_result",
+            "pass": true,
+            "note": "淡 30 分 浸 10.7s 理由：出湯太早，多等幾息再倒",
+            "seconds": 185.83663940429688,
+            "shot": "18_3_plum_early_result.png"
+        },
+        {
+            "index": 19,
+            "name": "abandon_returns_leaves",
+            "pass": true,
+            "note": "野茶 0 → 1",
+            "seconds": 189.83645629882813,
+            "shot": ""
+        }
+    ],
+    "logs": [
+        "6:fire2,375:fire0,375:leaves,903:pour",
+        "6:fire3,226:fire0,226:leaves,425:pour",
+        "6:fire2,288:fire0,288:leaves,395:pour"
+    ]
+}

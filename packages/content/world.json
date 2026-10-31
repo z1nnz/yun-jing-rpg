@@ -35,6 +35,8 @@
     { "id": "huichun-pill", "label": "回春丹" },
     { "id": "juqi-pill", "label": "聚氣丹" },
     { "id": "pill-residue", "label": "丹渣" },
+    { "id": "qingxi-wild-tea", "label": "青溪野茶" },
+    { "id": "plum-blossom-tea", "label": "梅花茶" },
     { "id": "stone", "label": "陣基石" },
     { "id": "spirit-stone", "label": "靈石" },
     { "id": "body-bath", "label": "淬體藥浴" },

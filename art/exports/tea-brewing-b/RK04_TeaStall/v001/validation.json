@@ -1,0 +1,126 @@
+{
+  "asset": "RK04_TeaStall",
+  "checks": [
+    {
+      "check": "origin_bottom_centre",
+      "pass": true,
+      "detail": {
+        "min": [
+          -1.4832,
+          -0.9805,
+          0.0
+        ],
+        "max": [
+          1.4832,
+          0.9805,
+          2.5645
+        ]
+      }
+    },
+    {
+      "check": "within_size_limit",
+      "pass": true,
+      "detail": {
+        "dims_m": [
+          2.9665,
+          1.9611,
+          2.5645
+        ],
+        "limit_m": [
+          3.0,
+          2.0,
+          2.6
+        ]
+      }
+    },
+    {
+      "check": "lod_ratios_50_15",
+      "pass": true,
+      "detail": {
+        "triangles": {
+          "LOD0": 122944,
+          "LOD1": 61472,
+          "LOD2": 18441
+        },
+        "LOD1": 0.5,
+        "LOD2": 0.15,
+        "per_group": {
+          "Main": {
+            "LOD0": 122944,
+            "LOD1": 61472,
+            "LOD2": 18441
+          }
+        }
+      }
+    },
+    {
+      "check": "fbx_reimport_dimensions",
+      "pass": true,
+      "detail": {
+        "fbx_lod0_dims_m": [
+          2.9665,
+          1.9611,
+          2.5645
+        ],
+        "blend_dims_m": [
+          2.9665,
+          1.9611,
+          2.5645
+        ]
+      }
+    },
+    {
+      "check": "fbx_has_lod0_1_2_and_collision",
+      "pass": true,
+      "detail": [
+        "RK04_TeaStall.001",
+        "RK04_TeaStall_Collision.001",
+        "RK04_TeaStall_LOD0.001",
+        "RK04_TeaStall_LOD1.001",
+        "RK04_TeaStall_LOD2.001",
+        "SOCKET_customer_1.001",
+        "SOCKET_customer_2.001",
+        "SOCKET_lantern_light.001",
+        "SOCKET_vendor.001"
+      ]
+    },
+    {
+      "check": "fbx_sockets",
+      "pass": true,
+      "detail": {
+        "SOCKET_customer_1.001": [
+          -0.6582,
+          -0.9235,
+          0.0095
+        ],
+        "SOCKET_customer_2.001": [
+          0.5418,
+          -0.9235,
+          0.0095
+        ],
+        "SOCKET_lantern_light.001": [
+          -1.1882,
+          -0.5635,
+          1.6095
+        ],
+        "SOCKET_vendor.001": [
+          -0.0082,
+          0.0765,
+          0.0095
+        ]
+      }
+    },
+    {
+      "check": "ten_views_rendered",
+      "pass": true,
+      "detail": "orthographic, framing asserted per view"
+    }
+  ],
+  "all_pass": true,
+  "seconds": 181,
+  "not_checked": [
+    "Unity import and LODGroup switch distances",
+    "in-engine lighting",
+    "collision tested by walking a character"
+  ]
+}
