@@ -170,6 +170,31 @@ def build_elder_form(spec, variant=0):
     E['limbs'] = [tuple(T(p) for p in limb) for limb in ELDER['limbs']]
     E['back'] = [(T(c), sc) for c, sc in ELDER['back']]
     E['front'] = [(T(c), sc) for c, sc in ELDER['front']]
+    if spec.get('tiers'):
+        # Pine and juniper (pine.png, juniper.png): the limbs leave the trunk in tiers all the way up, lower ones
+        # longer, each reaching out, sagging a little and turning up at its end under a flat pad of needles.
+        trunk_pts = [Vector(p) for p in E['trunk']]
+
+        def on_trunk(z):
+            for a_, b_ in zip(trunk_pts, trunk_pts[1:]):
+                if z <= b_.z:
+                    return a_.lerp(b_, (z - a_.z) / max(b_.z - a_.z, 1e-6))
+            return trunk_pts[-1].copy()
+        top = trunk_pts[-1].z
+        limbs, pads = [], []
+        for i, (a0, m0, e0) in enumerate(E['limbs']):
+            k = i / (len(E['limbs']) - 1)
+            st = on_trunk(top * (.38 + .55 * k))
+            out = Vector((e0[0] - a0[0], e0[1] - a0[1], 0))
+            out = out.normalized() if out.length > .01 else Vector((1, 0, 0))
+            reach = top * (.85 - .45 * k) * random.Random(i * 7 + variant).uniform(.8, 1.15)
+            mid = st + out * reach * .5 + Vector((0, 0, -reach * .12))
+            end = st + out * reach + Vector((0, 0, -reach * .02))
+            limbs.append((tuple(st), tuple(mid), tuple(end)))
+            pads.append((tuple(end + Vector((0, 0, .3))), (2.3 - .6 * k, 2.3 - .6 * k, .75)))
+            pads.append((tuple(st.lerp(end, .58) + Vector((0, 0, .2))), (1.6 - .4 * k, 1.6 - .4 * k, .6)))
+        pads.append((tuple(trunk_pts[-1] + Vector((0, 0, .3))), (1.8, 1.8, .8)))
+        E['limbs'], E['back'], E['front'] = limbs, pads, []
     trunk = to_mesh(curve('trunk', [Vector(p) * S for p in E['trunk']], [r * S * g for r in E['trunk_radii']]))
     cl = [Vector(p) * S for p in E['trunk']]
     for v in trunk.data.vertices:   # build_life_tree.py's flutes, in its own (unscaled) units
@@ -207,7 +232,7 @@ def build_elder_form(spec, variant=0):
     branches = []
     for i, pts in enumerate(E['limbs'], start=1):
         bevel = max(.14, .32 - i * .018)
-        branches.append(curve(f'limb_{i}', [Vector(p) * S for p in pts], [r * bevel * S * g_limb for r in (1.12 if i < 4 else .88, .48, .08)]))
+        branches.append(curve(f'limb_{i}', [Vector(p) * S for p in pts], [r * bevel * S * g_limb * (.55 if spec.get('tiers') else 1) for r in (1.12 if i < 4 else .88, .48, .08)]))
         if not spec.get('hang'):   # a weeping tree has no upward twigs: its curtains hang from the limbs
             elder_hierarchy(i, pts, S, branches, g_twig)
     for o in branches:
@@ -255,12 +280,12 @@ WILLOW_ELDER = dict(trunk_r=0.58, name='Willow', scale=1.35, wide=1.05, tall=1.1
 PLUM_ELDER = dict(trunk_r=0.28, name='Plum', scale=.85, wide=1.1, tall=.95, crown_xy=.85, crown_z=.85, leaves_per_cluster=1500, sparse=.55,
                   leaf_size=(.03, .05), leaf_width=1.4, bark_tint='#3e2f2a',
                   palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
-PINE_ELDER = dict(trunk_r=0.62, name='Pine', scale=1.45, wide=1.15, tall=1.2, crown_xy=1.15, crown_z=.4, leaves_per_cluster=1900,
+PINE_ELDER = dict(trunk_r=0.62, name='Pine', scale=1.45, wide=1.0, tall=1.55, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.3, leaves_per_cluster=1900,
                   leaf_size=(.03, .055), leaf_width=.25, bark_tint='#8a5a40',
-                  palette=['#16301f', '#22482a', '#3a6a34', '#6a9440', '#a8c058'])
-JUNIPER_ELDER = dict(trunk_r=0.62, name='Cypress', scale=1.15, wide=1.2, tall=.9, crown_xy=1.05, crown_z=.5, leaves_per_cluster=1800,
+                  palette=['#14301e', '#1f4a28', '#356a32', '#5e8c3c', '#9ab456'])
+JUNIPER_ELDER = dict(trunk_r=.95, name='Cypress', scale=1.15, wide=1.0, tall=1.35, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.8, leaves_per_cluster=1800,
                      leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
-                     palette=['#1a3a1e', '#2a5428', '#467a30', '#76a23a', '#b0c856'])
+                     palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
 SPECIES = [CAMPHOR_ELDER, MAPLE_ELDER, GINKGO_ELDER, WILLOW_ELDER, PLUM_ELDER, PINE_ELDER, JUNIPER_ELDER]
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that
 
