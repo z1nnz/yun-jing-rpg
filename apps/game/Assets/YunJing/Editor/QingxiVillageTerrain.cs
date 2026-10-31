@@ -562,7 +562,7 @@ namespace YunJing.Editor
                     float d = Vector2.Distance(new Vector2(wx, wz), t.at);
                     // Ragged edge: litter blows out further on one side, meadow creeps in on another.
                     float ragged = (Mathf.PerlinNoise(wx * .35f + t.at.x, wz * .35f + t.at.y) - .5f) * r * .6f;
-                    float w = (1f - Smooth(r * .15f, r * 1.1f, d + ragged)) * .55f;   // faint and wide: never a disc
+                    float w = (1f - Smooth(r * .15f, r * 1.1f, d + ragged)) * .75f;   // wide and soft-edged: never a disc
                     if (w <= 0) continue;
                     // Paths, flagstones, creek gravel and rock stay as they are.
                     float keep = paint[z, x, 1] + paint[z, x, 2] + paint[z, x, 5] + paint[z, x, 6];
