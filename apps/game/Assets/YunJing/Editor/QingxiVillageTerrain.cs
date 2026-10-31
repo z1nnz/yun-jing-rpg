@@ -213,6 +213,16 @@ namespace YunJing.Editor
         public static float WorldBase(float x, float z) =>
             .7f + 1.1f * (Mathf.PerlinNoise(x * .011f + 3.3f, z * .011f + 8.1f) - .5f);
 
+        // Where a spot sits in the land (tree placement, ground colour): relief is its height above the mean of a ring
+        // `ring` metres round it (knolls and rims positive, hollows negative); slope is rise over run.
+        public static (float relief, float slope) Site(Layout layout, float x, float z, float ring = 12f)
+        {
+            float h = Height(layout, x, z), mean = 0;
+            for (int k = 0; k < 8; k++) mean += Height(layout, x + Mathf.Cos(k * .785f) * ring, z + Mathf.Sin(k * .785f) * ring);
+            float dx = Height(layout, x + 1.5f, z) - Height(layout, x - 1.5f, z), dz = Height(layout, x, z + 1.5f) - Height(layout, x, z - 1.5f);
+            return (h - mean / 8, new Vector2(dx, dz).magnitude / 3f);
+        }
+
         public static float Height(Layout layout, float x, float z)
         {
             float h = BaseHeight(layout, x, z)
@@ -301,6 +311,32 @@ namespace YunJing.Editor
                 heights[z, x] = Mathf.Clamp01((Height(layout, wx, wz) - BaseY) / HeightRange);
             }
             data.SetHeights(0, 0, heights);
+            // Relief on a coarse grid (every 8 samples, ~1.6 m on a 100 m block): height above the mean of the ground
+            // about 10 m round, in metres; read back bilinearly for the paint.
+            const int C = (HeightResolution - 1) / 8 + 1;
+            var coarse = new float[C, C];
+            for (int z = 0; z < C; z++) for (int x = 0; x < C; x++) coarse[z, x] = heights[z * 8, x * 8] * HeightRange;
+            var reliefGrid = new float[C, C];
+            const int Ring = 6;
+            for (int z = 0; z < C; z++)
+            for (int x = 0; x < C; x++)
+            {
+                float sum = 0; int n = 0;
+                for (int dz = -Ring; dz <= Ring; dz += 2)
+                for (int dx = -Ring; dx <= Ring; dx += 2)
+                {
+                    int zz = Mathf.Clamp(z + dz, 0, C - 1), xx = Mathf.Clamp(x + dx, 0, C - 1);
+                    sum += coarse[zz, xx]; n++;
+                }
+                reliefGrid[z, x] = coarse[z, x] - sum / n;
+            }
+            float ReliefAt(float u, float v)   // u, v in 0..1 across the block
+            {
+                float fx = u * (C - 1), fz = v * (C - 1);
+                int x0 = Mathf.Clamp((int)fx, 0, C - 2), z0 = Mathf.Clamp((int)fz, 0, C - 2);
+                float tx = fx - x0, tz = fz - z0;
+                return Mathf.Lerp(Mathf.Lerp(reliefGrid[z0, x0], reliefGrid[z0, x0 + 1], tx), Mathf.Lerp(reliefGrid[z0 + 1, x0], reliefGrid[z0 + 1, x0 + 1], tx), tz);
+            }
 
             data.terrainLayers = Layers();
             data.alphamapResolution = PaintResolution;
@@ -349,6 +385,11 @@ namespace YunJing.Editor
                 float bank = layout.isolated ? 0 : Smooth(.32f, .62f, slope + edgeNoise * .25f) * Smooth(.35f, .65f, Mathf.PerlinNoise(wx * .23f + 91f, wz * .23f + 3f)) * (1f - rock) * (1f - dirt) * .75f;
                 dirt = Mathf.Max(dirt, bank);
                 float dryPatch = Smooth(.46f, .72f, Mathf.PerlinNoise(wx * .03f + 71f, wz * .03f + 9f) * .7f + Mathf.PerlinNoise(wx * .22f + 5f, wz * .22f + 33f) * .3f + edgeNoise * .3f);
+                // The land decides most of it: tops and shoulders catch the sun (light warm meadow), hollows hold water
+                // and stay deep green; the noise only breaks the edges.
+                float landRelief = ReliefAt((x + .5f) / PaintResolution, (z + .5f) / PaintResolution);
+                float sunlit = Smooth(.1f, 1.1f, landRelief + edgeNoise * .4f), hollow = Smooth(.2f, 1.2f, -landRelief);
+                dryPatch = Mathf.Clamp01(dryPatch * .35f + sunlit * .8f) * (1f - hollow * .85f);
                 plaza *= 1f - dirt * .5f;
                 float open = Mathf.Max(0, 1f - dirt - plaza - forest - gravel - rock);
                 paint[z, x, 1] = dirt;
@@ -443,7 +484,7 @@ namespace YunJing.Editor
                 layer.tileSize = new Vector2(tile, tile);
                 // The sun-dried meadow is the meadow painting, warmed toward straw.
                 layer.diffuseRemapMin = Vector4.zero;
-                layer.diffuseRemapMax = LayerNames[i] == "MeadowDry" ? new Vector4(1.0f, .92f, .56f, 1) : LayerNames[i] == "VillageMeadow" ? new Vector4(.78f, .86f, .7f, 1) : Vector4.one;
+                layer.diffuseRemapMax = LayerNames[i] == "MeadowDry" ? new Vector4(1.02f, 1.0f, .6f, 1) : LayerNames[i] == "OchreRock" ? new Vector4(.84f, .9f, .98f, 1) : LayerNames[i] == "VillageMeadow" ? new Vector4(.78f, .86f, .7f, 1) : Vector4.one;
                 layer.smoothness = 0; layer.metallic = 0;
                 EditorUtility.SetDirty(layer);
                 result[i] = layer;
@@ -461,9 +502,9 @@ namespace YunJing.Editor
             ["ElderPlum"] = ("plum", .5f), ["ElderWithered"] = ("withered", .45f), ["ElderGuardian"] = ("jianmu", .7f), ["JianmuSapling"] = ("jianmu", .9f) };
         // Stand-in until the painting exists: which painting, warmed or cooled toward the soil's colour.
         static readonly System.Collections.Generic.Dictionary<string, (string painting, Vector4 tint)> SoilStandIn = new System.Collections.Generic.Dictionary<string, (string, Vector4)> {
-            ["camphor"] = ("ground-forest", new Vector4(.82f, .9f, .74f, 1)), ["maple"] = ("ground-forest", new Vector4(1.3f, .72f, .5f, 1)),
-            ["ginkgo"] = ("ground-forest", new Vector4(1.35f, 1.12f, .5f, 1)), ["needle"] = ("ground-forest", new Vector4(.98f, .74f, .52f, 1)),
-            ["willow"] = ("ground-forest", new Vector4(.66f, .8f, .62f, 1)), ["plum"] = ("ground-meadow", new Vector4(.98f, .9f, .86f, 1)),
+            ["camphor"] = ("ground-forest", new Vector4(.8f, .9f, .74f, 1)), ["maple"] = ("ground-forest", new Vector4(1.12f, .82f, .62f, 1)),
+            ["ginkgo"] = ("ground-forest", new Vector4(1.18f, 1.06f, .62f, 1)), ["needle"] = ("ground-forest", new Vector4(.9f, .82f, .64f, 1)),
+            ["willow"] = ("ground-forest", new Vector4(.7f, .84f, .66f, 1)), ["plum"] = ("ground-meadow", new Vector4(.98f, .9f, .86f, 1)),
             ["withered"] = ("ground-path", new Vector4(1.04f, .98f, .86f, 1)), ["jianmu"] = ("ground-forest", new Vector4(.58f, .88f, .56f, 1)) };
 
         public static string SoilKind(string treeName) => SoilOfKind.Keys.Where(k => treeName.StartsWith(k)).OrderByDescending(k => k.Length).FirstOrDefault();
@@ -521,11 +562,11 @@ namespace YunJing.Editor
                     float d = Vector2.Distance(new Vector2(wx, wz), t.at);
                     // Ragged edge: litter blows out further on one side, meadow creeps in on another.
                     float ragged = (Mathf.PerlinNoise(wx * .35f + t.at.x, wz * .35f + t.at.y) - .5f) * r * .6f;
-                    float w = 1f - Smooth(r * .35f, r, d + ragged);
+                    float w = (1f - Smooth(r * .15f, r * 1.1f, d + ragged)) * .55f;   // faint and wide: never a disc
                     if (w <= 0) continue;
                     // Paths, flagstones, creek gravel and rock stay as they are.
                     float keep = paint[z, x, 1] + paint[z, x, 2] + paint[z, x, 5] + paint[z, x, 6];
-                    w *= Mathf.Clamp01(1f - keep * 1.5f) * .92f;
+                    w *= Mathf.Clamp01(1f - keep * 1.5f);
                     for (int l = 0; l < layers.Count; l++) paint[z, x, l] *= 1f - w;
                     paint[z, x, li] += w;
                     shade[z, x] = Mathf.Max(shade[z, x], w);

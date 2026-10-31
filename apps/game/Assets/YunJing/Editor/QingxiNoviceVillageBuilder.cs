@@ -833,7 +833,10 @@ namespace YunJing.Editor
             //   2. roads and pads keep 8 m clear, the creek its banks;
             //   3. groves frame the block: their centres sit in the outer band, the middle meadow stays open;
             //   4. single trees only as accents, at road bends and creek bends;
-            //   5. about forty per cent fewer trees than the biome's old count.
+            //   5. about forty per cent fewer trees than the biome's old count;
+            //   6. the land decides (z1nnz 2026-10-31, the reference valleys): groves stand on shoulders, rims and
+            //      slopes, hollow floors stay open meadow, nothing grows on ground too steep to hold a root, and the
+            //      highest knoll of the block carries one lone big tree that the eye goes to.
             var planted = new System.Collections.Generic.List<(Vector2 at, float r)>();
             // Quality over quantity (z1nnz 2026-10-31): fewer trees, each a real big tree, about 1.7 x its modelled size.
             const float Grand = 1.7f;
@@ -846,6 +849,7 @@ namespace YunJing.Editor
             bool Free(float x, float z, float pad = 3.5f, float road = 3f, float creekGap = -1)
             {
                 if (!Spaced(x, z)) return false;
+                if (QingxiVillageTerrain.Site(layout, x, z, 6f).slope > .55f) return false;   // too steep for a root
                 if (x < a.minX + 4 || x > a.minX + a.sizeX - 4 || z < a.minZ + 4 || z > a.minZ + a.sizeZ - 4) return false;
                 // The territory hollow keeps its yard open: trees and rocks stay on the surrounding hills.
                 if (layout.isolated && Mathf.Max(Mathf.Abs(x - (a.minX + a.sizeX / 2)), Mathf.Abs(z - (a.minZ + a.sizeZ / 2))) < a.sizeX * .28f) return false;
@@ -894,7 +898,35 @@ namespace YunJing.Editor
             int target = Mathf.RoundToInt(biome.trees * .3f);
             // Groves frame the block: centres in the outer band (within 22 m of the edge), the middle left open.
             bool Outer(float x, float z) => Mathf.Min(Mathf.Min(x - a.minX, a.minX + a.sizeX - x), Mathf.Min(z - a.minZ, a.minZ + a.sizeZ - z)) < 22f;
-            var groves = Enumerable.Range(0, biome.groves).Select(_ => Somewhere((x, z) => Outer(x, z) && Free(x, z, 8f, 8f))).Where(g => !float.IsNaN(g.x)).ToList();
+            // A grove's centre is the best of many tries: up on a shoulder or rim, not down in a hollow.
+            float Rise(float x, float z) { var s = QingxiVillageTerrain.Site(layout, x, z); return Mathf.Clamp(s.relief, -2f, 2f) + Mathf.Clamp01(s.slope * 3f) * .6f; }
+            Vector2 Best(Func<float, float, bool> ok, Func<float, float, float> score, int tries = 60)
+            {
+                var best = new Vector2(float.NaN, float.NaN); float top = float.MinValue;
+                for (int i = 0; i < tries; i++)
+                {
+                    var c = Somewhere(ok); if (float.IsNaN(c.x)) continue;
+                    float v = score(c.x, c.y) + R() * .5f;
+                    if (v > top) { top = v; best = c; }
+                }
+                return best;
+            }
+            // The lone tree on the block's highest open knoll, a little grander than the rest.
+            var knoll = Best((x, z) => Free(x, z, 10f, 9f), (x, z) => QingxiVillageTerrain.Site(layout, x, z, 16f).relief * 2f, 40);
+            if (!float.IsNaN(knoll.x) && mix[0].kind != null && QingxiVillageTerrain.Site(layout, knoll.x, knoll.y, 16f).relief > .4f)
+            {
+                var kind = mix.OrderByDescending(m => m.weight).First().kind;
+                planted.Add((knoll, Crown * 1.2f));
+                Tree(QingxiElderTrees.Source(kind), root, new Vector3(knoll.x, 0, knoll.y), heights[kind] * Grand * 1.15f, R() * 360);
+                root.GetChild(root.childCount - 1).name = $"Lone tree on the knoll - {kind}";
+                trees++; elders++;
+            }
+            var groves = new System.Collections.Generic.List<Vector2>();
+            for (int g = 0; g < biome.groves; g++)
+            {
+                var c = Best((x, z) => Outer(x, z) && Free(x, z, 8f, 8f) && groves.All(o => (o - new Vector2(x, z)).magnitude > 24f), Rise);
+                if (!float.IsNaN(c.x)) groves.Add(c);
+            }
             var groveKinds = groves.Select(_ => GroveKind()).ToList();
             int inGroves = groves.Count == 0 ? 0 : target * 3 / 4;
             for (int i = 0, tries = 0; i < inGroves && tries < inGroves * 20; tries++)
@@ -903,6 +935,7 @@ namespace YunJing.Editor
                 float angle = R() * Mathf.PI * 2, r = 4f + R() * 16f;
                 float x = g.x + Mathf.Cos(angle) * r, z = g.y + Mathf.Sin(angle) * r;
                 if (!Free(x, z, 8f, 8f)) continue;
+                if (QingxiVillageTerrain.Site(layout, x, z).relief < -.6f && R() < .8f) continue;   // hollow floors stay open meadow
                 PlantTree(x, z, groveKinds[gi]); i++;
             }
             // Accents: single trees at road bends and creek bends, set back from the way.
