@@ -252,7 +252,7 @@ namespace YunJing.Editor
                 // through them afterwards, so every way stays walkable.
                 if (layout.cliffs > 0)
                 {
-                    float n = Mathf.PerlinNoise(wx * .016f + 301f, wz * .016f + 77f) + .22f * (Mathf.PerlinNoise(wx * .07f + 9f, wz * .07f + 5f) - .5f);
+                    float n = Mathf.PerlinNoise(wx * .013f + 301f, wz * .013f + 77f) + .09f * (Mathf.PerlinNoise(wx * .05f + 9f, wz * .05f + 5f) - .5f);   // long walls, not scattered pits
                     float lower = Smooth(.48f, .52f, n), upper = Smooth(.665f, .695f, n);
                     // Near a road or a pad the wall softens into a ramp, so a way climbs from shelf to shelf instead of
                     // running in a cut between two walls.
@@ -261,6 +261,9 @@ namespace YunJing.Editor
                     lower = Mathf.Lerp(Smooth(.38f, .62f, n), lower, Smooth(3f, 8f, near));
                     upper = Mathf.Lerp(Smooth(.6f, .76f, n), upper, Smooth(3f, 8f, near));
                     rise += (lower + upper * .6f - .5f) * amp;
+                    // A lip of turf along the top of each wall (it overhangs the rock in the reference valleys).
+                    float lip = Mathf.Exp(-Mathf.Pow((n - .535f) / .012f, 2)) + .6f * Mathf.Exp(-Mathf.Pow((n - .708f) / .012f, 2));
+                    rise += lip * .35f * amp / Mathf.Max(layout.cliffs, .01f);
                     // The wall itself is not a smooth ramp: rock strata and ledges across its face.
                     float face = (4f * lower * (1f - lower) + 4f * upper * (1f - upper)) * Smooth(3f, 8f, near);
                     rise += face * (.45f * (Mathf.PerlinNoise(wx * .35f + 17f, wz * .35f + 3f) - .5f) + .2f * Mathf.Sin(rise * 4.2f));
