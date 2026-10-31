@@ -966,6 +966,7 @@ namespace YunJing.Editor
                 }
             elders += Landmarks(root, blockId);
             trees += entry.landmarks?.Length ?? 0;
+            SoilUnder(root);
             Debug.Log($"QINGXI_DRESSING {blockId} ({biome.name}): {trees} trees ({elders} elder-tree kin) in {groves.Count} groves, {rocks} boulders, {sedges} sedge tufts");
         }
 
@@ -1082,9 +1083,26 @@ namespace YunJing.Editor
                 else Tree(pine, root, at, 9f + (float)random.NextDouble() * 3, (float)random.NextDouble() * 360);
             }
             Landmarks(root, "A1");
+            SoilUnder(root);
             // a darker stand of pines behind the forest encounter
             foreach (var x in new[] { -13f, -10f, 10f, 13f, -6f, 6f })
                 Tree(pine, root, new Vector3(x, 0, 30 + Mathf.Abs(x) * .3f), 10f, x * 31);
+        }
+
+        // Each species' own soil under its crown (QingxiVillageTerrain.PaintSoils), from the trees just planted under root (world positions).
+        static void SoilUnder(Transform root)
+        {
+            var trees = new System.Collections.Generic.List<(Vector2 at, float height, string name)>();
+            foreach (Transform t in root)
+            {
+                var source = PrefabUtility.GetCorrespondingObjectFromSource(t.gameObject);
+                if (source == null || QingxiVillageTerrain.SoilKind(source.name) == null) continue;
+                var renderers = t.GetComponentsInChildren<Renderer>();
+                if (renderers.Length == 0) continue;
+                var b = renderers[0].bounds; foreach (var r in renderers) b.Encapsulate(r.bounds);
+                trees.Add((new Vector2(t.position.x, t.position.z), b.size.y, source.name));
+            }
+            QingxiVillageTerrain.PaintSoils(terrain, trees);
         }
 
         static void Tree(GameObject source, Transform parent, Vector3 at, float height, float yaw)

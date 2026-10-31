@@ -451,6 +451,106 @@ namespace YunJing.Editor
             return result;
         }
 
+        // Soil under the trees (z1nnz 2026-10-31: 地面也要按照樹種有不同的土壤): every species drops its own litter and
+        // keeps its own ground under its crown, the edge ragged and fading into the meadow, paths and stones left as
+        // they are, and the grass thinner in the shade. Painted soil-<name>.png from art/references/ground-textures-v1
+        // (prompts in soil-prompts.md) when it is there; until then a tinted painting stands in.
+        static readonly System.Collections.Generic.Dictionary<string, (string soil, float reach)> SoilOfKind = new System.Collections.Generic.Dictionary<string, (string, float)> {
+            ["ElderCamphor"] = ("camphor", .45f), ["ElderMaple"] = ("maple", .55f), ["ElderGinkgo"] = ("ginkgo", .38f),
+            ["ElderPine"] = ("needle", .4f), ["ElderCypress"] = ("needle", .38f), ["ElderWillow"] = ("willow", .42f),
+            ["ElderPlum"] = ("plum", .5f), ["ElderWithered"] = ("withered", .45f), ["ElderGuardian"] = ("jianmu", .7f), ["JianmuSapling"] = ("jianmu", .9f) };
+        // Stand-in until the painting exists: which painting, warmed or cooled toward the soil's colour.
+        static readonly System.Collections.Generic.Dictionary<string, (string painting, Vector4 tint)> SoilStandIn = new System.Collections.Generic.Dictionary<string, (string, Vector4)> {
+            ["camphor"] = ("ground-forest", new Vector4(.82f, .9f, .74f, 1)), ["maple"] = ("ground-forest", new Vector4(1.3f, .72f, .5f, 1)),
+            ["ginkgo"] = ("ground-forest", new Vector4(1.35f, 1.12f, .5f, 1)), ["needle"] = ("ground-forest", new Vector4(.98f, .74f, .52f, 1)),
+            ["willow"] = ("ground-forest", new Vector4(.66f, .8f, .62f, 1)), ["plum"] = ("ground-meadow", new Vector4(.98f, .9f, .86f, 1)),
+            ["withered"] = ("ground-path", new Vector4(1.04f, .98f, .86f, 1)), ["jianmu"] = ("ground-forest", new Vector4(.58f, .88f, .56f, 1)) };
+
+        public static string SoilKind(string treeName) => SoilOfKind.Keys.Where(k => treeName.StartsWith(k)).OrderByDescending(k => k.Length).FirstOrDefault();
+
+        static TerrainLayer SoilLayer(string soil)
+        {
+            string path = Generated + "/TerrainLayer-Soil-" + soil + ".asset";
+            var layer = AssetDatabase.LoadAssetAtPath<TerrainLayer>(path);
+            if (layer == null) { layer = new TerrainLayer(); AssetDatabase.CreateAsset(layer, path); }
+            var painted = PaintedTexture("soil-" + soil, out var relief);
+            var tint = Vector4.one;
+            if (painted == null) { painted = PaintedTexture(SoilStandIn[soil].painting, out relief); tint = SoilStandIn[soil].tint; }
+            layer.diffuseTexture = painted;
+            layer.normalMapTexture = NormalMap("Soil-" + soil, relief, 1.6f);
+            layer.tileSize = new Vector2(2.5f, 2.5f);
+            layer.diffuseRemapMin = Vector4.zero; layer.diffuseRemapMax = tint;
+            layer.smoothness = 0; layer.metallic = 0;
+            EditorUtility.SetDirty(layer);
+            return layer;
+        }
+
+        // trees: position (layout x/z), height in metres, and the tree's model name (ElderMaple_B ...).
+        public static void PaintSoils(Terrain terrain, System.Collections.Generic.IList<(Vector2 at, float height, string name)> trees)
+        {
+            var data = terrain.terrainData;
+            var under = trees.Select(t => (t.at, t.height, kind: SoilKind(t.name))).Where(t => t.kind != null).ToList();
+            if (under.Count == 0) return;
+            var layers = data.terrainLayers.ToList();
+            var index = new System.Collections.Generic.Dictionary<string, int>();
+            foreach (var soil in under.Select(t => SoilOfKind[t.kind].soil).Distinct())
+            {
+                var layer = SoilLayer(soil);
+                int at = layers.IndexOf(layer);
+                if (at < 0) { layers.Add(layer); at = layers.Count - 1; }
+                index[soil] = at;
+            }
+            int res = data.alphamapResolution, old = data.alphamapLayers;
+            var before = data.GetAlphamaps(0, 0, res, res);
+            data.terrainLayers = layers.ToArray();
+            var paint = new float[res, res, layers.Count];
+            for (int z = 0; z < res; z++) for (int x = 0; x < res; x++) for (int l = 0; l < old; l++) paint[z, x, l] = before[z, x, l];
+            var shade = new float[res, res];
+            Vector3 origin = terrain.transform.position, size = data.size;
+            foreach (var t in under)
+            {
+                var (soil, reach) = SoilOfKind[t.kind];
+                float r = Mathf.Max(2.5f, t.height * reach);
+                int x0 = Mathf.Max(0, (int)((t.at.x - r - origin.x) / size.x * res)), x1 = Mathf.Min(res - 1, (int)((t.at.x + r - origin.x) / size.x * res));
+                int z0 = Mathf.Max(0, (int)((t.at.y - r - origin.z) / size.z * res)), z1 = Mathf.Min(res - 1, (int)((t.at.y + r - origin.z) / size.z * res));
+                int li = index[soil];
+                for (int z = z0; z <= z1; z++)
+                for (int x = x0; x <= x1; x++)
+                {
+                    float wx = origin.x + (x + .5f) * size.x / res, wz = origin.z + (z + .5f) * size.z / res;
+                    float d = Vector2.Distance(new Vector2(wx, wz), t.at);
+                    // Ragged edge: litter blows out further on one side, meadow creeps in on another.
+                    float ragged = (Mathf.PerlinNoise(wx * .35f + t.at.x, wz * .35f + t.at.y) - .5f) * r * .6f;
+                    float w = 1f - Smooth(r * .35f, r, d + ragged);
+                    if (w <= 0) continue;
+                    // Paths, flagstones, creek gravel and rock stay as they are.
+                    float keep = paint[z, x, 1] + paint[z, x, 2] + paint[z, x, 5] + paint[z, x, 6];
+                    w *= Mathf.Clamp01(1f - keep * 1.5f) * .92f;
+                    for (int l = 0; l < layers.Count; l++) paint[z, x, l] *= 1f - w;
+                    paint[z, x, li] += w;
+                    shade[z, x] = Mathf.Max(shade[z, x], w);
+                }
+            }
+            data.SetAlphamaps(0, 0, paint);
+            // Thinner grass and fewer flowers in the shade (prototypes 0-5; the stones, 6 and 7, stay).
+            int D = data.detailResolution;
+            var rnd = new System.Random(res + under.Count);
+            for (int k = 0; k < Mathf.Min(6, data.detailPrototypes.Length); k++)
+            {
+                var grid = data.GetDetailLayer(0, 0, D, D, k);
+                for (int z = 0; z < D; z++)
+                for (int x = 0; x < D; x++)
+                {
+                    if (grid[z, x] == 0) continue;
+                    float s = shade[Mathf.Min(res - 1, z * res / D), Mathf.Min(res - 1, x * res / D)];
+                    if (rnd.NextDouble() < s * (k >= 3 ? .85f : .6f)) grid[z, x] = 0;
+                }
+                data.SetDetailLayer(0, 0, k, grid);
+            }
+            EditorUtility.SetDirty(data);
+            Debug.Log($"QINGXI_SOIL: {under.Count} trees, soils {string.Join(", ", index.Keys)}, {layers.Count} terrain layers");
+        }
+
         // Painted texture per layer (null = procedural) and its tile size in metres (the scale the prompt asked for).
         static readonly string[] Painted = { "ground-meadow", "ground-path", null, "ground-forest", "ground-meadow", "ground-gravel", "ground-rock" };
         static readonly float[] PaintedTile = { 3, 2.5f, 4, 2.5f, 3, 1.8f, 3.5f };
