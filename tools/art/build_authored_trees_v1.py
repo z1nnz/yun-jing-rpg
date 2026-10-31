@@ -361,7 +361,7 @@ def build_elder_form(spec, variant=0):
 
 CAMPHOR_ELDER = dict(trunk_r=1.05, name='Camphor', scale=1.9, leaves_per_cluster=1875, leaf_size=(.025, .048),
                      palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
-MAPLE_ELDER = dict(trunk_r=0.35, name='Maple', scale=1.35, wide=1.25, tall=1.06, crown_xy=1.1, crown_z=.8, leaves_per_cluster=1700,
+MAPLE_ELDER = dict(trunk_r=0.35, name='Maple', scale=1.35, wide=1.25, tall=1.06, crown_xy=1.1, crown_z=.8, leaves_per_cluster=2550,
                    leaf_size=(.028, .05), leaf_width=1.6, bark_tint='#8a8278',
                    palette=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454'])
 GINKGO_ELDER = dict(trunk_r=0.62, name='Ginkgo', scale=1.6, wide=.7, tall=1.45, crown_xy=.8, crown_z=1.15, leaves_per_cluster=1700,
@@ -373,22 +373,22 @@ WILLOW_ELDER = dict(trunk_r=0.58, name='Willow', scale=1.35, wide=1.05, tall=1.1
 PLUM_ELDER = dict(trunk_r=0.28, name='Plum', scale=.85, wide=1.1, tall=.95, crown_xy=.85, crown_z=.85, leaves_per_cluster=1500, sparse=.55,
                   leaf_size=(.03, .05), leaf_width=1.4, bark_tint='#3e2f2a',
                   palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
-PINE_ELDER = dict(trunk_r=0.43, name='Pine', scale=1.45, wide=1.0, tall=1.94, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.3, leaves_per_cluster=1900,
+PINE_ELDER = dict(trunk_r=0.43, name='Pine', scale=1.45, wide=1.0, tall=1.94, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.3, leaves_per_cluster=2850,
                   leaf_size=(.03, .055), leaf_width=.25, bark_tint='#8a5a40',
                   palette=['#14301e', '#1f4a28', '#356a32', '#5e8c3c', '#9ab456'])
-JUNIPER_ELDER = dict(trunk_r=0.66, name='Cypress', scale=1.15, wide=1.0, tall=1.69, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.8, leaves_per_cluster=1800,
+JUNIPER_ELDER = dict(trunk_r=0.66, name='Cypress', scale=1.15, wide=1.0, tall=1.69, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.8, leaves_per_cluster=2700,
                      leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
                      palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
 # Species traced from z1nnz's skeleton sheets (skeleton-<species>.png -> .json); maple and pine keep the Elder form.
-CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_total=24000, leaf_size=(0.050, 0.090), crown_z=.7,
+CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_total=38400, leaf_size=(0.050, 0.090), crown_z=.7,
                       palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
-GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=21600, leaf_size=(0.050, 0.090), leaf_width=1.5,
+GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=34560, leaf_size=(0.050, 0.090), leaf_width=1.5,
                      crown_z=.8, bark_tint='#8c7f6c', palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
-WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.2, leaves_total=18000, leaf_size=(0.080, 0.140), leaf_width=.32,
+WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.2, leaves_total=28800, leaf_size=(0.080, 0.140), leaf_width=.32,
                      hang=1.6, crown_z=.6, bark_tint='#6e6a5e', palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
-PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=7200, sparse=.6, leaf_size=(0.060, 0.100), leaf_width=1.4,
+PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=11520, sparse=.6, leaf_size=(0.060, 0.100), leaf_width=1.4,
                    crown_z=.7, bark_tint='#3e2f2a', palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
-JUNIPER_TRACED = dict(name='Cypress', skeleton='juniper', cluster=1.3, leaves_total=19200, leaf_size=(0.044, 0.080), leaf_width=.6,
+JUNIPER_TRACED = dict(name='Cypress', skeleton='juniper', cluster=1.3, leaves_total=30720, leaf_size=(0.044, 0.080), leaf_width=.6,
                       crown_z=.45, girth=1.25, bark_tint='#b8b0a4', palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
 SPECIES = [CAMPHOR_TRACED, MAPLE_ELDER, GINKGO_TRACED, WILLOW_TRACED, PLUM_TRACED, PINE_ELDER, JUNIPER_ELDER]   # juniper: its sheet has two intertwined trunks the tracer merges
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that

@@ -835,7 +835,9 @@ namespace YunJing.Editor
             //   4. single trees only as accents, at road bends and creek bends;
             //   5. about forty per cent fewer trees than the biome's old count.
             var planted = new System.Collections.Generic.List<(Vector2 at, float r)>();
-            const float Crown = 6.5f;
+            // Quality over quantity (z1nnz 2026-10-31): fewer trees, each a real big tree, about 1.7 x its modelled size.
+            const float Grand = 1.7f;
+            const float Crown = 11f;
             bool Spaced(float x, float z, float r = Crown)
             {
                 foreach (var t in planted) if ((t.at - new Vector2(x, z)).magnitude < .8f * (t.r + r)) return false;
@@ -883,13 +885,13 @@ namespace YunJing.Editor
                 else if (kind != null)
                 {
                     float h = heights[kind];
-                    Tree(QingxiElderTrees.Source(kind), root, new Vector3(x, 0, z), h * (.82f + R() * .36f), R() * 360);
+                    Tree(QingxiElderTrees.Source(kind), root, new Vector3(x, 0, z), h * Grand * (.85f + R() * .3f), R() * 360);
                     elders++;
                 }
                 else Tree(pine, root, new Vector3(x, 0, z), 7f + R() * 5.5f, R() * 360);
                 trees++;
             }
-            int target = Mathf.RoundToInt(biome.trees * .6f);
+            int target = Mathf.RoundToInt(biome.trees * .3f);
             // Groves frame the block: centres in the outer band (within 22 m of the edge), the middle left open.
             bool Outer(float x, float z) => Mathf.Min(Mathf.Min(x - a.minX, a.minX + a.sizeX - x), Mathf.Min(z - a.minZ, a.minZ + a.sizeZ - z)) < 22f;
             var groves = Enumerable.Range(0, biome.groves).Select(_ => Somewhere((x, z) => Outer(x, z) && Free(x, z, 8f, 8f))).Where(g => !float.IsNaN(g.x)).ToList();
