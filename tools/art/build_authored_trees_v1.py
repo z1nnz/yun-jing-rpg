@@ -439,7 +439,7 @@ CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_to
                       palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
 GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=34560, leaf_size=(0.050, 0.090), leaf_width=1.5,
                      crown_z=.8, bark_tint='#8c7f6c', palette=['#8a6200', '#c89000', '#f2bf10', '#ffe02e', '#fff27a'])
-WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.4, leaves_total=40000, leaf_size=(0.060, 0.100), leaf_width=.28,
+WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.4, leaves_total=31000, leaf_size=(0.060, 0.100), leaf_width=.28,
                      hang=1.9, crown_z=.5, bark_tint='#5e5a50', palette=['#1e4430', '#2f6a3a', '#4f9040', '#86b84a', '#c4dc78'])
 PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=11520, sparse=.6, leaf_size=(0.060, 0.100), leaf_width=1.4,
                    crown_z=.7, bark_tint='#3e2f2a', palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
