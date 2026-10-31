@@ -26,8 +26,8 @@ REFS = ROOT / 'art/references/tree-species-v1'
 HEIGHT = {'camphor': 12.0, 'juniper': 8.0, 'ginkgo': 14.0, 'plum': 6.0, 'willow': 10.0}
 
 
-def front_view(img):
-    """The left drawing: columns up to the widest white gap between the two drawings."""
+def front_view(img, side='left'):
+    """One of the two drawings on the sheet, split at the widest white gap between them."""
     a = np.asarray(img.convert('L'), dtype=np.float32) / 255
     ink = (a < .5)
     cols = ink.sum(axis=0)
@@ -42,14 +42,14 @@ def front_view(img):
         else:
             start = None
     cut = (best[0] + best[1]) // 2 if best != (0, w) else w
-    return ink[:, :cut]
+    return ink[:, :cut] if side == 'left' else ink[:, cut:]
 
 
-def trace(name):
+def trace(name, side='left'):
     img = Image.open(REFS / f'skeleton-{name}.png')
     scale = 1000 / max(img.size)
     img = img.resize((int(img.width * scale), int(img.height * scale)), Image.LANCZOS)
-    ink = front_view(img)
+    ink = front_view(img, side)
     ink = ndimage.binary_closing(ink, iterations=1)
     dist = ndimage.distance_transform_edt(ink)
     sk = skeletonize(ink)
@@ -104,7 +104,7 @@ def trace(name):
         s, pi, d, fd = pending.popleft()
         walk(s, pi, d, fd)
     # Depth: each first-order limb turns round the trunk by its own angle; children follow their limb.
-    rng = np.random.default_rng(len(name) * 97)
+    rng = np.random.default_rng(len(name) * 97 + (0 if side == 'left' else 13))
     turn = {}
     out = []
     rx = root[1]
@@ -127,11 +127,12 @@ def trace(name):
             radii.append(round(max(dist[(y, x)] * m_per_px, .012), 3))
         out.append(dict(parent=b['parent'], depth=b['depth'], points=xyz, radii=radii))
     data = dict(species=name, height=HEIGHT[name], branches=out)
-    (REFS / f'skeleton-{name}.json').write_text(json.dumps(data), encoding='utf-8')
+    (REFS / f"skeleton-{name}{'' if side == 'left' else '-b'}.json").write_text(json.dumps(data), encoding='utf-8')
     tips = sum(1 for i, b in enumerate(out) if not any(c['parent'] == i for c in out))
-    print(f'{name}: {len(out)} branches, {tips} tips, trunk radius {out[0]["radii"][0]:.2f} m, {m_per_px * 1000:.1f} mm/px')
+    print(f'{name} {side}: {len(out)} branches, {tips} tips, trunk radius {out[0]["radii"][0]:.2f} m, {m_per_px * 1000:.1f} mm/px')
 
 
 if __name__ == '__main__':
     for n in sys.argv[1:] or list(HEIGHT):
         trace(n)
+        trace(n, 'right')

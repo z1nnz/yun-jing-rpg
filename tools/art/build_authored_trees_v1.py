@@ -140,9 +140,12 @@ def build_traced_form(spec, variant=0):
     branch a smooth curve at its traced thickness, the trunk fluted like the Elder World Tree's, a few roots diving
     into the soil, and the crown as clusters of cupped leaves gathered over the branch tips. Variants: as drawn,
     mirrored, mirrored and a little shorter."""
-    data = json.loads((REFS / f"skeleton-{spec['skeleton']}.json").read_text(encoding='utf-8'))
+    # Variants: the sheet's left tree, its right tree (a different tree), and the left one mirrored and shorter.
+    second = REFS / f"skeleton-{spec['skeleton']}-b.json"
+    src = second if variant == 1 and second.exists() else REFS / f"skeleton-{spec['skeleton']}.json"
+    data = json.loads(src.read_text(encoding='utf-8'))
     name = 'Elder' + spec['name']
-    mx = -1 if variant else 1
+    mx = -1 if variant == 2 else 1
     sz = .9 if variant == 2 else 1.0
     bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))
     tint = spec.get('bark_tint')
@@ -165,6 +168,8 @@ def build_traced_form(spec, variant=0):
     for i, b in enumerate(branches):
         pts = [Vector((x * mx, y, z * sz)) for x, y, z in b['points']]
         if len(pts) < 2:
+            continue
+        if b['depth'] > 0 and min(p.z for p in pts) < 1.2:   # limbs drooping to the ground in the drawing: left out
             continue
         # Traced thickness wobbles pixel to pixel: smooth it along the branch and never let it grow outward.
         raw = b['radii']
@@ -216,7 +221,7 @@ def build_traced_form(spec, variant=0):
     clusters = []
     for g in groups.values():
         c = sum(g, Vector()) / len(g)
-        if c.z < 2.2 and not spec.get('hang'):   # no foliage lying on the ground under drooping limbs
+        if c.z < max(2.6, data['height'] * .3) and not spec.get('hang'):   # no foliage lying on the ground under drooping limbs
             continue
         r = cell * (.55 + .12 * min(len(g), 6))
         clusters.append((c, Vector((r, r, r * spec.get('crown_z', .75)))))
@@ -375,17 +380,17 @@ JUNIPER_ELDER = dict(trunk_r=.95, name='Cypress', scale=1.15, wide=1.0, tall=1.3
                      leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
                      palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
 # Species traced from z1nnz's skeleton sheets (skeleton-<species>.png -> .json); maple and pine keep the Elder form.
-CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_total=40000, leaf_size=(0.075, 0.135), crown_z=.7,
+CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_total=24000, leaf_size=(0.050, 0.090), crown_z=.7,
                       palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
-GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=36000, leaf_size=(0.075, 0.135), leaf_width=1.5,
+GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=21600, leaf_size=(0.050, 0.090), leaf_width=1.5,
                      crown_z=.8, bark_tint='#8c7f6c', palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
-WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.2, leaves_total=30000, leaf_size=(0.120, 0.210), leaf_width=.32,
+WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.2, leaves_total=18000, leaf_size=(0.080, 0.140), leaf_width=.32,
                      hang=1.6, crown_z=.6, bark_tint='#6e6a5e', palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
-PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=12000, sparse=.6, leaf_size=(0.090, 0.150), leaf_width=1.4,
+PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=7200, sparse=.6, leaf_size=(0.060, 0.100), leaf_width=1.4,
                    crown_z=.7, bark_tint='#3e2f2a', palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
-JUNIPER_TRACED = dict(name='Cypress', skeleton='juniper', cluster=1.3, leaves_total=32000, leaf_size=(0.066, 0.120), leaf_width=.6,
+JUNIPER_TRACED = dict(name='Cypress', skeleton='juniper', cluster=1.3, leaves_total=19200, leaf_size=(0.044, 0.080), leaf_width=.6,
                       crown_z=.45, girth=1.25, bark_tint='#b8b0a4', palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
-SPECIES = [CAMPHOR_TRACED, MAPLE_ELDER, GINKGO_TRACED, WILLOW_TRACED, PLUM_TRACED, PINE_ELDER, JUNIPER_TRACED]
+SPECIES = [CAMPHOR_TRACED, MAPLE_ELDER, GINKGO_TRACED, WILLOW_TRACED, PLUM_TRACED, PINE_ELDER, JUNIPER_ELDER]   # juniper: its sheet has two intertwined trunks the tracer merges
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that
 
 LODS = [dict(keep=1.0, grow=1.0, wood=1.0), dict(keep=.3, grow=1.8, wood=.4), dict(keep=.08, grow=3.2, wood=.15)]
