@@ -135,6 +135,94 @@ def lean_form(variant, spec):
     return T
 
 
+def build_traced_form(spec, variant=0):
+    """A species on its own traced skeleton (tools/art/trace_tree_skeleton.py, from z1nnz's skeleton sheet): every
+    branch a smooth curve at its traced thickness, the trunk fluted like the Elder World Tree's, a few roots diving
+    into the soil, and the crown as clusters of cupped leaves gathered over the branch tips. Variants: as drawn,
+    mirrored, mirrored and a little shorter."""
+    data = json.loads((REFS / f"skeleton-{spec['skeleton']}.json").read_text(encoding='utf-8'))
+    name = 'Elder' + spec['name']
+    mx = -1 if variant else 1
+    sz = .9 if variant == 2 else 1.0
+    bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))
+    tint = spec.get('bark_tint')
+    if tint:
+        import numpy as np
+        px = np.array(bark_src.pixels[:], dtype=np.float32).reshape(-1, 4)
+        grey = px[:, :3] @ np.array([.2126, .7152, .0722], dtype=np.float32)
+        t = np.array(lin(tint), dtype=np.float32)
+        px[:, :3] = np.clip(px[:, :3] * .35 + (grey[:, None] / max(grey.mean(), 1e-3)) * t[None, :] * .65, 0, 1)
+        bark_src.pixels = px.ravel().tolist()
+    bark_src.filepath_raw = str(OUT / f'{name}_Bark.png')
+    bark_src.file_format = 'PNG'
+    bark_src.save()
+    bark_mat = material(f'{name}_Bark', bark_src)
+    leaf_mat = material(f'{name}_Leaves', palette_image(f'{name}_Leaves', spec['palette']), closest=True)
+    girth = spec.get('girth', 1.0)
+    pieces, tips = [], []
+    branches = data['branches']
+    has_child = {b['parent'] for b in branches}
+    for i, b in enumerate(branches):
+        pts = [Vector((x * mx, y, z * sz)) for x, y, z in b['points']]
+        if len(pts) < 2:
+            continue
+        # Traced thickness wobbles pixel to pixel: smooth it along the branch and never let it grow outward.
+        raw = b['radii']
+        sm = [sum(raw[max(0, k - 3):k + 4]) / len(raw[max(0, k - 3):k + 4]) for k in range(len(raw))]
+        for k in range(1, len(sm)):
+            sm[k] = min(sm[k], sm[k - 1])
+        radii = [max(r * girth, .012) for r in sm]
+        if b['parent'] >= 0:   # start inside the parent so the joint has no seam
+            pts[0] = pts[0] - (pts[1] - pts[0]).normalized() * radii[0] * .5
+        if i not in has_child:
+            tips.append(pts[-1])
+        pieces.append(to_mesh(curve(f'b{i}', pts, radii)))
+    trunk = pieces[0]
+    # Flutes on the trunk (as build_life_tree.py), fading out above the first fork.
+    cl = [Vector((x * mx, y, z * sz)) for x, y, z in branches[0]['points']]
+    top = cl[-1].z
+    for v in trunk.data.vertices:
+        w = v.co
+        seg = next((k for k in range(len(cl) - 1) if w.z <= cl[k + 1].z), len(cl) - 2)
+        a, b = cl[seg], cl[seg + 1]
+        t = max(0, min(1, (w.z - a.z) / max(b.z - a.z, 1e-6)))
+        c = a.lerp(b, t)
+        radial = Vector((w.x - c.x, w.y - c.y, 0))
+        ang = math.atan2(radial.y, radial.x)
+        fade = max(0, 1 - w.z / max(top, .1))
+        v.co += radial * (math.sin(ang * 5 + w.z * .6) * .1 + .035 * math.sin(ang * 9 - w.z * .4)) * fade
+    r0 = branches[0]['radii'][0] * girth
+    for k in range(6):   # roots diving into the soil
+        a = k * 1.05 + .3
+        d = Vector((math.cos(a), math.sin(a), 0))
+        pieces.append(to_mesh(curve(f'root{k}', [d * r0 * .2 + Vector((0, 0, r0 * .9)), d * r0 * 1.4 + Vector((0, 0, r0 * .15)),
+                                                  d * r0 * 2.2 + Vector((0, 0, -r0 * .9))], [r0 * .45, r0 * .28, r0 * .1])))
+    bpy.ops.object.select_all(action='DESELECT')
+    for o in pieces:
+        o.select_set(True)
+    bpy.context.view_layer.objects.active = trunk
+    bpy.ops.object.join()
+    for poly in trunk.data.polygons:
+        poly.use_smooth = True
+    box_uv(trunk.data, tile=1.6)
+    trunk.data.materials.clear()
+    trunk.data.materials.append(bark_mat)
+    trunk.data.materials.append(leaf_mat)
+    # Crown: tips gathered into clusters about `cluster` metres across, one leaf cluster over each.
+    cell = spec.get('cluster', 1.6)
+    groups = {}
+    for tp in tips:
+        groups.setdefault((round(tp.x / cell), round(tp.y / cell), round(tp.z / cell)), []).append(tp)
+    clusters = []
+    for g in groups.values():
+        c = sum(g, Vector()) / len(g)
+        if c.z < 2.2 and not spec.get('hang'):   # no foliage lying on the ground under drooping limbs
+            continue
+        r = cell * (.55 + .12 * min(len(g), 6))
+        clusters.append((c, Vector((r, r, r * spec.get('crown_z', .75)))))
+    return name, trunk, bark_mat, leaf_mat, clusters
+
+
 def build_elder_form(spec, variant=0):
     """A species on the Elder World Tree's own skeleton, scaled by spec['scale'], with the species' bark and leaf
     colours: the trunk fluted as build_life_tree.py flutes it and fused with its roots, the eight limbs with their
@@ -286,7 +374,18 @@ PINE_ELDER = dict(trunk_r=0.62, name='Pine', scale=1.45, wide=1.0, tall=1.55, cr
 JUNIPER_ELDER = dict(trunk_r=.95, name='Cypress', scale=1.15, wide=1.0, tall=1.35, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.8, leaves_per_cluster=1800,
                      leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
                      palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
-SPECIES = [CAMPHOR_ELDER, MAPLE_ELDER, GINKGO_ELDER, WILLOW_ELDER, PLUM_ELDER, PINE_ELDER, JUNIPER_ELDER]
+# Species traced from z1nnz's skeleton sheets (skeleton-<species>.png -> .json); maple and pine keep the Elder form.
+CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_total=40000, leaf_size=(0.075, 0.135), crown_z=.7,
+                      palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
+GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=36000, leaf_size=(0.075, 0.135), leaf_width=1.5,
+                     crown_z=.8, bark_tint='#8c7f6c', palette=['#7f6a14', '#b88a18', '#e0b028', '#f2d048', '#faea96'])
+WILLOW_TRACED = dict(name='Willow', skeleton='willow', cluster=1.2, leaves_total=30000, leaf_size=(0.120, 0.210), leaf_width=.32,
+                     hang=1.6, crown_z=.6, bark_tint='#6e6a5e', palette=['#3a6444', '#5c8a3e', '#8cb24a', '#bcd468', '#e4ee9e'])
+PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=12000, sparse=.6, leaf_size=(0.090, 0.150), leaf_width=1.4,
+                   crown_z=.7, bark_tint='#3e2f2a', palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
+JUNIPER_TRACED = dict(name='Cypress', skeleton='juniper', cluster=1.3, leaves_total=32000, leaf_size=(0.066, 0.120), leaf_width=.6,
+                      crown_z=.45, girth=1.25, bark_tint='#b8b0a4', palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
+SPECIES = [CAMPHOR_TRACED, MAPLE_ELDER, GINKGO_TRACED, WILLOW_TRACED, PLUM_TRACED, PINE_ELDER, JUNIPER_TRACED]
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that
 
 LODS = [dict(keep=1.0, grow=1.0, wood=1.0), dict(keep=.3, grow=1.8, wood=.4), dict(keep=.08, grow=3.2, wood=.15)]
@@ -463,6 +562,11 @@ def material(name, img, closest=False):
 
 # ------------------------------------------------------------------ build
 def build(spec, variant=0):
+    if 'skeleton' in spec:
+        name, wood, bark_mat, leaf_mat, clusters = build_traced_form(spec, variant)
+        n = max(len(clusters), 1)
+        spec = dict(spec, leaves_per_cluster=max(150, spec.get('leaves_total', 30000) // n))
+        return finish(spec, name + ('', '_B', '_C')[variant], wood, bark_mat, leaf_mat, clusters)
     if 'scale' in spec:
         name, wood, bark_mat, leaf_mat, clusters = build_elder_form(spec, variant)
         return finish(spec, name + ('', '_B', '_C')[variant], wood, bark_mat, leaf_mat, clusters)
@@ -642,7 +746,7 @@ def main():
     report = json.loads(report_path.read_text(encoding='utf-8')) if report_path.exists() else {}
     roots_ = []
     for spec in SPECIES:
-        for variant in range(3 if 'scale' in spec else 1):
+        for variant in range(3 if ('scale' in spec or 'skeleton' in spec) else 1):
             r, info = build(spec, variant)
             roots_.append(r)
             report[r.name] = info

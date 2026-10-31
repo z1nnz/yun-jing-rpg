@@ -1014,7 +1014,7 @@ namespace YunJing.Editor
         // Each tree's full height as modelled, buried roots included (the model's origin is the ground line), so a
         // tree placed at this height keeps its modelled size.
         static readonly System.Collections.Generic.Dictionary<string, float> NaturalHeight = new System.Collections.Generic.Dictionary<string, float> {
-            ["ElderGuardian"] = 10.6f, ["JianmuSapling"] = 3.9f, ["ElderCamphor"] = 12.07f, ["ElderMaple"] = 7.24f, ["ElderGinkgo"] = 14.21f, ["ElderWillow"] = 8.84f, ["ElderPlum"] = 5.01f, ["ElderPine"] = 10.99f, ["ElderCypress"] = 7.66f, ["ElderWithered"] = 9.01f };
+            ["ElderGuardian"] = 10.6f, ["JianmuSapling"] = 3.9f, ["ElderCamphor"] = 12.42f, ["ElderMaple"] = 7.24f, ["ElderGinkgo"] = 14.23f, ["ElderWillow"] = 10.03f, ["ElderPlum"] = 6.13f, ["ElderPine"] = 10.99f, ["ElderCypress"] = 8.09f, ["ElderWithered"] = 9.01f };
 
         static bool elderCopied;
         static void ElderKit() { if (!elderCopied) { QingxiElderTrees.Copy(); elderCopied = true; } }
