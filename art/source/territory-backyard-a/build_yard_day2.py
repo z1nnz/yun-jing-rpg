@@ -842,7 +842,7 @@ def side_by_side(a, b, out):
 
 def sheets():
     # TY01: dry state four views, wet beside dry, the inlet, old vs new
-    out = PREV / 'TY01_SpiritField'
+    out = PREV / 'TY01_SpiritField_v002'
     scene()
     four_views(out, load(F1))
     shot(out / 'close_inlet_trowel.png', (2.2, -1.6, 1.1), (0.7, 0.1, 0.2), lens=50)
@@ -851,7 +851,7 @@ def sheets():
     wet(load(F1, (1.6, 0, 0)))
     shot(out / 'states_dry_wet.png', (0, -7.0, 4.8), (0, 0, 0.1), lens=40, res=(1800, 1000))
     # TY02: four views of the four stage meshes, stages side by side in beds, top layout, 1.7 m eye, close
-    out = PREV / 'TY02_QinglingGrass'
+    out = PREV / 'TY02_QinglingGrass_v002'
     scene()
     stages = [load(F2, keep=lambda n, i=i: f'_S{i + 1}_' in n) for i in range(4)]
     arrange(stages, 0.5)
@@ -869,7 +869,7 @@ def sheets():
     shot(out / 'top_layout.png', (0, 0, 20), (0, 0.0001, 0), ortho=3.8, res=(1200, 1400))
     shot(out / 'eye_1p7m_mature.png', (2.2, -2.5, 1.7), (0.0, 0.1, 0.3), lens=28, res=(1600, 900))
     # TY07: closed four views, leaves open, close-up of the tie, beside the author's #39 broken fence
-    out = PREV / 'TY07_Gate'
+    out = PREV / 'TY07_Gate_v001'
     scene()
     four_views(out, load(F7))
     shot(out / 'close_tie_sag.png', (0.5, -2.2, 1.4), (0.0, 0, 1.05), lens=50)
@@ -895,14 +895,14 @@ def sheets():
         scene()
         load(OLD_KIT / 'TY01_SpiritField_v001.glb', keep=lambda n: not n.endswith('_Water'))
         load(OLD_KIT / 'TY02_QinglingGrass_v001.glb', keep=lambda n: '_S4_' in n)
-        shot(PREV / 'TY01_SpiritField' / '_old.png', (3.4, -4.6, 2.8), (0, 0, 0.2), lens=45)
+        shot(PREV / 'TY01_SpiritField_v002' / '_old.png', (3.4, -4.6, 2.8), (0, 0, 0.2), lens=45)
         scene()
         load(F1)
         load(F2, keep=lambda n: '_S4_' in n)
-        shot(PREV / 'TY01_SpiritField' / '_new.png', (3.4, -4.6, 2.8), (0, 0, 0.2), lens=45)
-        side_by_side(PREV / 'TY01_SpiritField' / '_old.png', PREV / 'TY01_SpiritField' / '_new.png', PREV / 'TY01_SpiritField' / 'compare_v001_vs_v002.png')
+        shot(PREV / 'TY01_SpiritField_v002' / '_new.png', (3.4, -4.6, 2.8), (0, 0, 0.2), lens=45)
+        side_by_side(PREV / 'TY01_SpiritField_v002' / '_old.png', PREV / 'TY01_SpiritField_v002' / '_new.png', PREV / 'TY01_SpiritField_v002' / 'compare_v001_vs_v002.png')
         for f in ('_old.png', '_new.png'):
-            (PREV / 'TY01_SpiritField' / f).unlink()
+            (PREV / 'TY01_SpiritField_v002' / f).unlink()
 
 
 if __name__ == '__main__' and '--sheets' in ARGV:

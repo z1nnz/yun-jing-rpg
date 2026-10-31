@@ -78,7 +78,7 @@ blender -b --python-exit-code 1 --python art/source/territory-backyard-a/build_y
 
 貼圖 12 張 PNG，共 26.2 MB。三件的 GLB 回匯面數與包圍盒都一致，游離頂點和零面積面都是 0。
 
-## 審圖（`art/previews/territory-backyard-a/`）
+## 審圖（`art/previews/territory-backyard-a/<檔名>/`）
 
 燈光照建模規格第 8 節：EEVEE、規格 HDRI、AgX Medium High Contrast。
 
