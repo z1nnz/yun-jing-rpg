@@ -1,0 +1,15 @@
+# TY08 三視圖提示詞與取捨
+
+工具：Codex CLI 內建圖像生成（OpenAI），2026-10-31。seed：工具沒有回報。
+用法：工作包提示詞原文＋風格指南 5.2 固定風格段＋5.3 固定負面提示（此工具沒有負面欄，照 5.3 接在最後並加 "Avoid:"）。同一段提示詞獨立生成 4 張。
+
+選用：TY08-cand-3.png
+理由：三根竹橫桿、A 字側撐、石墩腳、麻布、底板上有竹篩和落葉，最接近 A 包「竹架、麻繩、竹篩」。2 號也好，但沒有竹篩；1、4 號底部是整片木台。
+建模時的差異：「修補過的腿綁著新麻繩」在圖上不明顯，建模時加在左前腳。空架狀態拿掉草藥束、保留麻布與竹篩。
+沒選的：TY08-cand-1.png, TY08-cand-2.png, TY08-cand-4.png（保留，看得出取捨）
+
+## 提示詞（原文，一字未改）
+
+Three-view orthographic turnaround sheet of a weathered wooden herb drying rack with three bamboo rails and bundles of drying herbs hanging from them, about 2.0 m wide, 0.8 m deep and 1.8 m tall, made of old grey-brown cedar wood, split bamboo, linen and hemp rope ties, showing rope-worn notches, a repaired leg tied with fresh rope, moss at the feet, dried leaves fallen on the base, used in the backyard of a newcomer's house in a mountain valley village. Layout: front view, side view and back view side by side in one image, all at the same scale and aligned on the same ground line, orthographic (no perspective), centred, full object visible with margin around it, plain light warm-grey background, even soft studio lighting so shapes and materials read clearly, no cast shadows on the background, one object only.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
