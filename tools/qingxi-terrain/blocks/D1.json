@@ -12,6 +12,7 @@
   "noise": 0.35,
   "relief": 3.0,
   "terrace": 0,
+  "cliffs": 6.5,
   "nodes": [
     {
       "id": "d1-south",

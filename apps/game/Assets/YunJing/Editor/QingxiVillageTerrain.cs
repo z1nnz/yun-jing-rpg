@@ -67,6 +67,7 @@ namespace YunJing.Editor
             public Flat[] flats;              // ground levelled under built works that are not on a pad (the old channel)
             public float relief;              // metres of broad rolling relief on open ground (roads, pads, creek stay level)
             public float terrace;             // Liyue-style terrace step (m) on the relief; 0 for none
+            public float cliffs;              // height (m) of the rock walls between shelves of land (the reference valleys); 0 for none
             public string block;              // block id; names the generated creek water mesh
             public bool isolated;             // a pocket world of its own (the territory): no blend to the shared world height
         }
@@ -246,6 +247,24 @@ namespace YunJing.Editor
                     float steps = rise / layout.terrace, floor = Mathf.Floor(steps), t = steps - floor;
                     rise = Mathf.Lerp(rise, (floor + Mathf.SmoothStep(0, 1, Mathf.Clamp01((t - .5f) / .5f))) * layout.terrace, .35f);   // soft shelves, not sawtooth
                 }
+                // Escarpments (z1nnz 2026-10-31, the reference valleys): the land breaks into two shelves with steep
+                // grey rock walls between them, the rim wandering in bays and spurs. Roads, pads and the creek cut
+                // through them afterwards, so every way stays walkable.
+                if (layout.cliffs > 0)
+                {
+                    float n = Mathf.PerlinNoise(wx * .016f + 301f, wz * .016f + 77f) + .22f * (Mathf.PerlinNoise(wx * .07f + 9f, wz * .07f + 5f) - .5f);
+                    float lower = Smooth(.48f, .52f, n), upper = Smooth(.665f, .695f, n);
+                    // Near a road or a pad the wall softens into a ramp, so a way climbs from shelf to shelf instead of
+                    // running in a cut between two walls.
+                    float near = Mathf.Min(RoadDistance(layout, x, z, out _), PadDistance(layout, x, z, out _, 3.5f));
+                    float amp = layout.cliffs * Smooth(1.5f, 8f, near);
+                    lower = Mathf.Lerp(Smooth(.38f, .62f, n), lower, Smooth(3f, 8f, near));
+                    upper = Mathf.Lerp(Smooth(.6f, .76f, n), upper, Smooth(3f, 8f, near));
+                    rise += (lower + upper * .6f - .5f) * amp;
+                    // The wall itself is not a smooth ramp: rock strata and ledges across its face.
+                    float face = (4f * lower * (1f - lower) + 4f * upper * (1f - upper)) * Smooth(3f, 8f, near);
+                    rise += face * (.45f * (Mathf.PerlinNoise(wx * .35f + 17f, wz * .35f + 3f) - .5f) + .2f * Mathf.Sin(rise * 4.2f));
+                }
                 h += rise;
             }
             float road = RoadDistance(layout, x, z, out float roadHeight);
@@ -381,7 +400,7 @@ namespace YunJing.Editor
                 // Rock shows only where the ground is really steep, in outcrops (not along every bank); moderate
                 // banks are bare earth broken by grass.
                 float outcrop = Smooth(.4f, .6f, Mathf.PerlinNoise(wx * .09f + 13f, wz * .09f + 57f));
-                float rock = (layout.isolated ? Smooth(.85f, 1.2f, slope + edgeNoise * .3f) : Smooth(.62f, .95f, slope + edgeNoise * .3f) * outcrop) * (1f - dirt);   // the hollow's slopes stay grassy
+                float rock = (layout.isolated ? Smooth(.85f, 1.2f, slope + edgeNoise * .3f) : Mathf.Max(Smooth(.62f, .95f, slope + edgeNoise * .3f) * outcrop, Smooth(.9f, 1.3f, slope + edgeNoise * .2f))) * (1f - dirt);   // the hollow's slopes stay grassy; walls are rock
                 float bank = layout.isolated ? 0 : Smooth(.32f, .62f, slope + edgeNoise * .25f) * Smooth(.35f, .65f, Mathf.PerlinNoise(wx * .23f + 91f, wz * .23f + 3f)) * (1f - rock) * (1f - dirt) * .75f;
                 dirt = Mathf.Max(dirt, bank);
                 float dryPatch = Smooth(.46f, .72f, Mathf.PerlinNoise(wx * .03f + 71f, wz * .03f + 9f) * .7f + Mathf.PerlinNoise(wx * .22f + 5f, wz * .22f + 33f) * .3f + edgeNoise * .3f);
@@ -484,7 +503,7 @@ namespace YunJing.Editor
                 layer.tileSize = new Vector2(tile, tile);
                 // The sun-dried meadow is the meadow painting, warmed toward straw.
                 layer.diffuseRemapMin = Vector4.zero;
-                layer.diffuseRemapMax = LayerNames[i] == "MeadowDry" ? new Vector4(1.02f, 1.0f, .6f, 1) : LayerNames[i] == "OchreRock" ? new Vector4(.84f, .9f, .98f, 1) : LayerNames[i] == "VillageMeadow" ? new Vector4(.78f, .86f, .7f, 1) : Vector4.one;
+                layer.diffuseRemapMax = LayerNames[i] == "MeadowDry" ? new Vector4(1.02f, 1.0f, .6f, 1) : LayerNames[i] == "OchreRock" ? new Vector4(.6f, .66f, .76f, 1) : LayerNames[i] == "VillageMeadow" ? new Vector4(.78f, .86f, .7f, 1) : Vector4.one;
                 layer.smoothness = 0; layer.metallic = 0;
                 EditorUtility.SetDirty(layer);
                 result[i] = layer;

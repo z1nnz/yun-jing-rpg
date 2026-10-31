@@ -428,5 +428,6 @@
   "checkpoints": [],
   "route": [],
   "relief": 2.4,
-  "terrace": 0
+  "terrace": 0,
+  "cliffs": 5.5
 }

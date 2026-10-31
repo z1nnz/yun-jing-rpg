@@ -982,6 +982,28 @@ namespace YunJing.Editor
                     rocks++;
                 }
             }
+            // Fallen rock at the foot of the walls (layout.cliffs): find wall faces and roll a few stones downhill off them.
+            if (layout.cliffs > 0)
+                for (int i = 0, tries = 0; i < biome.boulders / 3 && tries < 900; tries++)
+                {
+                    float x = a.minX + 6 + R() * (a.sizeX - 12), z = a.minZ + 6 + R() * (a.sizeZ - 12);
+                    float dx = QingxiVillageTerrain.Height(layout, x + 1, z) - QingxiVillageTerrain.Height(layout, x - 1, z);
+                    float dz = QingxiVillageTerrain.Height(layout, x, z + 1) - QingxiVillageTerrain.Height(layout, x, z - 1);
+                    var down = -new Vector2(dx, dz);
+                    if (down.magnitude / 2f < 1.1f) continue;   // not a wall
+                    var foot = new Vector2(x, z) + down.normalized * (2.5f + R() * 3f);
+                    if (QingxiVillageTerrain.PadDistance(layout, foot.x, foot.y, out _) < 3f || QingxiVillageTerrain.RoadDistance(layout, foot.x, foot.y, out _) < 2.5f
+                        || QingxiVillageTerrain.CreekDistance(layout, foot.x, foot.y, out _) < clear) continue;
+                    var rock = (GameObject)PrefabUtility.InstantiatePrefab(boulder);
+                    rock.name = "Fallen rock at the wall foot - MossBoulderSet_v001";
+                    rock.transform.SetParent(root, false);
+                    float scale = .4f + R() * R() * 1.1f;
+                    rock.transform.localScale *= scale;
+                    rock.transform.localRotation = Quaternion.Euler(R() * 20 - 10, R() * 360, R() * 20 - 10) * boulder.transform.localRotation;
+                    rock.transform.localPosition = At(foot.x, foot.y) + Vector3.down * (.1f + .2f * scale);
+                    MossStone(rock);
+                    rocks++; i++;
+                }
             // Withered sedge on the creek banks (the PR #45 tufts, when the upstream kit is in this project).
             if (biome.sedge > 0 && layout.creek != null && layout.creek.Count >= 2 && File.Exists(QingxiWaterheadA.ModelPath("A05_WitheredSedge_01")))
                 for (int i = 0, tries = 0; i < biome.sedge && tries < biome.sedge * 8; tries++)
