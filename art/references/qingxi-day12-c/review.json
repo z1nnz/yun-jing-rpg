@@ -1,0 +1,62 @@
+{
+ "generator": "Codex CLI 內建圖像生成（OpenAI），2026-10-31",
+ "seed": "工具沒有回報 seed",
+ "prompt_rule": "工作包 C 節的提示詞原文＋風格指南 5.2 固定風格段＋「Avoid: 」接 5.3 固定負面提示（此工具沒有負面欄）；每件同一段提示詞獨立生成 4 張",
+ "items": {
+  "RK03": {
+   "selected": "RK03/RK03-cand-3.png",
+   "candidates": [
+    "RK03/RK03-cand-1.png",
+    "RK03/RK03-cand-2.png",
+    "RK03/RK03-cand-3.png",
+    "RK03/RK03-cand-4.png"
+   ],
+   "why": "四分之三視角加正、側、背三張正交；桌子和兩張長凳在簷下看得最清楚，前方兩階石階、無字木招牌、竹簾、紙燈籠都在。1 號也不錯但桌凳被欄杆擋住；2、4 號的正交圖和透視圖屋頂形狀不一致。",
+   "modelling_differences": "只取形體與比例；桌上的盆栽和地面草皮不建（地面交給地形）。"
+  },
+  "G01": {
+   "selected": "G01/G01-cand-4.png",
+   "candidates": [
+    "G01/G01-cand-1.png",
+    "G01/G01-cand-2.png",
+    "G01/G01-cand-3.png",
+    "G01/G01-cand-4.png"
+   ],
+   "why": "燈室裡有煙燻痕（提示詞要求 soot inside the chamber）、柱身有刻框、邊角磨損；三張視圖高度一致。1 號燈室偏亮像已點燈；2 號燈室太乾淨；3 號柱身太粗。",
+   "modelling_differences": "暖灰花崗岩；做成比 TY04 更瘦高、屋蓋較小，兩座燈要一眼分得出來。"
+  },
+  "TY04": {
+   "selected": "TY04/TY04-cand-3.png",
+   "candidates": [
+    "TY04/TY04-cand-1.png",
+    "TY04/TY04-cand-2.png",
+    "TY04/TY04-cand-3.png",
+    "TY04/TY04-cand-4.png"
+   ],
+   "why": "屋蓋寬、頂珠成串、底座層次多，比 G01 敦實，符合 0.9 m 寬、2.0 m 高的比例。",
+   "modelling_differences": "四張候選的缺月都刻在柱身中段而且太大；照工作包改成「很小、看不清、刻在底座低處」，建模時不照圖。"
+  },
+  "TY08": {
+   "selected": "TY08/TY08-cand-3.png",
+   "candidates": [
+    "TY08/TY08-cand-1.png",
+    "TY08/TY08-cand-2.png",
+    "TY08/TY08-cand-3.png",
+    "TY08/TY08-cand-4.png"
+   ],
+   "why": "三根竹橫桿、A 字側撐、石墩腳、麻布、底板上有竹篩和落葉，最接近 A 包「竹架、麻繩、竹篩」。2 號也好，但沒有竹篩；1、4 號底部是整片木台。",
+   "modelling_differences": "「修補過的腿綁著新麻繩」在圖上不明顯，建模時加在左前腳。空架狀態拿掉草藥束、保留麻布與竹篩。"
+  },
+  "TY09": {
+   "selected": "TY09/TY09-cand-4.png",
+   "candidates": [
+    "TY09/TY09-cand-1.png",
+    "TY09/TY09-cand-2.png",
+    "TY09/TY09-cand-3.png",
+    "TY09/TY09-cand-4.png"
+   ],
+   "why": "只有這張是真正的鋤頭（橫刃），1–3 號畫成鏟子；木桶有提耳與鐵箍、竹籃口緣有修補。",
+   "modelling_differences": "水缸釉色在圖上偏褐，建模時往風格指南的青碧釉色靠。"
+  }
+ }
+}

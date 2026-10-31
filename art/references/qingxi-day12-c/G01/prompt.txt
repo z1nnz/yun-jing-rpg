@@ -1,0 +1,15 @@
+# G01 三視圖提示詞與取捨
+
+工具：Codex CLI 內建圖像生成（OpenAI），2026-10-31。seed：工具沒有回報。
+用法：工作包提示詞原文＋風格指南 5.2 固定風格段＋5.3 固定負面提示（此工具沒有負面欄，照 5.3 接在最後並加 "Avoid:"）。同一段提示詞獨立生成 4 張。
+
+選用：G01-cand-4.png
+理由：燈室裡有煙燻痕（提示詞要求 soot inside the chamber）、柱身有刻框、邊角磨損；三張視圖高度一致。1 號燈室偏亮像已點燈；2 號燈室太乾淨；3 號柱身太粗。
+建模時的差異：暖灰花崗岩；做成比 TY04 更瘦高、屋蓋較小，兩座燈要一眼分得出來。
+沒選的：G01-cand-1.png, G01-cand-2.png, G01-cand-3.png（保留，看得出取捨）
+
+## 提示詞（原文，一字未改）
+
+Three-view orthographic turnaround sheet of a tall stone lantern standing at a village gate, about 0.6 m wide and 2.2 m tall, made of weathered warm-grey granite with a square light chamber and paper windows, a small roof cap, moss on the base, showing soot inside the chamber and worn carved edges, used in pairs at the gate of a valley village; shown unlit. Layout: front view, side view and back view side by side in one image, all at the same scale and aligned on the same ground line, orthographic (no perspective), centred, full object visible with margin around it, plain light warm-grey background, even soft studio lighting so shapes and materials read clearly, no cast shadows on the background, one object only.
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye

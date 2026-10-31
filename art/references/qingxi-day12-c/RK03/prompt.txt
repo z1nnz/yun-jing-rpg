@@ -1,0 +1,15 @@
+# RK03 三視圖提示詞與取捨
+
+工具：Codex CLI 內建圖像生成（OpenAI），2026-10-31。seed：工具沒有回報。
+用法：工作包提示詞原文＋風格指南 5.2 固定風格段＋5.3 固定負面提示（此工具沒有負面欄，照 5.3 接在最後並加 "Avoid:"）。同一段提示詞獨立生成 4 張。
+
+選用：RK03-cand-3.png
+理由：四分之三視角加正、側、背三張正交；桌子和兩張長凳在簷下看得最清楚，前方兩階石階、無字木招牌、竹簾、紙燈籠都在。1 號也不錯但桌凳被欄杆擋住；2、4 號的正交圖和透視圖屋頂形狀不一致。
+建模時的差異：只取形體與比例；桌上的盆栽和地面草皮不建（地面交給地形）。
+沒選的：RK03-cand-1.png, RK03-cand-2.png, RK03-cand-4.png（保留，看得出取捨）
+
+## 提示詞（原文，一字未改）
+
+Architectural concept of a small open roadside tea pavilion on a country road outside a valley village, run by a kind old tea master who welcomes every newcomer, footprint about 6 m wide and 5 m deep, ridge 4.5 m high, timber post-and-beam frame with gently upturned eave corners, blue-grey clay tile roof with moss on the ridge, open on three sides with a low wooden railing, worn stone plinth with two steps, details: a square wooden tea table with two benches under the eaves, a small charcoal tea stove and a clay kettle, paper lanterns, a bamboo blind rolled up, a wooden signboard without text, weathering: sun-faded timber, a repaired roof corner with newer tiles. Layout: one three-quarter view from slightly above at eye height of a person, plus front, side and back orthographic views on the same sheet at the same scale, plain light warm-grey background, even soft lighting, building only (no landscape around it except a small ground patch).
+Art direction: stylized hand-painted 3D game art for an Eastern xianxia fantasy world (Chinese immortal-cultivation setting), warm golden morning light from a low sun, soft warm rim light on edges and silhouettes, gentle blue-violet shadows (never pure black), layered soft white mist in the distance, painterly textures made of large soft colour gradients with a few visible brush strokes, rich but natural colour palette (sunlit warm yellow-greens, cool teal shade greens, warm grey stone, aged brown timber, blue-grey roof tiles, turquoise water), lived-in details: wear on edges, moss and soil in the joints, patched and repaired parts, small cracks, weathered wood grain, high level of detail with clear readable shapes and a strong silhouette, real-world scale and proportions, cohesive with a hand-painted xianxia valley village, game-ready asset look, high quality, masterpiece.
+Avoid: photorealistic, photograph, photo texture, scanned texture, realistic PBR, plastic, glossy, shiny, chrome, pure black shadows, harsh contrast, neon colours, oversaturated, flat lighting, noon lighting, modern objects, cars, wires, concrete, glass windows, text, letters, Chinese characters, signature, logo, UI, watermark, frame, border, anime screenshot, cel-shaded flat colour, Genshin Impact, Mihoyo, copy of an existing game asset, blocky low-poly, voxel, cartoon chibi, noisy texture, blurry, low resolution, cropped, cut off, duplicate objects, extra limbs, floating parts, distorted perspective, fisheye
