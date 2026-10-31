@@ -1,0 +1,675 @@
+{
+ "G01": {
+  "id": "G01",
+  "device": "OPTIX",
+  "dimensions_xyz_m": [
+   0.588,
+   0.588,
+   2.137
+  ],
+  "size_limit_m": [
+   0.6,
+   0.6,
+   2.2
+  ],
+  "fits_limit": true,
+  "groups": {
+   "Stone": {
+    "material": "G01_Stone",
+    "texture_px": 2048,
+    "triangles": [
+     13894,
+     6946,
+     2084
+    ],
+    "emission": false
+   },
+   "Lamp": {
+    "material": "G01_Lamp",
+    "texture_px": 1024,
+    "triangles": [
+     2496,
+     1248,
+     374
+    ],
+    "emission": true
+   }
+  },
+  "triangles_total": [
+   16390,
+   8194,
+   2458
+  ],
+  "source_parts": 42,
+  "reference": "art/references/qingxi-day12-c/G01/prompt.txt",
+  "origin": "footprint centre, bottom z = 0, front = -Y (Blender) / +Z glTF",
+  "textures": "per group: Albedo / Normal / MaskURP (R metal, G AO, A smoothness) / ORM (glTF) [+ Emission]",
+  "collision": {
+   "mesh": "G01_Collision",
+   "primitives": [
+    {
+     "type": "box",
+     "size": [
+      0.6,
+      0.6,
+      2.137
+     ],
+     "center": [
+      0,
+      0,
+      1.068
+     ]
+    }
+   ]
+  },
+  "light_socket": [
+   -0.0,
+   0.0,
+   1.558
+  ]
+ },
+ "TY04": {
+  "id": "TY04",
+  "device": "OPTIX",
+  "dimensions_xyz_m": [
+   0.867,
+   0.867,
+   1.992
+  ],
+  "size_limit_m": [
+   0.9,
+   0.9,
+   2.0
+  ],
+  "fits_limit": true,
+  "groups": {
+   "Stone": {
+    "material": "TY04_Stone",
+    "texture_px": 2048,
+    "triangles": [
+     24290,
+     12144,
+     3642
+    ],
+    "emission": false
+   },
+   "Lamp": {
+    "material": "TY04_Lamp",
+    "texture_px": 1024,
+    "triangles": [
+     3360,
+     1680,
+     504
+    ],
+    "emission": true
+   }
+  },
+  "triangles_total": [
+   27650,
+   13824,
+   4146
+  ],
+  "source_parts": 46,
+  "reference": "art/references/qingxi-day12-c/TY04/prompt.txt",
+  "origin": "footprint centre, bottom z = 0, front = -Y (Blender) / +Z glTF",
+  "textures": "per group: Albedo / Normal / MaskURP (R metal, G AO, A smoothness) / ORM (glTF) [+ Emission]",
+  "collision": {
+   "mesh": "TY04_Collision",
+   "primitives": [
+    {
+     "type": "box",
+     "size": [
+      0.8,
+      0.8,
+      1.992
+     ],
+     "center": [
+      0,
+      0,
+      0.996
+     ]
+    }
+   ]
+  },
+  "crescent": {
+   "centre": [
+    -0.12,
+    -0.401,
+    0.075
+   ],
+   "size_m": 0.04,
+   "depth_m": 0.006
+  },
+  "light_socket": [
+   -0.0,
+   -0.0,
+   1.342
+  ]
+ },
+ "TY08": {
+  "id": "TY08",
+  "device": "OPTIX",
+  "dimensions_xyz_m": [
+   1.987,
+   0.78,
+   1.779
+  ],
+  "size_limit_m": [
+   2.0,
+   0.8,
+   1.8
+  ],
+  "fits_limit": true,
+  "groups": {
+   "Frame": {
+    "material": "TY08_Frame",
+    "texture_px": 2048,
+    "triangles": [
+     18916,
+     9458,
+     2837
+    ],
+    "emission": false
+   },
+   "Herbs": {
+    "material": "TY08_Herbs",
+    "texture_px": 1024,
+    "triangles": [
+     21570,
+     10784,
+     3235
+    ],
+    "emission": false
+   }
+  },
+  "triangles_total": [
+   40486,
+   20242,
+   6072
+  ],
+  "source_parts": 1515,
+  "reference": "art/references/qingxi-day12-c/TY08/prompt.txt",
+  "origin": "footprint centre, bottom z = 0, front = -Y (Blender) / +Z glTF",
+  "textures": "per group: Albedo / Normal / MaskURP (R metal, G AO, A smoothness) / ORM (glTF) [+ Emission]",
+  "collision": {
+   "mesh": "TY08_Collision",
+   "primitives": [
+    {
+     "type": "box",
+     "size": [
+      0.12,
+      0.8,
+      1.78
+     ],
+     "center": [
+      -0.91,
+      0,
+      0.89
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.12,
+      0.8,
+      1.78
+     ],
+     "center": [
+      0.91,
+      0,
+      0.89
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      1.9,
+      0.14,
+      0.1
+     ],
+     "center": [
+      0,
+      0,
+      1.1
+     ]
+    }
+   ]
+  },
+  "states": {
+   "empty": "hide the TY08_Herbs_* nodes",
+   "full": "show TY08_Herbs_* (default)"
+  }
+ },
+ "TY09": {
+  "id": "TY09",
+  "device": "OPTIX",
+  "dimensions_xyz_m": [
+   1.534,
+   1.269,
+   1.114
+  ],
+  "size_limit_m": [
+   1.6,
+   1.6,
+   2.0
+  ],
+  "fits_limit": true,
+  "groups": {
+   "Vat": {
+    "material": "TY09_Vat",
+    "texture_px": 1024,
+    "triangles": [
+     2860,
+     1430,
+     429
+    ],
+    "emission": false
+   },
+   "Basket": {
+    "material": "TY09_Basket",
+    "texture_px": 1024,
+    "triangles": [
+     4136,
+     2068,
+     619
+    ],
+    "emission": false
+   },
+   "Bucket": {
+    "material": "TY09_Bucket",
+    "texture_px": 1024,
+    "triangles": [
+     1732,
+     865,
+     258
+    ],
+    "emission": false
+   },
+   "Hoe": {
+    "material": "TY09_Hoe",
+    "texture_px": 512,
+    "triangles": [
+     204,
+     101,
+     30
+    ],
+    "emission": false
+   }
+  },
+  "triangles_total": [
+   8932,
+   4464,
+   1336
+  ],
+  "source_parts": 39,
+  "reference": "art/references/qingxi-day12-c/TY09/prompt.txt",
+  "origin": "footprint centre, bottom z = 0, front = -Y (Blender) / +Z glTF",
+  "textures": "per group: Albedo / Normal / MaskURP (R metal, G AO, A smoothness) / ORM (glTF) [+ Emission]",
+  "collision": {
+   "mesh": "TY09_Collision",
+   "primitives": [
+    {
+     "type": "cylinder",
+     "piece": "Vat",
+     "radius": 0.365,
+     "height": 0.765,
+     "center": [
+      0.12,
+      0.3,
+      0.3825
+     ]
+    },
+    {
+     "type": "cylinder",
+     "piece": "Basket",
+     "radius": 0.27,
+     "height": 0.42,
+     "center": [
+      -0.42,
+      -0.32,
+      0.21
+     ]
+    },
+    {
+     "type": "cylinder",
+     "piece": "Bucket",
+     "radius": 0.19,
+     "height": 0.52,
+     "center": [
+      0.64,
+      -0.3,
+      0.26
+     ]
+    }
+   ]
+  },
+  "pieces": {
+   "Vat": {
+    "centre": [
+     0.12,
+     0.3
+    ],
+    "collision": {
+     "type": "cylinder",
+     "radius": 0.365,
+     "height": 0.765
+    }
+   },
+   "Basket": {
+    "centre": [
+     -0.42,
+     -0.32
+    ],
+    "collision": {
+     "type": "cylinder",
+     "radius": 0.27,
+     "height": 0.42
+    }
+   },
+   "Bucket": {
+    "centre": [
+     0.64,
+     -0.3
+    ],
+    "collision": {
+     "type": "cylinder",
+     "radius": 0.19,
+     "height": 0.52
+    }
+   },
+   "Hoe": {
+    "collision": null,
+    "note": "leans on the vat rim; place after the vat"
+   }
+  }
+ },
+ "RK03": {
+  "id": "RK03",
+  "device": "OPTIX",
+  "dimensions_xyz_m": [
+   5.938,
+   4.971,
+   4.379
+  ],
+  "size_limit_m": [
+   6,
+   5,
+   4.5
+  ],
+  "fits_limit": true,
+  "groups": {
+   "Stone": {
+    "material": "RK03_Stone",
+    "texture_px": 2048,
+    "triangles": [
+     26924,
+     13462,
+     4038
+    ],
+    "emission": false
+   },
+   "Timber": {
+    "material": "RK03_Timber",
+    "texture_px": 2048,
+    "triangles": [
+     15348,
+     7674,
+     2302
+    ],
+    "emission": false
+   },
+   "Furniture": {
+    "material": "RK03_Furniture",
+    "texture_px": 1024,
+    "triangles": [
+     5696,
+     2848,
+     853
+    ],
+    "emission": false
+   },
+   "Lamp": {
+    "material": "RK03_Lamp",
+    "texture_px": 512,
+    "triangles": [
+     2944,
+     1472,
+     440
+    ],
+    "emission": true
+   },
+   "Roof": {
+    "material": "RK03_Roof",
+    "texture_px": 2048,
+    "triangles": [
+     192476,
+     96238,
+     28870
+    ],
+    "emission": false
+   }
+  },
+  "triangles_total": [
+   243388,
+   121694,
+   36503
+  ],
+  "source_parts": 463,
+  "reference": "art/references/qingxi-day12-c/RK03/prompt.txt",
+  "origin": "footprint centre, bottom z = 0, front = -Y (Blender) / +Z glTF",
+  "textures": "per group: Albedo / Normal / MaskURP (R metal, G AO, A smoothness) / ORM (glTF) [+ Emission]",
+  "collision": {
+   "mesh": "RK03_Collision",
+   "primitives": [
+    {
+     "type": "box",
+     "size": [
+      4.6,
+      3.8,
+      0.45
+     ],
+     "center": [
+      0,
+      0,
+      0.225
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      1.7,
+      0.3,
+      0.3
+     ],
+     "center": [
+      0,
+      -2.05,
+      0.15
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      1.7,
+      0.3,
+      0.15
+     ],
+     "center": [
+      0,
+      -2.35,
+      0.075
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.24,
+      0.24,
+      2.35
+     ],
+     "center": [
+      -1.9,
+      -1.5,
+      1.625
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.24,
+      0.24,
+      2.35
+     ],
+     "center": [
+      -1.9,
+      1.5,
+      1.625
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.1,
+      3.0,
+      0.6
+     ],
+     "center": [
+      -1.9,
+      0,
+      0.75
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.24,
+      0.24,
+      2.35
+     ],
+     "center": [
+      1.9,
+      -1.5,
+      1.625
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.24,
+      0.24,
+      2.35
+     ],
+     "center": [
+      1.9,
+      1.5,
+      1.625
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.1,
+      3.0,
+      0.6
+     ],
+     "center": [
+      1.9,
+      0,
+      0.75
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.99,
+      0.1,
+      0.6
+     ],
+     "center": [
+      -1.295,
+      -1.5,
+      0.75
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.99,
+      0.1,
+      0.6
+     ],
+     "center": [
+      1.295,
+      -1.5,
+      0.75
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      3.8,
+      0.12,
+      2.13
+     ],
+     "center": [
+      0,
+      1.52,
+      1.515
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.92,
+      0.92,
+      0.75
+     ],
+     "center": [
+      0,
+      0.05,
+      0.825
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      1.3,
+      0.3,
+      0.45
+     ],
+     "center": [
+      0,
+      -0.69,
+      0.675
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      1.3,
+      0.3,
+      0.45
+     ],
+     "center": [
+      0,
+      0.79,
+      0.675
+     ]
+    },
+    {
+     "type": "box",
+     "size": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "center": [
+      1.3,
+      0.85,
+      0.63
+     ]
+    }
+   ]
+  }
+ }
+}
