@@ -87,9 +87,9 @@
     "material": "TY04_Stone",
     "texture_px": 2048,
     "triangles": [
-     24290,
-     12144,
-     3642
+     24384,
+     12192,
+     3656
     ],
     "emission": false
    },
@@ -105,9 +105,9 @@
    }
   },
   "triangles_total": [
-   27650,
-   13824,
-   4146
+   27744,
+   13872,
+   4160
   ],
   "source_parts": 46,
   "reference": "art/references/qingxi-day12-c/TY04/prompt.txt",
@@ -134,11 +134,11 @@
   "crescent": {
    "centre": [
     -0.12,
-    -0.401,
+    -0.4,
     0.075
    ],
-   "size_m": 0.04,
-   "depth_m": 0.006
+   "size_m": 0.045,
+   "depth_m": 0.01
   },
   "light_socket": [
    -0.0,

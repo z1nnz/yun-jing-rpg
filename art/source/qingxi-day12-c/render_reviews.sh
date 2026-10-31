@@ -19,6 +19,15 @@ for L in day night; do
     r --glb $E/TY04.glb --out $P/TY04/levels --tag TY04-$L-level$i --views front --glow $s --light $L --no-ruler --res 640x960; i=$((i+1))
   done
 done
+r --glb $E/TY04.glb --out $P/TY04 --tag TY04-crescent-closeup --views "" --no-ruler --glow 0 --cam=-.08,-.70,.20,-.12,-.40,.09,60
+python - <<'PY'
+from PIL import Image   # five levels side by side
+P='art/previews/qingxi-day12-c/TY04/levels/'
+for L in ('day','night'):
+    ims=[Image.open(P+f'TY04-{L}-level{i}-front.png').convert('RGB') for i in range(5)];s=Image.new('RGB',(sum(i.width for i in ims),ims[0].height));x=0
+    for i in ims:s.paste(i,(x,0));x+=i.width
+    s.save(P+f'TY04-{L}-levels-0to4.png')
+PY
 # 3. drying rack empty / full
 r --glb $E/TY08.glb --out $P/TY08/states --tag TY08-empty --views threequarter --hide Herbs --no-ruler
 r --glb $E/TY08.glb --out $P/TY08/states --tag TY08-full --views threequarter --no-ruler

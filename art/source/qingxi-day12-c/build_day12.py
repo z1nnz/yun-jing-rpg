@@ -189,11 +189,15 @@ def beam(name,a,b,w,h,mat,grp,bev=.008,up=(0,0,1),scale=.5):
     a,b=Vector(a),Vector(b);t=(b-a);L=t.length;t.normalize();up=Vector(up);s=t.cross(up).normalized();u=s.cross(t)
     o=finish(name,box_bm((L,w,h)),mat,grp,scale);bevel(o,bev,2)
     o.data.transform(Matrix(((t.x,s.x,u.x,0),(t.y,s.y,u.y,0),(t.z,s.z,u.z,0),(0,0,0,1))));o.data.transform(Matrix.Translation((a+b)/2));return o
+def solid_prism(bm,pts,vec):
+    """closed prism: polygon pts (3D) swept by vec — both caps and the side walls"""
+    a=[bm.verts.new(p) for p in pts];b=[bm.verts.new(Vector(p)+Vector(vec)) for p in pts];n=len(pts)
+    bm.faces.new(a);bm.faces.new(list(reversed(b)))
+    for i in range(n):j=(i+1)%n;bm.faces.new((a[j],a[i],b[i],b[j]))
+    return bm
 def prism(name,poly,depth,mat,grp,bev=.004,scale=.4):
     """2D polygon in XZ (front view) extruded along Y (depth, centred on y=0)"""
-    bm=bmesh.new();f=bm.faces.new([bm.verts.new((x,-depth/2,z)) for x,z in poly])
-    r=bmesh.ops.extrude_face_region(bm,geom=[f]);vs=[e for e in r['geom'] if isinstance(e,bmesh.types.BMVert)]
-    bmesh.ops.translate(bm,verts=vs,vec=(0,depth,0));o=finish(name,bm,mat,grp,scale)
+    bm=solid_prism(bmesh.new(),[(x,-depth/2,z) for x,z in poly],(0,depth,0));o=finish(name,bm,mat,grp,scale)
     if bev:bevel(o,bev,1,30)
     return o
 def carve(o,cutters):
@@ -332,12 +336,12 @@ def TY04(M):
         'finial':[(.07,.07),(.055,.10)]})
     # 缺月: a small worn crescent (about 4 cm) on the lowest course, left of centre, low — not enlarged, not explained
     o=next(p for p in parts if p.name=='TY04_Base0_3');cx,cz=-.12,.075
-    vs=[v.co for v in o.data.vertices if abs(v.co.x-cx)<.05 and abs(v.co.z-cz)<.05 and v.co.y<0];fy=min(v.y for v in vs) if vs else -.39
-    bm=bmesh.new();N=24;outer=[(.020*math.cos(a),.020*math.sin(a)) for a in np.linspace(math.radians(60),math.radians(300),N)]
-    inner=[(.007+.016*math.cos(a),.016*math.sin(a)) for a in np.linspace(math.radians(280),math.radians(80),N)]
-    poly=outer+inner;f=bm.faces.new([bm.verts.new((cx+x,fy-.02,cz+y)) for x,y in poly])
-    r=bmesh.ops.extrude_face_region(bm,geom=[f]);bmesh.ops.translate(bm,verts=[e for e in r['geom'] if isinstance(e,bmesh.types.BMVert)],vec=(0,.026,0))
-    carve(o,[cutter(bm,'crescent')]);meta['crescent']={'centre':[cx,round(fy,3),cz],'size_m':.04,'depth_m':.006}
+    vs=[v.co.y for v in o.data.vertices if abs(v.co.x-cx)<.03 and abs(v.co.z-cz)<.03 and v.co.y<0];fy=min(vs);deep=max(vs)-fy+.010   # follow the jittered face
+    nf=len(o.data.polygons)
+    bm=bmesh.new();N=24;outer=[(.0225*math.cos(a),.0225*math.sin(a)) for a in np.linspace(math.radians(60),math.radians(300),N)]
+    inner=[(.008+.018*math.cos(a),.018*math.sin(a)) for a in np.linspace(math.radians(280),math.radians(80),N)]
+    poly=outer+inner;solid_prism(bm,[(cx+x,fy-.02,cz+y) for x,y in poly],(0,.02+deep,0))
+    carve(o,[cutter(bm,'crescent')]);assert len(o.data.polygons)>nf+8,'crescent cutter missed the stone face';meta['crescent']={'centre':[cx,round(fy,3),cz],'size_m':.045,'depth_m':.010};meta['nomoss']=[(cx,fy,cz,.05)]
     return meta
 
 def TY08(M):
@@ -452,8 +456,7 @@ def TY09(M):
     top_=B-fwd*.02+Vector((0,0,-.01));tube('TY09_HoeNeck',[B+t*.02,B-fwd*.03+Vector((0,0,-.005)),top_],.011,M['iron'],Ho,8,.2)
     w0,w1,L=.10,.15,.19;bm=bmesh.new()
     pl=[(-w0/2,0),(w0/2,0),(w1/2,L),(-w1/2,L)]
-    vs=[bm.verts.new(top_+side*x+(-fwd*.9+Vector((0,0,-.12)))*y) for x,y in pl]
-    f=bm.faces.new(vs);r=bmesh.ops.extrude_face_region(bm,geom=[f]);bmesh.ops.translate(bm,verts=[e for e in r['geom'] if isinstance(e,bmesh.types.BMVert)],vec=Vector((0,0,.006)))
+    solid_prism(bm,[top_+side*x+(-fwd*.9+Vector((0,0,-.12)))*y for x,y in pl],(0,0,.006))
     o=finish('TY09_HoeBlade',bm,M['iron'],Ho,.2);bevel(o,.0015,1)
     bc=top_-fwd*.12+Vector((0,0,-.02))
     meta['pieces']['Hoe']={'collision':None,'note':'leans on the vat rim; place after the vat'}
@@ -777,6 +780,8 @@ def run(pid):
             creep=np.clip(1-pz/.30,0,1)*meta.get('moss_low',0)*.9+cav*.5
             m=np.clip((mn*(low+highm+ridge+.15)+creep)*amt*2*np.clip((noise-.38)*3.5,0,1),0,1)*filled*(glow<.5)
             mcol=np.array([.27,.36,.13])*(1-m[...,None]*.0)+np.array([.10,.10,.04])*noise[...,None]
+            for (cx,cy,cz,rr) in meta.get('nomoss',[]):   # keep the carved mark faint: dirt, not bright moss
+                q=pos-meta['offset'];m=m*(1-(np.sqrt((q[...,0]-cx)**2+(q[...,1]-cy)**2+(q[...,2]-cz)**2)<rr)*np.clip(cav*3,0,1))
             col=col*(1-m[...,None])+mcol*m[...,None];rough=np.clip(rough+.15*m,0,1)
         # roof: a repaired corner with newer, cleaner tiles
         if g=='Roof' and meta.get('newtiles'):
