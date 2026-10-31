@@ -24,7 +24,7 @@ namespace YunJing.Editor
         public static GameObject Source(string kind)
         {
             var options = new System.Collections.Generic.List<GameObject>();
-            foreach (var suffix in new[] { "", "_B", "_C" })
+            foreach (var suffix in new[] { "", "_B", "_C", "_D", "_E", "_F", "_G", "_H" })
             {
                 var model = AssetDatabase.LoadAssetAtPath<GameObject>($"{Models}/{kind}{suffix}.fbx");
                 if (model != null) options.Add(model);
@@ -75,7 +75,7 @@ namespace YunJing.Editor
                 bark.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>($"{Models}/{barkName}.png"));
                 bark.SetColor("_BaseColor", Color.white); bark.SetFloat("_Smoothness", .12f);
                 EditorUtility.SetDirty(bark);
-                foreach (var suffix in new[] { "", "_B", "_C" })
+                foreach (var suffix in new[] { "", "_B", "_C", "_D", "_E", "_F", "_G", "_H" })
                 {
                 var path = $"{Models}/{kind}{suffix}.fbx";
                 var importer = (ModelImporter)AssetImporter.GetAtPath(path);

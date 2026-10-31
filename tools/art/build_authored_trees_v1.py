@@ -135,18 +135,39 @@ def lean_form(variant, spec):
     return T
 
 
+HEIGHT_M = {'camphor': 12.0, 'juniper': 8.0, 'ginkgo': 14.0, 'plum': 6.0, 'willow': 10.0, 'maple': 9.0, 'pine': 13.0}   # as traced
+SUFFIX = ('', '_B', '_C', '_D', '_E', '_F', '_G', '_H')
+
+
+def skeleton_files(spec):
+    """The traced trees of a species, left and right on each sheet: skeleton-<sp>.json, -b.json, then the extra forms
+    skeleton-<sp>-2.json, -2-b.json ... (`sheets` picks some of them), at most eight."""
+    import re
+    sp = spec['skeleton']
+    stems = spec.get('sheets') or sorted((p.stem for p in REFS.glob(f'skeleton-{sp}*.png') if re.fullmatch(rf'skeleton-{sp}(-\d+)?', p.stem)),
+                                         key=lambda s: (len(s), s))
+    files = []
+    for st in stems:
+        files += [f for f in (REFS / f'{st}.json', REFS / f'{st}-b.json') if f.exists()]
+    return files[:len(SUFFIX)]
+
+
 def build_traced_form(spec, variant=0):
     """A species on its own traced skeleton (tools/art/trace_tree_skeleton.py, from z1nnz's skeleton sheet): every
     branch a smooth curve at its traced thickness, the trunk fluted like the Elder World Tree's, a few roots diving
     into the soil, and the crown as clusters of cupped leaves gathered over the branch tips. Variants: as drawn,
     mirrored, mirrored and a little shorter."""
-    # Variants: the sheet's left tree, its right tree (a different tree), and the left one mirrored and shorter.
-    second = REFS / f"skeleton-{spec['skeleton']}-b.json"
-    src = second if variant == 1 and second.exists() else REFS / f"skeleton-{spec['skeleton']}.json"
-    data = json.loads(src.read_text(encoding='utf-8'))
+    # Variants: every tree drawn on the species' sheets, in turn (skeleton_files).
+    data = json.loads(skeleton_files(spec)[variant].read_text(encoding='utf-8'))
+    # A sheet traced under another species' height (skeleton-plum.png grown as camphor) is brought to this species'.
+    k = HEIGHT_M[spec['skeleton']] / data['height']
+    for br in data['branches']:
+        br['points'] = [[c * k for c in pt] for pt in br['points']]
+        br['radii'] = [r * k for r in br['radii']]
+    data['height'] = HEIGHT_M[spec['skeleton']]
     name = 'Elder' + spec['name']
-    mx = -1 if variant == 2 else 1
-    sz = (.9 if variant == 2 else 1.0) * spec.get('tall', 1.3)
+    mx = 1
+    sz = spec.get('tall', 1.3)
     bark_src = bpy.data.images.load(str(OUT / 'ElderBark.png'))
     tint = spec.get('bark_tint')
     if tint:
@@ -390,7 +411,7 @@ PINE_ELDER = dict(trunk_r=0.43, name='Pine', scale=1.45, wide=1.0, tall=1.94, cr
 JUNIPER_ELDER = dict(trunk_r=0.66, name='Cypress', scale=1.15, wide=1.0, tall=1.69, crown_xy=1.0, crown_z=.8, tiers=True, lean=1.8, leaves_per_cluster=2700,
                      leaf_size=(.026, .046), leaf_width=.6, bark_tint='#b8b0a4',
                      palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
-# Species traced from z1nnz's skeleton sheets (skeleton-<species>.png -> .json); maple and pine keep the Elder form.
+# Species traced from z1nnz's skeleton sheets (skeleton-<species>[-N].png -> .json), every tree on them a variant.
 CAMPHOR_TRACED = dict(name='Camphor', skeleton='camphor', cluster=1.7, leaves_total=38400, leaf_size=(0.050, 0.090), crown_z=.7,
                       palette=['#163f3c', '#1f5e48', '#3f8a3a', '#8cbc2c', '#d6e650'])
 GINKGO_TRACED = dict(name='Ginkgo', skeleton='ginkgo', cluster=1.6, leaves_total=34560, leaf_size=(0.050, 0.090), leaf_width=1.5,
@@ -401,7 +422,19 @@ PLUM_TRACED = dict(name='Plum', skeleton='plum', cluster=1.0, leaves_total=11520
                    crown_z=.7, bark_tint='#3e2f2a', palette=['#8a2a44', '#d47c96', '#eca8ba', '#f8d2dc', '#fff4f6'])
 JUNIPER_TRACED = dict(name='Cypress', skeleton='juniper', cluster=1.3, leaves_total=30720, leaf_size=(0.044, 0.080), leaf_width=.6,
                       crown_z=.45, girth=1.25, bark_tint='#b8b0a4', palette=['#14301a', '#204a22', '#356a2a', '#5c8e30', '#98b444'])
-SPECIES = [CAMPHOR_TRACED, MAPLE_ELDER, GINKGO_TRACED, WILLOW_TRACED, PLUM_TRACED, PINE_ELDER, JUNIPER_ELDER]   # juniper: its sheet has two intertwined trunks the tracer merges
+MAPLE_TRACED = dict(name='Maple', skeleton='maple', cluster=1.5, leaves_total=36000, leaf_size=(0.050, 0.090), leaf_width=1.6,
+                    crown_z=.7, bark_tint='#8a8278', palette=['#5e1420', '#9c2420', '#cf4522', '#e8802c', '#f6c454'])
+PINE_TRACED = dict(name='Pine', skeleton='pine', cluster=1.6, leaves_total=64000, leaf_size=(0.060, 0.110), leaf_width=.4,
+                   crown_z=.4, bark_tint='#8a5a40', palette=['#14301e', '#1f4a28', '#356a32', '#5e8c3c', '#9ab456'])
+# Juniper from its single-trunk sheets only (skeleton-juniper.png has two intertwined trunks the tracer merges).
+JUNIPER_TRACED = dict(JUNIPER_TRACED, sheets=['skeleton-juniper-2', 'skeleton-juniper-3'], girth=.85)
+# Which drawings each species grows from (z1nnz's sheets of 2026-10-31): the knotty budded drawings are plum, the broad
+# sturdy one (skeleton-plum.png, an early sheet) reads as camphor; ginkgo from its own two sheets.
+CAMPHOR_TRACED = dict(CAMPHOR_TRACED, sheets=['skeleton-camphor', 'skeleton-camphor-3', 'skeleton-plum'])
+GINKGO_TRACED = dict(GINKGO_TRACED, sheets=['skeleton-ginkgo-2', 'skeleton-ginkgo-3'])
+PLUM_TRACED = dict(PLUM_TRACED, sheets=['skeleton-plum-2', 'skeleton-plum-3', 'skeleton-ginkgo'])
+WILLOW_TRACED = dict(WILLOW_TRACED, sheets=['skeleton-willow', 'skeleton-willow-3'])
+SPECIES = [CAMPHOR_TRACED, MAPLE_TRACED, GINKGO_TRACED, WILLOW_TRACED, PLUM_TRACED, PINE_TRACED, JUNIPER_TRACED]
 SPREAD = 2.0   # the Elder tree's branch-hierarchy offsets were written for a 4 m trunk; these trees are about twice that
 
 LODS = [dict(keep=1.0, grow=1.0, wood=1.0), dict(keep=.3, grow=1.8, wood=.4), dict(keep=.08, grow=3.2, wood=.15)]
@@ -582,7 +615,7 @@ def build(spec, variant=0):
         name, wood, bark_mat, leaf_mat, clusters = build_traced_form(spec, variant)
         n = max(len(clusters), 1)
         spec = dict(spec, leaves_per_cluster=max(150, spec.get('leaves_total', 30000) // n))
-        return finish(spec, name + ('', '_B', '_C')[variant], wood, bark_mat, leaf_mat, clusters)
+        return finish(spec, name + SUFFIX[variant], wood, bark_mat, leaf_mat, clusters)
     if 'scale' in spec:
         name, wood, bark_mat, leaf_mat, clusters = build_elder_form(spec, variant)
         return finish(spec, name + ('', '_B', '_C')[variant], wood, bark_mat, leaf_mat, clusters)
@@ -762,7 +795,7 @@ def main():
     report = json.loads(report_path.read_text(encoding='utf-8')) if report_path.exists() else {}
     roots_ = []
     for spec in SPECIES:
-        for variant in range(3 if ('scale' in spec or 'skeleton' in spec) else 1):
+        for variant in range(len(skeleton_files(spec)) if 'skeleton' in spec else 3 if 'scale' in spec else 1):
             r, info = build(spec, variant)
             roots_.append(r)
             report[r.name] = info

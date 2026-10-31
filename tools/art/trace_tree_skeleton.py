@@ -8,7 +8,7 @@ spurs are dropped. The front view gives x (across) and z (up); depth comes from 
 round the trunk by its own angle, its children following it, so the tree reads as the drawing from the front and
 fills out in the round. Output: art/references/tree-species-v1/skeleton-<species>.json, metres, z up, foot at 0.
 
-Run: python tools/art/trace_tree_skeleton.py camphor juniper ginkgo plum willow
+Run: python tools/art/trace_tree_skeleton.py camphor juniper ginkgo plum willow maple pine
 """
 import json
 import math
@@ -23,7 +23,7 @@ from skimage.morphology import skeletonize
 
 ROOT = Path(__file__).resolve().parents[2]
 REFS = ROOT / 'art/references/tree-species-v1'
-HEIGHT = {'camphor': 12.0, 'juniper': 8.0, 'ginkgo': 14.0, 'plum': 6.0, 'willow': 10.0}
+HEIGHT = {'camphor': 12.0, 'juniper': 8.0, 'ginkgo': 14.0, 'plum': 6.0, 'willow': 10.0, 'maple': 9.0, 'pine': 13.0}
 
 
 def front_view(img, side='left'):
@@ -41,12 +41,19 @@ def front_view(img, side='left'):
                 best = (start, x)
         else:
             start = None
-    cut = (best[0] + best[1]) // 2 if best != (0, w) else w
-    return ink[:, :cut] if side == 'left' else ink[:, cut:]
+    if best != (0, w):
+        cut = (best[0] + best[1]) // 2
+        return ink[:, :cut] if side == 'left' else ink[:, cut:]
+    # No clear column between them (a long limb reaches over): take the two largest connected drawings instead.
+    lab, n = ndimage.label(ndimage.binary_closing(ink, iterations=1))
+    sizes = ndimage.sum(np.ones_like(lab), lab, range(1, n + 1))
+    two = sorted(np.argsort(sizes)[-2:] + 1, key=lambda k: ndimage.center_of_mass(lab == k)[1])
+    return lab == two[0 if side == 'left' else 1]
 
 
-def trace(name, side='left'):
-    img = Image.open(REFS / f'skeleton-{name}.png')
+def trace(name, side='left', sheet=None):
+    sheet = sheet or f'skeleton-{name}'
+    img = Image.open(REFS / f'{sheet}.png')
     scale = 1000 / max(img.size)
     img = img.resize((int(img.width * scale), int(img.height * scale)), Image.LANCZOS)
     ink = front_view(img, side)
@@ -127,12 +134,16 @@ def trace(name, side='left'):
             radii.append(round(max(dist[(y, x)] * m_per_px, .012), 3))
         out.append(dict(parent=b['parent'], depth=b['depth'], points=xyz, radii=radii))
     data = dict(species=name, height=HEIGHT[name], branches=out)
-    (REFS / f"skeleton-{name}{'' if side == 'left' else '-b'}.json").write_text(json.dumps(data), encoding='utf-8')
+    (REFS / f"{sheet}{'' if side == 'left' else '-b'}.json").write_text(json.dumps(data), encoding='utf-8')
     tips = sum(1 for i, b in enumerate(out) if not any(c['parent'] == i for c in out))
-    print(f'{name} {side}: {len(out)} branches, {tips} tips, trunk radius {out[0]["radii"][0]:.2f} m, {m_per_px * 1000:.1f} mm/px')
+    print(f'{sheet} {side}: {len(out)} branches, {tips} tips, trunk radius {out[0]["radii"][0]:.2f} m, {m_per_px * 1000:.1f} mm/px')
 
 
 if __name__ == '__main__':
+    # Every sheet of each species: skeleton-<species>.png and the extra forms skeleton-<species>-2.png, -3.png ...
+    import re
     for n in sys.argv[1:] or list(HEIGHT):
-        trace(n)
-        trace(n, 'right')
+        for png in sorted(REFS.glob(f'skeleton-{n}*.png')):
+            if re.fullmatch(rf'skeleton-{n}(-\d+)?', png.stem):
+                trace(n, 'left', png.stem)
+                trace(n, 'right', png.stem)
